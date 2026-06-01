@@ -112,13 +112,15 @@
         return;
       }
 
+      // mode: "no-cors" avoids CORS preflight while still delivering the request to Zapier.
+      // The response will be opaque (unreadable), so we treat dispatch as success.
       fetch(WEBHOOK, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ record_id: recordId })
       })
-      .then(function (res) {
-        if (!res.ok) throw new Error("HTTP " + res.status);
+      .then(function () {
         setUI({
           type: "success", emoji: "✅",
           title: "Thank you!",
