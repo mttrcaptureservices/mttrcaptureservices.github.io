@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Approval</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+    .icon.loading { background: #eff6ff; animation: pulse 1.2s ease-in-out infinite; }
+    .icon.success { background: #f0fdf4; }
+    .icon.error   { background: #fef2f2; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .badge.success { background: #dcfce7; color: #15803d; }
+    .badge.error   { background: #fee2e2; color: #b91c1c; }
+    .badge.loading { background: #dbeafe; color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="icon loading" id="icon">⏳</div>
+    <h1 id="title">Processing your approval…</h1>
+    <p id="message">Please wait while we record your response.</p>
+    <span class="badge loading" id="badge">In Progress</span>
+  </div>
+
+  <script>
+    (function () {
+      var WEBHOOK = "https://hooks.zapier.com/hooks/catch/10664871/4bdz3nt/";
+
+      var params  = new URLSearchParams(window.location.search);
+      var recordId = params.get("record_id") || "";
+
+      function setUI(state) {
+        var icon    = document.getElementById("icon");
+        var title   = document.getElementById("title");
+        var message = document.getElementById("message");
+        var badge   = document.getElementById("badge");
+
+        icon.className    = "icon " + state.type;
+        icon.textContent  = state.emoji;
+        title.textContent = state.title;
+        message.textContent = state.message;
+        badge.className   = "badge " + state.type;
+        badge.textContent = state.label;
+      }
+
+      if (!recordId) {
+        setUI({
+          type: "error", emoji: "⚠️",
+          title: "Missing record ID",
+          message: "This approval link appears to be incomplete. Please use the link from your email.",
+          label: "Invalid Link"
+        });
+        return;
+      }
+
+      fetch(WEBHOOK, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ record_id: recordId })
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        setUI({
+          type: "success", emoji: "✅",
+          title: "Thank you!",
+          message: "Your approval has been received and your order is now being processed.",
+          label: "Approved"
+        });
+      })
+      .catch(function (err) {
+        console.error("Webhook error:", err);
+        setUI({
+          type: "error", emoji: "❌",
+          title: "Something went wrong",
+          message: "We couldn't record your approval. Please try clicking the link again or contact support.",
+          label: "Error"
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
