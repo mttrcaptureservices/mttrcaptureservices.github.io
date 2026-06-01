@@ -18,7 +18,7 @@
       justify-content: center;
     }
 
-    /* ── Header bar ─────────────────────────────────────── */
+    /* ── Header ─────────────────────────────────────────── */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -30,10 +30,9 @@
       padding: 0 32px;
       z-index: 10;
     }
+    header img { height: 32px; width: auto; }
 
-    header svg { height: 28px; width: auto; }
-
-    /* ── Card ────────────────────────────────────────────── */
+    /* ── Main ────────────────────────────────────────────── */
     main {
       margin-top: 64px;
       flex: 1;
@@ -44,10 +43,11 @@
       width: 100%;
     }
 
+    /* ── Card ────────────────────────────────────────────── */
     .card {
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
       padding: 56px 48px 48px;
       max-width: 500px;
       width: 100%;
@@ -55,19 +55,27 @@
     }
 
     .icon-wrap {
-      width: 72px; height: 72px;
+      width: 80px; height: 80px;
       border-radius: 50%;
       margin: 0 auto 28px;
       display: flex; align-items: center; justify-content: center;
       font-size: 32px;
     }
-    .icon-wrap.loading { background: #fff4ee; animation: pulse 1.4s ease-in-out infinite; }
-    .icon-wrap.success { background: #f0fdf4; }
+    .icon-wrap.loading {
+      background: #fff0f3;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    .icon-wrap.success { background: transparent; }
     .icon-wrap.error   { background: #fef2f2; }
+
+    .icon-wrap svg {
+      width: 64px;
+      height: auto;
+    }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(0.95); }
+      50%       { opacity: 0.4; transform: scale(0.92); }
     }
 
     h1 {
@@ -77,7 +85,6 @@
       margin-bottom: 14px;
       letter-spacing: -0.3px;
     }
-
     p {
       font-size: 15px;
       color: #6b7280;
@@ -89,15 +96,15 @@
     .pill {
       display: inline-block;
       margin-top: 24px;
-      padding: 5px 16px;
+      padding: 5px 18px;
       border-radius: 999px;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .pill.loading { background: #fff4ee; color: #cc3d00; }
-    .pill.success { background: #dcfce7; color: #15803d; }
+    .pill.loading { background: #fff0f3; color: #FF3158; }
+    .pill.success { background: #fff0f3; color: #FF3158; }
     .pill.error   { background: #fee2e2; color: #b91c1c; }
 
     /* ── Footer ──────────────────────────────────────────── */
@@ -108,27 +115,33 @@
       text-align: center;
     }
     footer a { color: #9ca3af; text-decoration: none; }
-    footer a:hover { color: #ff4d00; }
+    footer a:hover { color: #FF3158; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header: full Matterport logo from their CDN -->
   <header>
-    <!-- Matterport wordmark SVG (CoStar era) -->
-    <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Matterport">
-      <!-- M mark -->
-      <path d="M4 32V8l12 14 12-14v24" stroke="#FF4D00" stroke-width="3.5"
-            stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <!-- Wordmark -->
-      <text x="36" y="27" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
-            font-size="17" font-weight="700" fill="#111827" letter-spacing="-0.3">atterport</text>
-    </svg>
+    <img
+      src="https://images.ctfassets.net/icnj41gkyohw/4TFgKaRydiQc25X5NqOPon/a1726d6086793c5335b73fd41a06d52c/Matterport_Logo_-_Black_%C3%82_%C3%AF__.svg"
+      alt="Matterport"
+    />
   </header>
 
   <main>
     <div class="card">
-      <div class="icon-wrap loading" id="icon">⏳</div>
+      <!-- Icon: Matterport mark used for all states; swapped via JS -->
+      <div class="icon-wrap loading" id="icon">
+        <!-- Matterport mark SVG (extracted from official logo) -->
+        <svg viewBox="0 0 330 298" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M125.631 1.69144C127.297 0.493365 130.005 0.435882 131.696 1.56841L183.287 36.2813C184.998 37.4682 185.42 39.8109 184.239 41.5254L147.811 91.6609C146.617 93.3118 144.052 94.1932 142.057 93.6577L42.3926 66.0637C40.4231 65.4868 40.1478 63.9963 41.8056 62.7569L125.631 1.69144Z" fill="#FF3158"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M56.0651 92.3257L92.3414 142.598C93.5316 144.241 93.5842 146.98 92.4436 148.68L35.4893 235.28C34.3244 237.005 32.8427 236.799 32.1818 234.852L0.223077 135.969C-0.417575 134.009 0.370842 131.394 1.95881 130.146L50.8174 91.6168C52.4661 90.3613 54.8091 90.6941 56.0651 92.3257Z" fill="#FF3158"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M204.943 20.395L209.593 124.042C209.659 126.101 211.312 128.259 213.237 128.909L272.042 148.173C274.025 148.761 276.104 147.624 276.712 145.669L293.668 85.68C294.21 83.7236 293.323 81.1299 291.716 80.4814L213.862 48.9527C211.918 48.2388 209.856 49.1952 209.593 51.1989" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M298.411 161.371L201.598 197.844C199.69 198.553 198.135 200.797 198.135 202.836L198.135 268.561C198.135 270.667 199.787 271.538 201.815 270.525L299.816 221.362C301.787 220.358 303.388 217.887 303.388 215.661L303.388 163.753C303.388 161.594 301.804 160.467 298.411 161.371Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M193.68 294.222L129.216 213.101C127.956 211.5 125.333 210.688 123.404 211.318L64.2265 230.806C62.2319 231.452 61.9264 233.044 63.5335 234.351L176.724 323.763C178.397 325.053 181.057 325.026 182.701 323.703L194.973 313.795C196.659 312.441 196.903 309.817 195.545 307.96" fill="black"/>
+        </svg>
+      </div>
+
       <h1 id="title">Processing your approval…</h1>
       <p id="message">Please hold on while we record your response.</p>
       <span class="pill loading" id="pill">In Progress</span>
@@ -137,45 +150,50 @@
 
   <footer>
     &copy; 2025 Matterport, Inc. &nbsp;·&nbsp;
-    <a href="https://matterport.com/privacy-policy" target="_blank">Privacy Policy</a>
+    <a href="https://matterport.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
   </footer>
 
   <script>
     (function () {
-      // Zapier catch-hook — use GET so the browser never fires a CORS preflight
       var WEBHOOK = "https://hooks.zapier.com/hooks/catch/10664871/4bdz3nt/";
       var recordId = new URLSearchParams(window.location.search).get("record_id") || "";
 
-      function setUI(type, emoji, title, message, pill) {
-        document.getElementById("icon").className  = "icon-wrap " + type;
-        document.getElementById("icon").textContent = emoji;
+      function setUI(type, title, message, pill) {
+        var wrap = document.getElementById("icon");
+        var pillEl = document.getElementById("pill");
+        wrap.className = "icon-wrap " + type;
         document.getElementById("title").textContent   = title;
         document.getElementById("message").textContent = message;
-        document.getElementById("pill").className   = "pill " + type;
-        document.getElementById("pill").textContent  = pill;
+        pillEl.className   = "pill " + type;
+        pillEl.textContent = pill;
+
+        // Error state: replace mark with emoji
+        if (type === "error") {
+          wrap.innerHTML = "<span style='font-size:36px'>❌</span>";
+        }
       }
 
       if (!recordId) {
-        setUI("error", "⚠️",
+        setUI("error",
           "Invalid approval link",
           "This link appears to be incomplete. Please use the approval link from your email.",
           "Invalid Link");
         return;
       }
 
-      // GET request — Zapier receives record_id as a query param; no CORS preflight needed
+      // GET request — no CORS preflight, Zapier receives record_id as query param
       var url = WEBHOOK + "?record_id=" + encodeURIComponent(recordId);
 
       fetch(url, { mode: "no-cors" })
         .then(function () {
-          setUI("success", "✅",
+          setUI("success",
             "Thank you!",
             "Your approval has been received and your order is now being processed.",
             "Approved");
         })
         .catch(function (err) {
           console.error("Webhook error:", err);
-          setUI("error", "❌",
+          setUI("error",
             "Something went wrong",
             "We couldn't record your approval. Please try clicking the link again or contact support.",
             "Error");
