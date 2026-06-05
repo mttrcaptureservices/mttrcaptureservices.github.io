@@ -1,604 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Needs Your Attention — Ricardo</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Needs Your Attention</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg: #f5f6f8;
-      --surface: #ffffff;
-      --border: #e4e7ec;
-      --text-primary: #111827;
-      --text-secondary: #6b7280;
-      --text-muted: #9ca3af;
-      --blue: #2563eb;
-      --blue-light: #eff6ff;
-      --green: #16a34a;
-      --green-light: #f0fdf4;
-      --yellow: #d97706;
-      --yellow-light: #fffbeb;
-      --red: #dc2626;
-      --red-light: #fef2f2;
-      --purple: #7c3aed;
-      --purple-light: #f5f3ff;
-      --gray-light: #f3f4f6;
-      --radius: 10px;
-      --shadow: 0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
-    }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f4f5f7;
+    color: #172b4d;
+    min-height: 100vh;
+  }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      font-size: 14px;
-      line-height: 1.5;
-      padding: 0;
-    }
+  .page-header {
+    background: #fff;
+    border-bottom: 1px solid #dfe1e6;
+    padding: 20px 32px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
 
-    /* ── TOP BAR ── */
-    .topbar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .topbar-left { display: flex; align-items: center; gap: 12px; }
-    .topbar-title { font-size: 16px; font-weight: 700; color: var(--text-primary); }
-    .topbar-date { font-size: 12px; color: var(--text-muted); }
-    .topbar-right { font-size: 12px; color: var(--text-muted); }
+  .page-header-left h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #172b4d;
+    letter-spacing: -0.3px;
+  }
 
-    /* ── INFO BANNER ── */
-    .banner {
-      background: var(--blue-light);
-      border-bottom: 1px solid #bfdbfe;
-      padding: 10px 24px;
-      font-size: 12px;
-      color: #1d4ed8;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+  .snapshot-date {
+    font-size: 12px;
+    color: #6b778c;
+    margin-top: 3px;
+  }
 
-    /* ── SOURCE CHIPS ── */
-    .chips-row {
-      padding: 10px 24px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 500;
-      border: 1px solid transparent;
-    }
-    .chip-blue  { background: var(--blue-light);   color: var(--blue);   border-color: #bfdbfe; }
-    .chip-green { background: var(--green-light);  color: var(--green);  border-color: #bbf7d0; }
-    .chip-teal  { background: #f0fdfa;             color: #0f766e;       border-color: #99f6e4; }
-    .chip-teams { background: #f0f4ff;             color: #4338ca;       border-color: #c7d2fe; }
+  .info-banner {
+    background: #e6f4fe;
+    border: 1px solid #b3d7f7;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: #0747a6;
+    max-width: 520px;
+    line-height: 1.5;
+  }
 
-    /* ── STATS ROW ── */
-    .stats-row {
-      display: flex;
-      gap: 12px;
-      padding: 14px 24px;
-      flex-wrap: wrap;
-    }
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 20px;
-      min-width: 130px;
-      flex: 1;
-      box-shadow: var(--shadow);
-    }
-    .stat-card .stat-num {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-card .stat-label { font-size: 11px; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; letter-spacing: .4px; }
-    .stat-card.red    .stat-num { color: var(--red); }
-    .stat-card.yellow .stat-num { color: var(--yellow); }
-    .stat-card.blue   .stat-num { color: var(--blue); }
-    .stat-card.gray   .stat-num { color: var(--text-secondary); }
+  .source-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
 
-    /* ── SECTIONS ── */
-    .main { padding: 0 24px 40px; }
+  .chip {
+    background: #f4f5f7;
+    border: 1px solid #dfe1e6;
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #42526e;
+    font-weight: 500;
+    white-space: nowrap;
+  }
 
-    .section { margin-bottom: 24px; }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    .section-count {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 20px;
-      height: 20px;
-      padding: 0 6px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      background: var(--gray-light);
-      color: var(--text-secondary);
-    }
-    .section-count.red   { background: var(--red-light);    color: var(--red); }
-    .section-count.blue  { background: var(--blue-light);   color: var(--blue); }
-    .section-count.yellow{ background: var(--yellow-light); color: var(--yellow); }
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    padding: 16px 32px;
+    background: #fff;
+    border-bottom: 1px solid #dfe1e6;
+    flex-wrap: wrap;
+  }
 
-    /* ── CARDS ── */
-    .cards { display: flex; flex-direction: column; gap: 8px; }
+  .stat-card {
+    background: #f4f5f7;
+    border-radius: 8px;
+    padding: 10px 18px;
+    min-width: 110px;
+    text-align: center;
+    border: 1px solid #dfe1e6;
+  }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 8px;
-      transition: box-shadow .15s;
-    }
-    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
-    .card.critical { border-left: 4px solid var(--red); }
-    .card.updated-today { border-left: 4px solid #f59e0b; }
-    .card.teams-card { border-left: 4px solid #4338ca; }
+  .stat-card .stat-num {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
 
-    .card-left { display: flex; flex-direction: column; gap: 5px; }
-    .card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+  .stat-card .stat-label {
+    font-size: 11px;
+    color: #6b778c;
+    margin-top: 4px;
+    font-weight: 500;
+  }
 
-    .card-key {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--blue);
-      text-decoration: none;
-      font-family: "SF Mono", "Fira Code", monospace;
-    }
-    .card-key:hover { text-decoration: underline; }
+  .stat-card.critical .stat-num { color: #de350b; }
+  .stat-card.updated .stat-num  { color: #ff8b00; }
+  .stat-card.progress .stat-num { color: #0052cc; }
+  .stat-card.testing .stat-num  { color: #6554c0; }
+  .stat-card.todo .stat-num     { color: #42526e; }
+  .stat-card.teams .stat-num    { color: #00875a; }
 
-    .card-title {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.35;
-    }
+  .main-content {
+    padding: 24px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-    .card-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .card-meta span { font-size: 11px; color: var(--text-secondary); }
-    .card-meta .sep { color: var(--border); }
+  .section {
+    margin-bottom: 28px;
+  }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-    .badge-ip     { background: #dbeafe; color: #1d4ed8; }
-    .badge-it     { background: #fef3c7; color: #92400e; }
-    .badge-todo   { background: #f3f4f6; color: #374151; }
-    .badge-p1     { background: var(--red-light); color: var(--red); font-weight: 700; }
-    .badge-today  { background: #fef3c7; color: #92400e; }
-    .badge-teams  { background: #eef2ff; color: #4338ca; }
-    .badge-team   { background: #ecfdf5; color: #065f46; }
-    .badge-eyes   { background: #fef3c7; color: #78350f; }
+  .section-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: #42526e;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 
-    .updated-time {
-      font-size: 11px;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-    .updated-time.today { color: #d97706; font-weight: 600; }
+  .section-count {
+    background: #dfe1e6;
+    border-radius: 100px;
+    padding: 1px 7px;
+    font-size: 11px;
+    color: #42526e;
+  }
 
-    .card-author { font-size: 11px; color: var(--text-secondary); }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
 
-    .empty-state {
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
+  .card {
+    background: #fff;
+    border: 1px solid #dfe1e6;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: box-shadow 0.15s, border-color 0.15s;
+    position: relative;
+  }
 
-    .divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-color: #c1c7d0;
+  }
 
-    @media (max-width: 600px) {
-      .stats-row { gap: 8px; }
-      .stat-card { min-width: 100px; }
-      .topbar, .chips-row, .stats-row, .main { padding-left: 14px; padding-right: 14px; }
-    }
-  </style>
+  .card.critical-card {
+    border-left: 4px solid #de350b;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .card-key a {
+    font-size: 11px;
+    font-weight: 600;
+    color: #0052cc;
+    text-decoration: none;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    letter-spacing: 0.3px;
+  }
+
+  .card-key a:hover { text-decoration: underline; }
+
+  .card-summary {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #172b4d;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    flex: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    border-radius: 3px;
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .badge-status-testing    { background: #eae6ff; color: #403294; }
+  .badge-status-progress   { background: #deebff; color: #0747a6; }
+  .badge-status-todo       { background: #f4f5f7; color: #42526e; border: 1px solid #dfe1e6; }
+  .badge-priority-critical { background: #ffebe6; color: #de350b; }
+  .badge-priority-high     { background: #fff0b3; color: #974f0c; }
+  .badge-priority-medium   { background: #deebff; color: #0747a6; }
+  .badge-type-epic         { background: #eae6ff; color: #403294; }
+  .badge-type-task         { background: #e3fcef; color: #006644; }
+
+  .card-updated {
+    font-size: 11px;
+    color: #97a0af;
+    margin-left: auto;
+  }
+
+  .card-assignee {
+    font-size: 11px;
+    color: #6b778c;
+  }
+
+  /* Teams threads */
+  .thread-card {
+    background: #fff;
+    border: 1px solid #dfe1e6;
+    border-left: 4px solid #ff8b00;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: box-shadow 0.15s;
+  }
+
+  .thread-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .thread-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .thread-author {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b778c;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .thread-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #172b4d;
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+
+  .thread-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .thread-title a:hover { text-decoration: underline; }
+
+  .thread-summary {
+    font-size: 12px;
+    color: #42526e;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .thread-footer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: #97a0af;
+  }
+
+  .thread-reactions span {
+    background: #fff8e6;
+    border: 1px solid #ffe380;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 12px;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid #dfe1e6;
+    margin: 24px 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 24px;
+    color: #6b778c;
+    font-size: 13px;
+    background: #fff;
+    border: 1px dashed #dfe1e6;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 640px) {
+    .page-header, .stats-row, .main-content { padding-left: 16px; padding-right: 16px; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="topbar-title">🔔 Needs Your Attention</div>
-    <div class="topbar-date">Snapshot: Friday, June 5, 2026</div>
+<div class="page-header">
+  <div class="page-header-left">
+    <h1>🔔 Needs Your Attention</h1>
+    <div class="snapshot-date">Static snapshot · Generated Fri Jun 5, 2026</div>
+    <div class="source-chips" style="margin-top:8px;">
+      <span class="chip">Jira · Matterport</span>
+      <span class="chip">Assigned to you</span>
+      <span class="chip">Team · COP · 7d</span>
+      <span class="chip">👀 Teams · CS Apps Support</span>
+    </div>
   </div>
-  <div class="topbar-right">Ricardo · Matterport</div>
+  <div class="info-banner">
+    Static snapshot generated by the Cowork agent. Refreshes automatically every hour on weekdays.
+  </div>
 </div>
 
-<!-- INFO BANNER -->
-<div class="banner">
-  ℹ️ Static snapshot generated by the Cowork agent. Refreshes automatically every hour on weekdays.
-</div>
-
-<!-- SOURCE CHIPS -->
-<div class="chips-row">
-  <span class="chip chip-blue">📋 Jira · Matterport</span>
-  <span class="chip chip-green">👤 Assigned to you</span>
-  <span class="chip chip-teal">👥 Team (COP · 7d)</span>
-  <span class="chip chip-teams">👀 Teams · CS Apps Support</span>
-</div>
-
-<!-- STATS ROW -->
 <div class="stats-row">
-  <div class="stat-card red">
-    <div class="stat-num">2</div>
-    <div class="stat-label">⚡ Critical / Today</div>
+  <div class="stat-card critical">
+    <div class="stat-num">1</div>
+    <div class="stat-label">🔴 Critical</div>
   </div>
-  <div class="stat-card yellow">
+  <div class="stat-card updated">
+    <div class="stat-num">1</div>
+    <div class="stat-label">⚡ Updated Today</div>
+  </div>
+  <div class="stat-card progress">
     <div class="stat-num">3</div>
     <div class="stat-label">🔄 In Progress</div>
   </div>
-  <div class="stat-card blue">
+  <div class="stat-card testing">
     <div class="stat-num">3</div>
     <div class="stat-label">🧪 In Testing</div>
   </div>
-  <div class="stat-card gray">
+  <div class="stat-card todo">
     <div class="stat-num">4</div>
     <div class="stat-label">📌 To Do</div>
   </div>
+  <div class="stat-card teams">
+    <div class="stat-num">1</div>
+    <div class="stat-label">👀 Pending Teams</div>
+  </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="main">
+<div class="main-content">
 
-  <!-- ⚡ UPDATED TODAY -->
+  <!-- Section 1: Updated Today -->
   <div class="section">
     <div class="section-header">
-      <span class="section-title">⚡ Updated Today</span>
-      <span class="section-count red">1</span>
+      ⚡ Updated Today
+      <span class="section-count">1</span>
     </div>
-    <div class="cards">
+    <div class="cards-grid">
 
-      <div class="card updated-today">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">COP-1889</a>
-          <div class="card-title">Coordinator Interfaces</div>
-          <div class="card-meta">
-            <span class="badge badge-it">In Testing</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">COP-1889</a></span>
+          <span class="card-updated">Jun 5, 11:23 AM</span>
         </div>
-        <div class="card-right">
-          <div class="updated-time today">Today 11:23 AM</div>
+        <div class="card-summary">Coordinator Interfaces</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- 🔄 IN PROGRESS -->
+  <!-- Section 2: In Progress -->
   <div class="section">
     <div class="section-header">
-      <span class="section-title">🔄 In Progress</span>
-      <span class="section-count yellow">3</span>
-    </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">COP-1884</a>
-          <div class="card-title">CT Directory overhaul work</div>
-          <div class="card-meta">
-            <span class="badge badge-ip">In Progress</span>
-            <span>Epic</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">May 27</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1886" target="_blank">COP-1886</a>
-          <div class="card-title">Parent Base Mapping Tech City Assignments</div>
-          <div class="card-meta">
-            <span class="badge badge-ip">In Progress</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">May 27</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1745" target="_blank">COP-1745</a>
-          <div class="card-title">[International] Update Required for CT Off Hours Fee – JOBID6434651316236641681</div>
-          <div class="card-meta">
-            <span class="badge badge-ip">In Progress</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">Mar 25</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 🧪 IN TESTING -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-title">🧪 In Testing</span>
-      <span class="section-count blue">2</span>
-    </div>
-    <div class="cards">
-
-      <div class="card critical">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1845" target="_blank">COP-1845</a>
-          <div class="card-title">Airtable Slowness – Causes of the slowness and solutions being discussed</div>
-          <div class="card-meta">
-            <span class="badge badge-it">In Testing</span>
-            <span class="badge badge-p1">P1 Critical</span>
-            <span>Epic</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">Apr 23</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1835" target="_blank">COP-1835</a>
-          <div class="card-title">Document the recent structural changes to the 'Country Data' table in Airtable to improve load times and recalculation frequencies</div>
-          <div class="card-meta">
-            <span class="badge badge-it">In Testing</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">May 13</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 📌 TO DO / BACKLOG -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-title">📌 To Do / Backlog</span>
-      <span class="section-count">4</span>
-    </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1873" target="_blank">COP-1873</a>
-          <div class="card-title">Update the cancellation payout policy to reflect new guidelines based on cancellation timing</div>
-          <div class="card-meta">
-            <span class="badge badge-todo">To Do</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">Jun 4</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1928" target="_blank">COP-1928</a>
-          <div class="card-title">Airtable Sync Failure Blocking Reshoot Creation – Record 78491 / JOBID6544222325428534088</div>
-          <div class="card-meta">
-            <span class="badge badge-todo">To Do</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">Jun 3</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1918" target="_blank">COP-1918</a>
-          <div class="card-title">Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</div>
-          <div class="card-meta">
-            <span class="badge badge-todo">To Do</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">Jun 1</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1907" target="_blank">COP-1907</a>
-          <div class="card-title">Claude Use Cases</div>
-          <div class="card-meta">
-            <span class="badge badge-todo">To Do</span>
-            <span>Epic</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <div class="updated-time">May 27</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 👥 TEAM · COP (7 days) -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-title">👥 Team · COP (7 days)</span>
+      🔄 In Progress
       <span class="section-count">3</span>
     </div>
-    <div class="cards">
+    <div class="cards-grid">
 
-      <div class="card updated-today">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1888" target="_blank">COP-1888</a>
-          <div class="card-title">Distance and CT Assignment Automation</div>
-          <div class="card-meta">
-            <span class="badge badge-it">In Testing</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">COP-1884</a></span>
+          <span class="card-updated">May 27</span>
         </div>
-        <div class="card-right">
-          <div class="updated-time today">Today 11:23 AM</div>
-          <div class="card-author">Adjet Kodia</div>
+        <div class="card-summary">CT Directory overhaul work</div>
+        <div class="card-meta">
+          <span class="badge badge-status-progress">In Progress</span>
+          <span class="badge badge-type-epic">Epic</span>
+          <span class="card-assignee">Ricardo Guzman</span>
         </div>
       </div>
 
-      <div class="card updated-today">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1923" target="_blank">COP-1923</a>
-          <div class="card-title">CT Review – Non/Vacasa CTs + Missing CTs in Tech City Assignment table to investigate</div>
-          <div class="card-meta">
-            <span class="badge badge-ip">In Progress</span>
-            <span>Task</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1886" target="_blank">COP-1886</a></span>
+          <span class="card-updated">May 27</span>
         </div>
-        <div class="card-right">
-          <div class="updated-time today">Today 11:18 AM</div>
-          <div class="card-author">Adjet Kodia</div>
+        <div class="card-summary">Parent Base Mapping Tech City Assignments</div>
+        <div class="card-meta">
+          <span class="badge badge-status-progress">In Progress</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
         </div>
       </div>
 
-      <div class="card updated-today">
-        <div class="card-left">
-          <a class="card-key" href="https://matterport.atlassian.net/browse/COP-1904" target="_blank">COP-1904</a>
-          <div class="card-title">3.1 Reschedule short link workflow update</div>
-          <div class="card-meta">
-            <span class="badge badge-it">In Testing</span>
-            <span>Epic</span>
-            <span class="sep">·</span>
-            <span>Not Prioritized</span>
-          </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1745" target="_blank">COP-1745</a></span>
+          <span class="card-updated">Mar 25</span>
         </div>
-        <div class="card-right">
-          <div class="updated-time today">Today 9:14 AM</div>
-          <div class="card-author">Adjet Kodia</div>
+        <div class="card-summary">[International] Update Required for CT Off Hours Fee – JOBID6434651316236641681</div>
+        <div class="card-meta">
+          <span class="badge badge-status-progress">In Progress</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- 👀 PENDING TEAMS THREADS -->
+  <!-- Section 3: In Testing -->
   <div class="section">
     <div class="section-header">
-      <span class="section-title">👀 Pending Teams Threads</span>
-      <span class="section-count yellow">1</span>
+      🧪 In Testing
+      <span class="section-count">3</span>
     </div>
-    <div class="cards">
+    <div class="cards-grid">
 
-      <div class="card teams-card">
-        <div class="card-left">
-          <div class="card-title">Client Rescheduling Form – CLM jobs</div>
-          <div class="card-meta">
-            <span class="badge badge-eyes">👀 ×2</span>
-            <span>26 replies</span>
-            <span class="sep">·</span>
-            <span>You, Kevin Curtis, Adjet Kodia +2</span>
-          </div>
-          <div class="card-meta" style="margin-top:4px">
-            <span style="font-size:12px; color: #374151;">Are CLM job rescheduling forms supposed to stay active? Discussion on disabling them + notification flow for Kevin &amp; Jordan when blocked. Ricardo replied today: Adjet to build out with notification step.</span>
-          </div>
-          <div class="card-meta" style="margin-top:4px">
-            <span class="badge badge-it" style="background:#fef3c7;color:#92400e;">Jira: COP-1904</span>
-          </div>
+      <div class="card critical-card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1845" target="_blank">COP-1845</a></span>
+          <span class="card-updated">Apr 23</span>
         </div>
-        <div class="card-right">
-          <a class="card-key" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">Open Channel ↗</a>
-          <div class="updated-time">May 27</div>
-          <div class="card-author">John Bosch</div>
+        <div class="card-summary">Airtable Slowness – Causes of the slowness and solutions being discussed</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-priority-critical">P1 · Critical</span>
+          <span class="badge badge-type-epic">Epic</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">COP-1889</a></span>
+          <span class="card-updated">Jun 5 ⚡</span>
+        </div>
+        <div class="card-summary">Coordinator Interfaces</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1835" target="_blank">COP-1835</a></span>
+          <span class="card-updated">May 13</span>
+        </div>
+        <div class="card-summary">Document the recent structural changes to the 'Country Data' table in Airtable to improve load times</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
         </div>
       </div>
 
     </div>
   </div>
 
-</div><!-- /main -->
+  <!-- Section 4: To Do / Backlog -->
+  <div class="section">
+    <div class="section-header">
+      📌 To Do / Backlog
+      <span class="section-count">4</span>
+    </div>
+    <div class="cards-grid">
 
-<script>
-  // Mark today's date in the page for quick reference
-  document.querySelectorAll('.updated-time.today').forEach(el => {
-    el.title = 'Updated today — June 5, 2026';
-  });
-</script>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1873" target="_blank">COP-1873</a></span>
+          <span class="card-updated">Jun 4</span>
+        </div>
+        <div class="card-summary">Update the cancellation payout policy to reflect new guidelines based on cancellation timing</div>
+        <div class="card-meta">
+          <span class="badge badge-status-todo">To Do</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1928" target="_blank">COP-1928</a></span>
+          <span class="card-updated">Jun 3</span>
+        </div>
+        <div class="card-summary">Airtable Sync Failure Blocking Reshoot Creation – Record 78491 / JOBID6544222325428534088</div>
+        <div class="card-meta">
+          <span class="badge badge-status-todo">To Do</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1918" target="_blank">COP-1918</a></span>
+          <span class="card-updated">Jun 1</span>
+        </div>
+        <div class="card-summary">Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</div>
+        <div class="card-meta">
+          <span class="badge badge-status-todo">To Do</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1907" target="_blank">COP-1907</a></span>
+          <span class="card-updated">May 27</span>
+        </div>
+        <div class="card-summary">Claude Use Cases</div>
+        <div class="card-meta">
+          <span class="badge badge-status-todo">To Do</span>
+          <span class="badge badge-type-epic">Epic</span>
+          <span class="card-assignee">Ricardo Guzman</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Section 5: Team COP 7 days -->
+  <div class="section">
+    <div class="section-header">
+      👥 Team · COP (7 days)
+      <span class="section-count">3</span>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1888" target="_blank">COP-1888</a></span>
+          <span class="card-updated">Jun 5 ⚡</span>
+        </div>
+        <div class="card-summary">Distance and CT Assignment Automation</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Adjet Kodia</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1923" target="_blank">COP-1923</a></span>
+          <span class="card-updated">Jun 5 ⚡</span>
+        </div>
+        <div class="card-summary">CT Review – Non/Vacasa CTs + Missing CTs in Tech City Assignment table to investigate</div>
+        <div class="card-meta">
+          <span class="badge badge-status-progress">In Progress</span>
+          <span class="badge badge-type-task">Task</span>
+          <span class="card-assignee">Adjet Kodia</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-key"><a href="https://matterport.atlassian.net/browse/COP-1904" target="_blank">COP-1904</a></span>
+          <span class="card-updated">Jun 5 ⚡</span>
+        </div>
+        <div class="card-summary">3.1 Reschedule short link workflow update</div>
+        <div class="card-meta">
+          <span class="badge badge-status-testing">In Testing</span>
+          <span class="badge badge-type-epic">Epic</span>
+          <span class="card-assignee">Adjet Kodia</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Section 6: Pending Teams Threads -->
+  <div class="section">
+    <div class="section-header">
+      👀 Pending Teams Threads
+      <span class="section-count">1</span>
+    </div>
+    <div class="cards-grid" style="grid-template-columns: 1fr;">
+
+      <div class="thread-card">
+        <div class="thread-header">
+          <div class="thread-author">
+            <span>John Bosch</span>
+            <span style="color:#dfe1e6;">·</span>
+            <span style="font-weight:400;">May 27, 11:36 AM</span>
+          </div>
+          <div class="thread-reactions">
+            <span>👀 2</span>
+          </div>
+        </div>
+        <div class="thread-title">
+          <a href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">Client Rescheduling Form – CLM jobs</a>
+        </div>
+        <div class="thread-summary">
+          Are client rescheduling forms supposed to remain active when a job is marked CLM? The form currently allows submissions even after a job is complete or canceled. Adjet is building a Zapier flow to block submissions on CLM/complete jobs and add a notification to Kevin Curtis &amp; Jordan Saiz when a reschedule attempt is stopped. Related Jira: <a href="https://matterport.atlassian.net/browse/COP-1904" target="_blank" style="color:#0052cc;">COP-1904</a>.
+        </div>
+        <div class="thread-footer">
+          <span>26 replies</span>
+          <span>·</span>
+          <span>From: Kevin Curtis, Adjet Kodia &amp; 2 others</span>
+          <span>·</span>
+          <span>Status: In Progress – Adjet building fix</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align:center; padding: 20px; font-size:11px; color:#97a0af;">
+  Snapshot: Fri Jun 5, 2026 · Jira · Matterport COP · MS Teams CS Apps Support · Generated by Cowork Agent
+</div>
 
 </body>
 </html>
