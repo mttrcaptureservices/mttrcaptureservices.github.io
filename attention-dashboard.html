@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attention Dashboard</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .header-left h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f;
+  }
+
+  .header-left .subtitle {
+    font-size: 13px;
+    color: #6e6e73;
+    margin-top: 2px;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    flex: 1;
+    border: 1px solid #e5e5ea;
+  }
+
+  .stat-card .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1f;
+  }
+
+  .stat-card .stat-label {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .stat-card.urgent .stat-number { color: #ff3b30; }
+  .stat-card.active .stat-number { color: #ff9500; }
+  .stat-card.todo .stat-number { color: #007aff; }
+  .stat-card.testing .stat-number { color: #34c759; }
+
+  .section {
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6e6e73;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .section-badge {
+    background: #e5e5ea;
+    color: #6e6e73;
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .issue-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e5ea;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .issue-card:hover {
+    border-color: #007aff;
+    box-shadow: 0 2px 8px rgba(0,122,255,0.12);
+  }
+
+  .issue-card.urgent-card {
+    border-left: 3px solid #ff3b30;
+  }
+
+  .issue-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .icon-task { background: #e3f0ff; }
+  .icon-epic { background: #f0e6ff; }
+  .icon-bug { background: #fff0e6; }
+
+  .issue-body { flex: 1; min-width: 0; }
+
+  .issue-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .issue-key {
+    font-size: 12px;
+    font-weight: 600;
+    color: #007aff;
+    white-space: nowrap;
+  }
+
+  .issue-summary {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1f;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .issue-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .badge-todo { background: #e8f0ff; color: #0055cc; }
+  .badge-inprogress { background: #fff4e0; color: #b35900; }
+  .badge-testing { background: #e6f9ed; color: #1a7a45; }
+  .badge-idea { background: #f5f0ff; color: #6600cc; }
+  .badge-p1 { background: #ffe5e5; color: #cc0000; }
+  .badge-epic { background: #ede6ff; color: #5500cc; }
+  .badge-task { background: #e8f4ff; color: #0066aa; }
+
+  .updated-time {
+    font-size: 11px;
+    color: #aeaeb2;
+    white-space: nowrap;
+  }
+
+  .updated-today {
+    color: #ff6b00;
+    font-weight: 600;
+  }
+
+  .issue-assignee {
+    font-size: 11px;
+    color: #6e6e73;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: #6e6e73;
+  }
+
+  .loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e5e5ea;
+    border-top-color: #007aff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 10px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error {
+    background: #fff0f0;
+    border: 1px solid #ffcdd2;
+    border-radius: 10px;
+    padding: 16px;
+    color: #c62828;
+    font-size: 13px;
+  }
+
+  .empty {
+    background: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    padding: 16px;
+    color: #6e6e73;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .source-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .source-chip {
+    background: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #6e6e73;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .source-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #007aff;
+  }
+
+  .source-dot.green { background: #34c759; }
+  .source-dot.orange { background: #ff9500; }
+
+  .refresh-btn {
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    margin-left: auto;
+  }
+
+  .refresh-btn:hover { opacity: 0.85; }
+  .refresh-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .divider {
+    height: 1px;
+    background: #e5e5ea;
+    margin: 4px 0 12px;
+  }
+
+  .open-link {
+    color: #007aff;
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .open-link:hover { text-decoration: underline; }
+
+  /* Teams thread cards — same structure as issue-card */
+  .thread-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e5ea;
+    border-left: 3px solid #5856d6;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .thread-card:hover {
+    border-color: #5856d6;
+    box-shadow: 0 2px 8px rgba(88,86,214,0.12);
+  }
+
+  .thread-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #5856d6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .badge-waiting { background: #fff4e0; color: #b35900; }
+  .badge-jira-link { background: #e8f0ff; color: #0055cc; }
+  .badge-fix-deployed { background: #e6f9ed; color: #1a7a45; }
+  .badge-investigating { background: #f5f0ff; color: #5500cc; }
+
+  .teams-chip {
+    background: #ede6ff;
+    color: #5856d6;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Needs Your Attention</h1>
+    <div class="subtitle" id="last-updated">Loading…</div>
+  </div>
+  <button class="refresh-btn" id="refresh-btn" onclick="loadAll()">Refresh</button>
+</div>
+
+<div class="source-row">
+  <div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
+  <div class="source-chip" id="assigned-chip"><div class="source-dot green"></div> Assigned to you</div>
+  <div class="source-chip" id="team-chip"><div class="source-dot orange"></div> Team (COP · 7d)</div>
+  <div class="teams-chip">👀 Teams · Clark</div>
+</div>
+
+<div id="stats-row" class="stats-row" style="display:none">
+  <div class="stat-card urgent">
+    <div class="stat-number" id="stat-urgent">0</div>
+    <div class="stat-label">Critical / Updated Today</div>
+  </div>
+  <div class="stat-card active">
+    <div class="stat-number" id="stat-active">0</div>
+    <div class="stat-label">In Progress</div>
+  </div>
+  <div class="stat-card testing">
+    <div class="stat-number" id="stat-testing">0</div>
+    <div class="stat-label">In Testing</div>
+  </div>
+  <div class="stat-card todo">
+    <div class="stat-number" id="stat-todo">0</div>
+    <div class="stat-label">To Do</div>
+  </div>
+</div>
+
+<div id="main-content">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    <div>Loading your items…</div>
+  </div>
+</div>
+
+<script>
+const CLOUD_ID = '8fd14425-b917-42d3-b0c5-3c649868f022';
+const JIRA_BASE = 'https://matterport.atlassian.net/browse/';
+const TEAMS_CHANNEL = 'https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1';
+
+// Pending 👀 threads — refreshed by Clark (last updated from Teams)
+// Each entry: { author, initials, summary, status, statusCls, date, jiraKey, clarkNote }
+const PENDING_THREADS_KEY = 'clark_pending_threads';
+const DEFAULT_THREADS = [
+  {
+    author: 'Don Fraser',
+    initials: 'DF',
+    summary: 'Spec Ops 2.0 AT automated to wrong MP Client — job JOBID6550347675497809918 assigned to Thoma-Holec Design instead of Anheuser-Busch.',
+    status: 'Waiting on Don',
+    statusCls: 'badge-waiting',
+    date: '5/28',
+    jiraKey: null,
+    clarkNote: 'Asked Don to confirm URL client used. Standing by for his response.',
+    color: '#ff9500'
+  },
+  {
+    author: 'Ryan Morrow',
+    initials: 'RM',
+    summary: 'INTL jobs arriving without MP Client — price codes and coordinator assignment automations not running. Affects >50% of INTL jobs.',
+    status: 'Jira created',
+    statusCls: 'badge-jira-link',
+    date: 'Today',
+    jiraKey: 'COP-1931',
+    clarkNote: 'Jira created and assigned to Ricardo. In queue.',
+    color: '#007aff'
+  },
+  {
+    author: 'Caitlin Suh',
+    initials: 'CS',
+    summary: 'Unable to create "adjustment line for CT rate" on JOBID6531393862914479294 — related to Airtable sync failure (data source unavailable).',
+    status: 'Investigating',
+    statusCls: 'badge-investigating',
+    date: 'Today',
+    jiraKey: 'COP-1928',
+    clarkNote: 'Snehal confirmed investigating the AT sync issue. Related to COP-1928.',
+    color: '#5856d6'
+  },
+  {
+    author: 'John Bosch',
+    initials: 'JB',
+    summary: 'Client rescheduling forms remain active on CLM/Complete jobs — clients can reschedule after job closure. Also: no 24-hour lock-out.',
+    status: 'Fix deployed',
+    statusCls: 'badge-fix-deployed',
+    date: '5/27',
+    jiraKey: 'COP-1904',
+    clarkNote: 'Adjet deployed short-link deactivation fix today (~5:31 PM). Awaiting John\'s confirmation.',
+    color: '#34c759'
+  }
+];
+
+function loadThreads() {
+  try {
+    const stored = localStorage.getItem(PENDING_THREADS_KEY);
+    return stored ? JSON.parse(stored) : DEFAULT_THREADS;
+  } catch(e) { return DEFAULT_THREADS; }
+}
+
+function saveThreads(threads) {
+  try { localStorage.setItem(PENDING_THREADS_KEY, JSON.stringify(threads)); } catch(e) {}
+}
+
+function renderThreads(threads) {
+  if (!threads || threads.length === 0) return '<div class="empty">No pending 👀 threads.</div>';
+  return threads.map(t => {
+    const avatarColor = t.color || '#5856d6';
+    const jiraBadge = t.jiraKey
+      ? `<span class="badge badge-jira-link" onclick="event.stopPropagation();window.open('${JIRA_BASE}${t.jiraKey}','_blank')" style="cursor:pointer">${t.jiraKey} ↗</span>`
+      : '';
+    return `<div class="thread-card" onclick="window.open('${TEAMS_CHANNEL}','_blank')">` +
+      `<div class="thread-avatar" style="background:${avatarColor}">${t.initials}</div>` +
+      `<div class="issue-body">` +
+        `<div class="issue-top">` +
+          `<span style="font-size:13px;font-weight:600;color:#1d1d1f">${t.author}</span>` +
+        `</div>` +
+        `<div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">${t.summary}</div>` +
+        `<div class="issue-meta">` +
+          `<span class="badge ${t.statusCls}">${t.status}</span>` +
+          `${jiraBadge}` +
+          `<span class="updated-time">${t.date}</span>` +
+          `<span style="font-size:11px;color:#6e6e73">🤖 ${t.clarkNote}</span>` +
+        `</div>` +
+      `</div>` +
+    `</div>`;
+  }).join('');
+}
+
+function timeAgo(dateStr) {
+  const now = new Date();
+  const date = new Date(dateStr);
+  const diffMs = now - date;
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffHours = Math.floor(diffMs / 3600000);
+  const diffDays = Math.floor(diffMs / 86400000);
+
+  const today = now.toDateString();
+  const itemDay = date.toDateString();
+
+  if (today === itemDay) {
+    if (diffMins < 60) return { text: diffMins < 2 ? 'just now' : `${diffMins}m ago`, today: true };
+    return { text: `${diffHours}h ago`, today: true };
+  }
+  if (diffDays === 1) return { text: 'yesterday', today: false };
+  if (diffDays < 7) return { text: `${diffDays}d ago`, today: false };
+  return { text: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), today: false };
+}
+
+function getStatusBadge(status) {
+  const s = status.toLowerCase();
+  if (s.includes('progress')) return { cls: 'badge-inprogress', label: 'In Progress' };
+  if (s.includes('testing')) return { cls: 'badge-testing', label: 'In Testing' };
+  if (s.includes('idea')) return { cls: 'badge-idea', label: 'Idea' };
+  if (s.includes('to do') || s === 'open') return { cls: 'badge-todo', label: 'To Do' };
+  return { cls: 'badge-todo', label: status };
+}
+
+function getIssueTypeIcon(typeName) {
+  const t = (typeName || '').toLowerCase();
+  if (t.includes('epic')) return { cls: 'icon-epic', emoji: '⚡' };
+  if (t.includes('bug')) return { cls: 'icon-bug', emoji: '🐛' };
+  return { cls: 'icon-task', emoji: '📋' };
+}
+
+function getPriorityBadge(priority) {
+  const p = (priority || '').toLowerCase();
+  if (p.includes('p0') || p.includes('p1') || p.includes('blocker') || p.includes('critical')) {
+    return `<span class="badge badge-p1">🔴 ${priority}</span>`;
+  }
+  return '';
+}
+
+function isToday(dateStr) {
+  return new Date(dateStr).toDateString() === new Date().toDateString();
+}
+
+function renderIssue(issue) {
+  const f = issue.fields;
+  const updated = f.updated || '';
+  const t = timeAgo(updated);
+  const status = f.status?.name || 'Unknown';
+  const priority = f.priority?.name || '';
+  const typeName = f.issuetype?.name || 'Task';
+  const { cls: iconCls, emoji } = getIssueTypeIcon(typeName);
+  const { cls: statusCls, label: statusLabel } = getStatusBadge(status);
+  const priorityBadge = getPriorityBadge(priority);
+  const isUrgent = priority.toLowerCase().includes('p0') || priority.toLowerCase().includes('p1') || priority.toLowerCase().includes('critical') || priority.toLowerCase().includes('blocker');
+  const assigneeName = f.assignee?.displayName || 'Unassigned';
+  const isAssignedToMe = f.assignee?.emailAddress === 'rguzman@costar.com';
+
+  const typeBadgeCls = typeName.toLowerCase().includes('epic') ? 'badge-epic' : 'badge-task';
+
+  return `
+  <a class="issue-card ${isUrgent ? 'urgent-card' : ''}" href="${JIRA_BASE}${issue.key}" target="_blank">
+    <div class="issue-icon ${iconCls}">${emoji}</div>
+    <div class="issue-body">
+      <div class="issue-top">
+        <span class="issue-key">${issue.key}</span>
+        <span class="issue-summary">${f.summary || '(no summary)'}</span>
+      </div>
+      <div class="issue-meta">
+        ${priorityBadge}
+        <span class="badge ${statusCls}">${statusLabel}</span>
+        <span class="badge ${typeBadgeCls}">${typeName}</span>
+        ${!isAssignedToMe ? `<span class="issue-assignee">→ ${assigneeName}</span>` : ''}
+        <span class="updated-time ${t.today ? 'updated-today' : ''}">${t.today ? '⚡ ' : ''}${t.text}</span>
+      </div>
+    </div>
+  </a>`;
+}
+
+async function loadAll() {
+  const btn = document.getElementById('refresh-btn');
+  btn.disabled = true;
+  btn.textContent = 'Loading…';
+  document.getElementById('main-content').innerHTML = `
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      <div>Fetching from Jira…</div>
+    </div>`;
+  document.getElementById('stats-row').style.display = 'none';
+
+  try {
+    const [myResult, teamResult] = await Promise.all([
+      window.cowork.callMcpTool(
+        'mcp__cebc0dda-9158-4954-848e-cac39ce62c3e__searchJiraIssuesUsingJql',
+        {
+          cloudId: CLOUD_ID,
+          jql: 'assignee = currentUser() AND statusCategory != Done AND updated >= -90d ORDER BY updated DESC',
+          fields: ['summary', 'status', 'priority', 'issuetype', 'updated', 'assignee'],
+          maxResults: 50,
+          responseContentFormat: 'markdown'
+        }
+      ),
+      window.cowork.callMcpTool(
+        'mcp__cebc0dda-9158-4954-848e-cac39ce62c3e__searchJiraIssuesUsingJql',
+        {
+          cloudId: CLOUD_ID,
+          jql: 'project = COP AND updated >= -7d AND statusCategory != Done AND assignee != currentUser() ORDER BY updated DESC',
+          fields: ['summary', 'status', 'priority', 'issuetype', 'updated', 'assignee'],
+          maxResults: 10,
+          responseContentFormat: 'markdown'
+        }
+      )
+    ]);
+
+    // Parse results
+    let myIssues = [];
+    let teamIssues = [];
+
+    function parseResult(r) {
+      if (!r || r.isError) return [];
+      try {
+        // Prefer structuredContent (already parsed)
+        if (r.structuredContent?.issues?.nodes) return r.structuredContent.issues.nodes;
+        // Fall back to text content
+        const text = r.content?.[0]?.text;
+        if (!text) return [];
+        // Guard: if response is a file-path message (too large), it won't be valid JSON
+        if (text.startsWith('Output too large') || text.startsWith('Error') || text.startsWith('/')) return [];
+        const raw = JSON.parse(text);
+        return raw.issues?.nodes || [];
+      } catch(e) {
+        return [];
+      }
+    }
+
+    const isFiltered = i => ['idea', 'on hold', 'on-hold'].includes((i.fields.status?.name || '').toLowerCase());
+    myIssues = parseResult(myResult).filter(i => !isFiltered(i));
+    teamIssues = parseResult(teamResult).filter(i => !isFiltered(i));
+
+    // Deduplicate by key
+    const seen = new Set(myIssues.map(i => i.key));
+    teamIssues = teamIssues.filter(i => !seen.has(i.key));
+
+    // Compute stats
+    const today = new Date().toDateString();
+    const allMine = myIssues;
+
+    const urgentCount = allMine.filter(i => {
+      const p = (i.fields.priority?.name || '').toLowerCase();
+      const updatedToday = new Date(i.fields.updated).toDateString() === today;
+      return p.includes('p0') || p.includes('p1') || p.includes('critical') || p.includes('blocker') || updatedToday;
+    }).length;
+
+    const activeCount = allMine.filter(i => i.fields.status?.name?.toLowerCase().includes('progress')).length;
+    const testingCount = allMine.filter(i => i.fields.status?.name?.toLowerCase().includes('testing')).length;
+    const todoCount = allMine.filter(i => {
+      const s = (i.fields.status?.name || '').toLowerCase();
+      return s.includes('to do') || s === 'open' || s.includes('idea');
+    }).length;
+
+    document.getElementById('stat-urgent').textContent = urgentCount;
+    document.getElementById('stat-active').textContent = activeCount;
+    document.getElementById('stat-testing').textContent = testingCount;
+    document.getElementById('stat-todo').textContent = todoCount;
+    document.getElementById('stats-row').style.display = 'flex';
+
+    // Sort: P1+ first, then by updated desc
+    function sortIssues(list) {
+      return list.sort((a, b) => {
+        const pA = (a.fields.priority?.name || '').toLowerCase();
+        const pB = (b.fields.priority?.name || '').toLowerCase();
+        const aUrgent = pA.includes('p0') || pA.includes('p1') || pA.includes('critical') || pA.includes('blocker') ? 1 : 0;
+        const bUrgent = pB.includes('p0') || pB.includes('p1') || pB.includes('critical') || pB.includes('blocker') ? 1 : 0;
+        if (aUrgent !== bUrgent) return bUrgent - aUrgent;
+        return new Date(b.fields.updated) - new Date(a.fields.updated);
+      });
+    }
+
+    // Group my issues
+    const todayItems = sortIssues(myIssues.filter(i => isToday(i.fields.updated)));
+    const activeItems = sortIssues(myIssues.filter(i => !isToday(i.fields.updated) && i.fields.status?.name?.toLowerCase().includes('progress')));
+    const testingItems = sortIssues(myIssues.filter(i => !isToday(i.fields.updated) && i.fields.status?.name?.toLowerCase().includes('testing')));
+    const todoItems = sortIssues(myIssues.filter(i => {
+      const s = (i.fields.status?.name || '').toLowerCase();
+      const notToday = !isToday(i.fields.updated);
+      const notActive = !s.includes('progress');
+      const notTesting = !s.includes('testing');
+      return notToday && notActive && notTesting;
+    }));
+
+    let html = '';
+
+    function renderSection(title, items, badge) {
+      if (items.length === 0) return '';
+      return `
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">${title}</span>
+            <span class="section-badge">${items.length}</span>
+          </div>
+          ${items.map(renderIssue).join('')}
+        </div>`;
+    }
+
+    html += renderSection('⚡ Updated Today', todayItems);
+    html += renderSection('🔄 In Progress', activeItems);
+    html += renderSection('🧪 In Testing', testingItems);
+    html += renderSection('📌 To Do / Backlog', todoItems);
+
+    if (teamIssues.length > 0) {
+      html += `<div class="divider"></div>`;
+      html += renderSection('👥 Team · COP (7 days)', sortIssues(teamIssues));
+    }
+
+    // Pending Teams threads (Clark data)
+    const threads = loadThreads();
+    html += `<div class="divider"></div>`;
+    html += `
+      <div class="section">
+        <div class="section-header">
+          <span class="section-title">👀 Pending Teams Threads</span>
+          <span class="section-badge">${threads.length}</span>
+          <span style="font-size:11px;color:#aeaeb2;margin-left:4px">· via Clark</span>
+        </div>
+        ${renderThreads(threads)}
+      </div>`;
+
+    if (!html) {
+      html = '<div class="empty">Nothing needs your attention right now. 🎉</div>';
+    }
+
+    document.getElementById('main-content').innerHTML = html;
+    document.getElementById('last-updated').textContent = `Last refreshed ${new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} · ${myIssues.length} assigned · ${teamIssues.length} team items`;
+
+  } catch(err) {
+    document.getElementById('main-content').innerHTML = `<div class="error">Failed to load: ${err.message || err}</div>`;
+    document.getElementById('last-updated').textContent = 'Failed to load';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Refresh';
+}
+
+// Load on startup
+loadAll();
+</script>
+</body>
+</html>
