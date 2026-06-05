@@ -103,9 +103,10 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .pill.loading { background: #fff0f3; color: #FF3158; }
-    .pill.success { background: #fff0f3; color: #FF3158; }
-    .pill.error   { background: #fee2e2; color: #b91c1c; }
+    .pill.loading   { background: #fff0f3; color: #FF3158; }
+    .pill.success   { background: #dcfce7; color: #15803d; }
+    .pill.cancelled { background: #fee2e2; color: #b91c1c; }
+    .pill.error     { background: #fee2e2; color: #b91c1c; }
 
     /* ── Footer ──────────────────────────────────────────── */
     footer {
@@ -156,7 +157,9 @@
   <script>
     (function () {
       var WEBHOOK = "https://hooks.zapier.com/hooks/catch/10664871/4bdz3nt/";
-      var recordId = new URLSearchParams(window.location.search).get("record_id") || "";
+      var params   = new URLSearchParams(window.location.search);
+      var recordId = params.get("record_id") || "";
+      var action   = params.get("action") || "accept"; // "accept" | "decline"
 
       function setUI(type, title, message, pill) {
         var wrap = document.getElementById("icon");
@@ -181,15 +184,22 @@
         return;
       }
 
-      // GET request — no CORS preflight, Zapier receives record_id as query param
-      var url = WEBHOOK + "?record_id=" + encodeURIComponent(recordId);
+      // GET request — no CORS preflight, Zapier receives record_id + action as query params
+      var url = WEBHOOK + "?record_id=" + encodeURIComponent(recordId) + "&action=" + encodeURIComponent(action);
 
       fetch(url, { mode: "no-cors" })
         .then(function () {
-          setUI("success",
-            "Thank you!",
-            "Your approval has been received and your order is now being processed. The Matterport team will now work to get this appointment scheduled.",
-            "Approved");
+          if (action === "decline") {
+            setUI("cancelled",
+              "Order Cancelled",
+              "Your response has been recorded. This order has been cancelled.",
+              "Cancelled");
+          } else {
+            setUI("success",
+              "Thank you!",
+              "Your approval has been received and your order is now being processed. The Matterport team will now work to get this appointment scheduled.",
+              "Approved");
+          }
         })
         .catch(function (err) {
           console.error("Webhook error:", err);
