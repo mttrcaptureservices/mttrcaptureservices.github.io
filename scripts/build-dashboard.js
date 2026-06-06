@@ -13,7 +13,7 @@ function jiraPost(body) {
   return new Promise((resolve, reject) => {
     const req = https.request({
       hostname: 'matterport.atlassian.net',
-      path: '/rest/api/3/search',
+      path: '/rest/api/3/search/jql',
       method: 'POST',
       headers: { 'Authorization': 'Basic ' + auth, 'Content-Type': 'application/json', 'Accept': 'application/json' }
     }, res => {
