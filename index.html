@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order Approval | Matterport</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -61,17 +62,12 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 32px;
     }
-    .icon-wrap.loading {
-      background: #fff0f3;
-      animation: pulse 1.4s ease-in-out infinite;
-    }
+    .icon-wrap.verify  { background: #f9fafb; }
+    .icon-wrap.loading { background: #fff0f3; animation: pulse 1.4s ease-in-out infinite; }
     .icon-wrap.success { background: transparent; }
     .icon-wrap.error   { background: #fef2f2; }
 
-    .icon-wrap svg {
-      width: 64px;
-      height: auto;
-    }
+    .icon-wrap svg { width: 64px; height: auto; }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -93,6 +89,37 @@
       margin: 0 auto;
     }
 
+    /* ── CAPTCHA + button area ───────────────────────────── */
+    .verify-area {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 13px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .confirm-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .confirm-btn:not(:disabled):hover  { opacity: 0.88; }
+    .confirm-btn:not(:disabled):active { transform: scale(0.98); }
+
+    .confirm-btn.accept  { background: #16a34a; color: #fff; }
+    .confirm-btn.decline { background: #dc2626; color: #fff; }
+
+    /* ── Pill ────────────────────────────────────────────── */
     .pill {
       display: inline-block;
       margin-top: 24px;
@@ -103,7 +130,6 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .pill.loading   { background: #fff0f3; color: #FF3158; }
     .pill.success   { background: #dcfce7; color: #15803d; }
     .pill.cancelled { background: #fee2e2; color: #b91c1c; }
     .pill.error     { background: #fee2e2; color: #b91c1c; }
@@ -131,9 +157,8 @@
 
   <main>
     <div class="card">
-      <!-- Icon: Matterport mark used for all states; swapped via JS -->
-      <div class="icon-wrap loading" id="icon">
-        <!-- Matterport mark SVG (extracted from official logo) -->
+      <!-- Matterport mark SVG -->
+      <div class="icon-wrap verify" id="icon">
         <svg viewBox="0 0 330 298" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M125.631 1.69144C127.297 0.493365 130.005 0.435882 131.696 1.56841L183.287 36.2813C184.998 37.4682 185.42 39.8109 184.239 41.5254L147.811 91.6609C146.617 93.3118 144.052 94.1932 142.057 93.6577L42.3926 66.0637C40.4231 65.4868 40.1478 63.9963 41.8056 62.7569L125.631 1.69144Z" fill="#FF3158"/>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M56.0651 92.3257L92.3414 142.598C93.5316 144.241 93.5842 146.98 92.4436 148.68L35.4893 235.28C34.3244 237.005 32.8427 236.799 32.1818 234.852L0.223077 135.969C-0.417575 134.009 0.370842 131.394 1.95881 130.146L50.8174 91.6168C52.4661 90.3613 54.8091 90.6941 56.0651 92.3257Z" fill="#FF3158"/>
@@ -143,9 +168,21 @@
         </svg>
       </div>
 
-      <h1 id="title">Processing your approval…</h1>
-      <p id="message">Please hold on while we record your response.</p>
-      <span class="pill loading" id="pill">In Progress</span>
+      <h1 id="title">Loading…</h1>
+      <p id="message"></p>
+
+      <!-- Verification area: CAPTCHA + confirm button (shown before submission) -->
+      <div class="verify-area" id="verify-area" style="display:none;">
+        <div class="g-recaptcha"
+             data-sitekey="6Le5_BctAAAAF79LwzB4UoU_5sr_OptzUlkm_dn"
+             data-callback="onCaptchaVerified"
+             data-expired-callback="onCaptchaExpired">
+        </div>
+        <button class="confirm-btn" id="confirm-btn" disabled>Confirm</button>
+      </div>
+
+      <!-- Pill shown after submission -->
+      <span class="pill" id="pill" style="display:none;"></span>
     </div>
   </main>
 
@@ -156,58 +193,98 @@
 
   <script>
     (function () {
-      var WEBHOOK = "https://hooks.zapier.com/hooks/catch/10664871/4bdz3nt/";
+      var WEBHOOK  = "https://hooks.zapier.com/hooks/catch/10664871/4bdz3nt/";
       var params   = new URLSearchParams(window.location.search);
       var recordId = params.get("record_id") || "";
       var action   = params.get("action") || "accept"; // "accept" | "decline"
 
-      function setUI(type, title, message, pill) {
-        var wrap = document.getElementById("icon");
-        var pillEl = document.getElementById("pill");
-        wrap.className = "icon-wrap " + type;
-        document.getElementById("title").textContent   = title;
-        document.getElementById("message").textContent = message;
-        pillEl.className   = "pill " + type;
-        pillEl.textContent = pill;
+      var iconEl   = document.getElementById("icon");
+      var titleEl  = document.getElementById("title");
+      var msgEl    = document.getElementById("message");
+      var verifyEl = document.getElementById("verify-area");
+      var btnEl    = document.getElementById("confirm-btn");
+      var pillEl   = document.getElementById("pill");
 
-        // Error state: replace mark with emoji
-        if (type === "error") {
-          wrap.innerHTML = "<span style='font-size:36px'>❌</span>";
-        }
+      // ── Error state ───────────────────────────────────────
+      function showError(title, msg) {
+        iconEl.className = "icon-wrap error";
+        iconEl.innerHTML = "<span style='font-size:36px'>&#10060;</span>";
+        titleEl.textContent    = title;
+        msgEl.textContent      = msg;
+        verifyEl.style.display = "none";
+        pillEl.className       = "pill error";
+        pillEl.textContent     = "Error";
+        pillEl.style.display   = "inline-block";
       }
 
+      // ── Validate URL params ───────────────────────────────
       if (!recordId) {
-        setUI("error",
+        showError(
           "Invalid approval link",
-          "This link appears to be incomplete. Please use the approval link from your email.",
-          "Invalid Link");
+          "This link appears to be incomplete. Please use the approval link from your email."
+        );
         return;
       }
 
-      // GET request — no CORS preflight, Zapier receives record_id + action as query params
-      var url = WEBHOOK + "?record_id=" + encodeURIComponent(recordId) + "&action=" + encodeURIComponent(action);
+      // ── Show verify UI based on action ────────────────────
+      if (action === "decline") {
+        titleEl.textContent = "Cancel this order?";
+        msgEl.textContent   = "Please verify you’re human, then confirm your decision to cancel this order.";
+        btnEl.textContent   = "Confirm Cancellation";
+        btnEl.classList.add("decline");
+      } else {
+        titleEl.textContent = "Approve this order?";
+        msgEl.textContent   = "Please verify you’re human, then confirm your approval to proceed.";
+        btnEl.textContent   = "Confirm Approval";
+        btnEl.classList.add("accept");
+      }
+      verifyEl.style.display = "flex";
 
-      fetch(url, { mode: "no-cors" })
-        .then(function () {
-          if (action === "decline") {
-            setUI("cancelled",
-              "Order Cancelled",
-              "Your response has been recorded. This order has been cancelled.",
-              "Cancelled");
-          } else {
-            setUI("success",
-              "Thank you!",
-              "Your approval has been received and your order is now being processed. The Matterport team will now work to get this appointment scheduled.",
-              "Approved");
-          }
-        })
-        .catch(function (err) {
-          console.error("Webhook error:", err);
-          setUI("error",
-            "Something went wrong",
-            "We couldn't record your approval. Please try clicking the link again or contact support.",
-            "Error");
-        });
+      // ── CAPTCHA callbacks (must be global) ────────────────
+      window.onCaptchaVerified = function () {
+        btnEl.disabled = false;
+      };
+      window.onCaptchaExpired = function () {
+        btnEl.disabled = true;
+      };
+
+      // ── Confirm button → fire webhook ─────────────────────
+      btnEl.addEventListener("click", function () {
+        btnEl.disabled         = true;
+        verifyEl.style.display = "none";
+        iconEl.className       = "icon-wrap loading";
+        titleEl.textContent    = "Processing…";
+        msgEl.textContent      = "Please hold on while we record your response.";
+
+        var url = WEBHOOK
+          + "?record_id=" + encodeURIComponent(recordId)
+          + "&action="    + encodeURIComponent(action);
+
+        fetch(url, { mode: "no-cors" })
+          .then(function () {
+            iconEl.className = "icon-wrap success";
+            if (action === "decline") {
+              titleEl.textContent  = "Order Cancelled";
+              msgEl.textContent    = "Your response has been recorded. This order has been cancelled.";
+              pillEl.className     = "pill cancelled";
+              pillEl.textContent   = "Cancelled";
+            } else {
+              titleEl.textContent  = "Thank you!";
+              msgEl.textContent    = "Your approval has been received and your order is now being processed. The Matterport team will now work to get this appointment scheduled.";
+              pillEl.className     = "pill success";
+              pillEl.textContent   = "Approved";
+            }
+            pillEl.style.display = "inline-block";
+          })
+          .catch(function (err) {
+            console.error("Webhook error:", err);
+            showError(
+              "Something went wrong",
+              "We couldn’t record your approval. Please try clicking the link again or contact support."
+            );
+          });
+      });
+
     })();
   </script>
 </body>
