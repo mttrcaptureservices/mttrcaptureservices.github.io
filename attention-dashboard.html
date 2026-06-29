@@ -5,456 +5,581 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Needs Your Attention</title>
 <style>
-  :root {
-    --bg: #f5f6f8;
-    --card-bg: #ffffff;
-    --border: #e2e4e9;
-    --text: #1a1d23;
-    --text-muted: #6b7280;
-    --text-light: #9ca3af;
-    --accent: #2563eb;
-    --accent-light: #eff6ff;
-    --green: #16a34a;
-    --green-light: #f0fdf4;
-    --yellow: #d97706;
-    --yellow-light: #fffbeb;
-    --red: #dc2626;
-    --red-light: #fef2f2;
-    --purple: #7c3aed;
-    --purple-light: #f5f3ff;
-    --radius: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f6fa; color: #1a1a2e; min-height: 100vh; }
+
+  /* Header */
+  .header { background: #fff; border-bottom: 1px solid #e8eaf0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .header-left h1 { font-size: 22px; font-weight: 700; color: #0f172a; }
+  .header-left .snapshot { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .header-right .reload-btn { background: #6366f1; color: #fff; border: none; border-radius: 8px; padding: 8px 18px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+  .header-right .reload-btn:hover { background: #4f46e5; }
+
+  /* Info banner */
+  .banner { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 10px 18px; margin: 18px 32px 0; font-size: 13px; color: #1d4ed8; display: flex; align-items: center; gap: 8px; }
+  .banner::before { content: 'ℹ️'; font-size: 14px; }
+
+  /* Source chips */
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 32px 0; }
+  .chip { background: #fff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 500; color: #475569; display: flex; align-items: center; gap: 6px; }
+  .chip .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .chip.jira .dot { background: #0052cc; }
+  .chip.assigned .dot { background: #6366f1; }
+  .chip.team .dot { background: #10b981; }
+  .chip.teams .dot { background: #7c3aed; }
+
+  /* Stats row */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 32px 0; }
+  .stat-card { background: #fff; border-radius: 12px; padding: 16px 20px; border: 1px solid #e8eaf0; }
+  .stat-card .stat-label { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-card .stat-value { font-size: 32px; font-weight: 700; margin-top: 4px; }
+  .stat-card.red .stat-value { color: #ef4444; }
+  .stat-card.blue .stat-value { color: #6366f1; }
+  .stat-card.amber .stat-value { color: #f59e0b; }
+  .stat-card.slate .stat-value { color: #64748b; }
+
+  /* Main layout */
+  .main { padding: 18px 32px 48px; display: grid; gap: 24px; }
+
+  /* Section */
+  .section-title { font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .section-title .count { background: #f1f5f9; color: #64748b; border-radius: 20px; padding: 2px 9px; font-size: 12px; font-weight: 600; }
+
+  /* Cards grid */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+
+  /* Issue card */
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e8eaf0; padding: 16px 18px; transition: box-shadow 0.15s, border-color 0.15s; text-decoration: none; color: inherit; display: block; }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #c7d2fe; }
+
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .card-key { font-size: 11px; font-weight: 700; color: #0052cc; font-family: monospace; background: #eff6ff; padding: 2px 7px; border-radius: 5px; white-space: nowrap; }
+  .card-badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
+
+  .badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .badge.p1, .badge.critical { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+  .badge.p2 { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+  .badge.p3 { background: #fefce8; color: #ca8a04; border: 1px solid #fef08a; }
+  .badge.p-none { background: #f8fafc; color: #94a3b8; border: 1px solid #e2e8f0; }
+  .badge.status-ip { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+  .badge.status-testing { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+  .badge.status-todo { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+  .badge.type-epic { background: #faf5ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+  .badge.type-story { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+  .badge.type-task { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
+
+  .card-summary { font-size: 13px; font-weight: 600; color: #0f172a; line-height: 1.45; margin-bottom: 10px; }
+
+  .card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #94a3b8; }
+  .card-assignee { display: flex; align-items: center; gap: 5px; }
+  .avatar { width: 20px; height: 20px; border-radius: 50%; background: #6366f1; color: #fff; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .updated-today { color: #059669; font-weight: 600; }
+
+  /* Teams thread card */
+  .teams-card { background: #fff; border-radius: 12px; border: 1px solid #e8eaf0; padding: 16px 18px; transition: box-shadow 0.15s; }
+  .teams-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #ddd6fe; }
+  .teams-card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .teams-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #faf5ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+  .teams-card-author { font-size: 11px; color: #94a3b8; }
+  .teams-card-title { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .teams-card-summary { font-size: 12px; color: #475569; line-height: 1.5; margin-bottom: 10px; }
+  .teams-card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #94a3b8; }
+  .teams-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: #6366f1; text-decoration: none; }
+  .teams-link:hover { color: #4f46e5; text-decoration: underline; }
+  .jira-ref { background: #eff6ff; color: #0052cc; border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 10px; font-weight: 700; }
+
+  /* Section divider */
+  .section { margin-bottom: 4px; }
+
+  /* Empty state */
+  .empty { color: #94a3b8; font-size: 13px; font-style: italic; padding: 12px 0; }
+
+  @media (max-width: 700px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .header, .banner, .chips, .main { padding-left: 16px; padding-right: 16px; }
+    .stats { margin-left: 16px; margin-right: 16px; }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh; }
-  header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-  .header-left h1 { font-size: 20px; font-weight: 700; color: var(--text); }
-  .header-left .snapshot { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-  .info-banner { background: var(--accent-light); border: 1px solid #bfdbfe; border-radius: 8px; padding: 10px 16px; font-size: 12px; color: #1e40af; margin: 16px 28px 0; display: flex; align-items: center; gap: 8px; }
-  .source-chips { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 28px 0; }
-  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-muted); }
-  .chip.jira { background: var(--accent-light); color: var(--accent); border-color: #bfdbfe; }
-  .chip.assigned { background: var(--green-light); color: var(--green); border-color: #bbf7d0; }
-  .chip.team { background: var(--purple-light); color: var(--purple); border-color: #ddd6fe; }
-  .chip.teams { background: var(--yellow-light); color: var(--yellow); border-color: #fde68a; }
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 16px 28px; }
-  .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); text-align: center; }
-  .stat-card .number { font-size: 28px; font-weight: 700; line-height: 1; }
-  .stat-card .label { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
-  .stat-card.today { border-top: 3px solid var(--red); }
-  .stat-card.today .number { color: var(--red); }
-  .stat-card.inprogress { border-top: 3px solid var(--accent); }
-  .stat-card.inprogress .number { color: var(--accent); }
-  .stat-card.testing { border-top: 3px solid var(--purple); }
-  .stat-card.testing .number { color: var(--purple); }
-  .stat-card.todo { border-top: 3px solid var(--text-muted); }
-  .stat-card.todo .number { color: var(--text-muted); }
-  main { padding: 0 28px 40px; }
-  .section { margin-bottom: 24px; }
-  .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; margin-top: 4px; }
-  .section-header h2 { font-size: 14px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; }
-  .section-count { font-size: 11px; background: var(--border); color: var(--text-muted); border-radius: 10px; padding: 1px 7px; font-weight: 600; }
-  .cards { display: flex; flex-direction: column; gap: 8px; }
-  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 12px; text-decoration: none; color: inherit; transition: border-color 0.15s, box-shadow 0.15s; }
-  .card:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(37,99,235,0.08); }
-  .card-left { flex: 1; min-width: 0; }
-  .card-key { font-size: 11px; font-weight: 600; color: var(--accent); font-family: 'SF Mono', 'Fira Code', monospace; margin-bottom: 2px; }
-  .card-title { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
-  .card-meta { display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
-  .badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.02em; }
-  .badge.status-todo { background: #f3f4f6; color: #6b7280; }
-  .badge.status-inprogress { background: var(--accent-light); color: var(--accent); }
-  .badge.status-testing { background: var(--purple-light); color: var(--purple); }
-  .badge.priority-p2 { background: #fff7ed; color: #ea580c; }
-  .badge.priority-normal { background: #f3f4f6; color: #6b7280; }
-  .badge.type { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
-  .card-date { font-size: 11px; color: var(--text-light); }
-  .card-assignee { font-size: 11px; color: var(--text-muted); }
-  .card-right { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-  .arrow { font-size: 16px; color: var(--text-light); }
-  .card.teams-card { border-left: 3px solid var(--yellow); }
-  .card-author { font-size: 11px; font-weight: 600; color: var(--text-muted); }
-  .card-snippet { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
-  .reaction-badge { font-size: 11px; background: var(--yellow-light); border: 1px solid #fde68a; color: var(--yellow); padding: 2px 7px; border-radius: 10px; font-weight: 600; }
-  .today-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #fef2f2; color: var(--red); letter-spacing: 0.04em; }
-  @media (max-width: 600px) { .stats-row { grid-template-columns: repeat(2, 1fr); } header, .info-banner, .source-chips, .stats-row, main { padding-left: 16px; padding-right: 16px; } }
 </style>
 </head>
 <body>
-<header>
+
+<div class="header">
   <div class="header-left">
-    <h1>🎯 Needs Your Attention</h1>
-    <div class="snapshot">Snapshot: Monday, June 29, 2026 · Ricardo Guzman</div>
+    <h1>Needs Your Attention</h1>
+    <div class="snapshot">Snapshot: Monday, June 29, 2026</div>
   </div>
-</header>
-<div class="info-banner">🤖 Static snapshot generated by the Cowork agent. Refreshes automatically every hour on weekdays.</div>
-<div class="source-chips">
-  <span class="chip jira">⚡ Jira · Matterport</span>
-  <span class="chip assigned">✅ Assigned to you</span>
-  <span class="chip team">👥 Team · COP · 7d</span>
-  <span class="chip teams">👀 Teams · Pending</span>
+  <div class="header-right">
+    <button class="reload-btn" onclick="window.location.reload()">↻ Reload</button>
+  </div>
 </div>
-<div class="stats-row">
-  <div class="stat-card today"><div class="number">1</div><div class="label">Updated Today</div></div>
-  <div class="stat-card inprogress"><div class="number">2</div><div class="label">In Progress</div></div>
-  <div class="stat-card testing"><div class="number">2</div><div class="label">In Testing</div></div>
-  <div class="stat-card todo"><div class="number">8</div><div class="label">To Do</div></div>
+
+<div class="banner">
+  Static snapshot generated by the Cowork agent. Refreshes automatically every hour on weekdays.
 </div>
-<main>
+
+<div class="chips">
+  <div class="chip jira"><span class="dot"></span> Jira · Matterport</div>
+  <div class="chip assigned"><span class="dot"></span> Assigned to you</div>
+  <div class="chip team"><span class="dot"></span> Team (COP · 7d)</div>
+  <div class="chip teams"><span class="dot"></span> 👀 Teams · CS Apps Support</div>
+</div>
+
+<div class="stats">
+  <div class="stat-card red">
+    <div class="stat-label">Updated Today</div>
+    <div class="stat-value">1</div>
+  </div>
+  <div class="stat-card blue">
+    <div class="stat-label">In Progress</div>
+    <div class="stat-value">2</div>
+  </div>
+  <div class="stat-card amber">
+    <div class="stat-label">In Testing</div>
+    <div class="stat-value">2</div>
+  </div>
+  <div class="stat-card slate">
+    <div class="stat-label">To Do</div>
+    <div class="stat-value">8</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SECTION 1: Updated Today -->
   <div class="section">
-    <div class="section-header"><h2>⚡ Updated Today</h2><span class="section-count">1</span></div>
+    <div class="section-title">⚡ Updated Today <span class="count">1</span></div>
     <div class="cards">
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1971" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1971</div>
-          <div class="card-title">Evercore Companies — Reassign jobs to correct MP Client and delete duplicate records</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1971</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="today-badge">TODAY</span>
-            <span class="card-date">Jun 29, 10:21 AM</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Evercore Companies — Reassign jobs to correct MP Client and delete duplicate records</div>
+        <div class="card-meta">
+          <div class="card-assignee">
+            <div class="avatar">RG</div>
+            Ricardo Guzman
+          </div>
+          <span class="updated-today">Updated today</span>
+        </div>
       </a>
+
     </div>
   </div>
+
+  <!-- SECTION 2: In Progress -->
   <div class="section">
-    <div class="section-header"><h2>🔄 In Progress</h2><span class="section-count">2</span></div>
+    <div class="section-title">🔄 In Progress <span class="count">2</span></div>
     <div class="cards">
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1884</div>
-          <div class="card-title">CT Directory overhaul work</div>
-          <div class="card-meta">
-            <span class="badge status-inprogress">In Progress</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Epic</span>
-            <span class="card-date">May 27</span>
+        <div class="card-top">
+          <span class="card-key">COP-1884</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-epic">Epic</span>
+            <span class="badge status-ip">In Progress</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">CT Directory overhaul work</div>
+        <div class="card-meta">
+          <div class="card-assignee">
+            <div class="avatar">RG</div>
+            Ricardo Guzman
+          </div>
+          <span>Updated May 27</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1886" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1886</div>
-          <div class="card-title">Parent Base Mapping Tech City Assignments</div>
-          <div class="card-meta">
-            <span class="badge status-inprogress">In Progress</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-date">May 27</span>
+        <div class="card-top">
+          <span class="card-key">COP-1886</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
+            <span class="badge status-ip">In Progress</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Parent Base Mapping Tech City Assignments</div>
+        <div class="card-meta">
+          <div class="card-assignee">
+            <div class="avatar">RG</div>
+            Ricardo Guzman
+          </div>
+          <span>Updated May 27</span>
+        </div>
       </a>
+
     </div>
   </div>
+
+  <!-- SECTION 3: In Testing -->
   <div class="section">
-    <div class="section-header"><h2>🧪 In Testing</h2><span class="section-count">2</span></div>
+    <div class="section-title">🧪 In Testing <span class="count">2</span></div>
     <div class="cards">
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1899" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1899</div>
-          <div class="card-title">Welltower updates</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1899</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-testing">In Testing</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Epic</span>
-            <span class="card-date">Jun 16</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Welltower updates</div>
+        <div class="card-meta">
+          <div class="card-assignee">
+            <div class="avatar">RG</div>
+            Ricardo Guzman
+          </div>
+          <span>Updated Jun 16</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1889</div>
-          <div class="card-title">Coordinator Interfaces</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1889</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-epic">Epic</span>
             <span class="badge status-testing">In Testing</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-date">Jun 16</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Coordinator Interfaces</div>
+        <div class="card-meta">
+          <div class="card-assignee">
+            <div class="avatar">RG</div>
+            Ricardo Guzman
+          </div>
+          <span>Updated Jun 16</span>
+        </div>
       </a>
+
     </div>
   </div>
+
+  <!-- SECTION 4: To Do / Backlog -->
   <div class="section">
-    <div class="section-header"><h2>📌 To Do / Backlog</h2><span class="section-count">8</span></div>
+    <div class="section-title">📌 To Do / Backlog <span class="count">8</span></div>
     <div class="cards">
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1964" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1964</div>
-          <div class="card-title">CT Communications – Add Scanning Best Practices Guide Link to Additional Details (Jotform + Confirmation + Reminder)</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1964</span>
+          <div class="card-badges">
+            <span class="badge p2">P2 · Major</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-p2">P2 – Major</span>
-            <span class="badge type">Story</span>
-            <span class="card-date">Jun 24</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">CT Communications – Add Scanning Best Practices Guide Link to Additional Details (Jotform + Confirmation + Reminder)</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 24</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1968" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1968</div>
-          <div class="card-title">Add Blurring tracking field and fee to Spec Ops / 2.0 Base</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1968</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Add Blurring tracking field and fee to Spec Ops / 2.0 Base</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1966" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1966</div>
-          <div class="card-title">Welltower UK Bulk Upload — Ensure Additional Details Are Populated Without Jotform</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1966</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Story</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1963" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1963</div>
-          <div class="card-title">Lennar – Shot list not showing all spaces in CT job request email</div>
-          <div class="card-meta">
-            <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Story</span>
-            <span class="card-date">Jun 24</span>
-          </div>
+        <div class="card-summary">Welltower UK Bulk Upload — Ensure Additional Details Are Populated Without Jotform</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 25</span>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
       </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1961" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1961</div>
-          <div class="card-title">Welltower Jotform — Fix Dynamic Dropdown sync and Property Address clear-on-change glitch</div>
-          <div class="card-meta">
-            <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Story</span>
-            <span class="card-date">Jun 23</span>
-          </div>
-        </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1960" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1960</div>
-          <div class="card-title">Add new fields in Global Requests table to record the zap url that creates a job, plus other fields</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1960</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Add new fields in Global Requests table to record the zap url that creates a job, plus other fields</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-1963" target="_blank">
+        <div class="card-top">
+          <span class="card-key">COP-1963</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
+            <span class="badge status-todo">To Do</span>
+          </div>
+        </div>
+        <div class="card-summary">Lennar - Shot list not showing all spaces in CT job request email</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 24</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-1961" target="_blank">
+        <div class="card-top">
+          <span class="card-key">COP-1961</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
+            <span class="badge status-todo">To Do</span>
+          </div>
+        </div>
+        <div class="card-summary">Welltower Jotform — Fix Dynamic Dropdown sync and Property Address clear-on-change glitch</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 23</span>
+        </div>
+      </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1918" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1918</div>
-          <div class="card-title">Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1918</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-date">Jun 1</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated Jun 1</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1907" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1907</div>
-          <div class="card-title">Claude Use Cases</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1907</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Epic</span>
-            <span class="card-date">May 27</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Claude Use Cases</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar">RG</div> Ricardo Guzman</div>
+          <span>Updated May 27</span>
+        </div>
       </a>
+
     </div>
   </div>
+
+  <!-- SECTION 5: Team COP -->
   <div class="section">
-    <div class="section-header"><h2>👥 Team · COP (7 days)</h2><span class="section-count">8</span></div>
+    <div class="section-title">👥 Team · COP (7 days) <span class="count">8</span></div>
     <div class="cards">
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1948" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1948</div>
-          <div class="card-title">Spec Ops 2.0 – Custom Client Travel Charge incorrectly triggering CT travel payout automation</div>
-          <div class="card-meta">
-            <span class="badge status-inprogress">In Progress</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-assignee">Troy Lowry</span>
-            <span class="card-date">Jun 26</span>
+        <div class="card-top">
+          <span class="card-key">COP-1948</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
+            <span class="badge status-ip">In Progress</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-800" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-800</div>
-          <div class="card-title">Global CS Process Documentation</div>
-          <div class="card-meta">
-            <span class="badge status-inprogress">In Progress</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-assignee">Elliot Finlayson-Smith</span>
-            <span class="card-date">Jun 25</span>
-          </div>
+        <div class="card-summary">Spec Ops 2.0 - Custom Client Travel Charge incorrectly triggering CT travel payout automation</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#7c3aed">TL</div> Troy Lowry</div>
+          <span>Updated Jun 26</span>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1919" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1919</div>
-          <div class="card-title">Welltower – Automate workflow: Jotform → Zapier → Airtable (Welltower pricing logic)</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1919</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-story">Story</span>
             <span class="badge status-testing">In Testing</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Story</span>
-            <span class="card-assignee">Snehal Meled</span>
-            <span class="card-date">Jun 23</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Welltower – Automate workflow: Jotform → Zapier → Airtable (Welltower pricing logic)</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#059669">SM</div> Snehal Meled</div>
+          <span>Updated Jun 23</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1967" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1967</div>
-          <div class="card-title">Update the Reschedule Zapier integration</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1967</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-story">Story</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Story</span>
-            <span class="card-assignee">Snehal Meled</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Update the Reschedule Zapier integration</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#059669">SM</div> Snehal Meled</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1965" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1965</div>
-          <div class="card-title">Job CT Issue Log</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1965</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-epic">Epic</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Epic</span>
-            <span class="card-assignee">Adjet Kodia</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Job CT Issue Log</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#ea580c">AK</div> Adjet Kodia</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1962" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1962</div>
-          <div class="card-title">Job Request link not working for CT when CT is changed (sometimes)</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1962</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-assignee">Adjet Kodia</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Job Request link not working for CT when CT is changed (sometimes)</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#ea580c">AK</div> Adjet Kodia</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1959" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1959</div>
-          <div class="card-title">Look into a way to make columns available in Global Requests table</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1959</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-assignee">Adjet Kodia</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Look into a way to make columns available in Global Requests table</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#ea580c">AK</div> Adjet Kodia</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1937" target="_blank">
-        <div class="card-left">
-          <div class="card-key">COP-1937</div>
-          <div class="card-title">Find a way to make record history available to CS team in GSB base</div>
-          <div class="card-meta">
+        <div class="card-top">
+          <span class="card-key">COP-1937</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
             <span class="badge status-todo">To Do</span>
-            <span class="badge priority-normal">Not Prioritized</span>
-            <span class="badge type">Task</span>
-            <span class="card-assignee">Adjet Kodia</span>
-            <span class="card-date">Jun 25</span>
           </div>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
+        <div class="card-summary">Find a way to make record history available to CS team in GSB base</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#ea580c">AK</div> Adjet Kodia</div>
+          <span>Updated Jun 25</span>
+        </div>
       </a>
+
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-800" target="_blank">
+        <div class="card-top">
+          <span class="card-key">COP-800</span>
+          <div class="card-badges">
+            <span class="badge p-none">Not Prioritized</span>
+            <span class="badge type-task">Task</span>
+            <span class="badge status-ip">In Progress</span>
+          </div>
+        </div>
+        <div class="card-summary">Global CS Process Documentation</div>
+        <div class="card-meta">
+          <div class="card-assignee"><div class="avatar" style="background:#0369a1">EF</div> Elliot Finlayson-Smith</div>
+          <span>Updated Jun 25</span>
+        </div>
+      </a>
+
     </div>
   </div>
+
+  <!-- SECTION 6: Pending Teams Threads -->
   <div class="section">
-    <div class="section-header"><h2>👀 Pending Teams Threads</h2><span class="section-count">3</span></div>
+    <div class="section-title">👀 Pending Teams Threads <span class="count">2</span></div>
     <div class="cards">
-      <a class="card teams-card" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">
-        <div class="card-left">
-          <div class="card-author">👀 Kailyn Jelniker · Jun 25</div>
-          <div class="card-title">Another scenario where automations changed status erroneously</div>
-          <div class="card-snippet">Record 81551 on JOBID6557096081907059352 was marked CIA but flipped to CLM. Snehal filed COP-1967. Adjet clarified this occurred before the Jun 11 fix. No ✅ yet.</div>
-          <div class="card-meta">
-            <span class="reaction-badge">👀 ×2</span>
-            <span class="badge status-todo">COP-1967 · To Do</span>
-            <span class="card-date">2 replies</span>
-          </div>
+
+      <div class="teams-card">
+        <div class="teams-card-top">
+          <span class="teams-badge">👀 Pending</span>
+          <span class="teams-card-author">Troy Lowry · Apr 30</span>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
-      <a class="card teams-card" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">
-        <div class="card-left">
-          <div class="card-author">👀 Kailyn Jelniker · Jun 24</div>
-          <div class="card-title">Reassign jobs to different MP Client — Evercore Companies</div>
-          <div class="card-snippet">3 duplicate MP Client records for Evercore; reassign all jobs to recpRcRZWDEJk8Z8B, delete rec9vXQwadgUE7JUZ & recGPeBjvcxtgmCLL. Ricardo acknowledged today — Jira COP-1971 created.</div>
-          <div class="card-meta">
-            <span class="reaction-badge">👀 ×1</span>
-            <span class="badge status-todo">COP-1971 · To Do</span>
-            <span class="today-badge">Updated Today</span>
-          </div>
+        <div class="teams-card-title">Add blurring tracking fields and blurring fee to Spec Ops / 2.0 Base</div>
+        <div class="teams-card-summary">
+          Request to add a Blurring checkbox, Blurring Fee field, and "Apply Mattertag Cost" to the Spec Ops 2.0 base so finance can track blurring services and close out current jobs. Ricardo created the {Blurring Fee} field at [MP Client] and set $100 for Military Health System, but is waiting on Troy Lowry / John Bosch to confirm whether to use the existing {Post Production Request} &gt; "Blurring" field or build new logic.
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
-      <a class="card teams-card" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">
-        <div class="card-left">
-          <div class="card-author">👀 John Bosch · May 6</div>
-          <div class="card-title">Vacasa – Total Travel Distance calculation</div>
-          <div class="card-snippet">Requesting the distance list used for Vacasa jobs (Ocean City MD example). 33-reply thread — Adjet said today: "I'll provide an update on this today." Travel distance logic ready; service-package update pending.</div>
-          <div class="card-meta">
-            <span class="reaction-badge">👀 ×1</span>
-            <span class="badge status-inprogress">In Progress</span>
-            <span class="card-date">33 replies · Last reply: today</span>
+        <div class="teams-card-meta">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span class="jira-ref">COP-1968</span>
+            <span style="color:#94a3b8">· Waiting for Troy / John confirmation</span>
           </div>
+          <a class="teams-link" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">View in Teams →</a>
         </div>
-        <div class="card-right"><span class="arrow">›</span></div>
-      </a>
+      </div>
+
+      <div class="teams-card">
+        <div class="teams-card-top">
+          <span class="teams-badge">👀 Pending</span>
+          <span class="teams-card-author">John Bosch · May 6</span>
+        </div>
+        <div class="teams-card-title">Vacasa - Total Travel Distance not calculating correctly</div>
+        <div class="teams-card-summary">
+          Vacasa jobs in Ocean City, MD have travel distances that appear too low — no Vacasa In Network city may be nearby. 33-reply thread. Adjet Kodia working on fixing the automatic travel distance calculation and a service-package update. Adjet confirmed an update would be provided today (Jun 29).
+        </div>
+        <div class="teams-card-meta">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="color:#94a3b8">Adjet Kodia working · Update due today</span>
+          </div>
+          <a class="teams-link" href="https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1" target="_blank">View in Teams →</a>
+        </div>
+      </div>
+
     </div>
   </div>
-</main>
-<footer style="text-align:center; padding: 16px 28px 32px; font-size: 11px; color: var(--text-light);">
-  Generated by Cowork Agent · June 29, 2026 · Jira (COP project) + MS Teams · Capture Services Applications Support
-</footer>
+
+</div>
+
 </body>
 </html>
