@@ -1,29 +1,53 @@
 {
-  "lastUpdated": "2026-06-05T15:00:00-07:00",
+  "lastUpdated": "2026-07-03T09:00:00-07:00",
   "threads": [
     {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#5856d6",
-      "summary": "Unable to create \"adjustment line for CT rate\" on JOBID6531393862914479294 — related to Airtable sync failure (data source unavailable).",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "6/4",
-      "jiraKey": "COP-1928",
-      "note": "Snehal confirmed investigating. No update from requester yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1780594856698?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1780594856698&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1780594856698&ngc=true"
+      "author": "Don Fraser",
+      "initials": "DF",
+      "color": "#007aff",
+      "summary": "Custom Client Travel Charge in Spec Ops 2.0 base is incorrectly triggering an automated CT travel payout, even though that field is meant to be independent of the payout automation.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Troy Lowry",
+      "date": "6/9",
+      "jiraKey": "COP-1948",
+      "note": "Ricardo asked Troy Lowry to confirm whether the 60% Spec Ops CT Travel Payout policy still applies; no reply yet from Troy.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#ff9500",
+      "summary": "A real Welltower order came through with an unselected property name and a malformed address, which should never have been submittable.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting Maddison's location list",
+      "date": "6/23",
+      "jiraKey": "COP-1961",
+      "note": "Jotform Address widget glitch is fixed, but New Jersey locations still look off — blocked on an updated NJ location list from Maddison to finish pairing the dropdowns.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782229134615?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782229134615&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782229134615&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#ff9500",
+      "summary": "Automations are still flipping job statuses erroneously — a CIA-flagged child record on a Welltower-style job flipped to CLM once sibling lines were marked complete.",
+      "statusCls": "badge-todo",
+      "status": "To Do (assigned to Snehal)",
+      "date": "6/25",
+      "jiraKey": "COP-1967",
+      "note": "Tracked in COP-1967, assigned to Snehal Meled (not Ricardo) — the reschedule Zapier integration fix to stop overriding Complete/Cancelled statuses hasn't started.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782417568847&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782417568847&ngc=true"
     },
     {
       "author": "John Bosch",
       "initials": "JB",
       "color": "#34c759",
-      "summary": "Client rescheduling forms remain active on CLM/Complete jobs. Fix deployed 6/4. Kevin Curtis asked about notifications on blocked reschedules. 24-hr lock-out still under investigation.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "5/27",
-      "jiraKey": "COP-1904",
-      "note": "Fix deployed 6/4 ~5:31 PM. Awaiting John's sign-off.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1779906971750?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1779906971750&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1779906971750&ngc=true"
+      "summary": "Vacasa jobs near Ocean City, MD are calculating a suspiciously low Total Travel Distance, suggesting no Vacasa In Network city is being matched nearby.",
+      "statusCls": "badge-investigating",
+      "status": "In Testing",
+      "date": "5/6",
+      "jiraKey": "COP-1888",
+      "note": "Long-running thread (36+ replies); recurring travel-distance calculation issue tracked in COP-1888. Last reply was a tangential aside between Adjet Kodia and Kevin Curtis, not new info from John Bosch.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1778092250825&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1778092250825&ngc=true"
     }
   ]
 }
