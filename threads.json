@@ -1,29 +1,28 @@
 {
-  "lastUpdated": "2026-07-06T19:10:00Z",
-  "threads": [
-    {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#F5A623",
-      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base is unexpectedly triggering an automated CT travel payout, even though that field is meant to be independent.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "6/9",
-      "jiraKey": "COP-1948",
-      "note": "Ricardo asked Troy Lowry to confirm whether the 60% CT Travel Payout policy for Spec Ops jobs still applies; blocked on Troy's reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184959b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7B61FF",
-      "summary": "Reminder email to the CT included Photography Services scan instructions even though Photography Services was not ordered on the job; the Confirmation email correctly omitted the text.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/6",
-      "jiraKey": "COP-1970",
-      "note": "Regression from the recently completed COP-1970 automation logged as a comment on that ticket; Reminder Email logic needs to be fixed to match the working Confirmation Email logic. Owed by: Ricardo/Homelander.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184959b216c59dbd59aa4b@thread.tacv2/1783362679442?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783362679442&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783362679442&ngc=true"
-    }
-  ]
+"lastUpdated": "2026-07-06T20:15:00Z",
+"threads": [
+{
+"author": "Don Fraser",
+"initials": "DF",
+"color": "#F5A623",
+"summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base is unexpectedly triggering an automated CT travel payout, even though that field is meant to be independent.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "6/9",
+"jiraKey": "COP-1948",
+"note": "Ricardo asked Troy Lowry to confirm whether the 60% CT Travel Payout policy for Spec Ops jobs still applies; blocked on Troy's reply.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184959b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
+},
+{
+"author": "Troy Lowry",
+"initials": "TL",
+"color": "#4A90D9",
+"summary": "Requesting that the \"On Hold\" job status option be moved to the top of the Job Status field list in both the Legacy and 2.0 Spec Ops Airtable bases so it's more visible in the view.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/6",
+"note": "Quick Airtable field-order change requested; Ricardo/Homelander to reorder the \"On Hold\" option to the top in both bases and confirm here.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783367684752?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783367684752&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783367684752&ngc=true"
+}
+]
 }
