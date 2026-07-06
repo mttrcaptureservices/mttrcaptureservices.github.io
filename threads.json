@@ -1,53 +1,29 @@
 {
-  "lastUpdated": "2026-07-03T09:00:00-07:00",
+  "lastUpdated": "2026-07-06T19:10:00Z",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#007aff",
-      "summary": "Custom Client Travel Charge in Spec Ops 2.0 base is incorrectly triggering an automated CT travel payout, even though that field is meant to be independent of the payout automation.",
+      "color": "#F5A623",
+      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base is unexpectedly triggering an automated CT travel payout, even though that field is meant to be independent.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on Troy Lowry",
+      "status": "Waiting on requester",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Ricardo asked Troy Lowry to confirm whether the 60% Spec Ops CT Travel Payout policy still applies; no reply yet from Troy.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
+      "note": "Ricardo asked Troy Lowry to confirm whether the 60% CT Travel Payout policy for Spec Ops jobs still applies; blocked on Troy's reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184959b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#ff9500",
-      "summary": "A real Welltower order came through with an unselected property name and a malformed address, which should never have been submittable.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting Maddison's location list",
-      "date": "6/23",
-      "jiraKey": "COP-1961",
-      "note": "Jotform Address widget glitch is fixed, but New Jersey locations still look off — blocked on an updated NJ location list from Maddison to finish pairing the dropdowns.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782229134615?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782229134615&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782229134615&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#ff9500",
-      "summary": "Automations are still flipping job statuses erroneously — a CIA-flagged child record on a Welltower-style job flipped to CLM once sibling lines were marked complete.",
-      "statusCls": "badge-todo",
-      "status": "To Do (assigned to Snehal)",
-      "date": "6/25",
-      "jiraKey": "COP-1967",
-      "note": "Tracked in COP-1967, assigned to Snehal Meled (not Ricardo) — the reschedule Zapier integration fix to stop overriding Complete/Cancelled statuses hasn't started.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782417568847&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782417568847&ngc=true"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#34c759",
-      "summary": "Vacasa jobs near Ocean City, MD are calculating a suspiciously low Total Travel Distance, suggesting no Vacasa In Network city is being matched nearby.",
+      "color": "#7B61FF",
+      "summary": "Reminder email to the CT included Photography Services scan instructions even though Photography Services was not ordered on the job; the Confirmation email correctly omitted the text.",
       "statusCls": "badge-investigating",
-      "status": "In Testing",
-      "date": "5/6",
-      "jiraKey": "COP-1888",
-      "note": "Long-running thread (36+ replies); recurring travel-distance calculation issue tracked in COP-1888. Last reply was a tangential aside between Adjet Kodia and Kevin Curtis, not new info from John Bosch.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1778092250825&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1778092250825&ngc=true"
+      "status": "Investigating",
+      "date": "7/6",
+      "jiraKey": "COP-1970",
+      "note": "Regression from the recently completed COP-1970 automation logged as a comment on that ticket; Reminder Email logic needs to be fixed to match the working Confirmation Email logic. Owed by: Ricardo/Homelander.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184959b216c59dbd59aa4b@thread.tacv2/1783362679442?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783362679442&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783362679442&ngc=true"
     }
   ]
 }
