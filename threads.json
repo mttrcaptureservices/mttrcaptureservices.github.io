@@ -1,40 +1,29 @@
 {
-  "lastUpdated": "2026-07-07T20:21:41Z",
+  "lastUpdated": "2026-07-07T21:39:57Z",
   "threads": [
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#A66DD4",
-      "summary": "Bulk upload submissions to the Spec Ops 2.0 base aren't landing in either the legacy or 2.0 base after two submission attempts using a converted CSV.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/6",
-      "note": "Waiting on Troy to confirm whether the CSV uploads used the AT Bulk Importer template/column headers, per Ricardo's question on 7/6.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783382273293?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783382273293&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783382273293&ngc=true"
-    },
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#4C9F70",
-      "summary": "Flagged that adding a Custom Client Travel Charge in the Spec Ops 2.0 base is incorrectly also auto-updating the CT travel payout, which should stay independent since it's a custom field.",
-      "statusCls": "badge-todo",
-      "status": "In queue",
+      "color": "#2563eb",
+      "summary": "Flagged that adding a Custom Client Travel Charge in the Spec Ops 2.0 base incorrectly triggers an automated CT travel payout to the technician, when only Total Travel Distance and Custom CT Travel Fee should affect that field.",
+      "statusCls": "badge-investigating",
+      "status": "Fix in progress",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Fix confirmed and logged in COP-1948, which Adjet Kodia will implement; no client action needed, awaiting build.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
+      "note": "Blocked on Adjet Kodia implementing the CT travel payout fix in COP-1948 (In Progress) — no action needed from Ricardo right now.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
     },
     {
       "author": "John Bosch",
       "initials": "JB",
-      "color": "#E8746B",
-      "summary": "Requested a dedicated Teams alert for Vacasa jobs where total travel distance exceeds 170 miles, posted to the Vacasa Ops channel tagging Kevin and Jordan.",
+      "color": "#d97706",
+      "summary": "Requested a dedicated Teams alert for Vacasa jobs where total travel distance exceeds 170 miles, posted to the Vacasa Ops channel and tagging Kevin and Jordan for client approval.",
       "statusCls": "badge-todo",
-      "status": "In queue",
+      "status": "Queued, not started",
       "date": "7/7",
       "jiraKey": "COP-1982",
-      "note": "Ticket COP-1982 is in the queue for a new automation build; no client action needed, awaiting build.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+      "note": "Blocked on building the new Airtable automation tracked in COP-1982 (To Do) — queued, work has not started yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
     }
   ]
 }
