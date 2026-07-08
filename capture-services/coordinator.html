@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capture Technician Dashboard</title>
+<title>Capture Coordinator Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
   :root{
@@ -274,13 +274,6 @@
   }
   .nav-panel a:hover{ background:#1a3562; }
   .nav-panel a.active{ background:var(--teal-2); color:#fff; font-weight:650; cursor:default; }
-  .nav-panel .nav-note{
-    padding:8px 12px 4px;
-    color:#7489ac;
-    font-size:11px;
-    border-top:1px solid #24365a;
-    margin-top:4px;
-  }
 </style>
 </head>
 <body>
@@ -290,19 +283,19 @@
   <div class="breadcrumb">
     <span class="crumb-root">Capture Services</span>
     <span class="crumb-sep">›</span>
-    <span class="crumb-current">Technician Dashboard</span>
+    <span class="crumb-current">Coordinator Dashboard</span>
   </div>
   <div class="nav-panel" id="navPanel">
     <a href="index.html">📊 Capture Services &amp; Client Dashboard</a>
-    <a href="technician.html" class="active">🧑‍🔧 Capture Technician Dashboard</a>
-    <a href="coordinator.html">🗂️ Capture Coordinator Dashboard</a>
+    <a href="technician.html">🧑‍🔧 Capture Technician Dashboard</a>
+    <a href="coordinator.html" class="active">🗂️ Capture Coordinator Dashboard</a>
   </div>
 </nav>
 
 <header>
   <div>
-    <h1>Capture Technician Dashboard</h1>
-    <div class="sub">Revenue · Jobs · Models · CT Satisfaction — live from Airtable</div>
+    <h1>Capture Coordinator Dashboard</h1>
+    <div class="sub">Revenue · Jobs · Models · Turnaround Time — live from Airtable</div>
   </div>
   <div class="filters">
     <div>
@@ -310,9 +303,9 @@
       <select id="fySelect"></select>
     </div>
     <div>
-      <label for="techSelect">Capture Technician</label>
-      <input list="techList" id="techSelect" placeholder="All Technicians" autocomplete="off">
-      <datalist id="techList"></datalist>
+      <label for="coordSelect">Capture Coordinator</label>
+      <input list="coordList" id="coordSelect" placeholder="All Coordinators" autocomplete="off">
+      <datalist id="coordList"></datalist>
     </div>
   </div>
 </header>
@@ -330,11 +323,12 @@ const REGION_GROUPS = ['GLOBAL','NORAM','INTL','SpecOps'];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 let DATA = null;
-let state = { fy: null, techIdx: -1 };
+let state = { fy: null, coordIdx: -1 };
 
 const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
 const fmtPct = (n) => (n*100).toFixed(1) + '%';
 const fmtNum = (n) => Math.round(n).toLocaleString('en-US');
+const fmtDays = (n) => n===null ? '--' : n.toFixed(2) + ' days';
 
 function regionMatches(r, group){
   // Buckets are fanned out per-record into both a specific region tag AND an
@@ -360,42 +354,43 @@ function populateFilters(){
   fySel.value = state.fy;
   fySel.addEventListener('change', () => { state.fy = Number(fySel.value); render(); });
 
-  const list = document.getElementById('techList');
-  const technicians = DATA.technicians || [];
-  list.innerHTML = technicians.slice().sort((a,b)=>a.localeCompare(b)).map(t => `<option value="${t}"></option>`).join('');
-  const techInput = document.getElementById('techSelect');
-  techInput.addEventListener('change', () => {
-    const v = techInput.value.trim();
-    if (!v) { state.techIdx = -1; render(); return; }
-    const idx = technicians.indexOf(v);
-    state.techIdx = idx === -1 ? -1 : idx;
+  const list = document.getElementById('coordList');
+  const coordinators = DATA.coordinators || [];
+  list.innerHTML = coordinators.slice().sort((a,b)=>a.localeCompare(b)).map(c => `<option value="${c}"></option>`).join('');
+  const coordInput = document.getElementById('coordSelect');
+  coordInput.addEventListener('change', () => {
+    const v = coordInput.value.trim();
+    if (!v) { state.coordIdx = -1; render(); return; }
+    const idx = coordinators.indexOf(v);
+    state.coordIdx = idx === -1 ? -1 : idx;
     render();
   });
 }
 
 // ---------- Aggregation ----------
 //
-// Mirrors the client dashboard's two-tier pattern, but sliced by Capture
-// Technician (Airtable "Vendor Name" field) instead of MP Client:
-//  - DATA.techCube / DATA.techReqCube: keyed per technician — correct for a
-//    single selected technician.
-//  - DATA.globalCube / DATA.globalReqCube: no technician (or client)
-//    dimension, independently deduped — this is the SAME "All Clients"
-//    unfiltered data the client dashboard uses, and it is exactly right for
-//    this dashboard's "All Technicians" unfiltered view too, since the source
-//    workbook's GLOBAL formulas are shared/identical across both tabs.
+// Mirrors the client/technician dashboards' two-tier pattern, sliced by
+// Capture Coordinator (Airtable "Coordinator Name" field) instead of MP
+// Client / Vendor Name:
+//  - DATA.coordCube / DATA.coordReqCube: keyed per coordinator — correct for
+//    a single selected coordinator.
+//  - DATA.globalCube / DATA.globalReqCube: no coordinator (or client/tech)
+//    dimension, independently deduped — the SAME "All Clients" unfiltered
+//    data the other two dashboards use, correct here too for "All
+//    Coordinators" since the source workbook's GLOBAL formulas are shared
+//    across all three tabs.
 
 function filteredCube(){
-  if (state.techIdx === -1){
+  if (state.coordIdx === -1){
     return DATA.globalCube.filter(b => b.y === state.fy);
   }
-  return (DATA.techCube || []).filter(b => b.y === state.fy && b.t === state.techIdx);
+  return (DATA.coordCube || []).filter(b => b.y === state.fy && b.co === state.coordIdx);
 }
 function filteredReqCube(){
-  if (state.techIdx === -1){
+  if (state.coordIdx === -1){
     return DATA.globalReqCube.filter(b => b.y === state.fy);
   }
-  return (DATA.techReqCube || []).filter(b => b.y === state.fy && b.t === state.techIdx);
+  return (DATA.coordReqCube || []).filter(b => b.y === state.fy && b.co === state.coordIdx);
 }
 
 function revenueSummary(group){
@@ -405,6 +400,20 @@ function revenueSummary(group){
   const inProgress = rows.filter(b=>b.s==='W').reduce((a,b)=>a+b.rev,0);
   const margin = rev ? (rev-cost)/rev : 0;
   return { rev, cost, margin, inProgress };
+}
+
+function turnaroundSummary(group){
+  // "Pending -> Scheduled" and "Scheduled -> Complete" average days, computed
+  // exactly like the source workbook: SUM(day-count field) / completed-models
+  // count for the same Complete-status, region, FY slice.
+  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
+  const models = rows.reduce((a,b)=>a+b.models,0);
+  const p2s = rows.reduce((a,b)=>a+(b.p2sSum||0),0);
+  const s2c = rows.reduce((a,b)=>a+(b.s2cSum||0),0);
+  return {
+    pendingToScheduled: models ? Math.round((p2s/models)*100)/100 : null,
+    scheduledToComplete: models ? Math.round((s2c/models)*100)/100 : null,
+  };
 }
 
 function monthlySeries(group, field, status){
@@ -456,39 +465,19 @@ function modelsMonthly(group, kind){
   return jobsMonthly(group, kind);
 }
 
-function ctSummary(){
-  // CT Satisfaction is not region-sliced in the source workbook — read straight
-  // off the GLOBAL('ALL') bucket, same grain used for revenue/jobs/models.
-  const rows = filteredCube().filter(b => regionMatches(b.r, 'GLOBAL') && b.s==='C');
-  const resp = rows.reduce((a,b)=>a+(b.ctCsatResp||0),0);
-  const sum = rows.reduce((a,b)=>a+(b.ctCsatSum||0),0);
-  return { resp, avg: resp ? Math.round((sum/resp)*10)/10 : null };
-}
-
-function ctMonthly(){
-  const rows = filteredCube().filter(b => regionMatches(b.r, 'GLOBAL') && b.s==='C');
-  const resp = new Array(12).fill(0), sum = new Array(12).fill(0);
-  rows.forEach(b => { resp[b.m-1] += (b.ctCsatResp||0); sum[b.m-1] += (b.ctCsatSum||0); });
-  return resp.map((r,i) => r ? Math.round((sum[i]/r)*10)/10 : null);
-}
-
 function top10(){
-  // Top 10 Technicians by Cost (labor payout), mirroring the client dashboard's
-  // Top 10 Clients by Revenue table but ranked by CT Rate USD (cost) instead —
-  // for technicians, "cost" to Matterport IS their earnings/payout.
-  // Note: the source spreadsheet's per-row "% of Total" formula divides by FY
-  // total REVENUE (a copy/paste artifact from the client tab), while its own
-  // Top-10-subtotal row divides by FY total COST. This rebuild uses total cost
-  // consistently for every row, which is the mathematically correct version.
-  const technicians = DATA.technicians || [];
-  const rows = (DATA.techYear || []).filter(ty => ty.y === state.fy && (state.techIdx === -1 || ty.t === state.techIdx));
-  const globalCost = revenueSummary('GLOBAL').cost;
-  return rows.slice().sort((a,b)=>b.cost-a.cost).slice(0,10).map(r => ({
-    tech: technicians[r.t] || 'Unknown',
+  // Top 10 Coordinators by Revenue, with total Capture Size (sq ft requested)
+  // — matches the source workbook's columns exactly (Completed / CLM / Rev /
+  // Capture Size). Note the source table has NO "% of total" column on this
+  // tab, unlike the Client and Technician dashboards' Top 10 tables.
+  const coordinators = DATA.coordinators || [];
+  const rows = (DATA.coordYear || []).filter(cy => cy.y === state.fy && (state.coordIdx === -1 || cy.co === state.coordIdx));
+  return rows.slice().sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
+    coord: coordinators[r.co] || 'Unknown',
     completed: r.jobs,
     clm: r.clm,
-    cost: r.cost,
-    pct: globalCost ? r.cost/globalCost : 0
+    rev: r.rev,
+    captureSize: r.captureSize,
   }));
 }
 
@@ -526,7 +515,7 @@ function buildLayout(){
         <div class="chart-box"><canvas id="chartRevCost"></canvas></div>
       </div>
       <div class="panel">
-        <h4>Top 10 Technicians by Cost</h4>
+        <h4>Top 10 Coordinators by Revenue</h4>
         <div id="top10Table"></div>
       </div>
     </div>
@@ -548,14 +537,6 @@ function buildLayout(){
       <div class="panel"><h4>Monthly Count of Delivered Models</h4><div class="chart-box"><canvas id="chartModelsCompleted"></canvas></div></div>
       <div class="panel"><h4>Requested vs Completed (Current FY Requests) — GLOBAL</h4><div class="chart-box"><canvas id="chartModelsReqComp"></canvas></div></div>
     </div>
-
-    <div class="section">
-      <div class="section-title"><span class="sq">■</span> CT Satisfaction</div>
-      <div class="kpi-grid" id="ctCards" style="grid-template-columns:1fr;"></div>
-    </div>
-    <div class="section">
-      <div class="panel"><h4>Monthly CT Satisfaction Score</h4><div class="chart-box"><canvas id="chartCtScore"></canvas></div></div>
-    </div>
   `;
 }
 
@@ -563,6 +544,7 @@ function renderRevenueCards(){
   const el = document.getElementById('revenueCards');
   el.innerHTML = REGION_GROUPS.map(g => {
     const s = revenueSummary(g);
+    const t = turnaroundSummary(g);
     return `
       <div class="kpi-card ${g==='GLOBAL'?'':'dim'}">
         <h3>${g}</h3>
@@ -570,6 +552,8 @@ function renderRevenueCards(){
         <div class="kpi-row"><span class="lbl">Total Cost</span><span class="val">${fmtUSD(s.cost)}</span></div>
         <div class="kpi-row"><span class="lbl">Margin</span><span class="val ${marginClass(s.margin)}">${fmtPct(s.margin)}</span></div>
         <div class="kpi-row"><span class="lbl">In Progress FY</span><span class="val">${fmtUSD(s.inProgress)}</span></div>
+        <div class="kpi-row"><span class="lbl">Pending → Scheduled</span><span class="val">${fmtDays(t.pendingToScheduled)}</span></div>
+        <div class="kpi-row"><span class="lbl">Scheduled → Complete</span><span class="val">${fmtDays(t.scheduledToComplete)}</span></div>
       </div>`;
   }).join('');
 }
@@ -592,21 +576,18 @@ function renderRevCostChart(){
 function renderTop10(){
   const rows = top10();
   const el = document.getElementById('top10Table');
-  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No cost recorded for this selection.</p>'; return; }
+  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No revenue recorded for this selection.</p>'; return; }
   el.innerHTML = `
     <table>
-      <thead><tr><th>Technician</th><th class="num">Completed</th><th class="num">CLM</th><th class="num">Cost (USD)</th><th class="num">% of Total Cost</th></tr></thead>
+      <thead><tr><th>Coordinator</th><th class="num">Completed</th><th class="num">CLM</th><th class="num">Rev. (USD)</th><th class="num">Capture Size</th></tr></thead>
       <tbody>
         ${rows.map((r,i) => `
           <tr>
-            <td><span class="rank">${i+1}</span>${r.tech}</td>
+            <td><span class="rank">${i+1}</span>${r.coord}</td>
             <td class="num">${fmtNum(r.completed)}</td>
             <td class="num">${fmtNum(r.clm)}</td>
-            <td class="num">${fmtUSD(r.cost)}</td>
-            <td class="num">
-              ${fmtPct(r.pct)}
-              <div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(100,r.pct*100)}%"></div></div>
-            </td>
+            <td class="num">${fmtUSD(r.rev)}</td>
+            <td class="num">${fmtNum(r.captureSize)}</td>
           </tr>`).join('')}
       </tbody>
     </table>`;
@@ -642,17 +623,6 @@ function renderModelsCards(){
         <div class="kpi-row"><span class="lbl">In Progress FY</span><span class="val">${fmtNum(wip)}</span></div>
       </div>`;
   }).join('');
-}
-
-function renderCtCards(){
-  const el = document.getElementById('ctCards');
-  const s = ctSummary();
-  el.innerHTML = `
-    <div class="kpi-card">
-      <h3>${state.techIdx === -1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}</h3>
-      <div class="kpi-row"><span class="lbl">CT Satisfaction (FY avg)</span><span class="val">${s.avg!==null? s.avg+' ★' : '-- ★'}</span></div>
-      <div class="kpi-row"><span class="lbl">Responses</span><span class="val">${fmtNum(s.resp)}</span></div>
-    </div>`;
 }
 
 function renderJobsCharts(){
@@ -697,21 +667,9 @@ function renderModelsCharts(){
   });
 }
 
-function renderCtChart(){
-  upsertChart('chartCtScore', {
-    type:'line',
-    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'CT Satisfaction', data: ctMonthly(), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3, spanGaps:true },
-    ]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
-      scales:{ y:{ suggestedMin:0, suggestedMax:5, ticks:{ callback:(v)=>v+'★' } } } }
-  });
-}
-
 function render(){
   document.getElementById('scopeLabel').textContent =
-    `Fiscal Year ${state.fy} · ${state.techIdx===-1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}`;
+    `Fiscal Year ${state.fy} · ${state.coordIdx===-1 ? 'All Coordinators' : (DATA.coordinators[state.coordIdx] || 'Unknown')}`;
   renderRevenueCards();
   renderRevCostChart();
   renderTop10();
@@ -719,8 +677,6 @@ function render(){
   renderJobsCharts();
   renderModelsCards();
   renderModelsCharts();
-  renderCtCards();
-  renderCtChart();
 }
 
 document.getElementById('navToggle').addEventListener('click', (e) => {
@@ -739,8 +695,8 @@ document.addEventListener('click', (e) => {
       document.getElementById('app').innerHTML = '<div class="loading">This dashboard hasn\'t completed its first Airtable data sync yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action (or wait for the next daily run) to populate it.</div>';
       return;
     }
-    if (!DATA.techCube || !DATA.technicians){
-      document.getElementById('app').innerHTML = '<div class="loading">Technician-level data hasn\'t synced yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action to populate it (needs the updated build script).</div>';
+    if (!DATA.coordCube || !DATA.coordinators){
+      document.getElementById('app').innerHTML = '<div class="loading">Coordinator-level data hasn\'t synced yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action to populate it (needs the updated build script).</div>';
       return;
     }
     buildLayout();
