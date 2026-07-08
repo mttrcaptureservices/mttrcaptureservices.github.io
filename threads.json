@@ -1,41 +1,41 @@
 {
-"lastUpdated": "2026-07-07T23:59:43Z",
-"threads": [
-{
-"author": "Don Fraser",
-"initials": "DF",
-"color": "#2563eb",
-"summary": "Flagged that adding a Custom Client Travel Charge in the Spec Ops 2.0 base incorrectly triggers an automated CT travel payout to the technician, when only Total Travel Distance and Custom CT Travel Fee should affect that field.",
-"statusCls": "badge-investigating",
-"status": "Fix in progress",
-"date": "6/9",
-"jiraKey": "COP-1948",
-"note": "Blocked on Adjet Kodia implementing the CT travel payout fix in COP-1948 (In Progress) — no action needed from Ricardo right now.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#d97706",
-"summary": "Requested a dedicated Teams alert for Vacasa jobs where total travel distance exceeds 170 miles, posted to the Vacasa Ops channel and tagging Kevin and Jordan for client approval.",
-"statusCls": "badge-todo",
-"status": "Queued, not started",
-"date": "7/7",
-"jiraKey": "COP-1982",
-"note": "Blocked on building the new Airtable automation tracked in COP-1982 (To Do) — queued, work has not started yet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#0891b2",
-"summary": "Reported being unable to create an adjustment line item for a job on the view-only all jobs tab, due to a data sync failure ('last sync failed 5 hours ago, data source unavailable').",
-"statusCls": "badge-todo",
-"status": "Queued, not started",
-"date": "7/7",
-"jiraKey": "COP-1985",
-"note": "Blocked on fixing the sync failure and adding adjustment reason/job rate/CT rate fields to her pending jobs view, tracked in COP-1985 — queued, work has not started yet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783446059400"
-}
-]
+  "lastUpdated": "2026-07-07T16:00:00-07:00",
+  "threads": [
+    {
+      "author": "Don Fraser",
+      "initials": "DF",
+      "color": "#F4B400",
+      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base incorrectly triggers an automated CT travel payout, even though that field should be independent from client-facing travel charges.",
+      "statusCls": "badge-investigating",
+      "status": "Fix in development",
+      "date": "6/9",
+      "jiraKey": "COP-1948",
+      "note": "Waiting on Adjet Kodia to implement the fix (keep the 60/40 payout split, route Custom CT Travel Payout uplifts into travel payout without touching Client Total Travel Charge). Not on Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#4285F4",
+      "summary": "Requesting a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles, posted to the Vacasa Ops channel and tagging Kevin and Jordan for client approval.",
+      "statusCls": "badge-todo",
+      "status": "In queue",
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "Needs a new automation build; ticket created today, work not yet started. Waiting on engineering, not on requester.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#34A853",
+      "summary": "Unable to create an adjustment line item for a job due to a data sync failure; also wants adjustment reason/job rate/CT rate fields added to her pending jobs view.",
+      "statusCls": "badge-todo",
+      "status": "In queue",
+      "date": "7/7",
+      "jiraKey": "COP-1985",
+      "note": "Ticket covers both the sync failure and the view field additions. Caitlin has acknowledged and is waiting on engineering; no further input needed from her.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783446059400"
+    }
+  ]
 }
