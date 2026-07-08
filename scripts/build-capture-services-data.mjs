@@ -4,25 +4,45 @@
  *
  * Pulls records from the GLOBAL Airtable table ("AT Quarterly Performance" view),
  * aggregates them into compact buckets, and writes capture-services/data.json for
- * the static dashboard (mttrcaptureservices.github.io/capture-services/) to
- * consume client-side.
+ * the static dashboards (mttrcaptureservices.github.io/capture-services/) to
+ * consume client-side. Feeds BOTH the Capture Services & Client Dashboard
+ * (index.html) and the Capture Technician Dashboard (technician.html) from a
+ * single Airtable fetch/pass — adding the technician-sliced cubes below is
+ * purely additive (new top-level keys) so index.html's existing behavior is
+ * unaffected.
  *
  * Requires: AIRTABLE_TOKEN env var (Airtable Personal Access Token with read
  * access to base appGPiaxVj615p7EP). Node 18+ (uses built-in fetch).
  *
  * Two-tier bucketing, mirroring the source Excel/Google-Sheet formulas exactly:
  *  - `cube` / `reqCube`: keyed by client (+ year/month/region/status) — used when
- *    the dashboard's MP Client filter is set to a specific client.
+ *    the Client Dashboard's MP Client filter is set to a specific client.
  *  - `globalCube` / `globalReqCube`: keyed WITHOUT a client dimension, with their
- *    own independent Job-ID dedup — used for the "All Clients" (unfiltered) view.
- *    This matters because a true "no client filter" unique-Job-ID count is NOT
- *    the same as summing already-per-client-deduped counts (the same Job ID can
- *    appear under slightly different client-string values). The original
- *    spreadsheet's GLOBAL formulas run their own unfiltered UNIQUE(FILTER(...))
- *    rather than summing the per-client breakdowns, so this replicates that.
+ *    own independent Job-ID dedup — used for the "All Clients" (unfiltered) view,
+ *    AND as the "All Technicians" unfiltered view on the Technician Dashboard
+ *    (same underlying GLOBAL-table math; the Excel's own formulas use identical
+ *    unfiltered SUMIFS/UNIQUE logic on both tabs when no slicer is set).
+ *  - `techCube` / `techReqCube`: keyed by technician (+ year/month/region/status)
+ *    — used when the Technician Dashboard's Capture Technician filter is set to
+ *    a specific person. Mirrors `cube`/`reqCube` exactly, just keyed by the
+ *    Airtable `Vendor Name` field instead of `MP Client`.
+ *  - `globalCube` additionally carries `ctCsatResp`/`ctCsatSum` (Capture-Tech
+ *    satisfaction, field `CSAT - Capture Tech Satisfaction`) so the Technician
+ *    Dashboard's CSAT card can read it from the SAME bucket used for
+ *    revenue/jobs/models, rather than a duplicate structure.
+ *  - `clientYear`: per-client per-year revenue/jobs/clm, for the Client
+ *    Dashboard's Top 10 Clients by Revenue table.
+ *  - `techYear`: per-technician per-year cost/jobs/clm, for the Technician
+ *    Dashboard's Top 10 Technicians by Cost table.
+ *
+ * This matters because a true "no filter" unique-Job-ID count is NOT the same
+ * as summing already-per-client/per-tech-deduped counts (the same Job ID can
+ * appear under slightly different client/vendor string values). The original
+ * spreadsheet's GLOBAL formulas run their own unfiltered UNIQUE(FILTER(...))
+ * rather than summing the per-slice breakdowns, so this replicates that.
  *
  * See project memory "capture-services-dashboard-data-model" for the full
- * formula-to-field mapping this script implements.
+ * formula-to-field mapping this script implements (tab 1 + tab 2).
  */
 
 import fs from 'fs';
@@ -33,6 +53,7 @@ const VIEW_ID = 'viw2z6hlI0ASSIL12'; // Interface Month Year - Quarterly Perform
 
 const FIELDS = [
   'MP Client',
+  'Vendor Name',
   'Sync Source_Derived',
   'Region_Derived',
   'USD',
@@ -44,6 +65,7 @@ const FIELDS = [
   'Job ID',
   'CSAT - Satisfaction of Service',
   'CSAT - Service Score',
+  'CSAT - Capture Tech Satisfaction',
 ];
 
 const TOKEN = process.env.AIRTABLE_TOKEN;
@@ -123,17 +145,31 @@ function main() {
         return clientIndex.get(key);
       }
 
+      const techIndex = new Map();
+      function techIdx(name) {
+        const key = (name || 'Unknown').trim();
+        if (!techIndex.has(key)) techIndex.set(key, techIndex.size);
+        return techIndex.get(key);
+      }
+
       const compCube = new Map(); // per-client: c|y|m|r|s
-      const globalCube = new Map(); // no client dim: y|m|r|s
+      const globalCube = new Map(); // no client/tech dim: y|m|r|s (also carries ctCsat*)
       const reqCube = new Map(); // per-client: c|y|m|r
       const globalReqCube = new Map(); // no client dim: y|m|r
-      const clientYear = new Map(); // c|y (Top 10 support)
+      const clientYear = new Map(); // c|y (Top 10 Clients support)
+
+      const techCube = new Map(); // per-technician: t|y|m|r|s
+      const techReqCube = new Map(); // per-technician: t|y|m|r
+      const techYear = new Map(); // t|y (Top 10 Technicians support)
+
       const fySet = new Set();
 
       for (const rec of records) {
         const f = rec.fields;
         const client = (f['MP Client'] || 'Unknown').trim();
         const c = clientIdx(client);
+        const vendor = f['Vendor Name'] ? f['Vendor Name'].trim() : null;
+        const t = vendor ? techIdx(vendor) : null;
         const region = regionBucket(f['Sync Source_Derived'], f['Region_Derived']);
         const status = statusCode(f['Interface Reporting Status']);
         const y = f['Interface Reporting Year'];
@@ -143,6 +179,7 @@ function main() {
         const jobId = f['Job ID'] || null;
         const csatScore = f['CSAT - Satisfaction of Service'];
         const csatHigh = f['CSAT - Service Score'];
+        const ctCsatScore = f['CSAT - Capture Tech Satisfaction'];
 
         if (y) fySet.add(y);
 
@@ -167,7 +204,21 @@ function main() {
             bump(
               globalCube,
               `${y}|${m}|${rg}|${status}`,
-              () => ({ y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, csatResp: 0, csatHigh: 0, csatSum: 0 }),
+              () => ({
+                y,
+                m,
+                r: rg,
+                s: status,
+                rev: 0,
+                cost: 0,
+                jobIds: new Set(),
+                models: 0,
+                csatResp: 0,
+                csatHigh: 0,
+                csatSum: 0,
+                ctCsatResp: 0,
+                ctCsatSum: 0,
+              }),
               (b) => {
                 b.rev += usd;
                 b.cost += cost;
@@ -178,8 +229,32 @@ function main() {
                   b.csatSum += csatScore;
                   if (typeof csatHigh === 'number') b.csatHigh += csatHigh;
                 }
+                if (typeof ctCsatScore === 'number') {
+                  b.ctCsatResp += 1;
+                  b.ctCsatSum += ctCsatScore;
+                }
               }
             );
+            if (t !== null) {
+              // Reuses the SAME `rg` from the outer `for (const rg of [region, 'ALL'])`
+              // loop this block lives in — do not add a second nested fan-out loop
+              // here, or every technician bucket gets double/quadruple-counted.
+              bump(
+                techCube,
+                `${t}|${y}|${m}|${rg}|${status}`,
+                () => ({ t, y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, ctCsatResp: 0, ctCsatSum: 0 }),
+                (b) => {
+                  b.rev += usd;
+                  b.cost += cost;
+                  if (jobId) b.jobIds.add(jobId);
+                  b.models += 1;
+                  if (typeof ctCsatScore === 'number') {
+                    b.ctCsatResp += 1;
+                    b.ctCsatSum += ctCsatScore;
+                  }
+                }
+              );
+            }
           }
         }
 
@@ -204,6 +279,17 @@ function main() {
                 if (status === 'C') b.comp.add(jobId);
               }
             );
+            if (t !== null) {
+              bump(
+                techReqCube,
+                `${t}|${reqDate.year}|${reqDate.month}|${rg}`,
+                () => ({ t, y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
+                (b) => {
+                  b.req.add(jobId);
+                  if (status === 'C') b.comp.add(jobId);
+                }
+              );
+            }
           }
           fySet.add(reqDate.year);
         }
@@ -219,10 +305,22 @@ function main() {
               cy.clm += 1;
             }
           );
+          if (t !== null) {
+            bump(
+              techYear,
+              `${t}|${y}`,
+              () => ({ t, y, cost: 0, jobIds: new Set(), clm: 0 }),
+              (ty) => {
+                ty.cost += cost;
+                if (jobId) ty.jobIds.add(jobId);
+                ty.clm += 1;
+              }
+            );
+          }
         }
       }
 
-      function cubeOut(map, hasClient) {
+      function cubeOut(map, keyName) {
         return Array.from(map.values()).map((b) => {
           const o = {
             y: b.y,
@@ -233,18 +331,24 @@ function main() {
             cost: round2(b.cost),
             jobs: b.jobIds.size,
             models: b.models,
-            csatResp: b.csatResp,
-            csatHigh: b.csatHigh,
-            csatSum: round2(b.csatSum),
           };
-          if (hasClient) o.c = b.c;
+          if ('csatResp' in b) {
+            o.csatResp = b.csatResp;
+            o.csatHigh = b.csatHigh;
+            o.csatSum = round2(b.csatSum);
+          }
+          if ('ctCsatResp' in b) {
+            o.ctCsatResp = b.ctCsatResp;
+            o.ctCsatSum = round2(b.ctCsatSum);
+          }
+          if (keyName) o[keyName] = b[keyName];
           return o;
         });
       }
-      function reqCubeOut(map, hasClient) {
+      function reqCubeOut(map, keyName) {
         return Array.from(map.values()).map((b) => {
           const o = { y: b.y, m: b.m, r: b.r, req: b.req.size, comp: b.comp.size };
-          if (hasClient) o.c = b.c;
+          if (keyName) o[keyName] = b[keyName];
           return o;
         });
       }
@@ -257,7 +361,16 @@ function main() {
         clm: cy.clm,
       }));
 
+      const techYearOut = Array.from(techYear.values()).map((ty) => ({
+        t: ty.t,
+        y: ty.y,
+        cost: round2(ty.cost),
+        jobs: ty.jobIds.size,
+        clm: ty.clm,
+      }));
+
       const clients = Array.from(clientIndex.keys());
+      const technicians = Array.from(techIndex.keys());
       const fiscalYears = Array.from(fySet).sort((a, b) => a - b);
 
       const out = {
@@ -265,19 +378,23 @@ function main() {
         sourceRecordCount: records.length,
         fiscalYears,
         clients,
-        cube: cubeOut(compCube, true),
-        globalCube: cubeOut(globalCube, false),
-        reqCube: reqCubeOut(reqCube, true),
-        globalReqCube: reqCubeOut(globalReqCube, false),
+        technicians,
+        cube: cubeOut(compCube, 'c'),
+        globalCube: cubeOut(globalCube, null),
+        reqCube: reqCubeOut(reqCube, 'c'),
+        globalReqCube: reqCubeOut(globalReqCube, null),
         clientYear: clientYearOut,
+        techCube: cubeOut(techCube, 't'),
+        techReqCube: reqCubeOut(techReqCube, 't'),
+        techYear: techYearOut,
       };
 
       const outPath = 'capture-services/data.json';
       fs.mkdirSync('capture-services', { recursive: true });
       fs.writeFileSync(outPath, JSON.stringify(out));
       console.error(
-        `Wrote ${outPath} — ${clients.length} clients, ${fiscalYears.length} fiscal years, ` +
-          `${out.cube.length} per-client buckets, ${out.globalCube.length} global buckets.`
+        `Wrote ${outPath} — ${clients.length} clients, ${technicians.length} technicians, ${fiscalYears.length} fiscal years, ` +
+          `${out.cube.length} per-client buckets, ${out.globalCube.length} global buckets, ${out.techCube.length} per-tech buckets.`
       );
     })
     .catch((err) => {
