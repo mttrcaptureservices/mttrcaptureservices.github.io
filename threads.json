@@ -1,29 +1,17 @@
 {
-  "lastUpdated": "2026-07-08T17:27:17Z",
+  "lastUpdated": "2026-07-08T23:14:22Z",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#E67E22",
-      "summary": "Flagged that in the Spec Ops 2.0 base, adding a Custom Client Travel Charge also auto-populates an automated technician travel payout, which shouldn't sync since that field is custom.",
-      "statusCls": "badge-todo",
-      "status": "Queued for dev",
+      "color": "#D97706",
+      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base is unexpectedly triggering an automated CT travel payout, when only Total Travel Distance and Custom CT Travel Fee should drive that calculation.",
+      "statusCls": "badge-investigating",
+      "status": "In Progress (COP-1948)",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Fix confirmed (keep the 60/40 split as-is; route the Custom CT Travel Payout uplift to payout without touching Client Total Travel Charge) — Adjet Kodia owns implementation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#2980B9",
-      "summary": "Requested a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles that need client approval, posted to the Vacasa Ops channel and tagging Kevin and Jordan.",
-      "statusCls": "badge-todo",
-      "status": "Building automation",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "New automation build required for the 170-mile alert; Ricardo owns the build and will update the thread once it's live.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+      "note": "Requirements confirmed with Troy Lowry (keep 60/40 split, Custom CT Travel Payout uplift should flow into payout without touching Client Total Travel Charge); Troy Lowry owns implementing the fix.",
+      "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support"
     }
   ]
 }
