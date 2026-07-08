@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capture Services Dashboard</title>
+<title>Capture Technician Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
   :root{
@@ -290,19 +290,19 @@
   <div class="breadcrumb">
     <span class="crumb-root">Capture Services</span>
     <span class="crumb-sep">›</span>
-    <span class="crumb-current">Client Dashboard</span>
+    <span class="crumb-current">Technician Dashboard</span>
   </div>
   <div class="nav-panel" id="navPanel">
-    <a href="index.html" class="active">📊 Capture Services &amp; Client Dashboard</a>
-    <a href="technician.html">🧑‍🔧 Capture Technician Dashboard</a>
+    <a href="index.html">📊 Capture Services &amp; Client Dashboard</a>
+    <a href="technician.html" class="active">🧑‍🔧 Capture Technician Dashboard</a>
     <div class="nav-note">More views coming soon</div>
   </div>
 </nav>
 
 <header>
   <div>
-    <h1>Capture Services Dashboard</h1>
-    <div class="sub">Revenue · Jobs · Models · CSAT — live from Airtable</div>
+    <h1>Capture Technician Dashboard</h1>
+    <div class="sub">Revenue · Jobs · Models · CT Satisfaction — live from Airtable</div>
   </div>
   <div class="filters">
     <div>
@@ -310,9 +310,9 @@
       <select id="fySelect"></select>
     </div>
     <div>
-      <label for="clientSelect">MP Client</label>
-      <input list="clientList" id="clientSelect" placeholder="All Clients" autocomplete="off">
-      <datalist id="clientList"></datalist>
+      <label for="techSelect">Capture Technician</label>
+      <input list="techList" id="techSelect" placeholder="All Technicians" autocomplete="off">
+      <datalist id="techList"></datalist>
     </div>
   </div>
 </header>
@@ -330,17 +330,16 @@ const REGION_GROUPS = ['GLOBAL','NORAM','INTL','SpecOps'];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 let DATA = null;
-let state = { fy: null, clientIdx: -1 };
+let state = { fy: null, techIdx: -1 };
 
 const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
-const fmtUSD2 = (n) => '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 const fmtPct = (n) => (n*100).toFixed(1) + '%';
 const fmtNum = (n) => Math.round(n).toLocaleString('en-US');
 
 function regionMatches(r, group){
   // Buckets are fanned out per-record into both a specific region tag AND an
-  // independent 'ALL' tag (see build-data.mjs). GLOBAL must read the 'ALL' tag
-  // only — matching "any specific region" would double-count against it.
+  // independent 'ALL' tag (see build-capture-services-data.mjs). GLOBAL must
+  // read the 'ALL' tag only — matching "any specific region" would double-count.
   if (group === 'GLOBAL') return r === 'ALL';
   if (group === 'NORAM') return r === 'NORAM';
   if (group === 'INTL') return r === 'EMEA' || r === 'APAC';
@@ -361,38 +360,42 @@ function populateFilters(){
   fySel.value = state.fy;
   fySel.addEventListener('change', () => { state.fy = Number(fySel.value); render(); });
 
-  const list = document.getElementById('clientList');
-  list.innerHTML = DATA.clients.slice().sort((a,b)=>a.localeCompare(b)).map(c => `<option value="${c}"></option>`).join('');
-  const clientInput = document.getElementById('clientSelect');
-  clientInput.addEventListener('change', () => {
-    const v = clientInput.value.trim();
-    if (!v) { state.clientIdx = -1; render(); return; }
-    const idx = DATA.clients.indexOf(v);
-    state.clientIdx = idx === -1 ? -1 : idx;
+  const list = document.getElementById('techList');
+  const technicians = DATA.technicians || [];
+  list.innerHTML = technicians.slice().sort((a,b)=>a.localeCompare(b)).map(t => `<option value="${t}"></option>`).join('');
+  const techInput = document.getElementById('techSelect');
+  techInput.addEventListener('change', () => {
+    const v = techInput.value.trim();
+    if (!v) { state.techIdx = -1; render(); return; }
+    const idx = technicians.indexOf(v);
+    state.techIdx = idx === -1 ? -1 : idx;
     render();
   });
 }
 
 // ---------- Aggregation ----------
 //
-// Two data sources per the builder script:
-//  - DATA.cube / DATA.reqCube: keyed per client — correct for a single selected client.
-//  - DATA.globalCube / DATA.globalReqCube: no client dimension, independently deduped —
-//    required for "All Clients" so Job-ID uniqueness is computed across the whole
-//    dataset rather than summed from per-client subsets (matches the source workbook,
-//    whose GLOBAL formulas run their own unfiltered UNIQUE(), not a sum of client rows).
+// Mirrors the client dashboard's two-tier pattern, but sliced by Capture
+// Technician (Airtable "Vendor Name" field) instead of MP Client:
+//  - DATA.techCube / DATA.techReqCube: keyed per technician — correct for a
+//    single selected technician.
+//  - DATA.globalCube / DATA.globalReqCube: no technician (or client)
+//    dimension, independently deduped — this is the SAME "All Clients"
+//    unfiltered data the client dashboard uses, and it is exactly right for
+//    this dashboard's "All Technicians" unfiltered view too, since the source
+//    workbook's GLOBAL formulas are shared/identical across both tabs.
 
 function filteredCube(){
-  if (state.clientIdx === -1){
+  if (state.techIdx === -1){
     return DATA.globalCube.filter(b => b.y === state.fy);
   }
-  return DATA.cube.filter(b => b.y === state.fy && b.c === state.clientIdx);
+  return (DATA.techCube || []).filter(b => b.y === state.fy && b.t === state.techIdx);
 }
 function filteredReqCube(){
-  if (state.clientIdx === -1){
+  if (state.techIdx === -1){
     return DATA.globalReqCube.filter(b => b.y === state.fy);
   }
-  return DATA.reqCube.filter(b => b.y === state.fy && b.c === state.clientIdx);
+  return (DATA.techReqCube || []).filter(b => b.y === state.fy && b.t === state.techIdx);
 }
 
 function revenueSummary(group){
@@ -424,8 +427,6 @@ function jobsSummary(group){
 function modelsSummary(group){
   const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
   const completed = rows.reduce((a,b)=>a+b.models,0);
-  // Models "requested" mirrors jobs requested cube proportionally isn't tracked separately server-side beyond job-level;
-  // reuse the same request cube (Job ID based) as the Excel does for both Jobs and Models "requested" sections.
   const reqRows = filteredReqCube().filter(b => regionMatches(b.r, group));
   const requested = reqRows.reduce((a,b)=>a+b.req,0);
   const completedOfReq = reqRows.reduce((a,b)=>a+b.comp,0);
@@ -433,7 +434,6 @@ function modelsSummary(group){
 }
 
 function jobsMonthly(group, kind){
-  // kind: 'completed' (by completion month) or 'requested'/'completedOfReq' (by request month)
   if (kind === 'completed'){
     const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
     const out = new Array(12).fill(0);
@@ -453,39 +453,42 @@ function modelsMonthly(group, kind){
     rows.forEach(b => out[b.m-1] += b.models);
     return out;
   }
-  // requested/completedOfReq models share the same Job-ID request cube as jobs (matches source workbook)
   return jobsMonthly(group, kind);
 }
 
-function csatSummary(group){
-  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
-  const responses = rows.reduce((a,b)=>a+b.csatResp,0);
-  const high = rows.reduce((a,b)=>a+b.csatHigh,0);
-  const scoreSum = rows.reduce((a,b)=>a+b.csatSum,0);
-  return {
-    responses, high,
-    rate: responses ? high/responses : 0,
-    avg: responses ? Math.round((scoreSum/responses)*10)/10 : null
-  };
+function ctSummary(){
+  // CT Satisfaction is not region-sliced in the source workbook — read straight
+  // off the GLOBAL('ALL') bucket, same grain used for revenue/jobs/models.
+  const rows = filteredCube().filter(b => regionMatches(b.r, 'GLOBAL') && b.s==='C');
+  const resp = rows.reduce((a,b)=>a+(b.ctCsatResp||0),0);
+  const sum = rows.reduce((a,b)=>a+(b.ctCsatSum||0),0);
+  return { resp, avg: resp ? Math.round((sum/resp)*10)/10 : null };
 }
 
-function csatMonthly(group, field){
-  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
-  const resp = new Array(12).fill(0), high = new Array(12).fill(0);
-  rows.forEach(b => { resp[b.m-1]+=b.csatResp; high[b.m-1]+=b.csatHigh; });
-  if (field==='rate') return resp.map((r,i)=> r? high[i]/r : 0);
-  return resp; // 'responses'
+function ctMonthly(){
+  const rows = filteredCube().filter(b => regionMatches(b.r, 'GLOBAL') && b.s==='C');
+  const resp = new Array(12).fill(0), sum = new Array(12).fill(0);
+  rows.forEach(b => { resp[b.m-1] += (b.ctCsatResp||0); sum[b.m-1] += (b.ctCsatSum||0); });
+  return resp.map((r,i) => r ? Math.round((sum[i]/r)*10)/10 : null);
 }
 
 function top10(){
-  const rows = DATA.clientYear.filter(cy => cy.y === state.fy && (state.clientIdx === -1 || cy.c === state.clientIdx));
-  const globalRev = revenueSummary('GLOBAL').rev;
-  return rows.slice().sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
-    client: DATA.clients[r.c],
+  // Top 10 Technicians by Cost (labor payout), mirroring the client dashboard's
+  // Top 10 Clients by Revenue table but ranked by CT Rate USD (cost) instead —
+  // for technicians, "cost" to Matterport IS their earnings/payout.
+  // Note: the source spreadsheet's per-row "% of Total" formula divides by FY
+  // total REVENUE (a copy/paste artifact from the client tab), while its own
+  // Top-10-subtotal row divides by FY total COST. This rebuild uses total cost
+  // consistently for every row, which is the mathematically correct version.
+  const technicians = DATA.technicians || [];
+  const rows = (DATA.techYear || []).filter(ty => ty.y === state.fy && (state.techIdx === -1 || ty.t === state.techIdx));
+  const globalCost = revenueSummary('GLOBAL').cost;
+  return rows.slice().sort((a,b)=>b.cost-a.cost).slice(0,10).map(r => ({
+    tech: technicians[r.t] || 'Unknown',
     completed: r.jobs,
     clm: r.clm,
-    rev: r.rev,
-    pct: globalRev ? r.rev/globalRev : 0
+    cost: r.cost,
+    pct: globalCost ? r.cost/globalCost : 0
   }));
 }
 
@@ -523,7 +526,7 @@ function buildLayout(){
         <div class="chart-box"><canvas id="chartRevCost"></canvas></div>
       </div>
       <div class="panel">
-        <h4>Top 10 Clients by Revenue</h4>
+        <h4>Top 10 Technicians by Cost</h4>
         <div id="top10Table"></div>
       </div>
     </div>
@@ -547,12 +550,11 @@ function buildLayout(){
     </div>
 
     <div class="section">
-      <div class="section-title"><span class="sq">■</span> Overall CSAT</div>
-      <div class="kpi-grid" id="csatCards"></div>
+      <div class="section-title"><span class="sq">■</span> CT Satisfaction</div>
+      <div class="kpi-grid" id="ctCards" style="grid-template-columns:1fr;"></div>
     </div>
-    <div class="section grid-2">
-      <div class="panel"><h4>Monthly CSAT Responses &amp; Score (4+★) — GLOBAL</h4><div class="chart-box"><canvas id="chartCsatResp"></canvas></div></div>
-      <div class="panel"><h4>Monthly CSAT Rate — GLOBAL</h4><div class="chart-box"><canvas id="chartCsatRate"></canvas></div></div>
+    <div class="section">
+      <div class="panel"><h4>Monthly CT Satisfaction Score</h4><div class="chart-box"><canvas id="chartCtScore"></canvas></div></div>
     </div>
   `;
 }
@@ -590,17 +592,17 @@ function renderRevCostChart(){
 function renderTop10(){
   const rows = top10();
   const el = document.getElementById('top10Table');
-  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No revenue recorded for this selection.</p>'; return; }
+  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No cost recorded for this selection.</p>'; return; }
   el.innerHTML = `
     <table>
-      <thead><tr><th>Client</th><th class="num">Completed</th><th class="num">CLM</th><th class="num">Rev. (USD)</th><th class="num">% of Total</th></tr></thead>
+      <thead><tr><th>Technician</th><th class="num">Completed</th><th class="num">CLM</th><th class="num">Cost (USD)</th><th class="num">% of Total Cost</th></tr></thead>
       <tbody>
         ${rows.map((r,i) => `
           <tr>
-            <td><span class="rank">${i+1}</span>${r.client}</td>
+            <td><span class="rank">${i+1}</span>${r.tech}</td>
             <td class="num">${fmtNum(r.completed)}</td>
             <td class="num">${fmtNum(r.clm)}</td>
-            <td class="num">${fmtUSD(r.rev)}</td>
+            <td class="num">${fmtUSD(r.cost)}</td>
             <td class="num">
               ${fmtPct(r.pct)}
               <div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(100,r.pct*100)}%"></div></div>
@@ -642,19 +644,15 @@ function renderModelsCards(){
   }).join('');
 }
 
-function renderCsatCards(){
-  const el = document.getElementById('csatCards');
-  el.innerHTML = REGION_GROUPS.map(g => {
-    const s = csatSummary(g);
-    return `
-      <div class="kpi-card ${g==='GLOBAL'?'':'dim'}">
-        <h3>${g}</h3>
-        <div class="kpi-row"><span class="lbl">CSAT Rate</span><span class="val">${s.responses? fmtPct(s.rate) : '--'}</span></div>
-        <div class="kpi-row"><span class="lbl">Responses</span><span class="val">${fmtNum(s.responses)}</span></div>
-        <div class="kpi-row"><span class="lbl">Score (4+★)</span><span class="val">${fmtNum(s.high)}</span></div>
-        <div class="kpi-row"><span class="lbl">Avg. Service Score</span><span class="val">${s.avg!==null? s.avg+' ★' : '-- ★'}</span></div>
-      </div>`;
-  }).join('');
+function renderCtCards(){
+  const el = document.getElementById('ctCards');
+  const s = ctSummary();
+  el.innerHTML = `
+    <div class="kpi-card">
+      <h3>${state.techIdx === -1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}</h3>
+      <div class="kpi-row"><span class="lbl">CT Satisfaction (FY avg)</span><span class="val">${s.avg!==null? s.avg+' ★' : '-- ★'}</span></div>
+      <div class="kpi-row"><span class="lbl">Responses</span><span class="val">${fmtNum(s.resp)}</span></div>
+    </div>`;
 }
 
 function renderJobsCharts(){
@@ -699,29 +697,21 @@ function renderModelsCharts(){
   });
 }
 
-function renderCsatCharts(){
-  upsertChart('chartCsatResp', {
-    type:'bar',
-    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Responses', data: csatMonthly('GLOBAL','responses'), backgroundColor:'#94a3b8' },
-      { label:'Score (4+★)', data: csatMonthly('GLOBAL','high'), backgroundColor:'#0ea5a0' },
-    ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
-  });
-  upsertChart('chartCsatRate', {
+function renderCtChart(){
+  upsertChart('chartCtScore', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'CSAT Rate', data: csatMonthly('GLOBAL','rate').map(v=>+(v*100).toFixed(1)), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
+      { label:'CT Satisfaction', data: ctMonthly(), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3, spanGaps:true },
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
-      scales:{ y:{ ticks:{ callback:(v)=>v+'%' }, suggestedMax:100 } } }
+      scales:{ y:{ suggestedMin:0, suggestedMax:5, ticks:{ callback:(v)=>v+'★' } } } }
   });
 }
 
 function render(){
   document.getElementById('scopeLabel').textContent =
-    `Fiscal Year ${state.fy} · ${state.clientIdx===-1 ? 'All MP Clients' : DATA.clients[state.clientIdx]}`;
+    `Fiscal Year ${state.fy} · ${state.techIdx===-1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}`;
   renderRevenueCards();
   renderRevCostChart();
   renderTop10();
@@ -729,8 +719,8 @@ function render(){
   renderJobsCharts();
   renderModelsCards();
   renderModelsCharts();
-  renderCsatCards();
-  renderCsatCharts();
+  renderCtCards();
+  renderCtChart();
 }
 
 document.getElementById('navToggle').addEventListener('click', (e) => {
@@ -747,6 +737,10 @@ document.addEventListener('click', (e) => {
     DATA = await loadData();
     if (!DATA.generatedAt || !DATA.sourceRecordCount){
       document.getElementById('app').innerHTML = '<div class="loading">This dashboard hasn\'t completed its first Airtable data sync yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action (or wait for the next daily run) to populate it.</div>';
+      return;
+    }
+    if (!DATA.techCube || !DATA.technicians){
+      document.getElementById('app').innerHTML = '<div class="loading">Technician-level data hasn\'t synced yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action to populate it (needs the updated build script).</div>';
       return;
     }
     buildLayout();
