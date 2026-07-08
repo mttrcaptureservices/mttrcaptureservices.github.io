@@ -26,14 +26,27 @@
  *    — used when the Technician Dashboard's Capture Technician filter is set to
  *    a specific person. Mirrors `cube`/`reqCube` exactly, just keyed by the
  *    Airtable `Vendor Name` field instead of `MP Client`.
+ *  - `coordCube` / `coordReqCube`: keyed by coordinator (+ year/month/region/status)
+ *    — used when the Coordinator Dashboard's Capture Coordinator filter is set
+ *    to a specific person. Mirrors `cube`/`reqCube`, keyed by the Airtable
+ *    `Coordinator Name` field (NOT `Capture Coordinator`, which is a different,
+ *    code-like field — verified `Coordinator Name` is the one holding
+ *    human-readable first names matching the source workbook's Top 10 list).
  *  - `globalCube` additionally carries `ctCsatResp`/`ctCsatSum` (Capture-Tech
  *    satisfaction, field `CSAT - Capture Tech Satisfaction`) so the Technician
  *    Dashboard's CSAT card can read it from the SAME bucket used for
- *    revenue/jobs/models, rather than a duplicate structure.
+ *    revenue/jobs/models, rather than a duplicate structure. It also carries
+ *    `p2sSum`/`s2cSum` (sums of `Pending to Scheduled (days/hrs)` and
+ *    `Scheduled to Complete (days/hrs)`) for the Coordinator Dashboard's two
+ *    turnaround-time KPIs in its "All Coordinators" unfiltered view — divide
+ *    by the bucket's own `models` count to get the workbook's "X.XX days" figure.
  *  - `clientYear`: per-client per-year revenue/jobs/clm, for the Client
  *    Dashboard's Top 10 Clients by Revenue table.
  *  - `techYear`: per-technician per-year cost/jobs/clm, for the Technician
  *    Dashboard's Top 10 Technicians by Cost table.
+ *  - `coordYear`: per-coordinator per-year revenue/jobs/clm/captureSize, for the
+ *    Coordinator Dashboard's Top 10 Coordinators by Revenue table (also shows
+ *    summed `Capture Size - Requested`).
  *
  * This matters because a true "no filter" unique-Job-ID count is NOT the same
  * as summing already-per-client/per-tech-deduped counts (the same Job ID can
@@ -54,6 +67,7 @@ const VIEW_ID = 'viw2z6hlI0ASSIL12'; // Interface Month Year - Quarterly Perform
 const FIELDS = [
   'MP Client',
   'Vendor Name',
+  'Coordinator Name',
   'Sync Source_Derived',
   'Region_Derived',
   'USD',
@@ -66,6 +80,9 @@ const FIELDS = [
   'CSAT - Satisfaction of Service',
   'CSAT - Service Score',
   'CSAT - Capture Tech Satisfaction',
+  'Capture Size - Requested',
+  'Pending to Scheduled (days/hrs)',
+  'Scheduled to Complete (days/hrs)',
 ];
 
 const TOKEN = process.env.AIRTABLE_TOKEN;
@@ -152,8 +169,15 @@ function main() {
         return techIndex.get(key);
       }
 
+      const coordIndex = new Map();
+      function coordIdx(name) {
+        const key = (name || 'Unknown').trim();
+        if (!coordIndex.has(key)) coordIndex.set(key, coordIndex.size);
+        return coordIndex.get(key);
+      }
+
       const compCube = new Map(); // per-client: c|y|m|r|s
-      const globalCube = new Map(); // no client/tech dim: y|m|r|s (also carries ctCsat*)
+      const globalCube = new Map(); // no client/tech/coord dim: y|m|r|s (also carries ctCsat*, p2sSum/s2cSum)
       const reqCube = new Map(); // per-client: c|y|m|r
       const globalReqCube = new Map(); // no client dim: y|m|r
       const clientYear = new Map(); // c|y (Top 10 Clients support)
@@ -161,6 +185,10 @@ function main() {
       const techCube = new Map(); // per-technician: t|y|m|r|s
       const techReqCube = new Map(); // per-technician: t|y|m|r
       const techYear = new Map(); // t|y (Top 10 Technicians support)
+
+      const coordCube = new Map(); // per-coordinator: co|y|m|r|s
+      const coordReqCube = new Map(); // per-coordinator: co|y|m|r
+      const coordYear = new Map(); // co|y (Top 10 Coordinators support)
 
       const fySet = new Set();
 
@@ -170,6 +198,8 @@ function main() {
         const c = clientIdx(client);
         const vendor = f['Vendor Name'] ? f['Vendor Name'].trim() : null;
         const t = vendor ? techIdx(vendor) : null;
+        const coordName = f['Coordinator Name'] ? f['Coordinator Name'].trim() : null;
+        const co = coordName ? coordIdx(coordName) : null;
         const region = regionBucket(f['Sync Source_Derived'], f['Region_Derived']);
         const status = statusCode(f['Interface Reporting Status']);
         const y = f['Interface Reporting Year'];
@@ -180,6 +210,9 @@ function main() {
         const csatScore = f['CSAT - Satisfaction of Service'];
         const csatHigh = f['CSAT - Service Score'];
         const ctCsatScore = f['CSAT - Capture Tech Satisfaction'];
+        const captureSize = typeof f['Capture Size - Requested'] === 'number' ? f['Capture Size - Requested'] : 0;
+        const p2s = f['Pending to Scheduled (days/hrs)'];
+        const s2c = f['Scheduled to Complete (days/hrs)'];
 
         if (y) fySet.add(y);
 
@@ -218,6 +251,8 @@ function main() {
                 csatSum: 0,
                 ctCsatResp: 0,
                 ctCsatSum: 0,
+                p2sSum: 0,
+                s2cSum: 0,
               }),
               (b) => {
                 b.rev += usd;
@@ -233,6 +268,8 @@ function main() {
                   b.ctCsatResp += 1;
                   b.ctCsatSum += ctCsatScore;
                 }
+                if (typeof p2s === 'number') b.p2sSum += p2s;
+                if (typeof s2c === 'number') b.s2cSum += s2c;
               }
             );
             if (t !== null) {
@@ -252,6 +289,22 @@ function main() {
                     b.ctCsatResp += 1;
                     b.ctCsatSum += ctCsatScore;
                   }
+                }
+              );
+            }
+            if (co !== null) {
+              // Same fan-out reuse note as the technician block above.
+              bump(
+                coordCube,
+                `${co}|${y}|${m}|${rg}|${status}`,
+                () => ({ co, y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, p2sSum: 0, s2cSum: 0 }),
+                (b) => {
+                  b.rev += usd;
+                  b.cost += cost;
+                  if (jobId) b.jobIds.add(jobId);
+                  b.models += 1;
+                  if (typeof p2s === 'number') b.p2sSum += p2s;
+                  if (typeof s2c === 'number') b.s2cSum += s2c;
                 }
               );
             }
@@ -290,6 +343,17 @@ function main() {
                 }
               );
             }
+            if (co !== null) {
+              bump(
+                coordReqCube,
+                `${co}|${reqDate.year}|${reqDate.month}|${rg}`,
+                () => ({ co, y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
+                (b) => {
+                  b.req.add(jobId);
+                  if (status === 'C') b.comp.add(jobId);
+                }
+              );
+            }
           }
           fySet.add(reqDate.year);
         }
@@ -317,6 +381,19 @@ function main() {
               }
             );
           }
+          if (co !== null) {
+            bump(
+              coordYear,
+              `${co}|${y}`,
+              () => ({ co, y, revenue: 0, jobIds: new Set(), clm: 0, captureSize: 0 }),
+              (cy) => {
+                cy.revenue += usd;
+                if (jobId) cy.jobIds.add(jobId);
+                cy.clm += 1;
+                cy.captureSize += captureSize;
+              }
+            );
+          }
         }
       }
 
@@ -340,6 +417,10 @@ function main() {
           if ('ctCsatResp' in b) {
             o.ctCsatResp = b.ctCsatResp;
             o.ctCsatSum = round2(b.ctCsatSum);
+          }
+          if ('p2sSum' in b) {
+            o.p2sSum = round2(b.p2sSum);
+            o.s2cSum = round2(b.s2cSum);
           }
           if (keyName) o[keyName] = b[keyName];
           return o;
@@ -369,8 +450,18 @@ function main() {
         clm: ty.clm,
       }));
 
+      const coordYearOut = Array.from(coordYear.values()).map((cy) => ({
+        co: cy.co,
+        y: cy.y,
+        rev: round2(cy.revenue),
+        jobs: cy.jobIds.size,
+        clm: cy.clm,
+        captureSize: round2(cy.captureSize),
+      }));
+
       const clients = Array.from(clientIndex.keys());
       const technicians = Array.from(techIndex.keys());
+      const coordinators = Array.from(coordIndex.keys());
       const fiscalYears = Array.from(fySet).sort((a, b) => a - b);
 
       const out = {
@@ -379,6 +470,7 @@ function main() {
         fiscalYears,
         clients,
         technicians,
+        coordinators,
         cube: cubeOut(compCube, 'c'),
         globalCube: cubeOut(globalCube, null),
         reqCube: reqCubeOut(reqCube, 'c'),
@@ -387,14 +479,17 @@ function main() {
         techCube: cubeOut(techCube, 't'),
         techReqCube: reqCubeOut(techReqCube, 't'),
         techYear: techYearOut,
+        coordCube: cubeOut(coordCube, 'co'),
+        coordReqCube: reqCubeOut(coordReqCube, 'co'),
+        coordYear: coordYearOut,
       };
 
       const outPath = 'capture-services/data.json';
       fs.mkdirSync('capture-services', { recursive: true });
       fs.writeFileSync(outPath, JSON.stringify(out));
       console.error(
-        `Wrote ${outPath} — ${clients.length} clients, ${technicians.length} technicians, ${fiscalYears.length} fiscal years, ` +
-          `${out.cube.length} per-client buckets, ${out.globalCube.length} global buckets, ${out.techCube.length} per-tech buckets.`
+        `Wrote ${outPath} — ${clients.length} clients, ${technicians.length} technicians, ${coordinators.length} coordinators, ${fiscalYears.length} fiscal years, ` +
+          `${out.cube.length} per-client buckets, ${out.globalCube.length} global buckets, ${out.techCube.length} per-tech buckets, ${out.coordCube.length} per-coordinator buckets.`
       );
     })
     .catch((err) => {
