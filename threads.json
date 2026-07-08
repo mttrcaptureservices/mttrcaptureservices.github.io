@@ -1,41 +1,53 @@
 {
-  "lastUpdated": "2026-07-07T16:00:00-07:00",
+  "lastUpdated": "2026-07-07T18:00:00-07:00",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#F4B400",
-      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base incorrectly triggers an automated CT travel payout, even though that field should be independent from client-facing travel charges.",
-      "statusCls": "badge-investigating",
-      "status": "Fix in development",
+      "color": "#F4A261",
+      "summary": "Flagged that adding a Custom Client Travel Charge in the Spec Ops 2.0 base also auto-adds an automated technician travel payout, even though that field is supposed to be custom/independent.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Adjet",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Waiting on Adjet Kodia to implement the fix (keep the 60/40 payout split, route Custom CT Travel Payout uplifts into travel payout without touching Client Total Travel Charge). Not on Ricardo.",
+      "note": "Fix approach confirmed with Troy Lowry (keep 60/40 split, custom CT travel payout uplift flows into travel fee payout without touching client travel charge); blocked on Adjet Kodia implementing it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
     },
     {
       "author": "John Bosch",
       "initials": "JB",
-      "color": "#4285F4",
-      "summary": "Requesting a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles, posted to the Vacasa Ops channel and tagging Kevin and Jordan for client approval.",
+      "color": "#2A9D8F",
+      "summary": "Requested a new Teams alert for Vacasa jobs with total travel distance over 170 miles, routed to the Vacasa Ops channel and tagging Kevin Curtis and Jordan Saiz.",
       "statusCls": "badge-todo",
-      "status": "In queue",
+      "status": "In Jira queue",
       "date": "7/7",
       "jiraKey": "COP-1982",
-      "note": "Needs a new automation build; ticket created today, work not yet started. Waiting on engineering, not on requester.",
+      "note": "Requires a new automation build; ticket is assigned to Ricardo and queued, work not yet started.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
     },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#34A853",
-      "summary": "Unable to create an adjustment line item for a job due to a data sync failure; also wants adjustment reason/job rate/CT rate fields added to her pending jobs view.",
+      "color": "#E76F51",
+      "summary": "Couldn't create an adjustment line item for a job because of a \"last sync failed, data source unavailable\" error, and wants adjustment reason/job rate/CT rate fields added to her pending jobs view.",
       "statusCls": "badge-todo",
-      "status": "In queue",
+      "status": "In Jira queue",
       "date": "7/7",
       "jiraKey": "COP-1985",
-      "note": "Ticket covers both the sync failure and the view field additions. Caitlin has acknowledged and is waiting on engineering; no further input needed from her.",
+      "note": "Ticket covers both the sync failure and the requested view fields; assigned to Ricardo, not yet started. Caitlin acknowledged and is not blocking.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783446059400"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#2A9D8F",
+      "summary": "Asked for the list used to calculate \"Total Travel Distance\" for Vacasa jobs — distances look too low for jobs in Ocean City, MD, suspects no Vacasa In Network city nearby.",
+      "statusCls": "badge-waiting",
+      "status": "In Testing",
+      "date": "5/6",
+      "jiraKey": "COP-1888",
+      "note": "Recurring In-Network-city/distance bug tracked in COP-1888 (Adjet Kodia, In Testing). Thread has been quiet since 6/30 (Adjet said he'd follow up and hasn't yet) — Adjet owes a status update.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
     }
   ]
 }
