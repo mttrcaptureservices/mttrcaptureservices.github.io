@@ -1,17 +1,4 @@
 {
-  "lastUpdated": "2026-07-08T23:14:22Z",
-  "threads": [
-    {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#D97706",
-      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base is unexpectedly triggering an automated CT travel payout, when only Total Travel Distance and Custom CT Travel Fee should drive that calculation.",
-      "statusCls": "badge-investigating",
-      "status": "In Progress (COP-1948)",
-      "date": "6/9",
-      "jiraKey": "COP-1948",
-      "note": "Requirements confirmed with Troy Lowry (keep 60/40 split, Custom CT Travel Payout uplift should flow into payout without touching Client Total Travel Charge); Troy Lowry owns implementing the fix.",
-      "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support"
-    }
-  ]
+  "lastUpdated": "2026-07-08T16:30:00-07:00",
+  "threads": []
 }
