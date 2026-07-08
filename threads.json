@@ -1,41 +1,29 @@
 {
-  "lastUpdated": "2026-07-08T10:04:56-07:00",
+  "lastUpdated": "2026-07-08T17:27:17Z",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#F4A261",
-      "summary": "Flagged that adding a Custom Client Travel Charge in the Spec Ops 2.0 base also auto-adds an automated technician travel payout, even though that field is supposed to be custom/independent.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Adjet",
+      "color": "#E67E22",
+      "summary": "Flagged that in the Spec Ops 2.0 base, adding a Custom Client Travel Charge also auto-populates an automated technician travel payout, which shouldn't sync since that field is custom.",
+      "statusCls": "badge-todo",
+      "status": "Queued for dev",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Fix approach confirmed with Troy Lowry (keep 60/40 split, custom CT travel payout uplift flows into travel fee payout without touching client travel charge) and logged in the ticket. Still In Progress in Jira, no further movement this run.",
+      "note": "Fix confirmed (keep the 60/40 split as-is; route the Custom CT Travel Payout uplift to payout without touching Client Total Travel Charge) — Adjet Kodia owns implementation.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800"
     },
     {
       "author": "John Bosch",
       "initials": "JB",
-      "color": "#2A9D8F",
-      "summary": "Requested a new Teams alert for Vacasa jobs with total travel distance over 170 miles, routed to the Vacasa Ops channel and tagging Kevin Curtis and Jordan Saiz.",
+      "color": "#2980B9",
+      "summary": "Requested a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles that need client approval, posted to the Vacasa Ops channel and tagging Kevin and Jordan.",
       "statusCls": "badge-todo",
-      "status": "In Jira queue",
+      "status": "Building automation",
       "date": "7/7",
       "jiraKey": "COP-1982",
-      "note": "Requires a new automation build; ticket is assigned to Ricardo and queued (To Do in Jira), work not yet started.",
+      "note": "New automation build required for the 170-mile alert; Ricardo owns the build and will update the thread once it's live.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#2A9D8F",
-      "summary": "Asked for the list used to calculate \"Total Travel Distance\" for Vacasa jobs — distances look too low for jobs in Ocean City, MD, suspects no Vacasa In Network city nearby.",
-      "statusCls": "badge-waiting",
-      "status": "In Testing",
-      "date": "5/6",
-      "jiraKey": "COP-1888",
-      "note": "Recurring In-Network-city/distance bug tracked in COP-1888 (Adjet Kodia, In Testing). Last activity was Kevin Curtis on 6/30 (\"no worries\"); a 7/1 message in the thread was deleted. No update from Adjet in over a week — he still owes a status update.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
     }
   ]
 }
