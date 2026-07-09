@@ -5,26 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capture Services Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0b1f3a;
-    --navy-2:#132b52;
-    --teal:#0ea5a0;
-    --teal-2:#0c8f8a;
-    --ink:#0f172a;
-    --muted:#64748b;
-    --border:#e2e8f0;
-    --bg:#f4f6f9;
+    --navy:#111111;
+    --navy-2:#000000;
+    --teal:#ff3158;
+    --teal-2:#e01f44;
+    --ink:#141414;
+    --muted:#6b6b70;
+    --border:#e7e5e3;
+    --bg:#f7f6f5;
     --card:#ffffff;
-    --good:#0ea5a0;
+    --good:#0f9d63;
     --bad:#e0524d;
-    --amber:#e2a53a;
-    --shadow: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.08);
+    --amber:#f2a93b;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.08);
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--ink);
   }
@@ -46,8 +49,12 @@
   }
   header .sub{
     font-size:12.5px;
-    color:#b9c6de;
+    color:#9a9a9f;
     margin-top:2px;
+  }
+  header > div:first-of-type{
+    border-left:3px solid var(--teal);
+    padding-left:14px;
   }
   .filters{
     display:flex;
@@ -59,18 +66,19 @@
     font-size:11px;
     text-transform:uppercase;
     letter-spacing:.06em;
-    color:#b9c6de;
+    color:#9a9a9f;
     display:block;
     margin-bottom:4px;
   }
   .filters select, .filters input{
     background:#fff;
     border:none;
-    border-radius:8px;
-    padding:8px 12px;
+    border-radius:100px;
+    padding:8px 14px;
     font-size:13.5px;
     min-width:180px;
     color:var(--ink);
+    font-weight:600;
   }
   .filters select:focus, .filters input:focus{ outline:2px solid var(--teal); }
   main{
@@ -116,7 +124,7 @@
     box-shadow:var(--shadow);
     border-top:3px solid var(--teal);
   }
-  .kpi-card.dim{ border-top-color:#94a3b8; }
+  .kpi-card.dim{ border-top-color:#c9c7c4; }
   .kpi-card h3{
     margin:0 0 10px;
     font-size:13px;
@@ -174,7 +182,7 @@
   }
   td.num, th.num{ text-align:right; font-variant-numeric:tabular-nums; }
   .bar-wrap{
-    background:#eef2f7;
+    background:#f0eeec;
     border-radius:6px;
     height:8px;
     overflow:hidden;
@@ -222,20 +230,25 @@
 
   /* ---- Shared nav bar (hamburger + breadcrumb) ---- */
   .topnav{
-    background:#081428;
-    color:#cdd8ea;
+    background:#ffffff;
+    color:#141414;
     display:flex;
     align-items:center;
-    gap:12px;
-    padding:8px 20px;
+    gap:14px;
+    padding:10px 20px;
     font-size:12.5px;
     position:relative;
     z-index:50;
+    border-bottom:1px solid #ececea;
+  }
+  .topnav .brand-logo{
+    height:20px;
+    display:block;
   }
   .hamburger{
     background:none;
-    border:1px solid #2a3c5e;
-    color:#fff;
+    border:1px solid #d8d6d3;
+    color:#141414;
     border-radius:6px;
     width:30px; height:28px;
     font-size:15px;
@@ -243,20 +256,20 @@
     cursor:pointer;
     flex:none;
   }
-  .hamburger:hover{ background:#132646; }
+  .hamburger:hover{ background:#f5f4f3; }
   .breadcrumb{ display:flex; align-items:center; gap:6px; }
-  .breadcrumb .crumb-root{ color:#8fa2c4; }
-  .breadcrumb .crumb-sep{ color:#4c5f83; }
-  .breadcrumb .crumb-current{ color:#fff; font-weight:600; }
+  .breadcrumb .crumb-root{ color:#8a8a8e; }
+  .breadcrumb .crumb-sep{ color:#c9c7c4; }
+  .breadcrumb .crumb-current{ color:var(--teal); font-weight:700; }
   .nav-panel{
     display:none;
     position:absolute;
-    top:40px; left:20px;
-    background:#0f2242;
-    border:1px solid #24365a;
+    top:44px; left:20px;
+    background:#ffffff;
+    border:1px solid #ececea;
     border-radius:10px;
     padding:6px;
-    box-shadow:0 12px 28px rgba(0,0,0,.35);
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
     min-width:260px;
     flex-direction:column;
     gap:2px;
@@ -268,17 +281,17 @@
     gap:9px;
     padding:9px 12px;
     border-radius:7px;
-    color:#dbe4f5;
+    color:#141414;
     text-decoration:none;
     font-size:13px;
   }
-  .nav-panel a:hover{ background:#1a3562; }
-  .nav-panel a.active{ background:var(--teal-2); color:#fff; font-weight:650; cursor:default; }
+  .nav-panel a:hover{ background:#f5f4f3; }
+  .nav-panel a.active{ background:var(--teal); color:#fff; font-weight:650; cursor:default; }
   .nav-panel .nav-note{
     padding:8px 12px 4px;
-    color:#7489ac;
+    color:#a3a1a0;
     font-size:11px;
-    border-top:1px solid #24365a;
+    border-top:1px solid #ececea;
     margin-top:4px;
   }
 </style>
@@ -286,6 +299,7 @@
 <body>
 
 <nav class="topnav">
+  <img class="brand-logo" src="https://images.ctfassets.net/icnj41gkyohw/4TFgKaRydiQc25X5NqOPon/a1726d6086793c5335b73fd41a06d52c/Matterport_Logo_-_Black_%C3%82_%C3%AF__.svg" alt="Matterport">
   <button class="hamburger" id="navToggle" aria-label="Open navigation">☰</button>
   <div class="breadcrumb">
     <span class="crumb-root">Capture Services</span>
@@ -578,8 +592,8 @@ function renderRevCostChart(){
   upsertChart('chartRevCost', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Revenue', data: rev, backgroundColor:'#0ea5a0' },
-      { label:'Cost', data: cost, backgroundColor:'#0b1f3a' },
+      { label:'Revenue', data: rev, backgroundColor:'#ff3158' },
+      { label:'Cost', data: cost, backgroundColor:'#111111' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       plugins:{legend:{position:'bottom', labels:{boxWidth:10}}},
@@ -661,9 +675,9 @@ function renderJobsCharts(){
   upsertChart('chartJobsCompleted', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'GLOBAL', data: jobsMonthly('GLOBAL','completed'), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
-      { label:'NORAM', data: jobsMonthly('NORAM','completed'), borderColor:'#0b1f3a', backgroundColor:'#0b1f3a', tension:.3 },
-      { label:'INTL', data: jobsMonthly('INTL','completed'), borderColor:'#e2a53a', backgroundColor:'#e2a53a', tension:.3 },
+      { label:'GLOBAL', data: jobsMonthly('GLOBAL','completed'), borderColor:'#ff3158', backgroundColor:'#ff3158', tension:.3 },
+      { label:'NORAM', data: jobsMonthly('NORAM','completed'), borderColor:'#111111', backgroundColor:'#111111', tension:.3 },
+      { label:'INTL', data: jobsMonthly('INTL','completed'), borderColor:'#f2a93b', backgroundColor:'#f2a93b', tension:.3 },
       { label:'Spec Ops', data: jobsMonthly('SpecOps','completed'), borderColor:'#e0524d', backgroundColor:'#e0524d', tension:.3 },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
@@ -671,8 +685,8 @@ function renderJobsCharts(){
   upsertChart('chartJobsReqComp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Requested', data: jobsMonthly('GLOBAL','requested'), backgroundColor:'#94a3b8' },
-      { label:'Completed', data: jobsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#0ea5a0' },
+      { label:'Requested', data: jobsMonthly('GLOBAL','requested'), backgroundColor:'#c9c7c4' },
+      { label:'Completed', data: jobsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#ff3158' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
@@ -682,9 +696,9 @@ function renderModelsCharts(){
   upsertChart('chartModelsCompleted', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'GLOBAL', data: modelsMonthly('GLOBAL','completed'), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
-      { label:'NORAM', data: modelsMonthly('NORAM','completed'), borderColor:'#0b1f3a', backgroundColor:'#0b1f3a', tension:.3 },
-      { label:'INTL', data: modelsMonthly('INTL','completed'), borderColor:'#e2a53a', backgroundColor:'#e2a53a', tension:.3 },
+      { label:'GLOBAL', data: modelsMonthly('GLOBAL','completed'), borderColor:'#ff3158', backgroundColor:'#ff3158', tension:.3 },
+      { label:'NORAM', data: modelsMonthly('NORAM','completed'), borderColor:'#111111', backgroundColor:'#111111', tension:.3 },
+      { label:'INTL', data: modelsMonthly('INTL','completed'), borderColor:'#f2a93b', backgroundColor:'#f2a93b', tension:.3 },
       { label:'Spec Ops', data: modelsMonthly('SpecOps','completed'), borderColor:'#e0524d', backgroundColor:'#e0524d', tension:.3 },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
@@ -692,8 +706,8 @@ function renderModelsCharts(){
   upsertChart('chartModelsReqComp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Requested', data: modelsMonthly('GLOBAL','requested'), backgroundColor:'#94a3b8' },
-      { label:'Completed', data: modelsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#0ea5a0' },
+      { label:'Requested', data: modelsMonthly('GLOBAL','requested'), backgroundColor:'#c9c7c4' },
+      { label:'Completed', data: modelsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#ff3158' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
@@ -703,15 +717,15 @@ function renderCsatCharts(){
   upsertChart('chartCsatResp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Responses', data: csatMonthly('GLOBAL','responses'), backgroundColor:'#94a3b8' },
-      { label:'Score (4+★)', data: csatMonthly('GLOBAL','high'), backgroundColor:'#0ea5a0' },
+      { label:'Responses', data: csatMonthly('GLOBAL','responses'), backgroundColor:'#c9c7c4' },
+      { label:'Score (4+★)', data: csatMonthly('GLOBAL','high'), backgroundColor:'#ff3158' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
   upsertChart('chartCsatRate', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'CSAT Rate', data: csatMonthly('GLOBAL','rate').map(v=>+(v*100).toFixed(1)), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
+      { label:'CSAT Rate', data: csatMonthly('GLOBAL','rate').map(v=>+(v*100).toFixed(1)), borderColor:'#ff3158', backgroundColor:'#ff3158', tension:.3 },
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
