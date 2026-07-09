@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-07-09T10:15:00-07:00",
+  "lastUpdated": "2026-07-09T19:30:24Z",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
       "color": "#E67E22",
-      "summary": "Flagged that adding a Custom Client Travel Charge on a Spec Ops 2.0 job also triggers an automatic CT travel payout, when a custom field like that shouldn't sync to CT payout.",
+      "summary": "Custom Client Travel Charge in Spec Ops 2.0 was auto-driving CT Travel Payout; Ricardo is confirming with Troy Lowry whether that auto-drive link should also be decoupled on standard jobs before finalizing the COP-1948 fix scope.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Ricardo asked Troy Lowry to confirm whether Custom Client Travel Charge should keep auto-driving CT Payout on standard jobs or be decoupled as Don originally flagged — waiting on Troy's reply.",
+      "note": "Waiting on Troy Lowry to confirm scope details (asked 7/8 11:58 PM); COP-1948 fix can't be finalized until he replies.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#9B59B6",
-      "summary": "Livit AG (2) jobs sitting in \"Please Schedule\" status aren't triggering the job request/confirmation email automation (which only fires on \"Pending\"), so CTs/clients aren't getting confirmations though reminder emails still go out fine.",
+      "summary": "Livit AG (2) job request/confirmation emails aren't sending when a job sits in \"Please Schedule\" status instead of \"Pending\", so clients and CTs miss confirmations even though reminder emails still go out.",
       "statusCls": "badge-todo",
-      "status": "Ticket created - To Do",
+      "status": "Fix queued (To Do)",
       "date": "7/9",
       "jiraKey": "COP-1990",
-      "note": "Jira ticket created and queued; next step owed by the team is fixing the automation trigger logic to also cover \"Please Schedule\" status and backfilling the affected Livit jobs.",
+      "note": "COP-1990 logged and assigned; blocked on dev implementing the automation trigger fix, not on any pending question to Stephenie.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783591107417?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783591107417&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783591107417&ngc=true"
     }
   ]
