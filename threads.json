@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-07-09T05:14:12Z",
-  "threads": [
-    {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#E67E22",
-      "summary": "Techs accepting KPS Spec Ops 2.0 jobs are having their confirmed date overwritten with today's date instead of the date they actually selected.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/8",
-      "jiraKey": "COP-1989",
-      "note": "Jira ticket opened and assigned to Ricardo; waiting on a Spec Ops 2.0 automation fix, not blocked on Don.",
-      "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
-    }
-  ]
+"lastUpdated": "2026-07-09T05:21:40Z",
+"threads": [
+{
+"author": "Don Fraser",
+"initials": "DF",
+"color": "#E67E22",
+"summary": "Techs accepting KPS Spec Ops 2.0 jobs are having their confirmed date overwritten with today's date instead of the date they actually selected.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/8",
+"jiraKey": "COP-1989",
+"note": "Jira ticket opened and assigned to Ricardo; waiting on a Spec Ops 2.0 automation fix, not blocked on Don.",
+"url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+}
+]
 }
