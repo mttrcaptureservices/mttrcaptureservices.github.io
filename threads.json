@@ -1,40 +1,40 @@
 {
-  "lastUpdated": "2026-07-10T09:38:00-07:00",
+  "lastUpdated": "2026-07-10T15:55:00-07:00",
   "threads": [
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#E67E22",
+      "summary": "Bulk CSV upload of Kroger jobs (3 Legacy Spec Ops + 1 Spec Ops 2.0) submitted via Jotform but none landed in Airtable; Troy needs these jobs out for scheduling today.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating — urgent",
+      "date": "7/6",
+      "jiraKey": "COP-1992",
+      "note": "Jotform confirms all 4 submissions went through but the bulk-upload sync into Airtable broke; recovering the 4 jobs manually and diagnosing root cause — next update owed by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783382273293?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783382273293&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783382273293&ngc=true"
+    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#F59E0B",
-      "summary": "Unable to create finance adjustment line items on multiple jobs since 7/8; base shows a stale sync status (~13 hrs behind).",
-      "statusCls": "badge-todo",
-      "status": "To do — dev fix queued",
+      "color": "#2E86C1",
+      "summary": "Can't create finance adjustment line items on any jobs since 7/8 — Airtable shows last sync was 13 hours old.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/9",
       "jiraKey": "COP-1985",
-      "note": "Logged as an occurrence on COP-1985 (To Do, assigned to Ricardo); fix not yet started.",
+      "note": "Same adjustment-line-item sync bug as Marina Menacho Rosales's report, broader impact (multiple jobs since 7/8); Airtable Support still investigating root cause — next update owed by Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     },
     {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#6366F1",
-      "summary": "Adding a Custom Client Travel Charge in Spec Ops 2.0 base unexpectedly triggers an automated CT travel payout.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Troy Lowry",
-      "date": "6/9",
-      "jiraKey": "COP-1948",
-      "note": "Scoping question posted to Troy Lowry on whether Custom Client Travel Charge should keep auto-driving CT Payout on standard jobs — no reply yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
-    },
-    {
       "author": "Marina Menacho Rosales",
-      "initials": "MR",
-      "color": "#EC4899",
-      "summary": "None of Marina's team members can create an adjustment line on AT; showing an error message.",
-      "statusCls": "badge-todo",
-      "status": "To do — dev fix queued",
+      "initials": "MM",
+      "color": "#8E44AD",
+      "summary": "None of her team members can create an adjustment line in Airtable — getting an error message.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Third reported occurrence of the same sync issue (Caitlin Suh 7/7, Freddy Arias 7/9, Marina 7/10); logged as a comment on COP-1985.",
+      "note": "Same sync issue tracked under Freddy Arias's report; impact now spans multiple teams — next update owed by Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
     }
   ]
