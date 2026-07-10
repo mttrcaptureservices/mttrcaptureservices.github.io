@@ -1,41 +1,41 @@
 {
-  "lastUpdated": "2026-07-09T20:00:00Z",
+  "lastUpdated": "2026-07-09T19:20:00-07:00",
   "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E07A5F",
+      "summary": "Can't create finance adjustment line items on multiple jobs since 7/8; base shows a stale sync status (~13 hrs behind).",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Blocked on an engineering fix to the adjustment-line-item sync; Ricardo logged this as a broader occurrence on the existing ticket.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+    },
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#E67E22",
-      "summary": "Custom Client Travel Charge in Spec Ops 2.0 is auto-triggering an automated CT travel payout, when it should stay decoupled since it's a custom finance field.",
+      "color": "#3D5A80",
+      "summary": "Flagged that Custom Client Travel Charge in Spec Ops 2.0 auto-triggers a CT travel payout, which shouldn't happen since it's a custom field.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Ricardo asked Troy Lowry to confirm whether Custom Client Travel Charge should keep auto-driving CT Payout on standard jobs before scoping COP-1948 — waiting on Troy's answer.",
+      "note": "Ricardo asked Troy Lowry to confirm whether Custom Client Travel Charge should keep auto-driving CT Payout on standard jobs before finalizing scope; awaiting Troy's answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
-      "color": "#8E44AD",
-      "summary": "Livit AG (2) job confirmation/request emails aren't sending when a job sits in \"Please Schedule\" status instead of \"Pending\", so clients and CTs miss confirmations.",
+      "color": "#8F5D9C",
+      "summary": "Livit AG (2) confirmation/job-request emails aren't sending when a job sits in \"Please Schedule\" instead of \"Pending\" status.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/9",
       "jiraKey": "COP-1990",
-      "note": "Jira ticket opened and assigned to Ricardo; automation trigger-logic fix still To Do, no update posted yet.",
+      "note": "Blocked on a fix to the automation trigger logic; Ricardo opened the ticket and looped in Adjet Kodia.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783591107417?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783591107417&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783591107417&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#2E86C1",
-      "summary": "Since 7/8, the Pending Jobs view won't let Freddy create finance adjustment line items on multiple jobs, and shows a sync status ~13 hours stale.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/9",
-      "jiraKey": "COP-1985",
-      "note": "Freddy's jobs added as a new, broader occurrence on the existing sync-issue ticket; still To Do, no fix update posted yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     }
   ]
 }
