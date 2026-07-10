@@ -1,41 +1,41 @@
 {
-  "lastUpdated": "2026-07-09T16:20:00-07:00",
+  "lastUpdated": "2026-07-09T17:20:02-07:00",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#e67e22",
-      "summary": "Adding a Custom Client Travel Charge in the Spec Ops 2.0 base unexpectedly triggers an automated CT travel payout, even though only Total Travel Distance and Custom CT Travel Fee should affect that calculation.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "color": "#F59E0B",
+      "summary": "Custom Client Travel Charge in Spec Ops 2.0 is incorrectly triggering an automated CT travel payout, even though it's a custom field that shouldn't sync to CT payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "6/9",
       "jiraKey": "COP-1948",
-      "note": "Waiting on Troy Lowry to confirm whether Custom Client Travel Charge should still auto-drive CT Payout on standard jobs before the fix scope is finalized.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781024020800?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781024020800&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#2980b9",
-      "summary": "Since 7/8, the View Only - All Jobs base won't let Freddy create adjustment line items on multiple jobs, and the base shows a stale sync status (~13 hours behind).",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/9",
-      "jiraKey": "COP-1985",
-      "note": "Logged as a new, broader occurrence on an existing sync-issue ticket; fix is unstarted (To Do), owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+      "note": "Blocked on Troy Lowry confirming whether Custom Client Travel Charge should also decouple from CT Payout on standard jobs before the fix scope is finalized.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1781068664470?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1781024020800&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1781068664470&ngc=true"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
-      "color": "#8e44ad",
-      "summary": "For Livit AG (2) jobs, the job request/confirmation email automation only fires on 'Pending' status, so it never sends when a job is worked under 'Please Schedule' — clients/CTs aren't getting confirmations, only reminders.",
+      "color": "#EC4899",
+      "summary": "Livit AG (2) job request/confirmation emails aren't sending when a job is under \"Please Schedule\" status instead of \"Pending\" — clients/CTs aren't getting confirmations, only reminders.",
       "statusCls": "badge-todo",
-      "status": "To Do",
+      "status": "Ticket created",
       "date": "7/9",
       "jiraKey": "COP-1990",
-      "note": "Jira ticket created and assigned; automation trigger-logic fix not yet started, owed by Adjet Kodia.",
+      "note": "Ticket created and assigned to Ricardo; automation trigger-logic fix not yet started.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783591107417?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783591107417&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783591107417&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#6366F1",
+      "summary": "Can't create adjustment line items on any jobs since 7/8 — base shows a stale sync status (~13 hrs behind) blocking finance adjustments.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Recurring sync issue (also hit Caitlin Suh on 7/7); Freddy's occurrence added to the existing ticket, fix in progress, assigned to Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     }
   ]
 }
