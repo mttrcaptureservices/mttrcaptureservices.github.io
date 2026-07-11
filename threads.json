@@ -1,17 +1,41 @@
 {
-"lastUpdated": "2026-07-11T00:10:36Z",
-"threads": [
-{
-"author": "Troy Lowry",
-"initials": "TL",
-"color": "#d97706",
-"summary": "Kroger Spec Ops bulk upload (CSV) isn't syncing to either the Legacy or 2.0 Airtable base, even though Jotform confirms all 4 submissions went through. Troy has now confirmed the 4 submissions are duplicates of one job, not 4 distinct jobs.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/6",
-"jiraKey": "COP-1992",
-"note": "Only 1 job needs to be recovered (most recent submission, per Troy's confirmation) — comment added to COP-1992. Blocked on the bulk-upload sync fix (Homelander triggered); Ricardo owes Troy an update once it lands in Airtable.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783382273293?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783382273293&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783382273293&ngc=true"
-}
-]
+  "lastUpdated": "2026-07-10T18:15:00-07:00",
+  "threads": [
+    {
+      "author": "Marina Menacho Rosales",
+      "initials": "MR",
+      "color": "#8B5CF6",
+      "summary": "None of Marina's team members can create adjustment line items on Airtable — the base shows an error and a stale sync status.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/10",
+      "jiraKey": "COP-1985",
+      "note": "Blocked on Airtable Support's root-cause investigation into the adjustment-line sync failure; Ricardo owes the next update once support responds.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#F59E0B",
+      "summary": "Freddy can't create adjustment line items for multiple jobs since 7/8 — base shows last sync 13 hours ago, same recurring AT sync bug as Marina's report.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Same root-cause investigation as Marina's occurrence; Freddy already followed up once today, Ricardo owes the next status update once Airtable Support responds.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#3B82F6",
+      "summary": "Troy's Kroger bulk upload submissions weren't loading into Spec Ops 2.0; the most recent submission has since been recovered and loaded into Legacy Spec Ops.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/6",
+      "jiraKey": "COP-1992",
+      "note": "Ricardo asked Troy to confirm whether the Spec Ops 2.0 upload attempt was a separate set of requests or more duplicates — waiting on Troy's reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783382273293?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783382273293&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783382273293&ngc=true"
+    }
+  ]
 }
