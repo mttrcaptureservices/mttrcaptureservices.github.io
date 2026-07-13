@@ -1,40 +1,29 @@
 {
-  "lastUpdated": "2026-07-13T20:49:38Z",
+  "lastUpdated": "2026-07-13T14:23:02-07:00",
   "threads": [
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#2E86AB",
-      "summary": "Legend Senior Living claims they submitted 5 property capture jobs (Paoli, Dresher, North Wales, Apple Blossom, Stonehaven OKC) that never arrived in Airtable.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/13",
-      "jiraKey": "COP-1993",
-      "note": "Ricardo is checking whether all 5 submissions got stuck before reaching Airtable; next action owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783971530394?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783971530394&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783971530394&ngc=true"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#C1666B",
-      "summary": "Southern Veterinary Partners jotform needed a rebrand from SVP to Mission Pet Health (logos, copy, prep guide link).",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "7/13",
-      "note": "Snehal finished the update and the client already said thanks, but Snehal asked Ricardo to personally review the jotform before it's considered fully closed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783962328122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783962328122&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783962328122&ngc=true"
-    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#E09F3E",
-      "summary": "Freddy can't create adjustment line items for multiple jobs since 7/8; last sync shows 13+ hours stale.",
+      "color": "#3498db",
+      "summary": "Can't create adjustment line items on multiple jobs since 7/8 — base shows a stale sync status (~13 hrs behind).",
       "statusCls": "badge-investigating",
-      "status": "Waiting on Airtable Support",
+      "status": "Investigating",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Tracked as a recurring sync bug affecting multiple teams; waiting on the underlying fix, not on Freddy for more info.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+    },
+    {
+      "author": "Marina Menacho Rosales",
+      "initials": "MR",
+      "color": "#9b59b6",
+      "summary": "None of her team can create an adjustment line on AT — shows an error, sync failing with the same pattern as other jobs.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Recurring sync failure, root cause still with Airtable Support; Ricardo owes Freddy an update once there's movement.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+      "note": "Same COP-1985 sync issue as Freddy Arias's report; waiting on the underlying fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
     }
   ]
 }
