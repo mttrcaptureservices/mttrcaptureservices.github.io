@@ -1,28 +1,39 @@
 {
-  "lastUpdated": "2026-07-10T19:20:00-07:00",
+  "lastUpdated": "2026-07-13T20:49:38Z",
   "threads": [
     {
-      "author": "Marina Menacho Rosales",
-      "initials": "MR",
-      "color": "#e91e63",
-      "summary": "None of Marina's team members can create an adjustment line item on AT — shows an error and last sync was 13+ hours ago.",
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#2E86AB",
+      "summary": "Legend Senior Living claims they submitted 5 property capture jobs (Paoli, Dresher, North Wales, Apple Blossom, Stonehaven OKC) that never arrived in Airtable.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Blocked on Airtable Support root cause investigation for the recurring adjustment-line sync failure; Ricardo owes an update to this thread once fixed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+      "date": "7/13",
+      "jiraKey": "COP-1993",
+      "note": "Ricardo is checking whether all 5 submissions got stuck before reaching Airtable; next action owed by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783971530394?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783971530394&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783971530394&ngc=true"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#C1666B",
+      "summary": "Southern Veterinary Partners jotform needed a rebrand from SVP to Mission Pet Health (logos, copy, prep guide link).",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
+      "date": "7/13",
+      "note": "Snehal finished the update and the client already said thanks, but Snehal asked Ricardo to personally review the jotform before it's considered fully closed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783962328122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783962328122&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783962328122&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#2196f3",
-      "summary": "Freddy can't create any finance adjustment line items on jobs since 7/8 — base shows a stale sync status (~13 hrs behind).",
+      "color": "#E09F3E",
+      "summary": "Freddy can't create adjustment line items for multiple jobs since 7/8; last sync shows 13+ hours stale.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/9",
+      "status": "Waiting on Airtable Support",
+      "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Same recurring sync bug as Marina's report (3rd occurrence); Airtable Support still looking into root cause, Ricardo owes an update.",
+      "note": "Recurring sync failure, root cause still with Airtable Support; Ricardo owes Freddy an update once there's movement.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     }
   ]
