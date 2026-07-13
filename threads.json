@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-07-13T14:23:02-07:00",
+  "lastUpdated": "2026-07-13T22:13:55Z",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#3498db",
-      "summary": "Can't create adjustment line items on multiple jobs since 7/8 — base shows a stale sync status (~13 hrs behind).",
+      "color": "#E67E22",
+      "summary": "Freddy can't create adjustment line items on any jobs since 7/8 — the base shows a stale sync status (~13 hrs behind) and blocks the edit.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/9",
       "jiraKey": "COP-1985",
-      "note": "Tracked as a recurring sync bug affecting multiple teams; waiting on the underlying fix, not on Freddy for more info.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+      "note": "Blocked on Airtable Support root-causing the sync error (COP-1985); next update owed by Ricardo once there's movement.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468"
     },
     {
       "author": "Marina Menacho Rosales",
-      "initials": "MR",
-      "color": "#9b59b6",
-      "summary": "None of her team can create an adjustment line on AT — shows an error, sync failing with the same pattern as other jobs.",
+      "initials": "MM",
+      "color": "#8E44AD",
+      "summary": "None of Marina's team members can create an adjustment line on AT — it shows an error message.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Same COP-1985 sync issue as Freddy Arias's report; waiting on the underlying fix.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+      "note": "Same root cause as Freddy Arias's report (COP-1985); waiting on the sync fix before adjustment line items work again.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418"
     }
   ]
 }
