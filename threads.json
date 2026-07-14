@@ -1,16 +1,17 @@
 {
-  "lastUpdated": "2026-07-14T14:15:00-07:00",
+  "lastUpdated": "2026-07-14T16:15:00-07:00",
   "threads": [
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "Job JOBID6594323772073237431 was dispatched to a Hattiesburg, MS tech, but the API automation reassigned it to a tech in Jackson, WY — so the confirmation email went to the wrong tech instead of the one who actually did the job.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed, confirming no recurrence",
-      "date": "7/14",
-      "note": "Adjet updated the v2 automation to read the scheduling-city field instead of tech-city-assignment; blocked on confirming this specific job's tech assignment was corrected and that the bug doesn't recur elsewhere — no action owed by Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#e07a5f",
+      "summary": "AT won't let Freddy create finance adjustment line items on multiple jobs since 7/8; sync status has been stale (~13 hrs behind).",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/10",
+      "jiraKey": "COP-1985",
+      "note": "Blocked on Airtable Support root-cause investigation; ticket sitting in To Do queue, Ricardo owes Freddy an update once there's movement.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     }
   ]
 }
