@@ -1,29 +1,17 @@
 {
-  "lastUpdated": "2026-07-14T08:15:00-07:00",
+  "lastUpdated": "2026-07-14T09:40:00-07:00",
   "threads": [
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E67E22",
-      "summary": "Can't create finance adjustment line items on any jobs since 7/8 — Airtable base shows a stale sync status (~13 hrs behind) and blocks the edit.",
+      "author": "Don Fraser",
+      "initials": "DF",
+      "color": "#2E86AB",
+      "summary": "Reported ~50 duplicate Spencer Technologies (4) jobs in the Spec Ops Legacy Base and wanted a safe way to cross-reference before deleting. Went ahead and deleted the duplicates himself before the review list was ready.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/9",
-      "jiraKey": "COP-1985",
-      "note": "Waiting on Airtable Support to find the root cause of the sync failure; Ricardo owns the next update once there's movement.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
-    },
-    {
-      "author": "Marina Menacho Rosales",
-      "initials": "MM",
-      "color": "#8E44AD",
-      "summary": "None of her team's members can create an adjustment line on Airtable — same sync error affecting multiple teams.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Same root cause as Freddy Arias's report — logged as another occurrence on COP-1985; waiting on Airtable Support / dev fix, not on Marina.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+      "status": "Spot-check in progress",
+      "date": "7/14",
+      "jiraKey": "COP-1995",
+      "note": "Don already deleted the duplicates on his own; Ricardo owes a retrospective spot-check against Subway-457, Subway-1298, and Subway-1741 to confirm no non-duplicate records were removed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784045487595?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784045487595&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784045487595&ngc=true"
     }
   ]
 }
