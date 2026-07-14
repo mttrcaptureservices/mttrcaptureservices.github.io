@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-07-13T22:13:55Z",
+  "lastUpdated": "2026-07-14T02:13:10Z",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#E67E22",
-      "summary": "Freddy can't create adjustment line items on any jobs since 7/8 — the base shows a stale sync status (~13 hrs behind) and blocks the edit.",
+      "color": "#e67e22",
+      "summary": "Can't create adjustment line items on Airtable since 7/8 — base shows a stale sync status (~13 hrs behind).",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/9",
       "jiraKey": "COP-1985",
-      "note": "Blocked on Airtable Support root-causing the sync error (COP-1985); next update owed by Ricardo once there's movement.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468"
+      "note": "Blocked on Airtable Support root-causing the sync issue; Ricardo confirmed today (7/13) it's still not fixed and sitting in the To Do queue.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     },
     {
       "author": "Marina Menacho Rosales",
       "initials": "MM",
-      "color": "#8E44AD",
-      "summary": "None of Marina's team members can create an adjustment line on AT — it shows an error message.",
+      "color": "#9b59b6",
+      "summary": "Her team can't create adjustment lines on Airtable — same sync error as other recent reports.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Same root cause as Freddy Arias's report (COP-1985); waiting on the sync fix before adjustment line items work again.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418"
+      "note": "Logged as another occurrence of the same recurring sync bug (COP-1985); blocked on Airtable Support, not a new investigation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
     }
   ]
 }
