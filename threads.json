@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-07-14T20:53:41Z",
+  "lastUpdated": "2026-07-14T14:15:00-07:00",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#F59E0B",
-      "summary": "Job JOBID6594323772073237431 was assigned to the correct Hattiesburg, MS tech, but an API automation reassigned it to a tech in Jackson, WY, so the confirmation email went to the wrong tech.",
+      "color": "#7c3aed",
+      "summary": "Job JOBID6594323772073237431 was dispatched to a Hattiesburg, MS tech, but the API automation reassigned it to a tech in Jackson, WY — so the confirmation email went to the wrong tech instead of the one who actually did the job.",
       "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed, confirming",
+      "status": "Fix deployed, confirming no recurrence",
       "date": "7/14",
-      "note": "Adjet fixed the v2 automation (it was reading the tech-city-assignment field instead of scheduling-city); waiting on Kailyn to confirm the job behaves correctly going forward.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+      "note": "Adjet updated the v2 automation to read the scheduling-city field instead of tech-city-assignment; blocked on confirming this specific job's tech assignment was corrected and that the bug doesn't recur elsewhere — no action owed by Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
     }
   ]
 }
