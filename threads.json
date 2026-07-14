@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-07-14T09:40:00-07:00",
+  "lastUpdated": "2026-07-14T09:50:00-07:00",
   "threads": [
     {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#2E86AB",
-      "summary": "Reported ~50 duplicate Spencer Technologies (4) jobs in the Spec Ops Legacy Base and wanted a safe way to cross-reference before deleting. Went ahead and deleted the duplicates himself before the review list was ready.",
-      "statusCls": "badge-investigating",
-      "status": "Spot-check in progress",
-      "date": "7/14",
-      "jiraKey": "COP-1995",
-      "note": "Don already deleted the duplicates on his own; Ricardo owes a retrospective spot-check against Subway-457, Subway-1298, and Subway-1741 to confirm no non-duplicate records were removed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784045487595?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784045487595&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784045487595&ngc=true"
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#D35400",
+      "summary": "Since 7/8, unable to create finance adjustment line items across multiple jobs — Airtable base shows stale sync (~13+ hrs behind).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Airtable Support",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Root cause isolated to an Airtable backend sync issue (escalated to Airtable Support 7/13); nothing further owed on our side until they respond.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468"
     }
   ]
 }
