@@ -5,29 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capture Coordinator Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#111111;
-    --navy-2:#000000;
-    --teal:#ff3158;
-    --teal-2:#e01f44;
-    --ink:#141414;
-    --muted:#6b6b70;
-    --border:#e7e5e3;
-    --bg:#f7f6f5;
+    --navy:#0b1f3a;
+    --navy-2:#132b52;
+    --teal:#0ea5a0;
+    --teal-2:#0c8f8a;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --bg:#f4f6f9;
     --card:#ffffff;
-    --good:#0f9d63;
+    --good:#0ea5a0;
     --bad:#e0524d;
-    --amber:#f2a93b;
-    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.08);
+    --amber:#e2a53a;
+    --shadow: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.08);
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--ink);
   }
@@ -49,12 +46,8 @@
   }
   header .sub{
     font-size:12.5px;
-    color:#9a9a9f;
+    color:#b9c6de;
     margin-top:2px;
-  }
-  header > div:first-of-type{
-    border-left:3px solid var(--teal);
-    padding-left:14px;
   }
   .filters{
     display:flex;
@@ -66,19 +59,18 @@
     font-size:11px;
     text-transform:uppercase;
     letter-spacing:.06em;
-    color:#9a9a9f;
+    color:#b9c6de;
     display:block;
     margin-bottom:4px;
   }
   .filters select, .filters input{
     background:#fff;
     border:none;
-    border-radius:100px;
-    padding:8px 14px;
+    border-radius:8px;
+    padding:8px 12px;
     font-size:13.5px;
-    min-width:180px;
+    min-width:150px;
     color:var(--ink);
-    font-weight:600;
   }
   .filters select:focus, .filters input:focus{ outline:2px solid var(--teal); }
   main{
@@ -111,9 +103,15 @@
   .section-title .sq{
     color:var(--teal);
   }
+  .section-note{
+    font-size:11.5px;
+    color:var(--muted);
+    font-weight:500;
+    margin-left:2px;
+  }
   .kpi-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
     gap:14px;
     margin-bottom:16px;
   }
@@ -124,7 +122,7 @@
     box-shadow:var(--shadow);
     border-top:3px solid var(--teal);
   }
-  .kpi-card.dim{ border-top-color:#c9c7c4; }
+  .kpi-card.dim{ border-top-color:#94a3b8; }
   .kpi-card h3{
     margin:0 0 10px;
     font-size:13px;
@@ -151,6 +149,11 @@
     grid-template-columns:1.3fr 1fr;
     gap:16px;
   }
+  .grid-2-eq{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
   .panel{
     background:var(--card);
     border-radius:12px;
@@ -162,6 +165,12 @@
     font-size:13.5px;
     color:var(--navy);
     font-weight:650;
+  }
+  .panel .footnote{
+    margin:10px 0 0;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.4;
   }
   table{
     width:100%;
@@ -180,9 +189,10 @@
     text-transform:uppercase;
     letter-spacing:.03em;
   }
+  th.help{ cursor:help; border-bottom:1px dotted var(--muted); }
   td.num, th.num{ text-align:right; font-variant-numeric:tabular-nums; }
   .bar-wrap{
-    background:#f0eeec;
+    background:#eef2f7;
     border-radius:6px;
     height:8px;
     overflow:hidden;
@@ -221,8 +231,8 @@
   }
   .error{ color:var(--bad); }
   @media (max-width:1100px){
-    .kpi-grid{ grid-template-columns:repeat(2,1fr); }
     .grid-2{ grid-template-columns:1fr; }
+    .grid-2-eq{ grid-template-columns:1fr; }
   }
   @media (max-width:600px){
     .kpi-grid{ grid-template-columns:1fr; }
@@ -230,25 +240,20 @@
 
   /* ---- Shared nav bar (hamburger + breadcrumb) ---- */
   .topnav{
-    background:#ffffff;
-    color:#141414;
+    background:#081428;
+    color:#cdd8ea;
     display:flex;
     align-items:center;
-    gap:14px;
-    padding:10px 20px;
+    gap:12px;
+    padding:8px 20px;
     font-size:12.5px;
     position:relative;
     z-index:50;
-    border-bottom:1px solid #ececea;
-  }
-  .topnav .brand-logo{
-    height:20px;
-    display:block;
   }
   .hamburger{
     background:none;
-    border:1px solid #d8d6d3;
-    color:#141414;
+    border:1px solid #2a3c5e;
+    color:#fff;
     border-radius:6px;
     width:30px; height:28px;
     font-size:15px;
@@ -256,20 +261,20 @@
     cursor:pointer;
     flex:none;
   }
-  .hamburger:hover{ background:#f5f4f3; }
+  .hamburger:hover{ background:#132646; }
   .breadcrumb{ display:flex; align-items:center; gap:6px; }
-  .breadcrumb .crumb-root{ color:#8a8a8e; }
-  .breadcrumb .crumb-sep{ color:#c9c7c4; }
-  .breadcrumb .crumb-current{ color:var(--teal); font-weight:700; }
+  .breadcrumb .crumb-root{ color:#8fa2c4; }
+  .breadcrumb .crumb-sep{ color:#4c5f83; }
+  .breadcrumb .crumb-current{ color:#fff; font-weight:600; }
   .nav-panel{
     display:none;
     position:absolute;
-    top:44px; left:20px;
-    background:#ffffff;
-    border:1px solid #ececea;
+    top:40px; left:20px;
+    background:#0f2242;
+    border:1px solid #24365a;
     border-radius:10px;
     padding:6px;
-    box-shadow:0 12px 28px rgba(0,0,0,.15);
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
     min-width:260px;
     flex-direction:column;
     gap:2px;
@@ -281,18 +286,17 @@
     gap:9px;
     padding:9px 12px;
     border-radius:7px;
-    color:#141414;
+    color:#dbe4f5;
     text-decoration:none;
     font-size:13px;
   }
-  .nav-panel a:hover{ background:#f5f4f3; }
-  .nav-panel a.active{ background:var(--teal); color:#fff; font-weight:650; cursor:default; }
+  .nav-panel a:hover{ background:#1a3562; }
+  .nav-panel a.active{ background:var(--teal-2); color:#fff; font-weight:650; cursor:default; }
 </style>
 </head>
 <body>
 
 <nav class="topnav">
-  <img class="brand-logo" src="https://images.ctfassets.net/icnj41gkyohw/4TFgKaRydiQc25X5NqOPon/a1726d6086793c5335b73fd41a06d52c/Matterport_Logo_-_Black_%C3%82_%C3%AF__.svg" alt="Matterport">
   <button class="hamburger" id="navToggle" aria-label="Open navigation">☰</button>
   <div class="breadcrumb">
     <span class="crumb-root">Capture Services</span>
@@ -317,6 +321,18 @@
       <select id="fySelect"></select>
     </div>
     <div>
+      <label for="granSelect">View By</label>
+      <select id="granSelect">
+        <option value="year">Year</option>
+        <option value="quarter">Quarter</option>
+        <option value="month">Month</option>
+      </select>
+    </div>
+    <div id="periodWrap" style="display:none;">
+      <label for="periodSelect">Period</label>
+      <select id="periodSelect"></select>
+    </div>
+    <div>
       <label for="coordSelect">Capture Coordinator</label>
       <input list="coordList" id="coordSelect" placeholder="All Coordinators" autocomplete="off">
       <datalist id="coordList"></datalist>
@@ -333,25 +349,28 @@
 </footer>
 
 <script>
-const REGION_GROUPS = ['GLOBAL','NORAM','INTL','SpecOps'];
+const REGION_GROUPS = ['GLOBAL','NORAM','INTL','SpecOps','VACASA'];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const QUARTER_LABELS = ['Q1','Q2','Q3','Q4'];
+const TREND_COLORS = ['#0ea5a0','#0b1f3a','#e2a53a'];
 
 let DATA = null;
-let state = { fy: null, coordIdx: -1 };
+let state = { fy: null, coordIdx: -1, granularity: 'year', period: null };
 
 const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
 const fmtPct = (n) => (n*100).toFixed(1) + '%';
 const fmtNum = (n) => Math.round(n).toLocaleString('en-US');
 const fmtDays = (n) => n===null ? '--' : n.toFixed(2) + ' days';
+const fmtUSD2 = (n) => n===null ? '--' : '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtSize = (n) => n===null ? '--' : Math.round(n).toLocaleString('en-US') + ' sq ft';
+const fmtCount1 = (n) => n===null ? '--' : n.toFixed(1);
 
 function regionMatches(r, group){
-  // Buckets are fanned out per-record into both a specific region tag AND an
-  // independent 'ALL' tag (see build-capture-services-data.mjs). GLOBAL must
-  // read the 'ALL' tag only — matching "any specific region" would double-count.
   if (group === 'GLOBAL') return r === 'ALL';
   if (group === 'NORAM') return r === 'NORAM';
   if (group === 'INTL') return r === 'EMEA' || r === 'APAC';
   if (group === 'SpecOps') return r === 'SpecOps';
+  if (group === 'VACASA') return r === 'VACASA';
   return false;
 }
 
@@ -361,12 +380,59 @@ async function loadData(){
   return res.json();
 }
 
+function monthsInScope(){
+  if (state.granularity === 'quarter' && state.period){
+    const start = (state.period - 1) * 3 + 1;
+    return [start, start+1, start+2];
+  }
+  if (state.granularity === 'month' && state.period){
+    return [state.period];
+  }
+  return null;
+}
+function inScope(m){
+  const scope = monthsInScope();
+  return scope === null || scope.includes(m);
+}
+
+function populatePeriodSelect(){
+  const wrap = document.getElementById('periodWrap');
+  const sel = document.getElementById('periodSelect');
+  if (state.granularity === 'year'){
+    wrap.style.display = 'none';
+    state.period = null;
+    return;
+  }
+  wrap.style.display = '';
+  if (state.granularity === 'quarter'){
+    sel.innerHTML = QUARTER_LABELS.map((q,i) => `<option value="${i+1}">${q}</option>`).join('');
+  } else {
+    sel.innerHTML = MONTHS.map((mo,i) => `<option value="${i+1}">${mo}</option>`).join('');
+  }
+  if (!state.period) state.period = 1;
+  sel.value = state.period;
+}
+
 function populateFilters(){
   const fySel = document.getElementById('fySelect');
   fySel.innerHTML = DATA.fiscalYears.slice().sort((a,b)=>b-a).map(y => `<option value="${y}">${y}</option>`).join('');
   state.fy = DATA.fiscalYears.includes(new Date().getFullYear()) ? new Date().getFullYear() : DATA.fiscalYears[DATA.fiscalYears.length-1];
   fySel.value = state.fy;
   fySel.addEventListener('change', () => { state.fy = Number(fySel.value); render(); });
+
+  const granSel = document.getElementById('granSelect');
+  granSel.value = state.granularity;
+  populatePeriodSelect();
+  granSel.addEventListener('change', () => {
+    state.granularity = granSel.value;
+    state.period = null;
+    populatePeriodSelect();
+    render();
+  });
+  document.getElementById('periodSelect').addEventListener('change', (e) => {
+    state.period = Number(e.target.value);
+    render();
+  });
 
   const list = document.getElementById('coordList');
   const coordinators = DATA.coordinators || [];
@@ -383,28 +449,31 @@ function populateFilters(){
 
 // ---------- Aggregation ----------
 //
-// Mirrors the client/technician dashboards' two-tier pattern, sliced by
-// Capture Coordinator (Airtable "Coordinator Name" field) instead of MP
-// Client / Vendor Name:
-//  - DATA.coordCube / DATA.coordReqCube: keyed per coordinator — correct for
-//    a single selected coordinator.
-//  - DATA.globalCube / DATA.globalReqCube: no coordinator (or client/tech)
-//    dimension, independently deduped — the SAME "All Clients" unfiltered
-//    data the other two dashboards use, correct here too for "All
-//    Coordinators" since the source workbook's GLOBAL formulas are shared
-//    across all three tabs.
+// Two lenses coexist, matching the source workbook (see index.html for the
+// fuller explanation): a completion lens (DATA.cube/globalCube) drives
+// Revenue/turnaround-time, and an ordered-cohort lens (DATA.coordReqCube/
+// globalReqCube, keyed by request date) drives Jobs/Models Ordered/Completed/
+// Cancelled/In-Progress.
 
-function filteredCube(){
+function yearCube(){
   if (state.coordIdx === -1){
     return DATA.globalCube.filter(b => b.y === state.fy);
   }
   return (DATA.coordCube || []).filter(b => b.y === state.fy && b.co === state.coordIdx);
 }
-function filteredReqCube(){
+function yearReqCube(){
   if (state.coordIdx === -1){
     return DATA.globalReqCube.filter(b => b.y === state.fy);
   }
   return (DATA.coordReqCube || []).filter(b => b.y === state.fy && b.co === state.coordIdx);
+}
+function filteredCube(){ return yearCube().filter(b => inScope(b.m)); }
+function filteredReqCube(){ return yearReqCube().filter(b => inScope(b.m)); }
+
+function periodLabel(){
+  if (state.granularity === 'quarter' && state.period) return `FY${state.fy} · ${QUARTER_LABELS[state.period-1]}`;
+  if (state.granularity === 'month' && state.period) return `FY${state.fy} · ${MONTHS[state.period-1]}`;
+  return `Fiscal Year ${state.fy}`;
 }
 
 function revenueSummary(group){
@@ -417,9 +486,6 @@ function revenueSummary(group){
 }
 
 function turnaroundSummary(group){
-  // "Pending -> Scheduled" and "Scheduled -> Complete" average days, computed
-  // exactly like the source workbook: SUM(day-count field) / completed-models
-  // count for the same Complete-status, region, FY slice.
   const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
   const models = rows.reduce((a,b)=>a+b.models,0);
   const p2s = rows.reduce((a,b)=>a+(b.p2sSum||0),0);
@@ -431,68 +497,121 @@ function turnaroundSummary(group){
 }
 
 function monthlySeries(group, field, status){
-  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s === status);
+  const rows = yearCube().filter(b => regionMatches(b.r, group) && b.s === status);
   const out = new Array(12).fill(0);
   rows.forEach(b => { out[b.m-1] += b[field]; });
   return out;
 }
 
 function jobsSummary(group){
-  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
-  const completed = rows.reduce((a,b)=>a+b.jobs,0);
   const reqRows = filteredReqCube().filter(b => regionMatches(b.r, group));
-  const requested = reqRows.reduce((a,b)=>a+b.req,0);
-  const completedOfReq = reqRows.reduce((a,b)=>a+b.comp,0);
-  const wip = requested - completedOfReq;
-  return { completed, requested, completedOfReq, wip, rate: requested ? completedOfReq/requested : 0 };
+  const ordered = reqRows.reduce((a,b)=>a+b.req,0);
+  const completed = reqRows.reduce((a,b)=>a+b.comp,0);
+  const cancelled = reqRows.reduce((a,b)=>a+b.cancelled,0);
+  const inProgress = Math.max(0, ordered - completed - cancelled);
+  const rate = ordered ? completed/ordered : 0;
+
+  const cubeRows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
+  const jrSum = cubeRows.reduce((a,b)=>a+(b.jrSum||0),0);
+  const jrCnt = cubeRows.reduce((a,b)=>a+(b.jrCnt||0),0);
+  const jsSum = cubeRows.reduce((a,b)=>a+(b.jsSum||0),0);
+  const jsCnt = cubeRows.reduce((a,b)=>a+(b.jsCnt||0),0);
+  return {
+    ordered, completed, cancelled, inProgress, rate,
+    avgJobRate: jrCnt ? jrSum/jrCnt : null,
+    avgJobSize: jsCnt ? jsSum/jsCnt : null,
+  };
 }
 
 function modelsSummary(group){
-  const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
-  const completed = rows.reduce((a,b)=>a+b.models,0);
   const reqRows = filteredReqCube().filter(b => regionMatches(b.r, group));
-  const requested = reqRows.reduce((a,b)=>a+b.req,0);
-  const completedOfReq = reqRows.reduce((a,b)=>a+b.comp,0);
-  return { completed, requested, completedOfReq };
+  const ordered = reqRows.reduce((a,b)=>a+b.reqModels,0);
+  const completed = reqRows.reduce((a,b)=>a+b.compModels,0);
+  const cancelled = reqRows.reduce((a,b)=>a+b.cancelledModels,0);
+  const inProgress = Math.max(0, ordered - completed - cancelled);
+  const rate = ordered ? completed/ordered : 0;
+
+  const cubeRows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
+  const jobsCompleted = cubeRows.reduce((a,b)=>a+b.jobs,0);
+  const modelsCompleted = cubeRows.reduce((a,b)=>a+b.models,0);
+  const msSum = cubeRows.reduce((a,b)=>a+(b.msSum||0),0);
+  const msCnt = cubeRows.reduce((a,b)=>a+(b.msCnt||0),0);
+  return {
+    ordered, completed, cancelled, inProgress, rate,
+    avgModelsPerJob: jobsCompleted ? modelsCompleted/jobsCompleted : null,
+    avgModelSize: msCnt ? msSum/msCnt : null,
+  };
 }
 
 function jobsMonthly(group, kind){
   if (kind === 'completed'){
-    const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
+    const rows = yearCube().filter(b => regionMatches(b.r, group) && b.s==='C');
     const out = new Array(12).fill(0);
     rows.forEach(b => out[b.m-1] += b.jobs);
     return out;
   }
-  const rows = filteredReqCube().filter(b => regionMatches(b.r, group));
+  const rows = yearReqCube().filter(b => regionMatches(b.r, group));
   const out = new Array(12).fill(0);
-  rows.forEach(b => out[b.m-1] += (kind==='requested'? b.req : b.comp));
+  const field = kind === 'ordered' ? 'req' : kind === 'cancelled' ? 'cancelled' : 'comp';
+  rows.forEach(b => out[b.m-1] += b[field]);
   return out;
 }
 
 function modelsMonthly(group, kind){
   if (kind === 'completed'){
-    const rows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
+    const rows = yearCube().filter(b => regionMatches(b.r, group) && b.s==='C');
     const out = new Array(12).fill(0);
     rows.forEach(b => out[b.m-1] += b.models);
     return out;
   }
-  return jobsMonthly(group, kind);
+  const rows = yearReqCube().filter(b => regionMatches(b.r, group));
+  const out = new Array(12).fill(0);
+  const field = kind === 'ordered' ? 'reqModels' : kind === 'cancelled' ? 'cancelledModels' : 'compModels';
+  rows.forEach(b => out[b.m-1] += b[field]);
+  return out;
 }
 
 function top10(){
-  // Top 10 Coordinators by Revenue, with total Capture Size (sq ft requested)
-  // — matches the source workbook's columns exactly (Completed / CLM / Rev /
-  // Capture Size). Note the source table has NO "% of total" column on this
-  // tab, unlike the Client and Technician dashboards' Top 10 tables.
   const coordinators = DATA.coordinators || [];
-  const rows = (DATA.coordYear || []).filter(cy => cy.y === state.fy && (state.coordIdx === -1 || cy.co === state.coordIdx));
-  return rows.slice().sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
-    coord: coordinators[r.co] || 'Unknown',
-    completed: r.jobs,
-    clm: r.clm,
-    rev: r.rev,
-    captureSize: r.captureSize,
+  if (state.granularity === 'year'){
+    const rows = (DATA.coordYear || []).filter(cy => cy.y === state.fy && (state.coordIdx === -1 || cy.co === state.coordIdx));
+    return rows.slice().sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
+      coord: coordinators[r.co] || 'Unknown', completed: r.jobs, clm: r.clm, rev: r.rev, captureSize: r.captureSize,
+    }));
+  }
+  // Quarter/Month drill-down — see index.html's top10() for the shared caveat
+  // about summing already-deduped monthly buckets for jobs. Capture Size isn't
+  // tracked in the monthly cube (only in the year-level coordYear table), so
+  // it's shown as "--" at Quarter/Month granularity.
+  const byCoord = new Map();
+  (DATA.coordCube || [])
+    .filter(b => b.y===state.fy && b.s==='C' && b.r==='ALL' && inScope(b.m) && (state.coordIdx===-1 || b.co===state.coordIdx))
+    .forEach(b=>{
+      let e = byCoord.get(b.co);
+      if (!e){ e = { co:b.co, rev:0, jobs:0, clm:0 }; byCoord.set(b.co,e); }
+      e.rev += b.rev; e.jobs += b.jobs; e.clm += b.models;
+    });
+  return Array.from(byCoord.values()).sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
+    coord: coordinators[r.co] || 'Unknown', completed: r.jobs, clm: r.clm, rev: r.rev, captureSize: null,
   }));
+}
+
+// ---------- 3-Year FY Trend Comparison ----------
+
+function trendYears(){
+  return [state.fy, state.fy-1, state.fy-2].filter(y => DATA.fiscalYears.includes(y));
+}
+function trendSeries(year, field){
+  const rows = (state.coordIdx === -1 ? DATA.globalCube : (DATA.coordCube || []))
+    .filter(b => b.y===year && b.s==='C' && b.r==='ALL' && (state.coordIdx===-1 || b.co===state.coordIdx));
+  const out = new Array(12).fill(0);
+  rows.forEach(b => { out[b.m-1] += (field==='jobs' ? b.jobs : b[field]); });
+  return out;
+}
+function trendMarginSeries(year){
+  const rev = trendSeries(year,'rev');
+  const cost = trendSeries(year,'cost');
+  return rev.map((r,i)=> r ? +(((r-cost[i])/r)*100).toFixed(1) : 0);
 }
 
 // ---------- Rendering ----------
@@ -539,8 +658,8 @@ function buildLayout(){
       <div class="kpi-grid" id="jobsCards"></div>
     </div>
     <div class="section grid-2">
-      <div class="panel"><h4>Monthly Count of Reported Complete Jobs</h4><div class="chart-box"><canvas id="chartJobsCompleted"></canvas></div></div>
-      <div class="panel"><h4>Requested vs Completed (Current FY Requests) — GLOBAL</h4><div class="chart-box"><canvas id="chartJobsReqComp"></canvas></div></div>
+      <div class="panel"><h4>Monthly Count of Completed Jobs (by completion month)</h4><div class="chart-box"><canvas id="chartJobsCompleted"></canvas></div></div>
+      <div class="panel"><h4>Ordered vs Completed vs Cancelled — GLOBAL</h4><div class="chart-box"><canvas id="chartJobsReqComp"></canvas></div></div>
     </div>
 
     <div class="section">
@@ -548,8 +667,20 @@ function buildLayout(){
       <div class="kpi-grid" id="modelsCards"></div>
     </div>
     <div class="section grid-2">
-      <div class="panel"><h4>Monthly Count of Delivered Models</h4><div class="chart-box"><canvas id="chartModelsCompleted"></canvas></div></div>
-      <div class="panel"><h4>Requested vs Completed (Current FY Requests) — GLOBAL</h4><div class="chart-box"><canvas id="chartModelsReqComp"></canvas></div></div>
+      <div class="panel"><h4>Monthly Count of Delivered Models (by completion month)</h4><div class="chart-box"><canvas id="chartModelsCompleted"></canvas></div></div>
+      <div class="panel"><h4>Ordered vs Completed vs Cancelled — GLOBAL</h4><div class="chart-box"><canvas id="chartModelsReqComp"></canvas></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> FY Trend Comparison <span class="section-note" id="trendNote"></span></div>
+      <div class="grid-2-eq">
+        <div class="panel"><h4>Revenue by Month</h4><div class="chart-box"><canvas id="chartTrendRev"></canvas></div></div>
+        <div class="panel"><h4>CT Payouts (Cost) by Month</h4><div class="chart-box"><canvas id="chartTrendCost"></canvas></div></div>
+      </div>
+      <div class="grid-2-eq" style="margin-top:16px;">
+        <div class="panel"><h4>Gross Margin % by Month</h4><div class="chart-box"><canvas id="chartTrendMargin"></canvas></div></div>
+        <div class="panel"><h4># of Jobs Completed by Month</h4><div class="chart-box"><canvas id="chartTrendJobs"></canvas></div></div>
+      </div>
     </div>
   `;
 }
@@ -562,10 +693,10 @@ function renderRevenueCards(){
     return `
       <div class="kpi-card ${g==='GLOBAL'?'':'dim'}">
         <h3>${g}</h3>
-        <div class="kpi-row"><span class="lbl">Revenue FY TD</span><span class="val">${fmtUSD(s.rev)}</span></div>
+        <div class="kpi-row"><span class="lbl">Revenue</span><span class="val">${fmtUSD(s.rev)}</span></div>
         <div class="kpi-row"><span class="lbl">Total Cost</span><span class="val">${fmtUSD(s.cost)}</span></div>
         <div class="kpi-row"><span class="lbl">Margin</span><span class="val ${marginClass(s.margin)}">${fmtPct(s.margin)}</span></div>
-        <div class="kpi-row"><span class="lbl">In Progress FY</span><span class="val">${fmtUSD(s.inProgress)}</span></div>
+        <div class="kpi-row"><span class="lbl">In Progress</span><span class="val">${fmtUSD(s.inProgress)}</span></div>
         <div class="kpi-row"><span class="lbl">Pending → Scheduled</span><span class="val">${fmtDays(t.pendingToScheduled)}</span></div>
         <div class="kpi-row"><span class="lbl">Scheduled → Complete</span><span class="val">${fmtDays(t.scheduledToComplete)}</span></div>
       </div>`;
@@ -578,8 +709,8 @@ function renderRevCostChart(){
   upsertChart('chartRevCost', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Revenue', data: rev, backgroundColor:'#ff3158' },
-      { label:'Cost', data: cost, backgroundColor:'#111111' },
+      { label:'Revenue', data: rev, backgroundColor:'#0ea5a0' },
+      { label:'Cost', data: cost, backgroundColor:'#0b1f3a' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       plugins:{legend:{position:'bottom', labels:{boxWidth:10}}},
@@ -593,7 +724,13 @@ function renderTop10(){
   if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No revenue recorded for this selection.</p>'; return; }
   el.innerHTML = `
     <table>
-      <thead><tr><th>Coordinator</th><th class="num">Completed</th><th class="num">CLM</th><th class="num">Rev. (USD)</th><th class="num">Capture Size</th></tr></thead>
+      <thead><tr>
+        <th>Coordinator</th>
+        <th class="num">Completed</th>
+        <th class="num help" title="Total model/deliverable records tied to this coordinator's completed jobs this period. A single job can include multiple models, so CLM is often several times higher than the Completed (unique job) count.">CLM ⓘ</th>
+        <th class="num">Rev. (USD)</th>
+        <th class="num">Capture Size</th>
+      </tr></thead>
       <tbody>
         ${rows.map((r,i) => `
           <tr>
@@ -601,10 +738,11 @@ function renderTop10(){
             <td class="num">${fmtNum(r.completed)}</td>
             <td class="num">${fmtNum(r.clm)}</td>
             <td class="num">${fmtUSD(r.rev)}</td>
-            <td class="num">${fmtNum(r.captureSize)}</td>
+            <td class="num">${r.captureSize===null ? '--' : fmtNum(r.captureSize)}</td>
           </tr>`).join('')}
       </tbody>
-    </table>`;
+    </table>
+    <p class="footnote">CLM = total model/deliverable records for this coordinator's completed jobs this period (each job can include multiple models).</p>`;
 }
 
 function renderJobsCards(){
@@ -614,10 +752,13 @@ function renderJobsCards(){
     return `
       <div class="kpi-card ${g==='GLOBAL'?'':'dim'}">
         <h3>${g}</h3>
-        <div class="kpi-row"><span class="lbl">Total Completed Jobs</span><span class="val">${fmtNum(s.completed)}</span></div>
-        <div class="kpi-row"><span class="lbl">Requested Jobs FY</span><span class="val">${fmtNum(s.requested)}</span></div>
-        <div class="kpi-row"><span class="lbl">Completed Jobs FY</span><span class="val">${fmtNum(s.completedOfReq)} <small style="color:var(--muted)">(${fmtPct(s.rate)})</small></span></div>
-        <div class="kpi-row"><span class="lbl">In Progress FY</span><span class="val">${fmtNum(s.wip)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Jobs Ordered</span><span class="val">${fmtNum(s.ordered)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Jobs Completed</span><span class="val">${fmtNum(s.completed)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Jobs Cancelled</span><span class="val">${fmtNum(s.cancelled)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Jobs In Progress</span><span class="val">${fmtNum(s.inProgress)}</span></div>
+        <div class="kpi-row"><span class="lbl">Completion Rate</span><span class="val">${fmtPct(s.rate)}</span></div>
+        <div class="kpi-row"><span class="lbl">Avg. Job Rate USD</span><span class="val">${fmtUSD2(s.avgJobRate)}</span></div>
+        <div class="kpi-row"><span class="lbl">Avg. Size of Job</span><span class="val">${fmtSize(s.avgJobSize)}</span></div>
       </div>`;
   }).join('');
 }
@@ -626,15 +767,16 @@ function renderModelsCards(){
   const el = document.getElementById('modelsCards');
   el.innerHTML = REGION_GROUPS.map(g => {
     const s = modelsSummary(g);
-    const wip = s.requested - s.completedOfReq;
-    const rate = s.requested ? s.completedOfReq/s.requested : 0;
     return `
       <div class="kpi-card ${g==='GLOBAL'?'':'dim'}">
         <h3>${g}</h3>
-        <div class="kpi-row"><span class="lbl">Delivered Models TD</span><span class="val">${fmtNum(s.completed)}</span></div>
-        <div class="kpi-row"><span class="lbl">Requested Models TD</span><span class="val">${fmtNum(s.requested)}</span></div>
-        <div class="kpi-row"><span class="lbl">Completed of Requested</span><span class="val">${fmtNum(s.completedOfReq)} <small style="color:var(--muted)">(${fmtPct(rate)})</small></span></div>
-        <div class="kpi-row"><span class="lbl">In Progress FY</span><span class="val">${fmtNum(wip)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Models Ordered</span><span class="val">${fmtNum(s.ordered)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Models Completed</span><span class="val">${fmtNum(s.completed)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Models Cancelled</span><span class="val">${fmtNum(s.cancelled)}</span></div>
+        <div class="kpi-row"><span class="lbl">Total Models In Progress</span><span class="val">${fmtNum(s.inProgress)}</span></div>
+        <div class="kpi-row"><span class="lbl">Completion Rate</span><span class="val">${fmtPct(s.rate)}</span></div>
+        <div class="kpi-row"><span class="lbl">Avg # Models / Job</span><span class="val">${fmtCount1(s.avgModelsPerJob)}</span></div>
+        <div class="kpi-row"><span class="lbl">Avg. Size of Model</span><span class="val">${fmtSize(s.avgModelSize)}</span></div>
       </div>`;
   }).join('');
 }
@@ -643,18 +785,20 @@ function renderJobsCharts(){
   upsertChart('chartJobsCompleted', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'GLOBAL', data: jobsMonthly('GLOBAL','completed'), borderColor:'#ff3158', backgroundColor:'#ff3158', tension:.3 },
-      { label:'NORAM', data: jobsMonthly('NORAM','completed'), borderColor:'#111111', backgroundColor:'#111111', tension:.3 },
-      { label:'INTL', data: jobsMonthly('INTL','completed'), borderColor:'#f2a93b', backgroundColor:'#f2a93b', tension:.3 },
+      { label:'GLOBAL', data: jobsMonthly('GLOBAL','completed'), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
+      { label:'NORAM', data: jobsMonthly('NORAM','completed'), borderColor:'#0b1f3a', backgroundColor:'#0b1f3a', tension:.3 },
+      { label:'INTL', data: jobsMonthly('INTL','completed'), borderColor:'#e2a53a', backgroundColor:'#e2a53a', tension:.3 },
       { label:'Spec Ops', data: jobsMonthly('SpecOps','completed'), borderColor:'#e0524d', backgroundColor:'#e0524d', tension:.3 },
+      { label:'Vacasa', data: jobsMonthly('VACASA','completed'), borderColor:'#7c3aed', backgroundColor:'#7c3aed', tension:.3 },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
   upsertChart('chartJobsReqComp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Requested', data: jobsMonthly('GLOBAL','requested'), backgroundColor:'#c9c7c4' },
-      { label:'Completed', data: jobsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#ff3158' },
+      { label:'Ordered', data: jobsMonthly('GLOBAL','ordered'), backgroundColor:'#94a3b8' },
+      { label:'Completed', data: jobsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#0ea5a0' },
+      { label:'Cancelled', data: jobsMonthly('GLOBAL','cancelled'), backgroundColor:'#e0524d' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
@@ -664,26 +808,64 @@ function renderModelsCharts(){
   upsertChart('chartModelsCompleted', {
     type:'line',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'GLOBAL', data: modelsMonthly('GLOBAL','completed'), borderColor:'#ff3158', backgroundColor:'#ff3158', tension:.3 },
-      { label:'NORAM', data: modelsMonthly('NORAM','completed'), borderColor:'#111111', backgroundColor:'#111111', tension:.3 },
-      { label:'INTL', data: modelsMonthly('INTL','completed'), borderColor:'#f2a93b', backgroundColor:'#f2a93b', tension:.3 },
+      { label:'GLOBAL', data: modelsMonthly('GLOBAL','completed'), borderColor:'#0ea5a0', backgroundColor:'#0ea5a0', tension:.3 },
+      { label:'NORAM', data: modelsMonthly('NORAM','completed'), borderColor:'#0b1f3a', backgroundColor:'#0b1f3a', tension:.3 },
+      { label:'INTL', data: modelsMonthly('INTL','completed'), borderColor:'#e2a53a', backgroundColor:'#e2a53a', tension:.3 },
       { label:'Spec Ops', data: modelsMonthly('SpecOps','completed'), borderColor:'#e0524d', backgroundColor:'#e0524d', tension:.3 },
+      { label:'Vacasa', data: modelsMonthly('VACASA','completed'), borderColor:'#7c3aed', backgroundColor:'#7c3aed', tension:.3 },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
   upsertChart('chartModelsReqComp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Requested', data: modelsMonthly('GLOBAL','requested'), backgroundColor:'#c9c7c4' },
-      { label:'Completed', data: modelsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#ff3158' },
+      { label:'Ordered', data: modelsMonthly('GLOBAL','ordered'), backgroundColor:'#94a3b8' },
+      { label:'Completed', data: modelsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#0ea5a0' },
+      { label:'Cancelled', data: modelsMonthly('GLOBAL','cancelled'), backgroundColor:'#e0524d' },
     ]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
+  });
+}
+
+function renderTrendCharts(){
+  const years = trendYears();
+  document.getElementById('trendNote').textContent =
+    `${years.length} year${years.length===1?'':'s'} available (${years.slice().reverse().join(', ')}) · scoped to ${state.coordIdx===-1 ? 'All Coordinators' : (DATA.coordinators[state.coordIdx] || 'Unknown')}, GLOBAL`;
+
+  const dsFor = (field) => years.map((y,i) => ({
+    label: String(y),
+    data: field==='margin' ? trendMarginSeries(y) : trendSeries(y, field),
+    borderColor: TREND_COLORS[i], backgroundColor: TREND_COLORS[i], tension:.3,
+  }));
+
+  upsertChart('chartTrendRev', {
+    type:'line',
+    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets: dsFor('rev') },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
+      scales:{ y:{ ticks:{ callback:(v)=>'$'+(v/1000).toFixed(0)+'k' } } } }
+  });
+  upsertChart('chartTrendCost', {
+    type:'line',
+    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets: dsFor('cost') },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
+      scales:{ y:{ ticks:{ callback:(v)=>'$'+(v/1000).toFixed(0)+'k' } } } }
+  });
+  upsertChart('chartTrendMargin', {
+    type:'line',
+    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets: dsFor('margin') },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}},
+      scales:{ y:{ ticks:{ callback:(v)=>v+'%' } } } }
+  });
+  upsertChart('chartTrendJobs', {
+    type:'line',
+    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets: dsFor('jobs') },
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
 }
 
 function render(){
   document.getElementById('scopeLabel').textContent =
-    `Fiscal Year ${state.fy} · ${state.coordIdx===-1 ? 'All Coordinators' : (DATA.coordinators[state.coordIdx] || 'Unknown')}`;
+    `${periodLabel()} · ${state.coordIdx===-1 ? 'All Coordinators' : (DATA.coordinators[state.coordIdx] || 'Unknown')}`;
   renderRevenueCards();
   renderRevCostChart();
   renderTop10();
@@ -691,6 +873,7 @@ function render(){
   renderJobsCharts();
   renderModelsCards();
   renderModelsCharts();
+  renderTrendCharts();
 }
 
 document.getElementById('navToggle').addEventListener('click', (e) => {
