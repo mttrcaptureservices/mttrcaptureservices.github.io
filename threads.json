@@ -1,40 +1,28 @@
 {
-  "lastUpdated": "2026-07-15T18:30:00Z",
+  "lastUpdated": "2026-07-15T19:58:24Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#F59E0B",
-      "summary": "Job JOBID6594323772073237431 was assigned to a Hattiesburg, MS CT but the API automation reassigned it to a Jackson, WY tech due to a bad lat/long, so the confirmation email went to the wrong tech.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed, follow-up pending",
+      "summary": "A dispatched job for a Hattiesburg, MS tech got reassigned by automation to a tech in Jackson, WY, so the confirmation email went to the wrong tech.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Ryan's fix",
       "date": "7/14",
-      "note": "Overwriting bug fixed and confirmed by Ricardo/Adjet; still waiting on Ryan to correct the bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' before this fully closes.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+      "note": "The v2 automation overwrite bug is already fixed by Adjet, but the underlying bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' still needs Ryan to correct it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
     },
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#EF4444",
-      "summary": "Can't create adjustment line items on the 'View Only - ALL Jobs' view since 7/8; base shows 'last sync failed, data source unavailable'.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Tracked under COP-1985 (Airtable sync failure blocking adjustment line items); still sitting in To Do, waiting on Airtable Support to find the root cause.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
-    },
-    {
-      "author": "Marina Menacho Rosales",
-      "initials": "MM",
-      "color": "#8B5CF6",
-      "summary": "None of her team members can create an adjustment line on AT; getting an error message on all attempts.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Same underlying sync issue as Freddy Arias's report, logged as another occurrence on COP-1985; waiting on Airtable Support's root-cause fix.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#3B82F6",
+      "summary": "Vacasa jobs in Ocean City, MD were showing unexpectedly low Total Travel Distance values, suggesting no Vacasa In-Network city was being matched nearby.",
+      "statusCls": "badge-fix-deployed",
+      "status": "In Testing (COP-1888)",
+      "date": "5/6",
+      "jiraKey": "COP-1888",
+      "note": "Travel-distance calc has been turned on for Vacasa; Kevin Curtis and Jordan Saiz are validating as new jobs come in. No action needed unless a regression is reported.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
     }
   ]
 }
