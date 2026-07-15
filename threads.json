@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-07-15T19:58:24Z",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#F59E0B",
-      "summary": "A dispatched job for a Hattiesburg, MS tech got reassigned by automation to a tech in Jackson, WY, so the confirmation email went to the wrong tech.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Ryan's fix",
-      "date": "7/14",
-      "note": "The v2 automation overwrite bug is already fixed by Adjet, but the underlying bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' still needs Ryan to correct it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#3B82F6",
-      "summary": "Vacasa jobs in Ocean City, MD were showing unexpectedly low Total Travel Distance values, suggesting no Vacasa In-Network city was being matched nearby.",
-      "statusCls": "badge-fix-deployed",
-      "status": "In Testing (COP-1888)",
-      "date": "5/6",
-      "jiraKey": "COP-1888",
-      "note": "Travel-distance calc has been turned on for Vacasa; Kevin Curtis and Jordan Saiz are validating as new jobs come in. No action needed unless a regression is reported.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
-    }
-  ]
+"lastUpdated": "2026-07-15T20:13:08Z",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#F59E0B",
+"summary": "A dispatched job for a Hattiesburg, MS tech got reassigned by automation to a tech in Jackson, WY, so the confirmation email went to the wrong tech.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Ryan's fix",
+"date": "7/14",
+"note": "The v2 automation overwrite bug is already fixed by Adjet, but the underlying bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' still needs Ryan to correct it. Adjet reconfirmed 7/15 9:05 AM this is still the only open piece.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#3B82F6",
+"summary": "Vacasa jobs in Ocean City, MD were showing unexpectedly low Total Travel Distance values, suggesting no Vacasa In-Network city was being matched nearby.",
+"statusCls": "badge-fix-deployed",
+"status": "In Testing (COP-1888)",
+"date": "5/6",
+"jiraKey": "COP-1888",
+"note": "Travel-distance calc has been turned on for Vacasa; Kevin Curtis and Jordan Saiz are validating as new jobs come in. No action needed unless a regression is reported.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
+}
+]
 }
