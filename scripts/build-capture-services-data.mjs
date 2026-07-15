@@ -5,11 +5,9 @@
  * Pulls records from the GLOBAL Airtable table ("AT Quarterly Performance" view),
  * aggregates them into compact buckets, and writes capture-services/data.json for
  * the static dashboards (mttrcaptureservices.github.io/capture-services/) to
- * consume client-side. Feeds BOTH the Capture Services & Client Dashboard
- * (index.html) and the Capture Technician Dashboard (technician.html) from a
- * single Airtable fetch/pass — adding the technician-sliced cubes below is
- * purely additive (new top-level keys) so index.html's existing behavior is
- * unaffected.
+ * consume client-side. Feeds the Client Dashboard (index.html), the Capture
+ * Technician Dashboard (technician.html), and the Capture Coordinator Dashboard
+ * (coordinator.html) from a single Airtable fetch/pass.
  *
  * Requires: AIRTABLE_TOKEN env var (Airtable Personal Access Token with read
  * access to base appGPiaxVj615p7EP). Node 18+ (uses built-in fetch).
@@ -19,34 +17,46 @@
  *    the Client Dashboard's MP Client filter is set to a specific client.
  *  - `globalCube` / `globalReqCube`: keyed WITHOUT a client dimension, with their
  *    own independent Job-ID dedup — used for the "All Clients" (unfiltered) view,
- *    AND as the "All Technicians" unfiltered view on the Technician Dashboard
- *    (same underlying GLOBAL-table math; the Excel's own formulas use identical
- *    unfiltered SUMIFS/UNIQUE logic on both tabs when no slicer is set).
- *  - `techCube` / `techReqCube`: keyed by technician (+ year/month/region/status)
- *    — used when the Technician Dashboard's Capture Technician filter is set to
- *    a specific person. Mirrors `cube`/`reqCube` exactly, just keyed by the
- *    Airtable `Vendor Name` field instead of `MP Client`.
- *  - `coordCube` / `coordReqCube`: keyed by coordinator (+ year/month/region/status)
- *    — used when the Coordinator Dashboard's Capture Coordinator filter is set
- *    to a specific person. Mirrors `cube`/`reqCube`, keyed by the Airtable
- *    `Coordinator Name` field (NOT `Capture Coordinator`, which is a different,
- *    code-like field — verified `Coordinator Name` is the one holding
- *    human-readable first names matching the source workbook's Top 10 list).
+ *    AND as the "All Technicians"/"All Coordinators" unfiltered view on the other
+ *    two dashboards (same underlying GLOBAL-table math; the Excel's own formulas
+ *    use identical unfiltered SUMIFS/UNIQUE logic on all tabs when no slicer is set).
+ *  - `techCube` / `techReqCube`: keyed by technician (Airtable `Vendor Name` field).
+ *  - `coordCube` / `coordReqCube`: keyed by coordinator (Airtable `Coordinator Name`
+ *    field, NOT `Capture Coordinator`, which is a different, code-like field).
  *  - `globalCube` additionally carries `ctCsatResp`/`ctCsatSum` (Capture-Tech
- *    satisfaction, field `CSAT - Capture Tech Satisfaction`) so the Technician
- *    Dashboard's CSAT card can read it from the SAME bucket used for
- *    revenue/jobs/models, rather than a duplicate structure. It also carries
- *    `p2sSum`/`s2cSum` (sums of `Pending to Scheduled (days/hrs)` and
- *    `Scheduled to Complete (days/hrs)`) for the Coordinator Dashboard's two
- *    turnaround-time KPIs in its "All Coordinators" unfiltered view — divide
- *    by the bucket's own `models` count to get the workbook's "X.XX days" figure.
- *  - `clientYear`: per-client per-year revenue/jobs/clm, for the Client
- *    Dashboard's Top 10 Clients by Revenue table.
- *  - `techYear`: per-technician per-year cost/jobs/clm, for the Technician
- *    Dashboard's Top 10 Technicians by Cost table.
- *  - `coordYear`: per-coordinator per-year revenue/jobs/clm/captureSize, for the
- *    Coordinator Dashboard's Top 10 Coordinators by Revenue table (also shows
- *    summed `Capture Size - Requested`).
+ *    satisfaction) and `p2sSum`/`s2cSum` (Coordinator turnaround-time sums).
+ *  - `clientYear` / `techYear` / `coordYear`: per-entity per-year revenue or cost,
+ *    for each dashboard's Top 10 table.
+ *
+ * v4 additions (2026-07-14 business-unit feedback round):
+ *  - `regionBucket()` now recognizes a 5th region tag, 'VACASA', driven by the
+ *    Airtable `Sync Source_Derived` field (which itself already derives "VACASA"
+ *    when the raw Sync Source is "Global Parent Base" + the MP Client name
+ *    contains "Vacasa", OR when Sync Source is literally "VACASA"). IMPORTANT
+ *    caveat: prior to this change, VACASA records were silently falling into the
+ *    NORAM bucket (their `Region_Derived` is "NORAM"), so NORAM's totals will
+ *    shift down once this ships — GLOBAL ('ALL') totals are unaffected, this is
+ *    purely a re-slice of what was already being counted.
+ *  - Each cube bucket now also accumulates job-rate/job-size/model-size sums,
+ *    read from the `Job Rate USD` and `Capture Size` fields, split by the
+ *    Airtable `Parent-Child?` field: a bucket's "parent" records (Parent-Child?
+ *    !== 'Yes') carry the per-job billing rate and the job's total capture size;
+ *    its "child" records (Parent-Child? === 'Yes') are individual models within
+ *    that job, each with their own (usually smaller) capture size. This mirrors
+ *    the source workbook's own per-record structure (verified empirically: a
+ *    job's parent record holds the full Job Rate USD + total Capture Size, while
+ *    each child model record carries its own slice of Capture Size and often a
+ *    $0 or repeated Job Rate USD, since billing happens at the job level).
+ *  - `reqCube` / `globalReqCube` / `techReqCube` / `coordReqCube` now track a
+ *    third bucket, `cancelled` (in addition to the existing `req`/`comp` Job-ID
+ *    sets), so the dashboards can show a single ordered-jobs cohort split into
+ *    Completed / Cancelled / (residual) In Progress. A job counts as cancelled
+ *    only if its raw `Job Status` text matches a cancellation variant (case-
+ *    insensitive "cancel") AND it was NOT already counted Complete via the
+ *    `Interface Reporting Status` formula — this deliberately excludes "Cancelled
+ *    Last Minute" jobs, which the source formula (and this pipeline, unchanged)
+ *    still bills/counts as Complete, per Ricardo's explicit call (2026-07-14):
+ *    keep that revenue-facing number exactly as it was, don't double-bucket it.
  *
  * This matters because a true "no filter" unique-Job-ID count is NOT the same
  * as summing already-per-client/per-tech-deduped counts (the same Job ID can
@@ -55,7 +65,7 @@
  * rather than summing the per-slice breakdowns, so this replicates that.
  *
  * See project memory "capture-services-dashboard-data-model" for the full
- * formula-to-field mapping this script implements (tab 1 + tab 2).
+ * formula-to-field mapping this script implements.
  */
 
 import fs from 'fs';
@@ -77,6 +87,10 @@ const FIELDS = [
   'Interface Reporting Year',
   'Reporting Request Date/Time',
   'Job ID',
+  'Job Status',
+  'Job Rate USD',
+  'Capture Size',
+  'Parent-Child?',
   'CSAT - Satisfaction of Service',
   'CSAT - Service Score',
   'CSAT - Capture Tech Satisfaction',
@@ -93,6 +107,7 @@ if (!TOKEN) {
 
 function regionBucket(syncSource, regionDerived) {
   if (syncSource === "Special Op's") return 'SpecOps';
+  if (syncSource === 'VACASA') return 'VACASA';
   if (regionDerived === 'EMEA') return 'EMEA';
   if (regionDerived === 'APAC') return 'APAC';
   if (syncSource === 'NORAM' || regionDerived === 'NORAM') return 'NORAM';
@@ -103,6 +118,17 @@ function statusCode(status) {
   if (status === 'Complete') return 'C';
   if (status === 'Work In Progress') return 'W';
   return 'O';
+}
+
+function isCancelledJobStatus(jobStatus) {
+  return typeof jobStatus === 'string' && /cancel/i.test(jobStatus);
+}
+
+function isParentRecord(parentChild) {
+  // Airtable "Parent-Child?" field: 'Yes' marks a child/model record nested
+  // under a job; 'No' (or blank, treated the same) marks the parent/job-level
+  // record that carries the true per-job billing rate and total capture size.
+  return parentChild !== 'Yes';
 }
 
 function monthFromDateStr(dateStr) {
@@ -177,7 +203,7 @@ function main() {
       }
 
       const compCube = new Map(); // per-client: c|y|m|r|s
-      const globalCube = new Map(); // no client/tech/coord dim: y|m|r|s (also carries ctCsat*, p2sSum/s2cSum)
+      const globalCube = new Map(); // no client/tech/coord dim: y|m|r|s (also carries ctCsat*, p2sSum/s2cSum, jobRate*/jobSize*/modelSize*)
       const reqCube = new Map(); // per-client: c|y|m|r
       const globalReqCube = new Map(); // no client dim: y|m|r
       const clientYear = new Map(); // c|y (Top 10 Clients support)
@@ -191,6 +217,40 @@ function main() {
       const coordYear = new Map(); // co|y (Top 10 Coordinators support)
 
       const fySet = new Set();
+
+      const cubeFactory = (extra) => ({
+        rev: 0,
+        cost: 0,
+        jobIds: new Set(),
+        models: 0,
+        jobRateSum: 0,
+        jobRateCount: 0,
+        jobSizeSum: 0,
+        jobSizeCount: 0,
+        modelSizeSum: 0,
+        modelSizeCount: 0,
+        ...extra,
+      });
+
+      function applyCubeBase(b, { usd, cost, jobId, isParent, jobRate, captureSize }) {
+        b.rev += usd;
+        b.cost += cost;
+        if (jobId) b.jobIds.add(jobId);
+        b.models += 1;
+        if (isParent) {
+          if (typeof jobRate === 'number') {
+            b.jobRateSum += jobRate;
+            b.jobRateCount += 1;
+          }
+          if (typeof captureSize === 'number') {
+            b.jobSizeSum += captureSize;
+            b.jobSizeCount += 1;
+          }
+        } else if (typeof captureSize === 'number') {
+          b.modelSizeSum += captureSize;
+          b.modelSizeCount += 1;
+        }
+      }
 
       for (const rec of records) {
         const f = rec.fields;
@@ -207,26 +267,28 @@ function main() {
         const usd = typeof f['USD'] === 'number' ? f['USD'] : 0;
         const cost = typeof f['CT Rate USD'] === 'number' ? f['CT Rate USD'] : 0;
         const jobId = f['Job ID'] || null;
+        const jobStatus = f['Job Status'] || null;
+        const jobRate = typeof f['Job Rate USD'] === 'number' ? f['Job Rate USD'] : null;
+        const captureSize = typeof f['Capture Size'] === 'number' ? f['Capture Size'] : null;
+        const isParent = isParentRecord(f['Parent-Child?']);
         const csatScore = f['CSAT - Satisfaction of Service'];
         const csatHigh = f['CSAT - Service Score'];
         const ctCsatScore = f['CSAT - Capture Tech Satisfaction'];
-        const captureSize = typeof f['Capture Size - Requested'] === 'number' ? f['Capture Size - Requested'] : 0;
         const p2s = f['Pending to Scheduled (days/hrs)'];
         const s2c = f['Scheduled to Complete (days/hrs)'];
 
         if (y) fySet.add(y);
+
+        const cubeExtra = { usd, cost, jobId, isParent, jobRate, captureSize };
 
         if (y && m && status !== 'O') {
           for (const rg of [region, 'ALL']) {
             bump(
               compCube,
               `${c}|${y}|${m}|${rg}|${status}`,
-              () => ({ c, y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, csatResp: 0, csatHigh: 0, csatSum: 0 }),
+              () => cubeFactory({ c, y, m, r: rg, s: status, csatResp: 0, csatHigh: 0, csatSum: 0 }),
               (b) => {
-                b.rev += usd;
-                b.cost += cost;
-                if (jobId) b.jobIds.add(jobId);
-                b.models += 1;
+                applyCubeBase(b, cubeExtra);
                 if (typeof csatScore === 'number') {
                   b.csatResp += 1;
                   b.csatSum += csatScore;
@@ -237,28 +299,22 @@ function main() {
             bump(
               globalCube,
               `${y}|${m}|${rg}|${status}`,
-              () => ({
-                y,
-                m,
-                r: rg,
-                s: status,
-                rev: 0,
-                cost: 0,
-                jobIds: new Set(),
-                models: 0,
-                csatResp: 0,
-                csatHigh: 0,
-                csatSum: 0,
-                ctCsatResp: 0,
-                ctCsatSum: 0,
-                p2sSum: 0,
-                s2cSum: 0,
-              }),
+              () =>
+                cubeFactory({
+                  y,
+                  m,
+                  r: rg,
+                  s: status,
+                  csatResp: 0,
+                  csatHigh: 0,
+                  csatSum: 0,
+                  ctCsatResp: 0,
+                  ctCsatSum: 0,
+                  p2sSum: 0,
+                  s2cSum: 0,
+                }),
               (b) => {
-                b.rev += usd;
-                b.cost += cost;
-                if (jobId) b.jobIds.add(jobId);
-                b.models += 1;
+                applyCubeBase(b, cubeExtra);
                 if (typeof csatScore === 'number') {
                   b.csatResp += 1;
                   b.csatSum += csatScore;
@@ -279,12 +335,9 @@ function main() {
               bump(
                 techCube,
                 `${t}|${y}|${m}|${rg}|${status}`,
-                () => ({ t, y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, ctCsatResp: 0, ctCsatSum: 0 }),
+                () => cubeFactory({ t, y, m, r: rg, s: status, ctCsatResp: 0, ctCsatSum: 0 }),
                 (b) => {
-                  b.rev += usd;
-                  b.cost += cost;
-                  if (jobId) b.jobIds.add(jobId);
-                  b.models += 1;
+                  applyCubeBase(b, cubeExtra);
                   if (typeof ctCsatScore === 'number') {
                     b.ctCsatResp += 1;
                     b.ctCsatSum += ctCsatScore;
@@ -297,12 +350,9 @@ function main() {
               bump(
                 coordCube,
                 `${co}|${y}|${m}|${rg}|${status}`,
-                () => ({ co, y, m, r: rg, s: status, rev: 0, cost: 0, jobIds: new Set(), models: 0, p2sSum: 0, s2cSum: 0 }),
+                () => cubeFactory({ co, y, m, r: rg, s: status, p2sSum: 0, s2cSum: 0 }),
                 (b) => {
-                  b.rev += usd;
-                  b.cost += cost;
-                  if (jobId) b.jobIds.add(jobId);
-                  b.models += 1;
+                  applyCubeBase(b, cubeExtra);
                   if (typeof p2s === 'number') b.p2sSum += p2s;
                   if (typeof s2c === 'number') b.s2cSum += s2c;
                 }
@@ -312,47 +362,43 @@ function main() {
         }
 
         const reqDate = monthFromDateStr(f['Reporting Request Date/Time']);
-        if (reqDate && jobId) {
+        if (reqDate) {
+          // A record counts as "cancelled" in the ordered cohort only if its raw
+          // Job Status says so AND it wasn't already billed/counted as Complete
+          // (e.g. "Cancelled Last Minute" stays under Completed only — see header
+          // note). This keeps Completed/Cancelled mutually exclusive.
+          const cancelled = status !== 'C' && isCancelledJobStatus(jobStatus);
+          const reqFactory = () => ({
+            req: new Set(),
+            comp: new Set(),
+            cancelled: new Set(),
+            reqModels: 0,
+            compModels: 0,
+            cancelledModels: 0,
+          });
+          const applyReq = (b) => {
+            if (jobId) {
+              b.req.add(jobId);
+              if (status === 'C') b.comp.add(jobId);
+              if (cancelled) b.cancelled.add(jobId);
+            }
+            // Model-level (record) counts — deliberately NOT deduped by Job ID,
+            // since one job can include multiple model records (see
+            // Parent-Child?/Number of Children). Mirrors the "Count of Models"
+            // convention used elsewhere in this pipeline (models = raw record
+            // count, jobs = unique Job ID count).
+            b.reqModels += 1;
+            if (status === 'C') b.compModels += 1;
+            if (cancelled) b.cancelledModels += 1;
+          };
           for (const rg of [region, 'ALL']) {
-            bump(
-              reqCube,
-              `${c}|${reqDate.year}|${reqDate.month}|${rg}`,
-              () => ({ c, y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
-              (b) => {
-                b.req.add(jobId);
-                if (status === 'C') b.comp.add(jobId);
-              }
-            );
-            bump(
-              globalReqCube,
-              `${reqDate.year}|${reqDate.month}|${rg}`,
-              () => ({ y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
-              (b) => {
-                b.req.add(jobId);
-                if (status === 'C') b.comp.add(jobId);
-              }
-            );
+            bump(reqCube, `${c}|${reqDate.year}|${reqDate.month}|${rg}`, () => ({ c, y: reqDate.year, m: reqDate.month, r: rg, ...reqFactory() }), applyReq);
+            bump(globalReqCube, `${reqDate.year}|${reqDate.month}|${rg}`, () => ({ y: reqDate.year, m: reqDate.month, r: rg, ...reqFactory() }), applyReq);
             if (t !== null) {
-              bump(
-                techReqCube,
-                `${t}|${reqDate.year}|${reqDate.month}|${rg}`,
-                () => ({ t, y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
-                (b) => {
-                  b.req.add(jobId);
-                  if (status === 'C') b.comp.add(jobId);
-                }
-              );
+              bump(techReqCube, `${t}|${reqDate.year}|${reqDate.month}|${rg}`, () => ({ t, y: reqDate.year, m: reqDate.month, r: rg, ...reqFactory() }), applyReq);
             }
             if (co !== null) {
-              bump(
-                coordReqCube,
-                `${co}|${reqDate.year}|${reqDate.month}|${rg}`,
-                () => ({ co, y: reqDate.year, m: reqDate.month, r: rg, req: new Set(), comp: new Set() }),
-                (b) => {
-                  b.req.add(jobId);
-                  if (status === 'C') b.comp.add(jobId);
-                }
-              );
+              bump(coordReqCube, `${co}|${reqDate.year}|${reqDate.month}|${rg}`, () => ({ co, y: reqDate.year, m: reqDate.month, r: rg, ...reqFactory() }), applyReq);
             }
           }
           fySet.add(reqDate.year);
@@ -390,7 +436,7 @@ function main() {
                 cy.revenue += usd;
                 if (jobId) cy.jobIds.add(jobId);
                 cy.clm += 1;
-                cy.captureSize += captureSize;
+                cy.captureSize += typeof f['Capture Size - Requested'] === 'number' ? f['Capture Size - Requested'] : 0;
               }
             );
           }
@@ -408,6 +454,12 @@ function main() {
             cost: round2(b.cost),
             jobs: b.jobIds.size,
             models: b.models,
+            jrSum: round2(b.jobRateSum),
+            jrCnt: b.jobRateCount,
+            jsSum: round2(b.jobSizeSum),
+            jsCnt: b.jobSizeCount,
+            msSum: round2(b.modelSizeSum),
+            msCnt: b.modelSizeCount,
           };
           if ('csatResp' in b) {
             o.csatResp = b.csatResp;
@@ -428,7 +480,17 @@ function main() {
       }
       function reqCubeOut(map, keyName) {
         return Array.from(map.values()).map((b) => {
-          const o = { y: b.y, m: b.m, r: b.r, req: b.req.size, comp: b.comp.size };
+          const o = {
+            y: b.y,
+            m: b.m,
+            r: b.r,
+            req: b.req.size,
+            comp: b.comp.size,
+            cancelled: b.cancelled.size,
+            reqModels: b.reqModels,
+            compModels: b.compModels,
+            cancelledModels: b.cancelledModels,
+          };
           if (keyName) o[keyName] = b[keyName];
           return o;
         });
