@@ -75,6 +75,29 @@
  * via a `clmJobIds` Set alongside `jobIds` on every cube bucket and every
  * clientYear/techYear/coordYear entry, output as `clm`.
  *
+ * v4.3 correction (2026-07-15): the "Count of Jobs" KPI cards (Total Jobs
+ * Ordered/Completed/Cancelled/In Progress) were redefined by Ricardo to be
+ * literal, independent PARENT-RECORD LINE-ITEM COUNTS scoped by the SAME
+ * Year/Quarter/Month + Region + Client/Tech/Coordinator filters as the rest of
+ * the page — replacing the old `reqCube`-based "ordered cohort" model (which
+ * keyed off `Reporting Request Date/Time`, a different date dimension than
+ * the rest of the page, and produced confusingly small numbers). The new
+ * rule, verbatim: Ordered = count of parent-record line items in scope (no
+ * status filter); Completed = count where `Interface Reporting Status` =
+ * "Complete"; Cancelled = count where `Job Status` contains "Cancelled";
+ * In Progress = count where `Interface Reporting Status` = "Work In
+ * Progress". These are independent counts now (NOT mutually exclusive residuals
+ * — a "Cancelled Last Minute" parent record counts under BOTH Completed and
+ * Cancelled, since it satisfies both predicates literally). Always gated on
+ * `isParent` (the record must be the job's authoritative parent row — see
+ * `isParentRecord()`). Implemented as new `jobsCountCube`/`globalJobsCountCube`/
+ * `techJobsCountCube`/`coordJobsCountCube` maps, keyed the same way as
+ * `compCube`/`globalCube`/etc. (c|y|m|r or y|m|r), but NOT gated on `status !==
+ * 'O'` like those cubes are — Ordered must include blank-status parent records
+ * too. `reqCube`/`globalReqCube`/`techReqCube`/`coordReqCube` are UNCHANGED and
+ * still power the separate "Count of Models" KPI cards, which Ricardo did not
+ * ask to change in this round.
+ *
  * This matters because a true "no filter" unique-Job-ID count is NOT the same
  * as summing already-per-client/per-tech-deduped counts (the same Job ID can
  * appear under slightly different client/vendor string values). The original
@@ -245,6 +268,15 @@ function main() {
       const coordReqCube = new Map(); // per-coordinator: co|y|m|r
       const coordYear = new Map(); // co|y (Top 10 Coordinators support)
 
+      // v4.3: literal parent-record line-item counts for the "Count of Jobs"
+      // KPI cards — see header note. NOT gated on status!=='O' (Ordered must
+      // include blank-status parent records); NOT deduped by Job ID (these are
+      // literal line-item counts, per Ricardo's exact filter definitions).
+      const jobsCountCube = new Map(); // per-client: c|y|m|r
+      const globalJobsCountCube = new Map(); // y|m|r
+      const techJobsCountCube = new Map(); // per-technician: t|y|m|r
+      const coordJobsCountCube = new Map(); // per-coordinator: co|y|m|r
+
       const fySet = new Set();
 
       const cubeFactory = (extra) => ({
@@ -396,6 +428,31 @@ function main() {
                   if (typeof s2c === 'number') b.s2cSum += s2c;
                 }
               );
+            }
+          }
+        }
+
+        // v4.3: "Count of Jobs" literal parent-record line-item counts —
+        // independent (not mutually exclusive) predicates, gated on isParent,
+        // keyed by Interface Reporting Year/Month (same date dimension as the
+        // rest of the page), NOT restricted to status !== 'O'.
+        if (isParent && y && m) {
+          const isCancelled = isCancelledJobStatus(jobStatus);
+          const jcFactory = () => ({ ordered: 0, completed: 0, cancelled: 0, inProgress: 0 });
+          const applyJc = (b) => {
+            b.ordered += 1;
+            if (status === 'C') b.completed += 1;
+            if (isCancelled) b.cancelled += 1;
+            if (status === 'W') b.inProgress += 1;
+          };
+          for (const rg of [region, 'ALL']) {
+            bump(jobsCountCube, `${c}|${y}|${m}|${rg}`, () => ({ c, y, m, r: rg, ...jcFactory() }), applyJc);
+            bump(globalJobsCountCube, `${y}|${m}|${rg}`, () => ({ y, m, r: rg, ...jcFactory() }), applyJc);
+            if (t !== null) {
+              bump(techJobsCountCube, `${t}|${y}|${m}|${rg}`, () => ({ t, y, m, r: rg, ...jcFactory() }), applyJc);
+            }
+            if (co !== null) {
+              bump(coordJobsCountCube, `${co}|${y}|${m}|${rg}`, () => ({ co, y, m, r: rg, ...jcFactory() }), applyJc);
             }
           }
         }
@@ -585,6 +642,10 @@ function main() {
         coordCube: cubeOut(coordCube, 'co'),
         coordReqCube: reqCubeOut(coordReqCube, 'co'),
         coordYear: coordYearOut,
+        jobsCountCube: Array.from(jobsCountCube.values()),
+        globalJobsCountCube: Array.from(globalJobsCountCube.values()),
+        techJobsCountCube: Array.from(techJobsCountCube.values()),
+        coordJobsCountCube: Array.from(coordJobsCountCube.values()),
       };
 
       const outPath = 'capture-services/data.json';
