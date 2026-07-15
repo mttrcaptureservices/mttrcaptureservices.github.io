@@ -38,15 +38,21 @@
  *    shift down once this ships — GLOBAL ('ALL') totals are unaffected, this is
  *    purely a re-slice of what was already being counted.
  *  - Each cube bucket now also accumulates job-rate/job-size/model-size sums,
- *    read from the `Job Rate USD` and `Capture Size` fields, split by the
- *    Airtable `Parent-Child?` field: a bucket's "parent" records (Parent-Child?
- *    !== 'Yes') carry the per-job billing rate and the job's total capture size;
- *    its "child" records (Parent-Child? === 'Yes') are individual models within
- *    that job, each with their own (usually smaller) capture size. This mirrors
- *    the source workbook's own per-record structure (verified empirically: a
- *    job's parent record holds the full Job Rate USD + total Capture Size, while
- *    each child model record carries its own slice of Capture Size and often a
- *    $0 or repeated Job Rate USD, since billing happens at the job level).
+ *    read from the `Job Rate USD` and `Capture Size` fields, split by parent
+ *    vs. child record — see `isParentRecord()` v4.2 note below for the
+ *    corrected (2026-07-14) authoritative signal. A bucket's "parent" record
+ *    carries the per-job billing rate and the job's total capture size; its
+ *    "child" records are individual models within that job, each with their
+ *    own (usually smaller) capture size. This mirrors the source workbook's
+ *    own per-record structure (verified empirically: a job's parent record
+ *    holds the full Job Rate USD + total Capture Size, while each child model
+ *    record carries its own slice of Capture Size and often a $0 or repeated
+ *    Job Rate USD, since billing happens at the job level). IMPORTANT: the
+ *    naive signal `Parent-Child? !== 'Yes'` (used in the original v4 ship) is
+ *    WRONG — many true parent records are themselves tagged Parent-Child?=
+ *    "Yes". The verified signal is `Floor/Unit/Suite === 'Parent Record'`,
+ *    falling back to `Parent-Child? === 'No'` only when Floor/Unit/Suite is
+ *    blank (e.g. ADJUSTMENT-type records). See `isParentRecord()`.
  *  - `reqCube` / `globalReqCube` / `techReqCube` / `coordReqCube` now track a
  *    third bucket, `cancelled` (in addition to the existing `req`/`comp` Job-ID
  *    sets), so the dashboards can show a single ordered-jobs cohort split into
@@ -102,6 +108,7 @@ const FIELDS = [
   'Job Rate USD',
   'Capture Size',
   'Parent-Child?',
+  'Floor/Unit/Suite',
   'CSAT - Satisfaction of Service',
   'CSAT - Service Score',
   'CSAT - Capture Tech Satisfaction',
@@ -135,11 +142,22 @@ function isCancelledJobStatus(jobStatus) {
   return typeof jobStatus === 'string' && /cancel/i.test(jobStatus);
 }
 
-function isParentRecord(parentChild) {
-  // Airtable "Parent-Child?" field: 'Yes' marks a child/model record nested
-  // under a job; 'No' (or blank, treated the same) marks the parent/job-level
-  // record that carries the true per-job billing rate and total capture size.
-  return parentChild !== 'Yes';
+function isParentRecord(parentChild, floorUnitSuite) {
+  // v4.2 correction (2026-07-14, same day): "Parent-Child?" ALONE is not a
+  // reliable parent/child signal — many true parent-level records are tagged
+  // Parent-Child?="Yes" (verified against Ricardo's own Airtable filter view,
+  // which used `Floor/Unit/Suite = "Parent Record" OR Parent-Child? = "No"`
+  // and returned exactly 29 unique Cancelled-Last-Minute jobs for United
+  // Healthcare Group FY2026, vs. 31 when using Parent-Child? alone — the 2
+  // extra were child-level rows whose own Job Status happened to read
+  // "Cancelled Last Minute" despite the job's actual parent-level record
+  // saying otherwise). The correct, verified rule: a record IS the job's
+  // parent/authoritative record if its Floor/Unit/Suite field literally reads
+  // "Parent Record", OR (for records where that field is blank, e.g. ADJUSTMENT
+  // entries) Parent-Child? is exactly "No". Every other combination — including
+  // blank/missing Parent-Child? with no "Parent Record" marker — is a child row.
+  if (floorUnitSuite === 'Parent Record') return true;
+  return parentChild === 'No';
 }
 
 function monthFromDateStr(dateStr) {
@@ -267,7 +285,10 @@ function main() {
         // "Cancelled Last Minute", deduped by Job ID exactly like `jobs`/
         // `Completed` above (NOT a raw record count — corrected 2026-07-14
         // per Ricardo; CLM does not mean "total model/deliverable records").
-        if (jobId && jobStatus === 'Cancelled Last Minute') b.clmJobIds.add(jobId);
+        // Gated on isParent (see isParentRecord() v4.2 note) — only the job's
+        // authoritative parent-level record's Job Status counts, so a stray
+        // child-model row with a mismatched Job Status doesn't inflate CLM.
+        if (isParent && jobId && jobStatus === 'Cancelled Last Minute') b.clmJobIds.add(jobId);
       }
 
       for (const rec of records) {
@@ -288,7 +309,7 @@ function main() {
         const jobStatus = f['Job Status'] || null;
         const jobRate = typeof f['Job Rate USD'] === 'number' ? f['Job Rate USD'] : null;
         const captureSize = typeof f['Capture Size'] === 'number' ? f['Capture Size'] : null;
-        const isParent = isParentRecord(f['Parent-Child?']);
+        const isParent = isParentRecord(f['Parent-Child?'], f['Floor/Unit/Suite']);
         const csatScore = f['CSAT - Satisfaction of Service'];
         const csatHigh = f['CSAT - Service Score'];
         const ctCsatScore = f['CSAT - Capture Tech Satisfaction'];
@@ -423,7 +444,7 @@ function main() {
         }
 
         if (y && status === 'C') {
-          const isClm = jobId && jobStatus === 'Cancelled Last Minute';
+          const isClm = isParent && jobId && jobStatus === 'Cancelled Last Minute';
           bump(
             clientYear,
             `${c}|${y}`,
