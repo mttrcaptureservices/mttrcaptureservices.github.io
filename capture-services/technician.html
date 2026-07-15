@@ -484,6 +484,18 @@ function yearReqCube(){
 function filteredCube(){ return yearCube().filter(b => inScope(b.m)); }
 function filteredReqCube(){ return yearReqCube().filter(b => inScope(b.m)); }
 
+// v4.3: "Count of Jobs" KPI cards use literal parent-record line-item counts
+// (DATA.techJobsCountCube / DATA.globalJobsCountCube), keyed the same way as
+// the completion lens above — NOT the ordered-cohort reqCube, which still
+// powers the separate "Count of Models" cards.
+function yearJobsCountCube(){
+  if (state.techIdx === -1){
+    return (DATA.globalJobsCountCube || []).filter(b => b.y === state.fy);
+  }
+  return (DATA.techJobsCountCube || []).filter(b => b.y === state.fy && b.t === state.techIdx);
+}
+function filteredJobsCountCube(){ return yearJobsCountCube().filter(b => inScope(b.m)); }
+
 function periodLabel(){
   if (state.granularity === 'quarter' && state.period) return `FY${state.fy} · ${QUARTER_LABELS[state.period-1]}`;
   if (state.granularity === 'month' && state.period) return `FY${state.fy} · ${MONTHS[state.period-1]}`;
@@ -507,11 +519,14 @@ function monthlySeries(group, field, status){
 }
 
 function jobsSummary(group){
-  const reqRows = filteredReqCube().filter(b => regionMatches(b.r, group));
-  const ordered = reqRows.reduce((a,b)=>a+b.req,0);
-  const completed = reqRows.reduce((a,b)=>a+b.comp,0);
-  const cancelled = reqRows.reduce((a,b)=>a+b.cancelled,0);
-  const inProgress = Math.max(0, ordered - completed - cancelled);
+  // v4.3: literal parent-record line-item counts, independent predicates (not
+  // mutually exclusive), scoped by the same Year/Quarter/Month + Region +
+  // Technician filters as the rest of the page. See build script's v4.3 note.
+  const rows = filteredJobsCountCube().filter(b => regionMatches(b.r, group));
+  const ordered = rows.reduce((a,b)=>a+b.ordered,0);
+  const completed = rows.reduce((a,b)=>a+b.completed,0);
+  const cancelled = rows.reduce((a,b)=>a+b.cancelled,0);
+  const inProgress = rows.reduce((a,b)=>a+b.inProgress,0);
   const rate = ordered ? completed/ordered : 0;
 
   const cubeRows = filteredCube().filter(b => regionMatches(b.r, group) && b.s==='C');
@@ -556,6 +571,16 @@ function jobsMonthly(group, kind){
   const rows = yearReqCube().filter(b => regionMatches(b.r, group));
   const out = new Array(12).fill(0);
   const field = kind === 'ordered' ? 'req' : kind === 'cancelled' ? 'cancelled' : 'comp';
+  rows.forEach(b => out[b.m-1] += b[field]);
+  return out;
+}
+
+function jobsCountMonthly(group, field){
+  // v4.3: monthly breakdown for the "Ordered vs Completed vs Cancelled" chart,
+  // sourced from the same literal parent-record line-item counts as the Count
+  // of Jobs KPI cards (NOT the old reqCube-based ordered-cohort lens).
+  const rows = yearJobsCountCube().filter(b => regionMatches(b.r, group));
+  const out = new Array(12).fill(0);
   rows.forEach(b => out[b.m-1] += b[field]);
   return out;
 }
@@ -824,9 +849,9 @@ function renderJobsCharts(){
   upsertChart('chartJobsReqComp', {
     type:'bar',
     data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
-      { label:'Ordered', data: jobsMonthly('GLOBAL','ordered'), backgroundColor:'#c9c7c4' },
-      { label:'Completed', data: jobsMonthly('GLOBAL','completedOfReq'), backgroundColor:'#ff3158' },
-      { label:'Cancelled', data: jobsMonthly('GLOBAL','cancelled'), backgroundColor:'#e0524d' },
+      { label:'Ordered', data: jobsCountMonthly('GLOBAL','ordered'), backgroundColor:'#c9c7c4' },
+      { label:'Completed', data: jobsCountMonthly('GLOBAL','completed'), backgroundColor:'#ff3158' },
+      { label:'Cancelled', data: jobsCountMonthly('GLOBAL','cancelled'), backgroundColor:'#e0524d' },
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10}}} }
   });
