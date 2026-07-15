@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-15T20:13:08Z",
+"lastUpdated": "2026-07-15T22:05:00Z",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -13,16 +13,28 @@
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
 },
 {
-"author": "John Bosch",
-"initials": "JB",
-"color": "#3B82F6",
-"summary": "Vacasa jobs in Ocean City, MD were showing unexpectedly low Total Travel Distance values, suggesting no Vacasa In-Network city was being matched nearby.",
-"statusCls": "badge-fix-deployed",
-"status": "In Testing (COP-1888)",
-"date": "5/6",
-"jiraKey": "COP-1888",
-"note": "Travel-distance calc has been turned on for Vacasa; Kevin Curtis and Jordan Saiz are validating as new jobs come in. No action needed unless a regression is reported.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825"
+"author": "Marina Menacho Rosales",
+"initials": "MM",
+"color": "#8B5CF6",
+"summary": "Finance adjustment line items won't create on AT for her team — the base is showing a sync error.",
+"statusCls": "badge-todo",
+"status": "In Jira queue (COP-1985)",
+"date": "7/10",
+"jiraKey": "COP-1985",
+"note": "Same recurring sync issue (stale sync status, adjustment fields not populating) affecting multiple teams. Logged as another COP-1985 occurrence; blocked on the dev fix, nothing needed from her.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#10B981",
+"summary": "Unable to create any finance adjustment line items on jobs since 7/8; base shows a stale sync status (~13 hrs behind).",
+"statusCls": "badge-todo",
+"status": "In Jira queue (COP-1985)",
+"date": "7/9",
+"jiraKey": "COP-1985",
+"note": "Same root cause as Marina's report below — Ricardo added his job details to COP-1985 as another occurrence since impact now spans multiple teams. Still sitting in the To Do queue as of Monday 7/13.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468"
 }
 ]
 }
