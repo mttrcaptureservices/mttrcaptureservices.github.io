@@ -616,18 +616,19 @@ function top10(){
     }));
   }
   // Quarter/Month drill-down: aggregate directly from the per-client monthly
-  // cube rather than the year-only clientYear table. Revenue and CLM are
-  // exact; the "Completed" (unique job) count sums already-deduped per-month
-  // buckets, so a job whose model records span two different completion
-  // months within the same quarter could in rare cases be counted twice —
-  // the source workbook's own month-summed rollups share this limitation.
+  // cube rather than the year-only clientYear table. Revenue is exact; the
+  // "Completed" (unique job) and CLM (unique Cancelled-Last-Minute job) counts
+  // sum already-deduped per-month buckets, so a job whose records span two
+  // different completion months within the same quarter could in rare cases
+  // be counted twice — the source workbook's own month-summed rollups share
+  // this limitation.
   const byClient = new Map();
   DATA.cube
     .filter(b => b.y===state.fy && b.s==='C' && b.r==='ALL' && inScope(b.m) && (state.clientIdx===-1 || b.c===state.clientIdx))
     .forEach(b=>{
       let e = byClient.get(b.c);
       if (!e){ e = { c:b.c, rev:0, jobs:0, clm:0 }; byClient.set(b.c,e); }
-      e.rev += b.rev; e.jobs += b.jobs; e.clm += b.models;
+      e.rev += b.rev; e.jobs += b.jobs; e.clm += b.clm;
     });
   return Array.from(byClient.values()).sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
     client: DATA.clients[r.c], completed: r.jobs, clm: r.clm, rev: r.rev,
@@ -774,7 +775,7 @@ function renderTop10(){
       <thead><tr>
         <th>Client</th>
         <th class="num">Completed</th>
-        <th class="num help" title="Total model/deliverable records tied to this client's completed jobs this period. A single job can include multiple models, so CLM is often several times higher than the Completed (unique job) count.">CLM ⓘ</th>
+        <th class="num help" title="CLM = Cancelled Last Minute. Count of this client's completed jobs this period whose Job Status was &quot;Cancelled Last Minute&quot; (Matterport still bills these, so they stay counted under Completed) — deduped by Job ID the same way Completed is, so CLM is always ≤ Completed.">CLM ⓘ</th>
         <th class="num">Rev. (USD)</th>
         <th class="num">% of Total</th>
       </tr></thead>
@@ -792,7 +793,7 @@ function renderTop10(){
           </tr>`).join('')}
       </tbody>
     </table>
-    <p class="footnote">CLM = total model/deliverable records for this client's completed jobs this period (each job can include multiple models — see "Avg # of models per Job" below).</p>`;
+    <p class="footnote">CLM = Cancelled Last Minute — this client's completed jobs this period whose Job Status was "Cancelled Last Minute" (still billed/counted as Completed, per Matterport policy).</p>`;
 }
 
 function renderJobsCards(){

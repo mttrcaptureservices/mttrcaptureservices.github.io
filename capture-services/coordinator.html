@@ -597,7 +597,7 @@ function top10(){
     .forEach(b=>{
       let e = byCoord.get(b.co);
       if (!e){ e = { co:b.co, rev:0, jobs:0, clm:0 }; byCoord.set(b.co,e); }
-      e.rev += b.rev; e.jobs += b.jobs; e.clm += b.models;
+      e.rev += b.rev; e.jobs += b.jobs; e.clm += b.clm;
     });
   return Array.from(byCoord.values()).sort((a,b)=>b.rev-a.rev).slice(0,10).map(r => ({
     coord: coordinators[r.co] || 'Unknown', completed: r.jobs, clm: r.clm, rev: r.rev, captureSize: null,
@@ -735,7 +735,7 @@ function renderTop10(){
       <thead><tr>
         <th>Coordinator</th>
         <th class="num">Completed</th>
-        <th class="num help" title="Total model/deliverable records tied to this coordinator's completed jobs this period. A single job can include multiple models, so CLM is often several times higher than the Completed (unique job) count.">CLM ⓘ</th>
+        <th class="num help" title="CLM = Cancelled Last Minute. Count of this coordinator's completed jobs this period whose Job Status was &quot;Cancelled Last Minute&quot; (Matterport still bills these, so they stay counted under Completed) — deduped by Job ID the same way Completed is, so CLM is always ≤ Completed.">CLM ⓘ</th>
         <th class="num">Rev. (USD)</th>
         <th class="num">Capture Size</th>
       </tr></thead>
@@ -750,7 +750,7 @@ function renderTop10(){
           </tr>`).join('')}
       </tbody>
     </table>
-    <p class="footnote">CLM = total model/deliverable records for this coordinator's completed jobs this period (each job can include multiple models).</p>`;
+    <p class="footnote">CLM = Cancelled Last Minute — this coordinator's completed jobs this period whose Job Status was "Cancelled Last Minute" (still billed/counted as Completed, per Matterport policy).</p>`;
 }
 
 function renderJobsCards(){
