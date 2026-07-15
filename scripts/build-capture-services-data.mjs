@@ -58,6 +58,17 @@
  *    still bills/counts as Complete, per Ricardo's explicit call (2026-07-14):
  *    keep that revenue-facing number exactly as it was, don't double-bucket it.
  *
+ * v4.1 correction (2026-07-14, same day): "CLM" in the Top 10 tables does NOT
+ * mean "total model/deliverable record count" (that was a wrong guess in the
+ * original v4 build). Per Ricardo: CLM = "Cancelled Last Minute" — a count of
+ * this bucket's/entity's jobs whose raw `Job Status` field is literally
+ * "Cancelled Last Minute", deduped by Job ID the exact same way `jobs`/
+ * Completed is (NOT a raw record count). Since "Cancelled Last Minute" always
+ * maps to Complete status (see above), CLM is always <= Completed for the same
+ * slice — e.g. United Healthcare Group FY2026: Completed 652, CLM 29. Tracked
+ * via a `clmJobIds` Set alongside `jobIds` on every cube bucket and every
+ * clientYear/techYear/coordYear entry, output as `clm`.
+ *
  * This matters because a true "no filter" unique-Job-ID count is NOT the same
  * as summing already-per-client/per-tech-deduped counts (the same Job ID can
  * appear under slightly different client/vendor string values). The original
@@ -229,10 +240,11 @@ function main() {
         jobSizeCount: 0,
         modelSizeSum: 0,
         modelSizeCount: 0,
+        clmJobIds: new Set(),
         ...extra,
       });
 
-      function applyCubeBase(b, { usd, cost, jobId, isParent, jobRate, captureSize }) {
+      function applyCubeBase(b, { usd, cost, jobId, isParent, jobRate, captureSize, jobStatus }) {
         b.rev += usd;
         b.cost += cost;
         if (jobId) b.jobIds.add(jobId);
@@ -250,6 +262,12 @@ function main() {
           b.modelSizeSum += captureSize;
           b.modelSizeCount += 1;
         }
+        // "CLM" = Cancelled Last Minute — the dashboards' Top 10 tables show a
+        // count of this bucket's jobs whose raw Job Status is literally
+        // "Cancelled Last Minute", deduped by Job ID exactly like `jobs`/
+        // `Completed` above (NOT a raw record count — corrected 2026-07-14
+        // per Ricardo; CLM does not mean "total model/deliverable records").
+        if (jobId && jobStatus === 'Cancelled Last Minute') b.clmJobIds.add(jobId);
       }
 
       for (const rec of records) {
@@ -279,7 +297,7 @@ function main() {
 
         if (y) fySet.add(y);
 
-        const cubeExtra = { usd, cost, jobId, isParent, jobRate, captureSize };
+        const cubeExtra = { usd, cost, jobId, isParent, jobRate, captureSize, jobStatus };
 
         if (y && m && status !== 'O') {
           for (const rg of [region, 'ALL']) {
@@ -405,25 +423,26 @@ function main() {
         }
 
         if (y && status === 'C') {
+          const isClm = jobId && jobStatus === 'Cancelled Last Minute';
           bump(
             clientYear,
             `${c}|${y}`,
-            () => ({ c, y, revenue: 0, jobIds: new Set(), clm: 0 }),
+            () => ({ c, y, revenue: 0, jobIds: new Set(), clmJobIds: new Set() }),
             (cy) => {
               cy.revenue += usd;
               if (jobId) cy.jobIds.add(jobId);
-              cy.clm += 1;
+              if (isClm) cy.clmJobIds.add(jobId);
             }
           );
           if (t !== null) {
             bump(
               techYear,
               `${t}|${y}`,
-              () => ({ t, y, cost: 0, jobIds: new Set(), clm: 0 }),
+              () => ({ t, y, cost: 0, jobIds: new Set(), clmJobIds: new Set() }),
               (ty) => {
                 ty.cost += cost;
                 if (jobId) ty.jobIds.add(jobId);
-                ty.clm += 1;
+                if (isClm) ty.clmJobIds.add(jobId);
               }
             );
           }
@@ -431,11 +450,11 @@ function main() {
             bump(
               coordYear,
               `${co}|${y}`,
-              () => ({ co, y, revenue: 0, jobIds: new Set(), clm: 0, captureSize: 0 }),
+              () => ({ co, y, revenue: 0, jobIds: new Set(), clmJobIds: new Set(), captureSize: 0 }),
               (cy) => {
                 cy.revenue += usd;
                 if (jobId) cy.jobIds.add(jobId);
-                cy.clm += 1;
+                if (isClm) cy.clmJobIds.add(jobId);
                 cy.captureSize += typeof f['Capture Size - Requested'] === 'number' ? f['Capture Size - Requested'] : 0;
               }
             );
@@ -460,6 +479,7 @@ function main() {
             jsCnt: b.jobSizeCount,
             msSum: round2(b.modelSizeSum),
             msCnt: b.modelSizeCount,
+            clm: b.clmJobIds.size,
           };
           if ('csatResp' in b) {
             o.csatResp = b.csatResp;
@@ -501,7 +521,7 @@ function main() {
         y: cy.y,
         rev: round2(cy.revenue),
         jobs: cy.jobIds.size,
-        clm: cy.clm,
+        clm: cy.clmJobIds.size,
       }));
 
       const techYearOut = Array.from(techYear.values()).map((ty) => ({
@@ -509,7 +529,7 @@ function main() {
         y: ty.y,
         cost: round2(ty.cost),
         jobs: ty.jobIds.size,
-        clm: ty.clm,
+        clm: ty.clmJobIds.size,
       }));
 
       const coordYearOut = Array.from(coordYear.values()).map((cy) => ({
@@ -517,7 +537,7 @@ function main() {
         y: cy.y,
         rev: round2(cy.revenue),
         jobs: cy.jobIds.size,
-        clm: cy.clm,
+        clm: cy.clmJobIds.size,
         captureSize: round2(cy.captureSize),
       }));
 
