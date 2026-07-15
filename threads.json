@@ -1,28 +1,40 @@
 {
-  "lastUpdated": "2026-07-15T14:09:23Z",
+  "lastUpdated": "2026-07-15T18:30:00Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "CT auto-assignment sent job JOBID6594323772073237431 to the wrong tech (Jackson, WY instead of Hattiesburg, MS) due to a bad LatLong, so the confirmation email went to the wrong tech.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Ricardo/Snehal",
+      "color": "#F59E0B",
+      "summary": "Job JOBID6594323772073237431 was assigned to a Hattiesburg, MS CT but the API automation reassigned it to a Jackson, WY tech due to a bad lat/long, so the confirmation email went to the wrong tech.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed, follow-up pending",
       "date": "7/14",
-      "note": "Root cause found and fixed for this job (tech-city-assignment field bug). Adjet turned the v2 automation off and is waiting on Ricardo/Snehal to confirm whether INTL jobs should also get CT auto-assign + travel-distance auto-calc before turning v2 back on.",
+      "note": "Overwriting bug fixed and confirmed by Ricardo/Adjet; still waiting on Ryan to correct the bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' before this fully closes.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#16A085",
-      "summary": "Can't create adjustment line items on any jobs since 7/8; base shows last sync 13 hours ago.",
+      "color": "#EF4444",
+      "summary": "Can't create adjustment line items on the 'View Only - ALL Jobs' view since 7/8; base shows 'last sync failed, data source unavailable'.",
       "statusCls": "badge-investigating",
-      "status": "In Jira queue",
-      "date": "7/9",
+      "status": "Investigating",
+      "date": "7/10",
       "jiraKey": "COP-1985",
-      "note": "Logged as COP-1985, sitting in the To Do queue. Ricardo owes Freddy an update once there's movement on the fix; no action needed from Freddy right now.",
+      "note": "Tracked under COP-1985 (Airtable sync failure blocking adjustment line items); still sitting in To Do, waiting on Airtable Support to find the root cause.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
+    },
+    {
+      "author": "Marina Menacho Rosales",
+      "initials": "MM",
+      "color": "#8B5CF6",
+      "summary": "None of her team members can create an adjustment line on AT; getting an error message on all attempts.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/10",
+      "jiraKey": "COP-1985",
+      "note": "Same underlying sync issue as Freddy Arias's report, logged as another occurrence on COP-1985; waiting on Airtable Support's root-cause fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
     }
   ]
 }
