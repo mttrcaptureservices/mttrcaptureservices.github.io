@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-07-15T02:13:19Z",
+  "lastUpdated": "2026-07-15T14:09:23Z",
   "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#F4511E",
-      "summary": "Can't create adjustment line items on ALL Jobs since 7/8 — base shows last sync as 13 hours ago, blocking finance adjustments.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/9",
-      "jiraKey": "COP-1985",
-      "note": "Blocked on Airtable Support's root-cause investigation into the sync failure; recurred again 7/13, Ricardo bumped visibility on the ticket.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E24AA",
-      "summary": "CT auto-assignment sent a job to the wrong tech (Jackson, WY instead of Hattiesburg, MS) after a v2 automation bug overwrote an already-set scheduling-city.",
+      "color": "#8E44AD",
+      "summary": "CT auto-assignment sent job JOBID6594323772073237431 to the wrong tech (Jackson, WY instead of Hattiesburg, MS) due to a bad LatLong, so the confirmation email went to the wrong tech.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on internal answer",
+      "status": "Waiting on Ricardo/Snehal",
       "date": "7/14",
-      "note": "Core NORAM bug already fixed and confirmed by Ricardo; v2 automation is switched off pending Adjet's unanswered question on whether INTL jobs should also get CT auto-assign/travel-distance — no action needed from Kailyn.",
+      "note": "Root cause found and fixed for this job (tech-city-assignment field bug). Adjet turned the v2 automation off and is waiting on Ricardo/Snehal to confirm whether INTL jobs should also get CT auto-assign + travel-distance auto-calc before turning v2 back on.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#16A085",
+      "summary": "Can't create adjustment line items on any jobs since 7/8; base shows last sync 13 hours ago.",
+      "statusCls": "badge-investigating",
+      "status": "In Jira queue",
+      "date": "7/9",
+      "jiraKey": "COP-1985",
+      "note": "Logged as COP-1985, sitting in the To Do queue. Ricardo owes Freddy an update once there's movement on the fix; no action needed from Freddy right now.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783621089468&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783621089468&ngc=true"
     }
   ]
 }
