@@ -1,64 +1,52 @@
 {
-  "lastUpdated": "2026-07-16T20:19:02Z",
+  "lastUpdated": "2026-07-16T15:10:00-07:00",
   "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#9B59B6",
+      "summary": "Job JOBID6594323772073237431 auto-reassigned from the correct Hattiesburg, MS tech to a Jackson, WY tech, so the confirmation email went to the wrong CT.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Ryan's fix",
+      "date": "7/14",
+      "note": "Overwrite bug already fixed by Adjet; still open: bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' awaiting Ryan's correction.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#F2994A",
-      "summary": "CT payout rates are coming in different than expected across all 16 phases of a Midtown Dental Care (Columbus, GA) construction scan job (SN2413930).",
+      "color": "#E67E22",
+      "summary": "All 16 phases of SN2413930 (Midtown Dental Care, Columbus GA) are showing CT payout rates different from what the technician expected.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Systemic price code/rate mapping issue across all 16 phases; Ricardo is comparing phases to find the fix.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#F2994A",
-      "summary": "Can't create a reshoot finance adjustment for job SENIOR6472662712413677080 — Finance Adjustments Options isn't working.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Airtable Support",
-      "date": "7/16",
-      "jiraKey": "COP-1985",
-      "note": "Same View Only sync failure as other reports on this ticket; root cause is blocked on Airtable Support's backend investigation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784220955294"
-    },
-    {
-      "author": "Marina Menacho Rosales",
-      "initials": "MR",
-      "color": "#9B59B6",
-      "summary": "Team still can't create adjustment lines on AT, and duplicate lines were created during failed attempts that now need deleting.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Airtable Support",
-      "date": "7/11",
-      "jiraKey": "COP-1985",
-      "note": "Ricardo needs to delete the duplicate lines; underlying sync issue is still blocked on Airtable Support.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418"
+      "note": "Systemic price code/rate mapping issue confirmed across all 16 phases; Ricardo comparing phases for a fix or explanation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Jordan Saiz",
       "initials": "JS",
-      "color": "#16A085",
-      "summary": "Client-initiated Vacasa reschedules update the child record's status but not the parent, so the CT never gets notified of the change.",
+      "color": "#4A90D9",
+      "summary": "Client-initiated Vacasa reschedules only update the child record's status, not the parent's, so the CT never receives a reschedule notification email.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "status": "Assigned to Adjet",
       "date": "7/16",
       "jiraKey": "COP-1999",
-      "note": "Ricardo is fixing the reschedule automation and correcting parent status on both affected jobs.",
+      "note": "Adjet Kodia to fix reschedule automation so parent record updates and CT gets notified; confirmed 'will do' at 3:08pm.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#2D9CDB",
-      "summary": "A job got reassigned from the correctly-dispatched Hattiesburg, MS tech to a Jackson, WY tech due to bad lat/long data, sending the confirmation email to the wrong technician.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Ryan's fix",
-      "date": "7/14",
-      "note": "Automation overwrite bug already fixed by Adjet; still waiting on Ryan to correct Jackson, WY's lat_long coordinates.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#16A085",
+      "summary": "Vacasa jobs near Ocean City, MD were calculating very low Total Travel Distance values with no nearby Vacasa In-Network city feeding the calculation.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed, monitoring",
+      "date": "5/6",
+      "jiraKey": "COP-1888",
+      "note": "Travel-distance calc turned on for Vacasa; Kevin Curtis and Jordan Saiz reviewing new jobs to confirm no regressions.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1778092250825&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1778092250825&ngc=true"
     }
   ]
 }
