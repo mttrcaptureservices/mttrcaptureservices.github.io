@@ -1,39 +1,62 @@
-{
-"lastUpdated": "2026-07-16T01:17:06Z",
-"threads": [
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#F97316",
-"summary": "Payout inconsistencies reported for the technician on 16 phases of the Midtown Dental Care (Columbus, GA / SN2413930) job; asking why and whether the payouts can be amended.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/15",
-"note": "Asked Freddy to specify which phases and what the discrepancy looks like (missing/zero vs wrong rate) before diagnosing root cause. Still no reply as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8B5CF6",
-"summary": "Job auto-reassigned from the correct Hattiesburg, MS tech to a Jackson, WY tech because of a bad lat/long on the Jackson, WY scheduling city; the overwrite-logic bug itself was fixed.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Ryan's fix",
-"date": "7/14",
-"note": "Adjet's overwriting-logic fix is confirmed live; still blocked on Ryan correcting the lat_long value for scheduling city 'Jackson, WY - 003 - Pro3'. No change as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#0EA5E9",
-"summary": "CT email automation isn't firing job request/confirmation emails for Livit AG (2) child-only jobs that have no parent record.",
-"statusCls": "badge-waiting",
-"status": "Confirming fix is permanent",
-"date": "7/9",
-"jiraKey": "COP-1994",
-"note": "The specific flagged job was retriggered and confirmed working; 👀 intentionally left up to confirm the fix is a permanent trigger-logic change (not a one-off) before closing the ticket.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783591107417?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783591107417&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783591107417&ngc=true"
-}
+[
+  {
+    "author": "Marina Menacho Rosales",
+    "initials": "MM",
+    "color": "#8e44ad",
+    "summary": "Team can't create adjustment lines on AT; duplicate lines were created during failed attempts and need to be deleted.",
+    "statusCls": "badge-waiting",
+    "status": "Blocked on Airtable Support",
+    "date": "2026-07-16",
+    "jiraKey": "COP-1985",
+    "note": "Recurrence of the View Only - ALL Jobs sync issue after the table rebuild; duplicate lines still need cleanup and creation is still failing for her team.",
+    "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+  },
+  {
+    "author": "Freddy Arias",
+    "initials": "FA",
+    "color": "#2980b9",
+    "summary": "CT payout rates came in different than expected across all 16 phases of Midtown Dental Care job SN2413930.",
+    "statusCls": "badge-todo",
+    "status": "Ticket created, in queue",
+    "date": "2026-07-15",
+    "jiraKey": "COP-1998",
+    "note": "Confirmed systemic (all 16 phases affected, wrong rate not missing payout) — ticket opened to review price code/rate mapping for this job group.",
+    "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+  },
+  {
+    "author": "Freddy Arias",
+    "initials": "FA",
+    "color": "#2980b9",
+    "summary": "Finance Adjustments Options not working in View Only when trying to create a reshoot for SENIOR6472662712413677080.",
+    "statusCls": "badge-waiting",
+    "status": "Blocked on Airtable Support",
+    "date": "2026-07-16",
+    "jiraKey": "COP-1985",
+    "note": "Same View Only sync issue as Marina's and Caitlin's reports; added to COP-1985 rather than opening a duplicate.",
+    "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784220955294?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784220955294&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784220955294&ngc=true"
+  },
+  {
+    "author": "Caitlin Suh",
+    "initials": "CS",
+    "color": "#16a085",
+    "summary": "Unsure whether to use View Only - All Jobs or the 2.0 tab for a reshoot on NAVYFEDVENICECA3; 2.0 tab is missing the Finance Adjustment Options dropdown and rate/reason fields.",
+    "statusCls": "badge-waiting",
+    "status": "Blocked on Airtable Support",
+    "date": "2026-07-16",
+    "jiraKey": "COP-1985",
+    "note": "Advised to stick with the original View Only - All Jobs tab for now; the 2.0 tab gaps are the same sync issue tracked in COP-1985.",
+    "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784222653535?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784222653535&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784222653535&ngc=true"
+  },
+  {
+    "author": "Jordan Saiz",
+    "initials": "JS",
+    "color": "#d35400",
+    "summary": "Client-initiated reschedules on a Vacasa job update the child record's status but not the parent's, so the CT never gets a reschedule notification email — happened twice now.",
+    "statusCls": "badge-todo",
+    "status": "Ticket created, in queue",
+    "date": "2026-07-16",
+    "jiraKey": "COP-1999",
+    "note": "Ticket opened to fix the reschedule automation so parent and child update together; parent status will also be corrected on both affected job IDs.",
+    "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
+  }
 ]
-}
