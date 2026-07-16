@@ -1,40 +1,39 @@
 {
-"lastUpdated": "2026-07-15T22:05:00Z",
-"threads": [
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#F59E0B",
-"summary": "A dispatched job for a Hattiesburg, MS tech got reassigned by automation to a tech in Jackson, WY, so the confirmation email went to the wrong tech.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Ryan's fix",
-"date": "7/14",
-"note": "The v2 automation overwrite bug is already fixed by Adjet, but the underlying bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' still needs Ryan to correct it. Adjet reconfirmed 7/15 9:05 AM this is still the only open piece.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185"
-},
-{
-"author": "Marina Menacho Rosales",
-"initials": "MM",
-"color": "#8B5CF6",
-"summary": "Finance adjustment line items won't create on AT for her team — the base is showing a sync error.",
-"statusCls": "badge-todo",
-"status": "In Jira queue (COP-1985)",
-"date": "7/10",
-"jiraKey": "COP-1985",
-"note": "Same recurring sync issue (stale sync status, adjustment fields not populating) affecting multiple teams. Logged as another COP-1985 occurrence; blocked on the dev fix, nothing needed from her.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#10B981",
-"summary": "Unable to create any finance adjustment line items on jobs since 7/8; base shows a stale sync status (~13 hrs behind).",
-"statusCls": "badge-todo",
-"status": "In Jira queue (COP-1985)",
-"date": "7/9",
-"jiraKey": "COP-1985",
-"note": "Same root cause as Marina's report below — Ricardo added his job details to COP-1985 as another occurrence since impact now spans multiple teams. Still sitting in the To Do queue as of Monday 7/13.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783621089468"
-}
-]
+  "lastUpdated": "2026-07-16T01:06:42Z",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#F97316",
+      "summary": "Payout inconsistencies reported for the technician on 16 phases of the Midtown Dental Care (Columbus, GA / SN2413930) job; asking why and whether the payouts can be amended.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/15",
+      "note": "Asked Freddy to specify which phases and what the discrepancy looks like (missing/zero vs wrong rate) before diagnosing root cause.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8B5CF6",
+      "summary": "Job auto-reassigned from the correct Hattiesburg, MS tech to a Jackson, WY tech because of a bad lat/long on the Jackson, WY scheduling city; the overwrite-logic bug itself was fixed.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Ryan's fix",
+      "date": "7/14",
+      "note": "Adjet's overwriting-logic fix is confirmed live; still blocked on Ryan correcting the lat_long value for scheduling city 'Jackson, WY - 003 - Pro3'.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#0EA5E9",
+      "summary": "CT email automation isn't firing job request/confirmation emails for Livit AG (2) child-only jobs that have no parent record.",
+      "statusCls": "badge-waiting",
+      "status": "Confirming fix is permanent",
+      "date": "7/9",
+      "jiraKey": "COP-1994",
+      "note": "The specific flagged job was retriggered and confirmed working Friday; 👀 intentionally left up to confirm the fix is a permanent trigger-logic change (not a one-off) before closing the ticket.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783591107417?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783591107417&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783591107417&ngc=true"
+    }
+  ]
 }
