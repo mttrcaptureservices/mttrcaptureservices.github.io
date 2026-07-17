@@ -4,25 +4,25 @@
     {
       "author": "Jordan Saiz",
       "initials": "JS",
-      "color": "#e07b39",
-      "summary": "Client-triggered Vacasa reschedules are updating the child record's job status but not the parent, which suppresses the CT reschedule notification email. Reported 2 instances (7/15 and 7/16).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Adjet",
+      "color": "#2E86AB",
+      "summary": "Client reschedule (Vacasa) updates the child record's status but not the parent, which suppresses the CT reschedule notification email. 2nd instance reported.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/16",
       "jiraKey": "COP-1999",
-      "note": "Fix + parent status correction assigned to Adjet Kodia, who acknowledged 7/16 3:08 PM ('Will do') but hasn't reported back yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
+      "note": "Adjet Kodia is reviewing the rescheduling cases; ticket is in queue for Ricardo to fix the automation and correct parent status on both flagged jobs.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#4f8fc0",
-      "summary": "CT payout rates came in inconsistent across all 16 phases of Midtown Dental Care (SN2413930). 10 phases were confirmed missing from the AP Report and fixed; 6 phases still need clarification on what the expected rate should be.",
+      "color": "#C73E1D",
+      "summary": "CT payout rate inconsistencies across 16 phases for Midtown Dental Care (SN2413930) construction scans.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "7/16",
+      "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Ricardo asked Freddy on 7/16 10:58 PM to confirm expected rates for Phases 1-6 (Qy6, 5Ix, M8a, CG5, Dg5, nFR); no reply yet.",
+      "note": "10 phases were fixed and confirmed for next week's AP Report; waiting on Freddy Arias to clarify expected rates for the remaining 6 phases before closing out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
     }
   ]
