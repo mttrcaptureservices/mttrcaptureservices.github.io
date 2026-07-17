@@ -1,29 +1,40 @@
 {
-  "lastUpdated": "2026-07-17T00:00:00-07:00",
+  "lastUpdated": "2026-07-17T21:24:45Z",
   "threads": [
     {
       "author": "Jordan Saiz",
       "initials": "JS",
-      "color": "#0078D4",
-      "summary": "Client used the reschedule link from the confirmation email on a Vacasa job; the child record updates to Rescheduled but the parent record doesn't, which suppresses the CT reschedule notification email. Happened twice (VAC105-6557123684419806897 on 7/15, VAC105-6597654113199360198 on 7/16).",
+      "color": "#E67E22",
+      "summary": "Client-initiated Vacasa job reschedules are updating the child record's status but not the parent record, so the CT never gets a reschedule notification.",
       "statusCls": "badge-investigating",
-      "status": "Fix in queue",
+      "status": "Investigating",
       "date": "7/16",
       "jiraKey": "COP-1999",
-      "note": "Ricardo opened COP-1999 and looped in Adjet to fix the reschedule automation and correct parent status on both instances; ticket still To Do, next action is on Ricardo/Adjet.",
+      "note": "Blocked on Adjet Kodia's investigation into a Zapier sync issue behind the parent/child status update.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#D83B01",
-      "summary": "CT payout rates came in inconsistent across all 16 phases of a Midtown Dental Care (Columbus, GA) construction scan job (SN2413930).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "color": "#16A085",
+      "summary": "CT payout amounts differ across identical phases of the same Midtown Dental Care construction scan job (SN2413930), and the technician wants the incorrect payouts corrected.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Ricardo fixed 10 phases that were missing a Completion Date; waiting on Freddy to clarify the expected rates for the remaining 6 phases before those can be corrected.",
+      "note": "Freddy clarified which phases are affected; waiting on Ricardo to review the rate/price-code mapping for each phase.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E44AD",
+      "summary": "Selecting Add-Ons (Photos, 360s, Tags) on a new SpecOps contract isn't causing those sections to appear in the generated shortlink jotform.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "Waiting on Kailyn to confirm whether she generated a brand-new shortlink after the field update, to isolate a stale-link issue from a field-mapping bug.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
     }
   ]
 }
