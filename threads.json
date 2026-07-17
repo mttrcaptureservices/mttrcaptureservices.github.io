@@ -1,40 +1,40 @@
 {
-  "lastUpdated": "2026-07-17T21:24:45Z",
+  "lastUpdated": "2026-07-17T21:36:12Z",
   "threads": [
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#E67E22",
-      "summary": "Client-initiated Vacasa job reschedules are updating the child record's status but not the parent record, so the CT never gets a reschedule notification.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/16",
-      "jiraKey": "COP-1999",
-      "note": "Blocked on Adjet Kodia's investigation into a Zapier sync issue behind the parent/child status update.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
-    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#16A085",
-      "summary": "CT payout amounts differ across identical phases of the same Midtown Dental Care construction scan job (SN2413930), and the technician wants the incorrect payouts corrected.",
+      "color": "#e67e22",
+      "summary": "Technician's CT payouts are inconsistent across identical phases of the Midtown Dental Care construction scan job (SN2413930) — same job phases paid different amounts.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "7/15",
+      "date": "7/16",
       "jiraKey": "COP-1998",
-      "note": "Freddy clarified which phases are affected; waiting on Ricardo to review the rate/price-code mapping for each phase.",
+      "note": "Ricardo confirmed the scope (rate mismatches across all 16 phases, not missing rates) and is investigating the price code/rate mapping; next update owed by Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Selecting Add-Ons (Photos, 360s, Tags) on a new SpecOps contract isn't causing those sections to appear in the generated shortlink jotform.",
+      "color": "#9b59b6",
+      "summary": "After updating the [Add-Ons?] field on a new SpecOps contract (ALRIG USA (2)), the generated shortlink jotform isn't including the selected add-on sections (Photos/360s/Tags).",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "7/17",
-      "note": "Waiting on Kailyn to confirm whether she generated a brand-new shortlink after the field update, to isolate a stale-link issue from a field-mapping bug.",
+      "note": "Ricardo asked whether Kailyn regenerated the shortlink after updating the field, or is still viewing the original link — awaiting her reply. No Jira yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+    },
+    {
+      "author": "Jordan Saiz",
+      "initials": "JS",
+      "color": "#2980b9",
+      "summary": "Client-initiated Vacasa reschedules aren't updating the parent record's Job Status, so the CT reschedule-notification email never fires; happened twice (7/15, 7/16).",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/16",
+      "jiraKey": "COP-1999",
+      "note": "Adjet is investigating in Zapier; Jordan clarified the parent was correctly set to Rescheduled but the child unexpectedly shows CIA — added to COP-1999, next step owed by Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
     }
   ]
 }
