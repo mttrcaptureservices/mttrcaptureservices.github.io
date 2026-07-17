@@ -4,26 +4,26 @@
     {
       "author": "Jordan Saiz",
       "initials": "JS",
-      "color": "#2E86AB",
-      "summary": "Client reschedule (Vacasa) updates the child record's status but not the parent, which suppresses the CT reschedule notification email. 2nd instance reported.",
+      "color": "#0078D4",
+      "summary": "Client used the reschedule link from the confirmation email on a Vacasa job; the child record updates to Rescheduled but the parent record doesn't, which suppresses the CT reschedule notification email. Happened twice (VAC105-6557123684419806897 on 7/15, VAC105-6597654113199360198 on 7/16).",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "status": "Fix in queue",
       "date": "7/16",
       "jiraKey": "COP-1999",
-      "note": "Adjet Kodia is reviewing the rescheduling cases; ticket is in queue for Ricardo to fix the automation and correct parent status on both flagged jobs.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057"
+      "note": "Ricardo opened COP-1999 and looped in Adjet to fix the reschedule automation and correct parent status on both instances; ticket still To Do, next action is on Ricardo/Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784224599057&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784224599057&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#C73E1D",
-      "summary": "CT payout rate inconsistencies across 16 phases for Midtown Dental Care (SN2413930) construction scans.",
+      "color": "#D83B01",
+      "summary": "CT payout rates came in inconsistent across all 16 phases of a Midtown Dental Care (Columbus, GA) construction scan job (SN2413930).",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "10 phases were fixed and confirmed for next week's AP Report; waiting on Freddy Arias to clarify expected rates for the remaining 6 phases before closing out.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+      "note": "Ricardo fixed 10 phases that were missing a Completion Date; waiting on Freddy to clarify the expected rates for the remaining 6 phases before those can be corrected.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     }
   ]
 }
