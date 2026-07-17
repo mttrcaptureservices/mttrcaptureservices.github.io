@@ -5,307 +5,306 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Needs Your Attention – Ricardo</title>
 <style>
-  :root {
-    --bg: #f5f6f8;
-    --card-bg: #ffffff;
-    --border: #e3e5e9;
-    --text: #1f2328;
-    --muted: #6b7280;
-    --accent: #2563eb;
-    --critical: #dc2626;
-    --warn-bg: #fff4e5;
-    --warn-border: #f5c377;
-    --warn-text: #7a4a00;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding: 24px;
-  }
-  .wrap { max-width: 900px; margin: 0 auto; }
-  h1 { font-size: 26px; margin: 0 0 4px 0; }
-  .date { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
-  .refresh-info { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
-  .banner {
-    background: var(--warn-bg);
-    border: 1px solid var(--warn-border);
-    color: var(--warn-text);
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  .banner strong { display: block; margin-bottom: 4px; font-size: 14px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-  .chip {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 6px 14px;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .stats-row { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
-  .stat {
-    flex: 1;
-    min-width: 140px;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 16px;
-    text-align: center;
-  }
-  .stat .num { font-size: 24px; font-weight: 700; }
-  .stat .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  section { margin-bottom: 26px; }
-  .section-title {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .section-title .count {
-    background: var(--border);
-    color: var(--muted);
-    border-radius: 999px;
-    padding: 1px 8px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .cards { display: flex; flex-direction: column; gap: 8px; }
-  a.card {
-    display: block;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    text-decoration: none;
-    color: var(--text);
-    transition: box-shadow .15s ease, transform .15s ease;
-  }
-  a.card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.06); transform: translateY(-1px); }
-  .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; }
-  .key { font-weight: 600; color: var(--accent); }
-  .badge {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-weight: 600;
-  }
-  .badge-todo { background: #eef2ff; color: #4338ca; }
-  .badge-inprogress { background: #fef3c7; color: #92400e; }
-  .badge-testing { background: #dcfce7; color: #166534; }
-  .badge-open { background: #fee2e2; color: #991b1b; }
-  .badge-critical { background: #dc2626; color: #fff; }
-  .badge-major { background: #fed7aa; color: #9a3412; }
-  .meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .thread-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-  }
-  .thread-top { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
-  .avatar {
-    width: 26px; height: 26px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 11px; font-weight: 700;
-    background: #5856d6;
-  }
-  .thread-summary { font-size: 13px; margin: 6px 0; color: var(--text); }
-  .thread-note { font-size: 12px; color: var(--muted); }
-  .stale-flag { color: var(--critical); font-weight: 600; }
-  footer { font-size: 12px; color: var(--muted); margin-top: 30px; text-align: center; }
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f7;color:#1d1d1f;font-size:14px;line-height:1.5;padding:20px}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.header h1{font-size:20px;font-weight:700}
+.subtitle{font-size:13px;color:#6e6e73;margin-bottom:4px}
+.refresh-info{font-size:11px;color:#aeaeb2;margin-bottom:14px}
+.source-row{display:flex;align-items:center;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.source-chip{background:#fff;border:1px solid #e5e5ea;border-radius:20px;padding:4px 12px;font-size:12px;color:#6e6e73;display:flex;align-items:center;gap:5px}
+.source-dot{width:7px;height:7px;border-radius:50%;background:#007aff}
+.source-dot.green{background:#34c759}.source-dot.orange{background:#ff9500}
+.teams-chip{background:#ede6ff;color:#5856d6;border-radius:20px;padding:4px 10px;font-size:12px;display:flex;align-items:center;gap:4px}
+.section{margin-bottom:20px}
+.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.section-title{font-size:13px;font-weight:600;color:#6e6e73;text-transform:uppercase;letter-spacing:.5px}
+.section-badge{background:#e5e5ea;color:#6e6e73;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600}
+.issue-card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:8px;border:1px solid #e5e5ea;cursor:pointer;display:flex;align-items:flex-start;gap:12px;text-decoration:none;color:inherit;transition:all .15s}
+.issue-card:hover{border-color:#007aff;box-shadow:0 2px 8px rgba(0,122,255,.12)}
+.issue-card.urgent-card{border-left:3px solid #ff3b30}
+.issue-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
+.icon-task{background:#e3f0ff}.icon-epic{background:#f0e6ff}
+.issue-body{flex:1;min-width:0}
+.issue-top{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.issue-key{font-size:12px;font-weight:600;color:#007aff;white-space:nowrap}
+.issue-summary{font-size:14px;font-weight:500;color:#1d1d1f}
+.issue-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.issue-assignee{font-size:11px;color:#6e6e73}
+.badge{border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-todo{background:#e8f0ff;color:#0055cc}
+.badge-inprogress{background:#fff4e0;color:#b35900}
+.badge-testing{background:#e6f9ed;color:#1a7a45}
+.badge-p1{background:#ffe5e5;color:#cc0000}
+.badge-epic{background:#ede6ff;color:#5500cc}
+.badge-task{background:#e8f4ff;color:#0066aa}
+.badge-investigating{background:#f5f0ff;color:#5500cc}
+.badge-fix-deployed{background:#e6f9ed;color:#1a7a45}
+.badge-jira-link{background:#e8f0ff;color:#0055cc}
+.badge-waiting{background:#fff4e0;color:#b35900}
+.updated-time{font-size:11px;color:#aeaeb2;white-space:nowrap}
+.updated-today{color:#ff6b00;font-weight:600}
+.divider{height:1px;background:#e5e5ea;margin:4px 0 12px}
+.thread-card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:8px;border:1px solid #e5e5ea;border-left:3px solid #5856d6;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .15s}
+.thread-card:hover{border-color:#5856d6;box-shadow:0 2px 8px rgba(88,86,214,.12)}
+.thread-avatar{width:28px;height:28px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.empty{background:#fff;border:1px solid #e5e5ea;border-radius:10px;padding:16px;color:#6e6e73;text-align:center}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Needs Your Attention</h1>
-  <div class="date">July 16, 2026</div>
-  <div class="refresh-info">Failover snapshot · built by Cowork agent · Last updated: 9:33 PM PT</div>
-
-  <div class="banner">
-    <strong>⚠️ Failover snapshot — primary GitHub Action pipeline looked unhealthy</strong>
-    The Refresh Dashboard GitHub Action reports recent "Success" runs (most recent completed ~6:45&nbsp;PM&nbsp;PT today), but the live page content was still showing an 8:57&nbsp;AM&nbsp;PT snapshot — missing two Jira items updated later this morning (COP-1998, COP-1997). That mismatch between a "successful" run and stale content suggests the pipeline is executing without erroring but not actually refreshing the published data, so this page was generated directly from Jira (and Clark's Teams feed) as a stopgap. The GitHub Action itself was left running — no changes were made to it. This will be overwritten automatically once the Action produces fresh content again.
-  </div>
-
-  <div class="chips">
-    <span class="chip">Jira · Matterport</span>
-    <span class="chip">Assigned to you</span>
-    <span class="chip">Team (COP · 7d)</span>
-    <span class="chip">👀 Teams · Clark</span>
-  </div>
-
-  <div class="stats-row">
-    <div class="stat"><div class="num">3</div><div class="label">Critical / Updated Today</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">In Progress</div></div>
-    <div class="stat"><div class="num">1</div><div class="label">In Testing</div></div>
-    <div class="stat"><div class="num">3</div><div class="label">To Do</div></div>
-  </div>
-
-  <section>
-    <div class="section-title">⚡ Updated Today <span class="count">2</span></div>
-    <div class="cards">
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1998" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1998</span>
-          <span>CT payout rate inconsistencies across 16 phases — Midtown Dental Care (SN2413930)</span>
-          <span class="badge badge-todo">To Do</span>
-        </div>
-        <div class="meta">Task · updated today 11:09 AM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1997" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1997</span>
-          <span>Midtown Dental Care (Columbus, GA / SN2413930) — CT payout showing wrong rate across 16 phases</span>
-          <span class="badge badge-todo">To Do</span>
-        </div>
-        <div class="meta">Task · updated today 10:08 AM PT</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">🔄 In Progress <span class="count">2</span></div>
-    <div class="cards">
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1884</span>
-          <span>CT Directory overhaul work</span>
-          <span class="badge badge-inprogress">In Progress</span>
-        </div>
-        <div class="meta">Epic · updated 5/27</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1886" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1886</span>
-          <span>Parent Base Mapping Tech City Assignments</span>
-          <span class="badge badge-inprogress">In Progress</span>
-        </div>
-        <div class="meta">Task · updated 5/27</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">🧪 In Testing <span class="count">1</span></div>
-    <div class="cards">
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1889</span>
-          <span>Coordinator Interfaces</span>
-          <span class="badge badge-testing">In Testing</span>
-        </div>
-        <div class="meta">Task · updated 6/16</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">📌 To Do / Backlog <span class="count">3</span></div>
-    <div class="cards">
-      <a class="card" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank">
-        <div class="card-top">
-          <span class="key">ZCI-73062</span>
-          <span>I need access to an pold employee one drive</span>
-          <span class="badge badge-critical">P1 - Critical</span>
-          <span class="badge badge-open">Open</span>
-        </div>
-        <div class="meta">Employee Termination · updated 7/7</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1978" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1978</span>
-          <span>Metroplex360 - Webhook fires ~30 min after email notification on job request creation</span>
-          <span class="badge badge-major">P2 - Major</span>
-          <span class="badge badge-todo">To Do</span>
-        </div>
-        <div class="meta">Task · updated 7/14</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1960" target="_blank">
-        <div class="card-top">
-          <span class="key">COP-1960</span>
-          <span>Add new fields in Global Requests table to record the zap url that creates a job, plus other fields too</span>
-          <span class="badge badge-todo">To Do</span>
-        </div>
-        <div class="meta">Task · updated 7/14</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">👥 Team · COP (7 days) <span class="count">11</span></div>
-    <div class="cards">
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1918" target="_blank">
-        <div class="card-top"><span class="key">COP-1918</span><span>Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Snehal Meled · updated today 4:11 PM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1999" target="_blank">
-        <div class="card-top"><span class="key">COP-1999</span><span>Client reschedule only updates child record's Rescheduled Job Status, parent doesn't propagate — no CT reschedule email</span><span class="badge badge-todo">To Do</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated today 1:45 PM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1888" target="_blank">
-        <div class="card-top"><span class="key">COP-1888</span><span>Distance Calculation and CT Assignment Automation</span><span class="badge badge-testing">In Testing</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated today 11:54 AM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1996" target="_blank">
-        <div class="card-top"><span class="key">COP-1996</span><span>Cushman &amp; Wakefield workflow verification</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Snehal Meled · updated yesterday 3:52 PM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1962" target="_blank">
-        <div class="card-top"><span class="key">COP-1962</span><span>Job Request link not working for CT when CT is changed (sometimes)</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated yesterday 11:40 AM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1923" target="_blank">
-        <div class="card-top"><span class="key">COP-1923</span><span>CT Review - Non/Vacasa CTs + Missing CTs in Tech City Assignment table to investigate</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated yesterday 11:35 AM PT</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1959" target="_blank">
-        <div class="card-top"><span class="key">COP-1959</span><span>Look into a way to make columns available in Global Requests table</span><span class="badge badge-todo">To Do</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated 7/14</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1988" target="_blank">
-        <div class="card-top"><span class="key">COP-1988</span><span>Disallow Client Rescheduling if within 24 hours of Job Scheduling Date</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated 7/14</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1965" target="_blank">
-        <div class="card-top"><span class="key">COP-1965</span><span>Job CT Issue Log</span><span class="badge badge-todo">To Do</span></div>
-        <div class="meta">Epic · → Adjet Kodia · updated 7/14</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1948" target="_blank">
-        <div class="card-top"><span class="key">COP-1948</span><span>Spec Ops 2.0 - Custom Client Travel Charge incorrectly triggering CT travel payout automation</span><span class="badge badge-inprogress">In Progress</span></div>
-        <div class="meta">Task · → Troy Lowry · updated 7/10</div>
-      </a>
-      <a class="card" href="https://matterport.atlassian.net/browse/COP-1991" target="_blank">
-        <div class="card-top"><span class="key">COP-1991</span><span>Job auto-flipping to "Expired contract" due to mismatched Fulfill Date on MP Client record — JOBID6594866456227413819</span><span class="badge badge-testing">In Testing</span></div>
-        <div class="meta">Task · → Adjet Kodia · updated 7/10</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">👀 Pending Teams Threads <span class="count">2</span></div>
-    <div class="meta" style="margin-bottom:10px;">Via Clark's threads.json — <span class="stale-flag">feed's lastUpdated is 2026-06-05, over 6 weeks old</span>. Treat this section as background, not current — Clark's feed hasn't refreshed recently, so newer thread activity (if any) won't be reflected here.</div>
-    <div class="thread-card">
-      <div class="thread-top"><span class="avatar" style="background:#5856d6;">CS</span> Caitlin Suh</div>
-      <div class="thread-summary">Unable to create "adjustment line for CT rate" on JOBID6531393862914479294 — related to Airtable sync failure (data source unavailable).</div>
-      <div class="thread-note">Investigating · 6/4 · <a href="https://matterport.atlassian.net/browse/COP-1928" target="_blank">COP-1928 ↗</a><br>Snehal confirmed investigating. No update from requester yet.</div>
-    </div>
-    <div class="thread-card">
-      <div class="thread-top"><span class="avatar" style="background:#34c759;">JB</span> John Bosch</div>
-      <div class="thread-summary">Client rescheduling forms remain active on CLM/Complete jobs. Fix deployed 6/4. Kevin Curtis asked about notifications on blocked reschedules. 24-hr lock-out still under investigation.</div>
-      <div class="thread-note">Awaiting confirmation · 5/27 · <a href="https://matterport.atlassian.net/browse/COP-1904" target="_blank">COP-1904 ↗</a><br>Fix deployed 6/4 ~5:31 PM. Awaiting John's sign-off.</div>
-    </div>
-  </section>
-
-  <footer>Built by the Cowork attention-dashboard-refresh task · This is a temporary failover — the GitHub Action remains the long-term source of truth and will overwrite this once healthy.</footer>
+<div class="header"><h1>Needs Your Attention</h1></div>
+<div class="subtitle">July 16, 2026</div>
+<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 9:53 PM PT · Jira live · Teams via Clark</div>
+<div class="source-row">
+<div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
+<div class="source-chip"><div class="source-dot green"></div> Assigned to you</div>
+<div class="source-chip"><div class="source-dot orange"></div> Team (COP · 7d)</div>
+<div class="teams-chip">👀 Teams · Clark</div>
 </div>
+<div class="section"><div class="section-header"><span class="section-title">⚡ Updated Today</span><span class="section-badge">1</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2000" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-2000</span><span class="issue-summary">Airbnb (6): Confirm CT Step Photos link + review/remove legacy France technician-select field in CT email</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time updated-today">⚡ 9:34 PM</span>
+      </div>
+    </div></a></div><div class="section"><div class="section-header"><span class="section-title">🔄 In Progress</span><span class="section-badge">2</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">
+    <div class="issue-icon icon-epic">⚡</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1884</span><span class="issue-summary">CT Directory overhaul work</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-epic">Epic</span>
+        
+        <span class="updated-time">5/27</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1886" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1886</span><span class="issue-summary">Parent Base Mapping Tech City Assignments</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">5/27</span>
+      </div>
+    </div></a></div><div class="section"><div class="section-header"><span class="section-title">🧪 In Testing</span><span class="section-badge">1</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1889</span><span class="issue-summary">Coordinator Interfaces</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-testing">In Testing</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">6/16</span>
+      </div>
+    </div></a></div><div class="section"><div class="section-header"><span class="section-title">📌 To Do / Backlog</span><span class="section-badge">5</span></div><a class="issue-card urgent-card" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">ZCI-73062</span><span class="issue-summary">I need access to an pold employee one drive</span></div>
+      <div class="issue-meta">
+        <span class="badge badge-p1">🔴 P1 - Critical</span>
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Employee Termination</span>
+        
+        <span class="updated-time">7/7</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1998" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1998</span><span class="issue-summary">CT payout rate inconsistencies across 16 phases — Midtown Dental Care (SN2413930)</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">0d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1997" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1997</span><span class="issue-summary">Midtown Dental Care (Columbus, GA / SN2413930) — CT payout showing wrong rate across 16 phases</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">0d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1960" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1960</span><span class="issue-summary">Add new fields in Global Requests table to record the zap url that creates a job, plus other fields too</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">2d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1978" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1978</span><span class="issue-summary">Metroplex360 - Webhook fires ~30 min after email notification on job request creation</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        
+        <span class="updated-time">2d ago</span>
+      </div>
+    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👥 Team · COP (7 days)</span><span class="section-badge">11</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1918" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1918</span><span class="issue-summary">Existing CT Views in CT Directory to update filters and new City Master Table fields using Claude</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Snehal Meled</span>
+        <span class="updated-time">0d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1999" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1999</span><span class="issue-summary">Client reschedule only updates child record's Rescheduled Job Status, parent doesn't propagate — no CT reschedule email</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">0d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1888" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1888</span><span class="issue-summary">Distance Calculation and CT Assignment Automation</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-testing">In Testing</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">0d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1996" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1996</span><span class="issue-summary">Cushman & Wakefield workflow verification</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Snehal Meled</span>
+        <span class="updated-time">yesterday</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1962" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1962</span><span class="issue-summary">Job Request link not working for CT when CT is changed (sometimes)</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">yesterday</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1923" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1923</span><span class="issue-summary">CT Review - Non/Vacasa CTs + Missing CTs in Tech City Assignment table to investigate</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">yesterday</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1959" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1959</span><span class="issue-summary">Look into a way to make columns available in Global Requests table</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">2d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1988" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1988</span><span class="issue-summary">Disallow Client Rescheduling if within 24 hours of Job Scheduling Date</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">2d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1965" target="_blank">
+    <div class="issue-icon icon-epic">⚡</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1965</span><span class="issue-summary">Job CT Issue Log</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-todo">To Do</span>
+        <span class="badge badge-epic">Epic</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">2d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1948" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1948</span><span class="issue-summary">Spec Ops 2.0 - Custom Client Travel Charge incorrectly triggering CT travel payout automation</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-inprogress">In Progress</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Troy Lowry</span>
+        <span class="updated-time">6d ago</span>
+      </div>
+    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1991" target="_blank">
+    <div class="issue-icon icon-task">📋</div>
+    <div class="issue-body">
+      <div class="issue-top"><span class="issue-key">COP-1991</span><span class="issue-summary">Job auto-flipping to "Expired contract" due to mismatched Fulfill Date on MP Client record — JOBID6594866456227413819</span></div>
+      <div class="issue-meta">
+        
+        <span class="badge badge-testing">In Testing</span>
+        <span class="badge badge-task">Task</span>
+        <span class="issue-assignee">→ Adjet Kodia</span>
+        <span class="updated-time">6d ago</span>
+      </div>
+    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👀 Pending Teams Threads</span><span class="section-badge">4</span><span style="font-size:11px;color:#aeaeb2;margin-left:4px">· via Clark · 7/16/2026</span></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true','_blank')">
+    <div class="thread-avatar" style="background:#9B59B6">KJ</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Job JOBID6594323772073237431 auto-reassigned from the correct Hattiesburg, MS tech to a Jackson, WY tech, so the confirmation email went to the wrong CT.</div>
+      <div class="issue-meta"><span class="badge badge-waiting">Waiting on Ryan's fix</span><span class="updated-time">7/14</span><span style="font-size:11px;color:#6e6e73">🤖 Overwrite bug already fixed by Adjet; still open: bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' awaiting Ryan's correction.</span></div>
+    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true','_blank')">
+    <div class="thread-avatar" style="background:#E67E22">FA</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">Freddy Arias</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">All 16 phases of SN2413930 (Midtown Dental Care, Columbus GA) are showing CT payout rates different from what the technician expected.</div>
+      <div class="issue-meta"><span class="badge badge-investigating">Investigating</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-1998" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-1998 ↗</a><span class="updated-time">7/15</span><span style="font-size:11px;color:#6e6e73">🤖 Systemic price code/rate mapping issue confirmed across all 16 phases; Ricardo comparing phases for a fix or explanation.</span></div>
+    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057','_blank')">
+    <div class="thread-avatar" style="background:#4A90D9">JS</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">Jordan Saiz</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Client-initiated Vacasa reschedules only update the child record's status, not the parent's, so the CT never receives a reschedule notification email.</div>
+      <div class="issue-meta"><span class="badge badge-investigating">Assigned to Adjet</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-1999" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-1999 ↗</a><span class="updated-time">7/16</span><span style="font-size:11px;color:#6e6e73">🤖 Adjet Kodia to fix reschedule automation so parent record updates and CT gets notified; confirmed 'will do' at 3:08pm.</span></div>
+    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1778092250825&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1778092250825&ngc=true','_blank')">
+    <div class="thread-avatar" style="background:#16A085">JB</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">John Bosch</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Vacasa jobs near Ocean City, MD were calculating very low Total Travel Distance values with no nearby Vacasa In-Network city feeding the calculation.</div>
+      <div class="issue-meta"><span class="badge badge-fix-deployed">Fix deployed, monitoring</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-1888" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-1888 ↗</a><span class="updated-time">5/6</span><span style="font-size:11px;color:#6e6e73">🤖 Travel-distance calc turned on for Vacasa; Kevin Curtis and Jordan Saiz reviewing new jobs to confirm no regressions.</span></div>
+    </div></div></div>
 </body>
 </html>
