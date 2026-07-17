@@ -1,29 +1,64 @@
 {
-  "lastUpdated": "2026-07-16T22:34:26-07:00",
-  "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E67E22",
-      "summary": "All 16 phases of SN2413930 (Midtown Dental Care, Columbus GA) are showing CT payout rates different from what the technician expected.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/15",
-      "jiraKey": "COP-1998",
-      "note": "Systemic price code/rate mapping issue confirmed across all 16 phases; Ricardo comparing phases for a fix or explanation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#4A90D9",
-      "summary": "Client-initiated Vacasa reschedules only update the child record's status, not the parent's, so the CT never receives a reschedule notification email.",
-      "statusCls": "badge-investigating",
-      "status": "Assigned to Adjet",
-      "date": "7/16",
-      "jiraKey": "COP-1999",
-      "note": "Adjet Kodia to fix reschedule automation so parent record updates and CT gets notified; confirmed 'will do' at 3:08pm.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057"
-    }
-  ]
+"lastUpdated": "2026-07-16T22:40:00-07:00",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "Job JOBID6594323772073237431 auto-reassigned from the correct Hattiesburg, MS tech to a Jackson, WY tech, so the confirmation email went to the wrong CT.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Ryan's fix",
+"date": "7/14",
+"note": "Overwrite bug already fixed by Adjet; still open: bad lat_long for scheduling city 'Jackson, WY - 003 - Pro3' awaiting Ryan's correction.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784050859185?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784050859185&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784050859185&ngc=true"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#E67E22",
+"summary": "All 16 phases of SN2413930 (Midtown Dental Care, Columbus GA) are showing CT payout rates different from what the technician expected.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/15",
+"jiraKey": "COP-1998",
+"note": "Ricardo is live in-thread with Freddy tonight (10:58pm) working phase-by-phase on which rates are actually wrong vs. expected; ticket open and assigned to Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+},
+{
+"author": "Jordan Saiz",
+"initials": "JS",
+"color": "#4A90D9",
+"summary": "Client-initiated Vacasa reschedules only update the child record's status, not the parent's, so the CT never receives a reschedule notification email.",
+"statusCls": "badge-investigating",
+"status": "Assigned to Adjet",
+"date": "7/16",
+"jiraKey": "COP-1999",
+"note": "Adjet Kodia to fix reschedule automation so parent record updates and CT gets notified; confirmed 'will do' at 3:08pm. No further movement since.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784224599057"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#16A085",
+"summary": "Vacasa jobs near Ocean City, MD were calculating very low Total Travel Distance values with no nearby Vacasa In-Network city feeding the calculation.",
+"statusCls": "badge-fix-deployed",
+"status": "Fix deployed, monitoring",
+"date": "5/6",
+"jiraKey": "COP-1888",
+"note": "Travel-distance calc turned on for Vacasa; Kevin Curtis and Jordan Saiz reviewing new jobs to confirm no regressions.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1778092250825?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1778092250825&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1778092250825&ngc=true"
+},
+{
+"author": "Juyoung Jang",
+"initials": "JJ",
+"color": "#C0392B",
+"summary": "Airbnb (6): needs the CT Step Photos upload link for ~7 pending Navigate jobs, and flagged a legacy France-only technician-select field in the automated Airbnb-to-CT email that may be blocking CTs from picking scan dates directly with hosts.",
+"statusCls": "badge-investigating",
+"status": "Ricardo live in-thread",
+"date": "7/16",
+"jiraKey": "COP-2000",
+"note": "Ricardo is actively clarifying scope directly with Juyoung in Teams tonight; ticket opened as a placeholder in case it needs to persist past this conversation.",
+"url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+}
+]
 }
