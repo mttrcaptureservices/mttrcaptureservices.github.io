@@ -1,39 +1,46 @@
 {
-  "lastUpdated": "2026-07-20T21:15:25Z",
+  "lastUpdated": "2026-07-20T15:14:06-07:00",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "Adding a new SpecOps contract for ALRIG USA (2); the [Add-Ons?] selections aren't carrying through to the generated shortlink jotform.",
+      "color": "#6366f1",
+      "summary": "Kailyn's SpecOps shortlink jotform for ALRIG USA (2) isn't including the Add-Ons sections (Photos/360s/Tags) she selected.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Ricardo explained the Spec Ops form doesn't support Add-Ons parameters and gave two options (regenerate via on-contract form, or wait for a form update); waiting on Kailyn to pick one.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+      "date": "7/18",
+      "note": "Ricardo gave 2 options (regenerate as an on-contract shortlink, or wait for the Spec Ops form to support Add-Ons); waiting on Kailyn to choose."
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#f59e0b",
-      "summary": "Technician payouts for 16 phases of a Midtown Dental Care construction scan job (SN2413930) came in inconsistent; asked for an investigation and correction.",
+      "summary": "Technician payout inconsistencies across all 16 construction-scan phases for Midtown Dental Care (SN2413930), Columbus GA.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "7/15",
+      "date": "7/16",
       "jiraKey": "COP-1998",
-      "note": "Root cause confirmed as a systemic price code/rate mapping issue; team now discussing internally whether the VHT travel payout workflow itself is still valid, no action owed by Freddy.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+      "note": "Root cause traced to VHT CT travel payout workflow; Ryan Morrow flagged an open question about whether it's still valid and how to surface VHT status now that scheduling cards are going away. Waiting on Ricardo/team to align."
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "A job in Benton, KY was auto-assigned to a technician in Carbondale (1200 miles away) instead of the much closer Nashville technician; asked why the automation picked the wrong INC.",
+      "color": "#6366f1",
+      "summary": "Automation assigned an INC 1,200 miles away (Carbondale, CO instead of Nashville, 127 mi) for a Benton, KY job.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/20",
-      "note": "Adjet Kodia identified the root cause live (bad lat-long data pointed to Carbondale, IL instead of Carbondale, CO) and is working the fix directly with Snehal; no action owed by Kailyn, who already reassigned the job manually.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784561438495?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784561438495&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784561438495&ngc=true"
+      "note": "Adjet Kodia found the real issue is a bad lat/long on the 'Carbondale, CO - 001 - Pro3' scheduling city record; he's working the fix directly, no action needed from Kailyn."
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#10b981",
+      "summary": "Requested a dedicated Teams alert for Vacasa jobs with travel distance over 170 miles, routed to the Vacasa Ops channel.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/7",
+      "note": "Alert was built and delivered, but the Vacasa Ops channel John pointed to shows as archived; Ricardo asked him to confirm the correct channel name."
     }
   ]
 }
