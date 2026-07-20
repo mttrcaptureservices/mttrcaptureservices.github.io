@@ -1,28 +1,39 @@
 {
-  "lastUpdated": "2026-07-17T18:48:21-07:00",
+  "lastUpdated": "2026-07-20T21:15:25Z",
   "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#7c3aed",
+      "summary": "Adding a new SpecOps contract for ALRIG USA (2); the [Add-Ons?] selections aren't carrying through to the generated shortlink jotform.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "Ricardo explained the Spec Ops form doesn't support Add-Ons parameters and gave two options (regenerate via on-contract form, or wait for a form update); waiting on Kailyn to pick one.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#E67E22",
-      "summary": "CT reported inconsistent per-phase payouts on a Columbus, GA Midtown Dental Care construction job (SN2413930) — identical job phases paying different CT rates (e.g. $614.08 vs $638.50 vs $617.38).",
+      "color": "#f59e0b",
+      "summary": "Technician payouts for 16 phases of a Midtown Dental Care construction scan job (SN2413930) came in inconsistent; asked for an investigation and correction.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Ricardo confirmed wrong (not missing) rates across all 16 phases as a systemic price code/rate mapping issue; reviewing further, tracked in COP-1998.",
+      "note": "Root cause confirmed as a systemic price code/rate mapping issue; team now discussing internally whether the VHT travel payout workflow itself is still valid, no action owed by Freddy.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Adding a new SpecOps contract for ALRIG USA (2) — the [Add-Ons?] field selections (Photos + 360s + Tags) aren't showing up in the generated shortlink jotform.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Diagnosed as a stale-link issue (shortlink snapshots Add-Ons at generation time); told Kailyn to generate a brand-new shortlink now that the field is set correctly. Waiting on her confirmation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+      "color": "#7c3aed",
+      "summary": "A job in Benton, KY was auto-assigned to a technician in Carbondale (1200 miles away) instead of the much closer Nashville technician; asked why the automation picked the wrong INC.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/20",
+      "note": "Adjet Kodia identified the root cause live (bad lat-long data pointed to Carbondale, IL instead of Carbondale, CO) and is working the fix directly with Snehal; no action owed by Kailyn, who already reassigned the job manually.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784561438495?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784561438495&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784561438495&ngc=true"
     }
   ]
 }
