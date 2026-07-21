@@ -1,74 +1,64 @@
 {
-  "lastUpdated": "2026-07-21T14:20:00-07:00",
+  "lastUpdated": "2026-07-21T16:35:00-07:00",
   "threads": [
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E67E22",
-      "summary": "CT payout inconsistencies on 16 phase line items for the Midtown Dental Care (Columbus, GA) construction scan job.",
-      "statusCls": "badge-investigating",
-      "status": "Waiting on surfacing decision",
-      "date": "7/16",
-      "jiraKey": "COP-1998",
-      "note": "VHT payout workflow itself confirmed valid; still open question on how to surface VHT-photographer status once scheduling cards go away. Owed by Ricardo/Ryan.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E67E22",
-      "summary": "Confirming a PAYISSUE line item for JOBID6594245426012487399 will still pay the technician despite showing Cancelled In Advance instead of Complete.",
-      "statusCls": "badge-investigating",
-      "status": "Ricardo confirming",
-      "date": "7/21",
-      "note": "Ricardo is actively confirming whether the PAYISSUE line's own status (vs. the parent job's) needs to be Complete for payout. Owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784659496691?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784659496691&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784659496691&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E67E22",
-      "summary": "Requesting JOBID6600459987584370535 be reverted from Cancelled In Advance back to Scheduled.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting manual update",
-      "date": "7/21",
-      "note": "Simple one-field status revert; needs to be executed manually in Airtable (direct field edit). Owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784664884603?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784664884603&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784664884603&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Two different Jotforms in circulation for JLL - JPMC; unclear which one is current and correctly syncs orders to Airtable with JPMC-prefixed Job IDs.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/21",
-      "jiraKey": "COP-2003",
-      "note": "New ticket created to compare both forms' Airtable/Zapier mapping and retire the incorrect link. Owed by Ricardo/Homelander.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784665714480?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784665714480&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784665714480&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "SpecOps Jotform for ALRIG USA (2) isn't including Add-On sections (Photos + 360s + Tags) even after the [Add-Ons?] field was set correctly.",
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#4A90D9",
+      "summary": "Wants Vacasa excessive-travel-fee alerts (>170 miles) routed to the Vacasa Ops channel and tagged to Kevin and Jordan, but that channel currently shows as archived.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "7/18",
-      "note": "Root cause confirmed: Spec Ops Form doesn't support Add-Ons at all. Kailyn is deciding between switching to the on-contract shortlink or waiting for the Spec Ops form to be updated. Owed by Kailyn.",
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "Waiting on John Bosch to confirm the correct (non-archived) channel name before the alert routing can be updated.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#E07B39",
+      "summary": "SpecOps Jotform doesn't include Add-Ons sections (Photos + 360s + Tags) for a new ALRIG USA (2) contract, even after updating the Add-Ons field.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "No Jira opened yet — Ricardo confirmed the Spec Ops form doesn't support Add-Ons at all and gave Kailyn two options (switch to on-contract shortlink now, or wait for a form fix); waiting on her choice.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+    },
+    {
+      "author": "Marina Menacho Rosales",
+      "initials": "MM",
+      "color": "#7B68EE",
+      "summary": "Team can't create adjustment lines in Airtable due to an error message; duplicate payissue lines were removed and a workaround view was shared in the meantime.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on confirmation",
+      "date": "7/10",
+      "jiraKey": "COP-1985",
+      "note": "Underlying sync bug is blocked on Airtable Support; waiting on Marina to confirm the View Only - ALL Jobs workaround view resolves the immediate need.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
-      "color": "#2980B9",
-      "summary": "Airbnb (6) jobs stuck in Pending status; asking to verify the Step Photos upload link works, review a Listing ID showing blank, and remove a confusing Scheduling Fee line from confirmation emails.",
-      "statusCls": "badge-waiting",
-      "status": "Ricardo resolving live",
-      "date": "7/20",
+      "color": "#50C878",
+      "summary": "Airbnb CT scheduling form may not be updating job status correctly, the Listing ID field is blank in the automated email, and Juyoung asked to remove the new Scheduling Fee line.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/16",
       "jiraKey": "COP-2000",
-      "note": "Ricardo is actively working this thread live in Teams (per standing guidance, Clark stands down on replies/reactions here). Owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784615143590?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784256310270&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784615143590&ngc=true"
+      "note": "Ricardo is handling this live in Teams; three new sub-issues raised 7/20 (form status, blank Listing ID, Scheduling Fee line) are still unanswered.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784256310270&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784256310270&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#D9534F",
+      "summary": "Technician payouts for 16 Midtown Dental Care (Columbus, GA) construction-scan phases came in inconsistent; needs root-cause and corrections.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on team",
+      "date": "7/15",
+      "jiraKey": "COP-1998",
+      "note": "VHT payout logic confirmed valid by Ryan Morrow; still open on how to surface VHT-workflow status once scheduling cards are retired.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     }
   ]
 }
