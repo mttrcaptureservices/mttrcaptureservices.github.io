@@ -1,52 +1,28 @@
 {
-  "lastUpdated": "2026-07-21T17:15:34Z",
+  "lastUpdated": "2026-07-21T10:15:00-07:00",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#E67E22",
-      "summary": "Technician payouts for Midtown Dental Care (SN2413930) construction scans came in inconsistent across all 16 phases — reported wrong CT rates/payouts, requesting a correction.",
+      "summary": "CT payout rates are inconsistent across all 16 phases of the Columbus, GA – Midtown Dental Care job (SN2413930); the technician was paid different rates than expected on each phase.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Waiting on Ryan Morrow to confirm whether the VHT travel payout workflow is still valid/visible to coordinators before rates can be corrected.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#2E86C1",
-      "summary": "Requested a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles, routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Alert is live; waiting on John Bosch to confirm the correct destination channel since the 'Vacasa Ops' channel he referenced shows as archived.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+      "note": "Ricardo asked Ryan Morrow/Kailyn Jelniker whether the VHT travel payout workflow is still valid for VHT technicians before correcting the 16 phase rates; Ryan confirmed it's valid but Ricardo hasn't followed up yet on how to surface it better.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Add-Ons field selections (Photos + 360s + Tags) aren't carrying over into the SpecOps shortlink jotform for ALRIG USA (2).",
+      "color": "#3498DB",
+      "summary": "New SpecOps contract for ALRIG USA (2) has Add-Ons selected in MP Client data, but the shortlink jotform isn't including the corresponding sections (Photos + 360s + Tags).",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "7/17",
-      "note": "Confirmed Add-Ons only work in the On-Contract form; gave Kailyn two options (regenerate shortlink vs. wait for Spec Ops form update) and awaiting her choice.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
-    },
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#16A085",
-      "summary": "Follow-up on Airbnb (CS International Base) jobs: scheduling jotform isn't updating job status off 'Pending', the Listing ID field is blank in the automated email, and the new 'Scheduling Fee' line should be removed.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/16",
-      "jiraKey": "COP-2000",
-      "note": "COP-2000 was already Complete for the original Step Photos/France-field ask; Juyoung's 7/20 follow-up raised 3 new issues logged as a ticket comment today — needs review of the jotform status-update logic and email template.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270"
+      "note": "Ricardo gave Kailyn 2 options (regenerate the shortlink on the on-contract form, or wait for the Spec Ops form to be updated with an Add-Ons section) — waiting on her reply to know which to pursue.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
     }
   ]
 }
