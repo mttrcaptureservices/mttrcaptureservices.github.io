@@ -1,64 +1,52 @@
 {
-"lastUpdated": "2026-07-21T10:05:00-07:00",
-"threads": [
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#2563eb",
-"summary": "Wants a dedicated Vacasa alert for jobs with total travel distance over 170 miles (needs client approval above that), routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/7",
-"jiraKey": "COP-1982",
-"note": "Alert automation (COP-1982) is built and live; waiting on John to confirm the correct Vacasa Ops channel name since the one he pointed to shows as archived.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#7c3aed",
-"summary": "Selected SpecOps add-ons (Photos + 360s + Tags) for the ALRIG USA (2) contract, but the generated shortlink jotform never included those sections, even after re-selecting the add-ons individually.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/17",
-"note": "Root cause found: shortlinks snapshot Add-Ons at generation time. Ricardo gave Kailyn 2 options (regenerate on the on-contract form, or wait for the Spec Ops form to get add-on support) — waiting on her to pick one.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#dc2626",
-"summary": "Reports payout inconsistencies across all 16 phases of a Midtown Dental Care construction scan job (SN2413930) and is asking why, and whether the wrong payouts can be corrected.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/15",
-"jiraKey": "COP-1998",
-"note": "Traced to the automatic VHT CT Travel Payout on 'Atlanta, GA - 007 - Pro3' plus a manually-added custom travel payout on the same lines. Ryan Morrow confirmed the VHT travel payout workflow is still valid and asked Ricardo for his thoughts on surfacing VHT-photographer status to coordinators — decision on how to reconcile/amend the payouts is still with Ricardo.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
-},
-{
-"author": "Marina Menacho Rosales",
-"initials": "MR",
-"color": "#059669",
-"summary": "None of Marina's team members could create an adjustment line item on Airtable (AT) — got an error message when trying.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/10",
-"jiraKey": "COP-1985",
-"note": "Duplicate adjustment lines were removed and Marina's team was pointed to the standing-guidance view (View Only - ALL Jobs, not 2.0). COP-1985 has since been marked Complete on our side (root cause traced to an Airtable backend sync issue, escalated to and blocked on Airtable Support) — Gisele asked Marina to retry creating the adjustment line and confirm it works; still waiting on her confirmation.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
-},
-{
-"author": "Juyoung Jang",
-"initials": "JJ",
-"color": "#ea580c",
-"summary": "Following up on ~18 Airbnb jobs accepted this week — flagged that the CT scheduling jotform may not be moving jobs out of 'Pending' correctly, the Listing ID shows blank in the automated email, and asked whether the new 'Scheduling Fee' line can be removed to avoid confusion.",
-"statusCls": "badge-todo",
-"status": "Needs reply",
-"date": "7/16",
-"jiraKey": "COP-2000",
-"note": "Original Step Photos link / legacy France field request was completed and COP-2000 was closed. Juyoung has since raised 3 new follow-on issues in the same thread. Ricardo has been replying to Juyoung directly in Teams; logged as a comment on COP-2000 for tracking since the ticket was already marked Complete.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784256310270&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784256310270&ngc=true"
-}
-]
+  "lastUpdated": "2026-07-21T17:15:34Z",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "Technician payouts for Midtown Dental Care (SN2413930) construction scans came in inconsistent across all 16 phases — reported wrong CT rates/payouts, requesting a correction.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/15",
+      "jiraKey": "COP-1998",
+      "note": "Waiting on Ryan Morrow to confirm whether the VHT travel payout workflow is still valid/visible to coordinators before rates can be corrected.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#2E86C1",
+      "summary": "Requested a dedicated Teams alert for Vacasa jobs with total travel distance over 170 miles, routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "Alert is live; waiting on John Bosch to confirm the correct destination channel since the 'Vacasa Ops' channel he referenced shows as archived.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E44AD",
+      "summary": "Add-Ons field selections (Photos + 360s + Tags) aren't carrying over into the SpecOps shortlink jotform for ALRIG USA (2).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "Confirmed Add-Ons only work in the On-Contract form; gave Kailyn two options (regenerate shortlink vs. wait for Spec Ops form update) and awaiting her choice.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#16A085",
+      "summary": "Follow-up on Airbnb (CS International Base) jobs: scheduling jotform isn't updating job status off 'Pending', the Listing ID field is blank in the automated email, and the new 'Scheduling Fee' line should be removed.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/16",
+      "jiraKey": "COP-2000",
+      "note": "COP-2000 was already Complete for the original Step Photos/France-field ask; Juyoung's 7/20 follow-up raised 3 new issues logged as a ticket comment today — needs review of the jotform status-update logic and email template.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270"
+    }
+  ]
 }
