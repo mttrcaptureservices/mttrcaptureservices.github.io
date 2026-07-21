@@ -1,28 +1,51 @@
 {
-  "lastUpdated": "2026-07-21T10:15:00-07:00",
+  "lastUpdated": "2026-07-21T12:15:00-07:00",
   "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#7C3AED",
+      "summary": "Adding SpecOps contract for ALRIG USA (2); the shortlink jotform isn't including the Photos + 360s + Tags add-on sections even after updating the [Add-Ons?] field.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "Root cause confirmed: Spec Ops Form doesn't support Add-Ons parameters at all (only the On-Contract form does). Kailyn needs to choose: regenerate the shortlink via the on-contract form now, or wait for the Spec Ops form to be updated with Add-Ons support.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
+    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#E67E22",
-      "summary": "CT payout rates are inconsistent across all 16 phases of the Columbus, GA – Midtown Dental Care job (SN2413930); the technician was paid different rates than expected on each phase.",
+      "color": "#F59E0B",
+      "summary": "CT payout inconsistencies across 16 phases for Columbus, GA - Midtown Dental Care (SN2413930); follow-on question about whether the VHT CT Travel Payout workflow is still valid for VHT Technicians.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Ricardo asked Ryan Morrow/Kailyn Jelniker whether the VHT travel payout workflow is still valid for VHT technicians before correcting the 16 phase rates; Ryan confirmed it's valid but Ricardo hasn't followed up yet on how to surface it better.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+      "note": "VHT travel payout workflow confirmed still valid (Ryan Morrow); blocked on an internal decision for how to surface \"this photographer is VHT\" to coordinators once scheduling cards are removed. Not blocked on Freddy - waiting on Ricardo/Ryan.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#3498DB",
-      "summary": "New SpecOps contract for ALRIG USA (2) has Add-Ons selected in MP Client data, but the shortlink jotform isn't including the corresponding sections (Photos + 360s + Tags).",
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#F59E0B",
+      "summary": "Created a pay issue line item on JOBID6594245426012487399 so the tech gets paid, but the line shows Cancelled In Advance (CIA) instead of Complete; confirmed the parent job is expected to stay CIA, question is whether the PAYISSUE line itself needs to flip to Complete for payout to process.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/21",
+      "note": "Confirming whether CIA status on the PAYISSUE line itself (as opposed to the parent job) blocks the tech's payout. Awaiting internal confirmation before replying with a definitive answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784659496691"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#0EA5E9",
+      "summary": "Requested a separate Teams alert for Vacasa jobs with travel distance over 170 miles, routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Ricardo gave Kailyn 2 options (regenerate the shortlink on the on-contract form, or wait for the Spec Ops form to be updated with an Add-Ons section) — waiting on her reply to know which to pursue.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "Alert channel was built and is live, but the Vacasa Ops channel John referenced shows as archived. Waiting on John to confirm the correct/active channel name so alerts can be redirected there.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
     }
   ]
 }
