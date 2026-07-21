@@ -1,64 +1,64 @@
 {
-  "lastUpdated": "2026-07-20T16:00:00-07:00",
-  "threads": [
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#2563eb",
-      "summary": "Wants a dedicated Vacasa alert for jobs with total travel distance over 170 miles (needs client approval above that), routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Alert automation (COP-1982) is built and live; waiting on John to confirm the correct Vacasa Ops channel name since the one he pointed to shows as archived.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "Selected SpecOps add-ons (Photos + 360s + Tags) for the ALRIG USA (2) contract, but the generated shortlink jotform never included those sections, even after re-selecting the add-ons individually.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Root cause found: shortlinks snapshot Add-Ons at generation time. Ricardo gave Kailyn 2 options (regenerate on the on-contract form, or wait for the Spec Ops form to get add-on support) — waiting on her to pick one.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#dc2626",
-      "summary": "Reports payout inconsistencies across all 16 phases of a Midtown Dental Care construction scan job (SN2413930) and is asking why, and whether the wrong payouts can be corrected.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/15",
-      "jiraKey": "COP-1998",
-      "note": "Traced to the automatic VHT CT Travel Payout on 'Atlanta, GA - 007 - Pro3' plus a manually-added custom travel payout on the same lines; Ricardo is now confirming with Ryan Morrow/Kailyn whether that VHT payout workflow is still meant to be active before amending anything.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
-    },
-    {
-      "author": "Marina Menacho Rosales",
-      "initials": "MR",
-      "color": "#059669",
-      "summary": "None of Marina's team members could create an adjustment line item on Airtable (AT) — got an error message when trying.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Duplicate adjustment lines were removed and Marina's team was pointed to the standing-guidance view (View Only - ALL Jobs, not 2.0) while COP-1985 stays open; Gisele asked Marina to retry creating the adjustment line and confirm it works.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "The closest-INC automation assigned a technician 1,200 miles away (Carbondale, CO) instead of the correct one 127 miles away (Nashville) for job ECPCLARKEYEBENTONKY — asking why Carbondale was picked.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed, in testing",
-      "date": "7/20",
-      "jiraKey": "COP-1888",
-      "note": "Root cause was a bad lat/long on 'Carbondale, CO - 001 - Pro3' (it pointed to Carbondale, Illinois); Adjet corrected the coordinates and logged it on COP-1888 (In Testing). Job was manually reassigned to Nashville in the meantime.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784561438495?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784561438495&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784561438495&ngc=true"
-    }
-  ]
+"lastUpdated": "2026-07-21T09:12:00-07:00",
+"threads": [
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#2563eb",
+"summary": "Wants a dedicated Vacasa alert for jobs with total travel distance over 170 miles (needs client approval above that), routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/7",
+"jiraKey": "COP-1982",
+"note": "Alert automation (COP-1982) is built and live; waiting on John to confirm the correct Vacasa Ops channel name since the one he pointed to shows as archived.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#7c3aed",
+"summary": "Selected SpecOps add-ons (Photos + 360s + Tags) for the ALRIG USA (2) contract, but the generated shortlink jotform never included those sections, even after re-selecting the add-ons individually.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/17",
+"note": "Root cause found: shortlinks snapshot Add-Ons at generation time. Ricardo gave Kailyn 2 options (regenerate on the on-contract form, or wait for the Spec Ops form to get add-on support) — waiting on her to pick one.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#dc2626",
+"summary": "Reports payout inconsistencies across all 16 phases of a Midtown Dental Care construction scan job (SN2413930) and is asking why, and whether the wrong payouts can be corrected.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/15",
+"jiraKey": "COP-1998",
+"note": "Traced to the automatic VHT CT Travel Payout on 'Atlanta, GA - 007 - Pro3' plus a manually-added custom travel payout on the same lines. Ryan Morrow confirmed the VHT travel payout workflow is still valid and asked Ricardo for his thoughts on surfacing VHT-photographer status to coordinators — decision on how to reconcile/amend the payouts is still with Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+},
+{
+"author": "Marina Menacho Rosales",
+"initials": "MR",
+"color": "#059669",
+"summary": "None of Marina's team members could create an adjustment line item on Airtable (AT) — got an error message when trying.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/10",
+"jiraKey": "COP-1985",
+"note": "Duplicate adjustment lines were removed and Marina's team was pointed to the standing-guidance view (View Only - ALL Jobs, not 2.0) while COP-1985 stays open; Gisele asked Marina to retry creating the adjustment line and confirm it works.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#7c3aed",
+"summary": "The closest-INC automation assigned a technician 1,200 miles away (Carbondale, CO) instead of the correct one 127 miles away (Nashville) for job ECPCLARKEYEBENTONKY — asking why Carbondale was picked.",
+"statusCls": "badge-fix-deployed",
+"status": "Fix deployed, in testing",
+"date": "7/20",
+"jiraKey": "COP-1888",
+"note": "Root cause was a bad lat/long on 'Carbondale, CO - 001 - Pro3' (it pointed to Carbondale, Illinois); Adjet corrected the coordinates and logged it on COP-1888 (In Testing). Job was manually reassigned to Nashville in the meantime — waiting on Kailyn to confirm the fix holds.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784561438495?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784561438495&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784561438495&ngc=true"
+}
+]
 }
