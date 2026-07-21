@@ -1,51 +1,74 @@
 {
-  "lastUpdated": "2026-07-21T19:15:00Z",
+  "lastUpdated": "2026-07-21T14:20:00-07:00",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#e67e22",
-      "summary": "Freddy reported inconsistent CT payouts on the Midtown Dental Care construction scan job phases, tied to how VHT photographer travel workflows get surfaced once scheduling cards are removed.",
+      "color": "#E67E22",
+      "summary": "CT payout inconsistencies on 16 phase line items for the Midtown Dental Care (Columbus, GA) construction scan job.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/15",
+      "status": "Waiting on surfacing decision",
+      "date": "7/16",
       "jiraKey": "COP-1998",
-      "note": "Payout logic itself confirmed valid by Ryan; still open on how to surface VHT workflow status once scheduling cards go away — next update owed by Ricardo/Ryan.",
+      "note": "VHT payout workflow itself confirmed valid; still open question on how to surface VHT-photographer status once scheduling cards go away. Owed by Ricardo/Ryan.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#e67e22",
-      "summary": "Freddy created a PAYISSUE line item on JOBID6594245426012487399 so the tech gets paid, but the line shows Cancelled In Advance instead of Complete, and he wants confirmation payout still happens.",
+      "color": "#E67E22",
+      "summary": "Confirming a PAYISSUE line item for JOBID6594245426012487399 will still pay the technician despite showing Cancelled In Advance instead of Complete.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "status": "Ricardo confirming",
       "date": "7/21",
-      "note": "Ricardo is confirming whether the PAYISSUE line itself needs to flip to Complete for payout, or if CIA status is fine — answer owed back to Freddy.",
+      "note": "Ricardo is actively confirming whether the PAYISSUE line's own status (vs. the parent job's) needs to be Complete for payout. Owed by Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784659496691?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784659496691&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784659496691&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "Requesting JOBID6600459987584370535 be reverted from Cancelled In Advance back to Scheduled.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting manual update",
+      "date": "7/21",
+      "note": "Simple one-field status revert; needs to be executed manually in Airtable (direct field edit). Owed by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784664884603?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784664884603&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784664884603&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Kailyn found the Spec Ops Form doesn't support Add-Ons (Photos + 360s + Tags) sections at all, unlike the On-Contract form, while setting up a new SpecOps contract for ALRIG USA (2).",
+      "color": "#8E44AD",
+      "summary": "Two different Jotforms in circulation for JLL - JPMC; unclear which one is current and correctly syncs orders to Airtable with JPMC-prefixed Job IDs.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/21",
+      "jiraKey": "COP-2003",
+      "note": "New ticket created to compare both forms' Airtable/Zapier mapping and retire the incorrect link. Owed by Ricardo/Homelander.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784665714480?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784665714480&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784665714480&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E44AD",
+      "summary": "SpecOps Jotform for ALRIG USA (2) isn't including Add-On sections (Photos + 360s + Tags) even after the [Add-Ons?] field was set correctly.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Ricardo gave Kailyn two options — regenerate the shortlink on the on-contract form, or wait for the Spec Ops form to be updated — waiting on her choice.",
+      "date": "7/18",
+      "note": "Root cause confirmed: Spec Ops Form doesn't support Add-Ons at all. Kailyn is deciding between switching to the on-contract shortlink or waiting for the Spec Ops form to be updated. Owed by Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
     },
     {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#2980b9",
-      "summary": "After Ricardo built the Vacasa excessive-travel-fee alert channel John requested, John asked whether alerts could instead route to the existing Vacasa Ops channel that Kevin and Jordan manage daily.",
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#2980B9",
+      "summary": "Airbnb (6) jobs stuck in Pending status; asking to verify the Step Photos upload link works, review a Listing ID showing blank, and remove a confusing Scheduling Fee line from confirmation emails.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Ricardo asked John to confirm the exact Vacasa Ops channel name since the one visible shows as archived — waiting on John's reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+      "status": "Ricardo resolving live",
+      "date": "7/20",
+      "jiraKey": "COP-2000",
+      "note": "Ricardo is actively working this thread live in Teams (per standing guidance, Clark stands down on replies/reactions here). Owed by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784615143590?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784256310270&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784615143590&ngc=true"
     }
   ]
 }
