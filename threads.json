@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T11:45:00-07:00",
+  "lastUpdated": "2026-07-22T12:20:00-07:00",
   "threads": [
     {
       "author": "Freddy Arias",
@@ -47,18 +47,6 @@
       "jiraKey": "COP-1962",
       "note": "Adjet Kodia identified the root cause today (7/22): a loop between the automations that create/delete the CT short-link when the CT is reassigned. He's actively working on a fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782341111163?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782341111163&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782341111163&ngc=true"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#16A085",
-      "summary": "Child record for JOBID6603855945316962787 shows an unexplained $13.20 in the CT Rate (Synced) field.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/22",
-      "jiraKey": "COP-2009",
-      "note": "Ticket created and assigned to Ricardo; needs to trace the field's sync source and confirm if isolated or systemic.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784745165595?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784745165595&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784745165595&ngc=true"
     }
   ]
 }
