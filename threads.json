@@ -1,53 +1,29 @@
 {
-  "lastUpdated": "2026-07-22T20:13:26Z",
+  "lastUpdated": "2026-07-22T15:15:00-07:00",
   "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#e07b39",
-      "summary": "CT payout rates vary $490–$638.50 across 16 phases of a Midtown Dental Care job; root cause confirmed as VHT mileage travel payout stacking on top of a flat Custom CT Travel Payout.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Kailyn's input",
-      "date": "7/15",
-      "jiraKey": "COP-1998",
-      "note": "Ricardo asked Kailyn Jelniker yesterday 10:40 PM whether to remove the stacked VHT amount; awaiting her reply before closing.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-    },
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#4a90d9",
-      "summary": "UK/AU Airbnb technician (Monika Morawska, JOBID155221232322060) never received the automated Airbnb email, and UK Airbnb jobs are still auto-matching to a stale technician (Leonard Humbert) from last year's London project.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/21",
-      "jiraKey": "COP-2006",
-      "note": "Ricardo opened COP-2006 this morning and is investigating both the email delivery failure and the Leonard Humbert auto-match removal; next update owed to Juyoung.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#e07b39",
-      "summary": "CT job-accept link intermittently fails when a job is reassigned to a different CT (JOBID6581403832416078618); root cause is a loop where the short-link create/delete automation fires non-stop.",
-      "statusCls": "badge-investigating",
-      "status": "Fix in progress (Adjet)",
-      "date": "6/24",
-      "jiraKey": "COP-1962",
-      "note": "Adjet Kodia found the root cause and is actively working on a fix; no ETA yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782341111163"
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "The \"YOUR CAPTURE SCAN REQUEST\" email resends to the Job Requestor whenever a job's status cycles back to Pending, such as during a CT reassignment, even though they already received it on initial submission.",
+      "color": "#8E44AD",
+      "summary": "Reassigning a CT to a new tech resends the 'YOUR CAPTURE SCAN REQUEST' email to the Job Requestor, even though they already received one on initial Jotform submission.",
       "statusCls": "badge-todo",
-      "status": "Ticket created, in queue",
+      "status": "In queue",
       "date": "7/22",
       "jiraKey": "COP-2010",
-      "note": "Opened this run; assigned to Ricardo, no work started yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784748587597"
+      "note": "Jira ticket opened for a 'sent once' flag fix; next action owed by Ricardo, nothing pending from Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784748587597?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784748587597&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784748587597&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "Requesting removal of the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 while keeping the tech's travel payout intact.",
+      "statusCls": "badge-todo",
+      "status": "In queue",
+      "date": "7/22",
+      "jiraKey": "COP-2011",
+      "note": "Jira ticket opened; next action owed by Ricardo/Homelander to locate the record and confirm the correct client-charge field before zeroing it out.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
     }
   ]
 }
