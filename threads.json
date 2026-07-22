@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-07-21T18:10:47-07:00",
-  "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E64A19",
-      "summary": "CT payout rates are inconsistent across all 16 phases of the Midtown Dental Care (Columbus, GA / SN2413930) Construction Scans job.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/15",
-      "jiraKey": "COP-1998",
-      "note": "Root cause found (VHT auto travel-payout vs. a Custom CT Travel Payout Freddy added conflicting) and payout logic itself confirmed correct; still waiting on Ricardo/Ryan to decide how to surface \"this CT is a VHT photographer\" to coordinators once scheduling cards are deprecated.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7B1FA2",
-      "summary": "Selecting Add-Ons for a new SpecOps contract (ALRIG USA (2)) doesn't add those sections to the generated SpecOps shortlink jotform.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Root cause confirmed: the Spec Ops Form doesn't support Add-Ons at all (only the On-Contract form does). Waiting on Kailyn to choose between regenerating the shortlink on the on-contract form now, or waiting for the Spec Ops Form to get Add-Ons support added.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
-    }
-  ]
+"lastUpdated": "2026-07-21T19:08:13-07:00",
+"threads": [
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#E64A19",
+"summary": "CT payout rates are inconsistent across all 16 phases of the Midtown Dental Care (Columbus, GA / SN2413930) Construction Scans job.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/15",
+"jiraKey": "COP-1998",
+"note": "Root cause found (VHT auto travel-payout vs. a Custom CT Travel Payout Freddy added conflicting) and payout logic itself confirmed correct; still waiting on Ricardo/Ryan to decide how to surface \"this CT is a VHT photographer\" to coordinators once scheduling cards are deprecated.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#7B1FA2",
+"summary": "Selecting Add-Ons for a new SpecOps contract (ALRIG USA (2)) doesn't add those sections to the generated SpecOps shortlink jotform.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/17",
+"note": "Root cause confirmed: the Spec Ops Form doesn't support Add-Ons at all (only the On-Contract form does). Waiting on Kailyn to choose between regenerating the shortlink on the on-contract form now, or waiting for the Spec Ops Form to get Add-Ons support added.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
+}
+]
 }
