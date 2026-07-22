@@ -1,28 +1,40 @@
 {
-"lastUpdated": "2026-07-21T19:08:13-07:00",
-"threads": [
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#E64A19",
-"summary": "CT payout rates are inconsistent across all 16 phases of the Midtown Dental Care (Columbus, GA / SN2413930) Construction Scans job.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/15",
-"jiraKey": "COP-1998",
-"note": "Root cause found (VHT auto travel-payout vs. a Custom CT Travel Payout Freddy added conflicting) and payout logic itself confirmed correct; still waiting on Ricardo/Ryan to decide how to surface \"this CT is a VHT photographer\" to coordinators once scheduling cards are deprecated.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#7B1FA2",
-"summary": "Selecting Add-Ons for a new SpecOps contract (ALRIG USA (2)) doesn't add those sections to the generated SpecOps shortlink jotform.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/17",
-"note": "Root cause confirmed: the Spec Ops Form doesn't support Add-Ons at all (only the On-Contract form does). Waiting on Kailyn to choose between regenerating the shortlink on the on-contract form now, or waiting for the Spec Ops Form to get Add-Ons support added.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
-}
-]
+  "lastUpdated": "2026-07-22T14:33:47Z",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#F4511E",
+      "summary": "Reports payout inconsistencies across 16 phases of a Midtown Dental Care (Columbus, GA) construction scan job; root cause traced to VHT mileage travel payout stacking on top of a flat Custom CT Travel Payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/16",
+      "jiraKey": "COP-1998",
+      "note": "Root cause confirmed to the dollar (VHT + Custom Travel Payout stacking, by design); waiting on Kailyn/Freddy to weigh in on removing the VHT amount and how to surface VHT status once scheduling cards go away.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E24AA",
+      "summary": "Add-Ons selected for a new SpecOps contract (ALRIG USA (2)) aren't being included in the generated shortlink jotform, even after re-selecting each add-on individually.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/17",
+      "note": "Real gap confirmed: the Spec Ops Form doesn't support Add-Ons at all. Ricardo gave Kailyn 2 options (regenerate the on-contract shortlink now vs. wait for a fix) - she hasn't chosen yet. No Jira opened pending her decision.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#1E88E5",
+      "summary": "A UK Airbnb technician (Monika Morawska) didn't receive the automated Airbnb scheduling email, blocking host contact; also flags that new UK jobs keep auto-matching to a technician (Leonard Humbert) left over from a one-off prior London project.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/21",
+      "jiraKey": "COP-2006",
+      "note": "Just opened this run - investigating automated email delivery for JOBID155221232322060 and removing Leonard Humbert from the UK Airbnb auto-match pool. Owed to Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784702190819&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784702190819&ngc=true"
+    }
+  ]
 }
