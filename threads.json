@@ -1,40 +1,64 @@
 {
-  "lastUpdated": "2026-07-22T14:33:47Z",
+  "lastUpdated": "2026-07-22T11:45:00-07:00",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#F4511E",
-      "summary": "Reports payout inconsistencies across 16 phases of a Midtown Dental Care (Columbus, GA) construction scan job; root cause traced to VHT mileage travel payout stacking on top of a flat Custom CT Travel Payout.",
+      "color": "#E67E22",
+      "summary": "CT payout inconsistency across 16 phases of the Midtown Dental Care (Columbus, GA) job - root cause traced to VHT mileage travel payout stacking on top of a flat Custom CT Travel Payout.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/16",
+      "status": "Waiting on Kailyn",
+      "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "Root cause confirmed to the dollar (VHT + Custom Travel Payout stacking, by design); waiting on Kailyn/Freddy to weigh in on removing the VHT amount and how to surface VHT status once scheduling cards go away.",
+      "note": "Root cause confirmed (VHT + Custom Travel Payout stacking, by design). Waiting on Kailyn Jelniker's call on whether to remove the VHT amount before any payout correction.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E24AA",
-      "summary": "Add-Ons selected for a new SpecOps contract (ALRIG USA (2)) aren't being included in the generated shortlink jotform, even after re-selecting each add-on individually.",
+      "color": "#9B59B6",
+      "summary": "New SpecOps contract for ALRIG USA (2) needs Add-Ons (Photos + 360s + Tags) in the shortlink jotform, but the Spec Ops Form doesn't support Add-Ons sections at all.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Waiting on Kailyn",
       "date": "7/17",
-      "note": "Real gap confirmed: the Spec Ops Form doesn't support Add-Ons at all. Ricardo gave Kailyn 2 options (regenerate the on-contract shortlink now vs. wait for a fix) - she hasn't chosen yet. No Jira opened pending her decision.",
+      "note": "Real gap confirmed: Spec Ops Form has no Add-Ons functionality. Kailyn needs to choose between (1) regenerating the shortlink on the on-contract form, or (2) waiting for the Spec Ops form to be updated. No Jira yet pending her choice.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
-      "color": "#1E88E5",
-      "summary": "A UK Airbnb technician (Monika Morawska) didn't receive the automated Airbnb scheduling email, blocking host contact; also flags that new UK jobs keep auto-matching to a technician (Leonard Humbert) left over from a one-off prior London project.",
+      "color": "#3498DB",
+      "summary": "UK/AU Airbnb CT (Monika Morawska) never received the automated Airbnb email for JOBID155221232322060, and UK Airbnb jobs keep auto-matching to a stale technician (Leonard Humbert) from last year's London project.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/21",
       "jiraKey": "COP-2006",
-      "note": "Just opened this run - investigating automated email delivery for JOBID155221232322060 and removing Leonard Humbert from the UK Airbnb auto-match pool. Owed to Ricardo.",
+      "note": "Ticket created and assigned to Ricardo; investigation into email delivery failure and auto-match removal still in queue.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784702190819&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784702190819&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "CT job-accept link intermittently not working for JOBID6581403832416078618 when the assigned CT is changed.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix in progress",
+      "date": "6/24",
+      "jiraKey": "COP-1962",
+      "note": "Adjet Kodia identified the root cause today (7/22): a loop between the automations that create/delete the CT short-link when the CT is reassigned. He's actively working on a fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782341111163?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782341111163&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782341111163&ngc=true"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#16A085",
+      "summary": "Child record for JOBID6603855945316962787 shows an unexplained $13.20 in the CT Rate (Synced) field.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/22",
+      "jiraKey": "COP-2009",
+      "note": "Ticket created and assigned to Ricardo; needs to trace the field's sync source and confirm if isolated or systemic.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784745165595?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784745165595&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784745165595&ngc=true"
     }
   ]
 }
