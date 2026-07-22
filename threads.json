@@ -1,64 +1,28 @@
 {
-  "lastUpdated": "2026-07-21T16:35:00-07:00",
+  "lastUpdated": "2026-07-21T17:13:22-07:00",
   "threads": [
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#4A90D9",
-      "summary": "Wants Vacasa excessive-travel-fee alerts (>170 miles) routed to the Vacasa Ops channel and tagged to Kevin and Jordan, but that channel currently shows as archived.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Waiting on John Bosch to confirm the correct (non-archived) channel name before the alert routing can be updated.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#E07B39",
-      "summary": "SpecOps Jotform doesn't include Add-Ons sections (Photos + 360s + Tags) for a new ALRIG USA (2) contract, even after updating the Add-Ons field.",
+      "color": "#8e44ad",
+      "summary": "SpecOps shortlink jotform for ALRIG USA (2) isn't reflecting the [Add-Ons?] field selections (Photos + 360s + Tags); the Spec Ops Form doesn't support add-on sections at all, unlike the on-contract form.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "7/17",
-      "note": "No Jira opened yet — Ricardo confirmed the Spec Ops form doesn't support Add-Ons at all and gave Kailyn two options (switch to on-contract shortlink now, or wait for a form fix); waiting on her choice.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
-    },
-    {
-      "author": "Marina Menacho Rosales",
-      "initials": "MM",
-      "color": "#7B68EE",
-      "summary": "Team can't create adjustment lines in Airtable due to an error message; duplicate payissue lines were removed and a workaround view was shared in the meantime.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on confirmation",
-      "date": "7/10",
-      "jiraKey": "COP-1985",
-      "note": "Underlying sync bug is blocked on Airtable Support; waiting on Marina to confirm the View Only - ALL Jobs workaround view resolves the immediate need.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783700014418?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783700014418&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783700014418&ngc=true"
-    },
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#50C878",
-      "summary": "Airbnb CT scheduling form may not be updating job status correctly, the Listing ID field is blank in the automated email, and Juyoung asked to remove the new Scheduling Fee line.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/16",
-      "jiraKey": "COP-2000",
-      "note": "Ricardo is handling this live in Teams; three new sub-issues raised 7/20 (form status, blank Listing ID, Scheduling Fee line) are still unanswered.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784256310270&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784256310270&ngc=true"
+      "note": "Ricardo gave Kailyn two options (regenerate using the on-contract form now, or wait for the Spec Ops Form to get add-ons support) — waiting on her decision before any Jira ticket gets opened.",
+      "url": "https://teams.microsoft.com/v2/"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#D9534F",
-      "summary": "Technician payouts for 16 Midtown Dental Care (Columbus, GA) construction-scan phases came in inconsistent; needs root-cause and corrections.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on team",
+      "color": "#2980b9",
+      "summary": "Technician on the Midtown Dental Care (Columbus, GA) construction scan job (SN2413930, 16 phases) reported payout inconsistencies; Freddy asked Ricardo to investigate and correct any wrong payouts.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "7/15",
       "jiraKey": "COP-1998",
-      "note": "VHT payout logic confirmed valid by Ryan Morrow; still open on how to surface VHT-workflow status once scheduling cards are retired.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784155806667&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784155806667&ngc=true"
+      "note": "VHT travel payout logic is confirmed valid; open question is how to surface VHT-photographer status once scheduling cards are retired — waiting on a product decision, not a bug fix.",
+      "url": "https://teams.microsoft.com/v2/"
     }
   ]
 }
