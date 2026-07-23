@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T16:24:11Z",
+"lastUpdated": "2026-07-23T18:05:00Z",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -10,7 +10,7 @@
 "status": "Waiting on Kailyn",
 "date": "7/15",
 "jiraKey": "COP-1998",
-"note": "Root cause confirmed to the dollar; Ricardo asked Kailyn Jelniker whether to remove the VHT travel payout amount now that the CT is being overpaid on this job - awaiting her decision.",
+"note": "Root cause confirmed to the dollar; Ricardo asked Kailyn Jelniker whether to remove the VHT travel payout amount now that the CT is being overpaid on this job - awaiting her decision. Still no reply as of this run.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
 },
 {
@@ -56,19 +56,8 @@
 "status": "Investigating",
 "date": "7/22",
 "jiraKey": "COP-2012",
-"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started. Eyes reaction confirmed intact this run.",
+"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#E74C3C",
-"summary": "Two Livit job requests are automatically moving to \"In Progress\" from \"please schedule\" status, and the automated job request email that should go out to the CT never sent.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Stephenie to confirm",
-"date": "7/23",
-"note": "Adjet fixed the automation and says the emails should have gone out for both jobs now; waiting on Stephenie to confirm receipt.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784816275185"
 },
 {
 "author": "John Bosch",
