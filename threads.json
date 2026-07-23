@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T02:09:42Z",
+"lastUpdated": "2026-07-23T07:05:57Z",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -22,44 +22,8 @@
 "status": "Investigating",
 "date": "7/21",
 "jiraKey": "COP-2006",
-"note": "Ricardo is investigating both the email delivery failure and the stale auto-match; no update has been posted back to Juyoung yet.",
+"note": "Ricardo retriggered and confirmed the email delivery; Leonard Humbert auto-match removal still tracked on COP-2006 (To Do), not yet done.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#9B59B6",
-"summary": "The \"YOUR CAPTURE SCAN REQUEST\" email resends to the Job Requestor every time a job re-enters Pending status (e.g. during a CT reassignment), not just on initial Jotform submission.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/22",
-"jiraKey": "COP-2010",
-"note": "Fix (a \"sent once\" flag so the email only fires on initial entry) is scoped and ticketed; implementation not yet started.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784748587597"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#E67E22",
-"summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/22",
-"jiraKey": "COP-2011",
-"note": "Ticket created and assigned to Ricardo; the client-facing charge has not yet been removed.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
-},
-{
-"author": "Juyoung Jang",
-"initials": "JJ",
-"color": "#3498DB",
-"summary": "Follow-up on the Airbnb International Base onboarding thread: confirm the CT step-photo/date-selection form is working, review why Listing ID shows blank in some emails, and consider removing the new \"scheduling fee\" line to avoid confusing hosts.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/20",
-"jiraKey": "COP-2000",
-"note": "Replied to Juyoung 7/22 acknowledging all three follow-up items (Pending-status bug, missing Listing ID, scheduling fee line) and logged them on COP-2000 for tracking; investigation not yet started.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270"
 },
 {
 "author": "Kailyn Jelniker",
@@ -73,6 +37,18 @@
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
 },
 {
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#E67E22",
+"summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
+"statusCls": "badge-todo",
+"status": "In queue",
+"date": "7/22",
+"jiraKey": "COP-2011",
+"note": "Ricardo removed the client-facing charge and asked Snehal/Adjet to stop auto-calculating Total Travel Distance on jobs with an asterisk in Job ID; awaiting their response.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+},
+{
 "author": "John Bosch",
 "initials": "JB",
 "color": "#1ABC9C",
@@ -82,6 +58,18 @@
 "date": "7/7",
 "note": "Ricardo asked John to confirm the correct channel name since the Vacasa Ops channel he can see is archived; awaiting reply.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+},
+{
+"author": "Ricardo Guzman",
+"initials": "RG",
+"color": "#2ECC71",
+"summary": "Test request to verify the CT Rate for Vortex Co.'s Tokyo job (JOBID6599036522428234585) and get a breakdown of any additional payout.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/22",
+"jiraKey": "COP-2012",
+"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983"
 }
 ]
 }
