@@ -1,86 +1,74 @@
 {
-"lastUpdated": "2026-07-23T16:08:39-07:00",
-"threads": [
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#F59E0B",
-"summary": "CT payout rates on Midtown Dental Care (SN2413930, 16 phases) varied $490-$638.50 due to VHT mileage travel payout stacking with a flat Custom CT Travel Payout; Freddy proposed honoring past overpayments and correcting future phases.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Kailyn",
-"date": "7/15",
-"jiraKey": "COP-1998",
-"note": "Freddy proposed honoring past phases and correcting future ones and asked Kailyn directly for her call - still awaiting her decision as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8B5CF6",
-"summary": "SpecOps shortlink jotform for ALRIG USA (2) doesn't include Add-Ons sections; root cause is the Spec Ops Form doesn't support Add-Ons at all (only the On-Contract form does).",
-"statusCls": "badge-waiting",
-"status": "Waiting on Kailyn",
-"date": "7/17",
-"note": "Ricardo gave Kailyn two options (regenerate shortlink on the on-contract form, or wait for Add-Ons support to be built into the Spec Ops form) - still no reply as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#F59E0B",
-"summary": "Client-facing travel charge removed from Zumper-SVP-...*SHOOT2 job; broader question of whether jobs with an asterisk in the Job ID should skip auto travel-distance calculation is on hold pending a conversation with Kailyn.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Ricardo/Kailyn",
-"date": "7/22",
-"jiraKey": "COP-2011",
-"note": "Ricardo asked Snehal/Adjet to skip auto travel-distance calc on asterisk Job IDs but is holding off until he talks to Kailyn - confirmed still on hold this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8B5CF6",
-"summary": "Requesting Shoot2 lines default to no travel distance calculation, or a new RESHOOT Finance Adjustment option split into charge/no-charge variants.",
-"statusCls": "badge-waiting",
-"status": "Meeting scheduled",
-"date": "7/23",
-"note": "Ricardo set up a call next week with Kailyn to go over the entire adjustment workflow including this request.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#10B981",
-"summary": "Requesting the \"Vacasa\" option be removed/hidden from the Franchise dropdown on the MP Sub client Jotform without affecting historical completed orders.",
-"statusCls": "badge-investigating",
-"status": "In progress (Snehal)",
-"date": "7/23",
-"note": "Ricardo queued the form-field update and handed it to Snehal, who confirmed she'd take a look - awaiting completion, unchanged this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784821417020"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8B5CF6",
-"summary": "Automations occasionally override a job line's CIA status (flipping to CLM or Complete when sibling lines change status); latest recurrence logged against Zumper-SVP-...373436 Record 80182.",
-"statusCls": "badge-investigating",
-"status": "Logged on ticket",
-"date": "6/25",
-"jiraKey": "COP-1967",
-"note": "CIA-to-Complete recurrence logged as a Jira comment for Adjet on 7/23, flagging the fix may need to cover the CIA-to-Complete path too - no new reply since.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#10B981",
-"summary": "Wants the new Vacasa excessive-travel-fee Teams alert (already built and live) routed to the \"Vacasa Ops\" channel and tagging Kevin/Jordan, but that channel shows as archived.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/7",
-"jiraKey": "COP-1982",
-"note": "Ricardo asked John to confirm the correct channel name since the one he referenced shows archived - no reply yet as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
-}
-]
+  "lastUpdated": "2026-07-23T16:35:00-07:00",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#9b59b6",
+      "summary": "Add-Ons field selections aren't reflected in the SpecOps shortlink jotform when generated after the fact for ALRIG USA (2).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "7/17",
+      "note": "Ricardo confirmed Add-Ons only work on the On-Contract form and gave Kailyn two options (regenerate via on-contract form, or wait for a Spec Ops form update); no reply yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#9b59b6",
+      "summary": "Proposes Shoot2 lines skip travel-distance calculation by default, or splitting Shoot2 into charge/no-charge variants with distinct Job ID suffixes.",
+      "statusCls": "badge-todo",
+      "status": "Call scheduled",
+      "date": "7/23",
+      "note": "Ricardo scheduled a call next week to review the full finance-adjustment workflow including this proposal; no Jira yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#e67e22",
+      "summary": "Requested the client-facing travel charge be removed for a Zumper Shoot2 line while still paying the tech.",
+      "statusCls": "badge-waiting",
+      "status": "Paused pending Kailyn",
+      "date": "7/22",
+      "jiraKey": "COP-2011",
+      "note": "Charge was removed and a Jira opened, but the broader fix (skip travel calc on any Job ID containing an asterisk) is on hold until Ricardo aligns with Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#16a085",
+      "summary": "Wants the \"Vacasa\" option removed/hidden from the Franchise dropdown on the MP Sub Client Jotform without altering historical completed orders.",
+      "statusCls": "badge-waiting",
+      "status": "With Snehal",
+      "date": "7/23",
+      "note": "Ricardo confirmed it's a form-only change (won't touch historical orders) and handed it to Snehal Meled, who acknowledged; awaiting her implementation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784821417020"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#e67e22",
+      "summary": "16-phase Midtown Dental Care (Columbus, GA) construction scan job showed inconsistent CT payouts across phases.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting Kailyn sign-off",
+      "date": "7/15",
+      "jiraKey": "COP-1998",
+      "note": "Root cause confirmed (VHT mileage travel payout stacking on a flat Custom CT Travel Payout). Freddy proposed honoring the 6 already-overpaid phases and correcting only future ones; still waiting on Kailyn's sign-off before any records are adjusted.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#9b59b6",
+      "summary": "A job status (CIA) was again overridden by an errant automation — recurrence of the pattern tracked in COP-1967.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed, awaiting confirm",
+      "date": "6/25",
+      "jiraKey": "COP-1967",
+      "note": "Adjet found and disabled the specific errant automation and documented it in COP-1967, but flagged other legacy workflows could still cause a recurrence; Kailyn hasn't yet confirmed the fix holds.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
+    }
+  ]
 }
