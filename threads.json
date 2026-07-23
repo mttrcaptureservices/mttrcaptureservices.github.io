@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T18:05:00Z",
+"lastUpdated": "2026-07-23T19:53:00Z",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -10,7 +10,7 @@
 "status": "Waiting on Kailyn",
 "date": "7/15",
 "jiraKey": "COP-1998",
-"note": "Root cause confirmed to the dollar; Ricardo asked Kailyn Jelniker whether to remove the VHT travel payout amount now that the CT is being overpaid on this job - awaiting her decision. Still no reply as of this run.",
+"note": "Freddy asked for an update today; Clark confirmed the root cause (VHT stacking on top of flat Custom Travel Payout) and that Ricardo is still waiting on Kailyn's sign-off before removing the VHT component. Ricardo then jumped in live to ask Freddy about the CT's expectations and set up a meeting with Kailyn and Ryan next week on VHT CTs generally.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
 },
 {
@@ -29,23 +29,12 @@
 "initials": "FA",
 "color": "#E67E22",
 "summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
-"statusCls": "badge-todo",
-"status": "In queue",
+"statusCls": "badge-waiting",
+"status": "Waiting on Kailyn",
 "date": "7/22",
 "jiraKey": "COP-2011",
-"note": "Ricardo removed the client-facing charge and asked Snehal/Adjet to stop auto-calculating Total Travel Distance on jobs with an asterisk in Job ID; still awaiting their response.",
+"note": "Ricardo removed the client-facing charge. He then asked Snehal/Adjet to stop auto-calculating Total Travel Distance on jobs with an asterisk in Job ID, but today (7/23) told them to hold off on that change until he talks to Kailyn first.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#1ABC9C",
-"summary": "Follow-up on the new Vacasa excessive-travel-fee alert: wants the alerts routed to the Vacasa Ops channel (tagging Kevin and Jordan) instead of the new dedicated channel, but that Vacasa Ops channel currently shows as archived.",
-"statusCls": "badge-waiting",
-"status": "Waiting on John Bosch",
-"date": "7/7",
-"note": "Ricardo asked John to confirm the correct channel name since the Vacasa Ops channel he can see is archived; still awaiting reply.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
 },
 {
 "author": "Ricardo Guzman",
@@ -63,12 +52,68 @@
 "author": "John Bosch",
 "initials": "JB",
 "color": "#1ABC9C",
+"summary": "Follow-up on the new Vacasa excessive-travel-fee alert: wants the alerts routed to the Vacasa Ops channel (tagging Kevin and Jordan) instead of the new dedicated channel, but that Vacasa Ops channel currently shows as archived.",
+"statusCls": "badge-waiting",
+"status": "Waiting on John Bosch",
+"date": "7/7",
+"note": "Ricardo asked John to confirm the correct channel name since the Vacasa Ops channel he can see is archived; still awaiting reply.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#1ABC9C",
 "summary": "Wants the \"Vacasa\" option removed or hidden from the Franchise dropdown on the Vacasa Order Form Jotform for the MP Sub client, without affecting historical orders that already used that value.",
 "statusCls": "badge-todo",
 "status": "In queue",
 "date": "7/23",
-"note": "Acknowledged the request and confirmed the field update won't affect historical records; the actual Jotform dropdown edit still needs to be made by Adjet or Ricardo.",
+"note": "Ricardo acknowledged the request and confirmed the field update won't affect historical records, then handed the actual Jotform dropdown edit to Snehal Meled, who confirmed today (12:08 PM) she'll take it.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784821417020"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "Another instance of automations overriding job status - a record marked CIA by the coordinator was flipped to CLM/Complete once sibling lines completed, when the CIA child should have stayed CIA. Follow-up on the recurring status-override bug tracked in COP-1967.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Adjet",
+"date": "6/25",
+"jiraKey": "COP-1967",
+"note": "Kailyn asked Adjet today whether this has been resolved, flagging a new mid-July instance (Zumper-SVP job, Record 80182). Internal team thread; no external requester waiting. Still open as of this run.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
+},
+{
+"author": "Ryan Morrow",
+"initials": "RM",
+"color": "#E74C3C",
+"summary": "Automations were incorrectly charging Choice Hotels (6) travel fees on US jobs; asked for the automation to be corrected and travel charges reversed on 5 specific jobs.",
+"statusCls": "badge-todo",
+"status": "In queue",
+"date": "7/23",
+"note": "Kailyn found the [Travel Fee Contract Rate] field on the MP Client had been mis-set and corrected it to NONE, and Ricardo confirmed that setting prevents future travel fees regardless of distance - so future Choice Hotels (6) jobs are fixed. Reversal of the travel charges already applied to the 5 flagged jobs isn't explicitly confirmed yet.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784830939959"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#3498DB",
+"summary": "Automated tech-notification emails aren't sending for several UDR job requests, one urgent (needs another tech available tomorrow) and two with preferred Monday (7/27) dates.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Adjet",
+"date": "7/23",
+"note": "Adjet is working on the underlying email fix. Clark told Caitlin to keep creating new UDR jobs as normal and manually notify assigned techs directly until the automated emails are fixed.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784824158204"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "Shoot2 lines default to the correct CUSTOM price code, but travel distance/fee calculation still runs on them; asked whether Shoot2 lines should skip travel calculation entirely, or whether a charge/no-charge Shoot2 split should be built into Finance Adjustments.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Ricardo",
+"date": "7/23",
+"note": "Ricardo set up a call next week to go over the entire Finance Adjustments workflow, including this question, rather than resolving it inline.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
 }
 ]
 }
