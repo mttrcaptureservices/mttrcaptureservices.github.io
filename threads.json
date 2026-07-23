@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T19:53:00Z",
+"lastUpdated": "2026-07-23T20:25:00Z",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -10,7 +10,7 @@
 "status": "Waiting on Kailyn",
 "date": "7/15",
 "jiraKey": "COP-1998",
-"note": "Freddy asked for an update today; Clark confirmed the root cause (VHT stacking on top of flat Custom Travel Payout) and that Ricardo is still waiting on Kailyn's sign-off before removing the VHT component. Ricardo then jumped in live to ask Freddy about the CT's expectations and set up a meeting with Kailyn and Ryan next week on VHT CTs generally.",
+"note": "Freddy checked back in today; Clark confirmed the root cause (VHT stacking on a flat Custom Travel Payout) and that Ricardo is still waiting on Kailyn's sign-off before adjusting the phases. Freddy then proposed honoring past overpayments as-is and correcting only future phases, and asked Kailyn what she thinks - awaiting her call.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
 },
 {
@@ -74,35 +74,13 @@
 "author": "Kailyn Jelniker",
 "initials": "KJ",
 "color": "#9B59B6",
-"summary": "Another instance of automations overriding job status - a record marked CIA by the coordinator was flipped to CLM/Complete once sibling lines completed, when the CIA child should have stayed CIA. Follow-up on the recurring status-override bug tracked in COP-1967.",
+"summary": "Another instance of automations overriding job status - a record marked CIA by the coordinator was flipped to Complete once sibling lines completed, when the CIA child should have stayed CIA. Follow-up on the recurring status-override bug tracked in COP-1967.",
 "statusCls": "badge-waiting",
 "status": "Waiting on Adjet",
 "date": "6/25",
 "jiraKey": "COP-1967",
-"note": "Kailyn asked Adjet today whether this has been resolved, flagging a new mid-July instance (Zumper-SVP job, Record 80182). Internal team thread; no external requester waiting. Still open as of this run.",
+"note": "Kailyn flagged a new recurrence today (Zumper-SVP-31373739333038373436, Record 80182, CIA overridden to Complete) even though COP-1967 already shows Complete. Logged as a Jira comment for Adjet questioning whether the fix covers the CIA-to-Complete path or only the original CIA-to-CLM path; Clark replied in-thread to confirm it's tracked. Awaiting Adjet's review.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
-},
-{
-"author": "Ryan Morrow",
-"initials": "RM",
-"color": "#E74C3C",
-"summary": "Automations were incorrectly charging Choice Hotels (6) travel fees on US jobs; asked for the automation to be corrected and travel charges reversed on 5 specific jobs.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/23",
-"note": "Kailyn found the [Travel Fee Contract Rate] field on the MP Client had been mis-set and corrected it to NONE, and Ricardo confirmed that setting prevents future travel fees regardless of distance - so future Choice Hotels (6) jobs are fixed. Reversal of the travel charges already applied to the 5 flagged jobs isn't explicitly confirmed yet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784830939959"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#3498DB",
-"summary": "Automated tech-notification emails aren't sending for several UDR job requests, one urgent (needs another tech available tomorrow) and two with preferred Monday (7/27) dates.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Adjet",
-"date": "7/23",
-"note": "Adjet is working on the underlying email fix. Clark told Caitlin to keep creating new UDR jobs as normal and manually notify assigned techs directly until the automated emails are fixed.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784824158204"
 },
 {
 "author": "Kailyn Jelniker",
