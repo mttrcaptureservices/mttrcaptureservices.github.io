@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T07:05:57Z",
+"lastUpdated": "2026-07-23T14:11:28Z",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -68,7 +68,7 @@
 "status": "Investigating",
 "date": "7/22",
 "jiraKey": "COP-2012",
-"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started.",
+"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started. Eyes reaction added this run (previously missing due to a Teams UI error).",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983"
 }
 ]
