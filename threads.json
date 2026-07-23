@@ -1,75 +1,85 @@
 {
-"lastUpdated": "2026-07-23T14:11:28Z",
-"threads": [
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#E67E22",
-"summary": "CT payouts were inconsistent across 16 phases of the Midtown Dental Care (SN2413930) construction scan job; root cause traced to VHT travel payout stacking on top of a flat Custom CT Travel Payout.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Freddy",
-"date": "7/15",
-"jiraKey": "COP-1998",
-"note": "Root cause confirmed to the dollar (VHT mileage payout + Custom CT Travel Payout stacking, by design); waiting on Freddy Arias to confirm before removing the VHT amount from the CT's payout.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-},
-{
-"author": "Juyoung Jang",
-"initials": "JJ",
-"color": "#3498DB",
-"summary": "A UK Airbnb job's automated confirmation email may not have reached CT Monika Morawska, and new UK Airbnb jobs are still auto-matching to a stale technician (Leonard Humbert) from last year's London project.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/21",
-"jiraKey": "COP-2006",
-"note": "Ricardo retriggered and confirmed the email delivery; Leonard Humbert auto-match removal still tracked on COP-2006 (To Do), not yet done.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#9B59B6",
-"summary": "SpecOps Jotform for \"ALRIG USA (2)\" doesn't include the Photos + 360s + Tags add-on sections even after setting the [Add-Ons?] field, because the Spec Ops Form doesn't currently support add-ons at all (only the On-Contract form does).",
-"statusCls": "badge-waiting",
-"status": "Waiting on Kailyn",
-"date": "7/17",
-"note": "Ricardo gave Kailyn two options (regenerate shortlink on the on-contract form, or wait for the Spec Ops Form to be updated to support add-ons); awaiting her choice. No Jira ticket yet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#E67E22",
-"summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/22",
-"jiraKey": "COP-2011",
-"note": "Ricardo removed the client-facing charge and asked Snehal/Adjet to stop auto-calculating Total Travel Distance on jobs with an asterisk in Job ID; awaiting their response.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#1ABC9C",
-"summary": "Follow-up on the new Vacasa excessive-travel-fee alert: wants the alerts routed to the Vacasa Ops channel (tagging Kevin and Jordan) instead of the new dedicated channel, but that Vacasa Ops channel currently shows as archived.",
-"statusCls": "badge-waiting",
-"status": "Waiting on John Bosch",
-"date": "7/7",
-"note": "Ricardo asked John to confirm the correct channel name since the Vacasa Ops channel he can see is archived; awaiting reply.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
-},
-{
-"author": "Ricardo Guzman",
-"initials": "RG",
-"color": "#2ECC71",
-"summary": "Test request to verify the CT Rate for Vortex Co.'s Tokyo job (JOBID6599036522428234585) and get a breakdown of any additional payout.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/22",
-"jiraKey": "COP-2012",
-"note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started. Eyes reaction added this run (previously missing due to a Teams UI error).",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983"
-}
-]
+  "lastUpdated": "2026-07-23T16:06:18Z",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "CT payouts were inconsistent across 16 phases of the Midtown Dental Care (SN2413930) construction scan job; root cause traced to VHT travel payout stacking on top of a flat Custom CT Travel Payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "7/15",
+      "jiraKey": "COP-1998",
+      "note": "Root cause confirmed to the dollar; Ricardo asked Kailyn Jelniker whether to remove the VHT travel payout amount now that the CT is being overpaid on this job - awaiting her decision.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#9B59B6",
+      "summary": "SpecOps Jotform for \"ALRIG USA (2)\" doesn't include the Photos + 360s + Tags add-on sections even after setting the [Add-Ons?] field, because the Spec Ops Form doesn't currently support add-ons at all (only the On-Contract form does).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "7/17",
+      "note": "Ricardo gave Kailyn two options (regenerate shortlink on the on-contract form, or wait for the Spec Ops Form to be updated to support add-ons); still awaiting her choice. No Jira ticket yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
+      "statusCls": "badge-todo",
+      "status": "In queue",
+      "date": "7/22",
+      "jiraKey": "COP-2011",
+      "note": "Ricardo removed the client-facing charge and asked Snehal/Adjet to stop auto-calculating Total Travel Distance on jobs with an asterisk in Job ID; still awaiting their response.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#1ABC9C",
+      "summary": "Follow-up on the new Vacasa excessive-travel-fee alert: wants the alerts routed to the Vacasa Ops channel (tagging Kevin and Jordan) instead of the new dedicated channel, but that Vacasa Ops channel currently shows as archived.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on John Bosch",
+      "date": "7/7",
+      "note": "Ricardo asked John to confirm the correct channel name since the Vacasa Ops channel he can see is archived; still awaiting reply. A stale checkmark left over from the earlier alert-delivery confirmation was removed this run since this follow-up question is still open.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+    },
+    {
+      "author": "Ricardo Guzman",
+      "initials": "RG",
+      "color": "#2ECC71",
+      "summary": "Test request to verify the CT Rate for Vortex Co.'s Tokyo job (JOBID6599036522428234585) and get a breakdown of any additional payout.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/22",
+      "jiraKey": "COP-2012",
+      "note": "Investigation found the parent record's CT Rate is $0.00 because Price Code Lookup CT is blank there, while the real $86,224 rate/travel payout is sitting on the child line item instead - same shape as the Lennar price-code bug (COP-1954/COP-1974). Ticket opened to correct the linkage; fix not yet started. Eyes reaction had reverted to a custom lookalike again this run - re-fixed to the real Teams eyes reaction.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E74C3C",
+      "summary": "Two Livit job requests are automatically moving to \"In Progress\" from \"please schedule\" status, and the automated job request email that should go out to the CT never sent.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Stephenie to confirm",
+      "date": "7/23",
+      "note": "Adjet fixed the automation and says the emails should have gone out for both jobs now; waiting on Stephenie to confirm receipt.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784816275185"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#1ABC9C",
+      "summary": "Wants the \"Vacasa\" option removed or hidden from the Franchise dropdown on the Vacasa Order Form Jotform for the MP Sub client, without affecting historical orders that already used that value.",
+      "statusCls": "badge-todo",
+      "status": "In queue",
+      "date": "7/23",
+      "note": "Acknowledged the request and confirmed the field update won't affect historical records; the actual Jotform dropdown edit still needs to be made by Adjet or Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784821417020"
+    }
+  ]
 }
