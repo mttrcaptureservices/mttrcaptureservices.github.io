@@ -1,29 +1,64 @@
 {
-  "lastUpdated": "2026-07-22T15:15:00-07:00",
+  "lastUpdated": "2026-07-23T00:20:12Z",
   "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "CT payouts were inconsistent across 16 phases of the Midtown Dental Care (SN2413930) construction scan job; root cause traced to VHT travel payout stacking on top of a flat Custom CT Travel Payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "7/15",
+      "jiraKey": "COP-1998",
+      "note": "Root cause confirmed to the dollar (VHT mileage payout + Custom CT Travel Payout stacking, by design); waiting on Kailyn Jelniker's input before removing the VHT amount from the CT's payout.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#3498DB",
+      "summary": "A UK Airbnb job's automated confirmation email may not have reached CT Monika Morawska, and new UK Airbnb jobs are still auto-matching to a stale technician (Leonard Humbert) from last year's London project.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/21",
+      "jiraKey": "COP-2006",
+      "note": "Ricardo is investigating both the email delivery failure and the stale auto-match; no update has been posted back to Juyoung yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784702190819"
+    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Reassigning a CT to a new tech resends the 'YOUR CAPTURE SCAN REQUEST' email to the Job Requestor, even though they already received one on initial Jotform submission.",
+      "color": "#9B59B6",
+      "summary": "The \"YOUR CAPTURE SCAN REQUEST\" email resends to the Job Requestor every time a job re-enters Pending status (e.g. during a CT reassignment), not just on initial Jotform submission.",
       "statusCls": "badge-todo",
       "status": "In queue",
       "date": "7/22",
       "jiraKey": "COP-2010",
-      "note": "Jira ticket opened for a 'sent once' flag fix; next action owed by Ricardo, nothing pending from Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784748587597?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784748587597&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784748587597&ngc=true"
+      "note": "Fix (a \"sent once\" flag so the email only fires on initial entry) is scoped and ticketed; implementation not yet started.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784748587597"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#E67E22",
-      "summary": "Requesting removal of the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 while keeping the tech's travel payout intact.",
+      "summary": "Client-facing travel charge needs to be removed from Zumper-SVP-31373738363834333133*SHOOT2 while the technician still gets paid for the travel.",
       "statusCls": "badge-todo",
       "status": "In queue",
       "date": "7/22",
       "jiraKey": "COP-2011",
-      "note": "Jira ticket opened; next action owed by Ricardo/Homelander to locate the record and confirm the correct client-charge field before zeroing it out.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
+      "note": "Ticket created and assigned to Ricardo; the client-facing charge has not yet been removed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#3498DB",
+      "summary": "Follow-up on the Airbnb International Base onboarding thread: confirm the CT step-photo/date-selection form is working, review why Listing ID shows blank in some emails, and consider removing the new \"scheduling fee\" line to avoid confusing hosts.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting Ricardo's review",
+      "date": "7/20",
+      "note": "Ricardo has been handling this thread personally in Teams; three follow-up questions from Juyoung (form check, Listing ID, scheduling fee) remain unanswered. No Jira ticket yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784256310270"
     }
   ]
 }
