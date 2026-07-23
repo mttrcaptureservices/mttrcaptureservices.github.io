@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T14:18:29-07:00",
+"lastUpdated": "2026-07-23T15:53:11-07:00",
 "threads": [
 {
 "author": "Freddy Arias",
@@ -10,7 +10,7 @@
 "status": "Waiting on Kailyn",
 "date": "7/15",
 "jiraKey": "COP-1998",
-"note": "Ricardo asked Kailyn to sign off on removing the VHT component; Freddy proposed honoring past phases and correcting future ones - awaiting Kailyn's decision.",
+"note": "Freddy proposed honoring past phases and correcting future ones and asked Kailyn directly for her call - still awaiting her decision.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
 },
 {
@@ -21,7 +21,7 @@
 "statusCls": "badge-waiting",
 "status": "Waiting on Kailyn",
 "date": "7/17",
-"note": "Ricardo gave Kailyn two options (regenerate shortlink on the on-contract form, or wait for Add-Ons support to be built into the Spec Ops form) - no reply yet.",
+"note": "Ricardo gave Kailyn two options (regenerate shortlink on the on-contract form, or wait for Add-Ons support to be built into the Spec Ops form) - still no reply as of 7/23.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876"
 },
 {
@@ -33,7 +33,7 @@
 "status": "Waiting on Ricardo/Kailyn",
 "date": "7/22",
 "jiraKey": "COP-2011",
-"note": "Ricardo asked Snehal/Adjet to skip auto travel-distance calc on asterisk Job IDs but is holding off until he talks to Kailyn.",
+"note": "Ricardo asked Snehal/Adjet to skip auto travel-distance calc on asterisk Job IDs but is holding off until he talks to Kailyn - confirmed still on hold this morning (7/23 10:40am).",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
 },
 {
@@ -55,7 +55,7 @@
 "statusCls": "badge-investigating",
 "status": "In progress (Snehal)",
 "date": "7/23",
-"note": "Ricardo queued the form-field update and handed it to Snehal, who confirmed he'd take a look - awaiting completion.",
+"note": "Ricardo queued the form-field update and handed it to Snehal, who confirmed today at 12:08pm she'd take a look - awaiting completion.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784821417020"
 },
 {
@@ -67,7 +67,7 @@
 "status": "Logged on ticket",
 "date": "6/25",
 "jiraKey": "COP-1967",
-"note": "Ricardo logged the new CIA-to-Complete recurrence as a comment on COP-1967 for Adjet, flagging that the fix may need to cover that path too, not just CIA-to-CLM.",
+"note": "New recurrence today (7/23 1:20pm): CIA getting overridden to Complete (not just CLM) on Zumper-SVP-...373436/Record 80182 - logged as a Jira comment for Adjet, flagging the fix may need to cover the CIA-to-Complete path too.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
 },
 {
