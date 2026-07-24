@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-07-24T15:05:59Z",
+  "lastUpdated": "2026-07-24T15:30:00Z",
   "threads": [
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#2980b9",
+      "summary": "Requested a dedicated Teams alert channel for Vacasa jobs with total travel distance over 170 miles (requires client approval above that threshold).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on John Bosch",
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "The alert automation itself is built and live (confirmed 7/8), but the thread stays open because the \"Vacasa Ops channel\" John pointed Ricardo to shows as archived — Ricardo asked him to confirm the correct destination channel and hasn't heard back.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
