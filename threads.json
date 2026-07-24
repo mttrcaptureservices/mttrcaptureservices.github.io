@@ -1,51 +1,63 @@
 {
-  "lastUpdated": "2026-07-24T15:30:44Z",
-  "threads": [
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#E67E22",
-      "summary": "Wants a dedicated Teams alert for Vacasa jobs where total travel distance exceeds 170 miles (170 is fine, 170.1+ needs client approval), posted to the Vacasa Ops channel tagging Kevin and Jordan.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Alert is built; waiting on John Bosch to confirm the correct non-archived Vacasa Ops channel name (the one he pointed to shows as archived).",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#9B59B6",
-      "summary": "The Spec Ops Jotform doesn't support the [Add-Ons?] sections (Photos + 360s + Tags) the way the on-contract shortlink form does, so add-on selections aren't reflected in the generated form.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/17",
-      "note": "Ricardo gave her two options: regenerate the shortlink using the on-contract form, or wait for Spec Ops form support. Waiting on her decision.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#3498DB",
-      "summary": "Requested removing the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 while still paying the tech for the travel.",
-      "statusCls": "badge-waiting",
-      "status": "On hold",
-      "date": "7/22",
-      "jiraKey": "COP-2011",
-      "note": "On hold pending Ricardo's scheduled call with Kailyn to review the full SHOOT2/Finance Adjustment workflow before making the change.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#9B59B6",
-      "summary": "Proposes Shoot2 lines default to no travel distance/fee calculation, or alternatively split into RESHOOT - No Charge to Client / RESHOOT - Charge Client Finance Adjustment options with distinct Job ID suffixes.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/23",
-      "note": "Ricardo set up a call next week with Kailyn and Ryan to go over the entire SHOOT2/adjustment workflow, which will resolve this alongside the Zumper SHOOT2 travel-charge thread.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784832069623&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784832069623&ngc=true"
-    }
-  ]
+"lastUpdated": "2026-07-24T16:11:03Z",
+"threads": [
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#E67E22",
+"summary": "Wants a dedicated Teams alert for Vacasa jobs where total travel distance exceeds 170 miles (170 is fine, 170.1+ needs client approval), posted to the Vacasa Ops channel tagging Kevin and Jordan.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/7",
+"jiraKey": "COP-1982",
+"note": "Alert is built; waiting on John Bosch to confirm the correct non-archived Vacasa Ops channel name (the one he pointed to shows as archived).",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "The Spec Ops Jotform doesn't support the [Add-Ons?] sections (Photos + 360s + Tags) the way the on-contract shortlink form does, so add-on selections aren't reflected in the generated form.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/17",
+"note": "Ricardo gave her two options: regenerate the shortlink using the on-contract form, or wait for Spec Ops form support. Waiting on her decision.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784312832876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784312832876&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784312832876&ngc=true"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#3498DB",
+"summary": "Requested removing the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 while still paying the tech for the travel.",
+"statusCls": "badge-waiting",
+"status": "On hold",
+"date": "7/22",
+"jiraKey": "COP-2011",
+"note": "On hold pending Ricardo's scheduled call with Kailyn to review the full SHOOT2/Finance Adjustment workflow before making the change.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "Proposes Shoot2 lines default to no travel distance/fee calculation, or alternatively split into RESHOOT - No Charge to Client / RESHOOT - Charge Client Finance Adjustment options with distinct Job ID suffixes.",
+"statusCls": "badge-waiting",
+"status": "Waiting on scheduled call",
+"date": "7/23",
+"note": "Ricardo set up a call next week with Kailyn and Ryan to go over the entire SHOOT2/adjustment workflow, which will resolve this alongside the Zumper SHOOT2 travel-charge thread.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784832069623&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784832069623&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#9B59B6",
+"summary": "Recurring automation bug: a CIA-marked child record (Record 81551) flipped back to CLM once sibling lines were marked CLM, overriding the coordinator's CIA status.",
+"statusCls": "badge-investigating",
+"status": "Fix applied, unconfirmed",
+"date": "6/25",
+"jiraKey": "COP-1967",
+"note": "Adjet found and disabled the specific errant automation (an old workaround, not the core code) that caused this instance; he's flagged it could resurface via yet another legacy workflow. Kailyn hasn't confirmed closure in-thread, so left open pending recurrence or her confirmation.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1782417568847&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1782417568847&ngc=true"
+}
+]
 }
