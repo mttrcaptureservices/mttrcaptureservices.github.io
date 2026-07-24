@@ -1,51 +1,58 @@
 {
-  "lastUpdated": "2026-07-24T17:25:31Z",
+  "lastUpdated": "2026-07-24T19:20:00Z",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#F59E0B",
-      "summary": "Remove the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 (tech still gets paid).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled meeting",
-      "date": "7/22",
+      "color": "#6264A7",
+      "summary": "Midtown Dental Care (SN2413930) CT payout variance across 16 phases — root cause confirmed (VHT mileage payout stacking with flat Custom Travel Payout, by design). Case closed for historical payouts; still waiting on the Ricardo/Kailyn workflow-revisit call to decide how to handle future phases.",
+      "statusCls": "status-progress",
+      "status": "Waiting on Ricardo/Kailyn workflow call",
+      "date": "2026-07-24",
+      "jiraKey": "COP-1998",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#C4314B",
+      "summary": "Welltower invoice mismatch — invoice says $1,253 but Validated Job Rate shows $1,403 after an automation re-added $150 a month after an earlier automation removed it. Requesting a lock/guard on the field post-validation.",
+      "statusCls": "status-progress",
+      "status": "Jira created, Homelander investigating",
+      "date": "2026-07-24",
+      "jiraKey": "COP-2014",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#C4314B",
+      "summary": "Proposal to make Shoot2 lines default to no travel-distance calculation for consistency (currently price code defaults to CUSTOM correctly, but travel distance/fee calculation still runs).",
+      "statusCls": "status-progress",
+      "status": "Waiting on adjustment-workflow call next week",
+      "date": "2026-07-23",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#6264A7",
+      "summary": "Requesting removal of the client-facing travel charge for Zumper-SVP-...*SHOOT2 (tech payout unaffected) — same underlying adjustment-workflow question as Kailyn's Shoot2 proposal.",
+      "statusCls": "status-progress",
+      "status": "Waiting on adjustment-workflow call next week",
+      "date": "2026-07-22",
       "jiraKey": "COP-2011",
-      "note": "Travel charge already removed on this job; the broader fix (asterisk Job IDs skipping auto travel-distance calc) is on hold until Ricardo's meeting with Kailyn on the adjustment workflow.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#EC4899",
-      "summary": "Proposes Shoot2 lines skip travel distance/fee calc by default, or splitting into RESHOOT (charge/no-charge) options in Finance Adjustments with distinct Job ID suffixes.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/23",
-      "note": "Ricardo set up a call next week to go over the entire adjustment workflow, including this proposal.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784832069623&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784832069623&ngc=true"
-    },
-    {
-      "author": "Ricardo Guzman",
-      "initials": "RG",
-      "color": "#3B82F6",
-      "summary": "Vortex Co. Tokyo job (JOBID6599036522428234585): CT Rate shows $0 on the parent record because Price Code Lookup CT is blank; the real $86,224 rate/travel payout landed on the child line instead.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/22",
-      "jiraKey": "COP-2012",
-      "note": "Same price-code-on-wrong-record pattern as the Lennar fix (COP-1954/COP-1974), new client. Ticket queued, linkage fix not yet started.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784789469983?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784789469983&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784789469983&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#EC4899",
-      "summary": "Can't find Precision Property Measurements' Airtable view inside GCB (CS - Global Customer Base) to unhide a field.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Kailyn",
-      "date": "7/24",
-      "note": "Located it for her (GLOBAL table, view \"Client View - Precision Property Measurements\"); waiting to hear which field she needs unhidden so it can be done directly.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784910015436?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784910015436&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784910015436&ngc=true"
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#498205",
+      "summary": "Requesting a separate Teams alert for Vacasa jobs with total travel distance over 170 miles that need client approval, posted to the Vacasa Ops channel and tagging Kevin/Jordan.",
+      "statusCls": "status-progress",
+      "status": "Waiting on Ricardo (\"I'll come back to you when it's done\")",
+      "date": "2026-07-24",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
     }
   ]
 }
