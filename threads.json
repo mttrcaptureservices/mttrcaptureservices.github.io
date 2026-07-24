@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-23T17:12:00-07:00",
+"lastUpdated": "2026-07-23T18:13:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -55,7 +55,7 @@
 "status": "Awaiting Kailyn sign-off",
 "date": "7/15",
 "jiraKey": "COP-1998",
-"note": "Root cause confirmed (VHT mileage travel payout stacking on a flat Custom CT Travel Payout). Freddy proposed honoring the 6 already-overpaid phases and correcting only future ones; still waiting on Kailyn's sign-off before any records are adjusted.",
+"note": "Root cause confirmed (VHT mileage travel payout stacking on a flat Custom CT Travel Payout). Freddy proposed honoring the 6 already-overpaid phases and correcting only future ones; still waiting on Kailyn's sign-off before any records are adjusted. Proposal logged as a Jira comment since Ricardo is live-replying in the thread.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
 },
 {
@@ -69,6 +69,18 @@
 "jiraKey": "COP-1967",
 "note": "Adjet found and disabled the specific errant automation and documented it in COP-1967, but flagged other legacy workflows could still cause a recurrence; Kailyn hasn't yet confirmed the fix holds.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1782417568847"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#16a085",
+"summary": "Wants the Vacasa 170-mile excessive-travel alert routed to the correct, active Vacasa Ops channel (managed by Kevin and Jordan), instead of the archived one currently in use.",
+"statusCls": "badge-waiting",
+"status": "Waiting on John Bosch",
+"date": "7/7",
+"jiraKey": "COP-1982",
+"note": "The 170-mile alert itself is live (COP-1982 complete). Ricardo asked John to confirm the exact name of the active Vacasa Ops channel since the one visible shows as archived; no reply since Monday (7/20).",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
 }
 ]
 }
