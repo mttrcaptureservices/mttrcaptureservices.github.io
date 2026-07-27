@@ -1,58 +1,51 @@
 {
-  "lastUpdated": "2026-07-24T19:20:00Z",
+  "lastUpdated": "2026-07-27T15:04:23Z",
   "threads": [
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#6264A7",
-      "summary": "Midtown Dental Care (SN2413930) CT payout variance across 16 phases — root cause confirmed (VHT mileage payout stacking with flat Custom Travel Payout, by design). Case closed for historical payouts; still waiting on the Ricardo/Kailyn workflow-revisit call to decide how to handle future phases.",
-      "statusCls": "status-progress",
-      "status": "Waiting on Ricardo/Kailyn workflow call",
-      "date": "2026-07-24",
-      "jiraKey": "COP-1998",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784155806667"
-    },
-    {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#C4314B",
-      "summary": "Welltower invoice mismatch — invoice says $1,253 but Validated Job Rate shows $1,403 after an automation re-added $150 a month after an earlier automation removed it. Requesting a lock/guard on the field post-validation.",
-      "statusCls": "status-progress",
-      "status": "Jira created, Homelander investigating",
-      "date": "2026-07-24",
+      "color": "#8b5cf6",
+      "summary": "Welltower invoice showed $1,253 but Validated Job Rate read $1,403 — an automation re-added $150 a month after it had been removed. Needs the specific job corrected and a guard so Validated Job Rate can't be silently overwritten once accounting has signed off.",
+      "statusCls": "badge-investigating",
+      "status": "In queue",
+      "date": "7/24",
       "jiraKey": "COP-2014",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+      "note": "Ticket created and assigned to Ricardo; job correction + automation root-cause + guardrail still to be done.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#C4314B",
-      "summary": "Proposal to make Shoot2 lines default to no travel-distance calculation for consistency (currently price code defaults to CUSTOM correctly, but travel distance/fee calculation still runs).",
-      "statusCls": "status-progress",
-      "status": "Waiting on adjustment-workflow call next week",
-      "date": "2026-07-23",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+      "color": "#8b5cf6",
+      "summary": "Shoot2 finance-adjustment lines default to CUSTOM price code (good) but travel distance/fee still calculates (not good). Proposed splitting into RESHOOT-No-Charge vs RESHOOT-Charge-Client variants with distinct Job ID suffixes.",
+      "statusCls": "badge-waiting",
+      "status": "Call scheduled",
+      "date": "7/23",
+      "note": "Ricardo set up a call next week to review the entire adjustment workflow, including this proposal — no ticket yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784832069623&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784832069623&ngc=true"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#6264A7",
-      "summary": "Requesting removal of the client-facing travel charge for Zumper-SVP-...*SHOOT2 (tech payout unaffected) — same underlying adjustment-workflow question as Kailyn's Shoot2 proposal.",
-      "statusCls": "status-progress",
-      "status": "Waiting on adjustment-workflow call next week",
-      "date": "2026-07-22",
+      "color": "#f97316",
+      "summary": "Requested removing the client-facing travel charge on Zumper-SVP-...*SHOOT2 (tech still gets paid, client shouldn't be charged travel).",
+      "statusCls": "badge-waiting",
+      "status": "Holding for internal discussion",
+      "date": "7/22",
       "jiraKey": "COP-2011",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+      "note": "Charge was removed on this job; broader fix (asterisk Job IDs skipping auto travel-distance calc) is on hold pending a conversation with Kailyn about the Shoot2 workflow.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
     },
     {
       "author": "John Bosch",
       "initials": "JB",
-      "color": "#498205",
-      "summary": "Requesting a separate Teams alert for Vacasa jobs with total travel distance over 170 miles that need client approval, posted to the Vacasa Ops channel and tagging Kevin/Jordan.",
-      "statusCls": "status-progress",
-      "status": "Waiting on Ricardo (\"I'll come back to you when it's done\")",
-      "date": "2026-07-24",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+      "color": "#14b8a6",
+      "summary": "Requested a separate Teams alert for Vacasa jobs with total travel distance over 170 miles (needs client approval), routed to the Vacasa Ops channel and tagging Kevin and Jordan.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting build",
+      "date": "7/7",
+      "note": "Channel confirmed (Vacasa Ops); Ricardo still owes the actual alert setup — a Power Automate webhook into that channel is the likely implementation path.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
     }
   ]
 }
