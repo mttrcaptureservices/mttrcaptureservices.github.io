@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-27T13:07:58-07:00",
+"lastUpdated": "2026-07-27T15:15:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
 "status": "Investigating",
 "date": "7/25",
 "jiraKey": "COP-2014",
-"note": "Opened 7/25, still To Do — needs the specific Welltower job corrected back to $1,253 and the re-add automation identified. Next action on Ricardo.",
+"note": "Still To Do, no new activity since 7/25 — needs the specific Welltower job corrected back to $1,253 and the re-add automation identified. Next action on Ricardo.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
 },
 {
@@ -45,18 +45,18 @@
 "status": "In progress",
 "date": "7/7",
 "jiraKey": "COP-1982",
-"note": "Kevin Curtis reconfirmed 7/27 the zap is still misdirected; Ricardo logged it as a COP-1982 comment and replied in Teams. No further reply since — next action is repointing the Zap itself.",
+"note": "Ricardo asked Adjet (3:02pm) to make the Vacasa Ops channel public so the Zap can post there directly; Adjet is checking whether that's feasible given the channel was made private specifically to allow posting. Next action on Adjet.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
 },
 {
 "author": "Freddy Arias",
 "initials": "FA",
 "color": "#f97316",
-"summary": "Three jobs (JOBID6607236119799188346, JOBID6609815035795043194, JOBID6609829204296606976) didn't load into Airtable correctly — client needs at least one scheduled ASAP.",
+"summary": "Four JLL jobs (JOBID6607236119799188346, JOBID6609815035795043194, JOBID6609829204296606976, JOBID6603701002898291017) didn't load into Airtable correctly — client needs at least one scheduled ASAP.",
 "statusCls": "badge-waiting",
 "status": "Waiting on requester",
 "date": "7/27",
-"note": "Snehal already diagnosed it: client never provided unit name/number/size for these jobs, so no child records or price codes were created. Waiting on Freddy to get those details from the client.",
+"note": "Ricardo replied live 3:11pm: root cause was a form/background-data issue, now fixed, but these 4 jobs still came in without unit details. Asked Freddy to connect with the client or create child records via the Airtable dropdowns. Next action on Freddy.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785170853650?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785170853650&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785170853650&ngc=true"
 }
 ]
