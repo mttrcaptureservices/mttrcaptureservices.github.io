@@ -1,63 +1,51 @@
 {
-"lastUpdated": "2026-07-27T15:15:00-07:00",
-"threads": [
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8b5cf6",
-"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) — an automation re-added $150 a month after it was removed. Needs a fix plus a guard so Validated Job Rate can't be silently overwritten after accounting signs off.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/25",
-"jiraKey": "COP-2014",
-"note": "Still To Do, no new activity since 7/25 — needs the specific Welltower job corrected back to $1,253 and the re-add automation identified. Next action on Ricardo.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#8b5cf6",
-"summary": "Proposal to stop travel distance from being calculated on *SHOOT2 lines by default, or alternatively split into RESHOOT-No-Charge / RESHOOT-Charge-Client variants with distinct Job ID suffixes.",
-"statusCls": "badge-waiting",
-"status": "Awaiting decision",
-"date": "7/23",
-"note": "No Jira yet — Ricardo put this on hold pending a direct discussion with Kailyn since it overlaps with COP-2011's fix. No movement since 7/23.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784832069623&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784832069623&ngc=true"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#f97316",
-"summary": "Remove client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 while keeping the tech's travel payout. Client-facing charge already removed as a one-off fix.",
-"statusCls": "badge-waiting",
-"status": "On hold",
-"date": "7/22",
-"jiraKey": "COP-2011",
-"note": "Immediate fix done 7/22; the broader automation fix (skip travel calc on asterisk Job IDs) is on hold until Ricardo talks with Kailyn — tied to the Shoot2 proposal above.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784755198665&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784755198665&ngc=true"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#14b8a6",
-"summary": "Vacasa excessive-travel alert (>170 miles) is live but posting to the wrong Teams channel — needs to be repointed to the Vacasa Ops channel that Kevin Curtis and Jordan Saiz actually monitor, tagging them directly.",
-"statusCls": "badge-investigating",
-"status": "In progress",
-"date": "7/7",
-"jiraKey": "COP-1982",
-"note": "Ricardo asked Adjet (3:02pm) to make the Vacasa Ops channel public so the Zap can post there directly; Adjet is checking whether that's feasible given the channel was made private specifically to allow posting. Next action on Adjet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1783435863388&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1783435863388&ngc=true"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#f97316",
-"summary": "Four JLL jobs (JOBID6607236119799188346, JOBID6609815035795043194, JOBID6609829204296606976, JOBID6603701002898291017) didn't load into Airtable correctly — client needs at least one scheduled ASAP.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/27",
-"note": "Ricardo replied live 3:11pm: root cause was a form/background-data issue, now fixed, but these 4 jobs still came in without unit details. Asked Freddy to connect with the client or create child records via the Airtable dropdowns. Next action on Freddy.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785170853650?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785170853650&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785170853650&ngc=true"
-}
-]
+  "lastUpdated": "2026-07-27T23:13:35Z",
+  "threads": [
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#6366f1",
+      "summary": "Requested a separate Vacasa Ops Teams alert for jobs with total travel distance over 170 miles, tagging Kevin and Jordan for client-approval review.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/7",
+      "jiraKey": "COP-1982",
+      "note": "Zap still misrouting to the wrong channel; Ricardo and Adjet are actively deciding between archiving/recreating Vacasa Ops as public vs. an email-to-channel workaround. Next action is on Ricardo/Adjet, not the requester.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#ec4899",
+      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation re-added $150 a month after it was removed; asked for a guard so the field can't be silently overwritten post-validation.",
+      "statusCls": "badge-todo",
+      "status": "To Do",
+      "date": "7/24",
+      "jiraKey": "COP-2014",
+      "note": "Ticket opened and in queue; still needs the specific Welltower job corrected back to $1,253 and the re-adding automation identified. No update since ticket creation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#ec4899",
+      "summary": "Proposed that *SHOOT2 lines default to no travel distance/fee calculation, or alternatively split into RESHOOT (No Charge) / RESHOOT (Charge Client) variants with distinct Job ID formats.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on scheduled call",
+      "date": "7/24",
+      "note": "Ricardo set up a call with Kailyn to review the entire adjustment workflow (overlaps with the Zumper *SHOOT2 travel-charge thread below); on hold until that call happens.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#10b981",
+      "summary": "Asked to remove the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 (pay the tech, don't bill the client for travel).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on scheduled call",
+      "date": "7/23",
+      "note": "Immediate charge was removed same day; the broader automation fix (suppressing auto travel-distance calc on any Job ID containing \"*\") is on hold pending the same adjustment-workflow call with Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+    }
+  ]
 }
