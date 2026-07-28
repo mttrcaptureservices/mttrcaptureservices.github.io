@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-28T15:10:00-07:00",
+"lastUpdated": "2026-07-28T16:06:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -30,11 +30,11 @@
 "initials": "JB",
 "color": "#16A085",
 "summary": "Vacasa wants a required Number of Bedrooms dropdown (0-20) added to their order form, mapped to Airtable's existing Number of Rooms field, visible in the Vacasa 2.0 AT view and View Only - All Jobs view.",
-"statusCls": "badge-todo",
-"status": "To Do",
+"statusCls": "badge-waiting",
+"status": "Waiting on Snehal",
 "date": "7/28",
 "jiraKey": "COP-2017",
-"note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Ricardo asked Snehal to pick this one up. Owed by Snehal/eng.",
+"note": "Requested by Aug 1 (Aug 3 latest). Snehal and John are aligning on scope live in-thread (bedrooms field is separate from sqft) before Snehal maps it to Airtable. Owed by Snehal.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
 },
 {
@@ -46,7 +46,7 @@
 "status": "To Do",
 "date": "7/28",
 "jiraKey": "COP-2020",
-"note": "New ticket, just opened this run. Owed by Ricardo/eng.",
+"note": "Ticket in To Do queue, assigned to Ricardo. Owed by Ricardo/eng.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785274748807"
 }
 ]
