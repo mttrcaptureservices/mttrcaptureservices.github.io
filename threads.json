@@ -1,51 +1,51 @@
 {
-  "lastUpdated": "2026-07-27T23:13:35Z",
-  "threads": [
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#6366f1",
-      "summary": "Requested a separate Vacasa Ops Teams alert for jobs with total travel distance over 170 miles, tagging Kevin and Jordan for client-approval review.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/7",
-      "jiraKey": "COP-1982",
-      "note": "Zap still misrouting to the wrong channel; Ricardo and Adjet are actively deciding between archiving/recreating Vacasa Ops as public vs. an email-to-channel workaround. Next action is on Ricardo/Adjet, not the requester.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1783435863388"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#ec4899",
-      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation re-added $150 a month after it was removed; asked for a guard so the field can't be silently overwritten post-validation.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Ticket opened and in queue; still needs the specific Welltower job corrected back to $1,253 and the re-adding automation identified. No update since ticket creation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#ec4899",
-      "summary": "Proposed that *SHOOT2 lines default to no travel distance/fee calculation, or alternatively split into RESHOOT (No Charge) / RESHOOT (Charge Client) variants with distinct Job ID formats.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/24",
-      "note": "Ricardo set up a call with Kailyn to review the entire adjustment workflow (overlaps with the Zumper *SHOOT2 travel-charge thread below); on hold until that call happens.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#10b981",
-      "summary": "Asked to remove the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 (pay the tech, don't bill the client for travel).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/23",
-      "note": "Immediate charge was removed same day; the broader automation fix (suppressing auto travel-distance calc on any Job ID containing \"*\") is on hold pending the same adjustment-workflow call with Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
-    }
-  ]
+"lastUpdated": "2026-07-27T23:50:00Z",
+"threads": [
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#10b981",
+"summary": "Job JOBID6607236119799188346 didn't load into Airtable correctly; client needs it scheduled ASAP so it can be sent to a technician.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/27",
+"note": "Ricardo is trying to reproduce the load failure on his end and is continuing to investigate; Freddy has been told he'll get an update. Next action is on Ricardo, not the requester.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785170853650"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#ec4899",
+"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation re-added $150 a month after it was removed; asked for a guard so the field can't be silently overwritten post-validation.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/24",
+"jiraKey": "COP-2014",
+"note": "Ticket opened and in queue; Ricardo asked Kailyn whether to remove the $150 fee in the meantime and is still waiting on her answer.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#ec4899",
+"summary": "Proposed that *SHOOT2 lines default to no travel distance/fee calculation, or alternatively split into RESHOOT (No Charge) / RESHOOT (Charge Client) variants with distinct Job ID formats.",
+"statusCls": "badge-waiting",
+"status": "Waiting on scheduled call",
+"date": "7/24",
+"note": "Ricardo set up a call with Kailyn to review the entire adjustment workflow (overlaps with the Zumper *SHOOT2 travel-charge thread below); on hold until that call happens.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#10b981",
+"summary": "Asked to remove the client-facing travel charge for Zumper-SVP-31373738363834333133*SHOOT2 (pay the tech, don't bill the client for travel).",
+"statusCls": "badge-waiting",
+"status": "Waiting on scheduled call",
+"date": "7/23",
+"jiraKey": "COP-2011",
+"note": "Immediate charge was removed same day; the broader automation fix (suppressing auto travel-distance calc on any Job ID containing \"*\") is on hold pending the same adjustment-workflow call with Kailyn.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
+}
+]
 }
