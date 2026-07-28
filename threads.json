@@ -1,51 +1,52 @@
 {
-"lastUpdated": "2026-07-28T12:12:41-07:00",
-"threads": [
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#6B5B95",
-"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation re-added $150 a month after it was removed; wants a guard so the field can't be silently overwritten once accounting has validated a job.",
-"statusCls": "badge-waiting",
-"status": "Awaiting confirmation",
-"date": "7/25",
-"jiraKey": "COP-2014",
-"note": "Still To Do — Ricardo asked Kailyn if she wants the $150 fee removed in the meantime; no reply yet.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#3D8B8B",
-"summary": "Requesting reinstatement of a previously cancelled job (JOBID6574890859423850255) — client says she never asked to cancel it.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/28",
-"note": "Adjet confirmed the fix is switching MP Client to Livit AG (3); Ricardo has now deferred the actual update to Gisele Tan (Parent Base access) since automations keep overriding status back to Expired Contract.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785244537848?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785244537848&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785244537848&ngc=true"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#3D8B8B",
-"summary": "Livit AG confirmation emails not sending even after the capture technician confirms availability; job status is stuck on \"in-progress\".",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/28",
-"jiraKey": "COP-1994",
-"note": "Adjet traced it further: the CT didn't clearly select a decision on the form, so Zapier couldn't detect an Accept/Decline — root cause narrowing beyond the general COP-1994 gap.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785235352753&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785235352753&ngc=true"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#3D8B8B",
-"summary": "CT confirmation email shows EUR 700.80 capture payout vs EUR 600 in Airtable for JOBID6610549953028075881.",
-"statusCls": "badge-waiting",
-"status": "Waiting on Gisele Tan",
-"date": "7/28",
-"note": "Payout question resolved (Stephenie confirmed EUR 700.80 does not need to be honored). Ricardo found 3 corrupted records (90794, 90796, 90811) from manual Job ID reassignment and handed the record fix + payout call to Gisele Tan.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
-}
-]
+  "lastUpdated": "2026-07-28T13:20:00-07:00",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E44AD",
+      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) - an automation re-added $150 a month after it was removed, and Validated Job Rate needs to be locked once accounting signs off.",
+      "statusCls": "badge-todo",
+      "status": "To Do",
+      "date": "7/24",
+      "jiraKey": "COP-2014",
+      "note": "Ticket in To Do queue - needs the specific Welltower job corrected and a guard built so Validated Job Rate can't be silently overwritten post-validation. Owed by Ricardo/eng.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#D35400",
+      "summary": "Livit project confirmation emails aren't sending even after the capture technician confirmed availability - job status stuck in-progress. Root cause traced to Zapier not reading the CT's Accept/Decline decision.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/28",
+      "note": "Adjet pushed the CT submission through manually and cleared Send-CT-Email so Stephenie can resolve the scheduled time before the email goes out. Next action is on Stephenie.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#2980B9",
+      "summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records - same shape as two prior Lennar recurrences (COP-1954, COP-1974), now on a new client.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/28",
+      "jiraKey": "COP-2016",
+      "note": "Caitlin already fixed the codes manually; ticket is to find why the automation didn't fire and whether it's a shared cross-client root cause. Owed by Ricardo/eng.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#16A085",
+      "summary": "Vacasa wants a required Number of Bedrooms dropdown (0-20) added to their order form, mapped to Airtable's existing Number of Rooms field, visible in the Vacasa 2.0 AT view and View Only - All Jobs view.",
+      "statusCls": "badge-todo",
+      "status": "To Do",
+      "date": "7/28",
+      "jiraKey": "COP-2017",
+      "note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Owed by Ricardo/eng.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
+    }
+  ]
 }
