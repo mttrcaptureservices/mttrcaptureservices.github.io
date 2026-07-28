@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-28T14:20:00-07:00",
+"lastUpdated": "2026-07-28T15:10:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -10,19 +10,8 @@
 "status": "To Do",
 "date": "7/24",
 "jiraKey": "COP-2014",
-"note": "Ticket in To Do queue - Ricardo offered yesterday to remove the $150 fee in the meantime; still awaiting Kailyn's reply on that offer. Owed by Kailyn/Ricardo.",
+"note": "Ticket in To Do queue - Ricardo offered to remove the $150 fee in the meantime; still awaiting Kailyn's reply on that offer. Owed by Kailyn/Ricardo.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#D35400",
-"summary": "Livit project confirmation emails aren't sending even after the capture technician confirmed availability - job status stuck in-progress. 3rd recurrence of this bug class (COP-1994).",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/28",
-"note": "Adjet plans to migrate this client (and any others on the old form) to the new one via a new Jira. Ricardo asked Stephenie to align with the tech on a future date and re-trigger the email automation - next action is on Stephenie.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753"
 },
 {
 "author": "Caitlin Suh",
@@ -45,20 +34,20 @@
 "status": "To Do",
 "date": "7/28",
 "jiraKey": "COP-2017",
-"note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Owed by Ricardo/eng.",
+"note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Ricardo asked Snehal to pick this one up. Owed by Snehal/eng.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
 },
 {
 "author": "Kailyn Jelniker",
 "initials": "KJ",
 "color": "#8E44AD",
-"summary": "Wants the Assigned Capture Coordinator CC'd on YOUR CAPTURE SCAN REQUEST emails (now that every MP Client has one), plus a new Reply-All reminder bullet at the top of the Important Reminders section.",
+"summary": "Wants [Currency] added next to pricing fields in customer-facing confirmation/reminder emails (Capture Requestor & On-Site Contact only, not CT emails).",
 "statusCls": "badge-todo",
 "status": "To Do",
 "date": "7/28",
-"jiraKey": "COP-2018",
-"note": "Two-part email automation + template change. Owed by Ricardo/eng.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785272391846"
+"jiraKey": "COP-2020",
+"note": "New ticket, just opened this run. Owed by Ricardo/eng.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785274748807"
 }
 ]
 }
