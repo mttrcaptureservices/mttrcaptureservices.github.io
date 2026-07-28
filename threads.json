@@ -1,51 +1,51 @@
 {
-  "lastUpdated": "2026-07-28T17:05:00Z",
+  "lastUpdated": "2026-07-28T10:22:52-07:00",
   "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#6B5B95",
+      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation re-added $150 a month after it was removed; wants a guard so the field can't be silently overwritten once accounting has validated a job.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
+      "date": "7/25",
+      "jiraKey": "COP-2014",
+      "note": "Ricardo opened COP-2014 and asked Kailyn if she wants the $150 fee removed in the meantime — waiting on her reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
+    },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
-      "color": "#8E44AD",
-      "summary": "Livit AG (2) job JOBID6603606043616825411 is a child-only job (no parent record), so the confirmation email automation isn't firing - same recurring gap as COP-1994.",
+      "color": "#3D8B8B",
+      "summary": "Requesting reinstatement of a previously cancelled job (JOBID6574890859423850255) — client says she never asked to cancel it.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "7/28",
+      "note": "Adjet asked Stephenie/Kailyn to confirm switching the MP Client to Livit AG (3) (since Livit AG (2) is Commitment Reached / contract expired) before he can move the job to Pending.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785244537848?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785244537848&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785244537848&ngc=true"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#3D8B8B",
+      "summary": "Livit AG confirmation emails not sending even after the capture technician confirms availability; job status is stuck on \"in-progress\".",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "7/28",
       "jiraKey": "COP-1994",
-      "note": "Adjet is now looking into a Zapier issue receiving the CT's decision; job still needs a manual email retrigger.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753"
+      "note": "Ricardo linked this to the recurring Livit AG (2) automation gap tracked on COP-1994; Adjet is investigating an issue receiving the CT's decision in Zapier.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785235352753&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785235352753&ngc=true"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
-      "color": "#8E44AD",
-      "summary": "Confirmation email for JOBID6610549953028075881 shows EUR 700.80 vs EUR 600 in Airtable - traced to a parent CT Rate of $600.80 plus a separate $100 PT child line item.",
+      "color": "#3D8B8B",
+      "summary": "CT confirmation email shows EUR 700.80 capture payout vs EUR 600 in Airtable for JOBID6610549953028075881.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "7/28",
-      "note": "Waiting on Stephenie to confirm whether the CT is doing both line items on this visit, or if the email should only reflect the parent line.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#8E44AD",
-      "summary": "Requesting reinstatement of JOBID6574890859423850255 from Cancelled in advance back to pending - client says she never requested the cancellation.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/28",
-      "note": "Adjet asked Stephenie to confirm the job's MP Client should move to Livit AG (3) before he reschedules it to Pending.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785244537848"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#2980B9",
-      "summary": "Welltower invoice mismatch - Validated Job Rate field got silently overwritten from $1,253 back to $1,403 by an automation a month after accounting validated the job.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Ricardo opened COP-2014 to build a guard so Validated Job Rate can't be overwritten post-validation; offered to remove the $150 fee in the meantime, awaiting Kailyn's confirmation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+      "note": "Ricardo traced the $100.80 gap to a separate child line item (price code DSLivit2R2) stacking on top of the parent CT Rate — asked Stephenie to confirm whether the CT is doing both lines on this visit.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
     }
   ]
 }
