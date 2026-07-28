@@ -1,52 +1,64 @@
 {
-  "lastUpdated": "2026-07-28T13:20:00-07:00",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E44AD",
-      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) - an automation re-added $150 a month after it was removed, and Validated Job Rate needs to be locked once accounting signs off.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Ticket in To Do queue - needs the specific Welltower job corrected and a guard built so Validated Job Rate can't be silently overwritten post-validation. Owed by Ricardo/eng.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#D35400",
-      "summary": "Livit project confirmation emails aren't sending even after the capture technician confirmed availability - job status stuck in-progress. Root cause traced to Zapier not reading the CT's Accept/Decline decision.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/28",
-      "note": "Adjet pushed the CT submission through manually and cleared Send-CT-Email so Stephenie can resolve the scheduled time before the email goes out. Next action is on Stephenie.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#2980B9",
-      "summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records - same shape as two prior Lennar recurrences (COP-1954, COP-1974), now on a new client.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/28",
-      "jiraKey": "COP-2016",
-      "note": "Caitlin already fixed the codes manually; ticket is to find why the automation didn't fire and whether it's a shared cross-client root cause. Owed by Ricardo/eng.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#16A085",
-      "summary": "Vacasa wants a required Number of Bedrooms dropdown (0-20) added to their order form, mapped to Airtable's existing Number of Rooms field, visible in the Vacasa 2.0 AT view and View Only - All Jobs view.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/28",
-      "jiraKey": "COP-2017",
-      "note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Owed by Ricardo/eng.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
-    }
-  ]
+"lastUpdated": "2026-07-28T14:20:00-07:00",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#8E44AD",
+"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) - an automation re-added $150 a month after it was removed, and Validated Job Rate needs to be locked once accounting signs off.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/24",
+"jiraKey": "COP-2014",
+"note": "Ticket in To Do queue - Ricardo offered yesterday to remove the $150 fee in the meantime; still awaiting Kailyn's reply on that offer. Owed by Kailyn/Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+},
+{
+"author": "Stephenie Yong",
+"initials": "SY",
+"color": "#D35400",
+"summary": "Livit project confirmation emails aren't sending even after the capture technician confirmed availability - job status stuck in-progress. 3rd recurrence of this bug class (COP-1994).",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/28",
+"note": "Adjet plans to migrate this client (and any others on the old form) to the new one via a new Jira. Ricardo asked Stephenie to align with the tech on a future date and re-trigger the email automation - next action is on Stephenie.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785235352753"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#2980B9",
+"summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records - same shape as two prior Lennar recurrences (COP-1954, COP-1974), now on a new client.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/28",
+"jiraKey": "COP-2016",
+"note": "Caitlin already fixed the codes manually; ticket is to find why the automation didn't fire and whether it's a shared cross-client root cause. Owed by Ricardo/eng.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#16A085",
+"summary": "Vacasa wants a required Number of Bedrooms dropdown (0-20) added to their order form, mapped to Airtable's existing Number of Rooms field, visible in the Vacasa 2.0 AT view and View Only - All Jobs view.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/28",
+"jiraKey": "COP-2017",
+"note": "Requested by Aug 1 (Aug 3 latest). Needs care since Number of Rooms is already used for Livit orders. Owed by Ricardo/eng.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#8E44AD",
+"summary": "Wants the Assigned Capture Coordinator CC'd on YOUR CAPTURE SCAN REQUEST emails (now that every MP Client has one), plus a new Reply-All reminder bullet at the top of the Important Reminders section.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/28",
+"jiraKey": "COP-2018",
+"note": "Two-part email automation + template change. Owed by Ricardo/eng.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785272391846"
+}
+]
 }
