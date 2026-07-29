@@ -1,63 +1,63 @@
 {
-  "lastUpdated": "2026-07-29T08:10:00-07:00",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#f59e0b",
-      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation silently re-added a $150 fee; needs both a record correction and a guard so validated rates can't be overwritten.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before making the correction.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#f59e0b",
-      "summary": "Proposal to stop auto-calculating travel distance/fees on *SHOOT2 lines, or split *SHOOT2 into no-charge vs charge-client variants with distinct Job ID suffixes.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/23",
-      "note": "Ricardo set up a call next week to review the entire adjustment workflow including this proposal; no ticket yet pending that discussion.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#14b8a6",
-      "summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records; manually corrected but automation gap needs a fix.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/28",
-      "jiraKey": "COP-2016",
-      "note": "3rd occurrence of this shape of bug (2x Lennar, now Cushman & Wakefield) - Ricardo investigating whether there's a shared root cause across client Zaps.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#3b82f6",
-      "summary": "Vacasa wants a required \"Number of Bedrooms\" (0-20) field added to their order form, mapped to Airtable's {Number of Rooms} field, targeting Aug 1-3.",
-      "statusCls": "badge-investigating",
-      "status": "In progress",
-      "date": "7/28",
-      "jiraKey": "COP-2017",
-      "note": "Snehal is building the field on a test Jotform for John to review before mapping it into Airtable; requirements clarified after some back-and-forth.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#ec4899",
-      "summary": "CT confirmation email showed EUR 700.80 vs EUR 600 in Airtable for a Bologna hotel job; root cause was a Hotel Pools line item added to the wrong parent record/Job ID.",
-      "statusCls": "badge-investigating",
-      "status": "Fixing now",
-      "date": "7/28",
-      "note": "Ricardo identified the Hotel Pools line item was sharing a Livit Job ID with an unrelated job and is splitting it into its own parent record now.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
-    }
-  ]
+"lastUpdated": "2026-07-29T08:15:00-07:00",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#f59e0b",
+"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation silently re-added a $150 fee; needs both a record correction and a guard so validated rates can't be overwritten.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/24",
+"jiraKey": "COP-2014",
+"note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before making the correction.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#f59e0b",
+"summary": "Proposal to stop auto-calculating travel distance/fees on *SHOOT2 lines, or split *SHOOT2 into no-charge vs charge-client variants with distinct Job ID suffixes.",
+"statusCls": "badge-waiting",
+"status": "Waiting on scheduled call",
+"date": "7/23",
+"note": "Ricardo set up a call next week to review the entire adjustment workflow including this proposal; no ticket yet pending that discussion.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#14b8a6",
+"summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records; manually corrected but automation gap needs a fix.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/28",
+"jiraKey": "COP-2016",
+"note": "3rd occurrence of this shape of bug (2x Lennar, now Cushman & Wakefield) - Ricardo investigating whether there's a shared root cause across client Zaps.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#3b82f6",
+"summary": "Vacasa wants a required \"Number of Bedrooms\" (0-20) field added to their order form, mapped to Airtable's {Number of Rooms} field, targeting Aug 1-3.",
+"statusCls": "badge-investigating",
+"status": "In progress",
+"date": "7/28",
+"jiraKey": "COP-2017",
+"note": "Snehal is building the field on a test Jotform for John to review before mapping it into Airtable; requirements clarified after some back-and-forth.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
+},
+{
+"author": "Stephenie Yong",
+"initials": "SY",
+"color": "#ec4899",
+"summary": "CT confirmation email showed EUR 700.80 vs EUR 600 in Airtable for a Bologna hotel job; root cause was a Hotel Pools line item sharing a Livit Job ID with an unrelated job instead of getting its own parent record.",
+"statusCls": "badge-investigating",
+"status": "Fixing now",
+"date": "7/28",
+"note": "Ricardo confirmed the root cause to Stephenie this morning and said he'll fix it by giving the Hotel Pools line item its own parent record; fix not yet applied.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
+}
+]
 }
