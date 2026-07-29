@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-28T17:07:25-07:00",
+"lastUpdated": "2026-07-28T18:10:28-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -34,20 +34,31 @@
 "status": "Waiting on Snehal",
 "date": "7/28",
 "jiraKey": "COP-2017",
-"note": "Requested by Aug 1 (Aug 3 latest). Snehal and John are aligning on scope live in-thread (bedrooms field is separate from sqft) before Snehal maps it to Airtable. Owed by Snehal.",
+"note": "Requested by Aug 1 (Aug 3 latest). Snehal identified the correct legacy Jotform to update after initial confusion over which form and confirmed she'll make the change. Owed by Snehal.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
 },
 {
 "author": "Kailyn Jelniker",
 "initials": "KJ",
 "color": "#8E44AD",
-"summary": "Wants [Currency] added next to pricing fields in customer-facing confirmation/reminder emails (Capture Requestor & On-Site Contact only, not CT emails).",
-"statusCls": "badge-todo",
-"status": "To Do",
-"date": "7/28",
-"jiraKey": "COP-2020",
-"note": "Ticket in To Do queue, assigned to Ricardo. Owed by Ricardo/eng.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785274748807"
+"summary": "Proposal to split *SHOOT2 adjustment lines into two distinct options - RESHOOT No Charge to Client (no travel calc) vs RESHOOT Charge Client (normal travel calc) - with different Job ID suffixes for each.",
+"statusCls": "badge-waiting",
+"status": "On hold - call pending",
+"date": "7/23",
+"note": "No Jira yet. Ricardo set up a call to review the entire adjustment/Finance Adjustments workflow together, including this proposal - call hasn't happened yet. Owed by Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#D35400",
+"summary": "Client-facing travel charge needed removal from a Zumper *SHOOT2 reshoot line while still paying the tech for travel; broader ask to stop auto-calculating Total Travel Distance on any Job ID containing an asterisk.",
+"statusCls": "badge-waiting",
+"status": "On hold - workflow call pending",
+"date": "7/22",
+"jiraKey": "COP-2011",
+"note": "Client-facing charge was removed same day. The broader automation fix is on hold pending the same adjustment-workflow call referenced in Kailyn's Shoot2 proposal thread. Owed by Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784755198665"
 }
 ]
 }
