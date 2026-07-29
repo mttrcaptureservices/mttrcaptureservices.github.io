@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-29T08:15:00-07:00",
+"lastUpdated": "2026-07-29T10:09:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -45,7 +45,7 @@
 "status": "In progress",
 "date": "7/28",
 "jiraKey": "COP-2017",
-"note": "Snehal is building the field on a test Jotform for John to review before mapping it into Airtable; requirements clarified after some back-and-forth.",
+"note": "Snehal is actively building/updating the Jotform field for John to review before mapping it into Airtable; Jira status now shows In Progress.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
 },
 {
@@ -56,7 +56,7 @@
 "statusCls": "badge-investigating",
 "status": "Fixing now",
 "date": "7/28",
-"note": "Ricardo confirmed the root cause to Stephenie this morning and said he'll fix it by giving the Hotel Pools line item its own parent record; fix not yet applied.",
+"note": "Ricardo and Stephenie went back and forth this morning on how to split the Hotel Pools line into its own parent record; Ricardo just confirmed (7:53am) the standalone record was incorrectly sharing a Livit Job ID and said he'll fix it - fix not yet applied.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
 }
 ]
