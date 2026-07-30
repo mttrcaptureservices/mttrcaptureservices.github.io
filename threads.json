@@ -1,63 +1,62 @@
 {
-"lastUpdated": "2026-07-29T10:09:00-07:00",
-"threads": [
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#f59e0b",
-"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) after an automation silently re-added a $150 fee; needs both a record correction and a guard so validated rates can't be overwritten.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/24",
-"jiraKey": "COP-2014",
-"note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before making the correction.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#f59e0b",
-"summary": "Proposal to stop auto-calculating travel distance/fees on *SHOOT2 lines, or split *SHOOT2 into no-charge vs charge-client variants with distinct Job ID suffixes.",
-"statusCls": "badge-waiting",
-"status": "Waiting on scheduled call",
-"date": "7/23",
-"note": "Ricardo set up a call next week to review the entire adjustment workflow including this proposal; no ticket yet pending that discussion.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#14b8a6",
-"summary": "New Cushman & Wakefield job came in with Price Code Lookup / Price Code Lookup CT blank on both parent and child records; manually corrected but automation gap needs a fix.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/28",
-"jiraKey": "COP-2016",
-"note": "3rd occurrence of this shape of bug (2x Lennar, now Cushman & Wakefield) - Ricardo investigating whether there's a shared root cause across client Zaps.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785267240243"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#3b82f6",
-"summary": "Vacasa wants a required \"Number of Bedrooms\" (0-20) field added to their order form, mapped to Airtable's {Number of Rooms} field, targeting Aug 1-3.",
-"statusCls": "badge-investigating",
-"status": "In progress",
-"date": "7/28",
-"jiraKey": "COP-2017",
-"note": "Snehal is actively building/updating the Jotform field for John to review before mapping it into Airtable; Jira status now shows In Progress.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785268123547"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#ec4899",
-"summary": "CT confirmation email showed EUR 700.80 vs EUR 600 in Airtable for a Bologna hotel job; root cause was a Hotel Pools line item sharing a Livit Job ID with an unrelated job instead of getting its own parent record.",
-"statusCls": "badge-investigating",
-"status": "Fixing now",
-"date": "7/28",
-"note": "Ricardo and Stephenie went back and forth this morning on how to split the Hotel Pools line into its own parent record; Ricardo just confirmed (7:53am) the standalone record was incorrectly sharing a Livit Job ID and said he'll fix it - fix not yet applied.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
-}
-]
+  "lastUpdated": "2026-07-29T21:45:00-07:00",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8B5CF6",
+      "summary": "Welltower flagged an invoice mismatch: their invoice showed $1,253 but Validated Job Rate in Airtable showed $1,403, after an automation silently re-added $150 a month after it had been removed.",
+      "statusCls": "badge-todo",
+      "status": "To Do",
+      "date": "7/24",
+      "jiraKey": "COP-2014",
+      "note": "Still To Do in Jira as of 7/29 — needs the Welltower record corrected back to $1,253 and a guard built so Validated Job Rate can't be silently overwritten post-validation. Owned by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8B5CF6",
+      "summary": "Proposed splitting Shoot2 lines into RESHOOT-No-Charge-to-Client vs RESHOOT-Charge-Client variants, each with different travel-distance calculation and Job ID format.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on scheduled call",
+      "date": "7/23",
+      "note": "Ricardo set up a call next week to go over the entire adjustment workflow including this proposal; no Jira ticket yet, on hold pending that discussion.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#0EA5E9",
+      "summary": "Automation assigned the wrong CT (Jacksonville, NC) to a job actually located in Jacksonville Beach, FL. She manually corrected the CT but flagged the recurring wrong-auto-assignment pattern.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/29",
+      "note": "Adjet Kodia is taking a look; likely the same root-cause family as the COP-1888/1956 City Link mismatch bugs.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785351447659"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#F97316",
+      "summary": "Job JOBID6582055306817720338 paid out $6,400 under price code INGPC1 after the client's country was corrected from India, but the technician says he hasn't actually received payment.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Accounting",
+      "date": "7/29",
+      "note": "Kailyn is checking with Accounting on what was actually paid before deciding between a -$6,400 adjustment or another fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#22C55E",
+      "summary": "Legacy Spec Ops base was posting the job submission date instead of the technician's chosen schedule date/time when jobs were accepted, affecting ~19 subway jobs.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed, confirming",
+      "date": "7/29",
+      "jiraKey": "COP-2024",
+      "note": "Adjet found and fixed the underlying Zapier issue; waiting on Troy to confirm whether the already-affected jobs still need manual date correction.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785368003479"
+    }
+  ]
 }
