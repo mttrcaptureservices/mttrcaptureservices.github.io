@@ -1,62 +1,96 @@
 {
-  "lastUpdated": "2026-07-29T21:45:00-07:00",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8B5CF6",
-      "summary": "Welltower flagged an invoice mismatch: their invoice showed $1,253 but Validated Job Rate in Airtable showed $1,403, after an automation silently re-added $150 a month after it had been removed.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Still To Do in Jira as of 7/29 — needs the Welltower record corrected back to $1,253 and a guard built so Validated Job Rate can't be silently overwritten post-validation. Owned by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8B5CF6",
-      "summary": "Proposed splitting Shoot2 lines into RESHOOT-No-Charge-to-Client vs RESHOOT-Charge-Client variants, each with different travel-distance calculation and Job ID format.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on scheduled call",
-      "date": "7/23",
-      "note": "Ricardo set up a call next week to go over the entire adjustment workflow including this proposal; no Jira ticket yet, on hold pending that discussion.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#0EA5E9",
-      "summary": "Automation assigned the wrong CT (Jacksonville, NC) to a job actually located in Jacksonville Beach, FL. She manually corrected the CT but flagged the recurring wrong-auto-assignment pattern.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/29",
-      "note": "Adjet Kodia is taking a look; likely the same root-cause family as the COP-1888/1956 City Link mismatch bugs.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785351447659"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#F97316",
-      "summary": "Job JOBID6582055306817720338 paid out $6,400 under price code INGPC1 after the client's country was corrected from India, but the technician says he hasn't actually received payment.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Accounting",
-      "date": "7/29",
-      "note": "Kailyn is checking with Accounting on what was actually paid before deciding between a -$6,400 adjustment or another fix.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#22C55E",
-      "summary": "Legacy Spec Ops base was posting the job submission date instead of the technician's chosen schedule date/time when jobs were accepted, affecting ~19 subway jobs.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed, confirming",
-      "date": "7/29",
-      "jiraKey": "COP-2024",
-      "note": "Adjet found and fixed the underlying Zapier issue; waiting on Troy to confirm whether the already-affected jobs still need manual date correction.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785368003479"
-    }
-  ]
+"lastUpdated": "2026-07-30T13:35:00-07:00",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#8B5CF6",
+"summary": "Welltower flagged an invoice mismatch: their invoice showed $1,253 but Validated Job Rate in Airtable showed $1,403, after an automation silently re-added $150 a month after it had been removed.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/24",
+"jiraKey": "COP-2014",
+"note": "Still To Do in Jira. Ricardo asked Kailyn if she'd like the $150 removed in the meantime; awaiting her reply.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#8B5CF6",
+"summary": "Proposed splitting Shoot2 lines into RESHOOT-No-Charge-to-Client vs RESHOOT-Charge-Client variants, each with different travel-distance calculation and Job ID format.",
+"statusCls": "badge-waiting",
+"status": "Waiting on scheduled call",
+"date": "7/23",
+"note": "No Jira ticket yet, on hold pending Ricardo's workflow discussion with the team.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784832069623"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#0EA5E9",
+"summary": "Automation assigned the wrong CT (Jacksonville, NC) to a job actually located in Jacksonville Beach, FL. She manually corrected the CT but flagged the recurring wrong-auto-assignment pattern.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/29",
+"note": "Adjet traced it to a concatenated lat-long value on the Jacksonville, NC scheduling card and is checking for other affected cities.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785351447659"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#F97316",
+"summary": "Job JOBID6582055306817720338 paid out $6,400 under price code INGPC1 after the client's country was corrected from India, but the technician (Bryan Coultard) hadn't received payment.",
+"statusCls": "badge-waiting",
+"status": "Waiting on Kailyn",
+"date": "7/29",
+"note": "Accounting confirmed the $6,400 was paid to Bryan Coultard on 7/6 (should've been $120); Kailyn is messaging him about the $6,280 deduction from his next payout.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
+},
+{
+"author": "Troy Lowry",
+"initials": "TL",
+"color": "#22C55E",
+"summary": "Legacy Spec Ops base was posting the job submission date instead of the technician's chosen schedule date/time when jobs were accepted, affecting ~19 subway jobs.",
+"statusCls": "badge-fix-deployed",
+"status": "Fix deployed, confirming",
+"date": "7/29",
+"jiraKey": "COP-2024",
+"note": "Adjet found and fixed the underlying Zapier regex bug; waiting on Troy to confirm whether already-affected jobs need manual date correction.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785368003479"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#EAB308",
+"summary": "Vacasa wants the \"Full Property\" 3D tour option removed from their order form, dropping to a 2-column layout (Interior-Only / Interior + Exterior Perimeter) with updated copy per his mockup.",
+"statusCls": "badge-todo",
+"status": "To Do",
+"date": "7/30",
+"jiraKey": "COP-2026",
+"note": "Ticket created and linked back to John; implementation (form edit) still to be done. Owned by Ricardo.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785426223445"
+},
+{
+"author": "Stephenie Yong",
+"initials": "SY",
+"color": "#EC4899",
+"summary": "After the EUR 700.80 vs EUR 600 confirmation-email mismatch was fixed on JOBID6610549953028075881, a follow-up surfaced: Job Rate/CT Rate briefly showed $0.00 despite a valid price code.",
+"statusCls": "badge-waiting",
+"status": "Awaiting confirmation",
+"date": "7/29",
+"note": "Ricardo confirmed record 91343 now shows correct Job Rate ($1,198) and CT Rate ($680) and asked Stephenie to confirm on her end — likely a sync delay, not a data issue.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
+},
+{
+"author": "Ryan Morrow",
+"initials": "RM",
+"color": "#14B8A6",
+"summary": "JOBID6612469501023269555's job-request email to the CT never arrived, despite the system showing two emails sent successfully.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/30",
+"note": "Thread had a checkmark reaction from Ricardo's initial reply, but Ryan says the emails never reached his inbox — reopened, Ricardo actively digging in.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785440033591"
+}
+]
 }
