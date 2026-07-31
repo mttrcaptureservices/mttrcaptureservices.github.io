@@ -1,63 +1,63 @@
 {
-  "lastUpdated": "2026-07-31T00:10:42.000Z",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#F59E0B",
-      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) — an automation re-added a $150 fee a month after it was removed, and Validated Job Rate needs to be locked once accounting has signed off.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/24",
-      "jiraKey": "COP-2014",
-      "note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before touching the record; root-cause fix still To Do.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#EF4444",
-      "summary": "Technician on JOBID6582055306817720338 flagged they hadn't been paid; payout was showing $6,400 against an INGPC1 price code that looked wrong.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/29",
-      "note": "Accounting confirmed tech Bryan Coultard was paid $6,400 (should have been $120); Freddy confirmed his identity. Still owed: message the tech about the $6,280 deduction from his next payout — on Freddy/Kailyn, not Clark.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#8B5CF6",
-      "summary": "CT confirmation email for JOBID6610549953028075881 showed EUR 700.80 vs EUR 600 in Airtable, then a follow-up where the amount briefly populated as $0.00.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "7/28",
-      "note": "Ricardo pulled record 91343 directly — Job Rate $1,198.00 / CT Rate $680.00 now match the sibling record on the same price code; waiting on Stephenie to refresh her view and confirm it looks correct now.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#3B82F6",
-      "summary": "Vacasa wants the \"Full Property\" 3D tour option removed from the order form, dropped to a 2-column layout, with updated copy under the remaining options.",
-      "statusCls": "badge-todo",
-      "status": "In queue",
-      "date": "7/30",
-      "jiraKey": "COP-2026",
-      "note": "Ticket created and link shared with John; work is in the queue, no ETA confirmed yet against his requested Aug 1–3 target.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785426223445"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#10B981",
-      "summary": "UDR reports scan requirements duplicated on the appointment emails they receive — flagged as an ongoing issue.",
-      "statusCls": "badge-todo",
-      "status": "In queue",
-      "date": "7/30",
-      "jiraKey": "COP-2030",
-      "note": "Confirmed root cause against JOBID6611935041228371730: the email template renders the Scan Requirements text twice (top-level summary + per-unit table) on single-unit jobs. Ticket created, template fix still To Do.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785445049232"
-    }
-  ]
+"lastUpdated": "2026-07-31T00:18:13.000Z",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#F59E0B",
+"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) — an automation re-added a $150 fee a month after it was removed, and Validated Job Rate needs to be locked once accounting has signed off.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/24",
+"jiraKey": "COP-2014",
+"note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before touching the record; root-cause fix still To Do.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
+},
+{
+"author": "Freddy Arias",
+"initials": "FA",
+"color": "#EF4444",
+"summary": "Technician on JOBID6582055306817720338 flagged they hadn't been paid; payout was showing $6,400 against an INGPC1 price code that looked wrong.",
+"statusCls": "badge-investigating",
+"status": "Investigating",
+"date": "7/29",
+"note": "Accounting confirmed tech Bryan Coultard was paid $6,400 (should have been $120); Freddy confirmed his identity. Still owed: message the tech about the $6,280 deduction from his next payout — on Freddy/Kailyn, not Clark.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
+},
+{
+"author": "Stephenie Yong",
+"initials": "SY",
+"color": "#8B5CF6",
+"summary": "CT confirmation email for JOBID6610549953028075881 showed EUR 700.80 vs EUR 600 in Airtable, then a follow-up where the amount briefly populated as $0.00.",
+"statusCls": "badge-waiting",
+"status": "Awaiting confirmation",
+"date": "7/28",
+"note": "Ricardo pulled record 91343 directly — Job Rate $1,198.00 / CT Rate $680.00 now match the sibling record on the same price code; waiting on Stephenie to refresh her view and confirm it looks correct now.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
+},
+{
+"author": "John Bosch",
+"initials": "JB",
+"color": "#3B82F6",
+"summary": "Vacasa wants the \"Full Property\" 3D tour option removed from the order form, dropped to a 2-column layout, with updated copy under the remaining options.",
+"statusCls": "badge-todo",
+"status": "In queue",
+"date": "7/30",
+"jiraKey": "COP-2026",
+"note": "Ticket created and link shared with John; work is in the queue, no ETA confirmed yet against his requested Aug 1–3 target.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785426223445"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#10B981",
+"summary": "UDR reports scan requirements duplicated on the appointment emails they receive — flagged as an ongoing issue.",
+"statusCls": "badge-todo",
+"status": "In queue",
+"date": "7/30",
+"jiraKey": "COP-2030",
+"note": "Confirmed root cause against JOBID6611935041228371730: the email template renders the Scan Requirements text twice (top-level summary + per-unit table) on single-unit jobs. Ticket created, template fix still To Do.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785445049232"
+}
+]
 }
