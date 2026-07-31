@@ -1,51 +1,39 @@
 {
-  "lastUpdated": "2026-07-31T17:13:22Z",
+  "lastUpdated": "2026-07-31T18:10:00-07:00",
   "threads": [
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#1abc9c",
-      "summary": "Can't select any NORAM Capture Technicians when assigning pending Airbnb jobs under the International Base.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/31",
-      "note": "Asked Juyoung for one specific Job ID so the CT linked-record filter on the International Base record can be checked directly.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785504339566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785504339566&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785504339566&ngc=true"
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#e67e22",
-      "summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403); automation silently re-added a $150 fee a month after it was removed.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
+      "summary": "Welltower invoice shows $1,253 but Validated Job Rate in Airtable shows $1,403 — an automation re-added a $150 fee a month after it had been removed. Wants Validated Job Rate locked once accounting has validated a job's price.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "7/24",
       "jiraKey": "COP-2014",
-      "note": "Ricardo asked Kailyn whether to remove the $150 fee in the meantime (Mon 4:11 PM) - no reply yet. Owed by Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#3498db",
-      "summary": "Wrong-country Price Code Lookup CT caused a $6,280 payout overstatement on JOBID6582055306817720338 (Legacy Wireless Solutions).",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "7/29",
-      "jiraKey": "COP-2023",
-      "note": "Adjet identified the true root cause (stale price code after a post-arrival country correction) and is fixing directly; Kailyn is having Freddy log a manual PAYISSUE adjustment in the meantime. Owed by Adjet/Freddy.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785355282529&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785355282529&ngc=true"
+      "note": "Ricardo asked Kailyn (Mon 4:11 PM) whether to remove the $150 fee in the meantime — still no reply from Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#9b59b6",
-      "summary": "CT confirmation email showed EUR 700.80 capture payout vs EUR 600 in Airtable for JOBID6610549953028075881; rates weren't syncing to the scheduling view for over 24 hours.",
+      "summary": "CT confirmation email for JOBID6610549953028075881 shows EUR 700.80 payout while Airtable shows EUR 600; now escalated to Job Rate/CT Rate both showing 0.00 in her scheduling-base view for over 24 hours, with Juyoung seeing the same zeros.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/29",
+      "note": "Ricardo is actively live-replying in-thread today (8:42 AM and 10:34 AM 'please check again') — owned by Ricardo, no Clark action needed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#1abc9c",
+      "summary": "Can no longer select any NORAM Capture Technicians when assigning pending Airbnb jobs under the International Base (CS - International Airtable base).",
       "statusCls": "badge-waiting",
-      "status": "Waiting on Ricardo",
-      "date": "7/28",
-      "note": "Ricardo replied live in-thread today (8:42 AM) that he'll review it today; standing down per prior guidance to avoid a duplicate reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
+      "status": "Waiting on requester",
+      "date": "7/31",
+      "note": "Ricardo asked for one specific Job ID (10:09 AM) to pull the record and check the CT linked-record filter — no reply from Juyoung yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785504339566"
     }
   ]
 }
