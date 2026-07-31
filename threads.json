@@ -1,51 +1,40 @@
 {
-"lastUpdated": "2026-07-31T05:57:50.000Z",
-"threads": [
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#F59E0B",
-"summary": "Welltower invoice ($1,253) doesn't match Validated Job Rate ($1,403) — an automation re-added a $150 fee a month after it was removed, and Validated Job Rate needs to be locked once accounting has signed off.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/24",
-"jiraKey": "COP-2014",
-"note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before touching the record; root-cause fix still To Do (reconfirmed via Jira, unchanged since 7/24).",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
-},
-{
-"author": "Freddy Arias",
-"initials": "FA",
-"color": "#EF4444",
-"summary": "Technician on JOBID6582055306817720338 flagged they hadn't been paid; payout was showing $6,400 against an INGPC1 price code that looked wrong.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "7/29",
-"note": "Accounting confirmed tech Bryan Coultard was paid $6,400 (should have been $120); Freddy confirmed his identity. Still owed: message the tech about the $6,280 deduction from his next payout — on Freddy/Kailyn, not Clark.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#8B5CF6",
-"summary": "CT confirmation email for JOBID6610549953028075881 showed EUR 700.80 vs EUR 600 in Airtable, then a follow-up where the amount briefly populated as $0.00.",
-"statusCls": "badge-waiting",
-"status": "Awaiting confirmation",
-"date": "7/28",
-"note": "Ricardo pulled record 91343 directly — Job Rate $1,198.00 / CT Rate $680.00 now match the sibling record on the same price code; waiting on Stephenie to refresh her view and confirm it looks correct now.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652"
-},
-{
-"author": "John Bosch",
-"initials": "JB",
-"color": "#3B82F6",
-"summary": "Vacasa wants the \"Full Property\" 3D tour option removed from the order form, dropped to a 2-column layout, with updated copy under the remaining options.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/30",
-"jiraKey": "COP-2026",
-"note": "Ticket created and link shared with John; work is in the queue (reconfirmed via Jira, still To Do), no ETA confirmed yet against his requested Aug 1–3 target.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785426223445"
-}
-]
+  "lastUpdated": "2026-07-31T16:12:44Z",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#e67e22",
+      "summary": "Welltower invoice ($1,253) doesn't match the Validated Job Rate shown in Airtable ($1,403) — an automation silently re-added $150 a month after a separate automation had removed it.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "7/24",
+      "jiraKey": "COP-2014",
+      "note": "Jira still To Do, unchanged since 7/24. Ricardo offered to remove the $150 fee in the meantime — waiting on Kailyn's reply on whether to do that now.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1784915062680&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1784915062680&ngc=true"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#3498db",
+      "summary": "Technician on JOBID6582055306817720338 wasn't paid; the stored payout showed $6,400 due to a wrong-country Price Code Lookup CT (INGPC1/India instead of USGPC1/US).",
+      "statusCls": "badge-todo",
+      "status": "Fix in progress",
+      "date": "7/29",
+      "jiraKey": "COP-2023",
+      "note": "Adjet is correcting the Price Code Lookup CT link; Jira updated today (8:51 AM) but still To Do. Owned by Adjet, not blocked on Clark/Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785355282529?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785355282529&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785355282529&ngc=true"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#9b59b6",
+      "summary": "CT confirmation email shows capture payout EUR 700.80 while Airtable shows EUR 600 for JOBID6610549953028075881; her scheduling-base view has also been showing zero rates for over 24 hours.",
+      "statusCls": "badge-waiting",
+      "status": "Ricardo live in-thread",
+      "date": "7/28",
+      "note": "Ricardo replied live in-thread today (8:42 AM PT) that he'll review it today — standing down per live-ownership rule; not a Clark-owned action item right now.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
+    }
+  ]
 }
