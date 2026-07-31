@@ -1,50 +1,61 @@
 {
-  "lastUpdated": "2026-07-31T14:15:00-07:00",
-  "threads": [
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#4A90D9",
-      "summary": "Has pending Airbnb jobs needing technician assignment but is unable to select any NORAM CTs under the International Base.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/31",
-      "note": "Ricardo asked for a specific Job ID so he can check the CT linked-record filter for the International Base; next action is on Juyoung.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785504339566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785504339566&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785504339566&ngc=true"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#E07B39",
-      "summary": "Chewy account's 2.0 form selection generates a short link to the old JOT form instead of the new one, blocking the client from collecting additional order details.",
-      "statusCls": "badge-investigating",
-      "status": "Awaiting confirmation",
-      "date": "7/31",
-      "note": "Ricardo clarified the two short links route to different forms (KPS Spec Ops vs Chewy); Troy still needs the new-format JOT form enabled for Chewy and hasn't confirmed next steps.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#C0392B",
-      "summary": "Scheduling-base view still shows $0.00 Job Rate / $0.01 CT Rate for JOBID6610549953028075881 more than 24 hours after the Parent Base value was corrected; confirmation email payout mismatch also reported.",
-      "statusCls": "badge-investigating",
-      "status": "Ricardo reviewing",
-      "date": "7/28",
-      "note": "Ricardo replied \"please check again\" at 10:34 AM; waiting on Stephenie to confirm whether the sync issue is resolved.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#27AE60",
-      "summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT-specific price code, requiring manual correction (JOBID6613285053015745534).",
-      "statusCls": "badge-todo",
-      "status": "Ticket created",
-      "date": "7/31",
-      "jiraKey": "COP-2033",
-      "note": "Jira ticket COP-2033 created and linked in the thread (assigned to Ricardo, To Do); fix is queued, no further action needed from Caitlin right now.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
-    }
-  ]
+"lastUpdated": "2026-07-31T15:13:20-07:00",
+"threads": [
+{
+"author": "Juyoung Jang",
+"initials": "JJ",
+"color": "#4A90D9",
+"summary": "Has pending Airbnb jobs needing technician assignment but is unable to select any NORAM CTs under the International Base.",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
+"date": "7/31",
+"note": "Ricardo asked for a specific Job ID so he can check the CT linked-record filter for the International Base; still no reply from Juyoung as of this run.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785504339566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785504339566&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785504339566&ngc=true"
+},
+{
+"author": "Troy Lowry",
+"initials": "TL",
+"color": "#E07B39",
+"summary": "Chewy account's 2.0 form selection generates a short link to the old JOT form instead of the new one, blocking the client from collecting additional order details.",
+"statusCls": "badge-investigating",
+"status": "Needs decision",
+"date": "7/31",
+"note": "Troy clarified at 2:27 PM that both links should route to the same (newer) JOT form template - the Chewy form is the outdated one and needs to be swapped for the version used for KPS. Ricardo is currently live-discussing the related Legacy-vs-2.0 routing issue with Adjet in a sibling thread; standing down this run to avoid duplicating that effort.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
+},
+{
+"author": "Troy Lowry",
+"initials": "TL",
+"color": "#E07B39",
+"summary": "Test submissions of the 2.0 JOT form for this MO client were delivered to the Legacy base instead of the 2.0 base, breaking the pattern of prior submissions.",
+"statusCls": "badge-investigating",
+"status": "Ricardo & Adjet investigating live",
+"date": "7/31",
+"note": "Adjet found two Zapier submissions 1 minute apart - the regular on-contract zap filtered the job out, but the Spec-Ops on-contract zap (pointed at the Legacy table, unmaintained since 2025) processed it. Ricardo and Adjet are actively working through the two-spec-ops-paths root cause together as of 2:52 PM; no action needed from Clark this run.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525027878?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525027878&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525027878&ngc=true"
+},
+{
+"author": "Stephenie Yong",
+"initials": "SY",
+"color": "#C0392B",
+"summary": "Scheduling-base view still shows $0.00 Job Rate / $0.01 CT Rate for JOBID6610549953028075881 more than 24 hours after the Parent Base value was corrected; confirmation email payout mismatch also reported.",
+"statusCls": "badge-investigating",
+"status": "Ricardo reviewing",
+"date": "7/28",
+"note": "Ricardo replied \"please check again\" at 10:34 AM; still waiting on Stephenie to confirm whether the sync issue is resolved.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#27AE60",
+"summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT-specific price code, requiring manual correction (JOBID6613285053015745534).",
+"statusCls": "badge-todo",
+"status": "Ticket created",
+"date": "7/31",
+"jiraKey": "COP-2033",
+"note": "Jira ticket COP-2033 created and linked in the thread (assigned to Ricardo, To Do); fix is queued, no further action needed from Caitlin right now.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
+}
+]
 }
