@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-31T00:18:13.000Z",
+"lastUpdated": "2026-07-31T05:50:46.000Z",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
 "status": "Waiting on requester",
 "date": "7/24",
 "jiraKey": "COP-2014",
-"note": "Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before touching the record; root-cause fix still To Do.",
+"note": "Still To Do in Jira as of 7/30. Ricardo offered to remove the $150 fee in the meantime and is waiting on Kailyn to confirm before touching the record; root-cause fix still To Do.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1784915062680"
 },
 {
@@ -46,18 +46,6 @@
 "jiraKey": "COP-2026",
 "note": "Ticket created and link shared with John; work is in the queue, no ETA confirmed yet against his requested Aug 1–3 target.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785426223445"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#10B981",
-"summary": "UDR reports scan requirements duplicated on the appointment emails they receive — flagged as an ongoing issue.",
-"statusCls": "badge-todo",
-"status": "In queue",
-"date": "7/30",
-"jiraKey": "COP-2030",
-"note": "Confirmed root cause against JOBID6611935041228371730: the email template renders the Scan Requirements text twice (top-level summary + per-unit table) on single-unit jobs. Ticket created, template fix still To Do.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785445049232"
 }
 ]
 }
