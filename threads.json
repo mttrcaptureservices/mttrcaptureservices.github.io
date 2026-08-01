@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-07-31T15:13:20-07:00",
+"lastUpdated": "2026-07-31T22:14:52-07:00",
 "threads": [
 {
 "author": "Juyoung Jang",
@@ -17,10 +17,11 @@
 "initials": "TL",
 "color": "#E07B39",
 "summary": "Chewy account's 2.0 form selection generates a short link to the old JOT form instead of the new one, blocking the client from collecting additional order details.",
-"statusCls": "badge-investigating",
-"status": "Needs decision",
+"statusCls": "badge-todo",
+"status": "Ticket created",
 "date": "7/31",
-"note": "Troy clarified at 2:27 PM that both links should route to the same (newer) JOT form template - the Chewy form is the outdated one and needs to be swapped for the version used for KPS. Ricardo is currently live-discussing the related Legacy-vs-2.0 routing issue with Adjet in a sibling thread; standing down this run to avoid duplicating that effort.",
+"jiraKey": "COP-2034",
+"note": "Jira ticket COP-2034 created and linked in the thread to repoint the Chewy (2) short link to the same current JOT Form version used by the KPS link (assigned to Ricardo, To Do).",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
 },
 {
@@ -29,9 +30,9 @@
 "color": "#E07B39",
 "summary": "Test submissions of the 2.0 JOT form for this MO client were delivered to the Legacy base instead of the 2.0 base, breaking the pattern of prior submissions.",
 "statusCls": "badge-investigating",
-"status": "Ricardo & Adjet investigating live",
+"status": "Waiting on requester",
 "date": "7/31",
-"note": "Adjet found two Zapier submissions 1 minute apart - the regular on-contract zap filtered the job out, but the Spec-Ops on-contract zap (pointed at the Legacy table, unmaintained since 2025) processed it. Ricardo and Adjet are actively working through the two-spec-ops-paths root cause together as of 2:52 PM; no action needed from Clark this run.",
+"note": "Adjet found two Zapier submissions 1 minute apart - the regular on-contract zap filtered the job out, but the Spec-Ops on-contract zap (pointed at the Legacy table, unmaintained since 2025) processed it. Adjet explained at 3:23 PM that the submission came from the full form URL rather than the short URL, which is why it landed in Legacy; awaiting Troy's confirmation/response.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525027878?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525027878&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525027878&ngc=true"
 },
 {
@@ -39,10 +40,10 @@
 "initials": "SY",
 "color": "#C0392B",
 "summary": "Scheduling-base view still shows $0.00 Job Rate / $0.01 CT Rate for JOBID6610549953028075881 more than 24 hours after the Parent Base value was corrected; confirmation email payout mismatch also reported.",
-"statusCls": "badge-investigating",
-"status": "Ricardo reviewing",
+"statusCls": "badge-waiting",
+"status": "Waiting on requester",
 "date": "7/28",
-"note": "Ricardo replied \"please check again\" at 10:34 AM; still waiting on Stephenie to confirm whether the sync issue is resolved.",
+"note": "Ricardo replied \"please check again\" at 10:34 AM; still waiting on Stephenie to confirm whether the sync issue is resolved (no reply as of this run, ~11 hours later).",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
 },
 {
