@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-08-03T09:47:55-07:00",
+  "lastUpdated": "2026-08-03T18:37:01Z",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#E91E63",
-      "summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT price code (came in as USGPC instead of USVHT on JOBID6613285053015745534). Caitlin fixed the record manually; the automation gap remains.",
+      "summary": "VHT tech assignment didn't auto-update {Price Code Lookup CT} to the VHT price code on JOBID6613285053015745534 — she had to correct it manually. The automation gap needs fixing so VHT assignment sets the right code automatically.",
       "statusCls": "badge-todo",
       "status": "In Jira queue",
       "date": "7/31",
       "jiraKey": "COP-2033",
-      "note": "Requester is unblocked (manual fix applied); waiting on Ricardo to fix the price-code automation — COP-2033 still To Do.",
+      "note": "Blocked on the COP-2033 automation fix (still To Do, assigned to Ricardo) — not waiting on the requester.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
     },
     {
       "author": "Troy Lowry",
       "initials": "TL",
       "color": "#FF9800",
-      "summary": "Chewy (2) On-Contract short link (go.mp/0q1nri) delivers an outdated JOT Form version without the additional-details fields; it needs to be repointed to the same current form as the KPS link (go.mp/cued5d).",
+      "summary": "Chewy (2) on-contract short link (go.mp/0q1nri) still delivers an outdated JOT Form that can't collect additional order details; it needs repointing to the same current form version as the KPS link (go.mp/cued5d).",
       "statusCls": "badge-todo",
       "status": "In Jira queue",
       "date": "7/31",
       "jiraKey": "COP-2034",
-      "note": "Waiting on Ricardo to repoint the Chewy (2) short link to the current JOT Form — COP-2034 still To Do.",
+      "note": "Blocked on the COP-2034 short-link repoint (still To Do, assigned to Ricardo) — not waiting on the requester.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
     }
   ]
