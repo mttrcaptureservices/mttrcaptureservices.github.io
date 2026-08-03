@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-08-03T18:42:54Z",
+  "lastUpdated": "2026-08-03T12:07:47-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#E91E63",
-      "summary": "VHT tech assignment didn't auto-update {Price Code Lookup CT} to the VHT price code on JOBID6613285053015745534 — she had to correct it manually. The automation gap needs fixing so VHT assignment sets the right code automatically.",
+      "color": "#C2185B",
+      "summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT price code (job JOBID6613285053015745534 came in as USGPC; Caitlin corrected it manually).",
       "statusCls": "badge-todo",
-      "status": "In Jira queue",
+      "status": "Ticket in queue",
       "date": "7/31",
       "jiraKey": "COP-2033",
-      "note": "Blocked on the COP-2033 automation fix (still To Do, assigned to Ricardo) — not waiting on the requester.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
+      "note": "Blocked on Ricardo working COP-2033 (automation gap fix); requester acknowledged and is not waiting on anything else.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993"
     },
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#FF9800",
-      "summary": "Chewy (2) on-contract short link (go.mp/0q1nri) still delivers an outdated JOT Form that can't collect additional order details; it needs repointing to the same current form version as the KPS link (go.mp/cued5d).",
+      "color": "#1976D2",
+      "summary": "Chewy (2) on-contract short link (go.mp/0q1nri) delivers an outdated JOT Form version instead of the current one used by the KPS link (go.mp/cued5d).",
       "statusCls": "badge-todo",
-      "status": "In Jira queue",
+      "status": "Ticket in queue",
       "date": "7/31",
       "jiraKey": "COP-2034",
-      "note": "Blocked on the COP-2034 short-link repoint (still To Do, assigned to Ricardo) — not waiting on the requester.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
+      "note": "Blocked on Ricardo repointing the Chewy short link to the current JOT Form (COP-2034); Jira link posted to requester 7/31.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967"
     }
   ]
 }
