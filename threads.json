@@ -1,51 +1,29 @@
 {
-"lastUpdated": "2026-07-31T22:23:12-07:00",
-"threads": [
-{
-"author": "Juyoung Jang",
-"initials": "JJ",
-"color": "#4A90D9",
-"summary": "Has pending Airbnb jobs needing technician assignment but is unable to select any NORAM CTs under the International Base.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/31",
-"note": "Ricardo asked for a specific Job ID so he can check the CT linked-record filter for the International Base; still no reply from Juyoung as of this run.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785504339566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785504339566&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785504339566&ngc=true"
-},
-{
-"author": "Troy Lowry",
-"initials": "TL",
-"color": "#E07B39",
-"summary": "Chewy account's 2.0 form selection generates a short link to the old JOT form instead of the new one, blocking the client from collecting additional order details.",
-"statusCls": "badge-todo",
-"status": "Ticket created",
-"date": "7/31",
-"jiraKey": "COP-2034",
-"note": "Jira ticket COP-2034 created and linked in the thread to repoint the Chewy (2) short link to the same current JOT Form version used by the KPS link (assigned to Ricardo, To Do).",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
-},
-{
-"author": "Stephenie Yong",
-"initials": "SY",
-"color": "#C0392B",
-"summary": "Scheduling-base view still shows $0.00 Job Rate / $0.01 CT Rate for JOBID6610549953028075881 more than 24 hours after the Parent Base value was corrected; confirmation email payout mismatch also reported.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "7/28",
-"note": "Ricardo replied \"please check again\" at 10:34 AM; still waiting on Stephenie to confirm whether the sync issue is resolved (no reply as of this run).",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785253997652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785253997652&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785253997652&ngc=true"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#27AE60",
-"summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT-specific price code, requiring manual correction (JOBID6613285053015745534).",
-"statusCls": "badge-todo",
-"status": "Ticket created",
-"date": "7/31",
-"jiraKey": "COP-2033",
-"note": "Jira ticket COP-2033 created and linked in the thread (assigned to Ricardo, To Do); fix is queued, no further action needed from Caitlin right now.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
-}
-]
+  "lastUpdated": "2026-08-03T09:47:55-07:00",
+  "threads": [
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#E91E63",
+      "summary": "VHT tech assignment doesn't auto-update the Price Code Lookup CT field to the VHT price code (came in as USGPC instead of USVHT on JOBID6613285053015745534). Caitlin fixed the record manually; the automation gap remains.",
+      "statusCls": "badge-todo",
+      "status": "In Jira queue",
+      "date": "7/31",
+      "jiraKey": "COP-2033",
+      "note": "Requester is unblocked (manual fix applied); waiting on Ricardo to fix the price-code automation — COP-2033 still To Do.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#FF9800",
+      "summary": "Chewy (2) On-Contract short link (go.mp/0q1nri) delivers an outdated JOT Form version without the additional-details fields; it needs to be repointed to the same current form as the KPS link (go.mp/cued5d).",
+      "statusCls": "badge-todo",
+      "status": "In Jira queue",
+      "date": "7/31",
+      "jiraKey": "COP-2034",
+      "note": "Waiting on Ricardo to repoint the Chewy (2) short link to the current JOT Form — COP-2034 still To Do.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
+    }
+  ]
 }
