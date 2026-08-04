@@ -1,29 +1,61 @@
 {
-  "lastUpdated": "2026-08-03T19:06:00-07:00",
+  "lastUpdated": "2026-08-04T14:35:00-07:00",
   "threads": [
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#E91E63",
-      "summary": "Assigning a VHT tech to a job doesn't auto-update {Price Code Lookup CT} to the VHT price code (e.g. USVHT) — it kept the standard code and had to be corrected manually (JOBID6613285053015745534).",
-      "statusCls": "badge-todo",
-      "status": "In queue",
-      "date": "7/31",
-      "jiraKey": "COP-2033",
-      "note": "Jira still To Do — waiting on Ricardo to investigate the price-code automation gap; nothing owed by Caitlin.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785521830993?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785521830993&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785521830993&ngc=true"
-    },
     {
       "author": "Troy Lowry",
       "initials": "TL",
       "color": "#3F51B5",
       "summary": "Chewy (2) on-contract short link (go.mp/0q1nri) still delivers the outdated JOT Form version instead of the current one used by the KPS link (go.mp/cued5d), blocking the client from ordering with additional details.",
-      "statusCls": "badge-todo",
-      "status": "Urgent — client waiting",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "7/31",
       "jiraKey": "COP-2034",
-      "note": "Troy asked for an ETA 8/3 10:20 AM (client needs the corrected form ASAP); urgency flagged on the ticket — waiting on Ricardo to repoint the short link.",
+      "note": "Troy said 8/3 9:48 PM he'll post the two form links 'so we can get aligned' — waiting on Troy, then Ricardo repoints the short link (Jira still To Do).",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#E91E63",
+      "summary": "New Cushman (C&W) jobs always come in with a blank project name (e.g. JOBID6616661699575876753) — Snehal confirmed the Project Name field never existed on the C&W NORAM form and will add it and map it through Zapier.",
+      "statusCls": "badge-investigating",
+      "status": "Fix in progress",
+      "date": "8/4",
+      "note": "Snehal owes the new Project Name field on the C&W NORAM Jotform + Zapier mapping; Caitlin confirmed that would resolve it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785858996246&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785858996246&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#FF9800",
+      "summary": "Reassigning a job from an inactive MP Client to the active one no longer flips Job Status from Expired Contract back to Pending (e.g. JOBID6612322593515551668, moved manually by Freddy).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/4",
+      "note": "Adjet questioned whether that automation ever existed and asked Kailyn/Freddy to confirm their past experience — waiting on their reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785862225071&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785862225071&ngc=true"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#FF9800",
+      "summary": "Heads up: UHG signed two new CS contracts (both SpecOps rates, 5% discount). Once their ~$25k original-contract balance is fulfilled, their Jotform needs a dropdown to pick which contract a job drills down from, driving MP Client assignment.",
+      "statusCls": "badge-todo",
+      "status": "Future work — on hold",
+      "date": "8/4",
+      "note": "No action until UHG fulfills the original contract; Kailyn is confirming dropdown option names and where the selection should surface in Airtable.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785863617420&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785863617420&ngc=true"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#009688",
+      "summary": "Cyprus is missing from the On Contract Jotform country dropdown so a client couldn't select it. Cyprus already exists fully configured in the Airtable Country Data table (EUR/EMEA) — only the form dropdown needs updating.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on form update",
+      "date": "8/4",
+      "note": "Airtable side confirmed done (Cyprus record already in Country Data); Snehal owes adding Cyprus to the On Contract Jotform dropdown.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785831993284?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785831993284&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785831993284&ngc=true"
     }
   ]
 }
