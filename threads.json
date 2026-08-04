@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2026-08-04T15:08:00-07:00",
+  "lastUpdated": "2026-08-04T16:10:00-07:00",
   "threads": [
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#3F51B5",
-      "summary": "Chewy (2) on-contract short link (go.mp/0q1nri) still delivers the outdated JOT Form version instead of the current one used by the KPS link (go.mp/cued5d), blocking the client from ordering with additional details.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "7/31",
-      "jiraKey": "COP-2034",
-      "note": "Troy said 8/3 9:48 PM he'll post the two form links 'so we can get aligned' — waiting on Troy, then Ricardo repoints the short link (Jira still To Do).",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785525561967?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785525561967&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785525561967&ngc=true"
-    },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
