@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T17:15:00-07:00",
+  "lastUpdated": "2026-08-04T18:15:00-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
@@ -9,7 +9,8 @@
       "statusCls": "badge-investigating",
       "status": "Fix in progress",
       "date": "8/4",
-      "note": "Snehal owes the new Project Name field on the C&W NORAM Jotform + Zapier mapping; Caitlin confirmed that would resolve it.",
+      "jiraKey": "COP-2037",
+      "note": "Snehal created COP-2037 (5:26 PM, To Do, assigned to Snehal) for the Jotform Project Name field + Zapier mapping; waiting on Snehal to implement.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785858996246&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785858996246&ngc=true"
     },
     {
