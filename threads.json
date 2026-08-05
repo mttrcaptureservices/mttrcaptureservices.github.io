@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T16:10:00-07:00",
+  "lastUpdated": "2026-08-04T17:15:00-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
@@ -33,17 +33,6 @@
       "date": "8/4",
       "note": "No action until UHG fulfills the original contract; Kailyn is confirming dropdown option names and where the selection should surface in Airtable.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785863617420&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785863617420&ngc=true"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#009688",
-      "summary": "Cyprus is missing from the On Contract Jotform country dropdown so a client couldn't select it. Cyprus already exists fully configured in the Airtable Country Data table (EUR/EMEA) — only the form dropdown needs updating.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on form update",
-      "date": "8/4",
-      "note": "Airtable side confirmed done (Cyprus record already in Country Data); Snehal owes adding Cyprus to the On Contract Jotform dropdown.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785831993284?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785831993284&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785831993284&ngc=true"
     }
   ]
 }
