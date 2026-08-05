@@ -1,39 +1,51 @@
 {
-  "lastUpdated": "2026-08-05T08:05:45-07:00",
+  "lastUpdated": "2026-08-05T10:06:21-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#E91E63",
-      "summary": "New Cushman (C&W) jobs always come in with a blank project name (e.g. JOBID6616661699575876753) — Snehal confirmed the Project Name field never existed on the C&W NORAM form and will add it and map it through Zapier.",
-      "statusCls": "badge-investigating",
-      "status": "Fix in progress",
+      "color": "#e07a5f",
+      "summary": "New Cushman & Wakefield jobs always come in with a blank project name; wants the project name to populate automatically on new jobs.",
+      "statusCls": "badge-todo",
+      "status": "Jira created",
       "date": "8/4",
       "jiraKey": "COP-2037",
-      "note": "Snehal created COP-2037 (8/4 5:26 PM, To Do, assigned to Snehal) for the Jotform Project Name field + Zapier mapping; waiting on Snehal to implement.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785858996246&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785858996246&ngc=true"
+      "note": "Snehal owns COP-2037 (To Do) — add Project Name field to the C&W Jotform and map it to Airtable via Zapier.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#FF9800",
-      "summary": "Reassigning a job from an inactive MP Client to the active one no longer flips Job Status from Expired Contract back to Pending (e.g. JOBID6612322593515551668, moved manually by Freddy).",
+      "color": "#3d85c6",
+      "summary": "Job status no longer auto-reverts from Expired Contract to Pending when a job is reassigned to an active MP Client; asked if the behavior change was intentional.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/4",
-      "note": "Ricardo/Adjet concluded (8/4 2:30 PM) that automation never existed — restoring Pending on MP Client change would be a new automation; waiting on Kailyn to confirm expectations.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785862225071&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785862225071&ngc=true"
+      "note": "Ricardo/Adjet confirmed the auto-revert never existed and would be a new automation — Kailyn owes a decision on whether to build it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#FF9800",
-      "summary": "Heads up: UHG signed two new CS contracts (both SpecOps rates, 5% discount). Once their ~$25k original-contract balance is fulfilled, their Jotform needs a dropdown to pick which contract a job drills down from, driving MP Client assignment.",
-      "statusCls": "badge-todo",
-      "status": "Future work — on hold",
+      "color": "#3d85c6",
+      "summary": "Heads-up: UHG signed two new CS contracts (SpecOps rates, 5% discount). Their Jotform will need a contract-selector dropdown that drives MP Client assignment once the ~$25k balance on the original contract is fulfilled.",
+      "statusCls": "badge-waiting",
+      "status": "On hold — future work",
       "date": "8/4",
-      "note": "No action until UHG fulfills the original contract; Kailyn is confirming dropdown option names and where the selection should surface in Airtable.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785863617420&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1785863617420&ngc=true"
+      "note": "No action until UHG fulfills the original contract; Kailyn owes the dropdown option names and where the selection should land in Airtable.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#e07a5f",
+      "summary": "5000 sq ft VHT commercial job resolved to USVHTCTC1 instead of the expected USVHTCTC2 — root cause: USVHTCTC2 doesn't exist in Global PriceBooks, so C1 acts as a catch-all; her manual fix also didn't stick.",
+      "statusCls": "badge-todo",
+      "status": "Jira created",
+      "date": "8/5",
+      "jiraKey": "COP-2038",
+      "note": "Ricardo owns COP-2038 (To Do) — add the missing commercial tier to Global PriceBooks, correct this job, and audit other 2,000+ sq ft VHT commercial jobs.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785945715486"
     }
   ]
 }
