@@ -1,51 +1,40 @@
 {
-"lastUpdated": "2026-08-05T22:29:29-07:00",
-"threads": [
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#E91E63",
-"summary": "New Cushman jobs come in with a blank project name; wants project name auto-populated on intake.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "8/4",
-"jiraKey": "COP-2037",
-"note": "Snehal is actively scoping the fix — Caitlin confirmed it should cover all C&W forms, NORAM and INT; next action is Snehal's.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#9C27B0",
-"summary": "Job Status no longer auto-reverts from Expired Contract to Pending when the job is reassigned to an active MP Client.",
-"statusCls": "badge-todo",
-"status": "To Do",
-"date": "8/4",
-"jiraKey": "COP-2040",
-"note": "Ricardo confirmed this auto-revert never existed as a real automation; Jira ticket created 8/5 to build it. Next action is engineering (Homelander/Ricardo).",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071"
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#9C27B0",
-"summary": "Heads-up: UHG signed two new SpecOps-rate contracts (5% discount); Jotform will need a contract-selector dropdown once their current ~$25k balance is fulfilled.",
-"statusCls": "badge-todo",
-"status": "On hold — future work",
-"date": "8/4",
-"note": "No action needed yet; Kailyn is identifying dropdown option names with the UHG contact and will flag when it's time to build.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#E91E63",
-"summary": "Checked 'Apply off hours fee' on JOBID6617503581217517294 but the off-hours amount isn't reflected in Job Rate.",
-"statusCls": "badge-waiting",
-"status": "Waiting on requester",
-"date": "8/5",
-"note": "Confirmed via Airtable formula trace: Job Rate never references the 'Apply off hours fee' checkbox — only 'Apply CT Off Hours Payout' (CT payout side) is wired up. Asked Caitlin whether off-hours fee is meant to affect client billing or just CT payout.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785963989553"
-}
-]
+  "lastUpdated": "2026-08-06T07:21:17-07:00",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#2563eb",
+      "summary": "Job Status doesn't auto-revert from Expired Contract back to Pending when a job is reassigned from an inactive to an active MP Client, requiring a manual fix.",
+      "statusCls": "badge-todo",
+      "status": "Ticketed - To Do",
+      "date": "8/4",
+      "jiraKey": "COP-2040",
+      "note": "Owed by Ricardo — Jira ticket created 8/5, still To Do. Workaround (manual status override) in use meanwhile.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#ea580c",
+      "summary": "New Cushman & Wakefield jobs come in with a blank project name; confirmed the fix needs to cover all C&W forms (NORAM and INT), not just the one flagged job.",
+      "statusCls": "badge-investigating",
+      "status": "In Progress",
+      "date": "8/4",
+      "jiraKey": "COP-2037",
+      "note": "Owed by Snehal Meled — ticket already covers both NORAM and INT per Caitlin's 8/5 confirmation (added as a Jira comment 8/6). Awaiting implementation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#2563eb",
+      "summary": "Heads-up that UHG signed two new CS contracts (SpecOps rates, 5% discount); no action needed until their current ~$25k contract balance is exhausted.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on client volume",
+      "date": "8/4",
+      "note": "Informational only, no Jira. Blocked on UHG fulfilling their current contract commit and Kailyn finalizing the new contract's dropdown options — not blocked on our side.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420"
+    }
+  ]
 }
