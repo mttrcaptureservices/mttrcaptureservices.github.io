@@ -1,40 +1,51 @@
 {
-  "lastUpdated": "2026-08-06T09:09:23-07:00",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#e07a5f",
-      "summary": "Job status no longer auto-reverts from \"Expired Contract\" to \"Pending\" when a job is reassigned from an inactive to an active MP Client — previously this switched automatically.",
-      "statusCls": "badge-todo",
-      "status": "In Jira queue",
-      "date": "8/4",
-      "jiraKey": "COP-2040",
-      "note": "Ticket created and assigned to Ricardo, still To Do — waiting on dev prioritization, not on Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#3d5a80",
-      "summary": "New Cushman & Wakefield jobs are coming in with a blank project name field; she wants it to populate automatically like it does for other jobs, across both NORAM and INT C&W forms.",
-      "statusCls": "badge-investigating",
-      "status": "In Progress",
-      "date": "8/4",
-      "jiraKey": "COP-2037",
-      "note": "Ticket in progress, assigned to Snehal — waiting on Snehal's Jotform/Zapier mapping fix for both C&W form types.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#e07a5f",
-      "summary": "UHG has signed two new CS contracts (SpecOps rates, 5% discount). No action needed yet — once their current ~$25k balance is fulfilled, the On Contract Jotform will need a new dropdown field so jobs can be routed to the correct MP Client.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/4",
-      "note": "Kailyn flagged this as informational only; she's discussing dropdown/contract details with the UHG account internally before there's anything to build. No Jira yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
-    }
-  ]
+"lastUpdated": "2026-08-06T10:12:46-07:00",
+"threads": [
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#e07a5f",
+"summary": "Job status no longer auto-reverts from \"Expired Contract\" to \"Pending\" when a job is reassigned from an inactive to an active MP Client — previously this switched automatically.",
+"statusCls": "badge-todo",
+"status": "In Jira queue",
+"date": "8/4",
+"jiraKey": "COP-2040",
+"note": "Ticket created and assigned to Ricardo, still To Do — waiting on dev prioritization, not on Kailyn.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#3d5a80",
+"summary": "New Cushman & Wakefield jobs are coming in with a blank project name field; she wants it to populate automatically like it does for other jobs, across both NORAM and INT C&W forms.",
+"statusCls": "badge-investigating",
+"status": "In Progress",
+"date": "8/4",
+"jiraKey": "COP-2037",
+"note": "Ticket in progress, assigned to Snehal — waiting on Snehal's Jotform/Zapier mapping fix for both C&W form types.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+},
+{
+"author": "Kailyn Jelniker",
+"initials": "KJ",
+"color": "#e07a5f",
+"summary": "Heads-up (not urgent) that UHG signed two new CS contracts on SpecOps rates with a 5% discount; jotform will eventually need a new dropdown so jobs route to the right contract/MP Client once their current ~$25k balance is used up.",
+"statusCls": "badge-waiting",
+"status": "No action needed yet",
+"date": "8/4",
+"note": "Kailyn explicitly said no action needed until UHG exhausts their current contract balance — she'll follow up when it's time to add the jotform dropdown. Flagged for awareness only.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+},
+{
+"author": "Caitlin Suh",
+"initials": "CS",
+"color": "#3d5a80",
+"summary": "Tech never got a confirmation email for a job even after accepting/scheduling it in Airtable; Caitlin found the parent record was stuck 'in progress' while only the child record showed 'scheduled', and manually scheduling the parent triggered the missing emails.",
+"statusCls": "badge-investigating",
+"status": "Being investigated",
+"date": "8/6",
+"note": "Snehal Meled has already reacted 👀 and is looking into why the parent-record scheduling status wasn't syncing/triggering confirmation emails — no reply or Jira yet, waiting on Snehal's findings.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786032947842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+}
+]
 }
