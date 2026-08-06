@@ -1,40 +1,29 @@
 {
-  "lastUpdated": "2026-08-06T07:21:17-07:00",
+  "lastUpdated": "2026-08-06T08:10:13-07:00",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#2563eb",
-      "summary": "Job Status doesn't auto-revert from Expired Contract back to Pending when a job is reassigned from an inactive to an active MP Client, requiring a manual fix.",
+      "color": "#e07a5f",
+      "summary": "Job status no longer auto-reverts from \"Expired Contract\" to \"Pending\" when a job is reassigned from an inactive to an active MP Client — previously this switched automatically.",
       "statusCls": "badge-todo",
-      "status": "Ticketed - To Do",
+      "status": "In Jira queue",
       "date": "8/4",
       "jiraKey": "COP-2040",
-      "note": "Owed by Ricardo — Jira ticket created 8/5, still To Do. Workaround (manual status override) in use meanwhile.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071"
+      "note": "Ticket created and assigned to Ricardo, still To Do — waiting on dev prioritization, not on Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
     },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#ea580c",
-      "summary": "New Cushman & Wakefield jobs come in with a blank project name; confirmed the fix needs to cover all C&W forms (NORAM and INT), not just the one flagged job.",
+      "color": "#3d5a80",
+      "summary": "New Cushman & Wakefield jobs are coming in with a blank project name field; she wants it to populate automatically like it does for other jobs, across both NORAM and INT C&W forms.",
       "statusCls": "badge-investigating",
       "status": "In Progress",
       "date": "8/4",
       "jiraKey": "COP-2037",
-      "note": "Owed by Snehal Meled — ticket already covers both NORAM and INT per Caitlin's 8/5 confirmation (added as a Jira comment 8/6). Awaiting implementation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#2563eb",
-      "summary": "Heads-up that UHG signed two new CS contracts (SpecOps rates, 5% discount); no action needed until their current ~$25k contract balance is exhausted.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on client volume",
-      "date": "8/4",
-      "note": "Informational only, no Jira. Blocked on UHG fulfilling their current contract commit and Kailyn finalizing the new contract's dropdown options — not blocked on our side.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420"
+      "note": "Ticket in progress, assigned to Snehal — waiting on Snehal's Jotform/Zapier mapping fix for both C&W form types.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
     }
   ]
 }
