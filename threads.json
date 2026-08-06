@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06T08:10:13-07:00",
+  "lastUpdated": "2026-08-06T09:09:23-07:00",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -24,6 +24,17 @@
       "jiraKey": "COP-2037",
       "note": "Ticket in progress, assigned to Snehal — waiting on Snehal's Jotform/Zapier mapping fix for both C&W form types.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#e07a5f",
+      "summary": "UHG has signed two new CS contracts (SpecOps rates, 5% discount). No action needed yet — once their current ~$25k balance is fulfilled, the On Contract Jotform will need a new dropdown field so jobs can be routed to the correct MP Client.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/4",
+      "note": "Kailyn flagged this as informational only; she's discussing dropdown/contract details with the UHG account internally before there's anything to build. No Jira yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
     }
   ]
 }
