@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-08-06T13:07:00-07:00",
+"lastUpdated": "2026-08-06T15:10:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -41,10 +41,10 @@
 "initials": "CS",
 "color": "#3d5a80",
 "summary": "A tech never got a confirmation email for a job despite accepting it in Airtable. Turned out the parent record was stuck 'in progress' while the child record was 'scheduled' — manually scheduling the parent triggered the confirmation emails. Asking why the sync didn't happen automatically.",
-"statusCls": "badge-investigating",
-"status": "Being investigated by Snehal",
+"statusCls": "badge-waiting",
+"status": "Awaiting Ricardo's reply",
 "date": "8/6",
-"note": "Snehal Meled already has eyes on this thread and appears to be looking into it; no Jira ticket yet. Clark is standing down since a team member is actively handling it.",
+"note": "Ricardo replied live (3:02 PM) confirming it looked like a CT-side issue and asked if the tech email was correct / checked spam. Caitlin confirmed the email was right and clarified the real question: the parent record's 'send ct email' automation was still stuck in progress, which is why the confirmation didn't fire. That follow-up question is still unanswered — Clark standing down since Ricardo is actively in the thread.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786032947842"
 }
 ]
