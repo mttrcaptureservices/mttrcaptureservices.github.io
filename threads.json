@@ -1,51 +1,29 @@
 {
-  "lastUpdated": "2026-08-06T21:22:00-07:00",
+  "lastUpdated": "2026-08-07T20:15:41Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#e07a5f",
-      "summary": "Job status no longer auto-reverts from \"Expired Contract\" to \"Pending\" when a job is reassigned from an inactive to an active MP Client — previously this switched automatically.",
+      "color": "#E8A33D",
+      "summary": "Reassigning a job from an inactive MP Client to an active MP Client no longer auto-reverts Job Status from Expired Contract back to Pending, requiring a manual fix each time.",
       "statusCls": "badge-todo",
-      "status": "In Jira queue",
+      "status": "To Do",
       "date": "8/4",
       "jiraKey": "COP-2040",
-      "note": "Ticket created and assigned to Ricardo, still To Do — waiting on dev prioritization, not on Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
+      "note": "Jira ticket created and assigned to Ricardo, still in To Do — no engineering work started yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f8597c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785862225071&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
     },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#3d5a80",
-      "summary": "New Cushman & Wakefield jobs are coming in with a blank project name field; she wants it to populate automatically like it does for other jobs, across both NORAM and INT C&W forms.",
-      "statusCls": "badge-investigating",
-      "status": "In Progress",
-      "date": "8/4",
+      "color": "#2BA6A6",
+      "summary": "New Cushman & Wakefield jobs were coming in with a blank Project Name field, requiring manual entry; asked whether this could sync automatically.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix in progress",
+      "date": "8/5",
       "jiraKey": "COP-2037",
-      "note": "Ticket in progress, assigned to Snehal — waiting on Snehal's Jotform/Zapier mapping fix for both C&W form types.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#e07a5f",
-      "summary": "Heads-up (not a request): UHG signed two new CS contracts. Once their ~$25k balance on the existing contract is fulfilled, their Jotform will need a new dropdown so jobs can be routed to the correct contract, which determines MP Client assignment.",
-      "statusCls": "badge-waiting",
-      "status": "Informational — no action needed yet",
-      "date": "8/4",
-      "note": "Kailyn is discussing dropdown options with UHG directly. No ticket needed until UHG fulfills their first commitment on the new contracts.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#3d5a80",
-      "summary": "A tech never got a confirmation email for a job despite accepting it in Airtable. Turned out the parent record was stuck 'in progress' while the child record was 'scheduled' — manually scheduling the parent triggered the confirmation emails. Asking why the sync didn't happen automatically.",
-      "statusCls": "badge-investigating",
-      "status": "Being investigated by Ricardo",
-      "date": "8/6",
-      "note": "Ricardo is actively live in the thread (replies at 3:02 PM and 3:40 PM) — suspects the CT-side confirmation email fired off the child record instead of the parent, and is investigating further. Clark is standing down since Ricardo owns this one directly.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786032947842"
+      "note": "Snehal is actively working the fix (In Progress in Jira); Ricardo confirmed scope covers both NORAM and INT C&W forms. Waiting on Snehal to close it out.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f8597c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785858996246&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
     }
   ]
 }
