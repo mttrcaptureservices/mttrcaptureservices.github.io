@@ -1,5 +1,5 @@
 {
-"lastUpdated": "2026-08-08T00:07:35Z",
+"lastUpdated": "2026-08-07T18:20:00-07:00",
 "threads": [
 {
 "author": "Kailyn Jelniker",
@@ -12,18 +12,6 @@
 "jiraKey": "COP-2040",
 "note": "Jira ticket created and assigned to Ricardo, still in To Do — no engineering work started yet.",
 "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f8597c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785862225071&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
-},
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#2BA6A6",
-"summary": "New Cushman & Wakefield jobs were coming in with a blank Project Name field, requiring manual entry; asked whether this could sync automatically.",
-"statusCls": "badge-fix-deployed",
-"status": "Fix in progress",
-"date": "8/5",
-"jiraKey": "COP-2037",
-"note": "Snehal is actively working the fix (In Progress in Jira); an automated update card posted 8/6 11:42 PM reports the Country/Project Name Zaps are live for NORAM/EMEA and APAC/Americas, but the Jira ticket itself is still In Progress (not yet Done) — waiting on Snehal to formally close it out.",
-"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785858996246?tenantId=9a64e7ca-363f-441c-9aa7-4f8597c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785858996246&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
 }
 ]
 }
