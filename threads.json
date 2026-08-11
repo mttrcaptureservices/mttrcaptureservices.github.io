@@ -1,17 +1,4 @@
 {
-  "lastUpdated": "2026-08-11T15:12:00-07:00",
-  "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#E8A33D",
-      "summary": "Reassigning a job from an inactive MP Client to an active MP Client no longer auto-reverts Job Status from Expired Contract back to Pending, requiring a manual fix each time.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "8/4",
-      "jiraKey": "COP-2040",
-      "note": "Jira ticket created and assigned to Ricardo, still in To Do with no comments and no engineering work started. Kailyn has not replied since the Jira link was posted 8/5.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785862225071?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1785862225071&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
-    }
-  ]
+  "lastUpdated": "2026-08-11T16:10:00-07:00",
+  "threads": []
 }
