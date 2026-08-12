@@ -1,40 +1,41 @@
 {
-  "lastUpdated": "2026-08-12T10:20:00-07:00",
+  "lastUpdated": "2026-08-12T11:42:00-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#4C9AFF",
-      "summary": "A Capture Tech cannot see the 'I would like to accept this job' / 'decline this job' options on the job request form for JOBID6622735036817477854 (Somerled Designs, 423 47 Street NW, Bradenton FL), and hits the same blank selection when he clicks Schedule in Airtable.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "summary": "A Capture Tech cannot see the 'I would like to accept this job' / 'decline this job' options on the CT job request form for JOBID6622735036817477854 (Somerled Designs), and hits the same dead end clicking Schedule in Airtable.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/12",
-      "note": "Both phase records (93496 / 93497) are already at Job Status = Scheduled, and the accept/decline URL passes live status in as jobStatusAT, so the accept + date/time block no longer renders. Asked Caitlin whether the job was already Scheduled when the tech tried. Separate finding to chase after she answers: 93496's CT job request URL resolves blank because its Floor/Unit/Suite reads ' entire unit' instead of 'Parent Record', so only 93497 ever dispatched a CT email.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786553001048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1786553001048&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1786553001048&ngc=true"
+      "jiraKey": "COP-2046",
+      "note": "The earlier jobStatusAT = Scheduled explanation is ruled out - Caitlin confirmed she set Scheduled manually after the CT's failed attempt. Airtable shows two live defects: record 93496 is named \" entire unit\" so its CT URL resolves blank and no email ever dispatched, and {Job Status} carries duplicate \"In Progress\" / \"In-Progress\" spellings the form may not both match. Next action is Ricardo - inspect the Jotform 252161480467962 conditional logic against the real status strings.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786553001048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786553001048&createdTime=1786553001048"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
-      "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of the international dd/mm/yy format, and 'preferred scan time' is not a required field on the Livit Jotform, so confirmations show 12am when the agent submits a date only.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting prioritization",
+      "summary": "Livit Jotform confirmation emails render some jobs in mm/dd/yy instead of the international dd/mm/yy format, and Livit agents can submit a preferred date with no preferred scan time, so confirmations show 12am.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Both issues logged against COP-2019 with JOBID6613077533619588764 as the example. Stephenie has acknowledged and is manually amending confirmed jobs meanwhile. Blocked on our decision: patch the legacy Livit form now, or fold the fix into the form migration. Next action is ours.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1786519727146&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1786519727146&ngc=true"
+      "note": "Stephenie acknowledged at 9:20 AM and is manually amending confirmed jobs in the meantime. Blocked on migrating Livit AG off the legacy Job Request and CT Accept/Decline forms - next action is Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#7C5CFF",
-      "summary": "Asked whether the Airbnb host reminder email for jobs in 'Please Schedule' status includes a link for hosts to submit the required information; thread then surfaced that CTs cannot see Airbnb jobs in their CT Airtable views even after scheduling.",
+      "summary": "Asked whether the Airbnb host reminder email for jobs in 'Please Schedule' status includes a link for hosts to submit the required information. Thread also branched into CTs not seeing Airbnb jobs in their Airtable views.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Ricardo established the CTs' missing jobs were unassigned rather than filtered out; Juyoung said she would check and share links for the Airbnb jobs she believes are missing from CT views. Next action is hers.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1786500528243&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1786500528243&ngc=true"
+      "note": "Ricardo narrowed the CT-visibility half to jobs with no assigned CT; Juyoung said she would send example links for scheduled Airbnb jobs CTs still cannot see. Next action is Juyoung.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
 }
