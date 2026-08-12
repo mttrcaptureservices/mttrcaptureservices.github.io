@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>CT Job Portal — Matterport Capture Services</title>
+<style>
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --surface-2:#f8fafc; --line:#e3e8ef; --line-strong:#cdd5e0;
+  --ink:#0f172a; --ink-2:#475569; --ink-3:#7b8794;
+  --brand:#0b6bcb; --brand-ink:#08529c; --brand-soft:#e8f1fc;
+  --ok:#0f7b52; --ok-soft:#e3f5ec; --warn:#9a5b00; --warn-soft:#fdf1dc;
+  --danger:#b3261e; --danger-soft:#fdecea;
+  --radius:14px; --radius-sm:9px;
+  --shadow-1:0 1px 2px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
+  --shadow-2:0 8px 28px rgba(15,23,42,.12);
+  --shadow-3:0 24px 60px rgba(15,23,42,.22);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none !important}
+
+#login{min-height:100dvh;display:grid;place-items:center;padding:24px;
+  background:radial-gradient(1100px 620px at 12% -10%, #1d4ed822 0%, transparent 60%),radial-gradient(900px 520px at 105% 110%, #0891b222 0%, transparent 55%),linear-gradient(170deg,#0b1220 0%,#132039 55%,#0d1a2e 100%)}
+.login-card{width:100%;max-width:420px;background:var(--surface);border-radius:18px;padding:34px 30px 30px;box-shadow:var(--shadow-3)}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+.brand-mark{width:38px;height:38px;border-radius:10px;flex:0 0 auto;background:linear-gradient(140deg,var(--brand),#0891b2);display:grid;place-items:center}
+.brand-mark svg{width:21px;height:21px}
+.brand-text b{display:block;font-size:15px;letter-spacing:-.01em}
+.brand-text span{display:block;font-size:12px;color:var(--ink-3)}
+.login-card h1{margin:0 0 6px;font-size:21px;letter-spacing:-.02em}
+.login-card p.sub{margin:0 0 22px;color:var(--ink-2);font-size:14px}
+label.field{display:block;margin-bottom:16px}
+label.field > span{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:6px;letter-spacing:.01em}
+.input,select.input,textarea.input{width:100%;padding:11px 13px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--surface);outline:none;transition:border-color .15s, box-shadow .15s}
+.input:focus,select.input:focus,textarea.input:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+textarea.input{min-height:96px;resize:vertical;line-height:1.5}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:var(--radius-sm);border:1px solid transparent;font-weight:600;font-size:14.5px;transition:background .15s,border-color .15s,opacity .15s}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover:not(:disabled){background:var(--brand-ink)}
+.btn-ghost{background:var(--surface);border-color:var(--line-strong);color:var(--ink)}
+.btn-ghost:hover:not(:disabled){background:var(--surface-2)}
+.btn-block{width:100%}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.alert{border-radius:var(--radius-sm);padding:10px 13px;font-size:13.5px;margin-bottom:16px;border:1px solid transparent}
+.alert-error{background:var(--danger-soft);border-color:#f3c9c5;color:var(--danger)}
+.login-foot{margin-top:18px;font-size:12.5px;color:var(--ink-3);text-align:center;line-height:1.6}
+
+header.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.88);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.topbar-inner{max-width:1120px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;gap:14px}
+.topbar .brand{margin:0;flex:1 1 auto;min-width:0}
+.who{display:flex;align-items:center;gap:9px;min-width:0}
+.avatar{width:31px;height:31px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand-ink);font-weight:700;font-size:12px}
+.who-email{font-size:13px;color:var(--ink-2);max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.icon-btn{border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.icon-btn:hover{background:var(--surface-2)}
+main.wrap{max-width:1120px;margin:0 auto;padding:20px 18px 56px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.search{position:relative;flex:1 1 240px;min-width:0}
+.search input{padding-left:36px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--ink-3);pointer-events:none}
+select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--surface);outline:none}
+.count-pill{font-size:12.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap}
+
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow-1);text-align:left;width:100%;display:flex;flex-direction:column;gap:11px;transition:border-color .15s, box-shadow .15s, transform .12s}
+.card:hover{border-color:var(--brand);box-shadow:var(--shadow-2);transform:translateY(-1px)}
+.card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.card-head{display:flex;align-items:flex-start;gap:10px}
+.card-title{flex:1 1 auto;min-width:0}
+.card-title h3{margin:0 0 3px;font-size:15px;letter-spacing:-.01em;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.jobid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--ink-3);word-break:break-all}
+.badge{flex:0 0 auto;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid transparent;white-space:nowrap;letter-spacing:.01em}
+.badge-scheduled{background:var(--brand-soft);color:var(--brand-ink);border-color:#c5ddf6}
+.badge-cancel{background:var(--danger-soft);color:var(--danger);border-color:#f3c9c5}
+.badge-warn{background:var(--warn-soft);color:var(--warn);border-color:#f0dcb4}
+.badge-none{background:var(--surface-2);color:var(--ink-3);border-color:var(--line)}
+.meta{display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink-2)}
+.meta-row{display:flex;gap:9px;align-items:flex-start}
+.meta-row svg{width:15px;height:15px;flex:0 0 auto;margin-top:2px;color:var(--ink-3)}
+.meta-row .v{min-width:0;overflow-wrap:anywhere}
+.meta-row .v strong{color:var(--ink);font-weight:600}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
+.chip{font-size:11.5px;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+.edit-hint{font-size:12.5px;font-weight:600;color:var(--brand);display:flex;align-items:center;gap:5px}
+
+.empty{text-align:center;padding:56px 20px;color:var(--ink-2);background:var(--surface);border:1px dashed var(--line-strong);border-radius:var(--radius)}
+.empty h3{margin:0 0 6px;color:var(--ink);font-size:16px}
+.skeleton{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;height:186px;position:relative;overflow:hidden}
+.skeleton::after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(15,23,42,.05),transparent);animation:shimmer 1.25s infinite}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+.spinner{width:15px;height:15px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.btn-ghost .spinner{border-color:var(--line-strong);border-top-color:var(--brand)}
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+.scrim{position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:50;background:var(--surface);display:flex;flex-direction:column;top:0;right:0;height:100dvh;width:min(520px,100%);box-shadow:var(--shadow-3);transform:translateX(100%);transition:transform .26s cubic-bezier(.32,.72,0,1)}
+.drawer.open{transform:none}
+.drawer-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;padding-top:calc(16px + env(safe-area-inset-top))}
+.drawer-head h2{margin:0 0 3px;font-size:16.5px;letter-spacing:-.01em}
+.drawer-body{flex:1 1 auto;overflow-y:auto;padding:18px;-webkit-overflow-scrolling:touch}
+.drawer-foot{border-top:1px solid var(--line);padding:13px 18px;display:flex;gap:10px;background:var(--surface-2);padding-bottom:calc(13px + env(safe-area-inset-bottom))}
+.drawer-foot .btn{flex:1 1 0}
+.close-x{border:none;background:var(--surface-2);border-radius:8px;width:32px;height:32px;flex:0 0 auto;display:grid;place-items:center;color:var(--ink-2);font-size:19px;line-height:1}
+.close-x:hover{background:var(--line)}
+.section{margin-bottom:22px}
+.section h4{margin:0 0 10px;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.readout{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.readout dl{margin:0;display:grid;grid-template-columns:minmax(110px,38%) 1fr}
+.readout dt,.readout dd{margin:0;padding:9px 13px;font-size:13.5px;border-top:1px solid var(--line)}
+.readout dt{color:var(--ink-3);font-weight:600}
+.readout dd{color:var(--ink);overflow-wrap:anywhere}
+.readout dl > dt:first-of-type,.readout dl > dt:first-of-type + dd{border-top:none}
+.hint{font-size:12px;color:var(--ink-3);margin-top:5px}
+
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);z-index:60;background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow-2);transition:transform .28s cubic-bezier(.32,.72,0,1);max-width:90vw;text-align:center}
+#toast.show{transform:translate(-50%,0)}
+#toast.err{background:var(--danger)}
+
+@media (max-width:640px){
+  body{font-size:15.5px}
+  main.wrap{padding:14px 13px 40px}
+  .grid{grid-template-columns:1fr;gap:10px}
+  .who-email{display:none}
+  .toolbar{gap:8px}
+  .search{flex:1 1 100%}
+  select.filter{flex:1 1 auto}
+  .count-pill{flex:0 0 auto}
+  .drawer{top:auto;bottom:0;right:0;left:0;width:100%;height:92dvh;border-radius:20px 20px 0 0;transform:translateY(100%)}
+  .drawer.open{transform:none}
+  .drawer-head{position:relative;padding-top:20px;border-radius:20px 20px 0 0}
+  .drawer-head::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:38px;height:4px;border-radius:2px;background:var(--line-strong)}
+  .readout dl{grid-template-columns:1fr}
+  .readout dd{padding-top:0;border-top:none}
+  .readout dt{padding-bottom:2px}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+
+<section id="login">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V7l8 5 8-5v12"/></svg>
+      </div>
+      <div class="brand-text"><b>Capture Services</b><span>Capture Tech Job Portal</span></div>
+    </div>
+    <h1>Sign in</h1>
+    <p class="sub">Enter the email address your jobs are assigned to. No password needed.</p>
+    <div id="loginError" class="alert alert-error" hidden></div>
+    <form id="loginForm" novalidate>
+      <label class="field">
+        <span>Email address</span>
+        <input class="input" type="email" id="emailInput" name="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" placeholder="you@example.com" required>
+      </label>
+      <button class="btn btn-primary btn-block" type="submit" id="loginBtn">Continue</button>
+    </form>
+    <p class="login-foot">Access is limited to jobs assigned to your email.<br>Trouble signing in? Contact your Capture Coordinator.</p>
+  </div>
+</section>
+
+<div id="app" hidden>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V7l8 5 8-5v12"/></svg>
+        </div>
+        <div class="brand-text"><b>CT Job Portal</b><span>Matterport Capture Services</span></div>
+      </div>
+      <div class="who">
+        <div class="avatar" id="avatar">–</div>
+        <div class="who-email" id="whoEmail"></div>
+      </div>
+      <button class="icon-btn" id="refreshBtn" title="Refresh jobs">Refresh</button>
+      <button class="icon-btn" id="logoutBtn">Sign out</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input class="input" type="search" id="searchInput" placeholder="Search address, property or job ID…" autocomplete="off">
+      </div>
+      <select class="filter" id="statusFilter" aria-label="Filter by status"><option value="">All statuses</option></select>
+      <span class="count-pill" id="countPill">—</span>
+    </div>
+    <div id="listError" class="alert alert-error" hidden></div>
+    <div id="grid" class="grid"></div>
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="drawer-head">
+    <div style="flex:1 1 auto;min-width:0">
+      <h2 id="drawerTitle">Job</h2>
+      <div class="jobid" id="drawerJobId"></div>
+    </div>
+    <button class="close-x" id="closeDrawer" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-body">
+    <div id="drawerError" class="alert alert-error" hidden></div>
+    <div class="section">
+      <h4>Job details</h4>
+      <div class="readout"><dl id="detailsList"></dl></div>
+    </div>
+    <div class="section">
+      <h4>Your update</h4>
+      <label class="field">
+        <span>Job Scheduled Date/Time</span>
+        <input class="input" type="datetime-local" id="fScheduled">
+        <span class="hint" id="tzHint">Times are shown in UTC, matching Airtable.</span>
+      </label>
+      <label class="field">
+        <span>CT Job Status</span>
+        <select class="input" id="fStatus"><option value="">— Not set —</option></select>
+      </label>
+      <label class="field">
+        <span>Reason for Declining</span>
+        <input class="input" type="text" id="fReason" placeholder="Only if you are declining or cancelling">
+      </label>
+      <label class="field" style="margin-bottom:4px">
+        <span>Additional Details</span>
+        <textarea class="input" id="fDetails" placeholder="Anything the coordinator should know…"></textarea>
+      </label>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <button class="btn btn-ghost" id="cancelBtn" type="button">Cancel</button>
+    <button class="btn btn-primary" id="saveBtn" type="button">Save changes</button>
+  </div>
+</aside>
+
+<div id="toast"></div>
+
+<script>
+/* ==================================================================== */
+/*  CONFIGURATION — edit this block only                                */
+/*  API_BASE: URL of your deployed Cloudflare Worker (no trailing slash).*/
+/*  Nothing secret goes here — the Airtable token lives as a secret      */
+/*  inside the Worker and never reaches the browser.                     */
+/* ==================================================================== */
+window.CT_PORTAL_CONFIG = {
+  API_BASE: 'https://ct-job-portal.YOUR-SUBDOMAIN.workers.dev',
+  TIMEZONE_LABEL: 'UTC'
+};
+/* ==================== end configuration ============================= */
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var CFG = window.CT_PORTAL_CONFIG || {};
+  var API = String(CFG.API_BASE || '').replace(/\/+$/, '');
+  var TZ_LABEL = CFG.TIMEZONE_LABEL || 'UTC';
+
+  var STATUS_OPTIONS = ['Scheduled','Cancel','Host Unresponsive','Host - No availability','Host not interested'];
+
+  var BADGE_CLASS = {
+    'Scheduled': 'badge-scheduled',
+    'Cancel': 'badge-cancel',
+    'Host Unresponsive': 'badge-warn',
+    'Host - No availability': 'badge-warn',
+    'Host not interested': 'badge-warn'
+  };
+
+  var STORAGE_KEY = 'ctPortalEmail';
+
+  function $(id) { return document.getElementById(id); }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function setBusy(btn, busy, label) {
+    if (busy) {
+      btn.dataset.label = btn.innerHTML;
+      btn.innerHTML = '<span class="spinner"></span>' + (label || 'Working…');
+      btn.disabled = true;
+    } else {
+      if (btn.dataset.label) btn.innerHTML = btn.dataset.label;
+      btn.disabled = false;
+    }
+  }
+
+  var toastTimer;
+  function toast(msg, isErr) {
+    var t = $('toast');
+    t.textContent = msg;
+    t.className = isErr ? 'show err' : 'show';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.className = ''; }, 3200);
+  }
+
+  function showAlert(el, msg) {
+    if (!msg) { el.hidden = true; el.textContent = ''; return; }
+    el.textContent = msg;
+    el.hidden = false;
+  }
+
+  var mem = {};
+  function store(k, v) {
+    try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); }
+    catch (e) { if (v === null) delete mem[k]; else mem[k] = v; }
+  }
+  function recall(k) {
+    try { var v = localStorage.getItem(k); if (v != null) return v; } catch (e) {}
+    return mem[k] || null;
+  }
+
+  function isoToLocalInput(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    function p(n) { return String(n).padStart(2, '0'); }
+    return d.getUTCFullYear() + '-' + p(d.getUTCMonth() + 1) + '-' + p(d.getUTCDate()) +
+           'T' + p(d.getUTCHours()) + ':' + p(d.getUTCMinutes());
+  }
+  function localInputToIso(val) {
+    if (!val) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(val);
+    if (!m) return null;
+    return m[1] + '-' + m[2] + '-' + m[3] + 'T' + m[4] + ':' + m[5] + ':00.000Z';
+  }
+  function fmtDateTime(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return String(iso);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var h = d.getUTCHours(), ap = h >= 12 ? 'PM' : 'AM';
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return months[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear() +
+           ' · ' + h12 + ':' + String(d.getUTCMinutes()).padStart(2, '0') + ' ' + ap + ' ' + TZ_LABEL;
+  }
+
+  function api(path, opts) {
+    if (!API || /YOUR-SUBDOMAIN/.test(API)) {
+      return Promise.reject(new Error('The portal is not configured yet — set API_BASE at the top of index.html.'));
+    }
+    return fetch(API + path, opts).then(function (res) {
+      return res.text().then(function (txt) {
+        var body = {};
+        try { body = txt ? JSON.parse(txt) : {}; } catch (e) { body = { error: txt.slice(0, 300) }; }
+        if (!res.ok) throw new Error(body.error || ('Request failed (' + res.status + ')'));
+        return body;
+      });
+    }, function () {
+      throw new Error('Could not reach the server. Check your connection and try again.');
+    });
+  }
+
+  var state = { email: null, records: [], current: null };
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = $('emailInput').value.trim().toLowerCase();
+    showAlert($('loginError'), '');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showAlert($('loginError'), 'Please enter a valid email address.');
+      return;
+    }
+    var btn = $('loginBtn');
+    setBusy(btn, true, 'Checking…');
+    api('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).then(function () {
+      store(STORAGE_KEY, email);
+      enterApp(email);
+    }).catch(function (err) {
+      showAlert($('loginError'), err.message);
+    }).then(function () {
+      setBusy(btn, false);
+    });
+  });
+
+  function enterApp(email) {
+    state.email = email;
+    $('login').hidden = true;
+    $('app').hidden = false;
+    $('whoEmail').textContent = email;
+    $('avatar').textContent = (email[0] || '?').toUpperCase();
+    document.title = 'CT Job Portal — ' + email;
+    loadJobs();
+  }
+
+  $('logoutBtn').addEventListener('click', function () {
+    store(STORAGE_KEY, null);
+    state = { email: null, records: [], current: null };
+    closeDrawer();
+    $('app').hidden = true;
+    $('login').hidden = false;
+    $('emailInput').value = '';
+    showAlert($('loginError'), '');
+    document.title = 'CT Job Portal — Matterport Capture Services';
+  });
+
+  function skeletons(n) {
+    var h = '';
+    for (var i = 0; i < n; i++) h += '<div class="skeleton"></div>';
+    $('grid').innerHTML = h;
+  }
+
+  function loadJobs() {
+    showAlert($('listError'), '');
+    skeletons(6);
+    $('countPill').textContent = 'Loading…';
+    return api('/api/jobs?email=' + encodeURIComponent(state.email))
+      .then(function (data) {
+        state.records = data.records || [];
+        buildStatusFilter();
+        render();
+      })
+      .catch(function (err) {
+        $('grid').innerHTML = '';
+        $('countPill').textContent = '—';
+        showAlert($('listError'), err.message);
+      });
+  }
+
+  $('refreshBtn').addEventListener('click', function () {
+    var b = $('refreshBtn');
+    setBusy(b, true, 'Refreshing');
+    loadJobs().then(function () { setBusy(b, false); toast('Jobs refreshed'); });
+  });
+
+  function buildStatusFilter() {
+    var sel = $('statusFilter');
+    var keep = sel.value;
+    var seen = {};
+    state.records.forEach(function (r) {
+      var s = (r.fields || {})['CT Job Status'];
+      if (s) seen[s] = true;
+    });
+    var opts = ['<option value="">All statuses</option>'];
+    STATUS_OPTIONS.concat(Object.keys(seen)).filter(function (v, i, a) { return a.indexOf(v) === i; })
+      .forEach(function (s) {
+        if (seen[s]) opts.push('<option value="' + esc(s) + '">' + esc(s) + '</option>');
+      });
+    opts.push('<option value="__none">No status set</option>');
+    sel.innerHTML = opts.join('');
+    sel.value = keep;
+  }
+
+  function visibleRecords() {
+    var q = $('searchInput').value.trim().toLowerCase();
+    var st = $('statusFilter').value;
+    return state.records.filter(function (r) {
+      var f = r.fields || {};
+      var status = f['CT Job Status'] || '';
+      if (st === '__none' && status) return false;
+      if (st && st !== '__none' && status !== st) return false;
+      if (!q) return true;
+      var hay = [f['Static Job ID'], f['Property Name'], f['Floor/Unit/Suite'], f['Capture Address'], f['City'], f['State'], status].join(' ').toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+  }
+
+  var ICONS = {
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>'
+  };
+
+  function metaRow(icon, html) {
+    return '<div class="meta-row">' + icon + '<div class="v">' + html + '</div></div>';
+  }
+
+  function render() {
+    var rows = visibleRecords();
+    var total = state.records.length;
+    $('countPill').textContent = rows.length === total
+      ? total + (total === 1 ? ' job' : ' jobs')
+      : rows.length + ' of ' + total;
+
+    if (!total) {
+      $('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h3>No jobs yet</h3><p>There are no jobs assigned to ' + esc(state.email) + ' in this view right now.</p></div>';
+      return;
+    }
+    if (!rows.length) {
+      $('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h3>No matches</h3><p>Try a different search term or clear the status filter.</p></div>';
+      return;
+    }
+
+    $('grid').innerHTML = rows.map(function (r) {
+      var f = r.fields || {};
+      var status = f['CT Job Status'] || '';
+      var badgeCls = BADGE_CLASS[status] || 'badge-none';
+      var title = f['Property Name'] || f['Floor/Unit/Suite'] || f['Capture Address'] || 'Untitled job';
+      var jobId = f['Static Job ID'] || '';
+      var loc = [f['City'], f['State'], f['Zip Code']].filter(Boolean).join(', ');
+      var addr = f['Capture Address'] || '—';
+      var sched = f['Job Scheduled Date/Time']
+        ? '<strong>' + esc(fmtDateTime(f['Job Scheduled Date/Time'])) + '</strong>'
+        : '<span style="color:var(--ink-3)">Not scheduled</span>';
+      var prefs = [f['Preferred Date/Time 1'], f['Preferred Date/Time 2']].filter(Boolean);
+      var size = f['Capture Size - Requested'];
+      var units = f['Area Units'] || '';
+      var chips = [];
+      if (size) chips.push('<span class="chip">' + esc(size) + ' ' + esc(units.replace(/\s*\(.*\)/, '')) + '</span>');
+      if (f['Property Type']) chips.push('<span class="chip">' + esc(f['Property Type']) + '</span>');
+      if (f['Job Status']) chips.push('<span class="chip">' + esc(f['Job Status']) + '</span>');
+
+      return '<button class="card" data-id="' + esc(r.id) + '" type="button">' +
+          '<div class="card-head"><div class="card-title"><h3>' + esc(title) + '</h3>' +
+          (jobId ? '<div class="jobid">' + esc(jobId) + '</div>' : '') + '</div>' +
+          '<span class="badge ' + badgeCls + '">' + esc(status || 'No status') + '</span></div>' +
+          '<div class="meta">' +
+            metaRow(ICONS.pin, esc(addr) + (loc ? '<br><span style="color:var(--ink-3)">' + esc(loc) + '</span>' : '')) +
+            metaRow(ICONS.cal, sched) +
+            (prefs.length ? metaRow(ICONS.clock, 'Preferred: ' + esc(prefs.join('  /  '))) : '') +
+          '</div>' +
+          '<div class="card-foot"><div style="display:flex;gap:5px;flex-wrap:wrap">' + chips.join('') + '</div>' +
+          '<span class="edit-hint">' + ICONS.pencil + 'Edit</span></div>' +
+        '</button>';
+    }).join('');
+  }
+
+  $('searchInput').addEventListener('input', render);
+  $('statusFilter').addEventListener('change', render);
+
+  $('grid').addEventListener('click', function (e) {
+    var card = e.target.closest('.card');
+    if (card) openDrawer(card.dataset.id);
+  });
+
+  (function initStatusSelect() {
+    var sel = $('fStatus');
+    STATUS_OPTIONS.forEach(function (s) {
+      var o = document.createElement('option');
+      o.value = s; o.textContent = s;
+      sel.appendChild(o);
+    });
+  })();
+
+  $('tzHint').textContent = 'Times are shown in ' + TZ_LABEL + ', matching Airtable.';
+
+  function detailRow(k, v) {
+    if (v === '' || v == null) return '';
+    return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
+  }
+
+  function openDrawer(id) {
+    var rec = state.records.filter(function (r) { return r.id === id; })[0];
+    if (!rec) return;
+    state.current = rec;
+    var f = rec.fields || {};
+    showAlert($('drawerError'), '');
+    $('drawerTitle').textContent = f['Property Name'] || f['Floor/Unit/Suite'] || f['Capture Address'] || 'Job';
+    $('drawerJobId').textContent = f['Static Job ID'] || rec.id;
+    var size = f['Capture Size - Requested'];
+    $('detailsList').innerHTML = [
+      detailRow('Address', f['Capture Address']),
+      detailRow('Unit / Floor', f['Floor/Unit/Suite']),
+      detailRow('City', [f['City'], f['State'], f['Zip Code']].filter(Boolean).join(', ')),
+      detailRow('Property type', f['Property Type']),
+      detailRow('Capture size', size ? size + ' ' + (f['Area Units'] || '') : ''),
+      detailRow('Preferred 1', f['Preferred Date/Time 1']),
+      detailRow('Preferred 2', f['Preferred Date/Time 2']),
+      detailRow('Job status', f['Job Status']),
+      detailRow('Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time']))
+    ].join('') || '<dt>Details</dt><dd>—</dd>';
+
+    $('fScheduled').value = isoToLocalInput(f['Job Scheduled Date/Time']);
+    $('fStatus').value = f['CT Job Status'] || '';
+    $('fReason').value = f['Reason for Declining'] || '';
+    $('fDetails').value = f['Additional Details'] || '';
+
+    $('scrim').classList.add('open');
+    $('drawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { $('fStatus').focus(); }, 260);
+  }
+
+  function closeDrawer() {
+    $('scrim').classList.remove('open');
+    $('drawer').classList.remove('open');
+    document.body.style.overflow = '';
+    state.current = null;
+  }
+
+  $('scrim').addEventListener('click', closeDrawer);
+  $('closeDrawer').addEventListener('click', closeDrawer);
+  $('cancelBtn').addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && $('drawer').classList.contains('open')) closeDrawer();
+  });
+
+  $('saveBtn').addEventListener('click', function () {
+    var rec = state.current;
+    if (!rec) return;
+    showAlert($('drawerError'), '');
+    var fields = {
+      'Job Scheduled Date/Time': localInputToIso($('fScheduled').value),
+      'CT Job Status': $('fStatus').value || null,
+      'Reason for Declining': $('fReason').value.trim(),
+      'Additional Details': $('fDetails').value.trim()
+    };
+    var btn = $('saveBtn');
+    setBusy(btn, true, 'Saving…');
+    api('/api/jobs/' + rec.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: state.email, fields: fields })
+    }).then(function (res) {
+      var updated = (res.record && res.record.fields) || {};
+      Object.keys(fields).forEach(function (k) {
+        rec.fields[k] = Object.prototype.hasOwnProperty.call(updated, k) ? updated[k] : undefined;
+      });
+      buildStatusFilter();
+      render();
+      closeDrawer();
+      toast('Job updated');
+    }).catch(function (err) {
+      showAlert($('drawerError'), err.message);
+    }).then(function () {
+      setBusy(btn, false);
+    });
+  });
+
+  var saved = recall(STORAGE_KEY);
+  if (saved) {
+    enterApp(saved);
+  } else {
+    setTimeout(function () { $('emailInput').focus(); }, 120);
+  }
+})();
+
+</script>
+</body>
+</html>
