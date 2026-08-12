@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-12T00:13:54.728Z",
+  "lastUpdated": "2026-08-12T04:00:42.580Z",
   "threads": [
     {
       "author": "Caitlin Suh",
@@ -9,8 +9,19 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
-      "note": "Parent record 93575 already shows Send CT Email (Parent Base) = Sent, so the trigger is firing; asked Caitlin whether the CT never received it or the field never flips to Sent.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786491152817?tenantId=9a64e7ca-363f-441c-9aa7-4f8597fc09c7&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&parentMessageId=1786491152817&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&createdTime=1786491152817"
+      "note": "Parent record 93575 already shows Send CT Email (Parent Base) = Sent, so the trigger is firing; asked Caitlin whether the CT never received it or the field never switches to Sent when she runs it. No reply yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786491152817?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786491152817&createdTime=1786491152817"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#4A90D9",
+      "summary": "Airbnb project: asking whether the host reminder email for jobs stuck in Please Schedule includes a link for submitting the required info. Two follow-on issues surfaced - a broken link in the reminder, and CTs reporting they cannot see Airbnb jobs in their Airtable views even after scheduling.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/11",
+      "note": "Ricardo answered the reminder-count question live and committed to investigating the broken link Adjet found. Still open and unassigned: CTs say scheduled Airbnb jobs never appear in their CT Airtable views - needs a view/filter check before Juyoung can answer the customer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
 }
