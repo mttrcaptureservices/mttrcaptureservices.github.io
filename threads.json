@@ -1,40 +1,28 @@
 {
-  "lastUpdated": "2026-08-12T19:15:21Z",
+  "lastUpdated": "2026-08-12T20:12:32Z",
   "threads": [
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#4C9AFF",
-      "summary": "A Capture Tech cannot see the accept/decline options on the CT job request form for JOBID6622735036817477854 (Somerled Designs), and hits the same dead end via Schedule in Airtable. Caitlin sees the options fine on her end.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/12",
-      "jiraKey": "COP-2046",
-      "note": "Caitlin confirmed the job was still In Progress when the tech tried, ruling out the Scheduled-status theory. COP-2046 is open with Ricardo to check the Jotform conditions against the duplicate Job Status spellings (In Progress vs In-Progress) and fix record 93496's blank CT URL.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786553001048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786553001048&createdTime=1786553001048"
-    },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
-      "summary": "The Livit confirmation email renders dates as month/day/year instead of the international day/month/year, and preferred scan time is not a required field on the Livit Jotform, so confirmations show 12am when the agent submits a date only.",
+      "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of the international dd/mm/yy format, and preferred scan time is not a required field so confirmations default to 12am.",
       "statusCls": "badge-todo",
       "status": "Awaiting decision",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Both issues are logged on COP-2019 with JOBID6613077533619588764 as the example. The open decision — patch the legacy Livit form now or fold it into the migration — is ours; Stephenie is manually amending confirmed jobs meanwhile.",
+      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration — decision sits with Ricardo and Snehal. Stephenie is manually correcting formats in the meantime.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#7C5CFF",
-      "summary": "Started as a question about Airbnb jobs marked Please Schedule and host response expectations, then narrowed to Capture Techs not seeing any Airbnb jobs in their Airtable views, even once scheduled.",
+      "summary": "Capture techs cannot see Airbnb jobs in their CT Airtable views even after the job has been scheduled, so job details have to be passed over by hand.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Ricardo's read is that the missing jobs were simply unassigned. Juyoung said she would check and share example links — no reply since 8/11 9:20 PM, so the next action is hers.",
+      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; nothing received since, so the next action is hers before COP-2043 can be narrowed further.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
