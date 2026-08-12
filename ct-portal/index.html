@@ -344,20 +344,60 @@ window.CT_PORTAL_CONFIG = {
            ' · ' + h12 + ':' + String(d.getUTCMinutes()).padStart(2, '0') + ' ' + ap + ' ' + TZ_LABEL;
   }
 
+  /**
+   * A transient failure should never reach a Capture Tech. Network drops and
+   * 5xx responses are retried with a short backoff; anything the server said
+   * deliberately (4xx) is surfaced immediately, because retrying won't help.
+   */
+  var RETRY_DELAYS = [400, 1200];
+
+  function wait(ms) {
+    return new Promise(function (r) { setTimeout(r, ms); });
+  }
+
   function api(path, opts) {
     if (!API || /YOUR-SUBDOMAIN/.test(API)) {
-      return Promise.reject(new Error('The portal is not configured yet — set API_BASE at the top of index.html.'));
+      return Promise.reject(new Error(
+        'The portal is not configured yet — set API_BASE at the top of index.html.'
+      ));
     }
-    return fetch(API + path, opts).then(function (res) {
-      return res.text().then(function (txt) {
-        var body = {};
-        try { body = txt ? JSON.parse(txt) : {}; } catch (e) { body = { error: txt.slice(0, 300) }; }
-        if (!res.ok) throw new Error(body.error || ('Request failed (' + res.status + ')'));
-        return body;
+
+    function attempt(n) {
+      return fetch(API + path, opts).then(function (res) {
+        return res.text().then(function (txt) {
+          var body = {};
+          try { body = txt ? JSON.parse(txt) : {}; } catch (e) { body = {}; }
+
+          if (res.ok) return body;
+
+          // 5xx: the server is unhealthy or mid-deploy — worth another go.
+          if (res.status >= 500 && n < RETRY_DELAYS.length) {
+            return wait(RETRY_DELAYS[n]).then(function () { return attempt(n + 1); });
+          }
+
+          if (body.error) throw new Error(body.error);
+          if (res.status >= 500) {
+            throw new Error('The server had a problem (' + res.status + '). Please try again in a moment.');
+          }
+          throw new Error('Request failed (' + res.status + ').');
+        });
+      }, function () {
+        // fetch itself rejected: offline, DNS, TLS, blocked, or a dropped
+        // connection. No response ever arrived, so status is unknowable.
+        if (n < RETRY_DELAYS.length) {
+          return wait(RETRY_DELAYS[n]).then(function () { return attempt(n + 1); });
+        }
+        if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+          throw new Error('You appear to be offline. Reconnect and try again.');
+        }
+        throw new Error(
+          'Could not reach the server after several tries. If this keeps happening, ' +
+          'send this to your Capture Coordinator: ' + API
+        );
       });
-    }, function () {
-      throw new Error('Could not reach the server. Check your connection and try again.');
-    });
+    }
+
+    return attempt(0);
   }
 
   var state = { email: null, records: [], current: null };
