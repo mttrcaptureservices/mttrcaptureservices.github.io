@@ -79,6 +79,7 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
 .badge-scheduled{background:var(--brand-soft);color:var(--brand-ink);border-color:#c5ddf6}
 .badge-cancel{background:var(--danger-soft);color:var(--danger);border-color:#f3c9c5}
 .badge-warn{background:var(--warn-soft);color:var(--warn);border-color:#f0dcb4}
+.badge-ok{background:var(--ok-soft);color:var(--ok);border-color:#bfe5d3}
 .badge-none{background:var(--surface-2);color:var(--ink-3);border-color:var(--line)}
 .meta{display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink-2)}
 .meta-row{display:flex;gap:9px;align-items:flex-start}
@@ -265,12 +266,41 @@ window.CT_PORTAL_CONFIG = {
 
   var STATUS_OPTIONS = ['Scheduled','Cancel','Host Unresponsive','Host - No availability','Host not interested'];
 
+  /**
+   * The card badge shows {Job Status} — the authoritative status of the job.
+   * ({Matterport Status} is a formula equal to {Job Status}, so it reads the
+   * same either way.) Unlisted values fall through to neutral grey rather
+   * than being mis-coloured, so new Airtable choices degrade safely.
+   */
   var BADGE_CLASS = {
+    // done
+    'Complete': 'badge-ok',
+    'QA Complete': 'badge-ok',
+    // in motion
     'Scheduled': 'badge-scheduled',
-    'Cancel': 'badge-cancel',
+    'Rescheduled': 'badge-scheduled',
+    'In Progress': 'badge-scheduled',
+    'Send to Snapshot Production': 'badge-scheduled',
+    'CT ALT': 'badge-scheduled',
+    // needs someone to act
+    'Pending': 'badge-warn',
+    'Please Schedule': 'badge-warn',
+    'Pending Review': 'badge-warn',
+    'Waiting for Approval': 'badge-warn',
+    'On Hold': 'badge-warn',
+    'On hold by Client': 'badge-warn',
     'Host Unresponsive': 'badge-warn',
     'Host - No availability': 'badge-warn',
-    'Host not interested': 'badge-warn'
+    'Host not interested': 'badge-warn',
+    // dead
+    'Cancel': 'badge-cancel',
+    'Cancelled': 'badge-cancel',
+    'Cancelled In Advance': 'badge-cancel',
+    'Cancelled in Advance': 'badge-cancel',
+    'Cancelled Last Minute': 'badge-cancel',
+    'Agent Cancelled': 'badge-cancel',
+    'Declined by CT': 'badge-cancel',
+    'Expired Contract': 'badge-cancel'
   };
 
   var STORAGE_KEY = 'ctPortalEmail';
@@ -481,14 +511,13 @@ window.CT_PORTAL_CONFIG = {
     var keep = sel.value;
     var seen = {};
     state.records.forEach(function (r) {
-      var s = (r.fields || {})['CT Job Status'];
+      var s = (r.fields || {})['Job Status'];
       if (s) seen[s] = true;
     });
     var opts = ['<option value="">All statuses</option>'];
-    STATUS_OPTIONS.concat(Object.keys(seen)).filter(function (v, i, a) { return a.indexOf(v) === i; })
-      .forEach(function (s) {
-        if (seen[s]) opts.push('<option value="' + esc(s) + '">' + esc(s) + '</option>');
-      });
+    Object.keys(seen).sort().forEach(function (s) {
+      opts.push('<option value="' + esc(s) + '">' + esc(s) + '</option>');
+    });
     opts.push('<option value="__none">No status set</option>');
     sel.innerHTML = opts.join('');
     sel.value = keep;
@@ -499,11 +528,11 @@ window.CT_PORTAL_CONFIG = {
     var st = $('statusFilter').value;
     return state.records.filter(function (r) {
       var f = r.fields || {};
-      var status = f['CT Job Status'] || '';
+      var status = f['Job Status'] || '';
       if (st === '__none' && status) return false;
       if (st && st !== '__none' && status !== st) return false;
       if (!q) return true;
-      var hay = [f['Static Job ID'], f['Property Name'], f['Floor/Unit/Suite'], f['Capture Address'], f['City'], f['State'], status].join(' ').toLowerCase();
+      var hay = [f['Static Job ID'], f['Property Name'], f['Floor/Unit/Suite'], f['Capture Address'], f['City'], f['State'], status, f['CT Job Status']].join(' ').toLowerCase();
       return hay.indexOf(q) !== -1;
     });
   }
@@ -537,7 +566,7 @@ window.CT_PORTAL_CONFIG = {
 
     $('grid').innerHTML = rows.map(function (r) {
       var f = r.fields || {};
-      var status = f['CT Job Status'] || '';
+      var status = f['Job Status'] || '';
       var badgeCls = BADGE_CLASS[status] || 'badge-none';
       var title = f['Property Name'] || f['Floor/Unit/Suite'] || f['Capture Address'] || 'Untitled job';
       var jobId = f['Static Job ID'] || '';
@@ -552,7 +581,8 @@ window.CT_PORTAL_CONFIG = {
       var chips = [];
       if (size) chips.push('<span class="chip">' + esc(size) + ' ' + esc(units.replace(/\s*\(.*\)/, '')) + '</span>');
       if (f['Property Type']) chips.push('<span class="chip">' + esc(f['Property Type']) + '</span>');
-      if (f['Job Status']) chips.push('<span class="chip">' + esc(f['Job Status']) + '</span>');
+      // Job Status is now the badge, so the chip carries what the CT last set.
+      if (f['CT Job Status']) chips.push('<span class="chip">You: ' + esc(f['CT Job Status']) + '</span>');
 
       return '<button class="card" data-id="' + esc(r.id) + '" type="button">' +
           '<div class="card-head"><div class="card-title"><h3>' + esc(title) + '</h3>' +
