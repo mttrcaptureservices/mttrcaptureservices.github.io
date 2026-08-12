@@ -1,17 +1,6 @@
 {
-  "lastUpdated": "2026-08-12T22:10:00.000Z",
+  "lastUpdated": "2026-08-12T23:10:00.000Z",
   "threads": [
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#2E9E7A",
-      "summary": "Needs a copy of the enterprise quoting calculator Kailyn maintains, which returns both the job rate and the per-line-item CT payout, so enterprise quotes can keep moving while she is out of office.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/12",
-      "note": "Asked Troy on 8/12 at 2:07 PM whether he needs Kailyn's actual spreadsheet or whether per-line-item CT payout figures pulled from the pricing tables would cover his in-flight quotes. Still unanswered as of 3:07 PM; next action is his. No Jira - the calculator is a file owned by Kailyn, not an Airtable defect.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786568702286?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786568702286&createdTime=1786568702286"
-    },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
@@ -21,19 +10,19 @@
       "status": "Awaiting decision",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration - decision sits with Ricardo and Snehal. Stephenie confirmed at 9:20 AM she is manually correcting formats in the meantime and is waiting on that decision.",
+      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration - that decision sits with Ricardo and Snehal. Stephenie confirmed at 9:20 AM she is manually correcting formats in the meantime and is waiting on the update, so the next action is ours.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#7C5CFF",
-      "summary": "Capture techs cannot see Airbnb jobs in their CT Airtable views even after the job has been scheduled, so job details have to be passed over by hand.",
+      "summary": "Capture techs cannot see Airbnb jobs in their CT Airtable views even after the job has been scheduled, so job details have to be passed over by hand. Adjet also found broken scheduling links on the host reminder emails.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; nothing received in the ~18 hours since, so COP-2043 cannot be narrowed past the unassigned-job theory until she sends them. Next action is hers.",
+      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; still nothing received ~21 hours later, so COP-2043 cannot be narrowed past the unassigned-job theory until she sends them. Next action is hers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
