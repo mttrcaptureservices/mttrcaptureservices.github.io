@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-12T21:20:00.000Z",
+  "lastUpdated": "2026-08-12T22:10:00.000Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/12",
-      "note": "Asked Troy on 8/12 at 2:07 PM whether he needs Kailyn's actual spreadsheet or whether per-line-item CT payout figures pulled from the pricing tables would cover his in-flight quotes; next action is his answer. No Jira - the calculator is a file owned by Kailyn, not an Airtable defect.",
+      "note": "Asked Troy on 8/12 at 2:07 PM whether he needs Kailyn's actual spreadsheet or whether per-line-item CT payout figures pulled from the pricing tables would cover his in-flight quotes. Still unanswered as of 3:07 PM; next action is his. No Jira - the calculator is a file owned by Kailyn, not an Airtable defect.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786568702286?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786568702286&createdTime=1786568702286"
     },
     {
@@ -21,7 +21,7 @@
       "status": "Awaiting decision",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration - decision sits with Ricardo and Snehal. Stephenie is manually correcting formats in the meantime.",
+      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration - decision sits with Ricardo and Snehal. Stephenie confirmed at 9:20 AM she is manually correcting formats in the meantime and is waiting on that decision.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
@@ -33,7 +33,7 @@
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; nothing received since, so the next action is hers before COP-2043 can be narrowed further.",
+      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; nothing received in the ~18 hours since, so COP-2043 cannot be narrowed past the unassigned-job theory until she sends them. Next action is hers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
