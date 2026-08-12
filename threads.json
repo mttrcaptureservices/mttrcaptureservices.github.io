@@ -1,27 +1,28 @@
 {
-  "lastUpdated": "2026-08-12T04:00:42.580Z",
+  "lastUpdated": "2026-08-11T21:26:00-07:00",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#7E57C2",
-      "summary": "Automations for JOBID6622980283227796111 (388 Beale / UDR) have not gone out after several manual trigger attempts.",
+      "color": "#E8734A",
+      "summary": "Automations for JOBID6622980283227796111 (388 Beale / UDR) were triggered several times but the CT email never went out.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
-      "note": "Parent record 93575 already shows Send CT Email (Parent Base) = Sent, so the trigger is firing; asked Caitlin whether the CT never received it or the field never switches to Sent when she runs it. No reply yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786491152817?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786491152817&createdTime=1786491152817"
+      "note": "Parent record already shows Send CT Email = Sent, so this points at delivery rather than the trigger. Asked Caitlin whether Emanuel is seeing nothing arrive at the Aerial Canvas inboxes, or whether the field never flips to Sent — no reply yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786491152817?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&parentMessageId=1786491152817&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#4A90D9",
-      "summary": "Airbnb project: asking whether the host reminder email for jobs stuck in Please Schedule includes a link for submitting the required info. Two follow-on issues surfaced - a broken link in the reminder, and CTs reporting they cannot see Airbnb jobs in their Airtable views even after scheduling.",
+      "summary": "Capture Technicians cannot see Airbnb jobs in their Airtable views, even for jobs that have already been scheduled — forcing coordinators to pass job details to CTs manually.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/11",
-      "note": "Ricardo answered the reminder-count question live and committed to investigating the broken link Adjet found. Still open and unassigned: CTs say scheduled Airbnb jobs never appear in their CT Airtable views - needs a view/filter check before Juyoung can answer the customer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
+      "jiraKey": "COP-2043",
+      "note": "Ricardo established live that unassigned jobs correctly don't appear in CT views; Juyoung says assigned/scheduled Airbnb jobs are missing too and is gathering example links. Blocked on those examples before touching the CT DIRECTORY SYNCED VIEW filters.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&parentMessageId=1786500528243&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
     }
   ]
 }
