@@ -1,40 +1,40 @@
 {
-  "lastUpdated": "2026-08-12T11:42:00-07:00",
+  "lastUpdated": "2026-08-12T19:15:21Z",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#4C9AFF",
-      "summary": "A Capture Tech cannot see the 'I would like to accept this job' / 'decline this job' options on the CT job request form for JOBID6622735036817477854 (Somerled Designs), and hits the same dead end clicking Schedule in Airtable.",
+      "summary": "A Capture Tech cannot see the accept/decline options on the CT job request form for JOBID6622735036817477854 (Somerled Designs), and hits the same dead end via Schedule in Airtable. Caitlin sees the options fine on her end.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/12",
       "jiraKey": "COP-2046",
-      "note": "The earlier jobStatusAT = Scheduled explanation is ruled out - Caitlin confirmed she set Scheduled manually after the CT's failed attempt. Airtable shows two live defects: record 93496 is named \" entire unit\" so its CT URL resolves blank and no email ever dispatched, and {Job Status} carries duplicate \"In Progress\" / \"In-Progress\" spellings the form may not both match. Next action is Ricardo - inspect the Jotform 252161480467962 conditional logic against the real status strings.",
+      "note": "Caitlin confirmed the job was still In Progress when the tech tried, ruling out the Scheduled-status theory. COP-2046 is open with Ricardo to check the Jotform conditions against the duplicate Job Status spellings (In Progress vs In-Progress) and fix record 93496's blank CT URL.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786553001048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786553001048&createdTime=1786553001048"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
-      "summary": "Livit Jotform confirmation emails render some jobs in mm/dd/yy instead of the international dd/mm/yy format, and Livit agents can submit a preferred date with no preferred scan time, so confirmations show 12am.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "summary": "The Livit confirmation email renders dates as month/day/year instead of the international day/month/year, and preferred scan time is not a required field on the Livit Jotform, so confirmations show 12am when the agent submits a date only.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting decision",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Stephenie acknowledged at 9:20 AM and is manually amending confirmed jobs in the meantime. Blocked on migrating Livit AG off the legacy Job Request and CT Accept/Decline forms - next action is Ricardo.",
+      "note": "Both issues are logged on COP-2019 with JOBID6613077533619588764 as the example. The open decision — patch the legacy Livit form now or fold it into the migration — is ours; Stephenie is manually amending confirmed jobs meanwhile.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#7C5CFF",
-      "summary": "Asked whether the Airbnb host reminder email for jobs in 'Please Schedule' status includes a link for hosts to submit the required information. Thread also branched into CTs not seeing Airbnb jobs in their Airtable views.",
+      "summary": "Started as a question about Airbnb jobs marked Please Schedule and host response expectations, then narrowed to Capture Techs not seeing any Airbnb jobs in their Airtable views, even once scheduled.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Ricardo narrowed the CT-visibility half to jobs with no assigned CT; Juyoung said she would send example links for scheduled Airbnb jobs CTs still cannot see. Next action is Juyoung.",
+      "note": "Ricardo's read is that the missing jobs were simply unassigned. Juyoung said she would check and share example links — no reply since 8/11 9:20 PM, so the next action is hers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
