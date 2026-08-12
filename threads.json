@@ -1,28 +1,29 @@
 {
-  "lastUpdated": "2026-08-11T21:26:00-07:00",
+  "lastUpdated": "2026-08-12T16:20:09.455Z",
   "threads": [
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#E8734A",
-      "summary": "Automations for JOBID6622980283227796111 (388 Beale / UDR) were triggered several times but the CT email never went out.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/11",
-      "note": "Parent record already shows Send CT Email = Sent, so this points at delivery rather than the trigger. Asked Caitlin whether Emanuel is seeing nothing arrive at the Aerial Canvas inboxes, or whether the field never flips to Sent — no reply yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786491152817?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&parentMessageId=1786491152817&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
-    },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
-      "color": "#4A90D9",
-      "summary": "Capture Technicians cannot see Airbnb jobs in their Airtable views, even for jobs that have already been scheduled — forcing coordinators to pass job details to CTs manually.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "color": "#7C5CFF",
+      "summary": "Airbnb jobs stuck in \"Please Schedule\" after the reminder attempts were exhausted, and Capture Techs report they cannot see Airbnb jobs in their Airtable views even once the jobs are scheduled.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Ricardo established live that unassigned jobs correctly don't appear in CT views; Juyoung says assigned/scheduled Airbnb jobs are missing too and is gathering example links. Blocked on those examples before touching the CT DIRECTORY SYNCED VIEW filters.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&parentMessageId=1786500528243&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support"
+      "note": "Ricardo narrowed it to jobs with no CT assigned; Juyoung says she means any Airbnb job including scheduled ones and is gathering example links. Next action is hers.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E8743B",
+      "summary": "Livit confirmation emails render dates as month/day/year instead of the international day/month/year, and preferred scan time is not a required field on the Livit Jotform, so confirmations show 12am when the agent submits a date only.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting decision",
+      "date": "8/12",
+      "jiraKey": "COP-2019",
+      "note": "Logged on COP-2019 with JOBID6613077533619588764 as the example; blocked on your call to either patch the legacy Livit Jotform now or fix it through the On-contract form migration.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
 }
