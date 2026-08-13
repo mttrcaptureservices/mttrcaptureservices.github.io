@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13T21:39:07.472Z",
+  "lastUpdated": "2026-08-13T22:15:03.309Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,30 +10,8 @@
       "status": "Investigating",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Stephenie confirmed she'll wait for updates - next action is on the CS Apps team to fix the date format and make preferred scan time compulsory on the Livit Jotform.",
+      "note": "Blocked on the CS Apps team - Livit Jotform confirmation email still renders dates as MM/DD/YYYY instead of DD/MM/YYYY; Stephenie is manually amending confirmed jobs while she waits.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8743B",
-      "summary": "No confirmation email went out for job SWC-7760, so the client was never told about the scan.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/13",
-      "note": "Ricardo is live in-thread: one invalid recipient address breaks the Airtable email step for the whole group, and he has offered to subscribe Stephenie to that automation's error notifications - awaiting her go-ahead.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786641251219?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786641251219&createdTime=1786641251219"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#2E9E7B",
-      "summary": "On revisit job SWC-7363_RV the adjustment line item keeps populating a job rate even with the client price code set to \"Refer to Parent\" - they want the client charged nothing while still paying the CT a custom amount.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/13",
-      "note": "{Job Rate} resolves as Job Rate 2.0 or 1.0 plus {Adjustment Job Rate}, so the client price code alone won't zero it; SWC-7363_RV doesn't resolve in Global Requests, so Troy has been asked for the Airtable record link or Record Number.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786638640808?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786638640808&createdTime=1786638640808"
     }
   ]
 }
