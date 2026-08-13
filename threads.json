@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2026-08-12T23:10:00.000Z",
+  "lastUpdated": "2026-08-13T04:13:46.862Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
-      "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of the international dd/mm/yy format, and preferred scan time is not a required field so confirmations default to 12am.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting decision",
+      "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of the international dd/mm/yy, and preferred scan time isn't a required field on the Jotform, so confirmations come through showing 12:00 AM.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Both defects are logged on COP-2019; blocked on the call of whether to patch the legacy Livit form now or fold the fix into the on-contract migration - that decision sits with Ricardo and Snehal. Stephenie confirmed at 9:20 AM she is manually correcting formats in the meantime and is waiting on the update, so the next action is ours.",
+      "note": "Stephenie confirmed she'll wait for updates — next action is on the CS Apps team to fix the date format and make preferred scan time compulsory on the Livit Jotform.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     },
     {
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#7C5CFF",
-      "summary": "Capture techs cannot see Airbnb jobs in their CT Airtable views even after the job has been scheduled, so job details have to be passed over by hand. Adjet also found broken scheduling links on the host reminder emails.",
+      "summary": "Airbnb jobs are not appearing in the Capture Techs' views, even for jobs that are already scheduled. Also asked whether the reminder email to Airbnb hosts on \"Please Schedule\" jobs is actually going out.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/11",
       "jiraKey": "COP-2043",
-      "note": "Juyoung said on 8/11 at 9:20 PM she would check with the CTs and share specific job links; still nothing received ~21 hours later, so COP-2043 cannot be narrowed past the unassigned-job theory until she sends them. Next action is hers.",
+      "note": "Root cause for the \"Please Schedule\" jobs is that they are unassigned, but Juyoung said she would send links to scheduled Airbnb jobs that still aren't visible — waiting on those examples before COP-2043 can move.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786500528243?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786500528243&createdTime=1786500528243"
     }
   ]
