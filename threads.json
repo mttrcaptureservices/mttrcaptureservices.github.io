@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T00:48:44.111Z",
+  "lastUpdated": "2026-08-14T01:08:59.357Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,7 +10,7 @@
       "status": "Investigating",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Blocked on the CS Apps team - Livit Jotform confirmation email still renders dates as MM/DD/YY and preferred scan time is not a required field; Stephenie is manually correcting jobs meanwhile.",
+      "note": "Blocked on the team's Livit Jotform date-format fix; Stephenie is manually checking confirmed jobs meanwhile and owes nothing.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
