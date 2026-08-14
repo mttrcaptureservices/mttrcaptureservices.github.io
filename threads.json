@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T20:07:30.379Z",
+  "lastUpdated": "2026-08-14T21:06:53.225Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,19 +10,8 @@
       "status": "Blocked on COP-2019",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Interim Zap date-format fix explained and acknowledged by Stephenie 8/14; nothing owed by her. Permanent fix is the Livit form migration on COP-2019, still To Do with Snehal.",
+      "note": "Interim Zap date-format fix is live and Stephenie has acknowledged it; nothing owed to her. Permanent fix is COP-2019 (Livit AG form migration), still To Do with Snehal since 8/13.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#4C9AFF",
-      "summary": "Asking whether an appointment confirmation email was actually delivered to the Roche team for job SWC-7760. Roche says they never received it, cancelled last minute, and are disputing the late-cancellation charge.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/14",
-      "note": "Snehal is live-checking the automation logs to confirm whether the confirmation email fired or failed; answer owed to Troy.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786736881037?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786736881037&createdTime=1786736881037"
     }
   ]
 }
