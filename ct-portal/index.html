@@ -715,6 +715,55 @@ window.CT_PORTAL_CONFIG = {
       });
   }
 
+  // For values whose HTML has already been built and escaped.
+  function detailRowHTML(k, html) {
+    if (!html) return '';
+    return '<dt>' + esc(k) + '</dt><dd>' + html + '</dd>';
+  }
+
+  function nl2br(v) {
+    return esc(v).replace(/\r?\n/g, '<br>');
+  }
+
+  /**
+   * On-site contact is a multi-line blob of name / number / email. Make the
+   * number and address tappable — a CT standing outside a property wants to
+   * call or email in one tap, not select-and-copy.
+   */
+  function linkifyContact(v) {
+    var out = esc(v);
+    out = out.replace(
+      /([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g,
+      '<a href="mailto:$1">$1</a>'
+    );
+    out = out.replace(/(\+?\d[\d\s().-]{6,}\d)/g, function (m) {
+      return '<a href="tel:' + m.replace(/[^\d+]/g, '') + '">' + m + '</a>';
+    });
+    return out.replace(/\r?\n/g, '<br>');
+  }
+
+  // Listing ID lives inside the {Job Identifiers} formula, not its own field.
+  function listingId(f) {
+    var m = /Listing ID:\s*(\S+)/i.exec(f['Job Identifiers'] || '');
+    return m ? m[1] : '';
+  }
+
+  function ctRate(f) {
+    var raw = f['CT Rate'];
+    if (raw === '' || raw == null) return '';
+    var cur = Array.isArray(f['CT Currency']) ? f['CT Currency'][0] : f['CT Currency'];
+    var n = Number(raw);
+    if (!isFinite(n)) return String(raw);
+    if (cur) {
+      try {
+        return new Intl.NumberFormat(undefined, { style: 'currency', currency: cur }).format(n);
+      } catch (e) {
+        return cur + ' ' + n; // unrecognised currency code — show it plainly
+      }
+    }
+    return String(n);
+  }
+
   function openDrawer(id) {
     var rec = state.records.filter(function (r) { return r.id === id; })[0];
     if (!rec) return;
@@ -725,16 +774,28 @@ window.CT_PORTAL_CONFIG = {
     $('drawerTitle').textContent = f['Property Name'] || f['Floor/Unit/Suite'] || f['Capture Address'] || 'Job';
     $('drawerJobId').textContent = f['Static Job ID'] || rec.id;
     var size = f['Capture Size - Requested'];
+    var scan = f['Scan Details'];
+
+    // {Scan Details} already bundles Floor/Unit/Suite and Size, so showing it
+    // alongside those two would repeat them. Prefer it when present, and fall
+    // back to the individual rows when it isn't.
+    var scanRows = scan
+      ? detailRowHTML('Scan details', nl2br(scan))
+      : detailRow('Unit / Floor', f['Floor/Unit/Suite']) +
+        detailRow('Capture size', size ? size + ' ' + (f['Area Units'] || '') : '');
+
     $('detailsList').innerHTML = [
       detailRow('Address', f['Capture Address']),
-      detailRow('Unit / Floor', f['Floor/Unit/Suite']),
       detailRow('City', [f['City'], f['State'], f['Zip Code']].filter(Boolean).join(', ')),
+      scanRows,
       detailRow('Property type', f['Property Type']),
-      detailRow('Capture size', size ? size + ' ' + (f['Area Units'] || '') : ''),
+      detailRowHTML('On-site contact', f['On Site Contact Info'] ? linkifyContact(f['On Site Contact Info']) : ''),
       detailRow('Preferred 1', f['Preferred Date/Time 1']),
       detailRow('Preferred 2', f['Preferred Date/Time 2']),
       detailRow('Job status', f['Job Status']),
-      detailRow('Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time']))
+      detailRow('Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time'])),
+      detailRow('Your rate', ctRate(f)),
+      detailRow('Listing ID', listingId(f))
     ].join('') || '<dt>Details</dt><dd>—</dd>';
 
     $('fScheduled').value = isoToLocalInput(f['Job Scheduled Date/Time']);
