@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-14T01:08:59.357Z",
+  "lastUpdated": "2026-08-14T03:56:48.816Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
       "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of the international dd/mm/yy, and preferred scan time isn't a required field on the Jotform, so confirmations come through showing 12:00 AM.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Blocked on the team's Livit Jotform date-format fix; Stephenie is manually checking confirmed jobs meanwhile and owes nothing.",
+      "note": "Native dd/mm/yyyy in Airtable declined as a structural change; the Zap now converts the Livit order form's dd-mm-yyyy to mm/dd/yyyy and hardcodes 10AM for preferred options 1 and 2. Waiting on Stephenie to confirm on the next Livit order.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
