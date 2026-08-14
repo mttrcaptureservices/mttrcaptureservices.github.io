@@ -763,10 +763,11 @@ window.CT_PORTAL_CONFIG = {
     return out.replace(/\r?\n/g, '<br>');
   }
 
-  // Listing ID lives inside the {Job Identifiers} formula, not its own field.
+  // Read straight from {Property ID}. (Previously parsed out of the
+  // {Job Identifiers} formula, which was brittle — a wording change there
+  // would have silently emptied this.)
   function listingId(f) {
-    var m = /Listing ID:\s*(\S+)/i.exec(f['Job Identifiers'] || '');
-    return m ? m[1] : '';
+    return String(f['Property ID'] == null ? '' : f['Property ID']).trim();
   }
 
   /**
