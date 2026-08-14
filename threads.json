@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-14T16:05:28.542Z",
+  "lastUpdated": "2026-08-14T17:05:35.682Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8743B",
       "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of international dd/mm/yy, and show 12am because the form has no required preferred scan time.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "statusCls": "badge-todo",
+      "status": "Blocked on COP-2019",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Interim Zap date-format fix explained and acknowledged by Stephenie 8/14; permanent fix is the Livit form migration on COP-2019, still To Do with Snehal.",
+      "note": "Interim Zap date-format fix explained and acknowledged by Stephenie 8/14; nothing owed by her. Permanent fix is the Livit form migration on COP-2019, still To Do with Snehal.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
