@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
 <title>CT Job Portal — Matterport Capture Services</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 <style>
 :root{
   --bg:#f4f6fa; --surface:#ffffff; --surface-2:#f8fafc; --line:#e3e8ef; --line-strong:#cdd5e0;
@@ -120,6 +122,15 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
 .readout dl > dt:first-of-type,.readout dl > dt:first-of-type + dd{border-top:none}
 .hint{font-size:12px;color:var(--ink-3);margin-top:5px}
 
+/* map */
+.mapwrap{position:relative;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface-2);height:240px}
+#mapCanvas{position:absolute;inset:0}
+.leaflet-container{background:var(--surface-2)!important;font:inherit}
+.map-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink-3);font-size:13px;padding:16px;text-align:center;background:var(--surface-2);z-index:500}
+.map-link{display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-size:13.5px;font-weight:600;color:var(--brand);text-decoration:none}
+.map-link:hover{text-decoration:underline}
+.map-link svg{width:15px;height:15px}
+
 #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);z-index:60;background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow-2);transition:transform .28s cubic-bezier(.32,.72,0,1);max-width:90vw;text-align:center}
 #toast.show{transform:translate(-50%,0)}
 #toast.err{background:var(--danger)}
@@ -210,6 +221,18 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
   </div>
   <div class="drawer-body">
     <div id="drawerError" class="alert alert-error" hidden></div>
+    <div class="section" id="mapSection" hidden>
+      <h4>Location</h4>
+      <div class="mapwrap">
+        <div id="mapCanvas"></div>
+        <div class="map-fallback" id="mapFallback">Loading map…</div>
+      </div>
+      <a class="map-link" id="mapLink" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Open in Google Maps</span>
+      </a>
+    </div>
+
     <div class="section">
       <h4>Job details</h4>
       <div class="readout"><dl id="detailsList"></dl></div>
@@ -623,12 +646,82 @@ window.CT_PORTAL_CONFIG = {
     return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
   }
 
+  /**
+   * Build the best address string we can for the map. The Airtable address
+   * is free text and sometimes lacks the town or country, so append City /
+   * State / Zip when they aren't already part of it.
+   */
+  function mapQuery(f) {
+    var base = (f['Capture Address'] || '').trim();
+    if (!base) return '';
+    var lower = base.toLowerCase();
+    var extras = [f['City'], f['State'], f['Zip Code']]
+      .filter(Boolean)
+      .filter(function (part) { return lower.indexOf(String(part).toLowerCase()) === -1; });
+    return extras.length ? base + ', ' + extras.join(', ') : base;
+  }
+
+  // One Leaflet instance, reused across drawer opens.
+  var mapObj = null;
+  var mapMarker = null;
+  var mapToken = 0;
+
+  function setMapMessage(msg) {
+    var fb = $('mapFallback');
+    fb.textContent = msg;
+    fb.hidden = !msg;
+  }
+
+  function renderMap(f) {
+    var section = $('mapSection');
+    var q = mapQuery(f);
+    var token = ++mapToken; // guards against a slow lookup landing on a later job
+
+    // No address at all — hide the section rather than show an empty frame.
+    if (!q) { section.hidden = true; return; }
+
+    section.hidden = false;
+    setMapMessage('Loading map…');
+    // Needs no API key, and opens the CT's default maps app on mobile.
+    $('mapLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+
+    api('/api/geocode?address=' + encodeURIComponent(q))
+      .then(function (res) {
+        if (token !== mapToken) return; // a different job was opened meanwhile
+        if (!res.found) { setMapMessage('No map available for this address'); return; }
+        if (typeof L === 'undefined') { setMapMessage('Map library unavailable'); return; }
+
+        setMapMessage('');
+
+        if (!mapObj) {
+          mapObj = L.map('mapCanvas', { scrollWheelZoom: false });
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(mapObj);
+        }
+
+        mapObj.setView([res.lat, res.lon], 16);
+        if (mapMarker) mapObj.removeLayer(mapMarker);
+        mapMarker = L.marker([res.lat, res.lon]).addTo(mapObj);
+
+        // The drawer animates open, so the container size isn't final yet.
+        setTimeout(function () { if (mapObj) mapObj.invalidateSize(); }, 60);
+        setTimeout(function () { if (mapObj) mapObj.invalidateSize(); }, 350);
+      })
+      .catch(function () {
+        if (token !== mapToken) return;
+        setMapMessage('Map unavailable');
+      });
+  }
+
   function openDrawer(id) {
     var rec = state.records.filter(function (r) { return r.id === id; })[0];
     if (!rec) return;
     state.current = rec;
     var f = rec.fields || {};
     showAlert($('drawerError'), '');
+    renderMap(f);
     $('drawerTitle').textContent = f['Property Name'] || f['Floor/Unit/Suite'] || f['Capture Address'] || 'Job';
     $('drawerJobId').textContent = f['Static Job ID'] || rec.id;
     var size = f['Capture Size - Requested'];
