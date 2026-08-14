@@ -769,6 +769,19 @@ window.CT_PORTAL_CONFIG = {
     return m ? m[1] : '';
   }
 
+  /**
+   * Link the Listing ID straight to the Airbnb listing. Only linked when the
+   * ID is purely numeric — anything else isn't an Airbnb room ID and would
+   * produce a dead link, so it's shown as plain text instead.
+   */
+  function listingLink(f) {
+    var id = listingId(f);
+    if (!id) return '';
+    if (!/^\d+$/.test(id)) return esc(id);
+    return '<a href="https://www.airbnb.com/rooms/' + id +
+           '" target="_blank" rel="noopener noreferrer">' + esc(id) + '</a>';
+  }
+
   function ctRate(f) {
     var raw = f['CT Rate'];
     if (raw === '' || raw == null) return '';
@@ -816,7 +829,7 @@ window.CT_PORTAL_CONFIG = {
       detailRow('Job status', f['Job Status']),
       detailRow('Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time'])),
       detailRow('Your rate', ctRate(f)),
-      detailRow('Listing ID', listingId(f))
+      detailRowHTML('Listing ID', listingLink(f))
     ].join('') || '<dt>Details</dt><dd>—</dd>';
 
     $('fScheduled').value = isoToLocalInput(f['Job Scheduled Date/Time']);
