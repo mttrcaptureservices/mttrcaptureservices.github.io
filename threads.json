@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T15:24:59.248Z",
+  "lastUpdated": "2026-08-14T16:05:28.542Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,7 +10,7 @@
       "status": "Waiting on requester",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Interim Zap patch normalizes the Livit date into the format Airtable parses and puts a set time on preferred options 1 and 2; the nuance was confirmed to Stephenie 8/14 and she is monitoring the next few Livit jobs. Permanent fix is the Livit-branded on-contract form migration, COP-2019, still To Do with Snehal.",
+      "note": "Interim Zap date-format fix explained and acknowledged by Stephenie 8/14; permanent fix is the Livit form migration on COP-2019, still To Do with Snehal.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
