@@ -248,9 +248,9 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
         <span>CT Job Status</span>
         <select class="input" id="fStatus"><option value="">— Not set —</option></select>
       </label>
-      <label class="field">
+      <label class="field" id="reasonField" hidden>
         <span>Reason for Declining</span>
-        <input class="input" type="text" id="fReason" placeholder="Only if you are declining or cancelling">
+        <input class="input" type="text" id="fReason" placeholder="Why is this job being cancelled?">
       </label>
       <label class="field" style="margin-bottom:4px">
         <span>Additional Details</span>
@@ -641,6 +641,27 @@ window.CT_PORTAL_CONFIG = {
 
   $('tzHint').textContent = 'Times are shown in ' + TZ_LABEL + ', matching Airtable.';
 
+  /**
+   * "Reason for Declining" only makes sense when cancelling, so it stays
+   * hidden until CT Job Status is "Cancel".
+   *
+   * It also stays visible when a reason is already on the record, whatever
+   * the status — hiding existing data would make it invisible but still
+   * saved, which is worse than an extra field on screen.
+   */
+  function syncReasonField() {
+    var isCancel = $('fStatus').value === 'Cancel';
+    var hasText = ($('fReason').value || '').trim() !== '';
+    $('reasonField').hidden = !(isCancel || hasText);
+  }
+
+  $('fStatus').addEventListener('change', function () {
+    // Moving off Cancel is a deliberate act, so drop the now-irrelevant
+    // reason rather than saving it invisibly.
+    if ($('fStatus').value !== 'Cancel') $('fReason').value = '';
+    syncReasonField();
+  });
+
   function detailRow(k, v) {
     if (v === '' || v == null) return '';
     return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>';
@@ -802,6 +823,7 @@ window.CT_PORTAL_CONFIG = {
     $('fStatus').value = f['CT Job Status'] || '';
     $('fReason').value = f['Reason for Declining'] || '';
     $('fDetails').value = f['Additional Details'] || '';
+    syncReasonField();
 
     $('scrim').classList.add('open');
     $('drawer').classList.add('open');
