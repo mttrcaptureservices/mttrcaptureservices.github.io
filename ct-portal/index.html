@@ -131,6 +131,10 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
 .map-link:hover{text-decoration:underline}
 .map-link svg{width:15px;height:15px}
 
+.locked-note{display:flex;gap:9px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.locked-note svg{width:16px;height:16px;flex:0 0 auto;margin-top:2px;color:var(--ink-3)}
+.locked-note strong{color:var(--ink)}
+
 #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);z-index:60;background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow-2);transition:transform .28s cubic-bezier(.32,.72,0,1);max-width:90vw;text-align:center}
 #toast.show{transform:translate(-50%,0)}
 #toast.err{background:var(--danger)}
@@ -237,7 +241,14 @@ select.filter{padding:11px 13px;border:1px solid var(--line-strong);border-radiu
       <h4>Job details</h4>
       <div class="readout"><dl id="detailsList"></dl></div>
     </div>
-    <div class="section">
+    <div class="section" id="lockedNote" hidden>
+      <div class="locked-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        <span>This job is <strong id="lockedStatus"></strong>, so it&#39;s read-only. Contact your Capture Coordinator if something needs changing.</span>
+      </div>
+    </div>
+
+    <div class="section" id="updateSection">
       <h4>Your update</h4>
       <label class="field">
         <span>Job Scheduled Date/Time</span>
@@ -783,6 +794,17 @@ window.CT_PORTAL_CONFIG = {
            '" target="_blank" rel="noopener noreferrer">' + esc(id) + '</a>';
   }
 
+  /**
+   * Once a job reaches one of these statuses the work is done and the record
+   * is settled, so the portal shows it read-only: no scheduling, status or
+   * notes edits, and the preferred-time options are no longer relevant.
+   */
+  var LOCKED_STATUSES = ['Complete', 'Cancelled Last Minute'];
+
+  function isLocked(f) {
+    return LOCKED_STATUSES.indexOf(f['Job Status'] || '') > -1;
+  }
+
   function ctRate(f) {
     var raw = f['CT Rate'];
     if (raw === '' || raw == null) return '';
@@ -810,6 +832,7 @@ window.CT_PORTAL_CONFIG = {
     $('drawerJobId').textContent = f['Static Job ID'] || rec.id;
     var size = f['Capture Size - Requested'];
     var scan = f['Scan Details'];
+    var locked = isLocked(f);
 
     // {Scan Details} already bundles Floor/Unit/Suite and Size, so showing it
     // alongside those two would repeat them. Prefer it when present, and fall
@@ -825,13 +848,23 @@ window.CT_PORTAL_CONFIG = {
       scanRows,
       detailRow('Property type', f['Property Type']),
       detailRowHTML('On-site contact', f['On Site Contact Info'] ? linkifyContact(f['On Site Contact Info']) : ''),
-      detailRow('Preferred 1', f['Preferred Date/Time 1']),
-      detailRow('Preferred 2', f['Preferred Date/Time 2']),
+      // Preferred times are only useful while the job is still being booked.
+      locked ? '' : detailRow('Preferred 1', f['Preferred Date/Time 1']),
+      locked ? '' : detailRow('Preferred 2', f['Preferred Date/Time 2']),
       detailRow('Job status', f['Job Status']),
-      detailRow('Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time'])),
+      detailRow(locked ? 'Scheduled' : 'Currently scheduled', fmtDateTime(f['Job Scheduled Date/Time'])),
+      locked ? detailRow('AP invoice number', f['AP Invoice Number']) : '',
       detailRow('Your rate', ctRate(f)),
       detailRowHTML('Listing ID', listingLink(f))
     ].join('') || '<dt>Details</dt><dd>—</dd>';
+
+    // Read-only jobs: hide every input and the Save button, so there is no
+    // way to submit a change (the payload is built from these fields).
+    $('updateSection').hidden = locked;
+    $('lockedNote').hidden = !locked;
+    $('saveBtn').hidden = locked;
+    $('cancelBtn').textContent = locked ? 'Close' : 'Cancel';
+    if (locked) $('lockedStatus').textContent = f['Job Status'];
 
     $('fScheduled').value = isoToLocalInput(f['Job Scheduled Date/Time']);
     $('fStatus').value = f['CT Job Status'] || '';
@@ -862,6 +895,14 @@ window.CT_PORTAL_CONFIG = {
   $('saveBtn').addEventListener('click', function () {
     var rec = state.current;
     if (!rec) return;
+
+    // Belt and braces: hiding the button isn't a guarantee, so refuse the
+    // write outright for a locked job.
+    if (isLocked(rec.fields || {})) {
+      showAlert($('drawerError'), 'This job is ' + rec.fields['Job Status'] + ' and can no longer be edited.');
+      return;
+    }
+
     showAlert($('drawerError'), '');
     var fields = {
       'Job Scheduled Date/Time': localInputToIso($('fScheduled').value),
