@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T23:06:16.448Z",
+  "lastUpdated": "2026-08-16T05:09:55.178Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,7 +10,7 @@
       "status": "Blocked on COP-2019",
       "date": "8/12",
       "jiraKey": "COP-2019",
-      "note": "Blocked on COP-2019 (To Do, Snehal) — migrate Livit AG to the new accept/decline form; Stephenie acknowledged the interim Zap date-format correction by reaction, nothing owed to her.",
+      "note": "Blocked on COP-2019 (To Do, Snehal, unchanged since 8/13) - migrate Livit AG to the new accept/decline form; Stephenie acknowledged the interim Zap date-format correction by reaction, nothing owed to her.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
     }
   ]
