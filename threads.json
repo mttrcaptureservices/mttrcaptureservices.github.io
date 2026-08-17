@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T16:12:41.948Z",
+  "lastUpdated": "2026-08-17T17:07:54.496Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -17,11 +17,11 @@
       "author": "John Bosch",
       "initials": "JB",
       "color": "#4C8BF5",
-      "summary": "Jobs marked ESoft QA Status: Model Not Found drop out of the Roche ESOFT Work Queue view; John wants them to persist so Esoft can re-find the models.",
+      "summary": "Jobs marked Esoft QA Status: Model Not Found drop out of the Esoft Roche QA View; John wants them to stay visible so models can be re-found.",
       "statusCls": "badge-investigating",
-      "status": "Root cause identified",
+      "status": "Two blockers identified",
       "date": "8/17",
-      "note": "Two blockers: the work queue's Job Status condition excludes In Progress/Complete/Cancelled (all 62 Roche QA-status Model Not Found records sit there), and separately the Spec Ops sync source view drops Job Status: Model Not Found entirely so SWC-7786 never reaches the table. Next action is Ricardo — fix the Spec Ops sync view, then regroup the work queue Job Status condition.",
+      "note": "Re-verified 10:06 AM: SWC-7786 still absent from CS QA Status > Esoft PPS, and zero Spec Ops-sourced records carry Job Status Model Not Found. Needs two fixes from Ricardo/Adjet - the Spec Ops sync source view and the work queue's Job Status condition. No Jira: Atlassian MCP unauthorized for a 3rd run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     }
   ]
