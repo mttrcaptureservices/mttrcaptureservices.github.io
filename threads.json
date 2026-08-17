@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T19:12:51.989Z",
+  "lastUpdated": "2026-08-17T20:08:30.274Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -17,22 +17,22 @@
       "author": "John Bosch",
       "initials": "JB",
       "color": "#4C8BF5",
-      "summary": "Roche/ESOFT QA jobs marked \"Model Not Found\" do not appear in the Esoft Roche QA work queue view.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "summary": "Roche jobs set to Esoft QA Status \"Model Not Found\" do not appear in the Esoft Roche Work Queue view; SWC-7786 is missing entirely.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting fix",
       "date": "8/17",
-      "note": "Two stacked blockers confirmed: the work queue Job Status condition excludes In Progress, and the Spec Ops sync source view drops Model Not Found so SWC-7786 never reaches the table. Both fixes are Ricardo/Esoft-side; nothing owed by support.",
+      "note": "Two stacked blockers confirmed: the work queue Job Status filter excludes In Progress, and the Spec Ops sync source view drops Job Status \"Model Not Found\" so the record never reaches the table. Fix belongs to Ricardo/Adjet on the Spec Ops sync view.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     },
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#9B59B6",
-      "summary": "Parent record on JOBID6613281817313028998 is Cancelled in Advance while child line item 91647 stays Scheduled.",
+      "summary": "Parent record on JOBID6613281817313028998 is Cancelled in Advance while line item 91647 remains Scheduled.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Adjet Kodia took ownership 11:26 AM, fixed this job plus two others, and opened COP-2068 for the root cause; he reports he has identified the issue and is working it.",
+      "note": "Adjet took over at 11:44 AM, identified the root cause and opened COP-2068; three affected jobs already corrected. Next action is Adjet on the ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
       "jiraKey": "COP-2068"
     },
@@ -40,11 +40,11 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#2E9E8F",
-      "summary": "New Cushman job JOBID6628007616566513182 arrived with no project name, parent sq ft of 0, and blank Price Code Lookup CT on parent and child.",
+      "summary": "Cushman job JOBID6628007616566513182 (650 Town Center Drive) arrived with no project name, parent sq ft 0 and blank Price Code Lookup CT across parent and line items.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Replied 12:11 PM with root cause: CT Price Type is blank on all four records so the price type formula falls back to GP, and the Calculate/Recalculate Price Codes control field is set only on the parent. Line item 94243 arrived 12:04 PM reproducing the same blanks; awaiting Caitlin on whether it shares the 650 Town Center Drive project name.",
+      "note": "Project name and parent sq ft (9,141) now correct on all four records. Remaining gap: record 94243 still has a blank Price Code Lookup CT - needs the Calculate / Recalculate Price Codes control field set rather than a typed code. CT Price Type blank on all four is what forces the GP fallback (USGPC3). No Jira - Atlassian MCP unauthorized.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786991954610?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786991954610&createdTime=1786991954610"
     }
   ]
