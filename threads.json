@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-16T05:09:55.178Z",
+  "lastUpdated": "2026-08-17T15:19:19.790Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -12,6 +12,17 @@
       "jiraKey": "COP-2019",
       "note": "Blocked on COP-2019 (To Do, Snehal, unchanged since 8/13) - migrate Livit AG to the new accept/decline form; Stephenie acknowledged the interim Zap date-format correction by reaction, nothing owed to her.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#4C8BF5",
+      "summary": "Roche jobs marked Esoft QA Status: Model Not Found disappear from the Roche ESOFT Work Queue view; wants them to stay visible so Esoft can re-check for the models.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/17",
+      "note": "Fix applied at 8:06 AM removed Model Not Found from the QA-status filter, but the view still returns 0 records - the Job Status condition (excludes In Progress) is what drops them. Waiting on John to confirm scope before changing that condition.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     }
   ]
 }
