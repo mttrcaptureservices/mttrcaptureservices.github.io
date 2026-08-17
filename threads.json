@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T21:28:32.000Z",
+  "lastUpdated": "2026-08-17T22:15:09.780Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -21,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting fix",
       "date": "8/17",
-      "note": "Two stacked blockers confirmed: the work queue Job Status filter excludes In Progress, and the Spec Ops sync source view drops Job Status \"Model Not Found\" so the record never reaches the table. Fix belongs to Ricardo/Adjet on the Spec Ops sync view.",
+      "note": "Re-verified 3:10 PM: both blockers unchanged. Spec Ops sync source view still returns 0 records for Job Status = Model Not Found, so those jobs never reach the Esoft PPS table; the work queue Job Status condition (excludes In Progress) is the second blocker. Owed by Ricardo/Adjet - two filter changes.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     },
     {
@@ -32,20 +32,9 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Adjet identified the root cause at 11:44 AM and opened COP-2068; the three affected jobs were corrected at 11:26 AM. Next action is Adjet's fix to the parent-to-child status cascade.",
+      "note": "Adjet Kodia took ownership, corrected this job plus the two other affected jobs, and opened COP-2068 for the systemic parent-to-child Job Status cascade. Nothing owed by support; ticket sits with Adjet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
       "jiraKey": "COP-2068"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#2E9E8F",
-      "summary": "Client says she submitted a reschedule form with new dates for JOBID6622778990412346993 (1 West 37th Street), but no reschedule request email arrived.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/17",
-      "note": "Confirmed no reschedule submission reached Airtable - nothing has written to any of the 11 records since 8/13 10:07 AM PDT. The reschedule link is inside its 2-working-day cutoff before the 8/18 9:00 AM appointment, so the form blocks the new-dates path. Waiting on Caitlin for the client's requested dates so the job can be moved manually.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786998175516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786998175516&createdTime=1786998175516"
     }
   ]
 }
