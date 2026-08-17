@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T17:07:54.496Z",
+  "lastUpdated": "2026-08-17T18:12:23.740Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -18,11 +18,22 @@
       "initials": "JB",
       "color": "#4C8BF5",
       "summary": "Jobs marked Esoft QA Status: Model Not Found drop out of the Esoft Roche QA View; John wants them to stay visible so models can be re-found.",
-      "statusCls": "badge-investigating",
-      "status": "Two blockers identified",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "8/17",
-      "note": "Re-verified 10:06 AM: SWC-7786 still absent from CS QA Status > Esoft PPS, and zero Spec Ops-sourced records carry Job Status Model Not Found. Needs two fixes from Ricardo/Adjet - the Spec Ops sync source view and the work queue's Job Status condition. No Jira: Atlassian MCP unauthorized for a 3rd run.",
+      "note": "No reply from John since the 9:11 AM answer; two blockers stand (Job Status filter condition on the work queue, and the Spec Ops sync view dropping Model Not Found). Blocked on Ricardo/Adjet to approve the fix. No Jira - Atlassian MCP unauthorized.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#9B59B6",
+      "summary": "Parent record on JOBID6613281817313028998 is Cancelled in Advance but its line item is still Scheduled; reports this happens whenever jobs go CIA or CLM.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/17",
+      "note": "Confirmed the mismatch, but it is intermittent - only 3 of the last 213 CIA/CLM parents have a line item left on Scheduled. Asked Freddy whether to correct the 3 records now or preserve them for automation run-history tracing. No Jira - Atlassian MCP unauthorized.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744"
     }
   ]
 }
