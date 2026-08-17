@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T22:15:09.780Z",
+  "lastUpdated": "2026-08-17T23:06:54.562Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -21,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting fix",
       "date": "8/17",
-      "note": "Re-verified 3:10 PM: both blockers unchanged. Spec Ops sync source view still returns 0 records for Job Status = Model Not Found, so those jobs never reach the Esoft PPS table; the work queue Job Status condition (excludes In Progress) is the second blocker. Owed by Ricardo/Adjet - two filter changes.",
+      "note": "Two open Airtable blockers: the work queue view Job Status condition excludes In Progress, and the Spec Ops sync source view drops Model Not Found so those records never reach the table. Owed by Ricardo/Adjet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     },
     {
@@ -32,7 +32,7 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Adjet Kodia took ownership, corrected this job plus the two other affected jobs, and opened COP-2068 for the systemic parent-to-child Job Status cascade. Nothing owed by support; ticket sits with Adjet.",
+      "note": "Adjet fixed the three affected jobs directly and owns COP-2068 for the root cause; nothing owed to Freddy.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
       "jiraKey": "COP-2068"
     }
