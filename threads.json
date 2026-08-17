@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T20:08:30.274Z",
+  "lastUpdated": "2026-08-17T21:28:32.000Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -32,7 +32,7 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Adjet took over at 11:44 AM, identified the root cause and opened COP-2068; three affected jobs already corrected. Next action is Adjet on the ticket.",
+      "note": "Adjet identified the root cause at 11:44 AM and opened COP-2068; the three affected jobs were corrected at 11:26 AM. Next action is Adjet's fix to the parent-to-child status cascade.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
       "jiraKey": "COP-2068"
     },
@@ -40,12 +40,12 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#2E9E8F",
-      "summary": "Cushman job JOBID6628007616566513182 (650 Town Center Drive) arrived with no project name, parent sq ft 0 and blank Price Code Lookup CT across parent and line items.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "summary": "Client says she submitted a reschedule form with new dates for JOBID6622778990412346993 (1 West 37th Street), but no reschedule request email arrived.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/17",
-      "note": "Project name and parent sq ft (9,141) now correct on all four records. Remaining gap: record 94243 still has a blank Price Code Lookup CT - needs the Calculate / Recalculate Price Codes control field set rather than a typed code. CT Price Type blank on all four is what forces the GP fallback (USGPC3). No Jira - Atlassian MCP unauthorized.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786991954610?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786991954610&createdTime=1786991954610"
+      "note": "Confirmed no reschedule submission reached Airtable - nothing has written to any of the 11 records since 8/13 10:07 AM PDT. The reschedule link is inside its 2-working-day cutoff before the 8/18 9:00 AM appointment, so the form blocks the new-dates path. Waiting on Caitlin for the client's requested dates so the job can be moved manually.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786998175516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786998175516&createdTime=1786998175516"
     }
   ]
 }
