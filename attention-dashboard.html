@@ -54,7 +54,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <body>
 <div class="header"><h1>Needs Your Attention</h1></div>
 <div class="subtitle">August 17, 2026</div>
-<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 8:46 AM PT · Jira live · Teams via Clark</div>
+<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 9:14 AM PT · Jira live · Teams via Clark</div>
 <div class="source-row">
 <div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
 <div class="source-chip"><div class="source-dot green"></div> Assigned to you</div>
@@ -302,8 +302,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="thread-avatar" style="background:#4C8BF5">JB</div>
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">John Bosch</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Roche jobs marked Esoft QA Status: Model Not Found disappear from the Roche ESOFT Work Queue view; wants them to stay visible so Esoft can re-check for the models.</div>
-      <div class="issue-meta"><span class="badge badge-investigating">Investigating</span><span class="updated-time">8/17</span><span style="font-size:11px;color:#6e6e73">🤖 Fix applied at 8:06 AM removed Model Not Found from the QA-status filter, but the view still returns 0 records - the Job Status condition (excludes In Progress) is what drops them. Waiting on John to confirm scope before changing that condition.</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Jobs marked ESoft QA Status: Model Not Found drop out of the Roche ESOFT Work Queue view; John wants them to persist so Esoft can re-find the models.</div>
+      <div class="issue-meta"><span class="badge badge-investigating">Root cause identified</span><span class="updated-time">8/17</span><span style="font-size:11px;color:#6e6e73">🤖 Two blockers: the work queue's Job Status condition excludes In Progress/Complete/Cancelled (all 62 Roche QA-status Model Not Found records sit there), and separately the Spec Ops sync source view drops Job Status: Model Not Found entirely so SWC-7786 never reaches the table. Next action is Ricardo — fix the Spec Ops sync view, then regroup the work queue Job Status condition.</span></div>
     </div></div></div>
 </body>
 </html>
