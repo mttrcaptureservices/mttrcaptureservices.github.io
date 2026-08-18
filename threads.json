@@ -1,40 +1,29 @@
 {
-  "lastUpdated": "2026-08-18T02:06:47.970Z",
+  "lastUpdated": "2026-08-18T16:25:53.897Z",
   "threads": [
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8743B",
-      "summary": "Livit Jotform confirmation emails render dates as mm/dd/yy instead of international dd/mm/yy, and show 12am because the form has no required preferred scan time.",
-      "statusCls": "badge-todo",
-      "status": "Blocked on COP-2019",
-      "date": "8/12",
-      "jiraKey": "COP-2019",
-      "note": "Blocked on COP-2019 (To Do, Snehal, unchanged since 8/13) - migrate Livit AG to the new accept/decline form; Stephenie acknowledged the interim Zap date-format correction by reaction, nothing owed to her.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786519727146?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786519727146&createdTime=1786519727146"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#4C8BF5",
-      "summary": "Roche jobs set to Esoft QA Status \"Model Not Found\" do not appear in the Esoft Roche Work Queue view; SWC-7786 is missing entirely.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting fix",
-      "date": "8/17",
-      "note": "Two Airtable blockers still open and re-verified this run: the work queue Job Status filter excludes In Progress, and the Spec Ops sync source view still drops Job Status Model Not Found (0 records). Next action is Ricardo's on the Airtable views.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
-    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#9B59B6",
-      "summary": "Parent record on JOBID6613281817313028998 is Cancelled in Advance while line item 91647 remains Scheduled.",
+      "summary": "Parent and child records on the same job end up with different Job Statuses - the parent was cancelled while a line item stayed on Scheduled.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/17",
-      "note": "Adjet fixed the three affected jobs directly and owns COP-2068 for the root cause; nothing owed to Freddy.",
+      "note": "Adjet has the root cause and is working the fix under COP-2068; nothing owed to Freddy right now.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
       "jiraKey": "COP-2068"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E8743B",
+      "summary": "Asks that a contact number be made mandatory for the Roche requestor and on-site person, because requests keep arriving without one and she has to chase Roche before she can schedule.",
+      "statusCls": "badge-todo",
+      "status": "Investigating",
+      "date": "8/18",
+      "jiraKey": "COP-2071",
+      "note": "Root cause confirmed - the Roche API validation requires created_by_name and created_by_email but not the phone number; 24% of the last 250 requests had no number at all. Blocked on a decision with Troy Lowry on whether Roche makes it mandatory at source before we enforce it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787047353292?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787047353292&createdTime=1787047353292"
     }
   ]
 }
