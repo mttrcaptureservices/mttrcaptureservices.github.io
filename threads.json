@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T01:07:37.737Z",
+  "lastUpdated": "2026-08-18T02:06:47.970Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -21,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting fix",
       "date": "8/17",
-      "note": "Two open Airtable blockers: the work queue view Job Status condition excludes In Progress, and the Spec Ops sync source view drops Model Not Found so those records never reach the table. Owed by Ricardo/Adjet.",
+      "note": "Two Airtable blockers still open and re-verified this run: the work queue Job Status filter excludes In Progress, and the Spec Ops sync source view still drops Job Status Model Not Found (0 records). Next action is Ricardo's on the Airtable views.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786977772391?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786977772391&createdTime=1786977772391"
     },
     {
