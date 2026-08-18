@@ -1,4 +1,17 @@
 {
-  "lastUpdated": "2026-08-18T17:13:35.797Z",
-  "threads": []
+  "lastUpdated": "2026-08-18T23:22:38.024Z",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8B5CF6",
+      "summary": "Welltower is signing their first Canada-specific contract with all rates in CAD. Needs a new CAD pricebook, Country/Currency defaults on intake, CAD-correct 360 and photo fees, and a decision on how the Jotform routes Canada vs US jobs.",
+      "statusCls": "badge-todo",
+      "status": "Queued for build",
+      "date": "8/18",
+      "jiraKey": "COP-2072",
+      "note": "Ticket written and acknowledged in-channel 4:21 PM; next action is ours - recommend Jotform Option A vs B and build the CAD pricebook. Nothing blocked on Kailyn.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
+    }
+  ]
 }
