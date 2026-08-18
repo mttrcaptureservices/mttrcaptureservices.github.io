@@ -1,29 +1,4 @@
 {
-  "lastUpdated": "2026-08-18T16:25:53.897Z",
-  "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#9B59B6",
-      "summary": "Parent and child records on the same job end up with different Job Statuses - the parent was cancelled while a line item stayed on Scheduled.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/17",
-      "note": "Adjet has the root cause and is working the fix under COP-2068; nothing owed to Freddy right now.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1786987822744?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1786987822744&createdTime=1786987822744",
-      "jiraKey": "COP-2068"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8743B",
-      "summary": "Asks that a contact number be made mandatory for the Roche requestor and on-site person, because requests keep arriving without one and she has to chase Roche before she can schedule.",
-      "statusCls": "badge-todo",
-      "status": "Investigating",
-      "date": "8/18",
-      "jiraKey": "COP-2071",
-      "note": "Root cause confirmed - the Roche API validation requires created_by_name and created_by_email but not the phone number; 24% of the last 250 requests had no number at all. Blocked on a decision with Troy Lowry on whether Roche makes it mandatory at source before we enforce it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787047353292?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787047353292&createdTime=1787047353292"
-    }
-  ]
+  "lastUpdated": "2026-08-18T17:13:35.797Z",
+  "threads": []
 }
