@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T01:08:32.307Z",
+  "lastUpdated": "2026-08-19T02:08:00.246Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
       "status": "Waiting on requester",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "COP-2072 is written and queued; Kailyn has not yet confirmed the scope restatement or answered the Jotform Option A vs B question posted 8/18 4:21 PM. Next action is hers, then the routing recommendation is the first item on the ticket.",
+      "note": "Jira link posted 8/18 4:21 PM; Kailyn has not replied. COP-2072 is To Do and assigned to Ricardo — next action is his Jotform routing decision (single form + country selector vs duplicate Canada form).",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     }
   ]
