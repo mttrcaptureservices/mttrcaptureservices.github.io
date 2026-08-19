@@ -1,50 +1,52 @@
 {
-  "lastUpdated": "2026-08-19T17:23:37.584Z",
+  "lastUpdated": "2026-08-19T18:19:11.464Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
-      "summary": "Welltower is signing a Canada-specific contract and needs a new CAD pricebook, Canada/CAD defaults on intake, and multi-currency billing rules (Customer 360 Fee $225 CAD, Photo Services at $6 CAD per photo).",
+      "summary": "Welltower is signing a Canada-specific contract billed in CAD. Needs a CAD pricebook, country-aware intake routing, CAD currency defaults and CAD-correct fee fields built ahead of signature.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Kailyn confirmed the scope on 8/19 and flagged a 9/1 contract start - she wants it testable early next week; the open decision is single-form-with-country-selector vs separate form, which interacts with the Scheduling Type / form-ID logic. Next action is ours.",
+      "note": "Contract starts 9/1 and she wants a testable flow by early week of 8/24 - roughly three working days. Blocked on the team; she is also waiting on the Jotform routing recommendation (Option A vs B). Deadline now recorded on COP-2072.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
       "author": "Oriana Ooi",
       "initials": "OO",
       "color": "#10B981",
-      "summary": "Cannot add Romania and Moldova to the CT Directory EMEA Country table - the Country Form itself refuses to submit, and the countries are missing from the picker when creating a CT record.",
-      "statusCls": "badge-todo",
-      "status": "Needs ticket + fix",
+      "summary": "Cannot add Romania or Moldova to the CT Directory EMEA base. The Country Form is broken - it references deleted fields, so Create is greyed out and no submission can ever succeed.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/19",
-      "note": "Root cause confirmed from her screenshot: the Country Form shows 'cannot be submitted because some of the fields have been deleted' with Create greyed out, so it is broken rather than misused. Romania and Moldova must be created directly on the Country table with Country Code, Team Code, Currency Code and VAT Rate populated, and the form needs repairing. Asked Oriana whether VAT rates come from her or Finance. No Jira - Atlassian MCP returned 403 all run.",
+      "jiraKey": "COP-2074",
+      "note": "Ticket created and posted to the thread. Blocked on Oriana supplying the VAT rates for Romania and Moldova - the only input the team cannot source itself.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
       "author": "Oriana Ooi",
       "initials": "OO",
       "color": "#10B981",
-      "summary": "Requests that the CT New Job Request email stop telling International CTs to upload models to the Scan Services US (SSUS) account and point them at Capture Services International instead.",
+      "summary": "The New Job Request email hardcodes Scan Services US (SSUS) as the Model Upload account, so International CTs are told to upload to the US account instead of Capture Services International.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/19",
-      "note": "Explained it is a conditional change, not a text swap - one template serves NORAM and International, so the upload-account line and its 'no SSUS access' fallback both have to branch on region. Asked whether all International jobs or only certain countries/clients should get the new wording. No Jira - Atlassian MCP returned 403 all run.",
+      "jiraKey": "COP-2075",
+      "note": "Ticket created and posted to the thread. Blocked on Oriana answering whether every International job gets the new wording or only certain countries or clients - the branch condition cannot be chosen without it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787124453537?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787124453537&createdTime=1787124453537"
     },
     {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#F59E0B",
-      "summary": "Two Roche techs report they were never paid - asks whether AP-rec4MeQfSgMBoM4P9 (SWC-7080) and AP-recGMSIkfSWOmrvgu (SWC-7122) made it into the payout report.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#3B82F6",
+      "summary": "Added two Casago DRM franchises to the Airtable list and asked whether that makes them appear on the Vacasa 2.0 booking form dropdown. It does not - the form carries its own hardcoded list.",
+      "statusCls": "badge-todo",
+      "status": "Fix identified",
       "date": "8/19",
-      "note": "Ricardo applied his own eyes reaction live at ~10:20 AM and owns it, so it was left to him rather than answered over. Still needs the AP Report Download Timestamp check plus the weekly CT payout export lookup - neither was possible this run because the Airtable MCP returned 403 throughout.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
+      "note": "Diagnosed and answered: Airtable has 148 franchises, the form widget has 146, and the only two missing are Casago DRM South Dakota and Casago DRM Woodland Park. Owed action is adding both as options on the Jotform franchise field, then confirming back in the thread.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054"
     }
   ]
 }
