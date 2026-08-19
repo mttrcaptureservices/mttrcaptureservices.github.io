@@ -1,17 +1,50 @@
 {
-  "lastUpdated": "2026-08-19T02:08:00.246Z",
+  "lastUpdated": "2026-08-19T17:23:37.584Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
-      "summary": "Welltower is signing their first Canada-specific contract with all rates in CAD. Needs a new CAD pricebook, Country/Currency defaults on intake, CAD-correct 360 and photo fees, and a decision on how the Jotform routes Canada vs US jobs.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "summary": "Welltower is signing a Canada-specific contract and needs a new CAD pricebook, Canada/CAD defaults on intake, and multi-currency billing rules (Customer 360 Fee $225 CAD, Photo Services at $6 CAD per photo).",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Jira link posted 8/18 4:21 PM; Kailyn has not replied. COP-2072 is To Do and assigned to Ricardo — next action is his Jotform routing decision (single form + country selector vs duplicate Canada form).",
+      "note": "Kailyn confirmed the scope on 8/19 and flagged a 9/1 contract start - she wants it testable early next week; the open decision is single-form-with-country-selector vs separate form, which interacts with the Scheduling Type / form-ID logic. Next action is ours.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#10B981",
+      "summary": "Cannot add Romania and Moldova to the CT Directory EMEA Country table - the Country Form itself refuses to submit, and the countries are missing from the picker when creating a CT record.",
+      "statusCls": "badge-todo",
+      "status": "Needs ticket + fix",
+      "date": "8/19",
+      "note": "Root cause confirmed from her screenshot: the Country Form shows 'cannot be submitted because some of the fields have been deleted' with Create greyed out, so it is broken rather than misused. Romania and Moldova must be created directly on the Country table with Country Code, Team Code, Currency Code and VAT Rate populated, and the form needs repairing. Asked Oriana whether VAT rates come from her or Finance. No Jira - Atlassian MCP returned 403 all run.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#10B981",
+      "summary": "Requests that the CT New Job Request email stop telling International CTs to upload models to the Scan Services US (SSUS) account and point them at Capture Services International instead.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/19",
+      "note": "Explained it is a conditional change, not a text swap - one template serves NORAM and International, so the upload-account line and its 'no SSUS access' fallback both have to branch on region. Asked whether all International jobs or only certain countries/clients should get the new wording. No Jira - Atlassian MCP returned 403 all run.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787124453537?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787124453537&createdTime=1787124453537"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#F59E0B",
+      "summary": "Two Roche techs report they were never paid - asks whether AP-rec4MeQfSgMBoM4P9 (SWC-7080) and AP-recGMSIkfSWOmrvgu (SWC-7122) made it into the payout report.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/19",
+      "note": "Ricardo applied his own eyes reaction live at ~10:20 AM and owns it, so it was left to him rather than answered over. Still needs the AP Report Download Timestamp check plus the weekly CT payout export lookup - neither was possible this run because the Airtable MCP returned 403 throughout.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
     }
   ]
 }
