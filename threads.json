@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T18:19:11.464Z",
+  "lastUpdated": "2026-08-19T19:11:07.058Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
       "status": "Investigating",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Contract starts 9/1 and she wants a testable flow by early week of 8/24 - roughly three working days. Blocked on the team; she is also waiting on the Jotform routing recommendation (Option A vs B). Deadline now recorded on COP-2072.",
+      "note": "Awaiting the Jotform routing recommendation (Option A vs B) plus the CAD pricebook build; contract starts 9/1 and she needs a testable flow by early week of 8/24. Next action is the team's.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
@@ -22,7 +22,7 @@
       "status": "Waiting on requester",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Ticket created and posted to the thread. Blocked on Oriana supplying the VAT rates for Romania and Moldova - the only input the team cannot source itself.",
+      "note": "Blocked on Oriana supplying VAT rates for Romania and Moldova; no reply since the ticket link was posted 11:16 AM.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on requester",
       "date": "8/19",
       "jiraKey": "COP-2075",
-      "note": "Ticket created and posted to the thread. Blocked on Oriana answering whether every International job gets the new wording or only certain countries or clients - the branch condition cannot be chosen without it.",
+      "note": "Blocked on Oriana answering whether every International job gets the Capture Services International account or only a subset; no reply since the ticket link was posted 11:18 AM.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787124453537?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787124453537&createdTime=1787124453537"
     },
     {
@@ -45,7 +45,7 @@
       "statusCls": "badge-todo",
       "status": "Fix identified",
       "date": "8/19",
-      "note": "Diagnosed and answered: Airtable has 148 franchises, the form widget has 146, and the only two missing are Casago DRM South Dakota and Casago DRM Woodland Park. Owed action is adding both as options on the Jotform franchise field, then confirming back in the thread.",
+      "note": "Diagnosis delivered and acknowledged by John. Re-verified 12:10 PM: the Jotform franchise widget still lists 146 options and neither Casago DRM franchise is present, so the manual form edit is still outstanding and owed to him.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054"
     }
   ]
