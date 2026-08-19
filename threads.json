@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T19:11:07.058Z",
+  "lastUpdated": "2026-08-19T22:12:44.042Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -41,12 +41,25 @@
       "author": "John Bosch",
       "initials": "JB",
       "color": "#3B82F6",
-      "summary": "Added two Casago DRM franchises to the Airtable list and asked whether that makes them appear on the Vacasa 2.0 booking form dropdown. It does not - the form carries its own hardcoded list.",
-      "statusCls": "badge-todo",
-      "status": "Fix identified",
+      "summary": "Two new Casago DRM franchises added to Airtable are not appearing in the Vacasa 2.0 booking form franchise picker.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/19",
-      "note": "Diagnosis delivered and acknowledged by John. Re-verified 12:10 PM: the Jotform franchise widget still lists 146 options and neither Casago DRM franchise is present, so the manual form edit is still outstanding and owed to him.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054"
+      "note": "Diagnosed: the picker is a hardcoded Jotform widget snapshot, not an Airtable read. Re-verified 3:10 PM - still 146 options, both franchises absent. Escalated to COP-2076; owed a manual form edit plus a durable sync/alert.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
+      "jiraKey": "COP-2076"
+    },
+    {
+      "author": "Kevin Curtis",
+      "initials": "KC",
+      "color": "#F59E0B",
+      "summary": "Vacasa job VAC105-6629751701528404293 shows 497 miles travel distance, and no excessive-travel alert reached the Vacasa Ops channel.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/19",
+      "jiraKey": "COP-2077",
+      "note": "Split in two: Adjet owns the wrong 497-mile figure (COP-1888); the missing >170-mile alert delivered under COP-1982 is COP-2077, blocked on locating and inspecting the Zap.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     }
   ]
 }
