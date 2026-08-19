@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-19T00:09:09.330Z",
+  "lastUpdated": "2026-08-19T01:08:32.307Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
       "summary": "Welltower is signing their first Canada-specific contract with all rates in CAD. Needs a new CAD pricebook, Country/Currency defaults on intake, CAD-correct 360 and photo fees, and a decision on how the Jotform routes Canada vs US jobs.",
-      "statusCls": "badge-todo",
-      "status": "Queued for build",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "COP-2072 is open and assigned to Ricardo; scope was confirmed back to Kailyn and she has not raised corrections. Blocked on build work, plus the unsigned contract for the remaining MP Client Data fields.",
+      "note": "COP-2072 is written and queued; Kailyn has not yet confirmed the scope restatement or answered the Jotform Option A vs B question posted 8/18 4:21 PM. Next action is hers, then the routing recommendation is the first item on the ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     }
   ]
