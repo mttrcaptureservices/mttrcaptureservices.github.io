@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T23:22:38.024Z",
+  "lastUpdated": "2026-08-19T00:09:09.330Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
       "status": "Queued for build",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Ticket written and acknowledged in-channel 4:21 PM; next action is ours - recommend Jotform Option A vs B and build the CAD pricebook. Nothing blocked on Kailyn.",
+      "note": "COP-2072 is open and assigned to Ricardo; scope was confirmed back to Kailyn and she has not raised corrections. Blocked on build work, plus the unsigned contract for the remaining MP Client Data fields.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     }
   ]
