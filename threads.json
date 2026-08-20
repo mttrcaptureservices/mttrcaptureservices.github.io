@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T17:31:04.318Z",
+  "lastUpdated": "2026-08-20T18:16:49.996Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
       "status": "Waiting on requester",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Build delivered 8/20 3:12 AM and verified — 34 CASFC price codes in CAD exist in Global PriceBooks. Kailyn owes two things: a test job with 360 Pano ordered to confirm the $225 CAD Customer 360 Fee, and the go-ahead on the single-form + country selector Jotform approach.",
+      "note": "Build verified real (34 CASFC codes in CAD, created 8/20); Jotform recommendation delivered 8/19. Kailyn owes testing before the 9/1 contract date.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
@@ -21,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "7th consecutive verification 8/20 — form still 146 options, both Casago DRM South Dakota and Woodland Park absent while Airtable has 148. Drift recorded on the ticket; no requester ping. Ricardo owes the Jotform edit plus the durable sync/alert.",
+      "note": "8th verification 8/20 11:15 AM — form still shows 146 options, Casago DRM South Dakota and Woodland Park both still absent. Manual Jotform edit still unowned.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -34,7 +34,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Root cause of the 497-mile value found (client typed 49,7; comma stripped) and posted to the ticket 8/20. Ticket stays open on the real defect: the >170-mile Vacasa Ops alert never fired on the stored 497. Ricardo owes the alert fix.",
+      "note": "Root cause posted (client typed 49,7 and the comma was stripped to 497). The separate >170-mile alert gap is still open and unowned; do not close as 'distance was wrong anyway'.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -45,32 +45,32 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/19",
-      "note": "Export cadence established from the AP Report Download timestamps (8/2, 8/9, 8/16 - weekly on Sundays), so both land in the 8/23 run; told Stephenie 8/23 is the export, not the deposit. Asked whether she wants AP chased for the post-export payment window.",
+      "note": "Both AP invoices verified re-queued; export cadence derived as weekly on Sundays, so next run 8/23. Asked her whether to chase AP for the payment window — awaiting her answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#EC4899",
-      "summary": "Roche insist they submitted scan request SWC-7877 but it is not in Airtable and no filter surfaces it. Adjet confirmed no job exists, while Roche comments for that ID did arrive.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/20",
-      "jiraKey": "COP-2079",
-      "note": "Root cause found: the request DID arrive but as an empty payload - control record with zero Capture Data rows and all 21 fields missing. SWC-7873 failed identically on 8/18. Waiting on Stephenie to say whether Roche re-pushes from Monday.com or we build both jobs manually.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#0E7490",
-      "summary": "Ticking 'Apply Off hours fee' on the parent record of a 6:30 AM job does not add anything to the client rate.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting decision",
+      "summary": "Asked whether the 'Apply Off hours fee' checkbox was billing the client on a 6:30 AM job, then whether the client's 25%-of-Job-Rate setting was correct.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "8/20",
       "jiraKey": "COP-2080",
-      "note": "Confirmed structural: the checkbox is referenced by no level of the Job Rate formula tree, while the CT-side off-hours box IS wired - so we pay the tech the premium and bill the client nothing. Second report of this (first 8/5). Blocked on a decision on the client-side surcharge basis.",
+      "note": "RESOLVED as not a defect — the fee IS billed ($461.25 base + $115.31 = $576.5625). Yesterday's 'wired to nothing' finding was wrong and has been retracted in-thread and on the ticket; COP-2080 closed. Awaiting Caitlin's acknowledgement.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787246615273?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787246615273&createdTime=1787246615273"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#10B981",
+      "summary": "Could not add Romania or Moldova as countries in CT Directory EMEA — the Country Form is unsubmittable because it references deleted fields.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Finance",
+      "date": "8/19",
+      "jiraKey": "COP-2074",
+      "note": "Romania and Moldova were created directly on the Country table 8/20 12:18 AM, but COP-2074 was closed while the Finance VAT confirmation is still outstanding — the VAT Rate feeds every CT payout in those countries, so it needs an explicit value (0 if none payable) rather than a blank.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
 }
