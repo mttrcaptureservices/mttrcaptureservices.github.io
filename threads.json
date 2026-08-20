@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-19T23:09:48.367Z",
+  "lastUpdated": "2026-08-20T00:12:57.821Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
-      "summary": "Welltower is signing a Canada-specific contract billed in CAD. Needs a CAD pricebook, country-aware intake routing, CAD currency defaults and CAD-correct fee fields built ahead of signature.",
-      "statusCls": "badge-todo",
-      "status": "Queued in Jira",
+      "summary": "Welltower is signing a Canada-specific contract billed in CAD. Needs a new CAN pricebook, Country/Currency defaults on intake, CAD pricing inputs, and a decision on how the Jotform handles country.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "No channel activity since 8/18; ticket still To Do. Kailyn set a 9/1 deadline for the CAD pricebook and intake routing — nothing owed by support until that work starts.",
+      "note": "Jotform recommendation delivered: single form with a country selector, since the CT request and reschedule links branch only on Scheduling Type and never on country. Awaiting Kailyn on whether the selector routes per job or is set once on the client. Contract start 9/1.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
@@ -22,7 +22,7 @@
       "status": "Queued in Jira",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Oriana acknowledged the reply with a reaction; nothing owed to her. Blocked on repairing the form field references and creating the two country records directly on the Country table. VAT Rate still needs to come from Finance.",
+      "note": "Diagnosed and ticketed; Oriana acknowledged. Blocked on Ricardo to create the Romania and Moldova records directly on the Country table and repair the form’s deleted-field references. VAT rate still needed from the requester or Finance.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Queued in Jira",
       "date": "8/19",
       "jiraKey": "COP-2075",
-      "note": "Reply and Jira link delivered 11:18 AM; nothing owed to Oriana. Blocked on the email template change.",
+      "note": "Diagnosed and ticketed. Blocked on Ricardo to make the Model Upload account in the New Job Request email resolve by region instead of hardcoding SSUS.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787124453537?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787124453537&createdTime=1787124453537"
     },
     {
@@ -45,7 +45,7 @@
       "statusCls": "badge-investigating",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Re-verified this run: the form still serves 146 options and both Casago DRM South Dakota and Woodland Park are absent. Fourth consecutive unexecuted verification — the manual Jotform edit is the blocker and COP-2076 now owns it.",
+      "note": "Re-verified this run: the form still returns 146 options and both Casago DRM franchises are absent — fourth consecutive check with no change. Blocked on the manual Jotform edit plus the durable sync-or-alert fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -58,7 +58,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Adjet solved the distance half — the client typed \"49,7\" and the comma collapsed it to 497. The alert gap is unaffected and still open. ⚠️ Jordan is about to correct the record, which destroys the only live reproduction; flagged in-thread. Two Jira writes failed 403 this run, so the root-cause comment on COP-2077 is owed next run, along with the unowned decimal-separator defect.",
+      "note": "Root cause of the 497 found by Adjet: client typed 49,7 and the decimal comma was stripped. The alert gap is separate and still open. Jordan is correcting the record, which destroys the only live repro. Jira comment could not be posted — Jira writes returning 403 all run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     }
   ]
