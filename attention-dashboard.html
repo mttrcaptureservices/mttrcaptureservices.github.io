@@ -54,7 +54,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <body>
 <div class="header"><h1>Needs Your Attention</h1></div>
 <div class="subtitle">August 20, 2026</div>
-<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 10:26 AM PT · Jira live · Teams via Clark</div>
+<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 10:54 AM PT · Jira live · Teams via Clark</div>
 <div class="source-row">
 <div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
 <div class="source-chip"><div class="source-dot green"></div> Assigned to you</div>
@@ -336,7 +336,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <span class="issue-assignee">→ Adjet Kodia</span>
         <span class="updated-time">6d ago</span>
       </div>
-    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👀 Pending Teams Threads</span><span class="section-badge">4</span><span style="font-size:11px;color:#aeaeb2;margin-left:4px">· via Clark · 8/20/2026</span></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947','_blank')">
+    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👀 Pending Teams Threads</span><span class="section-badge">6</span><span style="font-size:11px;color:#aeaeb2;margin-left:4px">· via Clark · 8/20/2026</span></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947','_blank')">
     <div class="thread-avatar" style="background:#8B5CF6">KJ</div>
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
@@ -358,8 +358,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="thread-avatar" style="background:#EC4899">SY</div>
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">Stephenie Yong</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Two Roche CT payouts (SWC-7080 $295, SWC-7122 $225) were flagged as exported but never made it into a weekly payout file, so the techs were never paid. She asked how long until they receive payment.</div>
-      <div class="issue-meta"><span class="badge badge-fix-deployed">Awaiting confirmation</span><span class="updated-time">8/19</span><span style="font-size:11px;color:#6e6e73">🤖 Both invoices confirmed re-queued — AP Report Downloaded cleared on both, verified 8/20. Clark owes Stephenie the exact payout export date and AP processing window so she can give the techs a firm date; no weekly export cron exists in Airtable, so the schedule has to be sourced elsewhere.</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Two Roche capture-tech payouts (SWC-7080 $295, SWC-7122 $225) were skipped by the March 29 export because both were flagged as already downloaded. Both flags are cleared and the invoices are re-queued.</div>
+      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><span class="updated-time">8/19</span><span style="font-size:11px;color:#6e6e73">🤖 Export cadence established from the AP Report Download timestamps (8/2, 8/9, 8/16 - weekly on Sundays), so both land in the 8/23 run; told Stephenie 8/23 is the export, not the deposit. Asked whether she wants AP chased for the post-export payment window.</span></div>
+    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731','_blank')">
+    <div class="thread-avatar" style="background:#EC4899">SY</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">Stephenie Yong</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Roche insist they submitted scan request SWC-7877 but it is not in Airtable and no filter surfaces it. Adjet confirmed no job exists, while Roche comments for that ID did arrive.</div>
+      <div class="issue-meta"><span class="badge badge-investigating">Investigating</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2079" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2079 ↗</a><span class="updated-time">8/20</span><span style="font-size:11px;color:#6e6e73">🤖 Root cause found: the request DID arrive but as an empty payload - control record with zero Capture Data rows and all 21 fields missing. SWC-7873 failed identically on 8/18. Waiting on Stephenie to say whether Roche re-pushes from Monday.com or we build both jobs manually.</span></div>
+    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787246615273?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787246615273&createdTime=1787246615273','_blank')">
+    <div class="thread-avatar" style="background:#0E7490">CS</div>
+    <div class="issue-body">
+      <div class="issue-top"><span style="font-size:13px;font-weight:600">Caitlin Suh</span></div>
+      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Ticking 'Apply Off hours fee' on the parent record of a 6:30 AM job does not add anything to the client rate.</div>
+      <div class="issue-meta"><span class="badge badge-todo">Awaiting decision</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2080" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2080 ↗</a><span class="updated-time">8/20</span><span style="font-size:11px;color:#6e6e73">🤖 Confirmed structural: the checkbox is referenced by no level of the Job Rate formula tree, while the CT-side off-hours box IS wired - so we pay the tech the premium and bill the client nothing. Second report of this (first 8/5). Blocked on a decision on the client-side surcharge basis.</span></div>
     </div></div></div>
 </body>
 </html>
