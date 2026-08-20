@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T17:05:33.907Z",
+  "lastUpdated": "2026-08-20T17:31:04.318Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -41,12 +41,36 @@
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#EC4899",
-      "summary": "Two Roche CT payouts (SWC-7080 $295, SWC-7122 $225) were flagged as exported but never made it into a weekly payout file, so the techs were never paid. She asked how long until they receive payment.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "summary": "Two Roche capture-tech payouts (SWC-7080 $295, SWC-7122 $225) were skipped by the March 29 export because both were flagged as already downloaded. Both flags are cleared and the invoices are re-queued.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/19",
-      "note": "Both invoices confirmed re-queued — AP Report Downloaded cleared on both, verified 8/20. Clark owes Stephenie the exact payout export date and AP processing window so she can give the techs a firm date; no weekly export cron exists in Airtable, so the schedule has to be sourced elsewhere.",
+      "note": "Export cadence established from the AP Report Download timestamps (8/2, 8/9, 8/16 - weekly on Sundays), so both land in the 8/23 run; told Stephenie 8/23 is the export, not the deposit. Asked whether she wants AP chased for the post-export payment window.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#EC4899",
+      "summary": "Roche insist they submitted scan request SWC-7877 but it is not in Airtable and no filter surfaces it. Adjet confirmed no job exists, while Roche comments for that ID did arrive.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/20",
+      "jiraKey": "COP-2079",
+      "note": "Root cause found: the request DID arrive but as an empty payload - control record with zero Capture Data rows and all 21 fields missing. SWC-7873 failed identically on 8/18. Waiting on Stephenie to say whether Roche re-pushes from Monday.com or we build both jobs manually.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#0E7490",
+      "summary": "Ticking 'Apply Off hours fee' on the parent record of a 6:30 AM job does not add anything to the client rate.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting decision",
+      "date": "8/20",
+      "jiraKey": "COP-2080",
+      "note": "Confirmed structural: the checkbox is referenced by no level of the Job Rate formula tree, while the CT-side off-hours box IS wired - so we pay the tech the premium and bill the client nothing. Second report of this (first 8/5). Blocked on a decision on the client-side surcharge basis.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787246615273?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787246615273&createdTime=1787246615273"
     }
   ]
 }
