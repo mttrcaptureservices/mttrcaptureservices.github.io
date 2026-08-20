@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T20:08:19.780Z",
+  "lastUpdated": "2026-08-20T21:07:13.134Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Verified again 8/20 (10th consecutive check): the Vacasa 2.0 booking form still lists 146 franchises and both Casago DRM South Dakota and Woodland Park are still absent. Blocked on the manual Jotform edit — owner Ricardo.",
+      "note": "Verified again 8/20 (11th consecutive check): the Vacasa 2.0 Jotform franchise picker still holds 146 options with both Casago DRM South Dakota and Casago DRM Woodland Park absent. Blocked on the manual Jotform edit; owner is the CS Apps team via COP-2076.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -22,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Root cause of the 497-mile value (client typed 49,7 with a decimal comma) is recorded on the ticket; the separate gap — the >170-mile Vacasa alert not firing on the stored value — is still unstarted. Owner Ricardo.",
+      "note": "Root cause is recorded on the ticket (client typed 49,7 and the decimal comma was stripped to 497). Still To Do — the open item is the >170-mile Vacasa Ops travel alert that never fired, which is separate from the bad distance value.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Verified 8/20: Romania (recPKwP6QQzaNUQVM) still has a blank VAT Rate and Moldova still has no Country Data record at all. COP-2074 was closed while the Finance VAT confirmation is still outstanding — no movement since the 8/20 escalation comment. Owner: Finance, via Oriana.",
+      "note": "Ticket is closed but the Finance answer is still outstanding, re-verified 8/20: Romania (recPKwP6QQzaNUQVM) still carries a blank VAT Rate and Moldova still has no Country Data record. Owner is Finance, via Oriana.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
