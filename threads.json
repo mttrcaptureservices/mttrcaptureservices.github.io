@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T00:12:57.821Z",
+  "lastUpdated": "2026-08-20T01:12:50.464Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -10,7 +10,7 @@
       "status": "Awaiting confirmation",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Jotform recommendation delivered: single form with a country selector, since the CT request and reschedule links branch only on Scheduling Type and never on country. Awaiting Kailyn on whether the selector routes per job or is set once on the client. Contract start 9/1.",
+      "note": "Jotform recommendation delivered 8/19 5:12 PM (single form + country selector, verified against the form-ID formula). Awaiting Kailyn's answer on whether Welltower Canada books only Canadian locations; Canada is absent from Country Data and there are zero CA price codes, both blockers for the 9/1 contract start.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
@@ -22,20 +22,8 @@
       "status": "Queued in Jira",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Diagnosed and ticketed; Oriana acknowledged. Blocked on Ricardo to create the Romania and Moldova records directly on the Country table and repair the form’s deleted-field references. VAT rate still needed from the requester or Finance.",
+      "note": "Country Form on CT Directory EMEA is unsubmittable (references deleted fields); Romania and Moldova still need creating directly on the Country table with VAT Rate sourced from the requester or Finance. Ticket owns it; nothing owed to Oriana.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
-    },
-    {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#10B981",
-      "summary": "The Model Upload line in the New Job Request email hardcodes Scan Services US (SSUS), so EMEA CTs receive a US upload destination.",
-      "statusCls": "badge-todo",
-      "status": "Queued in Jira",
-      "date": "8/19",
-      "jiraKey": "COP-2075",
-      "note": "Diagnosed and ticketed. Blocked on Ricardo to make the Model Upload account in the New Job Request email resolve by region instead of hardcoding SSUS.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787124453537?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787124453537&createdTime=1787124453537"
     },
     {
       "author": "John Bosch",
@@ -45,7 +33,7 @@
       "statusCls": "badge-investigating",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Re-verified this run: the form still returns 146 options and both Casago DRM franchises are absent — fourth consecutive check with no change. Blocked on the manual Jotform edit plus the durable sync-or-alert fix.",
+      "note": "Re-verified 8/19 6:15 PM (5th consecutive check): Vacasa 2.0 form still shows 146 options, Casago DRM South Dakota and Woodland Park both absent. Manual Jotform edit plus a durable sync/drift alert still owed on the ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -58,7 +46,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Root cause of the 497 found by Adjet: client typed 49,7 and the decimal comma was stripped. The alert gap is separate and still open. Jordan is correcting the record, which destroys the only live repro. Jira comment could not be posted — Jira writes returning 403 all run.",
+      "note": "Root cause of the 497-mile value is the client's European decimal comma (49,7 parsed as 497), traced by Adjet. Ticket stays open for the >170-mile alert that never fired and the unvalidated comma-to-integer conversion. Jira comment still owed - Atlassian writes are 403ing.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     }
   ]
