@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T22:08:18.207Z",
+  "lastUpdated": "2026-08-20T23:17:27.785Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Verified again 8/20 3:10 PM (12th consecutive check): the Vacasa 2.0 form still lists 146 franchises with both Casago DRM South Dakota and Woodland Park absent. The Jotform widget snapshot edit is still owed by the team.",
+      "note": "Re-verified 8/20 3:0x PM — Vacasa 2.0 form still lists 146 franchises; Casago DRM South Dakota and Woodland Park both still absent. Undone 13 runs running; owed by the team as a manual Jotform widget edit.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -22,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Still To Do. Root cause of the 497-mile reading (client typed the European decimal comma 49,7) is documented and commented; the outstanding work is the >170-mile Vacasa travel alert that failed to fire on the stored value. Owned by the team, not the requester.",
+      "note": "Decimal-comma root cause documented and commented. Remaining work is the >170-mile Vacasa travel alert that never fired; owned by Ricardo, ticket still To Do.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Finance VAT answer outstanding for a 4th consecutive run. Re-verified 8/20: Romania (recPKwP6QQzaNUQVM) exists with Country Code EU / EUR but no VAT Rate, and Moldova still has no Country Data record at all. Owed by Finance via Oriana; already escalated on the ticket, not re-commented.",
+      "note": "Ticket is Complete but the Finance VAT answer for Romania and Moldova is still outstanding — 5th consecutive run. Re-verified 8/20: Romania recPKwP6QQzaNUQVM has Country Code EU / EUR but no VAT Rate, and Moldova still has no Country Data record. Owed by Finance via Oriana.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
