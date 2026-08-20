@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-20T18:16:49.996Z",
+  "lastUpdated": "2026-08-20T19:08:26.433Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
-      "summary": "Welltower Canada contract needs a CAD pricebook, intake routing that separates Canada from US, and multi-currency billing rules ahead of the 9/1 contract start.",
+      "summary": "Welltower is signing a new contract for Canada locations and needs the Canada build — country record, CAD price codes and booking form — ready to test before the 9/1 deadline.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Build verified real (34 CASFC codes in CAD, created 8/20); Jotform recommendation delivered 8/19. Kailyn owes testing before the 9/1 contract date.",
+      "note": "COP-2072 is complete and the Canada build was confirmed ready for testing on 8/20 at 3:12 AM; verified real (34 CASFC codes in CAD). Waiting on Kailyn to test and confirm.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
     },
     {
@@ -21,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "8th verification 8/20 11:15 AM — form still shows 146 options, Casago DRM South Dakota and Woodland Park both still absent. Manual Jotform edit still unowned.",
+      "note": "9th consecutive verification (8/20 11:35 AM): the Vacasa 2.0 franchise picker still lists 146 options and both Casago DRM South Dakota and Woodland Park are absent. Tracked and owned by COP-2076; no further action owed here.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -34,31 +34,8 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Root cause posted (client typed 49,7 and the comma was stripped to 497). The separate >170-mile alert gap is still open and unowned; do not close as 'distance was wrong anyway'.",
+      "note": "COP-2077 open. Root cause of the 497-mile figure is understood (client typed 49,7 with a decimal comma), but the >170-mile Vacasa Ops alert still never fired and needs the Zap opened — that cannot be done from Airtable or Jira.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#EC4899",
-      "summary": "Two Roche capture-tech payouts (SWC-7080 $295, SWC-7122 $225) were skipped by the March 29 export because both were flagged as already downloaded. Both flags are cleared and the invoices are re-queued.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/19",
-      "note": "Both AP invoices verified re-queued; export cadence derived as weekly on Sundays, so next run 8/23. Asked her whether to chase AP for the payment window — awaiting her answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#0E7490",
-      "summary": "Asked whether the 'Apply Off hours fee' checkbox was billing the client on a 6:30 AM job, then whether the client's 25%-of-Job-Rate setting was correct.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "8/20",
-      "jiraKey": "COP-2080",
-      "note": "RESOLVED as not a defect — the fee IS billed ($461.25 base + $115.31 = $576.5625). Yesterday's 'wired to nothing' finding was wrong and has been retracted in-thread and on the ticket; COP-2080 closed. Awaiting Caitlin's acknowledgement.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787246615273?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787246615273&createdTime=1787246615273"
     },
     {
       "author": "Oriana Ooi",
@@ -69,7 +46,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Romania and Moldova were created directly on the Country table 8/20 12:18 AM, but COP-2074 was closed while the Finance VAT confirmation is still outstanding — the VAT Rate feeds every CT payout in those countries, so it needs an explicit value (0 if none payable) rather than a blank.",
+      "note": "Escalated onto COP-2074 on 8/20 (comment 621062) because the ticket was closed with the ask still open. Verified: Romania exists since 2024 with blank VAT Rate, Moldova has no record at all. Blocked on Finance confirming the VAT position.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
