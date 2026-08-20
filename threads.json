@@ -1,27 +1,15 @@
 {
-  "lastUpdated": "2026-08-20T19:08:26.433Z",
+  "lastUpdated": "2026-08-20T20:08:19.780Z",
   "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8B5CF6",
-      "summary": "Welltower is signing a new contract for Canada locations and needs the Canada build — country record, CAD price codes and booking form — ready to test before the 9/1 deadline.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/18",
-      "jiraKey": "COP-2072",
-      "note": "COP-2072 is complete and the Canada build was confirmed ready for testing on 8/20 at 3:12 AM; verified real (34 CASFC codes in CAD). Waiting on Kailyn to test and confirm.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
-    },
     {
       "author": "John Bosch",
       "initials": "JB",
       "color": "#3B82F6",
       "summary": "Two Casago DRM franchises added to Airtable never appeared on the Vacasa 2.0 booking form. The form’s franchise picker is a hardcoded Jotform widget snapshot, not a live read of Airtable.",
-      "statusCls": "badge-todo",
+      "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "9th consecutive verification (8/20 11:35 AM): the Vacasa 2.0 franchise picker still lists 146 options and both Casago DRM South Dakota and Woodland Park are absent. Tracked and owned by COP-2076; no further action owed here.",
+      "note": "Verified again 8/20 (10th consecutive check): the Vacasa 2.0 booking form still lists 146 franchises and both Casago DRM South Dakota and Woodland Park are still absent. Blocked on the manual Jotform edit — owner Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -34,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "COP-2077 open. Root cause of the 497-mile figure is understood (client typed 49,7 with a decimal comma), but the >170-mile Vacasa Ops alert still never fired and needs the Zap opened — that cannot be done from Airtable or Jira.",
+      "note": "Root cause of the 497-mile value (client typed 49,7 with a decimal comma) is recorded on the ticket; the separate gap — the >170-mile Vacasa alert not firing on the stored value — is still unstarted. Owner Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -46,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2074",
-      "note": "Escalated onto COP-2074 on 8/20 (comment 621062) because the ticket was closed with the ask still open. Verified: Romania exists since 2024 with blank VAT Rate, Moldova has no record at all. Blocked on Finance confirming the VAT position.",
+      "note": "Verified 8/20: Romania (recPKwP6QQzaNUQVM) still has a blank VAT Rate and Moldova still has no Country Data record at all. COP-2074 was closed while the Finance VAT confirmation is still outstanding — no movement since the 8/20 escalation comment. Owner: Finance, via Oriana.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
