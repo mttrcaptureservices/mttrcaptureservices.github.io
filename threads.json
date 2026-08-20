@@ -1,29 +1,17 @@
 {
-  "lastUpdated": "2026-08-20T02:10:20.858Z",
+  "lastUpdated": "2026-08-20T17:05:33.907Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8B5CF6",
-      "summary": "Welltower is signing a Canada-specific contract billed in CAD. Needs a new CAN pricebook, Country/Currency defaults on intake, CAD pricing inputs, and a decision on how the Jotform handles country.",
+      "summary": "Welltower Canada contract needs a CAD pricebook, intake routing that separates Canada from US, and multi-currency billing rules ahead of the 9/1 contract start.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/18",
       "jiraKey": "COP-2072",
-      "note": "Jotform recommendation delivered 8/19 5:12 PM (single form + country selector); still awaiting Kailyn’s answer on whether Welltower Canada books Canadian locations only. Canada absent from Country Data and zero CA price codes remain the 9/1 blockers.",
+      "note": "Build delivered 8/20 3:12 AM and verified — 34 CASFC price codes in CAD exist in Global PriceBooks. Kailyn owes two things: a test job with 360 Pano ordered to confirm the $225 CAD Customer 360 Fee, and the go-ahead on the single-form + country selector Jotform approach.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787077842947?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787077842947&createdTime=1787077842947"
-    },
-    {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#10B981",
-      "summary": "Oriana could not add Romania or Moldova via the CT Directory EMEA Country Form — the form references deleted fields, so Create is greyed out and no submission can succeed. Countries must be created directly on the Country table and the form repaired.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Finance",
-      "date": "8/19",
-      "jiraKey": "COP-2074",
-      "note": "Oriana confirmed 8/19 6:42 PM she will leave the form alone, and asked us to verify the current VAT treatment for Romania and Moldova with Finance. Creating the two country records is on hold until Finance confirms — VAT Rate is the only field the team cannot source internally.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
       "author": "John Bosch",
@@ -33,7 +21,7 @@
       "statusCls": "badge-todo",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Re-verified 8/19 7:15 PM (6th consecutive check): form 260160479889976 still returns 146 options with Casago DRM South Dakota and Casago DRM Woodland Park both absent. Blocked on the manual Jotform edit plus the durable sync/drift alert the ticket covers.",
+      "note": "7th consecutive verification 8/20 — form still 146 options, both Casago DRM South Dakota and Woodland Park absent while Airtable has 148. Drift recorded on the ticket; no requester ping. Ricardo owes the Jotform edit plus the durable sync/alert.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -46,8 +34,19 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Root cause of the 497-mile value is the client’s decimal comma (49,7 stripped to 497), not the travel calculation — but the >170-mile Vacasa Ops alert still should have fired on the stored value, so the alert gap keeps this open. Jira comment owed: Atlassian writes have 403’d for four consecutive runs.",
+      "note": "Root cause of the 497-mile value found (client typed 49,7; comma stripped) and posted to the ticket 8/20. Ticket stays open on the real defect: the >170-mile Vacasa Ops alert never fired on the stored 497. Ricardo owes the alert fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#EC4899",
+      "summary": "Two Roche CT payouts (SWC-7080 $295, SWC-7122 $225) were flagged as exported but never made it into a weekly payout file, so the techs were never paid. She asked how long until they receive payment.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
+      "date": "8/19",
+      "note": "Both invoices confirmed re-queued — AP Report Downloaded cleared on both, verified 8/20. Clark owes Stephenie the exact payout export date and AP processing window so she can give the techs a firm date; no weekly export cron exists in Airtable, so the schedule has to be sourced elsewhere.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787157479252?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787157479252&createdTime=1787157479252"
     }
   ]
 }
