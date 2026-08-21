@@ -1,17 +1,4 @@
 {
-  "lastUpdated": "2026-08-21T19:15:27.934Z",
-  "threads": [
-    {
-      "author": "Kevin Curtis",
-      "initials": "KC",
-      "color": "#F59E0B",
-      "summary": "A Vacasa job showed a 497-mile client travel distance against a true ~80 miles. Adjet traced it to the client typing \"49,7\" - the comma was stripped rather than parsed, turning it into 497.",
-      "statusCls": "badge-todo",
-      "status": "Ticketed",
-      "date": "8/19",
-      "jiraKey": "COP-2084",
-      "note": "COP-2084 filed today for the decimal-comma validation defect, which had no owner for three runs. Line item 94704 still carries the bad 497 while parent 94703 was corrected to 82 - Jordan to clear the child record.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
-    }
-  ]
+  "lastUpdated": "2026-08-21T20:18:25.122Z",
+  "threads": []
 }
