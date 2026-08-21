@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T16:33:02.545Z",
+  "lastUpdated": "2026-08-21T17:11:40.295Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Verified again this run: form still lists 146 options, both Casago DRM South Dakota and Woodland Park still absent. Undone 19 consecutive runs. Blocked on the manual Jotform widget edit — owed by the team, not the requester.",
+      "note": "Re-verified 8/21 10:10 AM: form still lists 146 options, both Casago DRM South Dakota and Woodland Park still absent. 20th consecutive run unexecuted — the manual Jotform widget edit is owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -18,11 +18,11 @@
       "initials": "KC",
       "color": "#F59E0B",
       "summary": "A Vacasa job stored a 497-mile travel distance and the >170-mile alert built under COP-1982 never fired to the Vacasa Ops channel.",
-      "statusCls": "badge-investigating",
+      "statusCls": "badge-todo",
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Open. Outstanding work is the >170-mile Vacasa travel alert that never fired; the decimal-comma root cause of the 497-mile figure is already documented and commented. No movement this run.",
+      "note": "Decimal-comma root cause is documented and closed out; the outstanding work is the >170-mile Vacasa travel alert that never fired. Needs the Zap opened in Zapier — not inspectable via MCP.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2082",
-      "note": "Verified again this run: Romania recPKwP6QQzaNUQVM still has no VAT value, and Moldova still has no Country Data record at all. Blocked on Finance. Ticket is assigned to Ricardo only because no Finance Jira account was resolvable — still needs reassigning.",
+      "note": "Re-verified 8/21: Romania record still has no VAT value and Moldova still has no Country Data record at all. Blocked on Finance. Ticket sits with Ricardo only because no Finance Jira account was resolvable — needs reassigning.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
@@ -42,11 +42,11 @@
       "initials": "SY",
       "color": "#A855F7",
       "summary": "Roche scan requests SWC-7877 and SWC-7873 never reached Airtable, and a Monday.com re-push produced no inbound request at all. Six more requests have failed the same way, only request_id arriving.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Ricardo removed the mandatory phone-number condition at 9:10 AM believing it was the cause; verified against the data it is NOT — the same failure occurred on 7/28 and 8/10, weeks before that change, with a byte-identical payload. Posted the correction in-thread and onto COP-2083 (comment 621208). Root cause of the request_id-only payload still open; Stephenie is creating SWC-7877/7873 manually.",
+      "note": "Root cause found and fixed: the mandatory phone-number condition was withholding complete requests. Ricardo removed it 9:10 AM 8/21 and six of seven (SWC-7873/7877/7880/7883/7886/7890) released with full data. Only SWC-7865 still failed — separate, older cause. A duplicate SWC-7877 row from Roche 6:30 AM re-test needs cleanup. Awaiting Stephenie.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     }
   ]
