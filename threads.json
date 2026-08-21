@@ -1,29 +1,17 @@
 {
-  "lastUpdated": "2026-08-21T18:39:02.295Z",
+  "lastUpdated": "2026-08-21T19:15:27.934Z",
   "threads": [
     {
       "author": "Kevin Curtis",
       "initials": "KC",
       "color": "#F59E0B",
-      "summary": "A Vacasa job stored a 497-mile travel distance and the >170-mile alert built under COP-1982 never fired to the Vacasa Ops channel.",
+      "summary": "A Vacasa job showed a 497-mile client travel distance against a true ~80 miles. Adjet traced it to the client typing \"49,7\" - the comma was stripped rather than parsed, turning it into 497.",
       "statusCls": "badge-todo",
-      "status": "Investigating",
+      "status": "Ticketed",
       "date": "8/19",
-      "jiraKey": "COP-2077",
-      "note": "Decimal-comma root cause is documented and closed out; the outstanding work is the >170-mile Vacasa travel alert that never fired. Needs the Zap opened in Zapier — not inspectable via MCP.",
+      "jiraKey": "COP-2084",
+      "note": "COP-2084 filed today for the decimal-comma validation defect, which had no owner for three runs. Line item 94704 still carries the bad 497 while parent 94703 was corrected to 82 - Jordan to clear the child record.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#A855F7",
-      "summary": "Roche scan requests (SWC-####) reaching Airtable with empty payloads - the control layer withholds them from Coordinators and nothing alerts anyone.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/20",
-      "jiraKey": "COP-2083",
-      "note": "Teams thread closed 8/21 - the phone-number gate was the cause of the 8/18-8/21 cluster and is removed. Open on COP-2083: root cause of the genuine request_id-only payloads (SWC-7865/7831/7768), and the zero-linked-row alert is still unbuilt.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     }
   ]
 }
