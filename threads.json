@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T01:06:33.455Z",
+  "lastUpdated": "2026-08-21T02:06:25.934Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Verified again 8/20 6:10 PM PT - Jotform franchise picker still lists 146 options and both Casago DRM names are absent; undone 15 consecutive runs. Blocked on the manual widget edit, owed by the team.",
+      "note": "Re-verified this run: the Vacasa 2.0 form widget still lists 146 options and both Casago DRM names are absent — undone for 16 consecutive runs. Owed by the team as a manual Jotform edit; ticket already tracks it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -22,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Blocked on opening the Zapier Zap that COP-1982 delivered - the >170-mile Vacasa alert never fired on the 497-mile job. Decimal-comma root cause already diagnosed and commented; the alert gap is the remaining work.",
+      "note": "Still To Do. Outstanding work is the >170-mile Vacasa travel alert that never fired; the decimal-comma root cause is already documented and commented. Owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2082",
-      "note": "Verified 8/20 6:10 PM PT - Romania recPKwP6QQzaNUQVM VAT still blank and Moldova still has no Country Data record. Blocked on Finance; ticket is assigned to Ricardo only because no Finance Jira account was resolvable and needs reassigning.",
+      "note": "Re-verified this run: Moldova still has no Country Data record, so Finance has not answered. Blocked on Finance, not on the requester. Ticket is assigned to Ricardo only because no Finance Jira account was resolvable — needs reassigning.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
