@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T00:07:05.169Z",
+  "lastUpdated": "2026-08-21T01:06:33.455Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Re-verified 5:35 PM: form still lists 146 options, both Casago DRM South Dakota and Woodland Park absent. 14th consecutive run undone. Manual Jotform widget edit owed by the team.",
+      "note": "Verified again 8/20 6:10 PM PT - Jotform franchise picker still lists 146 options and both Casago DRM names are absent; undone 15 consecutive runs. Blocked on the manual widget edit, owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -22,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Open on the Vacasa >170-mile travel alert that never fired; decimal-comma root cause already documented and commented. Next action is opening the Zap, owed by the team.",
+      "note": "Blocked on opening the Zapier Zap that COP-1982 delivered - the >170-mile Vacasa alert never fired on the 497-mile job. Decimal-comma root cause already diagnosed and commented; the alert gap is the remaining work.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,7 +34,7 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2082",
-      "note": "Escalated to its own ticket COP-2082 this run after 6 runs unanswered. Re-verified: Moldova still has no Country Data record, Romania recPKwP6QQzaNUQVM still has a blank VAT rate. Owed by Finance, via Oriana. COP-2082 needs reassigning to a Finance owner.",
+      "note": "Verified 8/20 6:10 PM PT - Romania recPKwP6QQzaNUQVM VAT still blank and Moldova still has no Country Data record. Blocked on Finance; ticket is assigned to Ricardo only because no Finance Jira account was resolvable and needs reassigning.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
