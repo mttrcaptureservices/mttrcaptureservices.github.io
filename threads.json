@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T15:14:28.133Z",
+  "lastUpdated": "2026-08-21T16:33:02.545Z",
   "threads": [
     {
       "author": "John Bosch",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting form edit",
       "date": "8/19",
-      "note": "Verified again 8/21 8:15 AM: form still lists 146 options, both Casago DRM names absent. Undone 18 consecutive runs; manual Jotform widget edit owed by the team.",
+      "note": "Verified again this run: form still lists 146 options, both Casago DRM South Dakota and Woodland Park still absent. Undone 19 consecutive runs. Blocked on the manual Jotform widget edit — owed by the team, not the requester.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
       "jiraKey": "COP-2076"
     },
@@ -22,7 +22,7 @@
       "status": "Investigating",
       "date": "8/19",
       "jiraKey": "COP-2077",
-      "note": "Open. Remaining work is the >170-mile Vacasa travel alert that never fired; decimal-comma root cause already documented and commented.",
+      "note": "Open. Outstanding work is the >170-mile Vacasa travel alert that never fired; the decimal-comma root cause of the 497-mile figure is already documented and commented. No movement this run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
@@ -34,19 +34,19 @@
       "status": "Waiting on Finance",
       "date": "8/19",
       "jiraKey": "COP-2082",
-      "note": "Verified again 8/21: Romania recPKwP6QQzaNUQVM still has no VAT value and Moldova still has no Country Data record at all. Blocked on Finance; ticket needs reassigning off Ricardo to a Finance owner.",
+      "note": "Verified again this run: Romania recPKwP6QQzaNUQVM still has no VAT value, and Moldova still has no Country Data record at all. Blocked on Finance. Ticket is assigned to Ricardo only because no Finance Jira account was resolvable — still needs reassigning.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#A855F7",
-      "summary": "Two Roche scan requests (SWC-7877, SWC-7873) never became jobs. Roche re-pushed both from Monday.com on 8/20 and confirmed it, but nothing arrived on our side at all.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "summary": "Roche scan requests SWC-7877 and SWC-7873 never reached Airtable, and a Monday.com re-push produced no inbound request at all. Six more requests have failed the same way, only request_id arriving.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Replied 8/21 8:12 AM with COP-2083. Re-push produced no control record and no Capture Data row, so the \"ask Roche to resubmit\" remedy does not work. Also found 4 more silent empty-payload failures on 8/20 (SWC-7880/7883/7886/7890). Waiting on Stephenie for the Monday.com request details so the two labs can be built manually.",
+      "note": "Ricardo removed the mandatory phone-number condition at 9:10 AM believing it was the cause; verified against the data it is NOT — the same failure occurred on 7/28 and 8/10, weeks before that change, with a byte-identical payload. Posted the correction in-thread and onto COP-2083 (comment 621208). Root cause of the request_id-only payload still open; Stephenie is creating SWC-7877/7873 manually.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     }
   ]
