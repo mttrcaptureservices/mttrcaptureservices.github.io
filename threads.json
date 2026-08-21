@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2026-08-21T17:11:40.295Z",
+  "lastUpdated": "2026-08-21T18:39:02.295Z",
   "threads": [
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#3B82F6",
-      "summary": "Two Casago DRM franchises added to Airtable never appeared on the Vacasa 2.0 booking form. The form’s franchise picker is a hardcoded Jotform widget snapshot, not a live read of Airtable.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting form edit",
-      "date": "8/19",
-      "note": "Re-verified 8/21 10:10 AM: form still lists 146 options, both Casago DRM South Dakota and Woodland Park still absent. 20th consecutive run unexecuted — the manual Jotform widget edit is owed by the team.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787162303054?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787162303054&createdTime=1787162303054",
-      "jiraKey": "COP-2076"
-    },
     {
       "author": "Kevin Curtis",
       "initials": "KC",
@@ -26,27 +14,15 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787170402331?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787170402331&createdTime=1787170402331"
     },
     {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#10B981",
-      "summary": "Could not add Romania or Moldova as countries in CT Directory EMEA — the Country Form is unsubmittable because it references deleted fields.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Finance",
-      "date": "8/19",
-      "jiraKey": "COP-2082",
-      "note": "Re-verified 8/21: Romania record still has no VAT value and Moldova still has no Country Data record at all. Blocked on Finance. Ticket sits with Ricardo only because no Finance Jira account was resolvable — needs reassigning.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
-    },
-    {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#A855F7",
-      "summary": "Roche scan requests SWC-7877 and SWC-7873 never reached Airtable, and a Monday.com re-push produced no inbound request at all. Six more requests have failed the same way, only request_id arriving.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "summary": "Roche scan requests (SWC-####) reaching Airtable with empty payloads - the control layer withholds them from Coordinators and nothing alerts anyone.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Root cause found and fixed: the mandatory phone-number condition was withholding complete requests. Ricardo removed it 9:10 AM 8/21 and six of seven (SWC-7873/7877/7880/7883/7886/7890) released with full data. Only SWC-7865 still failed — separate, older cause. A duplicate SWC-7877 row from Roche 6:30 AM re-test needs cleanup. Awaiting Stephenie.",
+      "note": "Teams thread closed 8/21 - the phone-number gate was the cause of the 8/18-8/21 cluster and is removed. Open on COP-2083: root cause of the genuine request_id-only payloads (SWC-7865/7831/7768), and the zero-linked-row alert is still unbuilt.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     }
   ]
