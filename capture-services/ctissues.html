@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CT Issues Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#111111;
+    --navy-2:#1c1c1c;
+    --teal:#ff3158;
+    --teal-2:#d81f44;
+    --ink:#171717;
+    --muted:#6b6864;
+    --border:#e5e2df;
+    --bg:#f5f4f3;
+    --card:#ffffff;
+    --good:#1a9c6b;
+    --bad:#dc2626;
+    --amber:#f2a93b;
+    --shadow: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.08);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  header{
+    background:linear-gradient(120deg,var(--navy),var(--navy-2));
+    color:#fff;
+    padding:20px 28px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  header h1{
+    font-size:20px;
+    margin:0;
+    font-weight:650;
+    letter-spacing:.2px;
+    padding-left:14px;
+    border-left:4px solid var(--teal);
+  }
+  header .sub{
+    font-size:12.5px;
+    color:#b9c6de;
+    margin-top:2px;
+  }
+  .filters{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .filters label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#b9c6de;
+    display:block;
+    margin-bottom:4px;
+  }
+  .filters select, .filters input{
+    background:#fff;
+    border:none;
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:13.5px;
+    min-width:150px;
+    color:var(--ink);
+  }
+  .filters select:focus, .filters input:focus{ outline:2px solid var(--teal); }
+  main{
+    max-width:1400px;
+    margin:0 auto;
+    padding:24px 28px 60px;
+  }
+  .meta-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--muted);
+    font-size:12.5px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .section{
+    margin-bottom:34px;
+  }
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:650;
+    color:var(--navy);
+    margin-bottom:14px;
+  }
+  .section-title .sq{
+    color:var(--teal);
+  }
+  .section-note{
+    font-size:11.5px;
+    color:var(--muted);
+    font-weight:500;
+    margin-left:2px;
+  }
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .kpi-card{
+    background:var(--card);
+    border-radius:12px;
+    padding:16px 18px;
+    box-shadow:var(--shadow);
+    border-top:3px solid var(--teal);
+  }
+  .kpi-card.dim{ border-top-color:#c9c7c4; }
+  .kpi-card h3{
+    margin:0 0 10px;
+    font-size:13px;
+    color:var(--muted);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  .kpi-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:5px 0;
+    border-bottom:1px dashed var(--border);
+    font-size:13.5px;
+  }
+  .kpi-row:last-child{ border-bottom:none; }
+  .kpi-row .lbl{ color:var(--muted); }
+  .kpi-row .val{ font-weight:650; font-variant-numeric:tabular-nums; }
+  .kpi-row .val.margin-good{ color:var(--good); }
+  .kpi-row .val.margin-bad{ color:var(--bad); }
+  .grid-2{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:16px;
+  }
+  .grid-2-eq{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .panel{
+    background:var(--card);
+    border-radius:12px;
+    padding:18px 20px;
+    box-shadow:var(--shadow);
+  }
+  .panel h4{
+    margin:0 0 12px;
+    font-size:13.5px;
+    color:var(--navy);
+    font-weight:650;
+  }
+  .panel .footnote{
+    margin:10px 0 0;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.4;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  th, td{
+    text-align:left;
+    padding:7px 8px;
+    border-bottom:1px solid var(--border);
+  }
+  th{
+    color:var(--muted);
+    font-weight:600;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  th.help{ cursor:help; border-bottom:1px dotted var(--muted); }
+  td.num, th.num{ text-align:right; font-variant-numeric:tabular-nums; }
+  td.small{ font-size:12px; color:var(--muted); }
+  .bar-wrap{
+    background:#eef2f7;
+    border-radius:6px;
+    height:8px;
+    overflow:hidden;
+    margin-top:4px;
+  }
+  .bar-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--teal-2),var(--teal));
+  }
+  canvas{ max-height:280px; }
+  .chart-box{ position:relative; height:260px; }
+  .chart-box.tall{ height:340px; }
+  .rank{
+    display:inline-flex;
+    width:20px; height:20px;
+    align-items:center; justify-content:center;
+    background:var(--navy);
+    color:#fff;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:700;
+    margin-right:6px;
+  }
+  .pill{
+    display:inline-block;
+    padding:1px 7px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+    background:#f1efed;
+    color:var(--muted);
+    margin:1px 3px 1px 0;
+    white-space:nowrap;
+  }
+  .pill.q{ background:#fdeaee; color:var(--teal-2); }
+  .pill.o{ background:#fdf1de; color:#9a6b12; }
+  .pill.s{ background:#e8f1fb; color:#1d4f91; }
+  .pill.c{ background:#eef0ef; color:#3f4b45; }
+  /* Coverage banner — deliberately loud, because every number on this page
+     depends on the log's short coverage window. */
+  .coverage{
+    background:var(--card);
+    border-radius:12px;
+    border-left:4px solid var(--amber);
+    box-shadow:var(--shadow);
+    padding:16px 20px;
+    margin-bottom:28px;
+  }
+  .coverage h4{
+    margin:0 0 8px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--navy);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .coverage p{ margin:0 0 8px; font-size:12.5px; line-height:1.55; color:var(--ink); }
+  .coverage p:last-child{ margin-bottom:0; }
+  .coverage .stats{
+    display:flex; flex-wrap:wrap; gap:18px; margin-top:10px;
+  }
+  .coverage .stat{ font-size:12px; color:var(--muted); }
+  .coverage .stat b{ display:block; font-size:17px; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .defs{ font-size:12.5px; line-height:1.6; color:var(--ink); }
+  .defs ul{ margin:6px 0 0; padding-left:18px; }
+  .defs li{ margin-bottom:7px; }
+  .defs code{ background:#f1efed; padding:1px 5px; border-radius:4px; font-size:11.5px; }
+  footer{
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 28px 40px;
+    color:var(--muted);
+    font-size:11.5px;
+  }
+  .loading, .error{
+    max-width:1400px;
+    margin:60px auto;
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+  }
+  .error{ color:var(--bad); }
+  @media (max-width:1100px){
+    .grid-2{ grid-template-columns:1fr; }
+    .grid-2-eq{ grid-template-columns:1fr; }
+  }
+  @media (max-width:600px){
+    .kpi-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---- Shared nav bar (hamburger + breadcrumb) ---- */
+  .topnav{
+    background:#ffffff;
+    color:#111111;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 20px;
+    font-size:12.5px;
+    position:relative;
+    z-index:50;
+  }
+  .topnav .brand-logo{ height:18px; display:block; margin-right:4px; }
+  .hamburger{
+    background:none;
+    border:1px solid #d8d5d1;
+    color:#111111;
+    border-radius:6px;
+    width:30px; height:28px;
+    font-size:15px;
+    line-height:1;
+    cursor:pointer;
+    flex:none;
+  }
+  .hamburger:hover{ background:#f5f4f3; }
+  .breadcrumb{ display:flex; align-items:center; gap:6px; }
+  .breadcrumb .crumb-root{ color:#8a8681; }
+  .breadcrumb .crumb-sep{ color:#c9c7c4; }
+  .breadcrumb .crumb-current{ color:#111111; font-weight:600; }
+  .nav-panel{
+    display:none;
+    position:absolute;
+    top:40px; left:20px;
+    background:#0f2242;
+    border:1px solid #24365a;
+    border-radius:10px;
+    padding:6px;
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+    min-width:260px;
+    flex-direction:column;
+    gap:2px;
+  }
+  .nav-panel.open{ display:flex; }
+  .nav-panel a{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 12px;
+    border-radius:7px;
+    color:#dbe4f5;
+    text-decoration:none;
+    font-size:13px;
+  }
+  .nav-panel a:hover{ background:#1a3562; }
+  .nav-panel a.active{ background:var(--teal-2); color:#fff; font-weight:650; cursor:default; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <button class="hamburger" id="navToggle" aria-label="Open navigation">☰</button>
+  <img class="brand-logo" src="https://images.ctfassets.net/icnj41gkyohw/4TFgKaRydiQc25X5NqOPon/a1726d6086793c5335b73fd41a06d52c/Matterport_Logo_-_Black_%C3%82_%C3%AF__.svg" alt="Matterport CoStar Logo">
+  <div class="breadcrumb">
+    <span class="crumb-root">Capture Services</span>
+    <span class="crumb-sep">›</span>
+    <span class="crumb-current">CT Issues Dashboard</span>
+  </div>
+  <div class="nav-panel" id="navPanel">
+    <a href="index.html">📊 Capture Services &amp; Client Dashboard</a>
+    <a href="technician.html">🧑‍🔧 Capture Technician Dashboard</a>
+    <a href="coordinator.html">🗂️ Capture Coordinator Dashboard</a>
+    <a href="ctissues.html" class="active">⚠️ CT Issues Dashboard</a>
+  </div>
+</nav>
+
+<header>
+  <div>
+    <h1>CT Issues Dashboard</h1>
+    <div class="sub">Cancellations · Declines · Reassignments · Quality — live from the CT Issue Log</div>
+  </div>
+  <div class="filters">
+    <div>
+      <label for="fySelect">Fiscal Year</label>
+      <select id="fySelect"></select>
+    </div>
+    <div>
+      <label for="granSelect">View By</label>
+      <select id="granSelect">
+        <option value="year">Year</option>
+        <option value="quarter">Quarter</option>
+        <option value="month">Month</option>
+      </select>
+    </div>
+    <div id="periodWrap" style="display:none;">
+      <label for="periodSelect">Period</label>
+      <select id="periodSelect"></select>
+    </div>
+    <div>
+      <label for="techSelect">Capture Technician</label>
+      <input list="techList" id="techSelect" placeholder="All Technicians" autocomplete="off">
+      <datalist id="techList"></datalist>
+    </div>
+  </div>
+</header>
+
+<main id="app">
+  <div class="loading" id="loadingMsg">Loading CT Issue Log…</div>
+</main>
+
+<footer>
+  Data source: CT Issue Log · Capture Technician Directory (Airtable), enriched from AT Quarterly Performance. Refreshed daily. <span id="genAt"></span>
+</footer>
+
+<script>
+/* ===========================================================================
+ * CT Issues Dashboard
+ *
+ * Reads ./ct-issues.json, produced by build-ct-issues-data.mjs. That file is
+ * SEPARATE from data.json on purpose — the CT Issue Log lives in a different
+ * base (appm03zXsTZJvY9vY) and none of the other three dashboards' cubes carry
+ * CT-issue data. See the build script header for why the GLOBAL reporting table
+ * cannot source this section (no CT/QA Issues field; CT-* job statuses unused;
+ * Interface Reporting Year/Month structurally blank for CT statuses).
+ *
+ * GRAIN — the single most important thing on this page:
+ *   ONE ROW = ONE CT ASSIGNMENT, not one job. Two rows for the same job are
+ *   correct when the technician differs. Every count is therefore labelled
+ *   "assignments" and distinct jobs is always shown as its own, smaller number.
+ *
+ * TIME AXIS: the log has no event date. Months come from each row's `Created`
+ * (when it was LOGGED). Rows written during the log's initial load carry
+ * seed=true and are excluded from the month trend — they still count in totals.
+ * ========================================================================= */
+
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const QUARTER_LABELS = ['Q1','Q2','Q3','Q4'];
+
+/* Palette matched to the other three dashboards. */
+const C_PRIMARY = '#ff3158';   // Matterport red — cancellations / headline
+const C_INK     = '#111111';   // declines & unavailable
+const C_AMBER   = '#f2a93b';   // reassignments (CT ALT)
+const C_PURPLE  = '#7c3aed';   // quality / SLA
+const C_GREY    = '#c9c7c4';   // everything else
+
+let DATA = null;
+let state = { fy: null, granularity: 'year', period: null, techIdx: -1 };
+
+const fmtNum = (n) => Math.round(n).toLocaleString('en-US');
+const fmtPct = (n) => (n*100).toFixed(1) + '%';
+const fmtUSD = (n) => n === null ? '--' : '$' + Math.round(n).toLocaleString('en-US');
+const fmtDate = (iso) => {
+  if (!iso) return '--';
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? '--' : d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+};
+
+async function loadData(){
+  const res = await fetch('./ct-issues.json', { cache: 'no-store' });
+  if (!res.ok) throw new Error('Could not load ct-issues.json (' + res.status + ')');
+  return res.json();
+}
+
+/* ---------------- Status / issue classification ----------------
+ * The status sets come from the JSON (`rules`), not hardcoded here, so the
+ * definition of "CT-caused" lives in exactly one place — the build script.
+ * Confirmed 2026-08-23: CT-caused = Cancelled by CT + CT Declined +
+ * CT Unavailable. CT ALT (reassignment) is reported separately and never folded
+ * into the headline, because a reassignment is not necessarily the CT's fault.
+ */
+function statusName(i){ return DATA.statuses[i]; }
+function isCtCaused(row){ return DATA.rules.ctCausedStatuses.includes(statusName(row.st)); }
+function isReassignment(row){ return DATA.rules.reassignmentStatuses.includes(statusName(row.st)); }
+function isCancelledByCt(row){ return statusName(row.st) === 'Cancelled by CT'; }
+function isDeclined(row){
+  const s = statusName(row.st);
+  return s === 'CT Declined' || s === 'CT Unavailable';
+}
+function hasIssues(row){ return row.iss && row.iss.length > 0; }
+function issueFamilyOf(issueIdx){ return DATA.issueFamilies[issueIdx] || 'Other'; }
+
+const FAMILIES = ['Quality','On-site','SLA','Scheduling churn','Other'];
+const FAMILY_PILL = { 'Quality':'q', 'On-site':'o', 'SLA':'s', 'Scheduling churn':'c', 'Other':'c' };
+
+/* ---------------- Scope / filters ---------------- */
+
+function monthsInScope(){
+  if (state.granularity === 'quarter' && state.period){
+    const start = (state.period - 1) * 3 + 1;
+    return [start, start+1, start+2];
+  }
+  if (state.granularity === 'month' && state.period) return [state.period];
+  return null;
+}
+function inScope(m){
+  const scope = monthsInScope();
+  return scope === null || scope.includes(m);
+}
+function periodLabel(){
+  if (state.granularity === 'quarter' && state.period) return `FY${state.fy} · ${QUARTER_LABELS[state.period-1]}`;
+  if (state.granularity === 'month' && state.period) return `FY${state.fy} · ${MONTHS[state.period-1]}`;
+  return `Fiscal Year ${state.fy}`;
+}
+
+/* Rows in scope: log-year + period + technician. Test identities were already
+ * removed at build time (count published in `coverage`). */
+function scopeRows(){
+  return DATA.rows.filter(r =>
+    r.y === state.fy &&
+    inScope(r.m) &&
+    (state.techIdx === -1 || r.t === state.techIdx)
+  );
+}
+/* Year-wide rows, ignoring the period filter — for the 12-month trend. */
+function yearRows(){
+  return DATA.rows.filter(r =>
+    r.y === state.fy &&
+    (state.techIdx === -1 || r.t === state.techIdx)
+  );
+}
+
+function distinct(rows, key){
+  const s = new Set();
+  rows.forEach(r => { if (r[key]) s.add(r[key]); });
+  return s.size;
+}
+function distinctTechs(rows){
+  return new Set(rows.map(r => r.t)).size;
+}
+
+/* ---------------- Aggregation ---------------- */
+
+function bucketSummary(rows, all){
+  const share = all.length ? rows.length / all.length : 0;
+  return {
+    assignments: rows.length,
+    jobs: distinct(rows, 'j'),
+    techs: distinctTechs(rows),
+    share,
+  };
+}
+
+function disruptionCards(){
+  const all = scopeRows();
+  const ct = all.filter(isCtCaused);
+  const canc = all.filter(isCancelledByCt);
+  const dec = all.filter(isDeclined);
+  const alt = all.filter(isReassignment);
+  const iss = all.filter(hasIssues);
+  const issueInstances = iss.reduce((a,r)=>a+r.iss.length,0);
+  return { all, ct, canc, dec, alt, iss, issueInstances,
+    s: {
+      all: bucketSummary(all, all),
+      ct: bucketSummary(ct, all),
+      canc: bucketSummary(canc, all),
+      dec: bucketSummary(dec, all),
+      alt: bucketSummary(alt, all),
+      iss: bucketSummary(iss, all),
+    }
+  };
+}
+
+/* Monthly trend. Seeded rows (logged during the initial load, so their Created
+ * date is the backfill date rather than the event date) are EXCLUDED here —
+ * including them would draw a fake spike in the log's first month. */
+function monthlySeries(pred){
+  const out = new Array(12).fill(0);
+  yearRows().filter(r => !r.seed && r.m && pred(r)).forEach(r => { out[r.m-1] += 1; });
+  return out;
+}
+
+function techTable(){
+  const rows = scopeRows();
+  const byTech = new Map();
+  rows.forEach(r => {
+    let e = byTech.get(r.t);
+    if (!e){ e = { t:r.t, canc:0, dec:0, alt:0, issues:0, total:0, ctCaused:0, jobs:new Set() }; byTech.set(r.t, e); }
+    if (isCancelledByCt(r)) e.canc += 1;
+    if (isDeclined(r)) e.dec += 1;
+    if (isReassignment(r)) e.alt += 1;
+    if (hasIssues(r)) e.issues += r.iss.length;
+    if (isCtCaused(r)) e.ctCaused += 1;
+    e.total += 1;
+    if (r.j) e.jobs.add(r.j);
+  });
+  const ctTotal = rows.filter(isCtCaused).length;
+  return Array.from(byTech.values())
+    .sort((a,b) => (b.ctCaused - a.ctCaused) || (b.total - a.total))
+    .slice(0, 10)
+    .map(e => ({
+      tech: DATA.technicians[e.t] || 'Unassigned',
+      canc: e.canc, dec: e.dec, alt: e.alt, issues: e.issues,
+      ctCaused: e.ctCaused, total: e.total, jobs: e.jobs.size,
+      pct: ctTotal ? e.ctCaused / ctTotal : 0,
+    }));
+}
+
+function familySummary(){
+  const rows = scopeRows().filter(hasIssues);
+  const byFam = new Map();
+  FAMILIES.forEach(f => byFam.set(f, { instances:0, rows:0, techs:new Set() }));
+  let totalInstances = 0;
+  rows.forEach(r => {
+    const fams = new Set(r.iss.map(issueFamilyOf));
+    r.iss.forEach(i => {
+      const f = issueFamilyOf(i);
+      const e = byFam.get(f) || byFam.get('Other');
+      e.instances += 1;
+      totalInstances += 1;
+    });
+    fams.forEach(f => {
+      const e = byFam.get(f) || byFam.get('Other');
+      e.rows += 1;
+      e.techs.add(r.t);
+    });
+  });
+  return { totalInstances, byFam };
+}
+
+function issueTypeBars(){
+  const rows = scopeRows().filter(hasIssues);
+  const counts = new Map();
+  rows.forEach(r => r.iss.forEach(i => counts.set(i, (counts.get(i)||0) + 1)));
+  return Array.from(counts.entries())
+    .map(([i,n]) => ({ name: DATA.issueTypes[i], fam: issueFamilyOf(i), n }))
+    .sort((a,b) => b.n - a.n);
+}
+
+function statusMix(){
+  const rows = scopeRows();
+  const counts = new Map();
+  rows.forEach(r => counts.set(r.st, (counts.get(r.st)||0) + 1));
+  return Array.from(counts.entries())
+    .map(([st,n]) => ({ name: DATA.statuses[st], n }))
+    .sort((a,b) => b.n - a.n);
+}
+
+/* Concentration: how many technicians carry 1, 2, 3, 4-5, 6+ CT-caused
+ * assignments. Answers "is this a systemic problem or a handful of people?" */
+function concentration(){
+  const rows = scopeRows().filter(isCtCaused);
+  const per = new Map();
+  rows.forEach(r => per.set(r.t, (per.get(r.t)||0) + 1));
+  const buckets = [
+    { label:'1', test:(n)=>n===1 },
+    { label:'2', test:(n)=>n===2 },
+    { label:'3', test:(n)=>n===3 },
+    { label:'4–5', test:(n)=>n>=4 && n<=5 },
+    { label:'6+', test:(n)=>n>=6 },
+  ].map(b => ({ label:b.label, techs:0, assignments:0 }));
+  const defs = [ (n)=>n===1, (n)=>n===2, (n)=>n===3, (n)=>n>=4&&n<=5, (n)=>n>=6 ];
+  per.forEach((n) => {
+    const i = defs.findIndex(f => f(n));
+    if (i >= 0){ buckets[i].techs += 1; buckets[i].assignments += n; }
+  });
+  const totalTechs = per.size;
+  const totalAssign = rows.length;
+  // Share of CT-caused disruption carried by the 10 worst technicians.
+  const top10 = Array.from(per.values()).sort((a,b)=>b-a).slice(0,10).reduce((a,b)=>a+b,0);
+  return { buckets, totalTechs, totalAssign, top10Share: totalAssign ? top10/totalAssign : 0 };
+}
+
+function coordinatorTable(){
+  const rows = scopeRows();
+  const byCoord = new Map();
+  rows.forEach(r => {
+    // Coordinator Name is comma-joined free text, split at build time — one row
+    // can credit several coordinators, so these columns sum above the row count.
+    const list = r.co && r.co.length ? r.co : [null];
+    list.forEach(ci => {
+      const key = ci === null ? -1 : ci;
+      let e = byCoord.get(key);
+      if (!e){ e = { ci:key, canc:0, dec:0, alt:0, issues:0, total:0 }; byCoord.set(key, e); }
+      if (isCancelledByCt(r)) e.canc += 1;
+      if (isDeclined(r)) e.dec += 1;
+      if (isReassignment(r)) e.alt += 1;
+      if (hasIssues(r)) e.issues += r.iss.length;
+      e.total += 1;
+    });
+  });
+  return Array.from(byCoord.values())
+    .sort((a,b) => b.total - a.total)
+    .slice(0, 12)
+    .map(e => ({
+      coord: e.ci === -1 ? '(none recorded)' : (DATA.coordinators[e.ci] || 'Unknown'),
+      canc:e.canc, dec:e.dec, alt:e.alt, issues:e.issues, total:e.total,
+    }));
+}
+
+function regionMix(){
+  // Enrichment-only dimension: region comes from the Job-ID join into the
+  // GLOBAL reporting table, so it is null for every unmatched job. Reported as
+  // "matched jobs only" and never used in a headline KPI.
+  const rows = scopeRows();
+  const counts = new Map();
+  let unknown = 0;
+  rows.forEach(r => {
+    if (!r.rg){ unknown += 1; return; }
+    counts.set(r.rg, (counts.get(r.rg)||0) + 1);
+  });
+  const arr = Array.from(counts.entries()).map(([k,n])=>({ name:k, n })).sort((a,b)=>b.n-a.n);
+  return { arr, unknown };
+}
+
+function recentRows(limit){
+  return scopeRows()
+    .slice()
+    .sort((a,b) => (b.d || '').localeCompare(a.d || ''))
+    .slice(0, limit);
+}
+
+/* ---------------- Rendering ---------------- */
+
+let charts = {};
+function upsertChart(id, config){
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  if (charts[id]) charts[id].destroy();
+  charts[id] = new Chart(ctx, config);
+}
+const noLegend = { legend: { display:false } };
+const bottomLegend = { legend: { position:'bottom', labels:{ boxWidth:10 } } };
+
+function populatePeriodSelect(){
+  const wrap = document.getElementById('periodWrap');
+  const sel = document.getElementById('periodSelect');
+  if (state.granularity === 'year'){
+    wrap.style.display = 'none';
+    state.period = null;
+    return;
+  }
+  wrap.style.display = '';
+  sel.innerHTML = (state.granularity === 'quarter')
+    ? QUARTER_LABELS.map((q,i) => `<option value="${i+1}">${q}</option>`).join('')
+    : MONTHS.map((mo,i) => `<option value="${i+1}">${mo}</option>`).join('');
+  if (!state.period) state.period = 1;
+  sel.value = state.period;
+}
+
+function populateFilters(){
+  const fySel = document.getElementById('fySelect');
+  const years = (DATA.years || []).slice().sort((a,b)=>b-a);
+  fySel.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+  const thisYear = new Date().getFullYear();
+  state.fy = years.includes(thisYear) ? thisYear : years[0];
+  fySel.value = state.fy;
+  fySel.addEventListener('change', () => { state.fy = Number(fySel.value); render(); });
+
+  const granSel = document.getElementById('granSelect');
+  granSel.value = state.granularity;
+  populatePeriodSelect();
+  granSel.addEventListener('change', () => {
+    state.granularity = granSel.value;
+    state.period = null;
+    populatePeriodSelect();
+    render();
+  });
+  document.getElementById('periodSelect').addEventListener('change', (e) => {
+    state.period = Number(e.target.value);
+    render();
+  });
+
+  const list = document.getElementById('techList');
+  const techs = DATA.technicians || [];
+  list.innerHTML = techs.slice().sort((a,b)=>a.localeCompare(b)).map(t => `<option value="${t}"></option>`).join('');
+  const techInput = document.getElementById('techSelect');
+  techInput.addEventListener('change', () => {
+    const v = techInput.value.trim();
+    if (!v) { state.techIdx = -1; render(); return; }
+    const idx = techs.indexOf(v);
+    state.techIdx = idx === -1 ? -1 : idx;
+    render();
+  });
+}
+
+function buildLayout(){
+  document.getElementById('app').innerHTML = `
+    <div class="meta-bar">
+      <div id="scopeLabel"></div>
+      <div id="genAtInline"></div>
+    </div>
+
+    <div class="coverage" id="coverageBanner"></div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> CT-Caused Disruption <span class="section-note" id="disruptionNote"></span></div>
+      <div class="kpi-grid" id="disruptionCards"></div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="panel">
+        <h4>Logged CT Issues by Month <span class="section-note">(by date logged · initial-load rows excluded)</span></h4>
+        <div class="chart-box"><canvas id="chartMonthly"></canvas></div>
+        <p class="footnote">The CT Issue Log has no event-date field, so bars are placed by the month the row was <em>logged</em>. Rows written during the log's initial load are excluded here — their timestamp is the backfill date, not the date the CT cancelled or declined — but they are counted in every total above.</p>
+      </div>
+      <div class="panel">
+        <h4>Top 10 Technicians by CT-Caused Disruption</h4>
+        <div id="techTable"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> Issue Type Breakdown <span class="section-note" id="issueNote"></span></div>
+      <div class="kpi-grid" id="familyCards"></div>
+    </div>
+    <div class="section grid-2">
+      <div class="panel">
+        <h4>Issue Types Recorded</h4>
+        <div class="chart-box tall"><canvas id="chartIssueTypes"></canvas></div>
+        <p class="footnote">CT Issue is a multi-select that is overwritten in place by the CT/QA Issues sync, so this is the log's <em>current</em> state, not a history of every issue ever recorded. One assignment can carry several issues, so instances exceed affected assignments.</p>
+      </div>
+      <div class="panel">
+        <h4>Issue Family Share</h4>
+        <div class="chart-box tall"><canvas id="chartFamily"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> Status Mix &amp; Concentration</div>
+      <div class="grid-2-eq">
+        <div class="panel">
+          <h4>Logged Assignments by Job Status</h4>
+          <div class="chart-box"><canvas id="chartStatus"></canvas></div>
+          <p class="footnote">Job Status here is the status <em>at the moment the assignment was logged</em>, not the job's current status — the job may since have been reassigned and completed.</p>
+        </div>
+        <div class="panel">
+          <h4>How Concentrated Is CT-Caused Disruption?</h4>
+          <div id="concentrationTable"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> Coordinator View</div>
+      <div class="panel">
+        <h4>Logged CT Issues by Capture Coordinator</h4>
+        <div id="coordTable"></div>
+        <p class="footnote">Coordinator Name is a free-text field holding comma-joined names ("Jordan Saiz, Kevin Curtis"); it is split so one person's work isn't scattered across several buckets. A shared assignment therefore credits every coordinator named on it, so these columns sum to more than the assignment count.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> Recent Logged Issues</div>
+      <div class="panel">
+        <h4>Most Recently Logged Assignments <span class="section-note">(newest 25 in scope)</span></h4>
+        <div id="recentTable"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="sq">■</span> Coverage, Definitions &amp; Data Quality</div>
+      <div class="grid-2-eq">
+        <div class="panel">
+          <h4>Logged Issues by Region <span class="section-note">(enriched jobs only)</span></h4>
+          <div class="chart-box"><canvas id="chartRegion"></canvas></div>
+          <p class="footnote" id="regionFootnote"></p>
+        </div>
+        <div class="panel">
+          <h4>How to Read This Page</h4>
+          <div class="defs" id="definitions"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCoverage(){
+  const c = DATA.coverage;
+  const el = document.getElementById('coverageBanner');
+  const dupWarning = c.duplicateSignatures && c.duplicateSignatures.length
+    ? `<p style="color:var(--bad);font-weight:600;">⚠ ${c.duplicateSignatures.length} duplicate Assignment Signature${c.duplicateSignatures.length===1?'':'s'} detected — two rows describing the same assignment. That is a real defect in the sync, not a data-entry artefact, and is worth investigating.</p>`
+    : '';
+  el.innerHTML = `
+    <h4>Coverage — read this before trusting a trend</h4>
+    <p>
+      The CT Issue Log started collecting on <b>${fmtDate(c.logStart)}</b> and currently runs to <b>${fmtDate(c.logEnd)}</b>.
+      It is <b>not</b> a historical record: rows only exist for assignments that passed through the CT-decline job statuses,
+      or that had a CT/QA issue edited after the sync went live. Anything before the start date is simply absent, so
+      month-over-month movement becomes meaningful only as the log accumulates.
+    </p>
+    <p>
+      <b>${fmtNum(c.seededRows)}</b> row${c.seededRows===1?'':'s'} were written during the log's initial load — their timestamp is the
+      backfill date, not the date the event happened. They count in every total but are excluded from the monthly trend chart.
+      <b>${fmtNum(c.excludedTestRows)}</b> test/internal row${c.excludedTestRows===1?'':'s'}
+      (${c.testIdentities.length} identit${c.testIdentities.length===1?'y':'ies'} such as <code>XX … TEST</code>, <code>… DNU</code>) are excluded everywhere.
+    </p>
+    ${dupWarning}
+    <div class="stats">
+      <div class="stat"><b>${fmtNum(c.totalRows)}</b>rows in Airtable</div>
+      <div class="stat"><b>${fmtNum(c.includedRows)}</b>rows in scope</div>
+      <div class="stat"><b>${fmtNum(c.distinctJobs)}</b>distinct jobs</div>
+      <div class="stat"><b>${fmtNum(c.distinctTechnicians)}</b>technicians</div>
+      <div class="stat"><b>${fmtNum(c.joinMatchedJobs)} / ${fmtNum(c.distinctJobs)}</b>jobs enriched from reporting data</div>
+      <div class="stat"><b>${c.duplicateSignatures.length===0 ? 'none' : fmtNum(c.duplicateSignatures.length)}</b>duplicate signatures</div>
+    </div>
+  `;
+}
+
+function renderDisruptionCards(){
+  const d = disruptionCards();
+  document.getElementById('disruptionNote').textContent =
+    `one row = one CT assignment, not one job · ${fmtNum(d.all.length)} assignment${d.all.length===1?'':'s'} in scope`;
+
+  const card = (title, s, primary, extraRows) => `
+    <div class="kpi-card ${primary ? '' : 'dim'}">
+      <h3>${title}</h3>
+      <div class="kpi-row"><span class="lbl">Assignments</span><span class="val">${fmtNum(s.assignments)}</span></div>
+      <div class="kpi-row"><span class="lbl">Distinct jobs</span><span class="val">${fmtNum(s.jobs)}</span></div>
+      <div class="kpi-row"><span class="lbl">Technicians involved</span><span class="val">${fmtNum(s.techs)}</span></div>
+      <div class="kpi-row"><span class="lbl">Share of logged</span><span class="val">${fmtPct(s.share)}</span></div>
+      ${extraRows || ''}
+    </div>`;
+
+  document.getElementById('disruptionCards').innerHTML = [
+    card('All Logged', d.s.all, true),
+    card('CT-Caused Disruption', d.s.ct, true),
+    card('Cancelled by CT', d.s.canc, false),
+    card('Declined / Unavailable', d.s.dec, false),
+    card('Reassignments (CT ALT)', d.s.alt, false,
+      `<div class="kpi-row"><span class="lbl" style="font-size:11.5px;">Not counted as CT-caused</span><span class="val" style="font-size:11.5px;color:var(--muted);">by design</span></div>`),
+    card('Quality &amp; SLA Issues', d.s.iss, false,
+      `<div class="kpi-row"><span class="lbl">Issue instances</span><span class="val">${fmtNum(d.issueInstances)}</span></div>`),
+  ].join('');
+}
+
+function renderMonthlyChart(){
+  upsertChart('chartMonthly', {
+    type:'bar',
+    data:{ labels: MONTHS.map(m=>m.slice(0,3)), datasets:[
+      { label:'Cancelled by CT', data: monthlySeries(isCancelledByCt), backgroundColor:C_PRIMARY, stack:'s' },
+      { label:'Declined / Unavailable', data: monthlySeries(isDeclined), backgroundColor:C_INK, stack:'s' },
+      { label:'Reassignment (CT ALT)', data: monthlySeries(isReassignment), backgroundColor:C_AMBER, stack:'s' },
+      { label:'Quality / SLA only', data: monthlySeries(r => hasIssues(r) && !isCtCaused(r) && !isReassignment(r)), backgroundColor:C_PURPLE, stack:'s' },
+      { label:'Other', data: monthlySeries(r => !hasIssues(r) && !isCtCaused(r) && !isReassignment(r)), backgroundColor:C_GREY, stack:'s' },
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins: bottomLegend,
+      scales:{ x:{ stacked:true }, y:{ stacked:true, ticks:{ precision:0 } } } }
+  });
+}
+
+function renderTechTable(){
+  const rows = techTable();
+  const el = document.getElementById('techTable');
+  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No logged CT issues for this selection.</p>'; return; }
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th class="help" title="The technician identity on this page is the CT Issue Log's Scheduling City link (e.g. &quot;Seattle, WA - 004 - Pro3&quot;). In this data set that field IS the capture technician, not a location — which is why the same city can appear with several numbers.">Technician ⓘ</th>
+        <th class="num">Canc.</th>
+        <th class="num">Decl.</th>
+        <th class="num">ALT</th>
+        <th class="num">Issues</th>
+        <th class="num help" title="CT-caused = Cancelled by CT + CT Declined + CT Unavailable. CT ALT (reassignment) is shown but deliberately not included.">CT-caused ⓘ</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map((r,i) => `
+          <tr>
+            <td><span class="rank">${i+1}</span>${r.tech}</td>
+            <td class="num">${fmtNum(r.canc)}</td>
+            <td class="num">${fmtNum(r.dec)}</td>
+            <td class="num">${fmtNum(r.alt)}</td>
+            <td class="num">${fmtNum(r.issues)}</td>
+            <td class="num">
+              ${fmtNum(r.ctCaused)} <small style="color:var(--muted)">(${fmtPct(r.pct)})</small>
+              <div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(100,r.pct*100)}%"></div></div>
+            </td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    <p class="footnote">Ranked by CT-caused disruption, then by total logged assignments. Percentage is that technician's share of all CT-caused assignments in scope.</p>`;
+}
+
+function renderFamilyCards(){
+  const { totalInstances, byFam } = familySummary();
+  const el = document.getElementById('familyCards');
+  document.getElementById('issueNote').textContent =
+    `${fmtNum(totalInstances)} issue instance${totalInstances===1?'':'s'} across ${fmtNum(scopeRows().filter(hasIssues).length)} assignment${scopeRows().filter(hasIssues).length===1?'':'s'} · CT Issue is sparse by design — most assignments legitimately carry none`;
+  const shown = FAMILIES.filter(f => (byFam.get(f) || {instances:0}).instances > 0);
+  if (!shown.length){
+    el.innerHTML = '<div class="kpi-card dim"><h3>No issues recorded</h3><div class="kpi-row"><span class="lbl">Assignments with a CT Issue</span><span class="val">0</span></div></div>';
+    return;
+  }
+  el.innerHTML = shown.map(f => {
+    const e = byFam.get(f);
+    return `
+      <div class="kpi-card ${f==='Quality' ? '' : 'dim'}">
+        <h3>${f}</h3>
+        <div class="kpi-row"><span class="lbl">Issue instances</span><span class="val">${fmtNum(e.instances)}</span></div>
+        <div class="kpi-row"><span class="lbl">Assignments affected</span><span class="val">${fmtNum(e.rows)}</span></div>
+        <div class="kpi-row"><span class="lbl">Technicians involved</span><span class="val">${fmtNum(e.techs.size)}</span></div>
+        <div class="kpi-row"><span class="lbl">Share of instances</span><span class="val">${fmtPct(totalInstances ? e.instances/totalInstances : 0)}</span></div>
+      </div>`;
+  }).join('');
+}
+
+const FAMILY_COLOR = {
+  'Quality': C_PURPLE,
+  'On-site': C_PRIMARY,
+  'SLA': C_INK,
+  'Scheduling churn': C_AMBER,
+  'Other': C_GREY,
+};
+
+function renderIssueCharts(){
+  const bars = issueTypeBars();
+  upsertChart('chartIssueTypes', {
+    type:'bar',
+    data:{
+      labels: bars.map(b => b.name),
+      datasets:[{ label:'Instances', data: bars.map(b => b.n), backgroundColor: bars.map(b => FAMILY_COLOR[b.fam] || C_GREY) }],
+    },
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins: noLegend,
+      scales:{ x:{ ticks:{ precision:0 } }, y:{ ticks:{ font:{ size:10.5 }, autoSkip:false } } } }
+  });
+
+  const { totalInstances, byFam } = familySummary();
+  const fams = FAMILIES.filter(f => (byFam.get(f)||{instances:0}).instances > 0);
+  upsertChart('chartFamily', {
+    type:'doughnut',
+    data:{
+      labels: fams,
+      datasets:[{ data: fams.map(f => byFam.get(f).instances), backgroundColor: fams.map(f => FAMILY_COLOR[f]) }],
+    },
+    options:{ responsive:true, maintainAspectRatio:false, plugins: bottomLegend }
+  });
+}
+
+function renderStatusChart(){
+  const mix = statusMix();
+  upsertChart('chartStatus', {
+    type:'bar',
+    data:{
+      labels: mix.map(s => s.name),
+      datasets:[{ label:'Assignments', data: mix.map(s => s.n),
+        backgroundColor: mix.map(s =>
+          DATA.rules.ctCausedStatuses.includes(s.name) ? C_PRIMARY
+          : DATA.rules.reassignmentStatuses.includes(s.name) ? C_AMBER
+          : C_GREY) }],
+    },
+    options:{ responsive:true, maintainAspectRatio:false, plugins: noLegend,
+      scales:{ y:{ ticks:{ precision:0 } }, x:{ ticks:{ font:{ size:10.5 } } } } }
+  });
+}
+
+function renderConcentration(){
+  const c = concentration();
+  const el = document.getElementById('concentrationTable');
+  if (!c.totalTechs){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No CT-caused disruption for this selection.</p>'; return; }
+  el.innerHTML = `
+    <table>
+      <thead><tr><th>CT-caused assignments per technician</th><th class="num">Technicians</th><th class="num">Assignments</th><th class="num">% of disruption</th></tr></thead>
+      <tbody>
+        ${c.buckets.filter(b=>b.techs>0).map(b => `
+          <tr>
+            <td>${b.label}</td>
+            <td class="num">${fmtNum(b.techs)}</td>
+            <td class="num">${fmtNum(b.assignments)}</td>
+            <td class="num">
+              ${fmtPct(c.totalAssign ? b.assignments/c.totalAssign : 0)}
+              <div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(100, (c.totalAssign ? b.assignments/c.totalAssign : 0)*100)}%"></div></div>
+            </td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    <p class="footnote">
+      <b>${fmtNum(c.totalTechs)}</b> technician${c.totalTechs===1?'':'s'} account for <b>${fmtNum(c.totalAssign)}</b> CT-caused assignment${c.totalAssign===1?'':'s'};
+      the 10 highest carry <b>${fmtPct(c.top10Share)}</b> of it. A long tail of ones and twos points at ordinary attrition; a short head points at specific technicians worth a conversation.
+    </p>`;
+}
+
+function renderCoordTable(){
+  const rows = coordinatorTable();
+  const el = document.getElementById('coordTable');
+  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">No logged CT issues for this selection.</p>'; return; }
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Coordinator</th>
+        <th class="num">Cancelled by CT</th>
+        <th class="num">Declined / Unavail.</th>
+        <th class="num">Reassignments</th>
+        <th class="num">Quality / SLA issues</th>
+        <th class="num">Total logged</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map((r,i) => `
+          <tr>
+            <td><span class="rank">${i+1}</span>${r.coord}</td>
+            <td class="num">${fmtNum(r.canc)}</td>
+            <td class="num">${fmtNum(r.dec)}</td>
+            <td class="num">${fmtNum(r.alt)}</td>
+            <td class="num">${fmtNum(r.issues)}</td>
+            <td class="num">${fmtNum(r.total)}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderRecentTable(){
+  const rows = recentRows(25);
+  const el = document.getElementById('recentTable');
+  if (!rows.length){ el.innerHTML = '<p style="color:var(--muted);font-size:13px;">Nothing logged for this selection.</p>'; return; }
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Logged</th>
+        <th>Job ID</th>
+        <th>Technician</th>
+        <th>Status when logged</th>
+        <th>CT Issue</th>
+        <th>Coordinator</th>
+        <th class="num">CT rate</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr>
+            <td class="small">${fmtDate(r.d)}${r.seed ? ' <span class="pill c" title="Written during the initial load of the log — this timestamp is the backfill date, not the date the event happened.">seed</span>' : ''}</td>
+            <td class="small">${r.j || '--'}</td>
+            <td>${DATA.technicians[r.t] || 'Unassigned'}</td>
+            <td>${DATA.statuses[r.st] || 'Unknown'}</td>
+            <td>${r.iss.length ? r.iss.map(i => `<span class="pill ${FAMILY_PILL[issueFamilyOf(i)]||'c'}">${DATA.issueTypes[i]}</span>`).join('') : '<span style="color:var(--muted);">—</span>'}</td>
+            <td class="small">${r.co.length ? r.co.map(ci => DATA.coordinators[ci]).join(', ') : '--'}</td>
+            <td class="num">${fmtUSD(r.ctRate)}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    <p class="footnote">CT rate is enrichment from the reporting table's parent record for the same Job ID; it shows "--" where the job could not be matched. "Status when logged" is a snapshot, not the job's current status.</p>`;
+}
+
+function renderRegionChart(){
+  const { arr, unknown } = regionMix();
+  upsertChart('chartRegion', {
+    type:'bar',
+    data:{ labels: arr.map(a=>a.name), datasets:[{ label:'Assignments', data: arr.map(a=>a.n), backgroundColor:C_PRIMARY }] },
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins: noLegend,
+      scales:{ x:{ ticks:{ precision:0 } } } }
+  });
+  const c = DATA.coverage;
+  document.getElementById('regionFootnote').innerHTML =
+    `Region is not stored on the CT Issue Log — it is joined in from the reporting table on Job ID, so it exists only for matched jobs.
+     <b>${fmtNum(unknown)}</b> assignment${unknown===1?'':'s'} in scope have no region because their job could not be matched
+     (${fmtNum(c.joinUnmatchedJobs)} of ${fmtNum(c.distinctJobs)} distinct job IDs are unmatched overall — mostly Vacasa IDs, which use a
+     different numbering shape in each system). No KPI on this page depends on the join.`;
+}
+
+function renderDefinitions(){
+  const c = DATA.coverage;
+  document.getElementById('definitions').innerHTML = `
+    <ul>
+      <li><b>One row = one CT assignment.</b> Two rows for the same job are correct when the technician differs. Every count on this page is assignments; distinct jobs is always shown as its own, smaller number.</li>
+      <li><b>Technician = the log's Scheduling City link</b> (<code>Seattle, WA - 004 - Pro3</code>). In this data set that field <em>is</em> the capture technician, not a location — so it is not the same identity as <code>Vendor Name</code> on the Technician Dashboard, and the two pages will not tie out person-for-person.</li>
+      <li><b>CT-caused disruption</b> = <code>${DATA.rules.ctCausedStatuses.join('</code> + <code>')}</code>. <b>CT ALT</b> (reassignment) is reported separately and deliberately excluded — a reassignment isn't necessarily the technician's fault.</li>
+      <li><b>Job Status is a snapshot</b> taken when the assignment was logged, not the job's current status. For current status, read the job's record in the parent base.</li>
+      <li><b>CT Issue is sparse and mutable.</b> It is overwritten in place by the CT/QA Issues sync, so the log holds current state, not history — which is why issues are never charted as a time series here.</li>
+      <li><b>Months come from the row's <code>Created</code> date</b>, i.e. when it was logged. ${fmtNum(c.seededRows)} initial-load row${c.seededRows===1?'':'s'} are excluded from the trend chart for that reason.</li>
+      <li><b>Deduplication</b>, where relevant, is on Assignment Signature — never on Parent Base Record ID, whose repeats are legitimate acceptance history.</li>
+      <li><b>Not in scope:</b> jobs cancelled outside the CT-decline statuses (Cancelled Last Minute, Cancelled in Advance, Cancelled by Matterport) never reach this log unless a CT/QA issue was recorded against them.</li>
+    </ul>`;
+}
+
+function render(){
+  document.getElementById('scopeLabel').textContent =
+    `${periodLabel()} · ${state.techIdx===-1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}`;
+  renderCoverage();
+  renderDisruptionCards();
+  renderMonthlyChart();
+  renderTechTable();
+  renderFamilyCards();
+  renderIssueCharts();
+  renderStatusChart();
+  renderConcentration();
+  renderCoordTable();
+  renderRecentTable();
+  renderRegionChart();
+  renderDefinitions();
+}
+
+document.getElementById('navToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('navPanel').classList.toggle('open');
+});
+document.addEventListener('click', (e) => {
+  const panel = document.getElementById('navPanel');
+  if (panel.classList.contains('open') && !panel.contains(e.target)) panel.classList.remove('open');
+});
+
+(async function init(){
+  try {
+    DATA = await loadData();
+    if (!DATA.generatedAt || !DATA.rows){
+      document.getElementById('app').innerHTML = '<div class="loading">This section hasn\'t completed its first CT Issue Log sync yet.<br>Run the "Refresh Capture Services dashboard data" GitHub Action (or wait for the next daily run) to populate it.</div>';
+      return;
+    }
+    if (!DATA.rows.length){
+      document.getElementById('app').innerHTML = '<div class="loading">The CT Issue Log returned no rows in scope.<br>Every row may have been excluded as a test identity — check the build log.</div>';
+      return;
+    }
+    buildLayout();
+    populateFilters();
+    document.getElementById('genAt').textContent = DATA.generatedAt ? ('Last refreshed: ' + new Date(DATA.generatedAt).toLocaleString()) : '';
+    render();
+  } catch (err) {
+    document.getElementById('app').innerHTML = `<div class="error">Failed to load CT Issues dashboard: ${err.message}</div>`;
+    console.error(err);
+  }
+})();
+</script>
+</body>
+</html>
