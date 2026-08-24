@@ -247,6 +247,12 @@
     padding:16px 20px;
     margin-bottom:28px;
   }
+  /* Staleness warning. The CT build is non-blocking in the refresh workflow, so
+     this page can legitimately serve yesterday's data while the other three
+     dashboards keep updating — that has to be visible here, not just in the
+     Actions tab. */
+  .coverage.stale{ border-left-color:var(--bad); }
+  .coverage.stale h4{ color:var(--bad); }
   .coverage h4{
     margin:0 0 8px;
     font-size:13px;
@@ -426,6 +432,12 @@
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const QUARTER_LABELS = ['Q1','Q2','Q3','Q4'];
+
+/* The refresh workflow runs daily ~11:00 UTC (queued, so typically ~11:25-11:32
+ * UTC). The CT Issues build inside it is deliberately non-blocking, so if it
+ * fails the previous ct-issues.json stays published and this page keeps serving
+ * it. 36h gives the daily run a full miss plus slack before we cry wolf. */
+const STALE_HOURS = 36;
 
 /* Palette matched to the other three dashboards. */
 const C_PRIMARY = '#ff3158';   // Matterport red — cancellations / headline
@@ -632,16 +644,18 @@ function concentration(){
   const rows = scopeRows().filter(isCtCaused);
   const per = new Map();
   rows.forEach(r => per.set(r.t, (per.get(r.t)||0) + 1));
-  const buckets = [
+  // Single source of truth for the buckets — label and predicate together, so
+  // the two can't drift apart.
+  const defs = [
     { label:'1', test:(n)=>n===1 },
     { label:'2', test:(n)=>n===2 },
     { label:'3', test:(n)=>n===3 },
     { label:'4–5', test:(n)=>n>=4 && n<=5 },
     { label:'6+', test:(n)=>n>=6 },
-  ].map(b => ({ label:b.label, techs:0, assignments:0 }));
-  const defs = [ (n)=>n===1, (n)=>n===2, (n)=>n===3, (n)=>n>=4&&n<=5, (n)=>n>=6 ];
+  ];
+  const buckets = defs.map(d => ({ label:d.label, techs:0, assignments:0 }));
   per.forEach((n) => {
-    const i = defs.findIndex(f => f(n));
+    const i = defs.findIndex(d => d.test(n));
     if (i >= 0){ buckets[i].techs += 1; buckets[i].assignments += n; }
   });
   const totalTechs = per.size;
@@ -771,6 +785,8 @@ function buildLayout(){
       <div id="genAtInline"></div>
     </div>
 
+    <div id="staleBanner"></div>
+
     <div class="coverage" id="coverageBanner"></div>
 
     <div class="section">
@@ -853,6 +869,31 @@ function buildLayout(){
       </div>
     </div>
   `;
+}
+
+/* Staleness check — see STALE_HOURS. Deliberately states the consequence
+ * ("the numbers below are from <date>") rather than just flagging a date, and
+ * names the workflow so whoever reads it knows where to look. */
+function renderStale(){
+  const el = document.getElementById('staleBanner');
+  if (!el) return;
+  const gen = DATA.generatedAt ? new Date(DATA.generatedAt) : null;
+  if (!gen || isNaN(gen.getTime())){ el.innerHTML = ''; return; }
+  const hours = (Date.now() - gen.getTime()) / 3600000;
+  if (hours < STALE_HOURS){ el.innerHTML = ''; return; }
+  const days = Math.floor(hours / 24);
+  const age = days >= 1 ? `${days} day${days === 1 ? '' : 's'}` : `${Math.floor(hours)} hours`;
+  el.innerHTML = `
+    <div class="coverage stale">
+      <h4>⚠ This data is ${age} old</h4>
+      <p>
+        Every number below is from <b>${gen.toLocaleString()}</b>, not today. The CT Issue Log build runs
+        inside the daily <em>Refresh Capture Services dashboard data</em> workflow but is non-blocking, so when it
+        fails the other three dashboards keep refreshing while this page holds the last good data — which is why
+        this page can be stale while they are current. Nothing here is wrong, it is just old.
+      </p>
+      <p>Check the workflow's most recent run to see why the CT Issues step failed.</p>
+    </div>`;
 }
 
 function renderCoverage(){
@@ -1154,6 +1195,7 @@ function renderDefinitions(){
 function render(){
   document.getElementById('scopeLabel').textContent =
     `${periodLabel()} · ${state.techIdx===-1 ? 'All Technicians' : (DATA.technicians[state.techIdx] || 'Unknown')}`;
+  renderStale();
   renderCoverage();
   renderDisruptionCards();
   renderMonthlyChart();
