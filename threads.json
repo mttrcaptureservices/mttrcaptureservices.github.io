@@ -1,17 +1,28 @@
 {
-  "lastUpdated": "2026-08-24T19:26:23.937Z",
+  "lastUpdated": "2026-08-24T20:14:28.270Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E07A5F",
-      "summary": "Reported a duplicate SWC-7865 record sitting in Pending on Airtable while the real job was already captured, QA'd and delivered. Confirmed as a phantom Spec Ops row with no inbound submission behind it, and safe to delete.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "summary": "Duplicate SWC-7865 record appeared under Pending in Spec Ops while the real job was already captured, QA'd and delivered. Roche confirmed they made no second submission.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting action",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Phantom Spec Ops row rec33V0SyJiq147wb is STILL undeleted after three runs; escalated to COP-2083 as comment 621577 so the deletion has a named owner. Blast radius re-verified zero. Roche side clean across the 32 most recent control records.",
+      "note": "Phantom Spec Ops row rec33V0SyJiq147wb still undeleted; blast radius verified zero and the deletion is now tracked on COP-2083 (comment 621577) — next move belongs to whoever has delete rights.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#5B8DEF",
+      "summary": "CT job request email for JOBID6634090048124019860 (Vera, Air Communities) has not gone out to the tech; re-triggering did not help.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/24",
+      "note": "Parent record 95243 shows Send CT Email = Sent but has no CT Short Link, no Short Link ID and no Last Email Sent — every other job dispatched today has one. Snehal to regenerate the short link; Clark to re-verify next run.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884"
     }
   ]
 }
