@@ -24,10 +24,21 @@ jobs:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: node scripts/build-capture-services-data.mjs
 
-      - name: Commit updated data file
+      # CT Issues section (ctissues.html). Deliberately a separate script and a
+      # separate output file: its source is the CT Issue Log in a DIFFERENT base
+      # (appm03zXsTZJvY9vY), and the GLOBAL reporting table cannot supply CT
+      # issue data at all — see the script header for the verification. Keeping
+      # it separate means a failure here can never corrupt data.json or change
+      # the numbers on the other three dashboards.
+      - name: Build capture-services/ct-issues.json from the CT Issue Log
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+        run: node scripts/build-ct-issues-data.mjs
+
+      - name: Commit updated data files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add capture-services/data.json
+          git add capture-services/data.json capture-services/ct-issues.json
           git diff --staged --quiet && echo "No changes to commit" || git commit -m "Capture Services dashboard: daily data refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
