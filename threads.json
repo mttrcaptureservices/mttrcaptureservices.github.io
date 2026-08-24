@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24T22:07:52.240Z",
+  "lastUpdated": "2026-08-24T23:09:55.862Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,7 +10,7 @@
       "status": "Awaiting action",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Phantom Spec Ops row rec33V0SyJiq147wb (SWC-7865) re-verified 8/24 3:10 PM — still present, still Pending, no CT/schedule/QA and nothing downstream. Ask already recorded on COP-2083 comment 621577; next action belongs to whoever has delete rights on the Spec Ops Capture Data table.",
+      "note": "Phantom Spec Ops row rec33V0SyJiq147wb (SWC-7865, Pending, no schedule/CT/QA) re-verified still present 8/24 4:08 PM; blast radius confirmed zero and the ask is discharged to COP-2083 comment 621577 - next action is deletion by whoever holds delete rights, requester already acknowledged.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     },
     {
@@ -21,7 +21,7 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/24",
-      "note": "Re-verified 8/24 3:06 PM — parent 95243 still Job Status Pending with Send CT Email = Sent and CT Short Link still empty ~2.5h after creation, so nothing has dispatched. Tracked as COP-2085; next action is the run-history root cause on Ricardo.",
+      "note": "Parent 95243 still Pending with Send CT Email = Sent and CT Short Link empty ~3.5h after creation; 18-parent cohort pulled 8/24 4:05 PM shows every other Sent parent dispatched normally including 8 created after hers, so the failure is isolated to this record - evidence added as COP-2085 comment 621638, and Caitlin has been asked whether to resubmit or hold 95243 as the live repro.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884",
       "jiraKey": "COP-2085"
     }
