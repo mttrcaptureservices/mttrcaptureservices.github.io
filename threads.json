@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24T20:14:28.270Z",
+  "lastUpdated": "2026-08-24T21:19:35.311Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -17,12 +17,24 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#5B8DEF",
-      "summary": "CT job request email for JOBID6634090048124019860 (Vera, Air Communities) has not gone out to the tech; re-triggering did not help.",
+      "summary": "CT job request email for JOBID6634090048124019860 (Vera) never went out - the parent shows Send CT Email = Sent but no CT Short Link was ever generated, so there is no link to put in the email.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/24",
-      "note": "Parent record 95243 shows Send CT Email = Sent but has no CT Short Link, no Short Link ID and no Last Email Sent — every other job dispatched today has one. Snehal to regenerate the short link; Clark to re-verify next run.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884"
+      "note": "COP-2085 filed and Homelander queued; short link on parent 95243 still empty as of 2:20 PM - next action is Ricardo/Snehal regenerating it, a plain re-trigger does not clear it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884",
+      "jiraKey": "COP-2085"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#6FBF73",
+      "summary": "Automated appointment confirmation emails reported as not sent for SENIOR6633937870516274511 (The Ivy Colorado Springs) and SENIOR6633939650518398952 (The Ivy Castle Rock).",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/24",
+      "note": "Both parents (95123, 95125) now read Last Email Sent = Appt Confirmation Emails sent, so dispatch completed on our side; asked Freddy to confirm with the on-site contact whether they actually landed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787603084519?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787603084519&createdTime=1787603084519"
     }
   ]
 }
