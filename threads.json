@@ -1,4 +1,17 @@
 {
-  "lastUpdated": "2026-08-22T02:09:55.789Z",
-  "threads": []
+  "lastUpdated": "2026-08-24T16:51:59.003Z",
+  "threads": [
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E07A5F",
+      "summary": "Roche SWC-7865 is showing twice in Airtable - a second Pending record appeared while the real job was already captured, QA'd and delivered. Asked whether the duplicate can be deleted.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/20",
+      "jiraKey": "COP-2083",
+      "note": "Answered 8/24: the Pending row rec33V0SyJiq147wb has no schedule, CT, QA record or downstream job, and Roche made no second submission - safe for Stephenie to delete. Cause of the internal re-push tracked on COP-2083 (comment 621524); second phantom duplicate in four days.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
+    }
+  ]
 }
