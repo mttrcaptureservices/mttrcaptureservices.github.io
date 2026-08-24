@@ -2,7 +2,8 @@ name: Refresh Capture Services dashboard data
 
 on:
   schedule:
-    # 11:00 UTC daily (~3-4am Pacific depending on DST)
+    # 11:00 UTC daily (~3-4am Pacific depending on DST). GitHub's scheduler
+    # queues these, so actual start has been running ~11:25-11:32 UTC.
     - cron: '0 11 * * *'
   workflow_dispatch: {}
 
@@ -24,21 +25,91 @@ jobs:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: node scripts/build-capture-services-data.mjs
 
-      # CT Issues section (ctissues.html). Deliberately a separate script and a
-      # separate output file: its source is the CT Issue Log in a DIFFERENT base
-      # (appm03zXsTZJvY9vY), and the GLOBAL reporting table cannot supply CT
-      # issue data at all — see the script header for the verification. Keeping
-      # it separate means a failure here can never corrupt data.json or change
-      # the numbers on the other three dashboards.
+      # CT Issues section (ctissues.html) — separate script, separate output
+      # file, and deliberately NON-BLOCKING.
+      #
+      # Its source is the CT Issue Log in a different base (appm03zXsTZJvY9vY);
+      # the GLOBAL reporting table cannot supply CT issue data at all, see the
+      # script header. `continue-on-error` is the important part: Actions is
+      # fail-fast, so without it a failure here would skip the commit step below
+      # and silently cost that day's data.json refresh too — coupling the three
+      # established dashboards to the newest one. The script's own sanity gate
+      # leaves the previous ct-issues.json untouched on failure, so the CT page
+      # serves stale-but-correct data (and says so) rather than zeros.
       - name: Build capture-services/ct-issues.json from the CT Issue Log
+        id: ct_issues
+        continue-on-error: true
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: node scripts/build-ct-issues-data.mjs
 
       - name: Commit updated data files
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add capture-services/data.json capture-services/ct-issues.json
-          git diff --staged --quiet && echo "No changes to commit" || git commit -m "Capture Services dashboard: daily data refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+
+          MSG="Capture Services dashboard: daily data refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          stage() {
+            git add -- capture-services/data.json
+            # Only stage the CT file if it exists — on a first run, or if the CT
+            # build failed before ever producing one, `git add` on a missing path
+            # would abort the whole step and lose the data.json refresh.
+            if [ -f capture-services/ct-issues.json ]; then
+              git add -- capture-services/ct-issues.json
+            fi
+          }
+
+          stage
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -q -m "$MSG"
+
+          # This job takes ~12 minutes, which is a wide window for a human commit
+          # to land on main first and make the push a non-fast-forward. Previously
+          # that threw away the whole refresh (run #57). These two files are
+          # wholly regenerated snapshots, so the correct resolution is "keep the
+          # remote's work, replay ours on top" — done by hard-resetting to the new
+          # main and restoring only our two files. A plain `git pull --rebase` is
+          # unreliable here because actions/checkout gives a shallow clone, and a
+          # `git reset --soft` would make our stale copy of every OTHER file win
+          # and silently revert whatever the concurrent commit changed.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected (attempt $attempt) — replaying our data files onto the current main"
+            TMP="$(mktemp -d)"
+            cp capture-services/data.json "$TMP/data.json"
+            if [ -f capture-services/ct-issues.json ]; then
+              cp capture-services/ct-issues.json "$TMP/ct-issues.json"
+            fi
+            git fetch --depth=1 origin main
+            git reset --hard origin/main
+            cp "$TMP/data.json" capture-services/data.json
+            if [ -f "$TMP/ct-issues.json" ]; then
+              cp "$TMP/ct-issues.json" capture-services/ct-issues.json
+            fi
+            rm -rf "$TMP"
+            stage
+            if git diff --staged --quiet; then
+              echo "Nothing left to commit after replay — the remote already has this data"
+              exit 0
+            fi
+            git commit -q -m "$MSG"
+          done
+          echo "::error title=Push failed::Could not push the refreshed data after 3 attempts."
+          exit 1
+
+      # Surface a CT-only failure loudly. The commit step above has already run,
+      # so data.json is safely refreshed; this just makes sure a CT breakage
+      # turns the run red instead of hiding behind a green check.
+      - name: Flag CT Issues build failure
+        if: steps.ct_issues.outcome == 'failure'
+        run: |
+          echo "::error title=CT Issues data not refreshed::build-ct-issues-data.mjs failed. capture-services/ct-issues.json was left at its previous version, so the CT Issues dashboard is serving stale data and will say so on the page. See the 'Build capture-services/ct-issues.json' step log above."
+          exit 1
