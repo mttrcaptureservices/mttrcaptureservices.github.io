@@ -85,6 +85,13 @@ const token = () => process.env.AIRTABLE_TOKEN;
 // ---------------------------------------------------------------------------
 const LOG_BASE = 'appm03zXsTZJvY9vY';
 const LOG_TABLE = 'tbl8zsiBhxBvuW8vS';
+// {Scheduling City} is a LINKED-RECORD field. The REST API returns linked
+// records as bare record-ID strings (["recXXXX"]) — it does NOT return the
+// display name, unlike the Airtable MCP tools, which return {id, name} objects.
+// Since Scheduling City IS the capture technician on this page, the names must
+// be resolved from the linked table itself.
+const CITY_TABLE = 'tblcQRAUI8a25vbxk';
+const CITY_PRIMARY_FIELD = 'fldrEXBDkmZigxO5L';
 const LF = {
   parentRecordId: 'fldSRR1eBFjaFcejC',
   schedulingCity: 'fldwzgAc3XT28ZQlu', // linked record — THE capture technician
@@ -176,6 +183,49 @@ function round2(n) {
   return Math.round(n * 100) / 100;
 }
 
+// ---------------------------------------------------------------------------
+// Cell-shape normalisers
+//
+// The raw REST API and the Airtable MCP tools return DIFFERENT shapes for the
+// same field, and getting this wrong fails silently — every value parses as
+// empty, so counts come out as zero rather than throwing:
+//
+//   field type          REST API                 MCP tools
+//   singleSelect        "Cancelled by CT"        {id, name, color}
+//   multipleSelects     ["QA: Missing 360s"]     [{id, name, color}]
+//   multipleRecordLinks ["recXXXXXXXXXXXXXX"]    [{id, name}]
+//
+// These helpers accept either, so the builder is correct whichever client is
+// used, and a future switch to the MCP tools can't silently zero the dashboard.
+// ---------------------------------------------------------------------------
+export function selName(v) {
+  if (v === null || v === undefined) return '';
+  if (typeof v === 'string') return v.trim();
+  if (typeof v === 'object' && typeof v.name === 'string') return v.name.trim();
+  return '';
+}
+
+export function multiNames(v) {
+  if (!Array.isArray(v)) return [];
+  return v.map(selName).filter(Boolean);
+}
+
+// Linked-record cells: return record IDs (REST) resolved through `nameById`, or
+// the embedded names (MCP) when they are already present.
+export function linkNames(v, nameById) {
+  if (!Array.isArray(v)) return [];
+  return v
+    .map((item) => {
+      if (typeof item === 'string') return (nameById.get(item) || '').trim();
+      if (item && typeof item === 'object') {
+        if (typeof item.name === 'string') return item.name.trim();
+        if (typeof item.id === 'string') return (nameById.get(item.id) || '').trim();
+      }
+      return '';
+    })
+    .filter(Boolean);
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function airtableGet(url) {
@@ -207,6 +257,28 @@ async function fetchIssueLog() {
     await sleep(210); // stay under Airtable's 5 req/s limit
   } while (offset);
   return out;
+}
+
+// ---------------------------------------------------------------------------
+// Fetch: Scheduling City record-ID -> technician name map
+// ---------------------------------------------------------------------------
+async function fetchCityNames() {
+  const map = new Map();
+  let offset;
+  do {
+    const url =
+      `https://api.airtable.com/v0/${LOG_BASE}/${CITY_TABLE}` +
+      `?pageSize=100&returnFieldsByFieldId=true&fields%5B%5D=${CITY_PRIMARY_FIELD}` +
+      (offset ? `&offset=${encodeURIComponent(offset)}` : '');
+    const data = await airtableGet(url);
+    for (const rec of data.records) {
+      const name = selName(rec.fields ? rec.fields[CITY_PRIMARY_FIELD] : '');
+      if (name) map.set(rec.id, name);
+    }
+    offset = data.offset;
+    await sleep(210);
+  } while (offset);
+  return map;
 }
 
 // ---------------------------------------------------------------------------
@@ -264,6 +336,12 @@ export async function main() {
 
   const totalRows = raw.length;
 
+  // Scheduling City is a linked field, so the technician NAME has to be looked
+  // up from the linked table — the REST API only returns record IDs here.
+  console.error(`Resolving Scheduling City names from ${CITY_TABLE} ...`);
+  const cityById = await fetchCityNames();
+  console.error(`Resolved ${cityById.size} Scheduling City names.`);
+
   // ---- Parse + filter -----------------------------------------------------
   const excludedTest = [];
   const testIdentities = new Set();
@@ -271,10 +349,10 @@ export async function main() {
 
   for (const rec of raw) {
     const f = rec.fields || {};
-    const cityLinks = f[LF.schedulingCity] || [];
-    const tech = cityLinks.length ? String(cityLinks[0].name || '').trim() : '';
-    const status = f[LF.jobStatus] ? String(f[LF.jobStatus].name || '').trim() : '';
-    const issues = (f[LF.ctIssue] || []).map((o) => String(o.name || '').trim()).filter(Boolean);
+    const cityNames = linkNames(f[LF.schedulingCity], cityById);
+    const tech = cityNames.length ? cityNames[0] : '';
+    const status = selName(f[LF.jobStatus]);
+    const issues = multiNames(f[LF.ctIssue]);
     const jobId = f[LF.jobId] ? String(f[LF.jobId]).trim() : '';
     const created = f[LF.created] || rec.createdTime || null;
     const signature = f[LF.signature] ? String(f[LF.signature]) : '';
@@ -381,6 +459,40 @@ export async function main() {
       size: e && typeof e['Capture Size - Requested'] === 'number' ? e['Capture Size - Requested'] : null,
     };
   });
+
+  // -------------------------------------------------------------------------
+  // Sanity gate.
+  //
+  // A field-shape mismatch (see the normalisers above) does NOT throw — it
+  // parses every cell as empty and produces a dashboard of confident-looking
+  // zeros. That shipped once. These assertions make that failure loud: better a
+  // red build than a page telling Ricardo there were no CT cancellations.
+  // -------------------------------------------------------------------------
+  const problems = [];
+  if (rows.length) {
+    const unknownStatus = rows.filter((r) => statusIndex.size && Array.from(statusIndex.keys())[r.st] === 'Unknown').length;
+    if (unknownStatus / rows.length > 0.5) {
+      problems.push(`${unknownStatus}/${rows.length} rows have no Job Status — the Job Status cell shape is probably not what the parser expects`);
+    }
+    if (rows.length > 20 && techIndex.size < 2) {
+      problems.push(`only ${techIndex.size} distinct technician(s) across ${rows.length} rows — Scheduling City link resolution is probably failing`);
+    }
+    const unassigned = rows.filter((r) => Array.from(techIndex.keys())[r.t] === 'Unassigned').length;
+    if (unassigned / rows.length > 0.5) {
+      problems.push(`${unassigned}/${rows.length} rows have no technician — Scheduling City link resolution is probably failing`);
+    }
+    const ctCaused = rows.filter((r) => CT_CAUSED_STATUSES.includes(Array.from(statusIndex.keys())[r.st])).length;
+    const reassign = rows.filter((r) => REASSIGNMENT_STATUSES.includes(Array.from(statusIndex.keys())[r.st])).length;
+    if (ctCaused === 0 && reassign === 0) {
+      problems.push('no row matched any CT-caused or reassignment status — status names are probably not being read correctly');
+    }
+  }
+  if (problems.length) {
+    console.error('\nSANITY CHECK FAILED — refusing to write ct-issues.json:');
+    problems.forEach((p) => console.error('  - ' + p));
+    console.error('\nThe existing ct-issues.json (if any) is left untouched.');
+    process.exit(1);
+  }
 
   const years = Array.from(new Set(rows.map((r) => r.y).filter((y) => y !== null))).sort((a, b) => a - b);
 
