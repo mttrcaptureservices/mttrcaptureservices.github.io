@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-08-24T21:19:35.311Z",
+  "lastUpdated": "2026-08-24T22:07:52.240Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E07A5F",
       "summary": "Duplicate SWC-7865 record appeared under Pending in Spec Ops while the real job was already captured, QA'd and delivered. Roche confirmed they made no second submission.",
-      "statusCls": "badge-todo",
+      "statusCls": "badge-waiting",
       "status": "Awaiting action",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Phantom Spec Ops row rec33V0SyJiq147wb still undeleted; blast radius verified zero and the deletion is now tracked on COP-2083 (comment 621577) — next move belongs to whoever has delete rights.",
+      "note": "Phantom Spec Ops row rec33V0SyJiq147wb (SWC-7865) re-verified 8/24 3:10 PM — still present, still Pending, no CT/schedule/QA and nothing downstream. Ask already recorded on COP-2083 comment 621577; next action belongs to whoever has delete rights on the Spec Ops Capture Data table.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     },
     {
@@ -21,20 +21,9 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/24",
-      "note": "COP-2085 filed and Homelander queued; short link on parent 95243 still empty as of 2:20 PM - next action is Ricardo/Snehal regenerating it, a plain re-trigger does not clear it.",
+      "note": "Re-verified 8/24 3:06 PM — parent 95243 still Job Status Pending with Send CT Email = Sent and CT Short Link still empty ~2.5h after creation, so nothing has dispatched. Tracked as COP-2085; next action is the run-history root cause on Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884",
       "jiraKey": "COP-2085"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#6FBF73",
-      "summary": "Automated appointment confirmation emails reported as not sent for SENIOR6633937870516274511 (The Ivy Colorado Springs) and SENIOR6633939650518398952 (The Ivy Castle Rock).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/24",
-      "note": "Both parents (95123, 95125) now read Last Email Sent = Appt Confirmation Emails sent, so dispatch completed on our side; asked Freddy to confirm with the on-site contact whether they actually landed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787603084519?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787603084519&createdTime=1787603084519"
     }
   ]
 }
