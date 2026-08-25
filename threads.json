@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-25T01:08:10.472Z",
+  "lastUpdated": "2026-08-25T02:08:01.000Z",
   "threads": [
     {
       "author": "Stephenie Yong",
@@ -10,7 +10,7 @@
       "status": "Awaiting action",
       "date": "8/20",
       "jiraKey": "COP-2083",
-      "note": "Phantom Spec Ops row rec33V0SyJiq147wb re-verified 8/24 6:20 PM - still present and Pending, blast radius still zero. Owned via COP-2083 comment 621577; next action is a manual delete by someone with rights.",
+      "note": "Phantom Spec Ops row rec33V0SyJiq147wb (SWC-7865) still present and Pending with no CT, schedule or QA. Already escalated on COP-2083 as a recurring duplicate; next action is the duplicate guard on the Roche to Spec Ops push. Nothing owed to Stephenie.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787237634731?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787237634731&createdTime=1787237634731"
     },
     {
@@ -21,7 +21,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting requester",
       "date": "8/24",
-      "note": "Re-pulled 95243 at 6:20 PM: still Pending, Send CT Email = Sent, CT Short Link still empty, Last Email Sent blank, parent Last Modified unchanged at 19:55:43Z - the repro is intact and the client resubmit has not landed yet. Waiting on Caitlin to confirm she left the record in place.",
+      "note": "Parent 95243 re-verified: still Pending, Send CT Email = Sent, CT Short Link still empty, Last Modified Time unchanged at 19:55:43Z — repro intact and the client resubmit has not landed. Next action is Caitlin preserving the record; root cause needs the Airtable run history.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787601876884?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787601876884&createdTime=1787601876884",
       "jiraKey": "COP-2085"
     }
