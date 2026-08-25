@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-08-25T16:10:40.608Z",
+  "lastUpdated": "2026-08-25T17:12:38.460Z",
   "threads": [
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E07A5F",
-      "summary": "A JLL client has her Jotform submission confirmation email but the capture request never appeared in Airtable, and she is now chasing a schedule for a job we have no record of.",
-      "statusCls": "badge-investigating",
-      "status": "Awaiting requester",
+      "summary": "JLL client's 21 Aug capture request for East Crescent, Palm Jumeirah, Dubai (UAE) never reached Airtable. The client holds a Jotform confirmation email, so the form accepted it, but no record exists anywhere on our side.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Jotform ID",
       "date": "8/25",
-      "note": "Confirmed nothing from JLL has reached Global Requests since JOBID6633992735792769592 on 8/24 9:48 AM PT, so the request never arrived - break is on the Jotform/Zapier hop. Asked Stephenie for the property name and the confirmation email timestamp to rule out a mis-picked client and check it against the 8/24 Airtable disruption window.",
+      "note": "Absence proven across both bases on 8/25: no Dubai / Palm Jumeirah / East Crescent record in Global Requests or CS - International Capture Data, nothing new under JLL in either, and the newest of 24 UAE-country records in CS - International is from April 2025. No JLL UAE work exists at all, so the client/country combination may not be mapped. Snehal Meled owns it per Ricardo's 9:00 AM ask and holds the forwarded email - next action is his: supply the Jotform submission ID so we can tell a form mapping gap from a Zapier drop.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787661064239?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787661064239&createdTime=1787661064239"
     }
   ]
