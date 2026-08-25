@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-25T22:13:01.240Z",
+  "lastUpdated": "2026-08-25T23:31:05.308Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/25",
-      "note": "Answered: it came via the Spec Ops Jotform (Form ID 251971717623967), so there is no client mapping behind it. Submitter Will Puiggari's two prior jobs both resolved to Waymo LLC (Arcadus). Waiting on Troy to confirm Waymo before investigating why the client did not carry across.",
+      "note": "Answered 8/25 3:11 PM: Spec Ops Jotform carries no client mapping; submitter's two prior jobs were both Waymo LLC (Arcadus). Awaiting Troy's confirmation. Spec Ops table still shows 0 rows for this Job ID as of 4:20 PM — likely Airtable latency, re-check next run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787693084186?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787693084186&createdTime=1787693084186"
     }
   ]
