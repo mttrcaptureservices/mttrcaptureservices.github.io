@@ -1,16 +1,4 @@
 {
-  "lastUpdated": "2026-08-25T18:06:34.547Z",
-  "threads": [
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E07A5F",
-      "summary": "JLL client's 21 Aug capture request for East Crescent, Palm Jumeirah, Dubai (UAE) never reached Airtable. The client holds a Jotform confirmation email, so the form accepted it, but no record exists anywhere on our side.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Jotform ID",
-      "date": "8/25",
-      "note": "Absence re-proved across Parent Base and CS - International; no JLL UAE history at all, so an unmapped client/country combination is the leading hypothesis. Waiting on Stephenie for the Jotform submission ID from the forwarded email; Snehal owns the thread.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787661064239?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787661064239&createdTime=1787661064239"
-    }
-  ]
+  "lastUpdated": "2026-08-25T19:11:02.279Z",
+  "threads": []
 }
