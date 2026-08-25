@@ -34,9 +34,21 @@
  * ---------------------------------------------------------------------------
  * appm03zXsTZJvY9vY (Capture Technician Directory) / tbl8zsiBhxBvuW8vS.
  * Governing rule from the skill: ONE ROW = ONE CT ASSIGNMENT. Two rows for the
- * same job are correct when the technician differs. `{Scheduling City}` IS the
- * capture technician (it is not a location), so it — not `Vendor Name` — is the
- * technician identity on this page.
+ * same job are correct when the technician differs.
+ *
+ * Technician identity: `{CT Name}` (updated 2026-08-24, was `{Scheduling
+ * City}`). Ricardo added `CT Name` directly on the CT Issue Log table — a
+ * lookup through `{Scheduling City}` (the linked-record identity field) into
+ * `Global Scheduling/Ops`'s `Main POC` field. `{Scheduling City}`'s own
+ * primary-field value is an encoded string ("Seattle, WA - 005 - Pro3" —
+ * city + sequence + tier), not a person's name, and the same technician can
+ * appear under several such encoded strings. `CT Name` collapses that back to
+ * one real name per technician (verified 2026-08-24: 70-71 distinct
+ * technicians via CT Name across 229 rows, all populated, vs. more distinct
+ * values under the old Scheduling-City-primary-field approach) — this also
+ * brings this page's technician dimension much closer to `Vendor Name` on the
+ * Technician dashboard, though the two still are not a guaranteed 1:1 tie
+ * (different source tables, no cross-check performed).
  *
  * Metric contract this script honours (all from the skill's "metric definitions
  * — get these right" section):
@@ -85,17 +97,17 @@ const token = () => process.env.AIRTABLE_TOKEN;
 // ---------------------------------------------------------------------------
 const LOG_BASE = 'appm03zXsTZJvY9vY';
 const LOG_TABLE = 'tbl8zsiBhxBvuW8vS';
-// {Scheduling City} is a LINKED-RECORD field. The REST API returns linked
-// records as bare record-ID strings (["recXXXX"]) — it does NOT return the
-// display name, unlike the Airtable MCP tools, which return {id, name} objects.
-// Since Scheduling City IS the capture technician on this page, the names must
-// be resolved from the linked table itself.
-const CITY_TABLE = 'tblcQRAUI8a25vbxk';
-const CITY_PRIMARY_FIELD = 'fldrEXBDkmZigxO5L';
 const LF = {
   parentRecordId: 'fldSRR1eBFjaFcejC',
-  schedulingCity: 'fldwzgAc3XT28ZQlu', // linked record — THE capture technician
+  schedulingCity: 'fldwzgAc3XT28ZQlu', // linked record — kept for context/debugging only, NOT used for technician identity anymore
   techCityAssignment: 'fldnuc9eHglJKppFZ',
+  // multipleLookupValues: Scheduling City -> Global Scheduling/Ops "Main POC".
+  // The REST API resolves lookup fields server-side and returns the looked-up
+  // value directly (an array of strings for a text lookup) — no second table
+  // fetch needed, unlike the old Scheduling-City-link-ID resolution this
+  // replaced. THIS is the capture technician's real name and the technician
+  // identity on this page.
+  ctName: 'fld5QSP3OK8qbfh5z',
   ctIssue: 'fldUDFIuTBozbvSfa', // multipleSelects, sparse + mutable
   jobStatus: 'fldkjSTayP5GWcS3m',
   coordinatorName: 'fldpYrNpMmvQEf6tZ', // free text, comma-joined multi-name
@@ -260,28 +272,6 @@ async function fetchIssueLog() {
 }
 
 // ---------------------------------------------------------------------------
-// Fetch: Scheduling City record-ID -> technician name map
-// ---------------------------------------------------------------------------
-async function fetchCityNames() {
-  const map = new Map();
-  let offset;
-  do {
-    const url =
-      `https://api.airtable.com/v0/${LOG_BASE}/${CITY_TABLE}` +
-      `?pageSize=100&returnFieldsByFieldId=true&fields%5B%5D=${CITY_PRIMARY_FIELD}` +
-      (offset ? `&offset=${encodeURIComponent(offset)}` : '');
-    const data = await airtableGet(url);
-    for (const rec of data.records) {
-      const name = selName(rec.fields ? rec.fields[CITY_PRIMARY_FIELD] : '');
-      if (name) map.set(rec.id, name);
-    }
-    offset = data.offset;
-    await sleep(210);
-  } while (offset);
-  return map;
-}
-
-// ---------------------------------------------------------------------------
 // Fetch: enrichment lookup for a set of Job IDs, batched
 // ---------------------------------------------------------------------------
 const JOIN_BATCH = 20;
@@ -336,12 +326,6 @@ export async function main() {
 
   const totalRows = raw.length;
 
-  // Scheduling City is a linked field, so the technician NAME has to be looked
-  // up from the linked table — the REST API only returns record IDs here.
-  console.error(`Resolving Scheduling City names from ${CITY_TABLE} ...`);
-  const cityById = await fetchCityNames();
-  console.error(`Resolved ${cityById.size} Scheduling City names.`);
-
   // ---- Parse + filter -----------------------------------------------------
   const excludedTest = [];
   const testIdentities = new Set();
@@ -349,8 +333,8 @@ export async function main() {
 
   for (const rec of raw) {
     const f = rec.fields || {};
-    const cityNames = linkNames(f[LF.schedulingCity], cityById);
-    const tech = cityNames.length ? cityNames[0] : '';
+    const ctNames = multiNames(f[LF.ctName]);
+    const tech = ctNames.length ? ctNames[0] : '';
     const status = selName(f[LF.jobStatus]);
     const issues = multiNames(f[LF.ctIssue]);
     const jobId = f[LF.jobId] ? String(f[LF.jobId]).trim() : '';
@@ -444,7 +428,7 @@ export async function main() {
     return {
       j: r.jobId,                                  // Job ID (verbatim)
       pr: r.parentRecId,                           // Parent Base Record ID
-      t: idxOf(techIndex, r.tech || 'Unassigned'), // technician = Scheduling City
+      t: idxOf(techIndex, r.tech || 'Unassigned'), // technician = CT Name (lookup: Scheduling City -> Main POC)
       st: idxOf(statusIndex, r.status || 'Unknown'),
       co: r.coordinators.map((c) => idxOf(coordIndex, c)),
       iss: r.issues.map((i) => idxOf(issueIndex, i)),
@@ -475,11 +459,11 @@ export async function main() {
       problems.push(`${unknownStatus}/${rows.length} rows have no Job Status — the Job Status cell shape is probably not what the parser expects`);
     }
     if (rows.length > 20 && techIndex.size < 2) {
-      problems.push(`only ${techIndex.size} distinct technician(s) across ${rows.length} rows — Scheduling City link resolution is probably failing`);
+      problems.push(`only ${techIndex.size} distinct technician(s) across ${rows.length} rows — the CT Name lookup is probably failing`);
     }
     const unassigned = rows.filter((r) => Array.from(techIndex.keys())[r.t] === 'Unassigned').length;
     if (unassigned / rows.length > 0.5) {
-      problems.push(`${unassigned}/${rows.length} rows have no technician — Scheduling City link resolution is probably failing`);
+      problems.push(`${unassigned}/${rows.length} rows have no technician — the CT Name lookup is probably failing`);
     }
     const ctCaused = rows.filter((r) => CT_CAUSED_STATUSES.includes(Array.from(statusIndex.keys())[r.st])).length;
     const reassign = rows.filter((r) => REASSIGNMENT_STATUSES.includes(Array.from(statusIndex.keys())[r.st])).length;
