@@ -978,7 +978,7 @@ function renderTechTable(){
   el.innerHTML = `
     <table>
       <thead><tr>
-        <th class="help" title="The technician identity on this page is the CT Issue Log's Scheduling City link (e.g. &quot;Seattle, WA - 004 - Pro3&quot;). In this data set that field IS the capture technician, not a location — which is why the same city can appear with several numbers.">Technician ⓘ</th>
+        <th class="help" title="The technician identity on this page is CT Name — a lookup field on the CT Issue Log resolved through Scheduling City to that record's Main POC. This is the capture technician's real name.">Technician ⓘ</th>
         <th class="num">Canc.</th>
         <th class="num">Decl.</th>
         <th class="num">ALT</th>
@@ -1182,7 +1182,7 @@ function renderDefinitions(){
   document.getElementById('definitions').innerHTML = `
     <ul>
       <li><b>One row = one CT assignment.</b> Two rows for the same job are correct when the technician differs. Every count on this page is assignments; distinct jobs is always shown as its own, smaller number.</li>
-      <li><b>Technician = the log's Scheduling City link</b> (<code>Seattle, WA - 004 - Pro3</code>). In this data set that field <em>is</em> the capture technician, not a location — so it is not the same identity as <code>Vendor Name</code> on the Technician Dashboard, and the two pages will not tie out person-for-person.</li>
+      <li><b>Technician = CT Name</b> — a lookup field on the CT Issue Log resolved through its <code>Scheduling City</code> link into that Scheduling City record's <code>Main POC</code>. This is the capture technician's real name. It is closer to, but not a guaranteed 1:1 match with, <code>Vendor Name</code> on the Technician Dashboard, since the two are sourced from different tables.</li>
       <li><b>CT-caused disruption</b> = <code>${DATA.rules.ctCausedStatuses.join('</code> + <code>')}</code>. <b>CT ALT</b> (reassignment) is reported separately and deliberately excluded — a reassignment isn't necessarily the technician's fault.</li>
       <li><b>Job Status is a snapshot</b> taken when the assignment was logged, not the job's current status. For current status, read the job's record in the parent base.</li>
       <li><b>CT Issue is sparse and mutable.</b> It is overwritten in place by the CT/QA Issues sync, so the log holds current state, not history — which is why issues are never charted as a time series here.</li>
