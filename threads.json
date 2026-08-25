@@ -1,4 +1,16 @@
 {
-  "lastUpdated": "2026-08-25T21:07:06.302Z",
-  "threads": []
+  "lastUpdated": "2026-08-25T22:13:01.240Z",
+  "threads": [
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#E8794A",
+      "summary": "JOBID6634916474028498979 (150 E Shore Dr) landed in Global Requests with no MP Client. Troy needs to know which Jotform it came through so he can assign the correct client.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/25",
+      "note": "Answered: it came via the Spec Ops Jotform (Form ID 251971717623967), so there is no client mapping behind it. Submitter Will Puiggari's two prior jobs both resolved to Waymo LLC (Arcadus). Waiting on Troy to confirm Waymo before investigating why the client did not carry across.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787693084186?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787693084186&createdTime=1787693084186"
+    }
+  ]
 }
