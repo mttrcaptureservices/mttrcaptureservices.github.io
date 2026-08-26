@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-08-26T02:09:20.089Z",
+  "lastUpdated": "2026-08-26T14:07:03.117Z",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
       "color": "#E8794A",
-      "summary": "Spec Ops 2.0 job JOBID6634916474028498979 (150 E Shore Dr) came in with no MP Client. Identified as Waymo LLC (Arcadus) from the submitter's history.",
-      "statusCls": "badge-investigating",
-      "status": "Awaiting confirmation",
+      "summary": "Job JOBID6634916474028498979 (150 E Shore Dr) landed with no MP Client assigned; asked which Jotform it came in through so the client could be identified.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "8/25",
-      "note": "MP Client now set to Waymo on parent 96480 but still blank on line items 96482 and 96483 - Troy owes the push-down to both children; second Waymo job to fill parent-only.",
+      "note": "Answered Tier 1: Spec Ops 2.0 Jotform carries no client mapping, and submitter history pointed to Waymo LLC (Arcadus). MP Client is now set on parent 96480 only - line items 96482 and 96483 are still blank as of 8/26 and all three records remain Pending. Awaiting Troy to confirm the client and push it down to both children.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787693084186?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787693084186&createdTime=1787693084186"
     }
   ]
