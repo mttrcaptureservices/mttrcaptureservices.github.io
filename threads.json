@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-26T00:06:31.343Z",
+  "lastUpdated": "2026-08-26T01:06:52.598Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/25",
-      "note": "Answered Tier 1: Form ID confirms the Spec Ops 2.0 Jotform, which carries no client mapping, and submitter history points to Waymo LLC. Awaiting Troy's confirmation. Spec Ops Capture Data still has 0 rows for this Job ID ~3h in - within the known Airtable latency window, re-check next run.",
+      "note": "Waymo LLC (Arcadus) identified as likely MP Client from submitter history; awaiting Troy's confirmation. Spec Ops row still absent ~1.5h after job creation (18:27 UTC) - within normal latency, re-check next run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787693084186?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787693084186&createdTime=1787693084186"
     }
   ]
