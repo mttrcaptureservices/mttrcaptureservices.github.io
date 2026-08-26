@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-08-26T22:10:37.602Z",
+  "lastUpdated": "2026-08-26T23:07:49.658Z",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#E86A92",
       "summary": "New Simpson Housing job JOBID6635896036811872926 came in with a price code she believes is wrong on the line item. She manually corrected it and flagged it for review.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "8/26",
-      "note": "Child record 96932 is actually correct; the real defect is on parent 96933 - client side resolved USSFC2 (SF family) while CT side fell to USGPC1 (GP family) because {CT Price Type} is blank. Two of three Simpson Housing parents today show it. Evidence posted to COP-2081 (comment 622101). Adjet Kodia has picked up the fix.",
+      "note": "Re-verified 8/26 3:06 PM PT: unchanged — parent 96933 still client USSFC2 vs CT USGPC1 with {CT Price Type} blank (GP fallback); child 96932 correct. Adjet Kodia accepted the fix in-thread; evidence on COP-2081 comment 622101.",
       "jiraKey": "COP-2081",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787780834200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787780834200&createdTime=1787780834200"
     }
