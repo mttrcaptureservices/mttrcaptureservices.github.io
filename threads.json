@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-08-27T21:56:42.362Z",
+  "lastUpdated": "2026-08-27T22:13:15.465Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
-      "summary": "Asked for [Unit of Travel Distance] to be added to all of Accounting's views in GCB, next to the total travel distance.",
+      "summary": "Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Team agreed to add the field; Adjet asked at 1:48 PM which specific GCB views she means and is waiting on her answer.",
+      "note": "A teammate accepted the work, then asked at 1:48 PM which specific GCB views she means (Accounting's own views can't be controlled; Global Scheduling base views can) - still unanswered, next action is Kailyn's.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     }
   ]
