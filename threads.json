@@ -1,17 +1,4 @@
 {
-  "lastUpdated": "2026-08-27T02:32:57.996Z",
-  "threads": [
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#E86A92",
-      "summary": "Child record on JOBID6635896036811872926 (Simpson Housing) resolved a real CT price code instead of Refer to Parent Record. Root cause: parent created ~70s after the child, so the child's price-code logic ran as a standalone job.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting verification",
-      "date": "8/26",
-      "note": "Adjet's price-code retrigger is still unverified: no Spec Ops job has been created parent-after-children since the fix shipped, so the race has not been re-exercised. Eight jobs created 8/24-8/26 (96866/96917/96920 and siblings) were all created parent-first and all children correctly read Refer to Parent Record. Re-check each run until a job actually hits the race.",
-      "jiraKey": "COP-2081",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787780834200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787780834200&createdTime=1787780834200"
-    }
-  ]
+  "lastUpdated": "2026-08-27T14:13:20.142Z",
+  "threads": []
 }
