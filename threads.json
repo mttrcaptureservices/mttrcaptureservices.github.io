@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-08-27T00:24:01.404Z",
+  "lastUpdated": "2026-08-27T00:33:59.750Z",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#E86A92",
       "summary": "Reported that the child record on JOBID6635896036811872926 (Simpson Housing) showed USGPC1 in Price Code Lookup CT instead of 'refer to parent'. Fix shipped; parent-record concern reviewed and withdrawn.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting verification",
       "date": "8/26",
-      "note": "Adjet root-caused it (parent created ~70s after the child, so child price-code logic ran standalone) and shipped a retrigger fix; child 96932 now reads Refer to Parent Record on both lookups. My earlier parent-record finding was wrong and is retracted on COP-2081 (comment 622126) - blank {CT Price Type} just means a non-VHT tech, so USGPC1 on parent 96933 is correct. Next action is Adjet/Ricardo confirming the retrigger holds on new jobs; nothing owed here.",
+      "note": "Resolved in-thread and marked complete by the team. Adjet root-caused it - the parent was created ~70s after the child, so the child's price-code logic ran as a standalone job - and shipped a retrigger fix. My earlier claim that the PARENT's codes were wrong was incorrect and is retracted on COP-2081 (622126/622127); Ricardo confirmed {Derived CT Price Type} correctly maps a blank {CT Price Type} to GP, and the pricebook bands reconcile exactly (USSFC2 1,001-2,000 ft2 @199 = Job Rate, USGPC1 0-2,000 ft2 @120 = CT Rate). Still owed by me: the retrigger is UNVERIFIED - child 96932 was corrected by Caitlin by hand, so it proves nothing. Watch for a fresh Spec Ops job created parent-after-children and report the result on COP-2081.",
       "jiraKey": "COP-2081",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787780834200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787780834200&createdTime=1787780834200"
     }
