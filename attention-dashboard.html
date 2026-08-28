@@ -2,326 +2,595 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Needs Your Attention – Ricardo</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f5f6f8;color:#1b1f24;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:960px;margin:0 auto;padding:24px 18px 60px}
-h1{font-size:26px;margin:0 0 2px}
-.date{color:#6b7280;font-size:14px;margin-bottom:10px}
-.refresh-info{color:#6b7280;font-size:12.5px;margin-bottom:12px}
-.banner{background:#fff7ed;border:1px solid #fdba74;border-left:4px solid #ea580c;border-radius:8px;padding:12px 14px;margin-bottom:16px;font-size:13px;color:#7c2d12}
-.banner b{color:#9a3412}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
-.chip{background:#fff;border:1px solid #e3e6ea;border-radius:999px;padding:4px 11px;font-size:12px;color:#4b5563}
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1c1e21;--muted:#6b7280;--line:#e5e7eb;--blue:#0b66c3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}header h1{margin:0 0 4px;font-size:29px;letter-spacing:-.4px}
+.date{color:var(--muted);font-size:14px}.refresh-info{margin-top:12px;font-size:12.5px;color:var(--muted)}
+.banner{margin:12px 0 18px;padding:12px 14px;background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:8px;font-size:13px;color:#7c2d12}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 18px}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;color:var(--muted)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px}
-.stat{background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px}
-.stat .n{font-size:24px;font-weight:650}
-.stat .l{font-size:11.5px;color:#6b7280;text-transform:uppercase;letter-spacing:.04em}
-section{margin-bottom:26px}
-h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#4b5563;margin:0 0 9px;display:flex;align-items:center;gap:8px}
-.count{background:#e5e7eb;color:#374151;border-radius:999px;padding:1px 8px;font-size:11.5px}
-.card{display:flex;gap:11px;background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px;margin-bottom:8px;text-decoration:none;color:inherit;transition:box-shadow .12s,border-color .12s}
-.card:hover{box-shadow:0 2px 10px rgba(16,24,40,.08);border-color:#c9cfd6}
-.card.p1{border-left:3px solid #dc2626}
-.ico{font-size:15px;line-height:1.3}
-.av{width:26px;height:26px;flex:0 0 26px;border-radius:50%;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.body{display:block;min-width:0}
-.key{font-weight:650;font-size:12.5px;color:#1f6feb;margin-right:6px}
-.sum{display:block;margin:2px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:26px;line-height:1.1}.stat span{font-size:10.5px;letter-spacing:.7px;color:var(--muted);text-transform:uppercase}
+.sec{margin-bottom:30px}.sec h2{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.cnt{background:#e5e7eb;color:#374151;border-radius:999px;padding:1px 8px;font-size:11px}
+.card{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 15px;margin-bottom:8px;text-decoration:none;color:inherit;transition:box-shadow .12s,transform .12s}
+.card:hover{box-shadow:0 2px 10px rgba(0,0,0,.07);transform:translateY(-1px)}.card-icon{font-size:17px;line-height:1.3}
+.avatar{width:30px;height:30px;flex:0 0 30px;border-radius:50%;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.card-body{flex:1;min-width:0}.key{font-weight:700;font-size:13px;color:var(--blue)}.summary{margin:3px 0 7px;font-size:14px}
 .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.badge{background:#eef1f4;color:#4b5563;border-radius:5px;padding:1px 7px;font-size:11.5px}
-.badge.type{background:#f3f4f6;color:#6b7280}
-.badge.who{background:#eff6ff;color:#1e40af}
-.badge.warn{background:#fef3c7;color:#92400e}
-.badge.p1b{background:#fee2e2;color:#991b1b;font-weight:600}
-.when{font-size:11.5px;color:#9ca3af;margin-left:auto}
-.note{display:block;margin-top:7px;font-size:12.5px;color:#6b7280;background:#f9fafb;border-left:2px solid #d1d5db;padding:6px 9px;border-radius:0 5px 5px 0}
-footer{color:#9ca3af;font-size:11.5px;text-align:center;margin-top:34px}
-@media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}.when{margin-left:0}}
+.pill{font-size:11px;padding:2px 8px;border-radius:5px;border:1px solid var(--line);background:#f9fafb;color:var(--muted)}
+.st-prog{background:#fef3c7;border-color:#fde68a;color:#92400e}.st-test{background:#ede9fe;border-color:#ddd6fe;color:#5b21b6}
+.st-todo{background:#f3f4f6;border-color:#e5e7eb;color:#4b5563}.st-wait{background:#fef3c7;border-color:#fde68a;color:#92400e}
+.pri{background:#fee2e2;border-color:#fecaca;color:#991b1b;font-weight:600}.owner{background:#eff6ff;border-color:#dbeafe;color:#1e40af}
+.upd{font-size:11.5px;color:var(--muted);margin-left:auto}
+.note{margin-top:8px;font-size:12px;color:#4b5563;background:#f9fafb;border-left:3px solid var(--line);padding:7px 10px;border-radius:0 5px 5px 0}
+.subnote{font-size:11.5px;color:var(--muted);margin:-4px 0 10px}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);text-align:center}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Needs Your Attention</h1>
-  <div class="date">Friday, August 28, 2026</div>
-  <div class="refresh-info">⚠️ Failover snapshot · Last updated: 9:02 AM PT · Jira live · Teams via Clark</div>
-  <div class="banner"><b>Failover build by the Cowork agent.</b> The primary GitHub Action pipeline (<code>refresh-dashboard.yml</code>, meant to run every 30 min on weekdays) looks unhealthy: its last run was <b>6:31 AM PT</b> — about 2h30m before this build — and it has run only 4 times since Aug 26 (6:31 AM Aug 28; 6:33 PM and 10:03 AM Aug 27; 10:41 PM Aug 26) instead of roughly every 30 minutes. No workflow failures were reported, so the scheduled trigger appears to be getting dropped. This page is a one-off snapshot; the Action will overwrite it once it recovers.</div>
+  <header>
+    <h1>Needs Your Attention</h1>
+    <div class="date">Friday, August 28, 2026</div>
+    <div class="refresh-info">⚠️ Failover snapshot · Last updated: 10:05 AM PT · Jira live · Teams via Clark</div>
+  </header>
+
+  <div class="banner">
+    <strong>Failover build by the Cowork agent.</strong> The primary GitHub Action pipeline
+    (<code>refresh-dashboard.yml</code>, meant to run every 30 min on weekdays) is still unhealthy.
+    Its last run was <strong>#761 at 6:31 AM PT</strong> — about 3h34m before this build — and the
+    schedule has been firing only a few times a day since Aug 26 (gaps of 2–12 hours) instead of every
+    30 minutes. Every run that does fire succeeds in ~15s, so GitHub is dropping the
+    <code>schedule</code> trigger; this is not a workflow failure. Fourth consecutive failover build —
+    worth investigating the cron. The Action will overwrite this page once it recovers.
+  </div>
+
   <div class="chips">
     <span class="chip">Jira · Matterport</span>
     <span class="chip">Assigned to you</span>
     <span class="chip">Team (COP · 7d)</span>
     <span class="chip">👀 Teams · Clark</span>
   </div>
+
   <div class="stats">
-    <div class="stat"><div class="n">1</div><div class="l">Updated today</div></div>
-    <div class="stat"><div class="n">4</div><div class="l">In progress</div></div>
-    <div class="stat"><div class="n">2</div><div class="l">In testing</div></div>
-    <div class="stat"><div class="n">7</div><div class="l">To do</div></div>
+    <div class="stat"><b>5</b><span>Updated Today</span></div>
+    <div class="stat"><b>7</b><span>In Progress</span></div>
+    <div class="stat"><b>2</b><span>In Testing</span></div>
+    <div class="stat"><b>9</b><span>To Do</span></div>
   </div>
-    <section>
-      <h2>⚡ Updated Today<span class="count">1</span></h2>
+
+    <section class="sec">
+      <h2>⚡ Updated Today<span class="cnt">5</span></h2>
+      
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2052" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2052</span></div>
+          <div class="summary">[MICL P2][REQ-57] Capture Tech assignment accuracy — report the actual technician, not the team lead</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">⚡ 9:09 AM</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2093" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2093</span></div>
+          <div class="summary">CT Directory: two divergent Country tables — CT Cities Master's Country picker reads the legacy table, so newly added countries (Romania, Moldova) are unselectable</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">⚡ 9:08 AM</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2051" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2051</span></div>
+          <div class="summary">[MICL P2][REQ-41] Scan naming convention &amp; URL format — verify platform-side standardisation</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">⚡ 9:08 AM</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2092" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2092</span></div>
+          <div class="summary">Rich-text formatting in [Scan Requirements] is stripped by the {Derived Scan Requirements} formula, so it never reaches the Job Acceptance Jotform or CT emails</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">⚡ 9:07 AM</span>
+          </div>
+        </div>
+      </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1843" target="_blank" rel="noopener">
-        <span class="ico">🐞</span>
-        <span class="body">
-          <span class="key">COP-1843</span>
-          <span class="sum">[International] Client View for MP client: Luxottica Group S.P.A (1)</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Bug</span><span class="when">⚡ 1:52 AM</span></span>
-        </span>
+        <div class="card-icon">🐞</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1843</span></div>
+          <div class="summary">[International] Client View for MP client: Luxottica Group S.P.A (1)</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Bug</span>
+            
+            <span class="upd">⚡ 1:52 AM</span>
+          </div>
+        </div>
       </a>
     </section>
-    <section>
-      <h2>🔄 In Progress<span class="count">4</span></h2>
-      <a class="card p1" href="https://matterport.atlassian.net/browse/COP-1845" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-1845</span>
-          <span class="sum">Airtable Slowness - Causes of the slowness and solutions being discussed</span>
-          <span class="meta"><span class="badge p1b">🔴 P1 - Critical</span><span class="badge">In Progress</span><span class="badge type">Epic</span><span class="when">yesterday</span></span>
-        </span>
+
+    <section class="sec">
+      <h2>🔄 In Progress<span class="cnt">4</span></h2>
+      
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-1845" target="_blank" rel="noopener">
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1845</span></div>
+          <div class="summary">Airtable Slowness - Causes of the slowness and solutions being discussed</div>
+          <div class="meta">
+            <span class="pill pri">🔴 P1 - Critical</span>
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Epic</span>
+            
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2088" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-2088</span>
-          <span class="sum">Allow MP Clients to have multiple currencies</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Epic</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2088</span></div>
+          <div class="summary">Allow MP Clients to have multiple currencies</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Epic</span>
+            
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2022" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2022</span>
-          <span class="sum">Migrate clients off the legacy CT Accept/Decline form</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Task</span><span class="when">7/30</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2022</span></div>
+          <div class="summary">Migrate clients off the legacy CT Accept/Decline form</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">7/30</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1965" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-1965</span>
-          <span class="sum">Job CT Issue Log</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Epic</span><span class="when">7/21</span></span>
-        </span>
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1965</span></div>
+          <div class="summary">Job CT Issue Log</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Epic</span>
+            
+            <span class="upd">7/21</span>
+          </div>
+        </div>
       </a>
     </section>
-    <section>
-      <h2>🧪 In Testing<span class="count">2</span></h2>
+
+    <section class="sec">
+      <h2>🧪 In Testing<span class="cnt">2</span></h2>
+      
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-1884</span>
-          <span class="sum">CT Directory overhaul work</span>
-          <span class="meta"><span class="badge">In Testing</span><span class="badge type">Epic</span><span class="when">7/31</span></span>
-        </span>
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1884</span></div>
+          <div class="summary">CT Directory overhaul work</div>
+          <div class="meta">
+            
+            <span class="pill st-test">In Testing</span>
+            <span class="pill type">Epic</span>
+            
+            <span class="upd">7/31</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-1889</span>
-          <span class="sum">Coordinator Interfaces</span>
-          <span class="meta"><span class="badge">In Testing</span><span class="badge type">Task</span><span class="when">6/16</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1889</span></div>
+          <div class="summary">Coordinator Interfaces</div>
+          <div class="meta">
+            
+            <span class="pill st-test">In Testing</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">6/16</span>
+          </div>
+        </div>
       </a>
     </section>
-    <section>
-      <h2>📌 To Do / Backlog<span class="count">7</span></h2>
-      <a class="card p1" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">ZCI-73062</span>
-          <span class="sum">I need access to an pold employee one drive</span>
-          <span class="meta"><span class="badge p1b">🔴 P1 - Critical</span><span class="badge">To Do</span><span class="badge type">Employee Termination</span><span class="when">7/7</span></span>
-        </span>
+
+    <section class="sec">
+      <h2>📌 To Do / Backlog<span class="cnt">7</span></h2>
+      
+      <a class="card" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">ZCI-73062</span></div>
+          <div class="summary">I need access to an pold employee one drive</div>
+          <div class="meta">
+            <span class="pill pri">🔴 P1 - Critical</span>
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Employee Termination</span>
+            
+            <span class="upd">7/7</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2090" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2090</span>
-          <span class="sum">{Customer 360 Fee} is paid to the CT but never billed to the client — missing from the Job Rate 2.0 fee SUM</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2090</span></div>
+          <div class="summary">{Customer 360 Fee} is paid to the CT but never billed to the client — missing from the Job Rate 2.0 fee SUM</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2089" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2089</span>
-          <span class="sum">Ensure New Requests from Jotform remain in a new {Job Status} until all the automations run and the data is complete</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2089</span></div>
+          <div class="summary">Ensure New Requests from Jotform remain in a new {Job Status} until all the automations run and the data is complete</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2058" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2058</span>
-          <span class="sum">[MICL P2][REQ-52A] New design status value — Scan Canceled Last Minute</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2058</span></div>
+          <div class="summary">[MICL P2][REQ-52A] New design status value — Scan Canceled Last Minute</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2065" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2065</span>
-          <span class="sum">[MICL P2] Comment attachments — enable images/documents in Matterport comments (RICARDO)</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="when">8/13</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2065</span></div>
+          <div class="summary">[MICL P2] Comment attachments — enable images/documents in Matterport comments (RICARDO)</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">8/13</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2054" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2054</span>
-          <span class="sum">[MICL P2][REQ-12] Customer reminder SMS notification — build the reminder workflow (RICARDO)</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="when">8/13</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2054</span></div>
+          <div class="summary">[MICL P2][REQ-12] Customer reminder SMS notification — build the reminder workflow (RICARDO)</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            
+            <span class="upd">8/13</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2049" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-2049</span>
-          <span class="sum">MICL Phase 2 — Matterport Requirements Validation &amp; Status Review</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Epic</span><span class="when">8/13</span></span>
-        </span>
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2049</span></div>
+          <div class="summary">MICL Phase 2 — Matterport Requirements Validation &amp; Status Review</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Epic</span>
+            
+            <span class="upd">8/13</span>
+          </div>
+        </div>
       </a>
     </section>
-    <section>
-      <h2>👥 Team · COP (7 days)<span class="count">14</span></h2>
+
+    <section class="sec">
+      <h2>👥 Team · COP (7 days)<span class="cnt">16</span></h2>
+      
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2063" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2063</span></div>
+          <div class="summary">[MICL P2] Estimated square footage synchronisation — pass Estimated Sq Ft from Roche to Matterport</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">9:20 AM</span>
+          </div>
+        </div>
+      </a>
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2060" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2060</span></div>
+          <div class="summary">[MICL P2][REQ-37] Scan rejection reasons — add Incorrect Scan Link and Missing Scan Link values</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">9:16 AM</span>
+          </div>
+        </div>
+      </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2073" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2073</span>
-          <span class="sum">Update Zaps to map children submitted (update the zaps for other forms as well)</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Task</span><span class="badge who">→ Snehal Meled</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2073</span></div>
+          <div class="summary">Update Zaps to map children submitted (update the zaps for other forms as well)</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Snehal Meled</span>
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2091" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2091</span>
-          <span class="sum">Airtable load is driven by what automations WRITE, not how often they run - reduce recalculation on the hottest fields</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Adjet Kodia</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2091</span></div>
+          <div class="summary">Airtable load is driven by what automations WRITE, not how often they run - reduce recalculation on the hottest fields</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Adjet Kodia</span>
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2081" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2081</span>
-          <span class="sum">Make price-code automations calculate Price-codes for all jobs (remove reliance on Zapier) - and Consolidate the price-code automation logic</span>
-          <span class="meta"><span class="badge">In Testing</span><span class="badge type">Task</span><span class="badge who">→ Adjet Kodia</span><span class="when">yesterday</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2081</span></div>
+          <div class="summary">Make price-code automations calculate Price-codes for all jobs (remove reliance on Zapier) - and Consolidate the price-code automation logic</div>
+          <div class="meta">
+            
+            <span class="pill st-test">In Testing</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Adjet Kodia</span>
+            <span class="upd">yesterday</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-800" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-800</span>
-          <span class="sum">Global CS Process Documentation</span>
-          <span class="meta"><span class="badge">In Progress</span><span class="badge type">Task</span><span class="badge who">→ Adjet Kodia</span><span class="when">2d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-800</span></div>
+          <div class="summary">Global CS Process Documentation</div>
+          <div class="meta">
+            
+            <span class="pill st-prog">In Progress</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Adjet Kodia</span>
+            <span class="upd">2d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2031" target="_blank" rel="noopener">
-        <span class="ico">⚡</span>
-        <span class="body">
-          <span class="key">COP-2031</span>
-          <span class="sum">Job pricing integrity — country input and price code assignment</span>
-          <span class="meta"><span class="badge">In Testing</span><span class="badge type">Epic</span><span class="badge who">→ Adjet Kodia</span><span class="when">2d ago</span></span>
-        </span>
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2031</span></div>
+          <div class="summary">Job pricing integrity — country input and price code assignment</div>
+          <div class="meta">
+            
+            <span class="pill st-test">In Testing</span>
+            <span class="pill type">Epic</span>
+            <span class="pill owner">→ Adjet Kodia</span>
+            <span class="upd">2d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1938" target="_blank" rel="noopener">
-        <span class="ico">🐞</span>
-        <span class="body">
-          <span class="key">COP-1938</span>
-          <span class="sum">Job requested through jotform landed in AT w/ no Capture Address</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Bug</span><span class="badge who">→ Snehal Meled</span><span class="when">2d ago</span></span>
-        </span>
+        <div class="card-icon">🐞</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1938</span></div>
+          <div class="summary">Job requested through jotform landed in AT w/ no Capture Address</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Bug</span>
+            <span class="pill owner">→ Snehal Meled</span>
+            <span class="upd">2d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1888" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-1888</span>
-          <span class="sum">Distance Calculation and CT Assignment Automation</span>
-          <span class="meta"><span class="badge">In Testing</span><span class="badge type">Task</span><span class="badge who">→ Adjet Kodia</span><span class="when">2d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-1888</span></div>
+          <div class="summary">Distance Calculation and CT Assignment Automation</div>
+          <div class="meta">
+            
+            <span class="pill st-test">In Testing</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Adjet Kodia</span>
+            <span class="upd">2d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2066" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2066</span>
-          <span class="sum">[MICL P2][FUTURE] Follow-up scan — Matterport merge / linking capability (awareness only)</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2066</span></div>
+          <div class="summary">[MICL P2][FUTURE] Follow-up scan — Matterport merge / linking capability (awareness only)</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2064" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2064</span>
-          <span class="sum">[MICL P2] Priority synchronisation — pass Priority from Monday.com to Matterport (Roche backlog REQ-32)</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2064</span></div>
+          <div class="summary">[MICL P2] Priority synchronisation — pass Priority from Monday.com to Matterport (Roche backlog REQ-32)</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2062" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2062</span>
-          <span class="sum">[MICL P2] Actual square footage accuracy — confirm accuracy and agree acceptable ranges</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2062</span></div>
+          <div class="summary">[MICL P2] Actual square footage accuracy — confirm accuracy and agree acceptable ranges</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2061" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2061</span>
-          <span class="sum">[MICL P2] Private model embedding — confirm availability and API support</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2061</span></div>
+          <div class="summary">[MICL P2] Private model embedding — confirm availability and API support</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2059" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2059</span>
-          <span class="sum">[MICL P2][REQ-36] Scan status / rejection workflow enhancements — awareness, requirement to follow</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2059</span></div>
+          <div class="summary">[MICL P2][REQ-36] Scan status / rejection workflow enhancements — awareness, requirement to follow</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2055" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2055</span>
-          <span class="sum">[MICL P2][REQ-56] Matterport plugin for Revit 2026 — confirm Autodesk release status</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2055</span></div>
+          <div class="summary">[MICL P2][REQ-56] Matterport plugin for Revit 2026 — confirm Autodesk release status</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2053" target="_blank" rel="noopener">
-        <span class="ico">📋</span>
-        <span class="body">
-          <span class="key">COP-2053</span>
-          <span class="sum">[MICL P2][REQ-55] MatterPak / Space naming convention — confirm supported length vs. Revit/Windows path limit</span>
-          <span class="meta"><span class="badge">To Do</span><span class="badge type">Task</span><span class="badge who">→ Troy Lowry</span><span class="when">3d ago</span></span>
-        </span>
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">COP-2053</span></div>
+          <div class="summary">[MICL P2][REQ-55] MatterPak / Space naming convention — confirm supported length vs. Revit/Windows path limit</div>
+          <div class="meta">
+            
+            <span class="pill st-todo">To Do</span>
+            <span class="pill type">Task</span>
+            <span class="pill owner">→ Troy Lowry</span>
+            <span class="upd">3d ago</span>
+          </div>
+        </div>
       </a>
     </section>
-    <section>
-      <h2>👀 Pending Teams Threads<span class="count">2</span></h2>
-      <div class="refresh-info">via Clark’s threads.json · feed last updated 8/28, 8:06 AM PT (55 min ago)</div>
-      <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150" target="_blank" rel="noopener">
-        <span class="av" style="background:#D9734A">KJ</span>
-        <span class="body">
-          <span class="key">Kailyn Jelniker</span>
-          <span class="sum">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</span>
-          <span class="meta"><span class="badge warn">Waiting on requester</span><span class="when">8/27</span></span>
-          <span class="note">🤖 Asked 8/27 1:48 PM which specific Accounting GCB views need {Unit of Travel Distance}; no answer 44+ hours later. Blocked on Kailyn.</span>
-        </span>
+  <section class="sec">
+    <h2>👀 Pending Teams Threads<span class="cnt">2</span></h2>
+    <div class="subnote">via Clark's threads.json · feed last updated 8/28, 8:06 AM PT (122 min ago)</div>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">Kailyn Jelniker</span></div>
+          <div class="summary">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</div>
+          <div class="meta"><span class="pill st-wait">Waiting on requester</span><span class="upd">8/27</span></div>
+          <div class="note">🤖 Asked 8/27 1:48 PM which specific Accounting GCB views need {Unit of Travel Distance}; no answer 44+ hours later. Blocked on Kailyn.</div>
+        </div>
       </a>
-      <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787123871721&amp;createdTime=1787123871721" target="_blank" rel="noopener">
-        <span class="av" style="background:#4A90D9">OO</span>
-        <span class="body">
-          <span class="key">Oriana Ooi</span>
-          <span class="sum">Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.</span>
-          <span class="meta"><span class="badge warn">Awaiting fix</span><span class="when">8/19</span></span>
-          <span class="note">🤖 Root cause delivered 8/28 7:15 AM: CT Cities Master Country Name links to the legacy Country Master table, which has neither Romania nor Moldova. Re-verified 8:05 AM - still absent, so the two-record add is unexecuted. Owner Ricardo/Adjet; escalate to a ticket if unexecuted after two more runs.</span>
-        </span>
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787123871721&amp;createdTime=1787123871721" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#4A90D9">OO</div>
+        <div class="card-body">
+          <div class="card-top"><span class="key">Oriana Ooi</span></div>
+          <div class="summary">Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.</div>
+          <div class="meta"><span class="pill st-wait">Awaiting fix</span><span class="upd">8/19</span></div>
+          <div class="note">🤖 Root cause delivered 8/28 7:15 AM: CT Cities Master Country Name links to the legacy Country Master table, which has neither Romania nor Moldova. Re-verified 8:05 AM - still absent, so the two-record add is unexecuted. Owner Ricardo/Adjet; escalate to a ticket if unexecuted after two more runs.</div>
+        </div>
       </a>
-    </section>
-  <footer>Failover snapshot generated 9:02 AM PT, Aug 28 2026 · Jira: assigned-to-Ricardo (90d) + COP team (7d), excluding Idea / On-Hold</footer>
+  </section>
+
+  <footer>
+    Failover snapshot generated 10:05 AM PT, Aug 28 2026 · Jira: assigned-to-Ricardo (90d) + COP team (7d), excluding Idea / On-Hold
+  </footer>
 </div>
 </body>
 </html>
