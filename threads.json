@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T20:40:32.911Z",
+  "lastUpdated": "2026-08-28T21:09:57.819Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "A teammate asked which specific GCB views Accounting uses; unanswered for ~50 hours. Blocked on Kailyn — no ticket, nothing owed by us.",
+      "note": "Asked which specific Accounting GCB views need [Unit of Travel Distance] surfaced; still no answer after ~54 hours - blocked on Kailyn, no ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "COP-2093 — re-verified 8/28: Romania and Moldova still absent from the legacy Country Master table the CT city picker reads (day 12). Owed action is a two-record add or repointing the link field.",
+      "note": "Romania and Moldova re-verified as still absent from the legacy Country Master table on 8/28 (0 records, day 12) - blocked on the fix decision tracked in COP-2093.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -33,7 +33,7 @@
       "status": "Awaiting fix",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "COP-2092 — Airtable formula fields cannot emit rich text, so the fix is a design decision for Ricardo; also waiting on Kailyn to say where she edits [Additional Details].",
+      "note": "Root cause confirmed: Airtable formula fields cannot emit rich text, so no formula edit can fix it - blocked on Ricardo's design decision under COP-2092.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     }
   ]
