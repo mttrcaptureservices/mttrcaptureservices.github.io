@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T15:06:50.940Z",
+  "lastUpdated": "2026-08-28T17:12:34.690Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Asked 8/27 1:48 PM which specific Accounting GCB views need {Unit of Travel Distance}; no answer 44+ hours later. Blocked on Kailyn.",
+      "note": "Asked on 8/27 which specific Accounting GCB views need [Unit of Travel Distance]; no answer 46+ hours later. Blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,8 +20,21 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Root cause delivered 8/28 7:15 AM: CT Cities Master Country Name links to the legacy Country Master table, which has neither Romania nor Moldova. Re-verified 8:05 AM - still absent, so the two-record add is unexecuted. Owner Ricardo/Adjet; escalate to a ticket if unexecuted after two more runs.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
+      "note": "Root cause delivered 8/28; now tracked as COP-2093. Romania and Moldova are still absent from the legacy Country Master table (re-verified today, 0 records), so the CT Cities Master picker still cannot see them. Owed action is a two-record add or a repoint of the link field, by Ricardo or Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
+      "jiraKey": "COP-2093"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Rich-text formatting (bold, bullets) added to [Scan Requirements] on MP Client Data does not reach the job record’s [Derived Scan Requirements], so it never renders in the Job Acceptance Jotform or CT emails. Also asked whether [Additional Details] can be made formattable at the job level.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/28",
+      "jiraKey": "COP-2092",
+      "note": "Root cause confirmed: {Derived Scan Requirements} is a formula field and Airtable formulas always return plain text, so formatting cannot survive that hop. Tracked on COP-2092 with Ricardo. [Additional Details] is already rich-text enabled — awaiting Kailyn on where she edits it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     }
   ]
 }
