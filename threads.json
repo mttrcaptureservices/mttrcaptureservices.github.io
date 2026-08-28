@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T02:07:18.776Z",
+  "lastUpdated": "2026-08-28T14:18:27.206Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,8 +9,19 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Teammate asked Kailyn at 1:48 PM which specific GCB views she means; still unanswered ~5.5 h later. Nothing owed by the team until she replies.",
+      "note": "Asked on 8/27 1:48 PM which specific GCB views she means; no answer 20+ hours later. Blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#4A90D9",
+      "summary": "Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.",
+      "statusCls": "badge-investigating",
+      "status": "Awaiting fix",
+      "date": "8/19",
+      "note": "Root cause found: CT Cities Master's Country Name links to the legacy Country Master table (67 countries, no Romania/Moldova); the 8/20 adds only landed in (new) Countries Master. Needs the two records added to Country Master, or the picker repointed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
 }
