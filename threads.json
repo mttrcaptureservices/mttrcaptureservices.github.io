@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T14:18:27.206Z",
+  "lastUpdated": "2026-08-28T15:06:50.940Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Asked on 8/27 1:48 PM which specific GCB views she means; no answer 20+ hours later. Blocked on Kailyn.",
+      "note": "Asked 8/27 1:48 PM which specific Accounting GCB views need {Unit of Travel Distance}; no answer 44+ hours later. Blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -17,10 +17,10 @@
       "initials": "OO",
       "color": "#4A90D9",
       "summary": "Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.",
-      "statusCls": "badge-investigating",
+      "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Root cause found: CT Cities Master's Country Name links to the legacy Country Master table (67 countries, no Romania/Moldova); the 8/20 adds only landed in (new) Countries Master. Needs the two records added to Country Master, or the picker repointed.",
+      "note": "Root cause delivered 8/28 7:15 AM: CT Cities Master Country Name links to the legacy Country Master table, which has neither Romania nor Moldova. Re-verified 8:05 AM - still absent, so the two-record add is unexecuted. Owner Ricardo/Adjet; escalate to a ticket if unexecuted after two more runs.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721"
     }
   ]
