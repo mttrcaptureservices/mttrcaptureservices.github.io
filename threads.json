@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T17:12:34.690Z",
+  "lastUpdated": "2026-08-28T18:08:26.939Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Asked on 8/27 which specific Accounting GCB views need [Unit of Travel Distance]; no answer 46+ hours later. Blocked on Kailyn.",
+      "note": "No reply yet on which specific GCB views need [Unit of Travel Distance] - asked 8/27, now 48h+ without an answer; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Root cause delivered 8/28; now tracked as COP-2093. Romania and Moldova are still absent from the legacy Country Master table (re-verified today, 0 records), so the CT Cities Master picker still cannot see them. Owed action is a two-record add or a repoint of the link field, by Ricardo or Adjet.",
+      "note": "Re-verified 11:05 AM 8/28: Romania and Moldova are still absent from the legacy Country Master, day 10. Owed action is Ricardo's - add the two records there, or repoint CT Cities Master's Country picker at the new Countries Master.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -33,7 +33,7 @@
       "status": "Investigating",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "Root cause confirmed: {Derived Scan Requirements} is a formula field and Airtable formulas always return plain text, so formatting cannot survive that hop. Tracked on COP-2092 with Ricardo. [Additional Details] is already rich-text enabled — awaiting Kailyn on where she edits it.",
+      "note": "Replied with the root cause - {Derived Scan Requirements} is a formula and Airtable formulas always return plain text, so no formula edit can carry bold through. Open check on COP-2092: whether the [Scan Requirements] lookup itself preserves formatting, which decides if pointing the Jotform at the lookup is viable. Waiting on Ricardo, and on Kailyn to say where she edits [Additional Details].",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     }
   ]
