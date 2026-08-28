@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T18:08:26.939Z",
+  "lastUpdated": "2026-08-28T19:09:59.803Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "No reply yet on which specific GCB views need [Unit of Travel Distance] - asked 8/27, now 48h+ without an answer; blocked on Kailyn.",
+      "note": "Asked which specific Accounting GCB views need [Unit of Travel Distance]; no answer 49+ hours on. Blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Re-verified 11:05 AM 8/28: Romania and Moldova are still absent from the legacy Country Master, day 10. Owed action is Ricardo's - add the two records there, or repoint CT Cities Master's Country picker at the new Countries Master.",
+      "note": "Romania and Moldova still absent from the legacy Country Master table the CT Cities picker reads - re-verified today, 0 records, day 11. Owed action is a two-record add or repointing the link field.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -33,8 +33,19 @@
       "status": "Investigating",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "Replied with the root cause - {Derived Scan Requirements} is a formula and Airtable formulas always return plain text, so no formula edit can carry bold through. Open check on COP-2092: whether the [Scan Requirements] lookup itself preserves formatting, which decides if pointing the Jotform at the lookup is viable. Waiting on Ricardo, and on Kailyn to say where she edits [Additional Details].",
+      "note": "Root cause confirmed: {Derived Scan Requirements} is a formula, and Airtable formulas cannot emit rich text. Waiting on Ricardo for the fix approach, and on Kailyn to say where she edits [Additional Details].",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
+    },
+    {
+      "author": "Kevin Curtis",
+      "initials": "KC",
+      "color": "#7C4AD9",
+      "summary": "Vacasa job VAC105-6637444843967762780 stayed Pending and never sent the Job Request email to the tech, despite Send CT Email reading Sent.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/28",
+      "note": "Parent 97461 has Send CT Email = Sent but an empty CT Short Link and blank Last Email Sent, so there was no link to send. Six later parents dispatched normally, so it is an isolated stall, not a backlog. Jira MCP is down - ticket owed as soon as writes recover.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787943444539?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787943444539&createdTime=1787943444539"
     }
   ]
 }
