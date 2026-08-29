@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T21:09:57.819Z",
+  "lastUpdated": "2026-08-29T00:06:26.627Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Asked which specific Accounting GCB views need [Unit of Travel Distance] surfaced; still no answer after ~54 hours - blocked on Kailyn, no ticket.",
+      "note": "Asked which specific Accounting GCB views need [Unit of Travel Distance]; no answer in ~54h. No ticket - blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Romania and Moldova re-verified as still absent from the legacy Country Master table on 8/28 (0 records, day 12) - blocked on the fix decision tracked in COP-2093.",
+      "note": "Romania and Moldova re-verified absent from legacy Country Master (0 records) - day 13 unexecuted. Owner: Ricardo, per COP-2093.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -33,8 +33,20 @@
       "status": "Awaiting fix",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "Root cause confirmed: Airtable formula fields cannot emit rich text, so no formula edit can fix it - blocked on Ricardo's design decision under COP-2092.",
+      "note": "Airtable formula fields cannot emit rich text, so no formula change can fix it - next move is Ricardo design decision on COP-2092.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#6AA84F",
+      "summary": "Wants a client confirmation email to go out on Spec Ops Jotform submissions, matching the enterprise submission confirmation, across both 2.0 and the legacy path.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/28",
+      "jiraKey": "COP-2095",
+      "note": "COP-2095 filed - the confirmation body, recipient and CC are already populated on Spec Ops records; only the trigger view excludes them, and 332 historical parents need a date guard. Asked Troy to define what he means by the legacy base before scoping; blocked on his answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787952219060?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787952219060&createdTime=1787952219060"
     }
   ]
 }
