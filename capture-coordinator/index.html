@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Capture Coordinator Console</title>
+<style>
+  :root{
+    --bg:#0b1220; --bg-soft:#111a2e; --panel:#152039; --panel-2:#1b2947;
+    --border:#26365c; --text:#e8edf7; --text-dim:#9fb0d1; --text-faint:#6c7ea3;
+    --accent:#4f8cff; --accent-2:#7c5cff; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+    --chip:#22304f; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fb; --bg-soft:#ffffff; --panel:#ffffff; --panel-2:#eef1f8;
+      --border:#dde3ef; --text:#0f1830; --text-dim:#465579; --text-faint:#8593b3;
+      --accent:#3b6fe0; --accent-2:#6a4fe0; --chip:#e8edfb; --shadow:0 8px 24px rgba(20,30,60,.08);
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);}
+  body{min-height:100vh;}
+  ::selection{background:var(--accent);color:#fff;}
+  button{font-family:inherit;cursor:pointer;}
+  input,select,textarea,button{font-family:inherit;font-size:14px;}
+  a{color:var(--accent);}
+
+  /* ---------- Gate / Login ---------- */
+  #gate{
+    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1200px 600px at 20% -10%, rgba(79,140,255,.18), transparent),
+               radial-gradient(1000px 500px at 100% 110%, rgba(124,92,255,.16), transparent),
+               var(--bg);
+    z-index:50;padding:24px;
+  }
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:32px;width:100%;max-width:400px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .brand .mark{
+    width:38px;height:38px;border-radius:10px;flex:none;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;
+  }
+  .brand h1{font-size:16px;margin:0;line-height:1.25;}
+  .brand p{margin:2px 0 0;font-size:12px;color:var(--text-faint);}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;color:var(--text-dim);margin-bottom:6px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;}
+  .field select, .field input{
+    width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--border);
+    background:var(--panel-2);color:var(--text);outline:none;transition:border-color .15s;
+  }
+  .field select:focus, .field input:focus{border-color:var(--accent);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 16px;border-radius:10px;border:none;font-weight:600;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;width:100%;
+    box-shadow:0 6px 18px rgba(79,140,255,.28);transition:filter .15s, transform .1s;
+  }
+  .btn:hover{filter:brightness(1.06);}
+  .btn:active{transform:translateY(1px);}
+  .btn.secondary{background:var(--panel-2);color:var(--text);box-shadow:none;border:1px solid var(--border);}
+  .btn.small{width:auto;padding:8px 12px;font-size:13px;}
+  .btn.danger{background:linear-gradient(135deg,#ef4444,#f97316);box-shadow:0 6px 18px rgba(239,68,68,.25);}
+  .err{color:var(--bad);font-size:13px;margin:8px 0 0;min-height:16px;}
+  .gate-foot{margin-top:16px;font-size:11.5px;color:var(--text-faint);line-height:1.5;}
+  .hidden{display:none !important;}
+
+  /* ---------- Token setup ---------- */
+  #tokenModal .card{max-width:460px;}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;}
+  .hint{font-size:12px;color:var(--text-faint);margin-top:8px;line-height:1.5;}
+
+  /* ---------- App shell ---------- */
+  #app{display:none;min-height:100vh;}
+  #app.show{display:block;}
+  header.top{
+    position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg-soft) 92%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--border);
+  }
+  .top-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px;}
+  .top-inner .brand{margin:0;flex:none;}
+  .top-inner .spacer{flex:1;}
+  .who{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-dim);}
+  .who .avatar{
+    width:30px;height:30px;border-radius:50%;background:var(--chip);display:flex;align-items:center;
+    justify-content:center;font-weight:700;font-size:12px;color:var(--text);
+  }
+  main{max-width:1280px;margin:0 auto;padding:22px 24px 60px;}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px;}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
+  .stat .n{font-size:24px;font-weight:700;}
+  .stat .l{font-size:12px;color:var(--text-faint);margin-top:2px;}
+  .stat.accent{border-color:color-mix(in srgb, var(--accent) 40%, var(--border));}
+
+  .tabs{display:flex;gap:6px;margin-bottom:16px;border-bottom:1px solid var(--border);}
+  .tab{
+    padding:10px 4px;margin-right:18px;font-size:13.5px;font-weight:600;color:var(--text-faint);
+    border-bottom:2px solid transparent;cursor:pointer;
+  }
+  .tab.active{color:var(--text);border-color:var(--accent);}
+  .tab .count{background:var(--chip);color:var(--text-dim);border-radius:999px;padding:1px 7px;font-size:11px;margin-left:6px;}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px;}
+  .toolbar input[type=search]{
+    flex:1;min-width:220px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
+    background:var(--panel);color:var(--text);outline:none;
+  }
+  .toolbar select{padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text);}
+  .toolbar .btn{width:auto;}
+
+  .table-wrap{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  thead th{
+    text-align:left;padding:12px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--text-faint);border-bottom:1px solid var(--border);white-space:nowrap;
+  }
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:var(--panel-2);}
+  .jobid{font-weight:700;}
+  .sub{color:var(--text-faint);font-size:12px;margin-top:2px;}
+  .badge{
+    display:inline-block;padding:4px 9px;border-radius:999px;font-size:11.5px;font-weight:700;
+    background:var(--chip);color:var(--text);white-space:nowrap;
+  }
+  .b-incoming{background:rgba(79,140,255,.15);color:#6ba0ff;}
+  .b-progress{background:rgba(245,158,11,.16);color:#f5a524;}
+  .b-issue{background:rgba(239,68,68,.16);color:#ef6a6a;}
+  .b-hold{background:rgba(160,120,255,.16);color:#b39bff;}
+  .b-done{background:rgba(34,197,94,.16);color:#3fdc7c;}
+  .b-cancel{background:rgba(148,163,184,.18);color:#94a3b8;}
+  .chips{display:flex;gap:4px;flex-wrap:wrap;max-width:220px;}
+  .chip{background:var(--chip);color:var(--text-dim);font-size:11px;padding:2px 7px;border-radius:999px;}
+  .empty{padding:60px 20px;text-align:center;color:var(--text-faint);}
+  .loading{padding:60px 20px;text-align:center;color:var(--text-faint);}
+
+  /* ---------- Modal ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(4,8,20,.55);backdrop-filter:blur(2px);
+    display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;z-index:60;overflow:auto;
+  }
+  .modal{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    box-shadow:var(--shadow);width:100%;max-width:560px;padding:26px;
+  }
+  .modal h2{margin:0 0 2px;font-size:17px;}
+  .modal .sub{margin-bottom:18px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .field textarea{
+    width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
+    background:var(--panel-2);color:var(--text);resize:vertical;outline:none;
+  }
+  .checklist{display:flex;flex-wrap:wrap;gap:8px;max-height:160px;overflow:auto;padding:2px;}
+  .check{
+    display:flex;align-items:center;gap:6px;background:var(--panel-2);border:1px solid var(--border);
+    padding:6px 10px;border-radius:999px;font-size:12.5px;cursor:pointer;user-select:none;
+  }
+  .check input{margin:0;}
+  .check.on{border-color:var(--accent);color:var(--accent);}
+  .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px;}
+  .modal-close{position:absolute;}
+  .modal-head{display:flex;justify-content:space-between;align-items:flex-start;}
+  .iconbtn{background:none;border:none;color:var(--text-faint);font-size:20px;line-height:1;padding:4px;}
+
+  .toast-wrap{position:fixed;bottom:20px;right:20px;z-index:80;display:flex;flex-direction:column;gap:8px;}
+  .toast{
+    background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 16px;
+    box-shadow:var(--shadow);font-size:13px;min-width:220px;
+  }
+  .toast.ok{border-color:color-mix(in srgb, var(--good) 50%, var(--border));}
+  .toast.error{border-color:color-mix(in srgb, var(--bad) 50%, var(--border));}
+
+  .link-btn{background:none;border:none;color:var(--accent);font-weight:600;padding:0;font-size:13px;}
+  footer.foot{text-align:center;color:var(--text-faint);font-size:11.5px;padding:20px 0 40px;}
+
+  @media (max-width:720px){
+    .row2{grid-template-columns:1fr;}
+    thead{display:none;}
+    table, tbody, tr, td{display:block;width:100%;}
+    tbody tr{border-bottom:1px solid var(--border);padding:10px 0;}
+    tbody td{border:none;padding:4px 0;}
+    tbody td::before{content:attr(data-label);display:block;font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOKEN SETUP MODAL ============ -->
+<div id="tokenModal" class="overlay hidden">
+  <div class="card" style="max-width:460px;">
+    <div class="brand">
+      <div class="mark">CC</div>
+      <div><h1>Connect to Airtable</h1><p>One-time setup for this browser</p></div>
+    </div>
+    <div class="field">
+      <label>Personal Access Token</label>
+      <input type="password" id="patInput" placeholder="pat••••••••••••••••" autocomplete="off" />
+    </div>
+    <button class="btn" id="patSave">Save &amp; continue</button>
+    <p class="hint">
+      Create a token at <span class="mono">airtable.com/create/tokens</span> scoped to the
+      <b>Parent Base</b> only, with scopes <span class="mono">data.records:read</span>,
+      <span class="mono">data.records:write</span> and <span class="mono">schema.bases:read</span>.
+      The token is stored only in this browser's local storage — it is never written to the site's
+      source code or sent anywhere except api.airtable.com.
+    </p>
+    <p class="err" id="patErr"></p>
+  </div>
+</div>
+
+<!-- ============ LOGIN GATE ============ -->
+<div id="gate">
+  <div class="card">
+    <div class="brand">
+      <div class="mark">CC</div>
+      <div><h1>Capture Coordinator Console</h1><p>Matterport Capture Services</p></div>
+    </div>
+    <div class="field">
+      <label>Coordinator</label>
+      <select id="loginName">
+        <option value="">Select your name…</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="loginPass" autocomplete="off" />
+    </div>
+    <button class="btn" id="loginBtn">Sign in</button>
+    <p class="err" id="loginErr"></p>
+    <p class="gate-foot">Internal tool · access limited to Capture Services coordinators. Contact Ricardo Guzman for a password reset.</p>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app">
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand"><div class="mark">CC</div><div><h1>Capture Coordinator Console</h1><p id="baseLabel">Global Requests · Parent Base</p></div></div>
+      <div class="spacer"></div>
+      <div class="who"><span class="avatar" id="avatarInit">?</span><span id="whoName">—</span></div>
+      <button class="btn secondary small" id="refreshBtn">↻ Refresh</button>
+      <button class="btn secondary small" id="logoutBtn">Sign out</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats" id="stats"></div>
+
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="mine">My Jobs <span class="count" id="cMine">0</span></div>
+      <div class="tab" data-tab="unassigned">Incoming / Unassigned <span class="count" id="cUn">0</span></div>
+      <div class="tab" data-tab="all">All Active Jobs <span class="count" id="cAll">0</span></div>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search job ID, project, client, address…" />
+      <select id="statusFilter"><option value="">All statuses</option></select>
+      <button class="btn secondary small" id="clearFilters">Clear</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Job</th><th>Client / Address</th><th>Status</th><th>Coordinator</th><th>CT / QA Issues</th><th>Notes</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="loading hidden" id="loadingRow">Loading jobs…</div>
+      <div class="empty hidden" id="emptyRow">No jobs match this view.</div>
+    </div>
+
+    <footer class="foot">Capture Coordinator Console · internal use only · data lives in Airtable, this page never stores job data outside your browser session</footer>
+  </main>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<!-- ============ EDIT MODAL ============ -->
+<div class="overlay hidden" id="editOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div><h2 id="mJobId">Job</h2><p class="sub" id="mProject"></p></div>
+      <button class="iconbtn" id="mClose">✕</button>
+    </div>
+
+    <div class="field">
+      <label>Job status</label>
+      <select id="mStatus"></select>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Assigned coordinator (dispatch)</label>
+        <select id="mCoord"><option value="">Unassigned</option></select>
+      </div>
+      <div class="field">
+        <label>Client</label>
+        <input id="mClient" disabled />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>CT / QA issues</label>
+      <div class="checklist" id="mIssues"></div>
+    </div>
+
+    <div class="field">
+      <label>Coordinator notes</label>
+      <textarea id="mNotes"></textarea>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn secondary" id="mCancel">Cancel</button>
+      <button class="btn" id="mSave">Save changes</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ================= CONFIG ================= */
+const BASE_ID   = "appT5E3pJK2FE6cwB";
+const JOBS_TBL  = "tblVJQFqz8QHLSeGf";   // Global Requests
+const COORD_TBL = "tblVSERd54uOP5C1D";   // Capture Coordinator roster
+
+const F = {
+  staticJobId: "Static Job ID",
+  projectName: "Project Name",
+  jobStatus: "Job Status",
+  captureCoordinator: "Capture Coordinator",
+  coordinatorName: "Coordinator Name",
+  coordinatorNotes: "Capture Coordinator Notes",
+  ctqaIssues: "CT/QA Issues",
+  captureAddress: "Capture Address",
+  floorUnitSuite: "Floor/Unit/Suite",
+  mpClient: "MP Client."
+};
+
+// Fallback option lists, used only if the live schema fetch fails (e.g. token lacks schema scope).
+const FALLBACK_STATUSES = ["Pending","Please Schedule","Scheduling in Progress","CT Outreach","CT Negotiations",
+  "CT Declined","CT Unavailable","CT ALT","Scheduled","In Progress","Waiting for Dates","Waiting for Approval",
+  "Rescheduled","On Hold","On Hold by Client","Model Not Found","Model Processing","Ready for PPS",
+  "Ready for Delivery","QA Complete","ESOFT QA Complete","Complete","Accounts Payable","PO Needed",
+  "Add Space Rqstd","Expired Contract","Permanently Remove","Cancelled","Cancelled by CT","Cancelled by Matterport",
+  "Cancelled Last Minute","Cancelled in Advance","Test"];
+const FALLBACK_ISSUES = ["QA: Scan Placement/Density","On-site: CT was No-Show","On-site: CT was late",
+  "SLA; Scheduling","SLA; Delivery","CT Cancellation","CT Reschedule"];
+
+// Coordinator roster + login credentials (SHA-256 of a random per-person password).
+// Passwords were generated once and shared with each coordinator directly — they are not in this file.
+const COORDINATORS = [
+  {name:"Don Fraser", code:"DF_NORAM", hash:"b63b984739c758e2bd48d5513465fe464673f52dce55cbc0729ea847ce2023db"},
+  {name:"Kailyn Jelniker", code:"KJ_NORAM", hash:"168ec61d2e8fc155b38e24dd7dbec257e93031c5ae6dfea2382533229af30097"},
+  {name:"Gisele Tan", code:"GT_INTL", hash:"23dbf25a559e3e56cdeee24c605e9c65efbde9f7b467cace89984fe5d28ce132"},
+  {name:"Ricardo Guzman", code:"RG_NORAM", hash:"94a99ddb2e66b6cd014524faf015c1e19f02a348e66350508a2071b1e4bb7861"},
+  {name:"Troy Lowry", code:"TL_NORAM", hash:"e34190d0b9d202d85d0c524e30034d5774435745f77c7e809bb50d214a4c1d0d"},
+  {name:"Stephenie Yong", code:"SY_INTL", hash:"06fc3db427e7db2eca7af414fad2918a99ff6c92a1e0845a021cf2923e339df9"},
+  {name:"Oriana Ooi", code:"OO_INTL", hash:"57d29a937a71b7d0fd6d45a8e14a94459e059cd1e36bee0532129f2a6bfddc67"},
+  {name:"Ryan Morrow", code:"RM_NORAM", hash:"d58659605d0d24d6c51c0e371d759a6ebd683b75d40294e684814a1e1fb3e31c"},
+  {name:"Peter Berlin", code:"PB_NORAM", hash:"fe90c1a2219276babfff46408d157b2d7fcaf902785688cd7a85570fd9867131"},
+  {name:"Juyoung Jang", code:"JJ_INTL", hash:"7e851d362bb7bcb656e8e48901919e7ee184dea491cdd51a31b6bf84e2b8d2fe"},
+  {name:"Caitlin Suh", code:"CS_NORAM", hash:"cef83dea1d57fa658f6e1589c2b7acd2881d56231dc41444509182599abfe316"},
+  {name:"Jordan Saiz", code:"JS_NORAM", hash:"1d56e8844ef1313c85db11e8f1b707cac9e085a581b44f70e69d1b6f9f8c2793"},
+  {name:"Elliot Finlayson", code:"EF_PM", hash:"15f7f9b011fe3d1e50a38b72af3ccb7992576efa7df28fbe8626fb27c298eca3"},
+  {name:"Freddy Arias", code:"FA_NORAM", hash:"893396c006a5b70132acb5175b36ad35dee84e46a7669d29e9bdd37d0730d176"},
+  {name:"Alex Justice", code:"AJ_NORAM", hash:"538dcec1355f9cadc4256eb583f68b90ad6a045fe88ac7f529373048b2d63443"},
+  {name:"Kevin Curtis", code:"KC_NORAM", hash:"7dcc2b30be5d47be47ad8d151d59a3f072f8244ba3d0d88f830ee64665cf924c"},
+  {name:"Marina Menacho Rosales", code:"MR_INTL", hash:"e10f944bb36b5f5bef9aa1c638848dfa81501c1ea071e04ccc4e55d3b23da022"}
+];
+
+/* ================= STATE ================= */
+let PAT = localStorage.getItem("cc_pat") || "";
+let ME = null;                 // {name, code}
+let ROSTER = [];                // [{id, name, code}] from live Airtable
+let STATUS_OPTIONS = [];
+let ISSUE_OPTIONS = [];
+let ALL_JOBS = [];               // cached raw records for currently loaded view union
+let CURRENT_TAB = "mine";
+let CURRENT_EDIT = null;         // record id being edited
+
+/* ================= HELPERS ================= */
+function $(id){ return document.getElementById(id); }
+async function sha256(str){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+function toast(msg, kind){
+  const el = document.createElement("div");
+  el.className = "toast " + (kind || "");
+  el.textContent = msg;
+  $("toasts").appendChild(el);
+  setTimeout(()=>el.remove(), 4200);
+}
+function airtableHeaders(){
+  return { "Authorization": "Bearer " + PAT, "Content-Type": "application/json" };
+}
+async function atFetch(path, opts){
+  const res = await fetch("https://api.airtable.com/v0/" + path, Object.assign({headers: airtableHeaders()}, opts||{}));
+  if(!res.ok){
+    let body = "";
+    try{ body = (await res.json()).error?.message || ""; }catch(e){}
+    throw new Error("Airtable " + res.status + (body ? (": " + body) : ""));
+  }
+  return res.json();
+}
+function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function statusBucket(status){
+  const s = (status||"").toLowerCase();
+  if(/cancel/.test(s)) return "cancel";
+  if(/complete|delivery|payable|ready for/.test(s)) return "done";
+  if(/hold|waiting|reschedul|expired|permanently remove/.test(s)) return "hold";
+  if(/^ct |declined|unavailable|negotiations|ct alt/.test(s)) return "issue";
+  if(/pending|please schedule|outreach|scheduling in progress|add space|po needed/.test(s)) return "incoming";
+  return "progress";
+}
+const BUCKET_LABEL = {incoming:"b-incoming", progress:"b-progress", issue:"b-issue", hold:"b-hold", done:"b-done", cancel:"b-cancel"};
+
+/* ================= TOKEN SETUP ================= */
+function ensureToken(){
+  return new Promise((resolve)=>{
+    if(PAT){ resolve(); return; }
+    $("tokenModal").classList.remove("hidden");
+    $("patSave").onclick = async ()=>{
+      const v = $("patInput").value.trim();
+      if(!v){ $("patErr").textContent = "Paste a token to continue."; return; }
+      PAT = v;
+      localStorage.setItem("cc_pat", PAT);
+      $("tokenModal").classList.add("hidden");
+      resolve();
+    };
+  });
+}
+
+/* ================= LOGIN ================= */
+function populateLoginNames(){
+  const sel = $("loginName");
+  COORDINATORS.slice().sort((a,b)=>a.name.localeCompare(b.name)).forEach(c=>{
+    const o = document.createElement("option");
+    o.value = c.code; o.textContent = c.name;
+    sel.appendChild(o);
+  });
+}
+
+async function attemptLogin(){
+  const code = $("loginName").value;
+  const pass = $("loginPass").value;
+  $("loginErr").textContent = "";
+  if(!code || !pass){ $("loginErr").textContent = "Choose your name and enter your password."; return; }
+  const person = COORDINATORS.find(c=>c.code===code);
+  const h = await sha256(pass);
+  if(!person || h !== person.hash){
+    $("loginErr").textContent = "Incorrect password.";
+    return;
+  }
+  ME = {name: person.name, code: person.code};
+  sessionStorage.setItem("cc_me", JSON.stringify(ME));
+  await boot();
+}
+
+/* ================= BOOT / DATA ================= */
+async function loadSchema(){
+  try{
+    const meta = await atFetch(`meta/bases/${BASE_ID}/tables`, {});
+    const jobsTable = (meta.tables||[]).find(t=>t.id===JOBS_TBL);
+    if(jobsTable){
+      const statusField = jobsTable.fields.find(f=>f.name===F.jobStatus);
+      const issuesField = jobsTable.fields.find(f=>f.name===F.ctqaIssues);
+      if(statusField && statusField.options && statusField.options.choices)
+        STATUS_OPTIONS = statusField.options.choices.map(c=>c.name);
+      if(issuesField && issuesField.options && issuesField.options.choices)
+        ISSUE_OPTIONS = issuesField.options.choices.map(c=>c.name);
+    }
+  }catch(e){ /* fall through to fallback below */ }
+  if(!STATUS_OPTIONS.length) STATUS_OPTIONS = FALLBACK_STATUSES;
+  if(!ISSUE_OPTIONS.length) ISSUE_OPTIONS = FALLBACK_ISSUES;
+
+  const statusSel = $("mStatus");
+  statusSel.innerHTML = STATUS_OPTIONS.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+  const filterSel = $("statusFilter");
+  filterSel.innerHTML = `<option value="">All statuses</option>` + STATUS_OPTIONS.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+  $("mIssues").innerHTML = ISSUE_OPTIONS.map(i=>`
+    <label class="check" data-val="${esc(i)}"><input type="checkbox" value="${esc(i)}"/>${esc(i)}</label>
+  `).join("");
+  $("mIssues").querySelectorAll("input[type=checkbox]").forEach(cb=>{
+    cb.addEventListener("change", ()=> cb.closest(".check").classList.toggle("on", cb.checked));
+  });
+}
+
+async function loadRoster(){
+  try{
+    const data = await atFetch(`${BASE_ID}/${COORD_TBL}?pageSize=100`, {});
+    ROSTER = (data.records||[]).map(r=>({
+      id: r.id,
+      name: r.fields["Name"] || "",
+      code: r.fields["Scheduler Code"] || ""
+    })).filter(r=>r.name);
+  }catch(e){
+    ROSTER = [];
+    toast("Could not load coordinator roster from Airtable (" + e.message + ")", "error");
+  }
+  const sel = $("mCoord");
+  sel.innerHTML = `<option value="">Unassigned</option>` + ROSTER
+    .slice().sort((a,b)=>a.name.localeCompare(b.name))
+    .map(r=>`<option value="${r.id}">${esc(r.name)}</option>`).join("");
+}
+
+function myRosterEntry(){
+  return ROSTER.find(r=>r.code === ME.code) || null;
+}
+
+async function fetchJobs(formula, extra){
+  let all = [];
+  let offset = undefined;
+  do{
+    const params = new URLSearchParams();
+    params.set("pageSize", "100");
+    if(formula) params.set("filterByFormula", formula);
+    if(offset) params.set("offset", offset);
+    const data = await atFetch(`${BASE_ID}/${JOBS_TBL}?${params.toString()}`, {});
+    all = all.concat(data.records || []);
+    offset = data.offset;
+  } while(offset && all.length < 500);
+  return all;
+}
+
+async function loadAllData(){
+  $("loadingRow").classList.remove("hidden");
+  $("rows").innerHTML = "";
+  $("emptyRow").classList.add("hidden");
+  try{
+    const notCancelledOrTest = `AND(NOT(FIND("Cancel", {${F.jobStatus}})), {${F.jobStatus}} != "Test")`;
+    const jobs = await fetchJobs(notCancelledOrTest);
+    ALL_JOBS = jobs;
+    renderStatsAndTabs();
+    renderTable();
+  }catch(e){
+    toast("Failed to load jobs: " + e.message, "error");
+  }finally{
+    $("loadingRow").classList.add("hidden");
+  }
+}
+
+/* ================= RENDER ================= */
+function jobCoordinatorCode(rec){
+  // Coordinator Name lookup returns an array of the linked coordinator's primary-field-adjacent Name values.
+  const v = rec.fields[F.coordinatorName];
+  if(Array.isArray(v)) return v[0] || "";
+  return v || "";
+}
+function jobIsMine(rec){
+  const names = rec.fields[F.coordinatorName];
+  if(!names) return false;
+  const arr = Array.isArray(names) ? names : [names];
+  return arr.some(n => n === ME.name);
+}
+function jobIsUnassigned(rec){
+  const link = rec.fields[F.captureCoordinator];
+  return !link || (Array.isArray(link) && link.length===0);
+}
+
+function currentViewRecords(){
+  let list = ALL_JOBS;
+  if(CURRENT_TAB === "mine") list = list.filter(jobIsMine);
+  else if(CURRENT_TAB === "unassigned") list = list.filter(jobIsUnassigned);
+  // "all" = everything already loaded (non-cancelled, non-test)
+
+  const q = $("search").value.trim().toLowerCase();
+  if(q){
+    list = list.filter(r=>{
+      const hay = [
+        r.fields[F.staticJobId], r.fields[F.projectName], r.fields[F.captureAddress],
+        r.fields[F.mpClient], r.fields[F.floorUnitSuite]
+      ].map(v=>Array.isArray(v)? v.join(" ") : (v||"")).join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  const sf = $("statusFilter").value;
+  if(sf) list = list.filter(r => r.fields[F.jobStatus] === sf);
+  return list;
+}
+
+function renderStatsAndTabs(){
+  const mine = ALL_JOBS.filter(jobIsMine);
+  const unassigned = ALL_JOBS.filter(jobIsUnassigned);
+  $("cMine").textContent = mine.length;
+  $("cUn").textContent = unassigned.length;
+  $("cAll").textContent = ALL_JOBS.length;
+
+  const buckets = {incoming:0, progress:0, issue:0, hold:0, done:0};
+  mine.forEach(r=>{ const b = statusBucket(r.fields[F.jobStatus]); if(buckets[b]!==undefined) buckets[b]++; });
+
+  $("stats").innerHTML = `
+    <div class="stat accent"><div class="n">${mine.length}</div><div class="l">My open jobs</div></div>
+    <div class="stat"><div class="n">${buckets.incoming}</div><div class="l">Incoming / to schedule</div></div>
+    <div class="stat"><div class="n">${buckets.progress}</div><div class="l">In progress</div></div>
+    <div class="stat"><div class="n">${buckets.issue}</div><div class="l">CT issues</div></div>
+    <div class="stat"><div class="n">${buckets.hold}</div><div class="l">On hold / waiting</div></div>
+    <div class="stat"><div class="n">${buckets.done}</div><div class="l">Complete / delivered</div></div>
+  `;
+}
+
+function renderTable(){
+  const list = currentViewRecords();
+  const rowsEl = $("rows");
+  if(!list.length){
+    rowsEl.innerHTML = "";
+    $("emptyRow").classList.remove("hidden");
+    return;
+  }
+  $("emptyRow").classList.add("hidden");
+  rowsEl.innerHTML = list.map(r=>{
+    const f = r.fields;
+    const status = f[F.jobStatus] || "—";
+    const bucket = statusBucket(status);
+    const coordName = jobCoordinatorCode(r) || "Unassigned";
+    const issues = f[F.ctqaIssues] || [];
+    const address = f[F.captureAddress] || "";
+    const client = Array.isArray(f[F.mpClient]) ? f[F.mpClient].join(", ") : (f[F.mpClient]||"");
+    const notes = f[F.coordinatorNotes] || "";
+    return `
+      <tr data-id="${r.id}">
+        <td data-label="Job">
+          <div class="jobid">${esc(f[F.staticJobId] || r.id)}</div>
+          <div class="sub">${esc(f[F.projectName]||"")}</div>
+        </td>
+        <td data-label="Client / Address">
+          <div>${esc(client)}</div>
+          <div class="sub">${esc(address).slice(0,60)}</div>
+        </td>
+        <td data-label="Status"><span class="badge ${BUCKET_LABEL[bucket]}">${esc(status)}</span></td>
+        <td data-label="Coordinator">${esc(coordName)}</td>
+        <td data-label="CT / QA Issues"><div class="chips">${issues.map(i=>`<span class="chip">${esc(i)}</span>`).join("") || '<span class="sub">—</span>'}</div></td>
+        <td data-label="Notes"><div class="sub">${esc(notes).slice(0,50)}${notes.length>50?"…":""}</div></td>
+        <td data-label=""><button class="link-btn" data-open="${r.id}">Open →</button></td>
+      </tr>
+    `;
+  }).join("");
+
+  rowsEl.querySelectorAll("[data-open]").forEach(btn=>{
+    btn.addEventListener("click", ()=> openEditModal(btn.getAttribute("data-open")));
+  });
+}
+
+/* ================= EDIT MODAL ================= */
+function openEditModal(recordId){
+  const rec = ALL_JOBS.find(r=>r.id===recordId);
+  if(!rec) return;
+  CURRENT_EDIT = recordId;
+  const f = rec.fields;
+  $("mJobId").textContent = f[F.staticJobId] || recordId;
+  $("mProject").textContent = f[F.projectName] || "";
+  $("mStatus").value = f[F.jobStatus] || "";
+  $("mClient").value = Array.isArray(f[F.mpClient]) ? f[F.mpClient].join(", ") : (f[F.mpClient]||"");
+  $("mNotes").value = f[F.coordinatorNotes] || "";
+
+  const link = f[F.captureCoordinator];
+  const linkedId = Array.isArray(link) && link.length ? (link[0].id || link[0]) : "";
+  $("mCoord").value = linkedId || "";
+
+  const activeIssues = new Set(f[F.ctqaIssues] || []);
+  $("mIssues").querySelectorAll(".check").forEach(chk=>{
+    const val = chk.getAttribute("data-val");
+    const cb = chk.querySelector("input");
+    cb.checked = activeIssues.has(val);
+    chk.classList.toggle("on", cb.checked);
+  });
+
+  $("editOverlay").classList.remove("hidden");
+}
+function closeEditModal(){
+  $("editOverlay").classList.add("hidden");
+  CURRENT_EDIT = null;
+}
+
+async function saveEdit(){
+  if(!CURRENT_EDIT) return;
+  const status = $("mStatus").value;
+  const notes = $("mNotes").value;
+  const coordId = $("mCoord").value;
+  const issues = Array.from($("mIssues").querySelectorAll("input:checked")).map(cb=>cb.value);
+
+  const fields = {};
+  fields[F.jobStatus] = status;
+  fields[F.coordinatorNotes] = notes;
+  fields[F.ctqaIssues] = issues;
+  fields[F.captureCoordinator] = coordId ? [coordId] : [];
+
+  const saveBtn = $("mSave");
+  saveBtn.disabled = true; saveBtn.textContent = "Saving…";
+  try{
+    await atFetch(`${BASE_ID}/${JOBS_TBL}/${CURRENT_EDIT}`, {
+      method: "PATCH",
+      body: JSON.stringify({ fields })
+    });
+    toast("Saved.", "ok");
+    closeEditModal();
+    await loadAllData();
+    switchTab(CURRENT_TAB);
+  }catch(e){
+    toast("Save failed: " + e.message, "error");
+  }finally{
+    saveBtn.disabled = false; saveBtn.textContent = "Save changes";
+  }
+}
+
+/* ================= TABS / FILTERS ================= */
+function switchTab(tab){
+  CURRENT_TAB = tab;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active", t.getAttribute("data-tab")===tab));
+  renderTable();
+}
+
+/* ================= BOOT ================= */
+async function boot(){
+  $("gate").style.display = "none";
+  $("app").classList.add("show");
+  $("whoName").textContent = ME.name;
+  $("avatarInit").textContent = ME.name.split(" ").map(p=>p[0]).slice(0,2).join("").toUpperCase();
+
+  await loadSchema();
+  await loadRoster();
+  await loadAllData();
+}
+
+function wireEvents(){
+  $("loginBtn").addEventListener("click", attemptLogin);
+  $("loginPass").addEventListener("keydown", e=>{ if(e.key==="Enter") attemptLogin(); });
+
+  document.querySelectorAll(".tab").forEach(t=>{
+    t.addEventListener("click", ()=> switchTab(t.getAttribute("data-tab")));
+  });
+  $("search").addEventListener("input", renderTable);
+  $("statusFilter").addEventListener("change", renderTable);
+  $("clearFilters").addEventListener("click", ()=>{ $("search").value=""; $("statusFilter").value=""; renderTable(); });
+  $("refreshBtn").addEventListener("click", loadAllData);
+  $("logoutBtn").addEventListener("click", ()=>{
+    sessionStorage.removeItem("cc_me");
+    location.reload();
+  });
+
+  $("mClose").addEventListener("click", closeEditModal);
+  $("mCancel").addEventListener("click", closeEditModal);
+  $("mSave").addEventListener("click", saveEdit);
+  $("editOverlay").addEventListener("click", e=>{ if(e.target.id==="editOverlay") closeEditModal(); });
+}
+
+(async function init(){
+  wireEvents();
+  populateLoginNames();
+  await ensureToken();
+
+  const saved = sessionStorage.getItem("cc_me");
+  if(saved){
+    ME = JSON.parse(saved);
+    await boot();
+  }
+})();
+
+})();
+</script>
+</body>
+</html>
