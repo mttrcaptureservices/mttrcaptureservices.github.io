@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29T00:06:26.627Z",
+  "lastUpdated": "2026-08-29T01:06:55.283Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Romania and Moldova re-verified absent from legacy Country Master (0 records) - day 13 unexecuted. Owner: Ricardo, per COP-2093.",
+      "note": "Romania and Moldova still absent from the legacy Country Master table (re-verified 8/28 PM, 0 records, day 14). Blocked on Ricardo deciding: add both records to the legacy table, or repoint the CT Cities Master country link at the new table.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
