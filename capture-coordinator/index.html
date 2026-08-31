@@ -156,6 +156,28 @@
     width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
     background:var(--panel-2);color:var(--text);resize:vertical;outline:none;
   }
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:4px;}
+  .price-box{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
+  .price-box .n{font-size:17px;font-weight:700;}
+  .price-box .l{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.03em;}
+  .pc-picker{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:8px 10px;}
+  .pc-current{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .pc-current .code{font-weight:700;font-size:13.5px;}
+  .pc-search input{
+    width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--border);
+    background:var(--panel);color:var(--text);outline:none;margin-bottom:6px;
+  }
+  .pc-results{max-height:150px;overflow:auto;display:flex;flex-direction:column;gap:2px;}
+  .pc-result{
+    text-align:left;background:none;border:none;padding:6px 8px;border-radius:6px;color:var(--text);
+    font-size:12.5px;cursor:pointer;
+  }
+  .pc-result:hover{background:var(--panel);}
+  .pc-result b{color:var(--accent);}
+  .gate-warn{
+    background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:#c98a12;
+    border-radius:8px;padding:8px 10px;font-size:12px;margin-top:6px;
+  }
   .checklist{display:flex;flex-wrap:wrap;gap:8px;max-height:160px;overflow:auto;padding:2px;}
   .check{
     display:flex;align-items:center;gap:6px;background:var(--panel-2);border:1px solid var(--border);
@@ -313,6 +335,53 @@
     </div>
 
     <div class="field">
+      <label>Pricing</label>
+      <div class="price-grid">
+        <div class="price-box"><div class="n" id="mJobRate">—</div><div class="l">Job rate</div></div>
+        <div class="price-box"><div class="n" id="mCTRate">—</div><div class="l">CT rate</div></div>
+        <div class="price-box"><div class="n" id="mPriceType">—</div><div class="l">Price type</div></div>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Price code (job)</label>
+        <div class="pc-picker" id="mPcJob"></div>
+      </div>
+      <div class="field">
+        <label>Price code (CT)</label>
+        <div class="pc-picker" id="mPcCT"></div>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Capture size requested</label>
+        <input id="mCaptureSize" type="number" step="0.01" />
+      </div>
+      <div class="field">
+        <label>Area units</label>
+        <select id="mAreaUnits"></select>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Adjustment job rate</label>
+        <input id="mAdjJobRate" type="number" step="0.01" />
+      </div>
+      <div class="field">
+        <label>Adjustment CT rate</label>
+        <input id="mAdjCTRate" type="number" step="0.01" />
+      </div>
+    </div>
+    <div class="field">
+      <label>Custom CT rate</label>
+      <input id="mCustomCTRate" type="number" step="0.01" />
+    </div>
+    <div class="gate-warn hidden" id="mGateWarn"></div>
+
+    <div class="field">
       <label>Coordinator notes</label>
       <textarea id="mNotes"></textarea>
     </div>
@@ -329,9 +398,10 @@
 "use strict";
 
 /* ================= CONFIG ================= */
-const BASE_ID   = "appT5E3pJK2FE6cwB";
-const JOBS_TBL  = "tblVJQFqz8QHLSeGf";   // Global Requests
-const COORD_TBL = "tblVSERd54uOP5C1D";   // Capture Coordinator roster
+const BASE_ID     = "appT5E3pJK2FE6cwB";
+const JOBS_TBL    = "tblVJQFqz8QHLSeGf";   // Global Requests
+const COORD_TBL   = "tblVSERd54uOP5C1D";   // Capture Coordinator roster
+const PRICEBOOK_TBL = "tblvLTsoDdvi9uVTr"; // Global PriceBooks (rate card)
 
 const F = {
   staticJobId: "Static Job ID",
@@ -343,8 +413,22 @@ const F = {
   ctqaIssues: "CT/QA Issues",
   captureAddress: "Capture Address",
   floorUnitSuite: "Floor/Unit/Suite",
-  mpClient: "MP Client."
+  mpClient: "MP Client.",
+  // Pricing
+  jobRate: "Job Rate",                     // formula, read-only
+  ctRate: "CT Rate",                       // formula, read-only
+  priceType: "Price Type",                 // lookup, read-only
+  priceCodeJob: "Price Code Lookup",       // link to Global PriceBooks — editable
+  priceCodeCT: "Price Code Lookup CT",     // link to Global PriceBooks — editable
+  captureSize: "Capture Size - Requested", // number — editable
+  areaUnits: "Area Units",                 // singleSelect — editable
+  adjJobRate: "Adjustment Job Rate",       // number — editable (needs "*" in Job ID to take effect)
+  adjCTRate: "Adjustment CT Rate",         // number — editable (needs "*" in Job ID to take effect)
+  customCTRate: "Custom CT Rate",          // number — editable
+  jobIdLink: "Job ID"                      // link field, used only to check for the "*" adjustment gate
 };
+
+const FALLBACK_AREA_UNITS = ["Square Feet (ft2)","Square Metres (m2)","Welltower (11)","ft2","Refer to Parent Record"];
 
 // Fallback option lists, used only if the live schema fetch fails (e.g. token lacks schema scope).
 const FALLBACK_STATUSES = ["Pending","Please Schedule","Scheduling in Progress","CT Outreach","CT Negotiations",
@@ -384,9 +468,13 @@ let ME = null;                 // {name, code}
 let ROSTER = [];                // [{id, name, code}] from live Airtable
 let STATUS_OPTIONS = [];
 let ISSUE_OPTIONS = [];
+let AREA_UNITS_OPTIONS = [];
 let ALL_JOBS = [];               // cached raw records for currently loaded view union
 let CURRENT_TAB = "mine";
 let CURRENT_EDIT = null;         // record id being edited
+let PC_JOB = null;                // {id, name} currently selected job price code, or null
+let PC_CT = null;                 // {id, name} currently selected CT price code, or null
+let PC_SEARCH_TIMER = null;
 
 /* ================= HELPERS ================= */
 function $(id){ return document.getElementById(id); }
@@ -476,14 +564,19 @@ async function loadSchema(){
     if(jobsTable){
       const statusField = jobsTable.fields.find(f=>f.name===F.jobStatus);
       const issuesField = jobsTable.fields.find(f=>f.name===F.ctqaIssues);
+      const areaField = jobsTable.fields.find(f=>f.name===F.areaUnits);
       if(statusField && statusField.options && statusField.options.choices)
         STATUS_OPTIONS = statusField.options.choices.map(c=>c.name);
       if(issuesField && issuesField.options && issuesField.options.choices)
         ISSUE_OPTIONS = issuesField.options.choices.map(c=>c.name);
+      if(areaField && areaField.options && areaField.options.choices)
+        AREA_UNITS_OPTIONS = areaField.options.choices.map(c=>c.name);
     }
   }catch(e){ /* fall through to fallback below */ }
   if(!STATUS_OPTIONS.length) STATUS_OPTIONS = FALLBACK_STATUSES;
   if(!ISSUE_OPTIONS.length) ISSUE_OPTIONS = FALLBACK_ISSUES;
+  if(!AREA_UNITS_OPTIONS.length) AREA_UNITS_OPTIONS = FALLBACK_AREA_UNITS;
+  $("mAreaUnits").innerHTML = AREA_UNITS_OPTIONS.map(a=>`<option value="${esc(a)}">${esc(a)}</option>`).join("");
 
   const statusSel = $("mStatus");
   statusSel.innerHTML = STATUS_OPTIONS.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
@@ -652,8 +745,115 @@ function renderTable(){
   });
 }
 
+/* ================= PRICE CODE PICKER ================= */
+// Global PriceBooks has ~3,400 rows, so we never load it in bulk — we search it live as the
+// coordinator types, and only remember the {id, name} of whatever is currently selected.
+function fmtMoney(v){
+  if(v === undefined || v === null || v === "") return "—";
+  const n = Number(v);
+  if(Number.isNaN(n)) return String(v);
+  return n.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function renderPcPicker(kind){
+  // kind: "job" or "ct"
+  const host = $(kind === "job" ? "mPcJob" : "mPcCT");
+  const sel = kind === "job" ? PC_JOB : PC_CT;
+  host.innerHTML = `
+    <div class="pc-current">
+      <span class="code">${sel ? esc(sel.name) : "Not set"}</span>
+      <button type="button" class="link-btn" data-pc-change="${kind}">${sel ? "Change" : "Set"}</button>
+    </div>
+  `;
+  host.querySelector("[data-pc-change]").addEventListener("click", ()=> openPcSearch(kind));
+}
+
+function openPcSearch(kind){
+  const host = $(kind === "job" ? "mPcJob" : "mPcCT");
+  host.innerHTML = `
+    <div class="pc-search">
+      <input type="text" placeholder="Type a price code, e.g. USUDRC2…" id="pcInput_${kind}" />
+      <div class="pc-results" id="pcResults_${kind}"></div>
+    </div>
+  `;
+  const input = $(`pcInput_${kind}`);
+  input.focus();
+  input.addEventListener("input", ()=>{
+    clearTimeout(PC_SEARCH_TIMER);
+    PC_SEARCH_TIMER = setTimeout(()=> searchPriceCodes(kind, input.value.trim()), 250);
+  });
+  searchPriceCodes(kind, "");
+}
+
+async function searchPriceCodes(kind, query){
+  const resultsEl = $(`pcResults_${kind}`);
+  if(!resultsEl) return;
+  resultsEl.innerHTML = `<div class="sub">Searching…</div>`;
+  try{
+    const params = new URLSearchParams();
+    params.set("pageSize", "15");
+    params.set("fields[]", "Price Code");
+    params.append("fields[]", "Country");
+    params.append("fields[]", "Type");
+    params.append("fields[]", "Currency");
+    params.append("fields[]", "Active");
+    if(query) params.set("filterByFormula", `SEARCH(UPPER("${query.replace(/"/g,'')}"), UPPER({Price Code}))`);
+    const data = await atFetch(`${BASE_ID}/${PRICEBOOK_TBL}?${params.toString()}`, {});
+    const recs = data.records || [];
+    if(!recs.length){ resultsEl.innerHTML = `<div class="sub">No matches.</div>`; return; }
+    resultsEl.innerHTML = recs.map(r=>{
+      const f = r.fields;
+      const code = f["Price Code"] || r.id;
+      const meta = [f["Type"], f["Country"], f["Currency"]].filter(Boolean).join(" · ");
+      return `<button type="button" class="pc-result" data-id="${r.id}" data-code="${esc(code)}"><b>${esc(code)}</b>${meta ? " — " + esc(meta) : ""}</button>`;
+    }).join("");
+    resultsEl.querySelectorAll(".pc-result").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const picked = {id: btn.getAttribute("data-id"), name: btn.getAttribute("data-code")};
+        if(kind === "job") PC_JOB = picked; else PC_CT = picked;
+        renderPcPicker(kind);
+      });
+    });
+  }catch(e){
+    resultsEl.innerHTML = `<div class="sub">Search failed: ${esc(e.message)}</div>`;
+  }
+}
+
+async function resolvePcLink(linkField){
+  // A link field from the raw Airtable API is normally just an array of record ID strings.
+  // If we already have a {id,name} shape (e.g. re-rendering from a picker selection) use it as-is;
+  // otherwise fetch the single record to find its human-readable Price Code.
+  const first = Array.isArray(linkField) && linkField.length ? linkField[0] : null;
+  if(!first) return null;
+  if(typeof first === "object" && first.name) return {id: first.id, name: first.name};
+  const id = (typeof first === "object") ? first.id : first;
+  try{
+    const rec = await atFetch(`${BASE_ID}/${PRICEBOOK_TBL}/${id}`, {});
+    return {id, name: (rec.fields && rec.fields["Price Code"]) || id};
+  }catch(e){
+    return {id, name: id};
+  }
+}
+
+function updateGateWarning(){
+  const jobIdField = ALL_JOBS.find(r=>r.id===CURRENT_EDIT);
+  const el = $("mGateWarn");
+  const adjJob = parseFloat($("mAdjJobRate").value) || 0;
+  const adjCT = parseFloat($("mAdjCTRate").value) || 0;
+  if(!jobIdField || (adjJob === 0 && adjCT === 0)){ el.classList.add("hidden"); return; }
+  const link = jobIdField.fields[F.jobIdLink];
+  const names = Array.isArray(link) ? link.map(v=>v.name || v) : (link ? [link] : []);
+  const hasStar = names.some(n=>String(n).includes("*"));
+  if(!hasStar){
+    el.textContent = "⚠ Adjustment amounts only take effect when this job's Job ID contains an asterisk (*). This job's Job ID does not, so these adjustments will be saved but silently ignored by the rate formulas.";
+    el.classList.remove("hidden");
+  }else{
+    el.classList.add("hidden");
+  }
+}
+
 /* ================= EDIT MODAL ================= */
-function openEditModal(recordId){
+async function openEditModal(recordId){
   const rec = ALL_JOBS.find(r=>r.id===recordId);
   if(!rec) return;
   CURRENT_EDIT = recordId;
@@ -676,11 +876,43 @@ function openEditModal(recordId){
     chk.classList.toggle("on", cb.checked);
   });
 
+  // Pricing
+  $("mJobRate").textContent = fmtMoney(f[F.jobRate]);
+  $("mCTRate").textContent = fmtMoney(f[F.ctRate]);
+  const priceType = f[F.priceType];
+  $("mPriceType").textContent = (Array.isArray(priceType) ? priceType[0] : priceType) || "—";
+
+  // Show placeholders immediately, resolve the real price-code names in the background.
+  PC_JOB = null; PC_CT = null;
+  renderPcPicker("job");
+  renderPcPicker("ct");
+
+  $("mCaptureSize").value = f[F.captureSize] ?? "";
+  $("mAreaUnits").value = f[F.areaUnits] || "";
+  $("mAdjJobRate").value = f[F.adjJobRate] ?? "";
+  $("mAdjCTRate").value = f[F.adjCTRate] ?? "";
+  $("mCustomCTRate").value = f[F.customCTRate] ?? "";
+  updateGateWarning();
+
   $("editOverlay").classList.remove("hidden");
+
+  const thisEdit = recordId;
+  const [pcJob, pcCt] = await Promise.all([
+    resolvePcLink(f[F.priceCodeJob]),
+    resolvePcLink(f[F.priceCodeCT])
+  ]);
+  if(CURRENT_EDIT === thisEdit){ // guard against the user closing/switching before this resolves
+    PC_JOB = pcJob;
+    PC_CT = pcCt;
+    renderPcPicker("job");
+    renderPcPicker("ct");
+  }
 }
 function closeEditModal(){
   $("editOverlay").classList.add("hidden");
   CURRENT_EDIT = null;
+  PC_JOB = null;
+  PC_CT = null;
 }
 
 async function saveEdit(){
@@ -690,11 +922,25 @@ async function saveEdit(){
   const coordId = $("mCoord").value;
   const issues = Array.from($("mIssues").querySelectorAll("input:checked")).map(cb=>cb.value);
 
+  const captureSize = $("mCaptureSize").value;
+  const areaUnits = $("mAreaUnits").value;
+  const adjJobRate = $("mAdjJobRate").value;
+  const adjCTRate = $("mAdjCTRate").value;
+  const customCTRate = $("mCustomCTRate").value;
+
   const fields = {};
   fields[F.jobStatus] = status;
   fields[F.coordinatorNotes] = notes;
   fields[F.ctqaIssues] = issues;
   fields[F.captureCoordinator] = coordId ? [coordId] : [];
+  // Pricing — Job Rate / CT Rate themselves are formulas and are never written; these are their inputs.
+  fields[F.priceCodeJob] = PC_JOB ? [PC_JOB.id] : [];
+  fields[F.priceCodeCT] = PC_CT ? [PC_CT.id] : [];
+  fields[F.captureSize] = captureSize === "" ? null : Number(captureSize);
+  if(areaUnits) fields[F.areaUnits] = areaUnits;
+  fields[F.adjJobRate] = adjJobRate === "" ? 0 : Number(adjJobRate);
+  fields[F.adjCTRate] = adjCTRate === "" ? 0 : Number(adjCTRate);
+  fields[F.customCTRate] = customCTRate === "" ? 0 : Number(customCTRate);
 
   const saveBtn = $("mSave");
   saveBtn.disabled = true; saveBtn.textContent = "Saving…";
@@ -753,6 +999,8 @@ function wireEvents(){
   $("mCancel").addEventListener("click", closeEditModal);
   $("mSave").addEventListener("click", saveEdit);
   $("editOverlay").addEventListener("click", e=>{ if(e.target.id==="editOverlay") closeEditModal(); });
+  $("mAdjJobRate").addEventListener("input", updateGateWarning);
+  $("mAdjCTRate").addEventListener("input", updateGateWarning);
 }
 
 (async function init(){
