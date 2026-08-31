@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T17:13:46.141Z",
+  "lastUpdated": "2026-08-31T18:08:14.630Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -68,7 +68,7 @@
       "status": "Investigating",
       "date": "8/31",
       "jiraKey": "COP-2094",
-      "note": "Re-verified 9:05 AM 8/31: record 97564 still Pending, Send CT Email = Sent, CT Short Link and Last Email Sent both empty, Scheduling Type still blank. Unchanged since the COP-2094 comment; owed by engineering.",
+      "note": "Re-verified 8/31 10:20 AM: record 97564 unchanged - Send CT Email Sent, no CT Short Link, no Last Email Sent, Job Status Pending. Blank Scheduling Type remains the only property differing from healthy parents.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788185256139?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788185256139&createdTime=1788185256139"
     },
     {
@@ -79,7 +79,7 @@
       "statusCls": "badge-todo",
       "status": "Queued",
       "date": "8/31",
-      "note": "Collaborator single-select re-checked 9:05 AM 8/31: still 13 choices, no Craig. Unowned manual schema edit; escalate to a ticket if unexecuted by 9/2.",
+      "note": "Re-verified 8/31 10:20 AM: Collaborator field still has 13 choices, no Craig. Escalate to a ticket if unexecuted by 9/2.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788187919214?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788187919214&createdTime=1788187919214"
     },
     {
@@ -90,7 +90,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Replied 8/31 that each link field into Global PriceBooks carries its own independent card-preview config ([Price Code Lookup] vs [Price Code Lookup CT] vs GSB), so a change on one card does not surface on the others. Waiting on Kailyn to say whether the size range shows anywhere at all - that decides copy-the-config vs change-never-saved.",
+      "note": "Reply was deleted from the thread; re-sent 8/31. Two separate link fields point at the same pricebook table and each carries its own card-preview config - asked Kailyn whether the size range shows on the CT field or in GSB, or nowhere.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     }
   ]
