@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29T02:06:22.393Z",
+  "lastUpdated": "2026-08-31T14:20:05.116Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Asked which specific Accounting GCB views need [Unit of Travel Distance]; no answer in ~54h. No ticket - blocked on Kailyn.",
+      "note": "Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "Re-verified: Romania and Moldova still absent from the legacy Country Master table, so the CT city picker still cannot see them. Blocked on Ricardo deciding whether to add the two records or repoint the link field.",
+      "note": "COP-2093. Re-verified 8/31: Romania and Moldova still absent from legacy Country Master, so the CT city picker still cannot see them - day 16 unexecuted. Owner Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -45,8 +45,31 @@
       "status": "Waiting on requester",
       "date": "8/28",
       "jiraKey": "COP-2095",
-      "note": "COP-2095 filed - the confirmation body, recipient and CC are already populated on Spec Ops records; only the trigger view excludes them, and 332 historical parents need a date guard. Asked Troy to define what he means by the legacy base before scoping; blocked on his answer.",
+      "note": "COP-2095. Blocked on Troy defining what 'the legacy base' covers before the trigger view change and the 332-parent date guard can be scoped.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787952219060?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787952219060&createdTime=1787952219060"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#6AA84F",
+      "summary": "Cancelled-last-minute charge on JOBID6561645326218412612 (KPS LLC / FRYS 79) reads 2,919.375 instead of the expected 2,335.50.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/31",
+      "note": "Diagnosed: the CLM base is correctly 2,335.50; the extra 583.875 is the off-hours fee surviving the cancellation. Asked Troy whether the fee should be dropped for KPS on a CLM job before anything is changed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788184666176?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788184666176&createdTime=1788184666176"
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#B07AA1",
+      "summary": "JOBID6639922582217107384 (Choice Hotels, Grand Park Inn) will not dispatch - no job request email reaches the tech after hitting Send.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/31",
+      "jiraKey": "COP-2094",
+      "note": "Record 97564 flagged Send CT Email = Sent with CT Short Link and Last Email Sent both empty; sq ft and price codes are fine, so the dispatch step stalled. Blank Scheduling Type is the only property differing from the healthy cohort - Ricardo to confirm from the run history.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788185256139?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788185256139&createdTime=1788185256139"
     }
   ]
 }
