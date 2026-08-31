@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T16:06:31.716Z",
+  "lastUpdated": "2026-08-31T17:13:46.141Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -33,7 +33,7 @@
       "status": "Awaiting fix",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "Airtable formula fields cannot emit rich text, so no formula change can fix it - next move is Ricardo design decision on COP-2092.",
+      "note": "Kailyn asked again 8/31 9:24 AM whether the formatting can be surfaced at all; answered - it cannot while [Derived Scan Requirements] is a formula field. Blocked on Ricardo choosing between rebuilding it as a rich text field written by an automation, or pointing the Jotform at the client rich text field directly.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     },
     {
@@ -81,6 +81,17 @@
       "date": "8/31",
       "note": "Collaborator single-select re-checked 9:05 AM 8/31: still 13 choices, no Craig. Unowned manual schema edit; escalate to a ticket if unexecuted by 9/2.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788187919214?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788187919214&createdTime=1788187919214"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asked for the size tier / sq ft range to be shown again in the card that appears when picking a price code on [Price Code Lookup]. Ricardo added it to the card on 8/27 but she reports she still cannot see it in Parent Base.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/27",
+      "note": "Replied 8/31 that each link field into Global PriceBooks carries its own independent card-preview config ([Price Code Lookup] vs [Price Code Lookup CT] vs GSB), so a change on one card does not surface on the others. Waiting on Kailyn to say whether the size range shows anywhere at all - that decides copy-the-config vs change-never-saved.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     }
   ]
 }
