@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T21:08:15.755Z",
+  "lastUpdated": "2026-08-31T22:06:21.185Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -49,17 +49,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787952219060?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787952219060&createdTime=1787952219060"
     },
     {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#6AA84F",
-      "summary": "Cancelled-last-minute charge on JOBID6561645326218412612 (KPS LLC / FRYS 79) reads 2,919.375 instead of the expected 2,335.50.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/31",
-      "note": "Diagnosed: the CLM base is correctly 2,335.50; the extra 583.875 is the off-hours fee surviving the cancellation. Asked Troy whether the fee should be dropped for KPS on a CLM job before anything is changed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788184666176?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788184666176&createdTime=1788184666176"
-    },
-    {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
@@ -75,10 +64,10 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.",
-      "statusCls": "badge-todo",
+      "statusCls": "badge-waiting",
       "status": "Assigned to Snehal",
       "date": "8/31",
-      "note": "COP-2096 filed and assigned to Snehal Meled at Ricardo’s request; Snehal is coordinating directly with Kailyn. Feasible — the real build is the write-back hop so the second Jotform updates the existing record.",
+      "note": "COP-2096 is In Progress with Snehal, who confirmed in-thread it looks doable and is waiting on further details from UHG; next action is Kailyn's.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
     },
