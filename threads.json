@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T20:09:36.825Z",
+  "lastUpdated": "2026-08-31T21:08:15.755Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -60,29 +60,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788184666176?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788184666176&createdTime=1788184666176"
     },
     {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#B07AA1",
-      "summary": "JOBID6639922582217107384 (Choice Hotels, Grand Park Inn) will not dispatch - no job request email reaches the tech after hitting Send.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "8/31",
-      "jiraKey": "COP-2094",
-      "note": "Dispatched on its own at 20:06 UTC, about 6.5h late - record 97564 is now In Progress with Last Email Sent = \"Job Request Email sent\". The blank Scheduling Type was NOT the cause and that has been retracted on COP-2094 (comment 622737); CT Short Link is still empty. Awaiting Ryan confirming the tech received it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788185256139?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788185256139&createdTime=1788185256139"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#E0A33E",
-      "summary": "Asked for Craig to be added as an option in the Collaborator single-select on the Post-Production Edits table.",
-      "statusCls": "badge-todo",
-      "status": "Queued",
-      "date": "8/31",
-      "note": "Re-verified 8/31 10:20 AM: Collaborator field still has 13 choices, no Craig. Escalate to a ticket if unexecuted by 9/2.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788187919214?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788187919214&createdTime=1788187919214"
-    },
-    {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
@@ -97,23 +74,13 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
-      "summary": "Asking which Airtable field maps to the [CS Property ID] field in Netsuite.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/31",
-      "note": "Confirmed {Property ID} propagates from Global Requests (fldzr87O51Q0767dA) into the Netsuite-facing GCB GLOBAL table (fldeGPTfJNuKf08Sn); awaiting Kailyn confirming the Netsuite-side values match. Ricardo is checking with Sandra on which field Finance actually adopted.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
       "summary": "UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "statusCls": "badge-todo",
+      "status": "Assigned to Snehal",
       "date": "8/31",
-      "note": "Confirmed feasible - Waiting for Approval status already exists and UDR uses it. Real work is the Zap writing back to the existing record rather than creating one. Waiting on Kailyn to say whether to open a ticket now or after she sends the full UHG change list.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147"
+      "note": "COP-2096 filed and assigned to Snehal Meled at Ricardo’s request; Snehal is coordinating directly with Kailyn. Feasible — the real build is the write-back hop so the second Jotform updates the existing record.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
+      "jiraKey": "COP-2096"
     },
     {
       "author": "Troy Lowry",
