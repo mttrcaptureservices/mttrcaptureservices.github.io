@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T18:08:14.630Z",
+  "lastUpdated": "2026-08-31T19:22:04.951Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -92,6 +92,39 @@
       "date": "8/27",
       "note": "Reply was deleted from the thread; re-sent 8/31. Two separate link fields point at the same pricebook table and each carries its own card-preview config - asked Kailyn whether the size range shows on the CT field or in GSB, or nowhere.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asking which Airtable field maps to the [CS Property ID] field in Netsuite.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/31",
+      "note": "Confirmed {Property ID} propagates from Global Requests (fldzr87O51Q0767dA) into the Netsuite-facing GCB GLOBAL table (fldeGPTfJNuKf08Sn); awaiting Kailyn confirming the Netsuite-side values match. Ricardo is checking with Sandra on which field Finance actually adopted.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/31",
+      "note": "Confirmed feasible - Waiting for Approval status already exists and UDR uses it. Real work is the Zap writing back to the existing record rather than creating one. Waiting on Kailyn to say whether to open a ticket now or after she sends the full UHG change list.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#6AA84F",
+      "summary": "CT job invite email shows a details block that he could not find anywhere in Airtable.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
+      "date": "8/31",
+      "note": "Answered and verified against his screenshot - the extra block is {Derived Scan Requirements} (fldMV31Ulxr3c2rsl), sourced from [Scan Requirements] on the ALRIG USA (2) MP Client record and hidden in the default Global Requests view. Nothing is missing; awaiting Troy acknowledging so it can be closed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788203390102?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788203390102&createdTime=1788203390102"
     }
   ]
 }
