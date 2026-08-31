@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T19:22:04.951Z",
+  "lastUpdated": "2026-08-31T20:09:36.825Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -64,11 +64,11 @@
       "initials": "RM",
       "color": "#B07AA1",
       "summary": "JOBID6639922582217107384 (Choice Hotels, Grand Park Inn) will not dispatch - no job request email reaches the tech after hitting Send.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "8/31",
       "jiraKey": "COP-2094",
-      "note": "Re-verified 8/31 10:20 AM: record 97564 unchanged - Send CT Email Sent, no CT Short Link, no Last Email Sent, Job Status Pending. Blank Scheduling Type remains the only property differing from healthy parents.",
+      "note": "Dispatched on its own at 20:06 UTC, about 6.5h late - record 97564 is now In Progress with Last Email Sent = \"Job Request Email sent\". The blank Scheduling Type was NOT the cause and that has been retracted on COP-2094 (comment 622737); CT Short Link is still empty. Awaiting Ryan confirming the tech received it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788185256139?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788185256139&createdTime=1788185256139"
     },
     {
@@ -90,7 +90,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Reply was deleted from the thread; re-sent 8/31. Two separate link fields point at the same pricebook table and each carries its own card-preview config - asked Kailyn whether the size range shows on the CT field or in GSB, or nowhere.",
+      "note": "Re-sent the answer 11:07 AM after the earlier reply was deleted from the thread; Ricardo asked at 12:15 PM whether the card now shows what she expects. Blocked on Kailyn confirming - the card-preview config is per link field, so Price Code Lookup and Price Code Lookup CT each need fldVpUp2h3gRTkHqx added separately.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     },
     {
@@ -123,7 +123,7 @@
       "statusCls": "badge-fix-deployed",
       "status": "Awaiting confirmation",
       "date": "8/31",
-      "note": "Answered and verified against his screenshot - the extra block is {Derived Scan Requirements} (fldMV31Ulxr3c2rsl), sourced from [Scan Requirements] on the ALRIG USA (2) MP Client record and hidden in the default Global Requests view. Nothing is missing; awaiting Troy acknowledging so it can be closed.",
+      "note": "Answered and closed out - the block is {Derived Scan Requirements} fldMV31Ulxr3c2rsl, sourced from [Scan Requirements] on the ALRIG USA (2) MP Client record and hidden in the default Global Requests view. Nothing is missing from Airtable. Awaiting Troy acknowledging.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788203390102?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788203390102&createdTime=1788203390102"
     }
   ]
