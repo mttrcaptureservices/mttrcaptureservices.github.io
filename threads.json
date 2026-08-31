@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T14:20:05.116Z",
+  "lastUpdated": "2026-08-31T15:09:04.853Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -68,8 +68,19 @@
       "status": "Investigating",
       "date": "8/31",
       "jiraKey": "COP-2094",
-      "note": "Record 97564 flagged Send CT Email = Sent with CT Short Link and Last Email Sent both empty; sq ft and price codes are fine, so the dispatch step stalled. Blank Scheduling Type is the only property differing from the healthy cohort - Ricardo to confirm from the run history.",
+      "note": "Record 97564 still Sent with no CT Short Link; blank {Scheduling Type} is the only property differing from 18 healthy Sent parents. Logged as COP-2094 comment; needs Airtable run history to confirm.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788185256139?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788185256139&createdTime=1788185256139"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#E0A33E",
+      "summary": "Asked for Craig to be added as an option in the Collaborator single-select on the Post-Production Edits table.",
+      "statusCls": "badge-todo",
+      "status": "Queued",
+      "date": "8/31",
+      "note": "Confirmed the field has 13 first-name choices and no Craig; a one-line select addition, pending Ricardo making the edit.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788187919214?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788187919214&createdTime=1788187919214"
     }
   ]
 }
