@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T03:50:12.646Z",
+  "lastUpdated": "2026-09-01T14:07:08.992Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -20,7 +20,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/19",
-      "note": "COP-2093. Re-verified 8/31: Romania and Moldova still absent from legacy Country Master, so the CT city picker still cannot see them - day 16 unexecuted. Owner Ricardo.",
+      "note": "Ricardo confirmed 9/1 1:11 AM that country will be handled at the sub tech level in the new version; the legacy-vs-repoint fix is tracked on COP-2093 and owned by him.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
       "jiraKey": "COP-2093"
     },
@@ -33,7 +33,7 @@
       "status": "Awaiting fix",
       "date": "8/28",
       "jiraKey": "COP-2092",
-      "note": "Kailyn asked again 8/31 9:24 AM whether the formatting can be surfaced at all; answered - it cannot while [Derived Scan Requirements] is a formula field. Blocked on Ricardo choosing between rebuilding it as a rich text field written by an automation, or pointing the Jotform at the client rich text field directly.",
+      "note": "Ricardo took this on personally 9/1 1:14 AM - Airtable will not parse enriched formatting from a synced table through a mapping field; he is still researching a workaround.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     },
     {
