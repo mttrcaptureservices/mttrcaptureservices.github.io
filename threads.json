@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T17:06:46.135Z",
+  "lastUpdated": "2026-09-01T18:07:45.629Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -76,8 +76,8 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Netsuite [CS Property ID] on downloadable Usage reports is always empty; asked which Airtable field maps to it so client internal coding can be surfaced on invoices and usage reports.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "8/31",
       "jiraKey": "COP-2097",
       "note": "Airtable side is populated ({Property ID} in Parent Base and GCB GLOBAL), so the break is on the Netsuite end. Ricardo owes a Netsuite screenshot; Kailyn is engaging Sophia and team.",
