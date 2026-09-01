@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T22:05:51.154Z",
+  "lastUpdated": "2026-09-01T23:06:21.059Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -71,6 +71,17 @@
       "jiraKey": "COP-2097",
       "note": "Airtable side is populated ({Property ID} in Parent Base and GCB GLOBAL), so the break is on the Netsuite end. Ricardo owes a Netsuite screenshot; Kailyn is engaging Sophia and team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Welltower: when 'Entire Property' is ordered, auto-populate [Custom Job Rate] with $100, include it in [Job Rate], and hold the Approval Needed email until that $100 is in the quote. Any other order type should leave [Custom Job Rate] at $0.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/1",
+      "note": "Ricardo replied in-thread asking whether the change applies to WIP jobs, newly created jobs only, or completed jobs; awaiting Kailyn. No ticket yet - file once scope is confirmed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409"
     }
   ]
 }
