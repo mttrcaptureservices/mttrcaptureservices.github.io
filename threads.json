@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T18:07:45.629Z",
+  "lastUpdated": "2026-09-01T21:15:49.970Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -47,17 +47,6 @@
       "jiraKey": "COP-2095",
       "note": "COP-2095. Blocked on Troy defining what 'the legacy base' covers before the trigger view change and the 332-parent date guard can be scoped.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787952219060?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787952219060&createdTime=1787952219060"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Asked for the size tier / sq ft range to be shown again in the card that appears when picking a price code on [Price Code Lookup]. Ricardo added it to the card on 8/27 but she reports she still cannot see it in Parent Base.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "8/27",
-      "note": "Confirmed 9/1 it is the Parent base Price Code Lookup card specifically - card layout is configured per link field and per base, so Ricardo still needs the same field added there.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     },
     {
       "author": "Kailyn Jelniker",
