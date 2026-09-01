@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T16:10:33.600Z",
+  "lastUpdated": "2026-09-01T17:06:46.135Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -56,7 +56,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/27",
-      "note": "Kailyn confirmed she means the Parent base Price Code Lookup card; card preview config is per link field and per base, so Ricardo needs to copy the size-range field onto that card.",
+      "note": "Confirmed 9/1 it is the Parent base Price Code Lookup card specifically - card layout is configured per link field and per base, so Ricardo still needs the same field added there.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     },
     {
