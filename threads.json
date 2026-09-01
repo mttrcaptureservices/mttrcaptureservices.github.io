@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T15:05:51.017Z",
+  "lastUpdated": "2026-09-01T16:10:33.600Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -54,9 +54,9 @@
       "color": "#D9734A",
       "summary": "Asked for the size tier / sq ft range to be shown again in the card that appears when picking a price code on [Price Code Lookup]. Ricardo added it to the card on 8/27 but she reports she still cannot see it in Parent Base.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "8/27",
-      "note": "Re-sent the answer 11:07 AM after the earlier reply was deleted from the thread; Ricardo asked at 12:15 PM whether the card now shows what she expects. Blocked on Kailyn confirming - the card-preview config is per link field, so Price Code Lookup and Price Code Lookup CT each need fldVpUp2h3gRTkHqx added separately.",
+      "note": "Kailyn confirmed she means the Parent base Price Code Lookup card; card preview config is per link field and per base, so Ricardo needs to copy the size-range field onto that card.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787851014173?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787851014173&createdTime=1787851014173"
     },
     {
@@ -70,6 +70,18 @@
       "note": "Snehal is on it (COP-2096, In Progress) and confirmed in-thread the split-ordering change looks doable; he is waiting on further requirement details from Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Netsuite [CS Property ID] on downloadable Usage reports is always empty; asked which Airtable field maps to it so client internal coding can be surfaced on invoices and usage reports.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/31",
+      "jiraKey": "COP-2097",
+      "note": "Airtable side is populated ({Property ID} in Parent Base and GCB GLOBAL), so the break is on the Netsuite end. Ricardo owes a Netsuite screenshot; Kailyn is engaging Sophia and team.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
     }
   ]
 }
