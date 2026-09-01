@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T23:05:46.017Z",
+  "lastUpdated": "2026-09-01T03:45:42.110Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -67,20 +67,9 @@
       "statusCls": "badge-waiting",
       "status": "Assigned to Snehal",
       "date": "8/31",
-      "note": "COP-2096 is In Progress with Snehal, who confirmed in-thread it looks doable and is waiting on further details from UHG; next action is Kailyn's.",
+      "note": "Snehal is on it (COP-2096, In Progress) and confirmed in-thread the split-ordering change looks doable; he is waiting on further requirement details from Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#6AA84F",
-      "summary": "CT job invite email shows a details block that he could not find anywhere in Airtable.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "8/31",
-      "note": "Answered and closed out - the block is {Derived Scan Requirements} fldMV31Ulxr3c2rsl, sourced from [Scan Requirements] on the ALRIG USA (2) MP Client record and hidden in the default Global Requests view. Nothing is missing from Airtable. Awaiting Troy acknowledging.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788203390102?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788203390102&createdTime=1788203390102"
     }
   ]
 }
