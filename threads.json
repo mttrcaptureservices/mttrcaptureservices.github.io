@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T17:05:57.591Z",
+  "lastUpdated": "2026-09-02T19:12:47.031Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -69,7 +69,7 @@
       "status": "Awaiting fix",
       "date": "8/31",
       "jiraKey": "COP-2097",
-      "note": "Airtable side is populated ({Property ID} in Parent Base and GCB GLOBAL), so the break is on the Netsuite end. Ricardo owes a Netsuite screenshot; Kailyn is engaging Sophia and team.",
+      "note": "Root is closed but Kailyn asked Ricardo on 9/2 at 11:52 AM for a screenshot of where Netsuite shows [Property ID]. Needs a human with Netsuite access.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
     },
     {
@@ -78,10 +78,11 @@
       "color": "#D9734A",
       "summary": "Welltower: when 'Entire Property' is ordered, auto-populate [Custom Job Rate] with $100, include it in [Job Rate], and hold the Approval Needed email until that $100 is in the quote. Any other order type should leave [Custom Job Rate] at $0.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "9/1",
-      "note": "Blocked on Kailyn: Ricardo asked 9/1 3:21 PM whether the $100 Entire Property rate applies to WIP jobs, new jobs only, or completed jobs too — still unanswered ~18h later. No ticket yet; filing would pre-empt his scoping.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409"
+      "note": "Kailyn confirmed going-forward jobs only, no backfill; COP-2098 filed and assigned to Ricardo. Next action is the build.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409",
+      "jiraKey": "COP-2098"
     },
     {
       "author": "Kailyn Jelniker",
@@ -91,8 +92,19 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting confirmation",
       "date": "9/2",
-      "note": "Answered 9/2: COP-1804 (Complete 8/19) removes the Jotform country-field dependency; guardrails sit on COP-2031 (Adjet) and currency on COP-2088 (Ricardo). Whether the dropdown itself is removed is Ricardo's and Adjet's call.",
+      "note": "Adjet is answering live in-thread. Kailyn's open question is the LOE to delete/hide the country field in Jotform - that is Adjet's and Ricardo's call, not Clark's.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#E07A5F",
+      "summary": "Somerled submitted two new job requests (4 Barkers Branch Rd, Stanton KY and 1519 Havens Drive #A, North Myrtle Beach SC) that produced no request email and do not appear in Airtable.",
+      "statusCls": "badge-investigating",
+      "status": "Awaiting requester",
+      "date": "9/2",
+      "note": "Neither address exists anywhere in Global Requests as of 12:10 PM 9/2; a separate Somerled form submission landed at 11:01 AM, so the path was live. Asked Caitlin to confirm whether the client got a Jotform confirmation for either one.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788375773442?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788375773442&createdTime=1788375773442"
     }
   ]
 }
