@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T19:12:47.031Z",
+  "lastUpdated": "2026-09-02T20:09:11.718Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -90,9 +90,9 @@
       "color": "#D9734A",
       "summary": "Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
+      "status": "Awaiting fix",
       "date": "9/2",
-      "note": "Adjet is answering live in-thread. Kailyn's open question is the LOE to delete/hide the country field in Jotform - that is Adjet's and Ricardo's call, not Clark's.",
+      "note": "Adjet answered 12:14 PM - no LOE yet, the Jotform country field may be removed by mid next week; he owns it and is speaking to the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868"
     },
     {
@@ -100,11 +100,22 @@
       "initials": "CS",
       "color": "#E07A5F",
       "summary": "Somerled submitted two new job requests (4 Barkers Branch Rd, Stanton KY and 1519 Havens Drive #A, North Myrtle Beach SC) that produced no request email and do not appear in Airtable.",
-      "statusCls": "badge-investigating",
-      "status": "Awaiting requester",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "9/2",
-      "note": "Neither address exists anywhere in Global Requests as of 12:10 PM 9/2; a separate Somerled form submission landed at 11:01 AM, so the path was live. Asked Caitlin to confirm whether the client got a Jotform confirmation for either one.",
+      "note": "Caitlin confirmed at 12:12 PM that Somerled got no confirmation emails; asked her to have them resend one and report whether a confirmation comes back. Held loosely - UDR reported the same shape an hour later.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788375773442?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788375773442&createdTime=1788375773442"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#E07A5F",
+      "summary": "UDR report that approvers confirmed job approvals by email but the jobs still read Waiting for Approval in Airtable, and that roughly 9-10 job requests submitted today are missing with no confirmation emails.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/2",
+      "note": "Ricardo is working it live in-thread - he asked for a Job ID at 1:04 PM and Caitlin supplied several. No ticket yet; Clark stood down to avoid duplicate effort.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788378934669?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788378934669&createdTime=1788378934669"
     }
   ]
 }
