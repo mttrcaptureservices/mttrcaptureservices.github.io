@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T14:11:36.015Z",
+  "lastUpdated": "2026-09-02T15:08:04.658Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,7 +80,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "9/1",
-      "note": "Kailyn has not yet answered the scoping question about whether this applies to WIP, new-only or completed jobs; no ticket filed until she does.",
+      "note": "Ricardo asked 9/1 3:21 PM whether the $100 auto-rate applies to WIP jobs, new jobs only, or completed jobs too; Kailyn has not answered ~17h later, so scoping is blocked on her before a ticket can be filed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409"
     }
   ]
