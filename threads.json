@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T21:12:48.787Z",
+  "lastUpdated": "2026-09-02T22:11:31.292Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -92,40 +92,18 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/2",
-      "note": "Adjet answered 12:14 PM - no LOE yet, the Jotform country field may be removed by mid next week; he owns it and is speaking to the team.",
+      "note": "Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#E07A5F",
-      "summary": "Somerled reported 2 new job requests submitted today that produced no request email and no Airtable record. Root cause found: the on-contract Zap is failing at the create-child-record step.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting fix",
-      "date": "9/2",
-      "note": "Snehal traced it to the on-contract Zap erroring on a missing {Static Job ID}; Ricardo is updating the Zap. Verify a resubmitted job lands in Global Requests once the fix is in.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788375773442?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788375773442&createdTime=1788375773442"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#E07A5F",
-      "summary": "UDR reported ~9-10 job requests submitted today missing from Airtable with no confirmation emails, and approvals not clearing. Same root cause as the Somerled thread.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting fix",
-      "date": "9/2",
-      "note": "Same on-contract Zap failure (missing {Static Job ID}). Ricardo owns the Zap fix and is answering UDR questions in-thread directly.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788378934669?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788378934669&createdTime=1788378934669"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "The CT Dashboard is reporting far lower SpecOps figures than Airtable for July and August 2026 - $68K vs $234K in July and $51K vs $187K in August.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "9/2",
-      "note": "Roughly a third of the Airtable totals in both months, so likely a scoping or filter problem in the dashboard aggregation. Airtable and Jira MCP are both 403 this run, so the figures could not be verified and no ticket is filed yet.",
+      "note": "Ricardo found the issue and explained it at 2:58 PM - the Airtable totals include legacy Spec Ops base records (Roche jobs, held in CS - Global Customer Base) that are not in Parent base. Awaiting Kailyn confirming that reconciles her figures; no ticket needed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788381342885?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788381342885&createdTime=1788381342885"
     }
   ]
