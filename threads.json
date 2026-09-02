@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T16:10:26.868Z",
+  "lastUpdated": "2026-09-02T17:05:57.591Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,7 +80,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "9/1",
-      "note": "Ricardo asked 9/1 3:21 PM whether the $100 auto-rate applies to WIP jobs, new jobs only, or completed jobs too; Kailyn has not answered ~17h later, so scoping is blocked on her before a ticket can be filed.",
+      "note": "Blocked on Kailyn: Ricardo asked 9/1 3:21 PM whether the $100 Entire Property rate applies to WIP jobs, new jobs only, or completed jobs too — still unanswered ~18h later. No ticket yet; filing would pre-empt his scoping.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409"
     },
     {
@@ -91,7 +91,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting confirmation",
       "date": "9/2",
-      "note": "Answered Tier 1 - COP-1804 (derive Country/Market from the capture address) closed Done 8/19; guardrails on COP-2031 (Adjet, In Testing) and currency on COP-2088 (Ricardo, In Progress). Removing the field itself is Ricardo/Adjet’s call.",
+      "note": "Answered 9/2: COP-1804 (Complete 8/19) removes the Jotform country-field dependency; guardrails sit on COP-2031 (Adjet) and currency on COP-2088 (Ricardo). Whether the dropdown itself is removed is Ricardo's and Adjet's call.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868"
     }
   ]
