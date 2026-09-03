@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T04:14:34.155Z",
+  "lastUpdated": "2026-09-03T14:12:52.764Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -105,6 +105,17 @@
       "date": "9/2",
       "note": "Ricardo found the issue and explained it at 2:58 PM - the Airtable totals include legacy Spec Ops base records (Roche jobs, held in CS - Global Customer Base) that are not in Parent base. Awaiting Kailyn confirming that reconciles her figures; no ticket needed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788381342885?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788381342885&createdTime=1788381342885"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#14b8a6",
+      "summary": "Two Airbnb property IDs sit under one host at adjacent addresses and the CT scanned both. Asks whether the Scheduled job record can be duplicated so the two models can be delivered as separate records, and whether duplicating would fire automated emails.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/2",
+      "note": "Advised against a manual duplicate - the deployed 'Airbnb Dupes Removal' automation on CS - International hard-deletes Airbnb records entering its trigger view. Asked Ricardo whether the second listing should come in as its own request; blocked on his call.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
     }
   ]
 }
