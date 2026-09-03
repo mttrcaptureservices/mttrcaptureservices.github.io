@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T16:06:19.610Z",
+  "lastUpdated": "2026-09-03T18:10:14.530Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -101,9 +101,9 @@
       "color": "#D9734A",
       "summary": "The CT Dashboard is reporting far lower SpecOps figures than Airtable for July and August 2026 - $68K vs $234K in July and $51K vs $187K in August.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
+      "status": "Awaiting fix",
       "date": "9/2",
-      "note": "Ricardo found the issue and explained it at 2:58 PM - the Airtable totals include legacy Spec Ops base records (Roche jobs, held in CS - Global Customer Base) that are not in Parent base. Awaiting Kailyn confirming that reconciles her figures; no ticket needed.",
+      "note": "Ricardo traced it to child-level pricing (UDR, Zumper) being excluded by the dashboard calculation and is fixing it himself; nothing owed by support.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788381342885?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788381342885&createdTime=1788381342885"
     },
     {
@@ -116,6 +116,29 @@
       "date": "9/2",
       "note": "Advised against hand-duplicating the Airbnb record (a deployed automation hard-deletes Airbnb duplicates); asked Ricardo whether the second listing should come in as its own billable request — blocked on him.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#E8813A",
+      "summary": "A new Johnson Controls job (JOBID6641747573114289050) came in with two identical parent records plus two children, so the client rate and CT payout are duplicated.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/3",
+      "jiraKey": "COP-2099",
+      "note": "Confirmed duplicate parent (records 99005 and 99006, both fully priced); COP-2099 assigned to Ricardo to remove the duplicate and add an intake guard.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788451790561?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788451790561&createdTime=1788451790561"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/3",
+      "note": "Ricardo answered in-thread: it is a set of conditionals rather than a field, he offered to build one in Parent base and suggested Global Customer Base for analytics. He owns the next action.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609"
     }
   ]
 }
