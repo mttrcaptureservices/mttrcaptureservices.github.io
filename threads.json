@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T19:07:09.272Z",
+  "lastUpdated": "2026-09-03T20:06:40.269Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -101,9 +101,9 @@
       "color": "#14b8a6",
       "summary": "Two Airbnb property IDs sit under one host at adjacent addresses and the CT scanned both. Asks whether the Scheduled job record can be duplicated so the two models can be delivered as separate records, and whether duplicating would fire automated emails.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
+      "status": "Waiting on requester",
       "date": "9/2",
-      "note": "Advised against hand-duplicating the Airbnb record (a deployed automation hard-deletes Airbnb duplicates); asked Ricardo whether the second listing should come in as its own billable request — blocked on him.",
+      "note": "Ricardo answered in-thread on 9/3 and asked Juyoung whether the model URLs can be comma-separated in one line item rather than adding a second record; he owns it, next action is hers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
     },
     {
