@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T22:29:22.806Z",
+  "lastUpdated": "2026-09-03T22:41:39.801Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -133,11 +133,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
-      "summary": "Bulk ingester upload did not produce records in Airtable. A replay pushed the jobs to Scheduled but Kailyn still could not see them, and the run errored at step 15.",
+      "summary": "Bulk ingester upload produced no records in Airtable. Snehal traced it to a Zapier timeout on the empty lines in the upload; Adjet found that Ricardo's fix to ignore empty lines was never deployed.",
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/3",
-      "note": "Snehal and Adjet are working this live in-thread as of 3:24 PM; Adjet owes the next action. Clark stood down - no reply sent.",
+      "note": "Adjet and Snehal are working it live in-thread (Action 2 updated, zap now v35); Kailyn asked whether she can hand-create rows meanwhile and Adjet asked her to hold. Adjet owes the next action.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788467351889?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788467351889&createdTime=1788467351889"
     }
   ]
