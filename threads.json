@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T22:41:39.801Z",
+  "lastUpdated": "2026-09-03T23:06:06.613Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -128,17 +128,6 @@
       "jiraKey": "COP-2100",
       "note": "Airtable confirms the gap - only two Gallina jobs since 7/9 (7/9 and 8/28) and nothing since; the 7/16 Deer Creek order is absent under any client. Next action is the Jotform submission log for form 221910903453955, which Clark cannot reach - Ricardo owns COP-2100.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788469271388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788469271388&createdTime=1788469271388"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Bulk ingester upload produced no records in Airtable. Snehal traced it to a Zapier timeout on the empty lines in the upload; Adjet found that Ricardo's fix to ignore empty lines was never deployed.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/3",
-      "note": "Adjet and Snehal are working it live in-thread (Action 2 updated, zap now v35); Kailyn asked whether she can hand-create rows meanwhile and Adjet asked her to hold. Adjet owes the next action.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788467351889?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788467351889&createdTime=1788467351889"
     }
   ]
 }
