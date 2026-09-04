@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T23:06:06.613Z",
+  "lastUpdated": "2026-09-04T01:07:32.242Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -101,9 +101,9 @@
       "color": "#14b8a6",
       "summary": "Two Airbnb property IDs sit under one host at adjacent addresses and the CT scanned both. Asks whether the Scheduled job record can be duplicated so the two models can be delivered as separate records, and whether duplicating would fire automated emails.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting decision",
       "date": "9/2",
-      "note": "Ricardo answered in-thread on 9/3 and asked Juyoung whether the model URLs can be comma-separated in one line item rather than adding a second record; he owns it, next action is hers.",
+      "note": "Juyoung answered Ricardo at 5:56 PM 9/3 - Finance will not approve a Custom Fee for the second listing, so she needs two billable jobs or written customer approval. Ricardo owes the policy call.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
     },
     {
@@ -128,6 +128,18 @@
       "jiraKey": "COP-2100",
       "note": "Airtable confirms the gap - only two Gallina jobs since 7/9 (7/9 and 8/28) and nothing since; the 7/16 Deer Creek order is absent under any client. Next action is the Jotform submission log for form 221910903453955, which Clark cannot reach - Ricardo owns COP-2100.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788469271388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788469271388&createdTime=1788469271388"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#9B59B6",
+      "summary": "Two 9/3 jobs came in with incomplete record sets - JOBID6642803852608820893 has two floor-plan line items but no Parent Record, and JOBID6642752753221267875 has a parent with no children. Neither can price or dispatch.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/3",
+      "jiraKey": "COP-2101",
+      "note": "Filed COP-2101 and asked Caitlin whether anyone replayed or re-pushed Zap runs for either job today - that is the one cause invisible in the record data. Assigned to Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788479243358?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788479243358&createdTime=1788479243358"
     }
   ]
 }
