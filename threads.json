@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T21:13:09.533Z",
+  "lastUpdated": "2026-09-04T22:12:01.850Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -150,7 +150,7 @@
       "status": "Waiting on requester",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Backfill covered the 159 parents only (now Waiting for Approval); the 159 unit-level children are still blank. Stephenie owes Adjet the bulk upload template file link.",
+      "note": "Parent records backfilled to Waiting for Approval; re-verified 9/4 3:07 PM PT that all 159 unit-level child records are still blank, so they stay hidden from status-filtered views until the same value is set on them. Blocked on the child backfill, plus Stephenie owing Adjet the bulk upload template file link.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     },
     {
@@ -163,18 +163,6 @@
       "date": "9/4",
       "note": "Ricardo picked it up live in-thread and asked her to forward him one of the emails; she did. Blocked on Ricardo to confirm what triggers them and whether coordinators should act. No ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788551376815?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788551376815&createdTime=1788551376815"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#E8A33D",
-      "summary": "Two JLL (8) jobs never dispatched to his techs - JPMC6641894333243402863 (parent 99023) and JOBID6642575144788200348 (parent 99098). Both sat Pending for ~29h and ~24h with no job request email.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "9/4",
-      "note": "Short links have now been generated on both parents (99023, 99098); Ricardo asked Freddy at 1:58 PM to trigger the CT email send. Send CT Email still blank on both.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788551988029?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788551988029&createdTime=1788551988029",
-      "jiraKey": "COP-2094"
     }
   ]
 }
