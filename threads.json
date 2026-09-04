@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T22:12:01.850Z",
+  "lastUpdated": "2026-09-04T23:07:02.852Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -150,19 +150,8 @@
       "status": "Waiting on requester",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Parent records backfilled to Waiting for Approval; re-verified 9/4 3:07 PM PT that all 159 unit-level child records are still blank, so they stay hidden from status-filtered views until the same value is set on them. Blocked on the child backfill, plus Stephenie owing Adjet the bulk upload template file link.",
+      "note": "Parent backfill to Waiting for Approval holds; 159 unit-level child records still carry a blank Job Status, unchanged since the last check. Blocked on Stephenie for the bulk upload template link, and on the child backfill.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Asking what the automated \"Job-Request CT Decision received for Billable job\" emails are for, and whether coordinators are expected to action them. She is getting several a week and 3 on 9/4 alone.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "9/4",
-      "note": "Ricardo picked it up live in-thread and asked her to forward him one of the emails; she did. Blocked on Ricardo to confirm what triggers them and whether coordinators should act. No ticket.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788551376815?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788551376815&createdTime=1788551376815"
     }
   ]
 }
