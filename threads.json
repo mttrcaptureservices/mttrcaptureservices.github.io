@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T14:08:50.917Z",
+  "lastUpdated": "2026-09-04T15:14:43.519Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -140,6 +140,18 @@
       "jiraKey": "COP-2101",
       "note": "Filed COP-2101 and asked Caitlin whether anyone replayed or re-pushed Zap runs for either job today - that is the one cause invisible in the record data. Assigned to Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788479243358?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788479243358&createdTime=1788479243358"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E8735A",
+      "summary": "Reported that her Livit bulk upload had not appeared in Airtable. It had in fact landed in full - all 159 rows are in as records 100129-100446 - but one row is duplicated in the file, so that job now carries two parent records.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/4",
+      "jiraKey": "COP-2099",
+      "note": "Stephenie owes confirmation of which of the two duplicate P4018.03.0001 parent records to keep so the other can be removed; logged on COP-2099 as a fourth duplicate-parent cause.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     }
   ]
 }
