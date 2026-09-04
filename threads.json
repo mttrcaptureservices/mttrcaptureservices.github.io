@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T06:24:40.477Z",
+  "lastUpdated": "2026-09-04T14:08:50.917Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -99,11 +99,11 @@
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#14b8a6",
-      "summary": "Two Airbnb property IDs sit under one host at adjacent addresses and the CT scanned both. Asks whether the Scheduled job record can be duplicated so the two models can be delivered as separate records, and whether duplicating would fire automated emails.",
+      "summary": "Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
+      "status": "Waiting on requester",
       "date": "9/2",
-      "note": "Juyoung answered Ricardo at 5:56 PM 9/3 - Finance will not approve a Custom Fee for the second listing, so she needs two billable jobs or written customer approval. Ricardo owes the policy call.",
+      "note": "Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
     },
     {
@@ -140,17 +140,6 @@
       "jiraKey": "COP-2101",
       "note": "Filed COP-2101 and asked Caitlin whether anyone replayed or re-pushed Zap runs for either job today - that is the one cause invisible in the record data. Assigned to Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788479243358?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788479243358&createdTime=1788479243358"
-    },
-    {
-      "author": "Ricardo Guzman",
-      "initials": "RG",
-      "color": "#4A90D9",
-      "summary": "Ricardo asked for two AT Bulk Importer files to be loaded into Global Requests. Both batches have now been imported.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "9/3",
-      "note": "Second file imported on his go-ahead: 8 parent/child pairs, records 100113-100128, nothing skipped. Clark to confirm all 8 parent price codes resolved on the next pass.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788498410019?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788498410019&createdTime=1788498410019"
     }
   ]
 }
