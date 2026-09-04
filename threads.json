@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T18:50:34.972Z",
+  "lastUpdated": "2026-09-04T18:59:02.657Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -122,8 +122,8 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "The Gallina Companies say CapServ orders placed through their on-contract Jotform since July have not been arriving - no email receipt and no Airtable record. Named example is a 7/16 order for Deer Creek with 3 units.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/3",
       "jiraKey": "COP-2100",
       "note": "Airtable confirms the gap - only two Gallina jobs since 7/9 (7/9 and 8/28) and nothing since; the 7/16 Deer Creek order is absent under any client. Next action is the Jotform submission log for form 221910903453955, which Clark cannot reach - Ricardo owns COP-2100.",
@@ -150,7 +150,7 @@
       "status": "Awaiting fix",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Root cause confirmed: the AT Bulk Importer Zap did not map Job Status, which should have been Waiting for Approval. Adjet is checking the Zap mapping; the 318 records (100129-100446) still need backfilling. The separate P4018.03.0001 duplicate-parent question is settled - Livit reuses one Job ID across two different addresses, so both parents are legitimate.",
+      "note": "Adjet Kodia picked it up in-thread at 11:51 AM and is fixing the Zap field mapping; the 318 imported records still read a blank Job Status and need backfilling to Waiting for Approval.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     }
   ]
