@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T19:05:11.348Z",
+  "lastUpdated": "2026-09-04T20:12:52.053Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -147,11 +147,33 @@
       "color": "#E8735A",
       "summary": "Bulk upload of 159 Livit AG jobs loaded into Airtable but is invisible in her view. All 318 created records came in with a blank Job Status, so every status-filtered view hides them.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "status": "Waiting on requester",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Adjet Kodia picked it up in-thread at 11:51 AM and is fixing the Zap field mapping; the 318 imported records still read a blank Job Status and need backfilling to Waiting for Approval.",
+      "note": "Adjet is on the Zap mapping fix; he asked Stephenie at 12:26 PM 9/4 for the bulk upload template file link, so it is blocked on her. The 318 records (100129-100446) still read a blank Job Status and need backfilling to Waiting for Approval.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asking what the automated \"Job-Request CT Decision received for Billable job\" emails are for, and whether coordinators are expected to action them. She is getting several a week and 3 on 9/4 alone.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "9/4",
+      "note": "Ricardo picked it up live in-thread and asked her to forward him one of the emails; she did. Blocked on Ricardo to confirm what triggers them and whether coordinators should act. No ticket.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788551376815?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788551376815&createdTime=1788551376815"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E8A33D",
+      "summary": "Two JLL (8) jobs never dispatched to his techs - JPMC6641894333243402863 (parent 99023) and JOBID6642575144788200348 (parent 99098). Both sat Pending for ~29h and ~24h with no job request email.",
+      "statusCls": "badge-investigating",
+      "status": "Awaiting fix",
+      "date": "9/4",
+      "note": "Records are clean (sq ft, both price codes, Scheduling City, CT assigned, CT Long Link fully formed) but Send CT Email was never set at all - the dispatch step never ran. Not latency: 13 preceding JLL parents dispatched and base intake was healthy 44 min before he posted. Logged on COP-2094 comment 623821; needs the Airtable run history and someone to push both jobs out.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788551988029?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788551988029&createdTime=1788551988029"
     }
   ]
 }
