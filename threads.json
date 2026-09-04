@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T05:38:52.025Z",
+  "lastUpdated": "2026-09-04T06:04:53.353Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -145,11 +145,11 @@
       "author": "Ricardo Guzman",
       "initials": "RG",
       "color": "#4A90D9",
-      "summary": "Asked for a test bulk upload of an AT Bulk Importer CSV (Welltower (12), one line item, flagged DO NOT BILL).",
+      "summary": "Bulk upload test in the channel. First file imported (records 100111/100112 on TESTWELLTOWER12ATNSDISCREP); a second file with 8 Southern Tire Mart (4) line items has since been posted.",
       "statusCls": "badge-waiting",
       "status": "Awaiting confirmation",
       "date": "9/3",
-      "note": "Approved and executed - records 100111 (Parent Record) and 100112 created on Job ID TESTWELLTOWER12ATNSDISCREP. Flagged to Ricardo that both records show Expired Contract rather than the Pending in the file, and that no price code will resolve without capture size or property type.",
+      "note": "Pre-flight done on the second file: 8 new parent/child pairs, client and country resolve, nothing skipped. Waiting on Ricardo's go-ahead to run it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788498410019?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788498410019&createdTime=1788498410019"
     }
   ]
