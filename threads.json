@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T02:05:58.529Z",
+  "lastUpdated": "2026-09-04T05:28:14.389Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -140,6 +140,17 @@
       "jiraKey": "COP-2101",
       "note": "Filed COP-2101 and asked Caitlin whether anyone replayed or re-pushed Zap runs for either job today - that is the one cause invisible in the record data. Assigned to Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788479243358?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788479243358&createdTime=1788479243358"
+    },
+    {
+      "author": "Ricardo Guzman",
+      "initials": "RG",
+      "color": "#4A90D9",
+      "summary": "Posted a test AT Bulk Importer CSV and asked for it to be bulk uploaded into Global Requests. One line item: Welltower (12), Job ID TESTWELLTOWER12ATNSDISCREP, flagged DO NOT BILL.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting approval",
+      "date": "9/3",
+      "note": "File parses clean - 1 row, MP Client / Country / Currency all resolve, and the Job ID is not yet in Global Requests, so it would be one new parent/child pair with nothing skipped. Held per the standing rule that a bulk import needs Ricardo's explicit go-ahead; Ricardo owes the go/no-go.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788498410019?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788498410019&createdTime=1788498410019"
     }
   ]
 }
