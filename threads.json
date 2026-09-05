@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T23:07:02.852Z",
+  "lastUpdated": "2026-09-05T00:08:07.969Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -150,7 +150,7 @@
       "status": "Waiting on requester",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Parent backfill to Waiting for Approval holds; 159 unit-level child records still carry a blank Job Status, unchanged since the last check. Blocked on Stephenie for the bulk upload template link, and on the child backfill.",
+      "note": "Parent backfill to Waiting for Approval holds; the 159 unit-level child records still read a blank Job Status, re-verified unchanged for a third run. Also waiting on Stephenie for the bulk upload template file link.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     }
   ]
