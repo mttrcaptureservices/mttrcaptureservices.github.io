@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T00:08:07.969Z",
+  "lastUpdated": "2026-09-05T01:08:57.309Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -130,18 +130,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788469271388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788469271388&createdTime=1788469271388"
     },
     {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#9B59B6",
-      "summary": "Two 9/3 jobs came in with incomplete record sets - JOBID6642803852608820893 has two floor-plan line items but no Parent Record, and JOBID6642752753221267875 has a parent with no children. Neither can price or dispatch.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "9/3",
-      "jiraKey": "COP-2101",
-      "note": "Filed COP-2101 and asked Caitlin whether anyone replayed or re-pushed Zap runs for either job today - that is the one cause invisible in the record data. Assigned to Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788479243358?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788479243358&createdTime=1788479243358"
-    },
-    {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8735A",
@@ -150,7 +138,7 @@
       "status": "Waiting on requester",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Parent backfill to Waiting for Approval holds; the 159 unit-level child records still read a blank Job Status, re-verified unchanged for a third run. Also waiting on Stephenie for the bulk upload template file link.",
+      "note": "Parent backfill to Waiting for Approval holds; the 159 unit-level CHILD records still read a blank Job Status - re-verified unchanged for a fourth consecutive run (9/4 6:10 PM PT), so no new ticket comment. Also still waiting on Stephenie for the bulk upload template file link.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     }
   ]
