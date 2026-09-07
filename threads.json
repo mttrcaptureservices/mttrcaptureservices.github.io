@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T06:16:22.914Z",
+  "lastUpdated": "2026-09-07T14:16:35.146Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -118,28 +118,27 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "The Gallina Companies say CapServ orders placed through their on-contract Jotform since July have not been arriving - no email receipt and no Airtable record. Named example is a 7/16 order for Deer Creek with 3 units.",
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E8735A",
+      "summary": "Livit AG bulk upload of 159 rows created 318 records with a blank Job Status, hiding the whole batch from every status-filtered view.",
       "statusCls": "badge-waiting",
-      "status": "Root cause found",
-      "date": "9/3",
-      "jiraKey": "COP-2100",
-      "note": "Root cause confirmed 9/4 6:22 PM: the 3 missing orders were submitted on a legacy long-form URL whose MP Client parameter read 'The Gallina Company' with no bracketed suffix, so Zapier could not resolve the client record and dropped them silently. Ricardo is importing the 3 orders manually; residual scope (silent drop, stale-URL audit, name-matching fallback, zero-intake alert) recorded on COP-2100.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788469271388?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788469271388&createdTime=1788469271388"
+      "status": "Assigned to Adjet",
+      "date": "9/4",
+      "jiraKey": "COP-2103",
+      "note": "All Livit records now carry a Job Status (parents and the 159 children). Ricardo asked Clark to disengage; Adjet Kodia owns the close-out and the root cause.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8735A",
-      "summary": "Bulk upload of 159 Livit AG jobs loaded into Airtable but is invisible in her view. All 318 created records came in with a blank Job Status, so every status-filtered view hides them.",
+      "summary": "A scheduled Livit job in Lausanne is assigned to capture tech Sandrine Thibon but is not showing on the shared Airtable view the tech uses.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "9/4",
-      "jiraKey": "COP-2103",
-      "note": "Parent backfill holds; the 159 unit-level children are still blank on {Job Status} - unchanged for a fifth consecutive run. Also still waiting on Stephenie for the source template file link.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
+      "date": "9/7",
+      "note": "The job is present in both synced tables with the right tech and rate, so it is a view filter rather than a sync failure. Asked Stephenie whether that view shows Scheduled jobs or only Complete ones.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788785945415?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788785945415&createdTime=1788785945415"
     }
   ]
 }
