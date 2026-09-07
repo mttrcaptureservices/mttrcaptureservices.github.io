@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-07T14:16:35.146Z",
+  "lastUpdated": "2026-09-07T18:08:24.244Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -133,12 +133,13 @@
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E8735A",
-      "summary": "A scheduled Livit job in Lausanne is assigned to capture tech Sandrine Thibon but is not showing on the shared Airtable view the tech uses.",
+      "summary": "A scheduled Livit job in Lausanne is assigned to capture tech Sandrine Thibon but is not showing on the shared Airtable view the tech uses. She has since asked that Scheduled and Cancelled Last Minute jobs be shown there too.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting decision",
       "date": "9/7",
-      "note": "The job is present in both synced tables with the right tech and rate, so it is a view filter rather than a sync failure. Asked Stephenie whether that view shows Scheduled jobs or only Complete ones.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788785945415?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788785945415&createdTime=1788785945415"
+      "note": "Not a sync failure - the per-CT scheduling views filter to Complete only, and the same filter sits on all 268 views, so Ricardo owes a decision on which statuses to include before it is rolled out.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788785945415?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788785945415&createdTime=1788785945415",
+      "jiraKey": "COP-2104"
     }
   ]
 }
