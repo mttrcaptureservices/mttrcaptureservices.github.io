@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T19:08:21.957Z",
+  "lastUpdated": "2026-09-08T20:08:11.711Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -30,9 +30,9 @@
       "color": "#D9734A",
       "summary": "UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.",
       "statusCls": "badge-waiting",
-      "status": "Assigned to Snehal",
+      "status": "Waiting on requester",
       "date": "8/31",
-      "note": "Snehal is on it (COP-2096, In Progress) and confirmed in-thread the split-ordering change looks doable; he is waiting on further requirement details from Kailyn.",
+      "note": "Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
     },
@@ -86,10 +86,10 @@
       "initials": "FA",
       "color": "#E67E22",
       "summary": "Five jobs came in with no square footage on the Parent Record, so the client travel fee is not calculating and there is no CT payout price code.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "9/8",
-      "note": "Ricardo replied in-thread that automations are lagging today and is looking into it; he owns the next action.",
+      "note": "Verified 1:05 PM: all five parents now carry square footage and both price code lookups resolved, CT email sent, jobs In Progress. Automation queue lag has drained; awaiting Ricardo's close-out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788891490012?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788891490012&createdTime=1788891490012"
     }
   ]
