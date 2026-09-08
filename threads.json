@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T20:08:11.711Z",
+  "lastUpdated": "2026-09-08T21:07:13.614Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -85,11 +85,11 @@
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#E67E22",
-      "summary": "Five jobs came in with no square footage on the Parent Record, so the client travel fee is not calculating and there is no CT payout price code.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
+      "summary": "Five jobs came in with no square footage on the Parent Record, so no client travel fee and no CT payout price code. Kevin Curtis reported the same symptom on a Vacasa job in the same thread.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/8",
-      "note": "Verified 1:05 PM: all five parents now carry square footage and both price code lookups resolved, CT email sent, jobs In Progress. Automation queue lag has drained; awaiting Ricardo's close-out.",
+      "note": "Ricardo confirmed a base-wide automation backlog and owns it live (1:45 PM). Freddy's five have all recovered and dispatched; Kevin's VAC105-6644426821874758910 (parent 100505) is also dispatched with price codes resolved. Next action is Ricardo's close-out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788891490012?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788891490012&createdTime=1788891490012"
     }
   ]
