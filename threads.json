@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T02:06:15.762Z",
+  "lastUpdated": "2026-09-08T14:07:12.285Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -28,30 +28,6 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
-      "summary": "Rich-text formatting (bold, bullets) added to [Scan Requirements] on MP Client Data does not reach the job record’s [Derived Scan Requirements], so it never renders in the Job Acceptance Jotform or CT emails. Also asked whether [Additional Details] can be made formattable at the job level.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "8/28",
-      "jiraKey": "COP-2092",
-      "note": "Ricardo took this on personally 9/1 1:14 AM - Airtable will not parse enriched formatting from a synced table through a mapping field; he is still researching a workaround.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#6AA84F",
-      "summary": "Wants a client confirmation email to go out on Spec Ops Jotform submissions, matching the enterprise submission confirmation, across both 2.0 and the legacy path.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/28",
-      "jiraKey": "COP-2095",
-      "note": "COP-2095. Blocked on Troy defining what 'the legacy base' covers before the trigger view change and the 332-parent date guard can be scoped.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787952219060?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787952219060&createdTime=1787952219060"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
       "summary": "UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.",
       "statusCls": "badge-waiting",
       "status": "Assigned to Snehal",
@@ -71,18 +47,6 @@
       "jiraKey": "COP-2097",
       "note": "Root is closed but Kailyn asked Ricardo on 9/2 at 11:52 AM for a screenshot of where Netsuite shows [Property ID]. Needs a human with Netsuite access.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Welltower: when 'Entire Property' is ordered, auto-populate [Custom Job Rate] with $100, include it in [Job Rate], and hold the Approval Needed email until that $100 is in the quote. Any other order type should leave [Custom Job Rate] at $0.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/1",
-      "note": "Kailyn confirmed going-forward jobs only, no backfill; COP-2098 filed and assigned to Ricardo. Next action is the build.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409",
-      "jiraKey": "COP-2098"
     },
     {
       "author": "Kailyn Jelniker",
@@ -128,18 +92,6 @@
       "jiraKey": "COP-2103",
       "note": "Ricardo instructed Clark to disengage and let Adjet Kodia close this case out; Stephenie's follow-up filter question self-resolved 9/6 11:23 PM (she filtered on Job Status is empty and found the 159 children). Adjet owes the close-out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8735A",
-      "summary": "A scheduled Livit job in Lausanne is assigned to capture tech Sandrine Thibon but is not showing on the shared Airtable view the tech uses. She has since asked that Scheduled and Cancelled Last Minute jobs be shown there too.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "9/7",
-      "note": "Not a sync failure - the per-CT scheduling views filter to Complete only, and the same filter sits on all 268 views, so Ricardo owes a decision on which statuses to include before it is rolled out.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788785945415?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788785945415&createdTime=1788785945415",
-      "jiraKey": "COP-2104"
     }
   ]
 }
