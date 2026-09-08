@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T18:06:23.198Z",
+  "lastUpdated": "2026-09-08T19:08:21.957Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -35,18 +35,6 @@
       "note": "Snehal is on it (COP-2096, In Progress) and confirmed in-thread the split-ordering change looks doable; he is waiting on further requirement details from Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Netsuite [CS Property ID] on downloadable Usage reports is always empty; asked which Airtable field maps to it so client internal coding can be surfaced on invoices and usage reports.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "8/31",
-      "jiraKey": "COP-2097",
-      "note": "Root is closed but Kailyn asked Ricardo on 9/2 at 11:52 AM for a screenshot of where Netsuite shows [Property ID]. Needs a human with Netsuite access.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788201657856?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788201657856&createdTime=1788201657856"
     },
     {
       "author": "Kailyn Jelniker",
@@ -92,6 +80,17 @@
       "jiraKey": "COP-2103",
       "note": "Ricardo instructed Clark to disengage and let Adjet Kodia close this case out; Stephenie's follow-up filter question self-resolved 9/6 11:23 PM (she filtered on Job Status is empty and found the 159 children). Adjet owes the close-out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#E67E22",
+      "summary": "Five jobs came in with no square footage on the Parent Record, so the client travel fee is not calculating and there is no CT payout price code.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/8",
+      "note": "Ricardo replied in-thread that automations are lagging today and is looking into it; he owns the next action.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788891490012?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788891490012&createdTime=1788891490012"
     }
   ]
 }
