@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T22:09:24.608Z",
+  "lastUpdated": "2026-09-09T23:08:49.479Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,18 +80,6 @@
       "jiraKey": "COP-2103",
       "note": "Adjet Kodia owns this; COP-2103 moved To Do to In Progress on 9/9. Ricardo instructed no further engagement from support monitoring on this case.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#0F766E",
-      "summary": "Two JLL (8) jobs arrived with no square footage on the parent record, so no price code resolved and neither dispatched to a tech.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "9/9",
-      "jiraKey": "COP-2105",
-      "note": "Both parents dispatched after Ricardo corrected Children Submitted; Snehal is adding that logic to the JLL Zap. Child unit 2 on the first job is still 0 sq ft.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788983927201?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788983927201&createdTime=1788983927201"
     },
     {
       "author": "Caitlin Suh",
