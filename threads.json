@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T18:19:52.519Z",
+  "lastUpdated": "2026-09-09T19:07:34.317Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -78,7 +78,7 @@
       "status": "Assigned to Adjet",
       "date": "9/4",
       "jiraKey": "COP-2103",
-      "note": "Ricardo instructed Clark to disengage and let Adjet Kodia close this case out; Stephenie's follow-up filter question self-resolved 9/6 11:23 PM (she filtered on Job Status is empty and found the 159 children). Adjet owes the close-out.",
+      "note": "Adjet Kodia owns this; COP-2103 moved To Do to In Progress on 9/9. Ricardo instructed no further engagement from support monitoring on this case.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     }
   ]
