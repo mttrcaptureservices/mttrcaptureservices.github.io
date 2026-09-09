@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T18:14:39.712Z",
+  "lastUpdated": "2026-09-09T18:19:52.519Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,30 +80,6 @@
       "jiraKey": "COP-2103",
       "note": "Ricardo instructed Clark to disengage and let Adjet Kodia close this case out; Stephenie's follow-up filter question self-resolved 9/6 11:23 PM (she filtered on Job Status is empty and found the 159 children). Adjet owes the close-out.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#7C3AED",
-      "summary": "A CT cancelled last minute onsite on Vacasa VAC105-6604733271123310819 was paid the 50 percent job rate but no travel fee, and the Airtable revision history link for the job errors.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "9/9",
-      "jiraKey": "COP-2106",
-      "note": "Ricardo added the VACASA price type to the CLM under-2hr logic at 11:10 AM; parent 90127 now reads CT Rate 390 with the 300 travel payout included. Jordan owes the removal of payissue line 100901 so the tech is not double-paid.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788968022940?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788968022940&createdTime=1788968022940"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Welltower Entire Property orders should auto-populate 100 dollars in Custom Job Rate and hold the Approval Needed email until it is included in the quoted Job Rate.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "9/1",
-      "jiraKey": "COP-2098",
-      "note": "Ricardo confirmed in thread on 9/9 that it is implemented and the quote will not go out without it. Blocked on Kailyn - she is running a test and owes her findings.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788300575409?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788300575409&createdTime=1788300575409"
     }
   ]
 }
