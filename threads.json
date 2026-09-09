@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T19:07:34.317Z",
+  "lastUpdated": "2026-09-09T20:12:10.816Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,6 +80,30 @@
       "jiraKey": "COP-2103",
       "note": "Adjet Kodia owns this; COP-2103 moved To Do to In Progress on 9/9. Ricardo instructed no further engagement from support monitoring on this case.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#0F766E",
+      "summary": "Two JLL (8) jobs came in with no square footage on the parent record, so no price code resolved and neither job has dispatched.",
+      "statusCls": "badge-investigating",
+      "status": "Awaiting fix",
+      "date": "9/9",
+      "jiraKey": "COP-2105",
+      "note": "Children carry their sizes (5,056 and 2,902) but the parent write did not land; every earlier job on this JLL form was fine. Logged as COP-2105 comment 624410 - Snehal owns the ticket, Ricardo is investigating the root cause. Which hop dropped the write needs the Zap task history.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788983927201?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788983927201&createdTime=1788983927201"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#BE185D",
+      "summary": "CT job request email not firing for JOBID6640189793226051682; re-triggering did not help. Root cause traced to the JLL children-submitted count after a unit was removed in the shotlist editor.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/4",
+      "jiraKey": "COP-2105",
+      "note": "Ricardo said 1:01 PM 9/9 that Zapier + Airtable should cover this scenario and he is investigating the root cause; Snehal holds COP-2105. Nothing owed by support - kept visible because the ticket is open and two further instances landed today.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
     }
   ]
 }
