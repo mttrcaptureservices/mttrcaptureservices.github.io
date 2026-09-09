@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T21:17:49.613Z",
+  "lastUpdated": "2026-09-09T21:20:07.191Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -90,7 +90,7 @@
       "status": "Awaiting fix",
       "date": "9/9",
       "jiraKey": "COP-2105",
-      "note": "Records repaired by hand and price codes now resolve, but both parents still read Send CT Email = Sent with no short link and remain Pending, so dispatch has not fired. Snehal owns COP-2105 and Ricardo is investigating the root cause; child unit 2 on the first job is still 0 sq ft.",
+      "note": "Ricardo named the chain at 2:17 PM: Children Submitted drives the CT short link, which drives the job request email, and the counts were wrong. He has entered them by hand and told Freddy to hold rather than resubmit; Snehal is fixing the JLL Zap. Child unit 2 on the first job is still 0 sq ft.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788983927201?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788983927201&createdTime=1788983927201"
     },
     {
@@ -102,7 +102,7 @@
       "status": "Awaiting fix",
       "date": "9/4",
       "jiraKey": "COP-2105",
-      "note": "Ricardo said 1:01 PM 9/9 that Zapier + Airtable should cover this scenario and he is investigating the root cause; Snehal holds COP-2105. Nothing owed by support - kept visible because the ticket is open and two further instances landed today.",
+      "note": "Same COP-2105 root cause as the JLL parent-size jobs: a wrong Children Submitted count blocks the short link and so the CT email. Snehal is fixing the JLL Zap, Ricardo is on the root cause. Nothing owed by us.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
     },
     {
