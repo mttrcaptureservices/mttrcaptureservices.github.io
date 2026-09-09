@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T17:52:28.026Z",
+  "lastUpdated": "2026-09-09T18:14:39.712Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -86,24 +86,12 @@
       "initials": "JS",
       "color": "#7C3AED",
       "summary": "A CT cancelled last minute onsite on Vacasa VAC105-6604733271123310819 was paid the 50 percent job rate but no travel fee, and the Airtable revision history link for the job errors.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "9/9",
       "jiraKey": "COP-2106",
-      "note": "Root cause verified: the CT travel field hard-zeros on Cancelled Last Minute and the full-travel sub-2hr rule excludes non-SF price types. Needs Ricardo to decide the intended policy before the formula is changed.",
+      "note": "Ricardo added the VACASA price type to the CLM under-2hr logic at 11:10 AM; parent 90127 now reads CT Rate 390 with the 300 travel payout included. Jordan owes the removal of payissue line 100901 so the tech is not double-paid.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788968022940?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788968022940&createdTime=1788968022940"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "UHG job JOBID6642802875571690634 arrived on 9/3 as a parent record with no child line item, so it has no capture size, no price codes and has never dispatched.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "9/9",
-      "jiraKey": "COP-2107",
-      "note": "Blocked on the original Jotform submission - the child unit and square footage exist nowhere in Airtable. Do not replay the Zap run; that risks a duplicate parent.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788975024353?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788975024353&createdTime=1788975024353"
     },
     {
       "author": "Kailyn Jelniker",
