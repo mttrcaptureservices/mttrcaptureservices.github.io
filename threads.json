@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T20:12:10.816Z",
+  "lastUpdated": "2026-09-09T21:17:49.613Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -85,12 +85,12 @@
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#0F766E",
-      "summary": "Two JLL (8) jobs came in with no square footage on the parent record, so no price code resolved and neither job has dispatched.",
-      "statusCls": "badge-investigating",
+      "summary": "Two JLL (8) jobs came in with blank square footage on the parent and no price codes, so neither could dispatch. A third job with the same symptom was reported the same afternoon.",
+      "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/9",
       "jiraKey": "COP-2105",
-      "note": "Children carry their sizes (5,056 and 2,902) but the parent write did not land; every earlier job on this JLL form was fine. Logged as COP-2105 comment 624410 - Snehal owns the ticket, Ricardo is investigating the root cause. Which hop dropped the write needs the Zap task history.",
+      "note": "Records repaired by hand and price codes now resolve, but both parents still read Send CT Email = Sent with no short link and remain Pending, so dispatch has not fired. Snehal owns COP-2105 and Ricardo is investigating the root cause; child unit 2 on the first job is still 0 sq ft.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788983927201?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788983927201&createdTime=1788983927201"
     },
     {
@@ -104,6 +104,18 @@
       "jiraKey": "COP-2105",
       "note": "Ricardo said 1:01 PM 9/9 that Zapier + Airtable should cover this scenario and he is investigating the root cause; Snehal holds COP-2105. Nothing owed by support - kept visible because the ticket is open and two further instances landed today.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#0F766E",
+      "summary": "Asked for the Vacasa 2.0 order form Franchise Name list to be trimmed to only the names on his attached spreadsheet, and for a folder SID to be set for the automated model transfers.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting fix",
+      "date": "9/9",
+      "jiraKey": "COP-2108",
+      "note": "The franchise picker is a hardcoded 148-name snapshot on the Jotform, not a live Airtable read, so it needs a manual edit. Ticket filed and assigned to Ricardo; the attached spreadsheet still has to be read to establish the target list and the folder SID.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788981098617?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788981098617&createdTime=1788981098617"
     }
   ]
 }
