@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T22:07:22.638Z",
+  "lastUpdated": "2026-09-10T23:06:29.491Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -148,7 +148,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting decision",
       "date": "9/10",
-      "note": "Ricardo owes the call on which direction the under-2-hour cancellation rule should pay - the rule currently covers only the SF and VACA price types, and an EUR 50 adjustment line is already pending for this tech. No ticket filed until he answers.",
+      "note": "Ricardo escalated the CLM travel-payout policy question to Kailyn Jelniker at 3:21 PM 9/10 - the logic predates him and is enforced by the Vacasa team. Blocked on her input; no ticket until the direction is settled.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
     }
   ]
