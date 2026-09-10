@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T20:36:12.571Z",
+  "lastUpdated": "2026-09-10T21:11:04.026Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -139,6 +139,17 @@
       "date": "9/10",
       "note": "Ricardo took the root cause in-thread at 1:30 PM 9/10, calling the skipped-phase-11 read an AI assumption and saying he will confirm the cause himself; Freddy has already created a phase record (101100) whose Floor/Unit/Suite still reads Phase10. Next action is Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789070044702?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789070044702&createdTime=1789070044702"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#E8735A",
+      "summary": "CT payout on a last-minute cancelled Livit job paid EUR 100 of travel where she expected EUR 150. Ricardo stated the cancellation policy runs the opposite direction to what the under-2-hour rule actually does.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "9/10",
+      "note": "Ricardo owes the call on which direction the under-2-hour cancellation rule should pay - the rule currently covers only the SF and VACA price types, and an EUR 50 adjustment line is already pending for this tech. No ticket filed until he answers.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
     }
   ]
 }
