@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T05:33:40.952Z",
+  "lastUpdated": "2026-09-10T20:27:18.025Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -104,6 +104,52 @@
       "jiraKey": "COP-2108",
       "note": "The franchise picker is a hardcoded 148-name snapshot on the Jotform, not a live Airtable read, so it needs a manual edit. Ticket filed and assigned to Ricardo; the attached spreadsheet still has to be read to establish the target list and the folder SID.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788981098617?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788981098617&createdTime=1788981098617"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#BE185D",
+      "summary": "A Cushman requester submitted a new job for 395 Hudson Street on 9/8 and got a confirmation email, but the job never appeared in her queue.",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
+      "date": "9/10",
+      "note": "Snehal found the submission in Jotform with the Zap errored, fixed it, and confirmed at 1:14 PM that the job is now in Airtable. Awaiting Caitlin's confirmation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789066319520?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789066319520&createdTime=1789066319520"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting build",
+      "date": "9/10",
+      "jiraKey": "COP-2110",
+      "note": "Filed and assigned to Ricardo. Counts must be by job rather than by model, and whether scan duration exists as stored data is still unconfirmed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
+    },
+    {
+      "author": "Kevin Curtis",
+      "initials": "KC",
+      "color": "#00897B",
+      "summary": "Casago corporate wants Job Rates and costs removed from the requestor version of the Vacasa CONFIRMED appointment email; the tech and onsite contact versions stay as they are.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting build",
+      "date": "9/10",
+      "jiraKey": "COP-2109",
+      "note": "Filed and assigned to Ricardo. Kevin is forwarding a sample of the requestor email so the exact fields can be confirmed before any edit.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789069029862?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789069029862&createdTime=1789069029862"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#FB8C00",
+      "summary": "Heartland Dental SN2413975: phase 11 was skipped between the bulk upload and Airtable, so the line items jump from phase 10 to phase 12.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/10",
+      "note": "Phase 11 was absent from the original 4/15 batch; a phase 11 record (101100) was added 9/10 but its Floor/Unit/Suite reads Phase10, so it still shows as a gap. Asked Freddy whether to chase the label fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789070044702?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789070044702&createdTime=1789070044702"
     }
   ]
 }
