@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09T23:08:49.479Z",
+  "lastUpdated": "2026-09-10T05:25:46.949Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -87,10 +87,10 @@
       "color": "#BE185D",
       "summary": "CT job request email not firing for JOBID6640189793226051682; re-triggering did not help. Root cause traced to the JLL children-submitted count after a unit was removed in the shotlist editor.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "status": "Awaiting discussion",
       "date": "9/4",
       "jiraKey": "COP-2105",
-      "note": "Same COP-2105 root cause as the JLL parent-size jobs: a wrong Children Submitted count blocks the short link and so the CT email. Snehal is fixing the JLL Zap, Ricardo is on the root cause. Nothing owed by us.",
+      "note": "Snehal shipped the children-submitted and unit-number fixes on 9/9; Ricardo decided not to backfill already-dispatched jobs. Open question left on the thread is whether Zapier should be allowed to delete job records - Adjet has taken that to tomorrow's standup.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
     },
     {
