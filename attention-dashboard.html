@@ -72,14 +72,18 @@
 
   <h1>Needs Your Attention</h1>
   <div class="date">September 10, 2026</div>
-  <div class="refresh-info">⚠️ Failover snapshot · Last updated: 4:18 PM PT · Jira live · Teams via Clark</div>
+  <div class="refresh-info">⚠️ Failover snapshot · Last updated: 5:09 PM PT · Jira live · Teams via Clark</div>
 
   <div class="banner">
     <h2>⚠️ Failover snapshot — built by the Cowork agent, not the usual 30-minute pipeline</h2>
-    
-    
-    
-  <p>The GitHub Action that normally refreshes this page every 30 minutes on weekdays is still skipping runs. What was observed at 4:05 PM PT:</p><ul><li>Newest scheduled <em>Refresh Dashboard</em> run is <strong>#827 at 3:03 PM PT</strong> — about 62 minutes before this check against a 30-minute cadence (the 3:30 and 4:00 PM runs never fired).</li><li>Earlier gaps today were larger still: 10:23 AM → 12:53 PM (150 min) and 12:53 PM → 3:03 PM (130 min).</li><li>The live page was serving the 3:11 PM PT Cowork failover snapshot — run #827’s own commit was already superseded, and the last several commits to this file have come from failover runs rather than the Action.</li><li>Runs that do fire finish in 14–18 s and succeed, so this continues to look like GitHub scheduler throttling rather than a broken workflow. The pattern has recurred every day since 9/7 and the gaps are not shrinking.</li></ul><p>Jira was re-queried live at 4:02 PM PT — no changes since 12:41 PM (14 open items assigned to you after filtering Idea / On-Hold, 11 team COP items in the last 7 days). Clark’s <code>threads.json</code> is current as of 3:07 PM PT with 13 threads, unchanged from the previous snapshot. The Action remains the long-term source of truth and will overwrite this page once it resumes.</p></div>
+    <p>The GitHub Action that normally refreshes this page every 30 minutes on weekdays is still skipping runs. What was observed at 5:09 PM PT:</p>
+    <ul>
+      <li>Newest scheduled <strong>Refresh Dashboard</strong> run is <em>still</em> <strong>#827 at 3:03 PM PT</strong> — about <strong>2 hours 6 minutes</strong> before this check against a 30-minute cadence. The 3:30, 4:00, 4:30 and 5:00 PM runs never fired.</li>
+      <li>Earlier gaps today were comparable: 10:23 AM → 12:53 PM (150 min) and 12:53 PM → 3:03 PM (130 min). This is now the longest gap of the day.</li>
+      <li>The live page was serving the 4:18 PM PT Cowork failover snapshot; the last several commits to this file have all come from failover runs rather than the Action.</li>
+      <li>Runs that do fire finish in 14–18 s and succeed, so this continues to look like GitHub scheduler throttling rather than a broken workflow. The pattern has recurred every day since 9/7 and the gaps are not shrinking.</li>
+    </ul>
+    <p>Jira was re-queried live at 5:09 PM PT — no issue has changed since 12:41 PM (14 open items assigned to you after filtering Idea / On-Hold, 12 team COP items in the last 7 days; <strong>COP-2053 has re-entered the 7-day team window</strong> since the previous snapshot). Clark's <code>threads.json</code> is current as of 9/10/2026 4:06 PM PT with 13 threads — the Stephenie Yong CT-payout thread now shows the policy question escalated to Kailyn Jelniker. The Action remains the long-term source of truth and will overwrite this page once it resumes.</p></div>
 
   <div class="chips">
     <span class="chip">Jira · Matterport</span>
@@ -200,7 +204,7 @@
   </section>
 
   <section>
-    <div class="sec-head"><h2>👥 Team · COP (7 days)</h2><span class="count">11</span></div>
+    <div class="sec-head"><h2>👥 Team · COP (7 days)</h2><span class="count">12</span></div>
     <div class="cards">
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2103">
         <div class="card-top"><span class="key">COP-2103</span><span class="flag today">⚡ 9:46 AM</span></div>
@@ -257,12 +261,16 @@
         <p class="summary">[MICL P2][REQ-56] Matterport plugin for Revit 2026 — confirm Autodesk release status</p>
         <div class="meta"><span class="badge badge-progress">In Progress</span><span>→ Troy Lowry</span><span>9/7</span></div>
       </a>
-    </div>
+    <a class="card" href="https://matterport.atlassian.net/browse/COP-2053">
+        <div class="card-top"><span class="key">COP-2053</span></div>
+        <p class="summary">[MICL P2][REQ-55] MatterPak / Space naming convention — confirm supported length vs. Revit/Windows path limit</p>
+        <div class="meta"><span class="badge badge-progress">In Progress</span><span>→ Troy Lowry</span><span>9/7</span></div>
+      </a></div>
   </section>
 
   <section>
     <div class="sec-head"><h2>👀 Pending Teams Threads</h2><span class="count">13</span></div>
-    <p class="src-note">via Clark · threads.json last updated 9/10/2026 3:07 PM PT (~70 min old at build time)</p>
+    <p class="src-note">via Clark · threads.json last updated 9/10/2026 4:06 PM PT (~62 min old at build time)</p>
     <div class="cards">
 
       <a class="thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789070044702?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789070044702&amp;createdTime=1789070044702">
@@ -279,7 +287,7 @@
         <div class="thread-body">
           <div class="thread-top"><span class="author">Stephenie Yong</span><span class="badge badge-waiting">Awaiting decision</span><span class="meta">9/10</span></div>
           <p class="summary">CT payout on a last-minute cancelled Livit job paid EUR 100 of travel where she expected EUR 150. Ricardo stated the cancellation policy runs the opposite direction to what the under-2-hour rule actually does.</p>
-          <p class="note">🤖 Ricardo owes the call on which direction the under-2-hour cancellation rule should pay — the rule currently covers only the SF and VACA price types, and an EUR 50 adjustment line is already pending for this tech. No ticket filed until he answers.</p>
+          <p class="note">🤖 Ricardo escalated the CLM travel-payout policy question to Kailyn Jelniker at 3:21 PM 9/10 — the logic predates him and is enforced by the Vacasa team. Blocked on her input; no ticket until the direction is settled.</p>
         </div>
       </a>
 
@@ -385,9 +393,10 @@
     </div>
   </section>
 
-  <footer>Failover snapshot built by the Cowork agent at 4:18 PM PT on September 10, 2026 · Jira queried live (Matterport cloud) at 4:02 PM PT · Teams threads from Clark’s threads.json (3:07 PM PT) · Static page, no live API calls. The 30-minute GitHub Action remains the primary pipeline and will overwrite this page once it resumes.</footer>
+  <footer>Failover snapshot built by the Cowork agent at 5:09 PM PT on September 10, 2026 · Jira queried live (Matterport cloud) at 5:09 PM PT · Teams threads from Clark’s threads.json (4:06 PM PT) · Static page, no live API calls. The 30-minute GitHub Action remains the primary pipeline and will overwrite this page once it resumes.</footer>
 
 </div>
+
 
 
 </body></html>
