@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-11T02:06:20.464Z",
+  "lastUpdated": "2026-09-11T14:09:15.710Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -87,47 +87,23 @@
       "color": "#BE185D",
       "summary": "CT job request email not firing for JOBID6640189793226051682; re-triggering did not help. Root cause traced to the JLL children-submitted count after a unit was removed in the shotlist editor.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting discussion",
+      "status": "Awaiting fix",
       "date": "9/4",
       "jiraKey": "COP-2105",
-      "note": "Snehal shipped the children-submitted and unit-number fixes on 9/9; Ricardo decided not to backfill already-dispatched jobs. Open question left on the thread is whether Zapier should be allowed to delete job records - Adjet has taken that to tomorrow's standup.",
+      "note": "Ricardo found a second case of Zapier not triggering on a Jotform submission and is raising a Zapier ticket; Snehal still holds COP-2105.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#0F766E",
-      "summary": "Asked for the Vacasa 2.0 order form Franchise Name list to be trimmed to only the names on his attached spreadsheet, and for a folder SID to be set for the automated model transfers.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting fix",
-      "date": "9/9",
-      "jiraKey": "COP-2108",
-      "note": "The franchise picker is a hardcoded 148-name snapshot on the Jotform, not a live Airtable read, so it needs a manual edit. Ticket filed and assigned to Ricardo; the attached spreadsheet still has to be read to establish the target list and the folder SID.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788981098617?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788981098617&createdTime=1788981098617"
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.",
-      "statusCls": "badge-todo",
+      "statusCls": "badge-waiting",
       "status": "Awaiting build",
       "date": "9/10",
       "jiraKey": "COP-2110",
-      "note": "Filed and assigned to Ricardo. Counts must be by job rather than by model, and whether scan duration exists as stored data is still unconfirmed.",
+      "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
-    },
-    {
-      "author": "Kevin Curtis",
-      "initials": "KC",
-      "color": "#00897B",
-      "summary": "Casago corporate wants Job Rates and costs removed from the requestor version of the Vacasa CONFIRMED appointment email; the tech and onsite contact versions stay as they are.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting build",
-      "date": "9/10",
-      "jiraKey": "COP-2109",
-      "note": "Filed and assigned to Ricardo. Kevin is forwarding a sample of the requestor email so the exact fields can be confirmed before any edit.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789069029862?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789069029862&createdTime=1789069029862"
     },
     {
       "author": "Freddy Arias",
@@ -139,17 +115,6 @@
       "date": "9/10",
       "note": "Ricardo took the root cause in-thread at 1:30 PM 9/10, calling the skipped-phase-11 read an AI assumption and saying he will confirm the cause himself; Freddy has already created a phase record (101100) whose Floor/Unit/Suite still reads Phase10. Next action is Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789070044702?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789070044702&createdTime=1789070044702"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8735A",
-      "summary": "CT payout on a last-minute cancelled Livit job paid EUR 100 of travel where she expected EUR 150. Ricardo stated the cancellation policy runs the opposite direction to what the under-2-hour rule actually does.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "9/10",
-      "note": "Ricardo escalated the CLM travel-payout policy question to Kailyn Jelniker at 3:21 PM 9/10 - the logic predates him and is enforced by the Vacasa team. Blocked on her input; no ticket until the direction is settled.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
     }
   ]
 }
