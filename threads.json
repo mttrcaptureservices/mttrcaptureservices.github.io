@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-11T16:06:15.072Z",
+  "lastUpdated": "2026-09-11T17:06:18.677Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -68,18 +68,6 @@
       "date": "9/3",
       "note": "Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E8735A",
-      "summary": "Livit AG bulk upload of 159 rows created 318 records with a blank Job Status, hiding the whole batch from every status-filtered view.",
-      "statusCls": "badge-waiting",
-      "status": "Assigned to Adjet",
-      "date": "9/4",
-      "jiraKey": "COP-2103",
-      "note": "Adjet moved this to In Testing at 5:12 PM 9/9; Clark has been told to disengage from this case, so no further action from support.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788533244771?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788533244771&createdTime=1788533244771"
     },
     {
       "author": "Caitlin Suh",
