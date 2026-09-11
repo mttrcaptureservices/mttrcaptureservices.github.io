@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-11T18:17:50.436Z",
+  "lastUpdated": "2026-09-11T19:06:41.886Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -68,18 +68,6 @@
       "date": "9/3",
       "note": "Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#BE185D",
-      "summary": "CT job request email not firing for JOBID6640189793226051682; re-triggering did not help. Root cause traced to the JLL children-submitted count after a unit was removed in the shotlist editor.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/4",
-      "jiraKey": "COP-2105",
-      "note": "Ricardo found a second case of Zapier not triggering on a Jotform submission and is raising a Zapier ticket; Snehal still holds COP-2105.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788537233764?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788537233764&createdTime=1788537233764"
     },
     {
       "author": "Kailyn Jelniker",
