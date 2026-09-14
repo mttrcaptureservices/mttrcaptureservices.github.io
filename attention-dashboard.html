@@ -5,318 +5,324 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Needs Your Attention – Ricardo</title>
 <style>
-  :root{
-    --bg:#f5f6f8; --card:#ffffff; --ink:#1a1d21; --muted:#6b7280;
-    --line:#e5e7eb; --accent:#2563eb; --crit:#dc2626; --warn:#d97706;
-    --prog:#ca8a04; --test:#7c3aed; --todo:#475569; --team:#0891b2; --teams:#7c3aed;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
-  .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 60px}
-  h1{font-size:30px;font-weight:700;margin:0 0 4px;letter-spacing:-.02em}
-  .date{color:var(--muted);font-size:14px;margin:0 0 14px}
-  .refresh-info{font-size:12.5px;color:var(--muted);margin:0 0 16px}
-  .banner{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid var(--warn);
-    border-radius:8px;padding:12px 14px;margin:0 0 20px;font-size:13px;color:#7c2d12}
-  .banner b{display:block;margin-bottom:4px;font-size:13.5px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-  .chip{background:var(--card);border:1px solid var(--line);border-radius:999px;
-    padding:5px 12px;font-size:12.5px;color:var(--muted)}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 26px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:14px 16px;text-align:center}
-  .stat .n{font-size:26px;font-weight:700;line-height:1.1}
-  .stat .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-  .stat.crit .n{color:var(--crit)} .stat.prog .n{color:var(--prog)}
-  .stat.test .n{color:var(--test)} .stat.todo .n{color:var(--todo)}
-  section{margin:0 0 26px}
-  .sec-head{display:flex;align-items:center;gap:8px;margin:0 0 10px}
-  .sec-head h2{font-size:13px;letter-spacing:.09em;text-transform:uppercase;
-    margin:0;font-weight:700;color:var(--muted)}
-  .count{background:var(--line);color:var(--muted);border-radius:999px;
-    padding:1px 8px;font-size:11.5px;font-weight:600}
-  .card{display:block;text-decoration:none;color:inherit;background:var(--card);
-    border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px;
-    transition:border-color .12s, box-shadow .12s}
-  .card:hover{border-color:#c7cdd6;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-  .card.p1{border-left:3px solid var(--crit)}
-  .key{font-weight:700;font-size:13.5px;color:var(--accent);margin-right:6px}
-  .sum{font-size:14px;margin:3px 0 7px}
-  .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11.5px;color:var(--muted)}
-  .badge{border-radius:5px;padding:2px 7px;font-size:11px;font-weight:600;border:1px solid var(--line)}
-  .b-crit{background:#fee2e2;color:#991b1b;border-color:#fecaca}
-  .b-prog{background:#fef9c3;color:#854d0e;border-color:#fde68a}
-  .b-test{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
-  .b-todo{background:#f1f5f9;color:#334155;border-color:#e2e8f0}
-  .b-type{background:#f8fafc;color:#64748b}
-  .who{margin-left:auto;font-size:11.5px;color:var(--muted)}
-  .thread{display:flex;gap:11px;align-items:flex-start}
-  .av{flex:0 0 32px;height:32px;border-radius:50%;color:#fff;font-size:11.5px;
-    font-weight:700;display:flex;align-items:center;justify-content:center}
-  .badge-waiting{background:#fef3c7;color:#92400e;border-color:#fde68a}
-  .note{font-size:12.5px;color:var(--muted);margin-top:7px;padding-top:7px;
-    border-top:1px dashed var(--line)}
-  .srcline{font-size:11.5px;color:var(--muted);margin:-4px 0 10px}
-  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px}
-  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}}
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1a1d21; --muted:#6b7280;
+  --line:#e5e7eb; --accent:#2563eb; --crit:#dc2626; --warn:#d97706;
+  --ok:#059669; --purple:#7c3aed;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 60px}
+header h1{font-size:26px;font-weight:700;margin:0 0 4px;letter-spacing:-.4px}
+.date{color:var(--muted);font-size:13px;margin-bottom:10px}
+.refresh-info{font-size:12px;color:var(--muted);margin-bottom:14px}
+.banner{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid var(--warn);
+  border-radius:8px;padding:12px 14px;margin-bottom:18px;font-size:12.5px;color:#7c2d12}
+.banner strong{display:block;margin-bottom:4px;font-size:13px;color:#9a3412}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:4px 11px;font-size:11.5px;color:var(--muted);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:center}
+.stat .n{font-size:24px;font-weight:700;line-height:1}
+.stat .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
+.stat.crit .n{color:var(--crit)}
+.stat.prog .n{color:var(--accent)}
+.stat.test .n{color:var(--purple)}
+.stat.todo .n{color:var(--muted)}
+section{margin-bottom:26px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);
+  font-weight:700;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+h2 .count{background:var(--line);color:var(--muted);border-radius:999px;
+  padding:1px 8px;font-size:10.5px;letter-spacing:0}
+.cards{display:flex;flex-direction:column;gap:8px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:9px;
+  padding:12px 14px;text-decoration:none;color:inherit;transition:border-color .12s,box-shadow .12s}
+a.card:hover{border-color:#c7cdd6;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.card.p1{border-left:3px solid var(--crit)}
+.key{font-weight:700;font-size:12.5px;color:var(--accent);margin-bottom:3px}
+.sum{font-size:13.5px;margin-bottom:7px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag{font-size:10.5px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tag.crit{background:#fef2f2;border-color:#fecaca;color:var(--crit);font-weight:600}
+.tag.prog{background:#eff6ff;border-color:#bfdbfe;color:var(--accent)}
+.tag.test{background:#f5f3ff;border-color:#ddd6fe;color:var(--purple)}
+.tag.todo{background:#f9fafb}
+.when{font-size:11px;color:var(--muted);margin-left:auto}
+.who{font-size:11.5px;color:var(--muted);margin-top:6px}
+.thread{display:flex;gap:11px;align-items:flex-start}
+.av{width:30px;height:30px;border-radius:50%;flex:0 0 30px;color:#fff;font-size:11px;
+  font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tbody{flex:1;min-width:0}
+.tauthor{font-weight:600;font-size:12.5px;margin-bottom:2px}
+.note{font-size:11.5px;color:var(--muted);background:#f9fafb;border:1px solid var(--line);
+  border-radius:6px;padding:7px 9px;margin-top:7px}
+.sub{font-size:11px;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0}
+footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--muted);text-align:center}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
+<header>
   <h1>Needs Your Attention</h1>
-  <p class="date">September 14, 2026</p>
-  <p class="refresh-info">🔄 Failover snapshot · Built 2:05 PM PT · Jira live · Teams via Clark</p>
+  <div class="date">September 14, 2026</div>
+  <div class="refresh-info">🔄 Failover snapshot · Built 3:10 PM PT · Jira live · Teams via Clark</div>
+</header>
 
-  <div class="banner">
-    <b>⚠️ Failover snapshot — the primary GitHub Action pipeline looks unhealthy.</b>
-    This page was built by the Cowork agent, not by the 30-minute Refresh Dashboard workflow.
-    The newest scheduled run is <b style="display:inline">#839 at 12:40 PM PT</b> (green, succeeded in 17s) — about
-    82 minutes before the 2:02 PM PT health check, against a 30-minute cadence (~2 runs skipped: 1:10 and 1:40 PM).
-    The workflow itself is not failing; this is GitHub silently throttling scheduled runs, the same pattern seen all week.
-    Note that #839 <em>did</em> commit at 12:40 PM and was then overwritten 8 minutes later by the previous Cowork
-    failover build — so the newest commit on <code>attention-dashboard.html</code> before this one was the 12:48 PM PT
-    failover, showing Jira data from 12:01 PM. Clark's <code>threads.json</code> was last updated 1:06 PM PT (~56 min old).
-    The Action stays the long-term source of truth and will overwrite this page once it catches up.
-  </div>
+<div class="banner">
+  <strong>⚠️ Failover snapshot — the primary GitHub Action pipeline looks unhealthy.</strong>
+  This page was built by the Cowork agent, not by the 30-minute Refresh Dashboard workflow. The newest scheduled run is
+  still <strong style="display:inline">#839 at 12:40 PM PT</strong> (green, succeeded in 17s) — about 142 minutes before the
+  3:02 PM PT health check, against a 30-minute cadence (~4 runs skipped: 1:10, 1:40, 2:10 and 2:40 PM). No new run has fired
+  since the previous failover check at 2:02 PM. The workflow itself is not failing; this is GitHub silently throttling
+  scheduled runs, the same pattern seen every day this week. The newest commit on <code>attention-dashboard.html</code>
+  before this one was the 2:05 PM PT Cowork failover. Clark's <code>threads.json</code> was last updated 2:06 PM PT
+  (~64 min old). The Action stays the long-term source of truth and will overwrite this page once it catches up.
+</div>
 
-  <div class="chips">
-    <span class="chip">Jira · Matterport</span>
-    <span class="chip">Assigned to you</span>
-    <span class="chip">Team (COP · 7d)</span>
-    <span class="chip">👀 Teams · Clark</span>
-  </div>
+<div class="chips">
+  <span class="chip">Jira · Matterport</span>
+  <span class="chip">Assigned to you</span>
+  <span class="chip">Team (COP · 7d)</span>
+  <span class="chip">👀 Teams · Clark</span>
+</div>
 
-  <div class="stats">
-    <div class="stat crit"><div class="n">2</div><div class="l">Critical</div></div>
-    <div class="stat prog"><div class="n">6</div><div class="l">In Progress</div></div>
-    <div class="stat test"><div class="n">1</div><div class="l">In Testing</div></div>
-    <div class="stat todo"><div class="n">4</div><div class="l">To Do</div></div>
-  </div>
+<div class="stats">
+  <div class="stat crit"><div class="n">2</div><div class="l">Critical</div></div>
+  <div class="stat prog"><div class="n">6</div><div class="l">In Progress</div></div>
+  <div class="stat test"><div class="n">1</div><div class="l">In Testing</div></div>
+  <div class="stat todo"><div class="n">4</div><div class="l">To Do</div></div>
+</div>
 
-  <section>
-    <div class="sec-head"><h2>🔄 In Progress</h2><span class="count">6</span></div>
-
+<section>
+  <h2>🔄 In Progress <span class="count">6</span></h2>
+  <div class="cards">
     <a class="card p1" href="https://matterport.atlassian.net/browse/COP-1845">
-      <div><span class="key">⚡ COP-1845</span></div>
+      <div class="key">⚡ COP-1845</div>
       <div class="sum">Airtable Slowness - Causes of the slowness and solutions being discussed</div>
-      <div class="meta"><span class="badge b-crit">🔴 P1 - Critical</span>
-        <span class="badge b-prog">In Progress</span><span class="badge b-type">Epic</span><span>8/27</span></div>
+      <div class="meta"><span class="tag crit">🔴 P1 - Critical</span><span class="tag prog">In Progress</span><span class="tag">Epic</span><span class="when">8/27</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2049">
-      <div><span class="key">⚡ COP-2049</span></div>
+      <div class="key">⚡ COP-2049</div>
       <div class="sum">MICL Phase 2 — Matterport Requirements Validation &amp; Status Review</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Epic</span><span>9/7</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Epic</span><span class="when">9/7</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2054">
-      <div><span class="key">📋 COP-2054</span></div>
+      <div class="key">📋 COP-2054</div>
       <div class="sum">[MICL P2][REQ-12] Customer reminder SMS notification — build the reminder workflow (RICARDO)</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2088">
-      <div><span class="key">⚡ COP-2088</span></div>
+      <div class="key">⚡ COP-2088</div>
       <div class="sum">Allow MP Clients to have multiple currencies</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Epic</span><span>8/31</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Epic</span><span class="when">8/31</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2022">
-      <div><span class="key">📋 COP-2022</span></div>
+      <div class="key">📋 COP-2022</div>
       <div class="sum">Migrate clients off the legacy CT Accept/Decline form</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>7/30</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">7/30</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-1965">
-      <div><span class="key">⚡ COP-1965</span></div>
+      <div class="key">⚡ COP-1965</div>
       <div class="sum">Job CT Issue Log</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Epic</span><span>7/21</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Epic</span><span class="when">7/21</span></div>
     </a>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="sec-head"><h2>🧪 In Testing</h2><span class="count">1</span></div>
+<section>
+  <h2>🧪 In Testing <span class="count">1</span></h2>
+  <div class="cards">
     <a class="card" href="https://matterport.atlassian.net/browse/COP-1884">
-      <div><span class="key">⚡ COP-1884</span></div>
+      <div class="key">⚡ COP-1884</div>
       <div class="sum">CT Directory overhaul work</div>
-      <div class="meta"><span class="badge b-test">In Testing</span><span class="badge b-type">Epic</span><span>7/31</span></div>
+      <div class="meta"><span class="tag test">In Testing</span><span class="tag">Epic</span><span class="when">7/31</span></div>
     </a>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="sec-head"><h2>📌 To Do / Backlog</h2><span class="count">4</span></div>
-
+<section>
+  <h2>📌 To Do / Backlog <span class="count">4</span></h2>
+  <div class="cards">
     <a class="card p1" href="https://matterport.atlassian.net/browse/ZCI-73062">
-      <div><span class="key">📋 ZCI-73062</span></div>
+      <div class="key">📋 ZCI-73062</div>
       <div class="sum">I need access to an pold employee one drive</div>
-      <div class="meta"><span class="badge b-crit">🔴 P1 - Critical</span>
-        <span class="badge b-todo">Open</span><span class="badge b-type">Employee Termination</span><span>7/7</span></div>
+      <div class="meta"><span class="tag crit">🔴 P1 - Critical</span><span class="tag todo">Open</span><span class="tag">Employee Termination</span><span class="when">7/7</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2110">
-      <div><span class="key">📋 COP-2110</span></div>
+      <div class="key">📋 COP-2110</div>
       <div class="sum">CT Directory: per-technician job-volume and scan-duration stats, visible when filtering by Main POC</div>
-      <div class="meta"><span class="badge b-todo">To Do</span><span class="badge b-type">Task</span><span>4d ago</span></div>
+      <div class="meta"><span class="tag todo">To Do</span><span class="tag">Task</span><span class="when">4d ago</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2093">
-      <div><span class="key">📋 COP-2093</span></div>
+      <div class="key">📋 COP-2093</div>
       <div class="sum">CT Directory: two divergent Country tables — CT Cities Master's Country picker reads the legacy table, so newly added countries (Romania, Moldova) are unselectable</div>
-      <div class="meta"><span class="badge b-todo">To Do</span><span class="badge b-type">Task</span><span>8/28</span></div>
+      <div class="meta"><span class="tag todo">To Do</span><span class="tag">Task</span><span class="when">8/28</span></div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2089">
-      <div><span class="key">📋 COP-2089</span></div>
+      <div class="key">📋 COP-2089</div>
       <div class="sum">Ensure New Requests from Jotform remain in a new {Job Status} until all the automations run and the data is complete</div>
-      <div class="meta"><span class="badge b-todo">To Do</span><span class="badge b-type">Task</span><span>8/27</span></div>
+      <div class="meta"><span class="tag todo">To Do</span><span class="tag">Task</span><span class="when">8/27</span></div>
     </a>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="sec-head"><h2>👥 Team · COP (7 days)</h2><span class="count">10</span></div>
-
+<section>
+  <h2>👥 Team · COP (7 days) <span class="count">10</span></h2>
+  <div class="cards">
     <a class="card" href="https://matterport.atlassian.net/browse/COP-800">
-      <div><span class="key">📋 COP-800</span></div>
+      <div class="key">📋 COP-800</div>
       <div class="sum">Global CS Process Documentation</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>4d ago</span>
-        <span class="who">→ Adjet Kodia</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">4d ago</span></div>
+      <div class="who">→ Adjet Kodia</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2066">
-      <div><span class="key">📋 COP-2066</span></div>
+      <div class="key">📋 COP-2066</div>
       <div class="sum">[MICL P2][FUTURE] Follow-up scan — Matterport merge / linking capability (awareness only)</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2064">
-      <div><span class="key">📋 COP-2064</span></div>
+      <div class="key">📋 COP-2064</div>
       <div class="sum">[MICL P2] Priority synchronisation — pass Priority from Monday.com to Matterport (Roche backlog REQ-32)</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2063">
-      <div><span class="key">📋 COP-2063</span></div>
+      <div class="key">📋 COP-2063</div>
       <div class="sum">[MICL P2] Estimated square footage synchronisation — pass Estimated Sq Ft from Roche to Matterport</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2062">
-      <div><span class="key">📋 COP-2062</span></div>
+      <div class="key">📋 COP-2062</div>
       <div class="sum">[MICL P2] Actual square footage accuracy — confirm accuracy and agree acceptable ranges</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2061">
-      <div><span class="key">📋 COP-2061</span></div>
+      <div class="key">📋 COP-2061</div>
       <div class="sum">[MICL P2] Private model embedding — confirm availability and API support</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2060">
-      <div><span class="key">📋 COP-2060</span></div>
+      <div class="key">📋 COP-2060</div>
       <div class="sum">[MICL P2][REQ-37] Scan rejection reasons — add Incorrect Scan Link and Missing Scan Link values</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2059">
-      <div><span class="key">📋 COP-2059</span></div>
+      <div class="key">📋 COP-2059</div>
       <div class="sum">[MICL P2][REQ-36] Scan status / rejection workflow enhancements — awareness, requirement to follow</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2055">
-      <div><span class="key">📋 COP-2055</span></div>
+      <div class="key">📋 COP-2055</div>
       <div class="sum">[MICL P2][REQ-56] Matterport plugin for Revit 2026 — confirm Autodesk release status</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-
     <a class="card" href="https://matterport.atlassian.net/browse/COP-2053">
-      <div><span class="key">📋 COP-2053</span></div>
+      <div class="key">📋 COP-2053</div>
       <div class="sum">[MICL P2][REQ-55] MatterPak / Space naming convention — confirm supported length vs. Revit/Windows path limit</div>
-      <div class="meta"><span class="badge b-prog">In Progress</span><span class="badge b-type">Task</span><span>9/7</span>
-        <span class="who">→ Troy Lowry</span></div>
+      <div class="meta"><span class="tag prog">In Progress</span><span class="tag">Task</span><span class="when">9/7</span></div>
+      <div class="who">→ Troy Lowry</div>
     </a>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="sec-head"><h2>👀 Pending Teams Threads</h2><span class="count">7</span></div>
-    <p class="srcline">· via Clark · threads.json updated 1:06 PM PT, 9/14/2026</p>
-
+<section>
+  <h2>👀 Pending Teams Threads <span class="count">7</span> <span class="sub">· via Clark · threads.json updated 2:06 PM PT, 9/14/2026</span></h2>
+  <div class="cards">
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150">
-      <div class="thread"><div class="av" style="background:#D9734A">KJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Kailyn Jelniker</div>
-        <div class="sum">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</div>
-        <div class="meta"><span class="badge badge-waiting">Waiting on requester</span><span>8/27</span></div>
-        <div class="note">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#D9734A">KJ</div>
+        <div class="tbody">
+          <div class="tauthor">Kailyn Jelniker</div>
+          <div class="sum">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</div>
+          <div class="meta"><span class="tag todo">Waiting on requester</span><span class="when">8/27</span></div>
+          <div class="note">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787123871721&amp;createdTime=1787123871721">
-      <div class="thread"><div class="av" style="background:#4A90D9">OO</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Oriana Ooi</div>
-        <div class="sum">Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.</div>
-        <div class="meta"><span class="badge badge-waiting">Awaiting fix</span><span class="badge b-type">COP-2093 ↗</span><span>8/19</span></div>
-        <div class="note">🤖 Ricardo confirmed 9/1 1:11 AM that country will be handled at the sub tech level in the new version; the legacy-vs-repoint fix is tracked on COP-2093 and owned by him.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#4A90D9">OO</div>
+        <div class="tbody">
+          <div class="tauthor">Oriana Ooi</div>
+          <div class="sum">Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.</div>
+          <div class="meta"><span class="tag todo">Awaiting fix</span><span class="tag prog">COP-2093 ↗</span><span class="when">8/19</span></div>
+          <div class="note">🤖 Ricardo confirmed 9/1 1:11 AM that country will be handled at the sub tech level in the new version; the legacy-vs-repoint fix is tracked on COP-2093 and owned by him.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788202147147&amp;createdTime=1788202147147">
-      <div class="thread"><div class="av" style="background:#D9734A">KJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Kailyn Jelniker</div>
-        <div class="sum">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</div>
-        <div class="meta"><span class="badge badge-waiting">Waiting on requester</span><span class="badge b-type">COP-2096 ↗</span><span>8/31</span></div>
-        <div class="note">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#D9734A">KJ</div>
+        <div class="tbody">
+          <div class="tauthor">Kailyn Jelniker</div>
+          <div class="sum">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</div>
+          <div class="meta"><span class="tag todo">Waiting on requester</span><span class="tag prog">COP-2096 ↗</span><span class="when">8/31</span></div>
+          <div class="note">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788364382868&amp;createdTime=1788364382868">
-      <div class="thread"><div class="av" style="background:#D9734A">KJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Kailyn Jelniker</div>
-        <div class="sum">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</div>
-        <div class="meta"><span class="badge badge-waiting">Awaiting fix</span><span>9/2</span></div>
-        <div class="note">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#D9734A">KJ</div>
+        <div class="tbody">
+          <div class="tauthor">Kailyn Jelniker</div>
+          <div class="sum">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</div>
+          <div class="meta"><span class="tag todo">Awaiting fix</span><span class="when">9/2</span></div>
+          <div class="note">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788411226220&amp;createdTime=1788411226220">
-      <div class="thread"><div class="av" style="background:#14b8a6">JJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Juyoung Jang</div>
-        <div class="sum">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</div>
-        <div class="meta"><span class="badge badge-waiting">Waiting on requester</span><span>9/2</span></div>
-        <div class="note">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#14b8a6">JJ</div>
+        <div class="tbody">
+          <div class="tauthor">Juyoung Jang</div>
+          <div class="sum">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</div>
+          <div class="meta"><span class="tag todo">Waiting on requester</span><span class="when">9/2</span></div>
+          <div class="note">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788452567609&amp;createdTime=1788452567609">
-      <div class="thread"><div class="av" style="background:#D9734A">KJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Kailyn Jelniker</div>
-        <div class="sum">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</div>
-        <div class="meta"><span class="badge badge-waiting">Waiting on requester</span><span>9/3</span></div>
-        <div class="note">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#D9734A">KJ</div>
+        <div class="tbody">
+          <div class="tauthor">Kailyn Jelniker</div>
+          <div class="sum">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</div>
+          <div class="meta"><span class="tag todo">Waiting on requester</span><span class="when">9/3</span></div>
+          <div class="note">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</div>
+        </div>
+      </div>
     </a>
-
     <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789057433383&amp;createdTime=1789057433383">
-      <div class="thread"><div class="av" style="background:#D9734A">KJ</div><div style="flex:1">
-        <div style="font-weight:600;font-size:13.5px">Kailyn Jelniker</div>
-        <div class="sum">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</div>
-        <div class="meta"><span class="badge badge-waiting">Awaiting build</span><span class="badge b-type">COP-2110 ↗</span><span>4d ago</span></div>
-        <div class="note">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.</div>
-      </div></div>
+      <div class="thread">
+        <div class="av" style="background:#D9734A">KJ</div>
+        <div class="tbody">
+          <div class="tauthor">Kailyn Jelniker</div>
+          <div class="sum">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</div>
+          <div class="meta"><span class="tag todo">Awaiting build</span><span class="tag prog">COP-2110 ↗</span><span class="when">4d ago</span></div>
+          <div class="note">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.</div>
+        </div>
+      </div>
     </a>
-  </section>
+  </div>
+</section>
 
-  <footer>Failover build · Cowork agent · 2:05 PM PT, Sep 14 2026 · Jira via Atlassian API · Teams via Clark's threads.json</footer>
+<footer>
+  Failover build · Cowork agent · 3:10 PM PT, Sep 14 2026 · Jira via Atlassian API · Teams via Clark's threads.json
+</footer>
 </div>
 </body>
 </html>
