@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-15T18:03:15.054Z",
+  "lastUpdated": "2026-09-15T20:06:37.933Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -80,6 +80,18 @@
       "jiraKey": "COP-2110",
       "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#7C5CBF",
+      "summary": "Blocked from saving a new client view on the Airtable Global base, with an error he read as a permissions problem on his own account.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "9/15",
+      "jiraKey": "COP-2113",
+      "note": "Airtable reports the Global base has hit a usage limit, so the view will not save - COP-2113 is To Do with Ricardo; Troy was asked to confirm which base he had open.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
     }
   ]
 }
