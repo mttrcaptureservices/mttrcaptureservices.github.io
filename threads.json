@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-15T22:08:13.966Z",
+  "lastUpdated": "2026-09-15T23:06:35.272Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -90,7 +90,7 @@
       "status": "Waiting on requester",
       "date": "9/15",
       "jiraKey": "COP-2113",
-      "note": "Airtable reports the Global base has hit a usage limit, so the view will not save - COP-2113 is To Do with Ricardo; Troy was asked to confirm which base he had open.",
+      "note": "Ricardo followed up in-thread at 3:49 PM asking whether the error is still present; waiting on Troy to confirm which base he had open and whether it persists.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
     }
   ]
