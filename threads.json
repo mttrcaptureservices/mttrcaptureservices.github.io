@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T18:21:29.412Z",
+  "lastUpdated": "2026-09-16T19:11:40.370Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -68,6 +68,17 @@
       "jiraKey": "COP-2110",
       "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#6366f1",
+      "summary": "Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting research",
+      "date": "9/16",
+      "note": "Ricardo picked this up in-thread, said it looks doable, and is researching where the branding fields sit in the MTTR API before coming back to John. No ticket yet - he owes the next action.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
     }
   ]
 }
