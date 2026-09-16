@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T14:08:08.813Z",
+  "lastUpdated": "2026-09-16T16:50:53.328Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -66,7 +66,7 @@
       "status": "Awaiting build",
       "date": "9/10",
       "jiraKey": "COP-2110",
-      "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.",
+      "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
     }
   ]
