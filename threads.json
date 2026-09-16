@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T02:09:41.443Z",
+  "lastUpdated": "2026-09-16T14:08:08.813Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -11,18 +11,6 @@
       "date": "8/27",
       "note": "Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
-    },
-    {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#4A90D9",
-      "summary": "Cannot select Romania or Moldova in the Country Name list when creating CT cities under Sub Tech Master in the Capture Technician Directory.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "8/19",
-      "note": "Ricardo confirmed 9/1 1:11 AM that country will be handled at the sub tech level in the new version; the legacy-vs-repoint fix is tracked on COP-2093 and owned by him.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787123871721?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787123871721&createdTime=1787123871721",
-      "jiraKey": "COP-2093"
     },
     {
       "author": "Kailyn Jelniker",
@@ -80,18 +68,6 @@
       "jiraKey": "COP-2110",
       "note": "Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#7C5CBF",
-      "summary": "Blocked from saving a new client view on the Airtable Global base, with an error he read as a permissions problem on his own account.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "9/15",
-      "jiraKey": "COP-2113",
-      "note": "Ricardo re-pinged Troy in-thread at 3:49 PM on 9/15 asking if the issue is still present; Troy owes the answer. Cause is an Airtable base usage limit on Global, not his account permissions.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
     }
   ]
 }
