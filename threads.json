@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T19:11:40.370Z",
+  "lastUpdated": "2026-09-16T22:23:43.802Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -77,8 +77,32 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting research",
       "date": "9/16",
-      "note": "Ricardo picked this up in-thread, said it looks doable, and is researching where the branding fields sit in the MTTR API before coming back to John. No ticket yet - he owes the next action.",
+      "note": "Ricardo posted his MTTR API schema finding at 3:15 PM 9/16 (PublicationDetailsPatch) and is running tests; he and Adjet own the research. Two-run clock started 9/16.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#b91c1c",
+      "summary": "Cannot save a new client view on the Global base - Airtable returns a base usage-limit error. Confirmed on 9/16 that it still reproduces after COP-2113 was closed.",
+      "statusCls": "badge-investigating",
+      "status": "Root cause found",
+      "date": "9/15",
+      "jiraKey": "COP-2115",
+      "note": "Root cause found: the GLOBAL table sits exactly on Airtable's hard cap of 1,000 views per table, so it is structural, not transient. Needs unused views retired with their owners' sign-off - COP-2115 assigned to Ricardo. Clark still owes Troy an in-channel reply (composer would not accept input this run).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "The MP Client usage report for Atlantic Pacific CC'd a stale salesperson address (jbrownlee@ rather than jbrownlee1@). Asked which field the CC is pulled from.",
+      "statusCls": "badge-waiting",
+      "status": "Assigned to Ricardo",
+      "date": "9/16",
+      "jiraKey": "COP-2116",
+      "note": "Answered: the CC reads a hand-maintained field, not [Salesperson Email], so the two drift apart. All 329 currently-sending clients match, so no other client is affected. Ricardo replied 3:17 PM taking the fix himself.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789589252816?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789589252816&createdTime=1789589252816"
     }
   ]
 }
