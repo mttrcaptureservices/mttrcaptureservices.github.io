@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T22:23:43.802Z",
+  "lastUpdated": "2026-09-16T22:44:33.430Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -89,7 +89,7 @@
       "status": "Root cause found",
       "date": "9/15",
       "jiraKey": "COP-2115",
-      "note": "Root cause found: the GLOBAL table sits exactly on Airtable's hard cap of 1,000 views per table, so it is structural, not transient. Needs unused views retired with their owners' sign-off - COP-2115 assigned to Ricardo. Clark still owes Troy an in-channel reply (composer would not accept input this run).",
+      "note": "Root cause sent to Troy in-thread: the GCB GLOBAL table sits at Airtable's hard ceiling of 1,000 views, so no new view can be saved. Ricardo owns COP-2115 - freeing a slot needs unused views retired with their owners' sign-off.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
     },
     {
@@ -101,7 +101,7 @@
       "status": "Assigned to Ricardo",
       "date": "9/16",
       "jiraKey": "COP-2116",
-      "note": "Answered: the CC reads a hand-maintained field, not [Salesperson Email], so the two drift apart. All 329 currently-sending clients match, so no other client is affected. Ricardo replied 3:17 PM taking the fix himself.",
+      "note": "Ricardo took this in-thread (\"I'll fix it\") - the CC field is hand-maintained and drifts from [Salesperson Email]. No live client affected: 0 mismatches across all 329 sendable records. Awaiting his fix on COP-2116.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789589252816?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789589252816&createdTime=1789589252816"
     }
   ]
