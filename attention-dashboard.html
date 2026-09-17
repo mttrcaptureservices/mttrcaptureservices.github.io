@@ -44,6 +44,9 @@
   .pill-p1 { background: #fef2f2; color: #b91c1c; border-color: #fecaca; font-weight: 600; }
   .pill-jira { background: #ecfdf5; color: #065f46; border-color: #d1fae5; }
   .pill-unv { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+  .badge-waiting { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+  .badge-investigating { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+  .badge-fix-deployed { background: #ecfdf5; color: #065f46; border-color: #d1fae5; }
   .meta .when { font-size: 11px; color: #9ca3af; margin-left: auto; }
   .note { margin-top: 8px; font-size: 12px; color: #4b5563; background: #f8fafc;
     border-left: 3px solid #cbd5e1; border-radius: 0 6px 6px 0; padding: 7px 10px; }
@@ -53,30 +56,57 @@
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Needs Your Attention</h1>
-    <div class="today">September 17, 2026</div>
-    <div class="subhead">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 3:07 PM PT · Jira live · Teams via Clark</div>
+<div class="wrap">
 
-    <div class="banner">⚠️ <strong>Failover snapshot</strong> — built by the Cowork agent because the primary GitHub Action pipeline looked unhealthy. Newest <em>Refresh Dashboard</em> run <strong>#858</strong> succeeded (13s) at <strong>1:43 PM PT</strong>, ~83 minutes before this 3:07 PM PT check — against a 30-minute cadence, so roughly 2 scheduled runs were skipped. The workflow itself is green: this is GitHub scheduler throttling, not a failing job.</div>
+  <h1>Needs Your Attention</h1>
+  <div class="today">September 17, 2026</div>
+  <div class="subhead">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 4:05 PM PT · Jira live · Teams via Clark</div>
 
-    <div class="chips">
-      <span class="chip">Jira · Matterport</span>
-      <span class="chip">Assigned to you</span>
-      <span class="chip">Team (COP · 7d)</span>
-      <span class="chip">👀 Teams · Clark</span>
+  <div class="banner">
+    ⚠️ <strong>Failover snapshot</strong> — built by the Cowork agent because the primary GitHub Action pipeline looked unhealthy.
+    Newest <em>Refresh Dashboard</em> run is still <strong>#858</strong>, which succeeded in 13s at <strong>1:43 PM PT</strong> —
+    ~140 minutes before this 4:05 PM PT check, against a 30-minute cadence, so roughly <strong>4 scheduled runs were skipped</strong>
+    (no 2:13, 2:43, 3:13 or 3:43 PM run was ever dispatched). The workflow itself is green: this is
+    <strong>GitHub scheduler throttling, not a failing job</strong>.
+  </div>
+
+  <div class="chips">
+    <span class="chip">Jira · Matterport</span>
+    <span class="chip">Assigned to you</span>
+    <span class="chip">Team (COP · 7d)</span>
+    <span class="chip">👀 Teams · Clark</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat crit"><div class="n">2</div><div class="l">P1 Critical</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">In Progress</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">In Testing</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">To Do</div></div>
+  </div>
+
+  <!-- UPDATED TODAY -->
+  <div class="sec">
+    <h2>⚡ Updated Today <span class="sec-count">1</span></h2>
+    <div class="cards">
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2117" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="jkey">COP-2117</span></div>
+          <div class="summary">Welltower photo fees bill from {Number of Photos} on the parent, not the hardcoded per-space-type quantity — 1 Bedroom (AL) job billed $32 instead of $40</div>
+          <div class="meta">
+            <span class="pill pill-status">To Do</span>
+            <span class="pill">Task</span>
+            <span class="when">today · 3:11 PM</span>
+          </div>
+        </div>
+      </a>
     </div>
+  </div>
 
-    <div class="stats">
-      <div class="stat crit"><div class="n">2</div><div class="l">P1 Critical</div></div>
-      <div class="stat"><div class="n">6</div><div class="l">In Progress</div></div>
-      <div class="stat"><div class="n">1</div><div class="l">In Testing</div></div>
-      <div class="stat"><div class="n">3</div><div class="l">To Do</div></div>
-    </div>
-
-    <section class="sec">
-      <h2><span class="sec-title">🔄 In Progress</span><span class="sec-count">6</span></h2>
-      <div class="cards">
+  <!-- IN PROGRESS -->
+  <div class="sec">
+    <h2>🔄 In Progress <span class="sec-count">6</span></h2>
+    <div class="cards">
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1845" target="_blank" rel="noopener">
         <div class="card-icon">⚡</div>
         <div class="card-body">
@@ -125,11 +155,13 @@
           <div class="meta"><span class="pill pill-status">In Progress</span><span class="pill">Epic</span><span class="when">7/21</span></div>
         </div>
       </a>
-      </div>
-    </section>
-    <section class="sec">
-      <h2><span class="sec-title">🧪 In Testing</span><span class="sec-count">1</span></h2>
-      <div class="cards">
+    </div>
+  </div>
+
+  <!-- IN TESTING -->
+  <div class="sec">
+    <h2>🧪 In Testing <span class="sec-count">1</span></h2>
+    <div class="cards">
       <a class="card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank" rel="noopener">
         <div class="card-icon">⚡</div>
         <div class="card-body">
@@ -138,24 +170,34 @@
           <div class="meta"><span class="pill pill-status">In Testing</span><span class="pill">Epic</span><span class="when">7/31</span></div>
         </div>
       </a>
-      </div>
-    </section>
-    <section class="sec">
-      <h2><span class="sec-title">📌 To Do / Backlog</span><span class="sec-count">3</span></h2>
-      <div class="cards">
+    </div>
+  </div>
+
+  <!-- TO DO -->
+  <div class="sec">
+    <h2>📌 To Do / Backlog <span class="sec-count">4</span></h2>
+    <div class="cards">
       <a class="card" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank" rel="noopener">
         <div class="card-icon">📋</div>
         <div class="card-body">
           <div class="card-top"><span class="jkey">ZCI-73062</span><span class="pill pill-p1">🔴 P1 - Critical</span></div>
           <div class="summary">I need access to an pold employee one drive</div>
-          <div class="meta"><span class="pill pill-status">To Do</span><span class="pill">Employee Termination</span><span class="when">7/7</span></div>
+          <div class="meta"><span class="pill pill-status">Open</span><span class="pill">Employee Termination</span><span class="when">7/7</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://matterport.atlassian.net/browse/COP-2117" target="_blank" rel="noopener">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <div class="card-top"><span class="jkey">COP-2117</span></div>
+          <div class="summary">Welltower photo fees bill from {Number of Photos} on the parent, not the hardcoded per-space-type quantity — 1 Bedroom (AL) job billed $32 instead of $40</div>
+          <div class="meta"><span class="pill pill-status">To Do</span><span class="pill">Task</span><span class="when">today</span></div>
         </div>
       </a>
       <a class="card" href="https://matterport.atlassian.net/browse/COP-2116" target="_blank" rel="noopener">
         <div class="card-icon">📋</div>
         <div class="card-body">
           <div class="card-top"><span class="jkey">COP-2116</span></div>
-          <div class="summary">MP Client Usage Report CCs a hand-maintained field, not [Salesperson Email] — the two drift and a stale address was CC&#x27;d</div>
+          <div class="summary">MP Client Usage Report CCs a hand-maintained field, not [Salesperson Email] — the two drift and a stale address was CC'd</div>
           <div class="meta"><span class="pill pill-status">To Do</span><span class="pill">Task</span><span class="when">yesterday</span></div>
         </div>
       </a>
@@ -163,121 +205,149 @@
         <div class="card-icon">📋</div>
         <div class="card-body">
           <div class="card-top"><span class="jkey">COP-2115</span></div>
-          <div class="summary">GCB GLOBAL table is at Airtable&#x27;s hard ceiling of 1,000 views — no new view can be saved (COP-2113 reproduces after closure)</div>
+          <div class="summary">GCB GLOBAL table is at Airtable's hard ceiling of 1,000 views — no new view can be saved (COP-2113 reproduces after closure)</div>
           <div class="meta"><span class="pill pill-status">To Do</span><span class="pill">Task</span><span class="when">yesterday</span></div>
         </div>
       </a>
-      </div>
-    </section>
-    <section class="sec">
-      <h2><span class="sec-title">👥 Team · COP (7 days)</span><span class="sec-count">0</span></h2>
-      <div class="empty">No other COP items updated in the last 7 days.</div>
-    </section>
-    <section class="sec">
-      <h2><span class="sec-title">👀 Pending Teams Threads</span><span class="sec-count">11</span><span class="sec-sub">· via Clark · 9/17/2026 2:07 PM PT</span></h2>
-      <div class="cards">
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150" target="_blank" rel="noopener">
+    </div>
+  </div>
+
+  <!-- TEAM COP -->
+  <div class="sec">
+    <h2>👥 Team · COP (7 days) <span class="sec-count">0</span></h2>
+    <div class="empty">No other COP items updated in the last 7 days.</div>
+  </div>
+
+  <!-- TEAMS THREADS -->
+  <div class="sec">
+    <h2>👀 Pending Teams Threads <span class="sec-count">12</span> <span class="sec-sub">· via Clark · 9/17/2026 3:14 PM PT</span></h2>
+    <div class="cards">
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789681228842&amp;createdTime=1789681228842" target="_blank" rel="noopener">
         <div class="avatar" style="background:#D9734A">KJ</div>
         <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting&#x27;s GCB views.</div>
-          <div class="meta"><span class="pill pill-status">Waiting on requester</span><span class="when">8/27</span></div>
-          <div class="note">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</div>
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.</div>
+          <div class="meta"><span class="pill badge-investigating">Investigating</span><span class="pill pill-jira">COP-2117 ↗</span><span class="when">9/17</span></div>
+          <div class="note">🤖 RICARDO - the hardcoded Welltower pricing table is correct (1 Bedroom (AL) = 5). The fee bills off the written {Number of Photos} field on the parent, which read 8, and never reads that table; what writes that field is unidentified and needs the Airtable run history.</div>
         </div>
       </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788202147147&amp;createdTime=1788202147147" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#D9734A">KJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</div>
-          <div class="meta"><span class="pill pill-status">Waiting on requester</span><span class="pill pill-jira">COP-2096 ↗</span><span class="when">8/31</span></div>
-          <div class="note">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788364382868&amp;createdTime=1788364382868" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#D9734A">KJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</div>
-          <div class="meta"><span class="pill pill-status">Awaiting fix</span><span class="when">9/2</span></div>
-          <div class="note">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788411226220&amp;createdTime=1788411226220" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#14b8a6">JJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Juyoung Jang</span></div>
-          <div class="summary">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</div>
-          <div class="meta"><span class="pill pill-status">Waiting on requester</span><span class="when">9/2</span></div>
-          <div class="note">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788452567609&amp;createdTime=1788452567609" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#D9734A">KJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</div>
-          <div class="meta"><span class="pill pill-status">Waiting on requester</span><span class="when">9/3</span></div>
-          <div class="note">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789057433383&amp;createdTime=1789057433383" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#D9734A">KJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</div>
-          <div class="meta"><span class="pill pill-status">Awaiting build</span><span class="pill pill-jira">COP-2110 ↗</span><span class="when">9/10</span></div>
-          <div class="note">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789583853516&amp;createdTime=1789583853516" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#6366f1">JB</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">John Bosch</span></div>
-          <div class="summary">Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.</div>
-          <div class="meta"><span class="pill pill-status">Awaiting research</span><span class="when">9/16</span></div>
-          <div class="note">🤖 John supplied the test model SID at 7:47 AM 9/17 as asked; Ricardo now has what he needs to test exposing sub client/franchise to the model-transfer automation - blocked on him.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789495397795&amp;createdTime=1789495397795" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#b91c1c">TL</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Troy Lowry</span></div>
-          <div class="summary">Cannot save a new client view on the Global base - Airtable returns a base usage-limit error. Confirmed on 9/16 that it still reproduces after COP-2113 was closed.</div>
-          <div class="meta"><span class="pill pill-status">Awaiting confirmation</span><span class="pill pill-jira">COP-2115 ↗</span><span class="when">9/15</span></div>
-          <div class="note">🤖 Ricardo freed view slots by deleting some of his personal views at 10:21 PM 9/16 and asked Troy to retry creating the view; awaiting Troy. Structural fix (view-count reduction on the GCB GLOBAL table) still open on COP-2115.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787930079925&amp;createdTime=1787930079925" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#D9734A">KJ</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
-          <div class="summary">Rich-text formatting added to [Scan Requirements] on the MP Client record does not survive through to the job record, the Jotform or the CT emails.</div>
-          <div class="meta"><span class="pill pill-status">Awaiting fix</span><span class="when">8/28</span></div>
-          <div class="note">🤖 Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.</div>
-        </div>
-      </a>
-      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789663208752?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789663208752&amp;createdTime=1789663208752" target="_blank" rel="noopener">
-        <div class="avatar" style="background:#8b5cf6">CS</div>
-        <div class="card-body">
-          <div class="card-top"><span class="jkey">Caitlin Suh</span></div>
-          <div class="summary">Reschedule request email for JOBID6635027852025185554 showed the tech the old dates rather than the new 9/25 window.</div>
-          <div class="meta"><span class="pill pill-status">Investigating</span><span class="when">9/17</span></div>
-          <div class="note">🤖 Snehal is digging into why the record picked up the new dates ~20 hours after the email went out; nothing owed by the requester.</div>
-        </div>
-      </a>
+
       <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789669265111&amp;createdTime=1789669265111" target="_blank" rel="noopener">
         <div class="avatar" style="background:#D9734A">KJ</div>
         <div class="card-body">
-          <div class="card-top"><span class="jkey">Kailyn Jelniker</span></div>
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
           <div class="summary">Asked for the Bulk Importer Excel to highlight the required fields in yellow and to mark Country and Currency as required.</div>
-          <div class="meta"><span class="pill pill-status">Waiting on requester</span><span class="when">9/17</span></div>
-          <div class="note">🤖 Adjet has the change and pushed back on making Country and Currency required since Airtable derives both; waiting on Kailyn&#x27;s call.</div>
+          <div class="meta"><span class="pill badge-fix-deployed">Fix deployed</span><span class="when">9/17</span></div>
+          <div class="note">🤖 Adjet shipped the updated official sheet at 2:49 PM - required fields highlighted, dropdown logic on 4 columns, header notes and a SAMPLE tab; Country and Currency deliberately left optional. Awaiting Kailyn confirming it covers what she asked for.</div>
         </div>
       </a>
-      </div>
-    </section>
-    <footer>Failover build by Cowork · Sep 17, 2026 3:07 PM PT · Jira: 10 open items · Teams: 11 pending threads</footer>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789663208752?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789663208752&amp;createdTime=1789663208752" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#8b5cf6">CS</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Caitlin Suh</strong></div>
+          <div class="summary">Reschedule request email for JOBID6635027852025185554 showed the tech the old dates rather than the new 9/25 window.</div>
+          <div class="meta"><span class="pill badge-investigating">Investigating</span><span class="when">9/17</span></div>
+          <div class="note">🤖 Snehal is digging into why the record picked up the new dates ~20 hours after the email went out; nothing owed by the requester.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789583853516&amp;createdTime=1789583853516" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#6366f1">JB</div>
+        <div class="card-body">
+          <div class="card-top"><strong>John Bosch</strong></div>
+          <div class="summary">Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.</div>
+          <div class="meta"><span class="pill badge-waiting">Awaiting research</span><span class="when">9/16</span></div>
+          <div class="note">🤖 John supplied the test model SID at 7:47 AM 9/17 as asked; Ricardo now has what he needs to test exposing sub client/franchise to the model-transfer automation - blocked on him.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789495397795&amp;createdTime=1789495397795" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#b91c1c">TL</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Troy Lowry</strong></div>
+          <div class="summary">Cannot save a new client view on the Global base - Airtable returns a base usage-limit error. Confirmed on 9/16 that it still reproduces after COP-2113 was closed.</div>
+          <div class="meta"><span class="pill badge-waiting">Awaiting confirmation</span><span class="pill pill-jira">COP-2115 ↗</span><span class="when">9/15</span></div>
+          <div class="note">🤖 Ricardo freed view slots by deleting some of his personal views at 10:21 PM 9/16 and asked Troy to retry creating the view; awaiting Troy. Structural fix (view-count reduction on the GCB GLOBAL table) still open on COP-2115.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789057433383&amp;createdTime=1789057433383" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</div>
+          <div class="meta"><span class="pill badge-waiting">Awaiting build</span><span class="pill pill-jira">COP-2110 ↗</span><span class="when">9/10</span></div>
+          <div class="note">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788452567609&amp;createdTime=1788452567609" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</div>
+          <div class="meta"><span class="pill badge-waiting">Waiting on requester</span><span class="when">9/3</span></div>
+          <div class="note">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788411226220&amp;createdTime=1788411226220" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#14b8a6">JJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Juyoung Jang</strong></div>
+          <div class="summary">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</div>
+          <div class="meta"><span class="pill badge-waiting">Waiting on requester</span><span class="when">9/2</span></div>
+          <div class="note">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788364382868&amp;createdTime=1788364382868" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</div>
+          <div class="meta"><span class="pill badge-waiting">Awaiting fix</span><span class="when">9/2</span></div>
+          <div class="note">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788202147147&amp;createdTime=1788202147147" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</div>
+          <div class="meta"><span class="pill badge-waiting">Waiting on requester</span><span class="pill pill-jira">COP-2096 ↗</span><span class="when">8/31</span></div>
+          <div class="note">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787930079925&amp;createdTime=1787930079925" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Rich-text formatting added to [Scan Requirements] on the MP Client record does not survive through to the job record, the Jotform or the CT emails.</div>
+          <div class="meta"><span class="pill badge-waiting">Awaiting fix</span><span class="when">8/28</span></div>
+          <div class="note">🤖 Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150" target="_blank" rel="noopener">
+        <div class="avatar" style="background:#D9734A">KJ</div>
+        <div class="card-body">
+          <div class="card-top"><strong>Kailyn Jelniker</strong></div>
+          <div class="summary">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</div>
+          <div class="meta"><span class="pill badge-waiting">Waiting on requester</span><span class="when">8/27</span></div>
+          <div class="note">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</div>
+        </div>
+      </a>
+
+    </div>
   </div>
+
+  <footer>Failover build by Cowork · Sep 17, 2026 4:05 PM PT · Jira: 11 open items · Teams: 12 pending threads</footer>
+
+</div>
 </body>
 </html>
