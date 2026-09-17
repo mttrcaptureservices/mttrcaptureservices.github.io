@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-17T14:08:10.400Z",
+  "lastUpdated": "2026-09-17T15:41:22.123Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -77,7 +77,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting research",
       "date": "9/16",
-      "note": "Ricardo found a candidate GraphQL schema 3:15 PM 9/16 and asked John at 10:03 PM for a model SID he can safely test against; awaiting John, Ricardo owns the work.",
+      "note": "John supplied the test model SID at 7:47 AM 9/17 as asked; Ricardo now has what he needs to test exposing sub client/franchise to the model-transfer automation - blocked on him.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
     },
     {
