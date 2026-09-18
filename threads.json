@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T04:34:56.743Z",
+  "lastUpdated": "2026-09-18T14:06:56.590Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -75,22 +75,10 @@
       "color": "#6366f1",
       "summary": "Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting research",
+      "status": "Waiting on requester",
       "date": "9/16",
-      "note": "John supplied the test model SID at 7:47 AM 9/17 as asked; Ricardo now has what he needs to test exposing sub client/franchise to the model-transfer automation - blocked on him.",
+      "note": "Ricardo confirmed his API test worked and has asked John to verify model uJgRmJhHqpw, name which records to update, and say which Airtable fields should populate the branding fields - blocked on John.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#b91c1c",
-      "summary": "Cannot save a new client view on the Global base - Airtable returns a base usage-limit error. Confirmed on 9/16 that it still reproduces after COP-2113 was closed.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "9/15",
-      "jiraKey": "COP-2115",
-      "note": "Ricardo freed view slots by deleting some of his personal views at 10:21 PM 9/16 and asked Troy to retry creating the view; awaiting Troy. Structural fix (view-count reduction on the GCB GLOBAL table) still open on COP-2115.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789495397795?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789495397795&createdTime=1789495397795"
     },
     {
       "author": "Kailyn Jelniker",
@@ -102,17 +90,6 @@
       "date": "8/28",
       "note": "Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "Reschedule request email for JOBID6635027852025185554 showed the tech the old dates rather than the new 9/25 window.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/17",
-      "note": "Snehal is digging into why the record picked up the new dates ~20 hours after the email went out; nothing owed by the requester.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789663208752?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789663208752&createdTime=1789663208752"
     },
     {
       "author": "Kailyn Jelniker",
