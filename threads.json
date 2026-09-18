@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-17T23:07:36.785Z",
+  "lastUpdated": "2026-09-18T00:06:53.928Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -130,11 +130,11 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/17",
       "jiraKey": "COP-2117",
-      "note": "RICARDO - the hardcoded Welltower pricing table is correct (1 Bedroom (AL) = 5). The fee bills off the written {Number of Photos} field on the parent, which read 8, and never reads that table; what writes that field is unidentified and needs the Airtable run history.",
+      "note": "Ticket filed and assigned to Ricardo. The hardcoded per-space-type table is correct, so the fee bills off the written Number of Photos on the parent; identifying what writes that field needs the Airtable UI run history.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789681228842&createdTime=1789681228842"
     }
   ]
