@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T20:10:32.292Z",
+  "lastUpdated": "2026-09-18T21:11:26.703Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -120,10 +120,10 @@
       "color": "#6366f1",
       "summary": "Casago and Vacasa franchise Folder IDs for model transfer are wrong in Airtable, so models are currently being transferred into the wrong folder. Corrected values supplied as an attached spreadsheet.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "9/18",
       "jiraKey": "COP-2118",
-      "note": "John asked where the duplicate rows were - answered 1:08 PM that they are in Airtable, not his file: Annapolis, Austin, Big Bear and Estes Park each have a 6/10 row and a 9/11 row carrying different folder IDs. He owes which row wins before the corrected file is applied; record-level detail is on the ticket.",
+      "note": "John confirmed the corrected list is the only authoritative one and that both the 9/11 batch and the earlier 6/10 rows are retired; Ricardo owns applying it to all 39 franchise rows.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789753345385&createdTime=1789753345385"
     },
     {
