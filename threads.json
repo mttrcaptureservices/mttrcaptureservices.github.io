@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T18:03:30.501Z",
+  "lastUpdated": "2026-09-18T18:19:12.233Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -99,7 +99,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting answer",
       "date": "9/17",
-      "note": "Adjet delivered the updated official sheet 9/17. She came back 9/18 with two questions for him: whether Country and Currency auto-populate from the address with full accuracy before removing them, and whether the ingest normalises free-form date/time formatting from the Excel. Adjet owes the answers.",
+      "note": "Adjet live-replied 11:06 AM 9/18 - he is not certain free-form dates like March 26 at 5am parse correctly in Zapier, and agreed a test batch of varied date formats is the way to check. Ball with Kailyn to run that test batch.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111"
     },
     {
@@ -125,6 +125,17 @@
       "jiraKey": "COP-2118",
       "note": "Confirmed against the live table - 32 of the 39 franchise rows added 9/11 reuse a folder ID that already belongs to another franchise. Ricardo owns the fix; John owes a decision on which row wins for the four franchises that have two rows each.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789753345385&createdTime=1789753345385"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asking for a full rundown of how CLM cancellation fees work across price types and notice windows - what the job rate and the travel fee should each pay at under 2 hours, 2 to 24 hours, and over 24 hours notice.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "9/18",
+      "note": "Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
     }
   ]
 }
