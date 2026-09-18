@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T16:48:41.803Z",
+  "lastUpdated": "2026-09-18T18:03:30.501Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -96,10 +96,10 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Asked for the Bulk Importer Excel to highlight the required fields in yellow and to mark Country and Currency as required.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
       "date": "9/17",
-      "note": "Adjet shipped the updated official sheet at 2:49 PM - required fields highlighted, dropdown logic on 4 columns, header notes and a SAMPLE tab; Country and Currency deliberately left optional. Awaiting Kailyn confirming it covers what she asked for.",
+      "note": "Adjet delivered the updated official sheet 9/17. She came back 9/18 with two questions for him: whether Country and Currency auto-populate from the address with full accuracy before removing them, and whether the ingest normalises free-form date/time formatting from the Excel. Adjet owes the answers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111"
     },
     {
@@ -108,11 +108,23 @@
       "color": "#D9734A",
       "summary": "Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "9/17",
       "jiraKey": "COP-2117",
-      "note": "Ricardo confirmed the photo-count automation fires on job completion and overwrites Number of Photos, replacing the quoted 10 with the 8 it counted, then at 9:28 PM asked Kailyn to confirm whether that behaviour is undesired for Welltower and linked the quantity mapping table - next action is hers.",
+      "note": "Kailyn answered 9/18: bill the hardcoded per-space-type quantity, never the API photo count. That settles the open decision and confirms the defect - the photo-count automation overwrites the parent Number of Photos on job completion. Recorded as comment 626121; Ricardo owns the fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789681228842&createdTime=1789681228842"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#6366f1",
+      "summary": "Casago and Vacasa franchise Folder IDs for model transfer are wrong in Airtable, so models are currently being transferred into the wrong folder. Corrected values supplied as an attached spreadsheet.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/18",
+      "jiraKey": "COP-2118",
+      "note": "Confirmed against the live table - 32 of the 39 franchise rows added 9/11 reuse a folder ID that already belongs to another franchise. Ricardo owns the fix; John owes a decision on which row wins for the four franchises that have two rows each.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789753345385&createdTime=1789753345385"
     }
   ]
 }
