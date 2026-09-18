@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T04:23:39.422Z",
+  "lastUpdated": "2026-09-18T04:34:56.743Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -131,10 +131,10 @@
       "color": "#D9734A",
       "summary": "Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
+      "status": "Waiting on requester",
       "date": "9/17",
       "jiraKey": "COP-2117",
-      "note": "RICARDO named the cause at 5:28 PM 9/17 - the photo-count automation runs on job completion and overwrites {Number of Photos}, replacing the quoted 10 (2 units x 5) with the 8 it counted, which is why the fee billed 32 not 40. Recorded on the ticket as comment 626031. Now a billing-basis decision for Ricardo, not an investigation.",
+      "note": "Ricardo confirmed the photo-count automation fires on job completion and overwrites Number of Photos, replacing the quoted 10 with the 8 it counted, then at 9:28 PM asked Kailyn to confirm whether that behaviour is undesired for Welltower and linked the quantity mapping table - next action is hers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789681228842&createdTime=1789681228842"
     }
   ]
