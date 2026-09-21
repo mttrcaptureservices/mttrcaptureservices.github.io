@@ -1,281 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Needs Your Attention – Ricardo</title>
 <style>
-:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f7;color:#1d1d1f;font-size:14px;line-height:1.5;padding:20px}
-.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
-.header h1{font-size:20px;font-weight:700}
-.subtitle{font-size:13px;color:#6e6e73;margin-bottom:4px}
-.refresh-info{font-size:11px;color:#aeaeb2;margin-bottom:14px}
-.source-row{display:flex;align-items:center;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-.source-chip{background:#fff;border:1px solid #e5e5ea;border-radius:20px;padding:4px 12px;font-size:12px;color:#6e6e73;display:flex;align-items:center;gap:5px}
-.source-dot{width:7px;height:7px;border-radius:50%;background:#007aff}
-.source-dot.green{background:#34c759}.source-dot.orange{background:#ff9500}
-.teams-chip{background:#ede6ff;color:#5856d6;border-radius:20px;padding:4px 10px;font-size:12px;display:flex;align-items:center;gap:4px}
-.section{margin-bottom:20px}
-.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.section-title{font-size:13px;font-weight:600;color:#6e6e73;text-transform:uppercase;letter-spacing:.5px}
-.section-badge{background:#e5e5ea;color:#6e6e73;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600}
-.issue-card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:8px;border:1px solid #e5e5ea;cursor:pointer;display:flex;align-items:flex-start;gap:12px;text-decoration:none;color:inherit;transition:all .15s}
-.issue-card:hover{border-color:#007aff;box-shadow:0 2px 8px rgba(0,122,255,.12)}
-.issue-card.urgent-card{border-left:3px solid #ff3b30}
-.issue-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
-.icon-task{background:#e3f0ff}.icon-epic{background:#f0e6ff}
-.issue-body{flex:1;min-width:0}
-.issue-top{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
-.issue-key{font-size:12px;font-weight:600;color:#007aff;white-space:nowrap}
-.issue-summary{font-size:14px;font-weight:500;color:#1d1d1f}
-.issue-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.issue-assignee{font-size:11px;color:#6e6e73}
-.badge{border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;white-space:nowrap}
-.badge-todo{background:#e8f0ff;color:#0055cc}
-.badge-inprogress{background:#fff4e0;color:#b35900}
-.badge-testing{background:#e6f9ed;color:#1a7a45}
-.badge-p1{background:#ffe5e5;color:#cc0000}
-.badge-epic{background:#ede6ff;color:#5500cc}
-.badge-task{background:#e8f4ff;color:#0066aa}
-.badge-investigating{background:#f5f0ff;color:#5500cc}
-.badge-fix-deployed{background:#e6f9ed;color:#1a7a45}
-.badge-jira-link{background:#e8f0ff;color:#0055cc}
-.badge-waiting{background:#fff4e0;color:#b35900}
-.updated-time{font-size:11px;color:#aeaeb2;white-space:nowrap}
-.updated-today{color:#ff6b00;font-weight:600}
-.divider{height:1px;background:#e5e5ea;margin:4px 0 12px}
-.thread-card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:8px;border:1px solid #e5e5ea;border-left:3px solid #5856d6;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .15s}
-.thread-card:hover{border-color:#5856d6;box-shadow:0 2px 8px rgba(88,86,214,.12)}
-.thread-avatar{width:28px;height:28px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
-.empty{background:#fff;border:1px solid #e5e5ea;border-radius:10px;padding:16px;color:#6e6e73;text-align:center}
+  :root{
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --ink:#1b1f24;
+    --ink-2:#52606d;
+    --ink-3:#8b96a3;
+    --line:#e3e7ec;
+    --accent:#2f6fed;
+    --crit:#dc2626;
+    --warn:#b45309;
+    --warn-bg:#fef6e7;
+    --warn-line:#f0d9a8;
+    --ok:#0f9d58;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:28px;line-height:1.2;margin:0 0 4px;letter-spacing:-.3px}
+  .today{color:var(--ink-2);font-size:14px;margin:0 0 10px}
+  .refresh-info{color:var(--ink-3);font-size:13px;margin:0 0 16px}
+
+  .failover{
+    background:var(--warn-bg);
+    border:1px solid var(--warn-line);
+    border-left:4px solid var(--warn);
+    border-radius:8px;
+    padding:12px 14px;
+    margin:0 0 18px;
+    font-size:13.5px;
+    color:#6b4a0c;
+  }
+  .failover b{color:#5a3d08}
+  .failover ul{margin:8px 0 0;padding-left:20px}
+  .failover li{margin:3px 0}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .chip{
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px;font-size:12.5px;color:var(--ink-2);white-space:nowrap;
+  }
+
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px}
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px 18px;min-width:120px;flex:1 1 120px;
+  }
+  .stat .n{font-size:26px;font-weight:650;line-height:1;letter-spacing:-.5px}
+  .stat .l{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink-3);margin-top:6px}
+  .stat.crit .n{color:var(--crit)}
+
+  h2{
+    font-size:13px;text-transform:uppercase;letter-spacing:.7px;color:var(--ink-2);
+    margin:30px 0 12px;display:flex;align-items:center;gap:8px;font-weight:650;
+  }
+  h2 .count{
+    background:#e8ebef;color:var(--ink-2);border-radius:999px;
+    padding:1px 9px;font-size:11.5px;letter-spacing:0;
+  }
+
+  .card{
+    display:block;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:14px 16px;margin-bottom:10px;
+    text-decoration:none;color:inherit;transition:box-shadow .12s,border-color .12s;
+  }
+  .card:hover{box-shadow:0 2px 10px rgba(20,28,40,.08);border-color:#cfd6df}
+  .card.p1{border-left:4px solid var(--crit)}
+  .row1{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .key{font-weight:650;font-size:13.5px;color:var(--accent);font-variant-numeric:tabular-nums}
+  .icon{font-size:13px}
+  .summary{margin:6px 0 0;font-size:14.5px;line-height:1.45}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+  .badge{
+    font-size:11.5px;padding:2px 9px;border-radius:999px;
+    background:#eef1f5;color:var(--ink-2);border:1px solid var(--line);white-space:nowrap;
+  }
+  .badge.p1{background:#fdecec;color:var(--crit);border-color:#f6cfcf;font-weight:600}
+  .badge-waiting{background:#fff5e6;color:var(--warn);border-color:#f2dcb4}
+  .when{font-size:12px;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+
+  .thread .row1{gap:10px;align-items:center}
+  .avatar{
+    width:28px;height:28px;border-radius:50%;flex:0 0 28px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:11px;font-weight:650;letter-spacing:.3px;
+  }
+  .author{font-weight:600;font-size:13.5px}
+  .note{
+    margin-top:10px;padding:9px 11px;background:#f7f8fa;border:1px solid var(--line);
+    border-radius:7px;font-size:13px;color:var(--ink-2);line-height:1.45;
+  }
+  .empty{
+    background:var(--card);border:1px dashed var(--line);border-radius:10px;
+    padding:16px;color:var(--ink-3);font-size:13.5px;
+  }
+  footer{margin-top:36px;color:var(--ink-3);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
+  @media(max-width:600px){
+    .wrap{padding:20px 14px 44px}
+    h1{font-size:23px}
+    .when{margin-left:0}
+  }
 </style>
 </head>
 <body>
-<div class="header"><h1>Needs Your Attention</h1></div>
-<div class="subtitle">September 21, 2026</div>
-<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 1:02 PM PT · Jira live · Teams via Clark</div>
-<div class="source-row">
-<div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
-<div class="source-chip"><div class="source-dot green"></div> Assigned to you</div>
-<div class="source-chip"><div class="source-dot orange"></div> Team (COP · 7d)</div>
-<div class="teams-chip">👀 Teams · Clark</div>
+<div class="wrap">
+
+  <h1>Needs Your Attention</h1>
+  <p class="today">September 21, 2026</p>
+  <p class="refresh-info">⚠️ Failover snapshot · Last updated: 10:20 AM PT · Jira live · Teams via Clark</p>
+
+  <div class="failover">
+    <b>This is a failover snapshot built by the Cowork agent</b> — the primary GitHub Action pipeline looked unhealthy at the 10:17 AM PT check.
+    <ul>
+      <li>Newest <code>Refresh Dashboard</code> run is <b>#870 at 8:12 AM PT</b> (14s, <b>success</b>) — about <b>125 minutes</b> before this check, against a 30-minute cadence (~4 scheduled runs skipped). No <b>#871</b> exists.</li>
+      <li>Recent runs are all green but widely spaced — #868 Sun 7:17 PM PT, #869 Mon 1:04 AM PT, #870 Mon 8:12 AM PT. This is <b>GitHub scheduler throttling, not a failing workflow</b>.</li>
+      <li>Clark's <code>threads.json</code> feed is itself stale: <code>lastUpdated</code> 2026-09-18 7:06 PM PT (~2.7 days old), so the Teams section below reflects Friday evening, not this morning.</li>
+    </ul>
+  </div>
+
+  <div class="chips">
+    <span class="chip">Jira · Matterport</span>
+    <span class="chip">Assigned to you</span>
+    <span class="chip">Team (COP · 7d)</span>
+    <span class="chip">👀 Teams · Clark</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat crit"><div class="n">2</div><div class="l">P1 / Critical</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Updated Today</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">In Progress</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">In Testing</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">To Do</div></div>
+  </div>
+
+  <h2>⚡ Updated Today <span class="count">0</span></h2>
+  <div class="empty">Nothing assigned to you was updated today. Most recent activity was 9/18 (COP-2118, COP-2116, COP-2117).</div>
+
+  <h2>🔄 In Progress <span class="count">6</span></h2>
+
+  <a class="card p1" href="https://matterport.atlassian.net/browse/COP-1845">
+    <div class="row1"><span class="icon">⚡</span><span class="key">COP-1845</span></div>
+    <p class="summary">Airtable Slowness - Causes of the slowness and solutions being discussed</p>
+    <div class="meta">
+      <span class="badge p1">🔴 P1 - Critical</span>
+      <span class="badge">In Progress</span>
+      <span class="badge">Epic</span>
+      <span class="when">8/27</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2049">
+    <div class="row1"><span class="icon">⚡</span><span class="key">COP-2049</span></div>
+    <p class="summary">MICL Phase 2 — Matterport Requirements Validation &amp; Status Review</p>
+    <div class="meta">
+      <span class="badge">In Progress</span>
+      <span class="badge">Epic</span>
+      <span class="when">9/8</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2054">
+    <div class="row1"><span class="icon">📋</span><span class="key">COP-2054</span></div>
+    <p class="summary">[MICL P2][REQ-12] Customer reminder SMS notification — build the reminder workflow (RICARDO)</p>
+    <div class="meta">
+      <span class="badge">In Progress</span>
+      <span class="badge">Task</span>
+      <span class="when">9/8</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2088">
+    <div class="row1"><span class="icon">⚡</span><span class="key">COP-2088</span></div>
+    <p class="summary">Allow MP Clients to have multiple currencies</p>
+    <div class="meta">
+      <span class="badge">In Progress</span>
+      <span class="badge">Epic</span>
+      <span class="when">8/31</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2022">
+    <div class="row1"><span class="icon">📋</span><span class="key">COP-2022</span></div>
+    <p class="summary">Migrate clients off the legacy CT Accept/Decline form</p>
+    <div class="meta">
+      <span class="badge">In Progress</span>
+      <span class="badge">Task</span>
+      <span class="when">7/30</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-1965">
+    <div class="row1"><span class="icon">⚡</span><span class="key">COP-1965</span></div>
+    <p class="summary">Job CT Issue Log</p>
+    <div class="meta">
+      <span class="badge">In Progress</span>
+      <span class="badge">Epic</span>
+      <span class="when">7/21</span>
+    </div>
+  </a>
+
+  <h2>🧪 In Testing <span class="count">1</span></h2>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-1884">
+    <div class="row1"><span class="icon">⚡</span><span class="key">COP-1884</span></div>
+    <p class="summary">CT Directory overhaul work</p>
+    <div class="meta">
+      <span class="badge">In Testing</span>
+      <span class="badge">Epic</span>
+      <span class="when">7/31</span>
+    </div>
+  </a>
+
+  <h2>📌 To Do / Backlog <span class="count">4</span></h2>
+
+  <a class="card p1" href="https://matterport.atlassian.net/browse/ZCI-73062">
+    <div class="row1"><span class="icon">📋</span><span class="key">ZCI-73062</span></div>
+    <p class="summary">I need access to an pold employee one drive</p>
+    <div class="meta">
+      <span class="badge p1">🔴 P1 - Critical</span>
+      <span class="badge">Open</span>
+      <span class="badge">Employee Termination</span>
+      <span class="when">7/7</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2118">
+    <div class="row1"><span class="icon">📋</span><span class="key">COP-2118</span></div>
+    <p class="summary">Vacasa/Casago franchise Folder IDs are wrong — 32 of the 39 rows added 9/11 reuse a folder ID already assigned to another franchise; models are transferring to the wrong folder</p>
+    <div class="meta">
+      <span class="badge">To Do</span>
+      <span class="badge">Task</span>
+      <span class="when">3d ago</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2116">
+    <div class="row1"><span class="icon">📋</span><span class="key">COP-2116</span></div>
+    <p class="summary">MP Client Usage Report CCs a hand-maintained field, not [Salesperson Email] — the two drift and a stale address was CC'd</p>
+    <div class="meta">
+      <span class="badge">To Do</span>
+      <span class="badge">Task</span>
+      <span class="when">3d ago</span>
+    </div>
+  </a>
+
+  <a class="card" href="https://matterport.atlassian.net/browse/COP-2117">
+    <div class="row1"><span class="icon">📋</span><span class="key">COP-2117</span></div>
+    <p class="summary">Welltower photo fees bill from {Number of Photos} on the parent, not the hardcoded per-space-type quantity — 1 Bedroom (AL) job billed $32 instead of $40</p>
+    <div class="meta">
+      <span class="badge">To Do</span>
+      <span class="badge">Task</span>
+      <span class="when">3d ago</span>
+    </div>
+  </a>
+
+  <h2>👥 Team · COP (7 days) <span class="count">0</span></h2>
+  <div class="empty">No COP issues assigned to others were updated in the last 7 days.</div>
+
+  <h2>👀 Pending Teams Threads <span class="count">12</span></h2>
+  <p class="refresh-info" style="margin:-6px 0 12px">via Clark · feed lastUpdated 9/18/2026 7:06 PM PT (stale)</p>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787853624150&amp;createdTime=1787853624150">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">8/27</span></div>
+    <p class="summary">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</p>
+    <div class="meta"><span class="badge badge-waiting">Waiting on requester</span></div>
+    <div class="note">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788202147147&amp;createdTime=1788202147147">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">8/31</span></div>
+    <p class="summary">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</p>
+    <div class="meta"><span class="badge badge-waiting">Waiting on requester</span><span class="badge">COP-2096 ↗</span></div>
+    <div class="note">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788364382868&amp;createdTime=1788364382868">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/2</span></div>
+    <p class="summary">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting fix</span></div>
+    <div class="note">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788411226220&amp;createdTime=1788411226220">
+    <div class="row1"><span class="avatar" style="background:#14b8a6">JJ</span><span class="author">Juyoung Jang</span><span class="when">9/2</span></div>
+    <p class="summary">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</p>
+    <div class="meta"><span class="badge badge-waiting">Waiting on requester</span></div>
+    <div class="note">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1788452567609&amp;createdTime=1788452567609">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/3</span></div>
+    <p class="summary">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</p>
+    <div class="meta"><span class="badge badge-waiting">Waiting on requester</span></div>
+    <div class="note">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789057433383&amp;createdTime=1789057433383">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/10</span></div>
+    <p class="summary">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting build</span><span class="badge">COP-2110 ↗</span></div>
+    <div class="note">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789583853516&amp;createdTime=1789583853516">
+    <div class="row1"><span class="avatar" style="background:#6366f1">JB</span><span class="author">John Bosch</span><span class="when">9/16</span></div>
+    <p class="summary">Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.</p>
+    <div class="meta"><span class="badge badge-waiting">Waiting on requester</span></div>
+    <div class="note">🤖 Ricardo confirmed his API test worked and has asked John to verify model uJgRmJhHqpw, name which records to update, and say which Airtable fields should populate the branding fields - blocked on John.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1787930079925&amp;createdTime=1787930079925">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">8/28</span></div>
+    <p class="summary">Rich-text formatting added to [Scan Requirements] on the MP Client record does not survive through to the job record, the Jotform or the CT emails.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting fix</span></div>
+    <div class="note">🤖 Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789669265111&amp;createdTime=1789669265111">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/17</span></div>
+    <p class="summary">Asked for the Bulk Importer Excel to highlight the required fields in yellow and to mark Country and Currency as required.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting answer</span></div>
+    <div class="note">🤖 Adjet live-replied 11:06 AM 9/18 - he is not certain free-form dates like March 26 at 5am parse correctly in Zapier, and agreed a test batch of varied date formats is the way to check. Ball with Kailyn to run that test batch.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789681228842&amp;createdTime=1789681228842">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/17</span></div>
+    <p class="summary">Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting fix</span><span class="badge">COP-2117 ↗</span></div>
+    <div class="note">🤖 Kailyn answered 9/18: bill the hardcoded per-space-type quantity, never the API photo count. That settles the open decision and confirms the defect - the photo-count automation overwrites the parent Number of Photos on job completion. Recorded as comment 626121; Ricardo owns the fix.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789753345385&amp;createdTime=1789753345385">
+    <div class="row1"><span class="avatar" style="background:#6366f1">JB</span><span class="author">John Bosch</span><span class="when">9/18</span></div>
+    <p class="summary">Casago and Vacasa franchise Folder IDs for model transfer are wrong in Airtable, so models are currently being transferred into the wrong folder. Corrected values supplied as an attached spreadsheet.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting fix</span><span class="badge">COP-2118 ↗</span></div>
+    <div class="note">🤖 John confirmed the corrected list is the only authoritative one and that both the 9/11 batch and the earlier 6/10 rows are retired; Ricardo owns applying it to all 39 franchise rows.</div>
+  </a>
+
+  <a class="card thread" href="https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&amp;groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&amp;teamName=Matterport&amp;channelName=Capture%20Services%20Applications%20Support&amp;parentMessageId=1789026793333&amp;createdTime=1789026793333">
+    <div class="row1"><span class="avatar" style="background:#D9734A">KJ</span><span class="author">Kailyn Jelniker</span><span class="when">9/18</span></div>
+    <p class="summary">Asking for a full rundown of how CLM cancellation fees work across price types and notice windows - what the job rate and the travel fee should each pay at under 2 hours, 2 to 24 hours, and over 24 hours notice.</p>
+    <div class="meta"><span class="badge badge-waiting">Awaiting decision</span></div>
+    <div class="note">🤖 Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.</div>
+  </a>
+
+  <footer>
+    Failover snapshot built by the Cowork agent at 10:20 AM PT on 2026-09-21. Jira data is live as of this build (two JQL queries: assigned to Ricardo, 90d; team COP, 7d — issues in <em>Idea</em> and <em>On-Hold</em> excluded). Teams data comes from Clark's <code>threads.json</code>. The GitHub Action remains the long-term source of truth and will overwrite this page on its next successful run.
+  </footer>
+
 </div>
-<div class="section"><div class="section-header"><span class="section-title">⚡ Updated Today</span><span class="section-badge">2</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2118" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2118</span><span class="issue-summary">Vacasa/Casago franchise Folder IDs are wrong — 32 of the 39 rows added 9/11 reuse a folder ID already assigned to another franchise; models are transferring to the wrong folder</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-todo">To Do</span>
-        <span class="badge badge-task">Task</span>
-        
-        <span class="updated-time updated-today">⚡ 11:06 AM</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2117" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2117</span><span class="issue-summary">Welltower photo fees bill from {Number of Photos} on the parent, not the hardcoded per-space-type quantity — 1 Bedroom (AL) job billed $32 instead of $40</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-todo">To Do</span>
-        <span class="badge badge-task">Task</span>
-        
-        <span class="updated-time updated-today">⚡ 11:06 AM</span>
-      </div>
-    </div></a></div><div class="section"><div class="section-header"><span class="section-title">🔄 In Progress</span><span class="section-badge">6</span></div><a class="issue-card urgent-card" href="https://matterport.atlassian.net/browse/COP-1845" target="_blank">
-    <div class="issue-icon icon-epic">⚡</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-1845</span><span class="issue-summary">Airtable Slowness - Causes of the slowness and solutions being discussed</span></div>
-      <div class="issue-meta">
-        <span class="badge badge-p1">🔴 P1 - Critical</span>
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-epic">Epic</span>
-        
-        <span class="updated-time">8/27</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2049" target="_blank">
-    <div class="issue-icon icon-epic">⚡</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2049</span><span class="issue-summary">MICL Phase 2 — Matterport Requirements Validation & Status Review</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-epic">Epic</span>
-        
-        <span class="updated-time">9/8</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2054" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2054</span><span class="issue-summary">[MICL P2][REQ-12] Customer reminder SMS notification — build the reminder workflow (RICARDO)</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-task">Task</span>
-        
-        <span class="updated-time">9/8</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2088" target="_blank">
-    <div class="issue-icon icon-epic">⚡</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2088</span><span class="issue-summary">Allow MP Clients to have multiple currencies</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-epic">Epic</span>
-        
-        <span class="updated-time">8/31</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2022" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2022</span><span class="issue-summary">Migrate clients off the legacy CT Accept/Decline form </span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-task">Task</span>
-        
-        <span class="updated-time">7/30</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1965" target="_blank">
-    <div class="issue-icon icon-epic">⚡</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-1965</span><span class="issue-summary">Job CT Issue Log</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-epic">Epic</span>
-        
-        <span class="updated-time">7/21</span>
-      </div>
-    </div></a></div><div class="section"><div class="section-header"><span class="section-title">🧪 In Testing</span><span class="section-badge">1</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1884" target="_blank">
-    <div class="issue-icon icon-epic">⚡</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-1884</span><span class="issue-summary">CT Directory overhaul work</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-testing">In Testing</span>
-        <span class="badge badge-epic">Epic</span>
-        
-        <span class="updated-time">7/31</span>
-      </div>
-    </div></a></div><div class="section"><div class="section-header"><span class="section-title">📌 To Do / Backlog</span><span class="section-badge">2</span></div><a class="issue-card urgent-card" href="https://matterport.atlassian.net/browse/ZCI-73062" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">ZCI-73062</span><span class="issue-summary">I need access to an pold employee one drive</span></div>
-      <div class="issue-meta">
-        <span class="badge badge-p1">🔴 P1 - Critical</span>
-        <span class="badge badge-todo">To Do</span>
-        <span class="badge badge-task">Employee Termination</span>
-        
-        <span class="updated-time">7/7</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-2116" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-2116</span><span class="issue-summary">MP Client Usage Report CCs a hand-maintained field, not [Salesperson Email] — the two drift and a stale address was CC'd</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-todo">To Do</span>
-        <span class="badge badge-task">Task</span>
-        
-        <span class="updated-time">3d ago</span>
-      </div>
-    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👥 Team · COP (7 days)</span><span class="section-badge">2</span></div><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1948" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-1948</span><span class="issue-summary">Spec Ops 2.0 - Custom Client Travel Charge incorrectly triggering CT travel payout automation</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-inprogress">In Progress</span>
-        <span class="badge badge-task">Task</span>
-        <span class="issue-assignee">→ Troy Lowry</span>
-        <span class="updated-time updated-today">⚡ 10:18 AM</span>
-      </div>
-    </div></a><a class="issue-card" href="https://matterport.atlassian.net/browse/COP-1889" target="_blank">
-    <div class="issue-icon icon-task">📋</div>
-    <div class="issue-body">
-      <div class="issue-top"><span class="issue-key">COP-1889</span><span class="issue-summary">Coordinator Interfaces</span></div>
-      <div class="issue-meta">
-        
-        <span class="badge badge-testing">In Testing</span>
-        <span class="badge badge-task">Task</span>
-        <span class="issue-assignee">→ Adjet Kodia</span>
-        <span class="updated-time updated-today">⚡ 10:15 AM</span>
-      </div>
-    </div></a></div><div class="divider"></div><div class="section"><div class="section-header"><span class="section-title">👀 Pending Teams Threads</span><span class="section-badge">12</span><span style="font-size:11px;color:#aeaeb2;margin-left:4px">· via Clark · 9/19/2026</span></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asked for [Unit of Travel Distance] to be added next to the total travel distance field in all of Accounting's GCB views.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><span class="updated-time">8/27</span><span style="font-size:11px;color:#6e6e73">🤖 Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">UHG want their ordering Jotform split in two, so the On-Site Contact supplies Scheduling Details via a follow-up form.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2096" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2096 ↗</a><span class="updated-time">8/31</span><span style="font-size:11px;color:#6e6e73">🤖 Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">9/2</span><span style="font-size:11px;color:#6e6e73">🤖 Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220','_blank')">
-    <div class="thread-avatar" style="background:#14b8a6">JJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Juyoung Jang</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><span class="updated-time">9/2</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><span class="updated-time">9/3</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asked for per-technician stats in CT Directory so filtering by Main POC shows completed job counts (all time and last 12 months) plus average scan duration.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting build</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2110" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2110 ↗</a><span class="updated-time">9/10</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo replied that CT Directory additions will be scoped into the new model that has not been released yet; ticket moved to On-Hold on 9/15.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516','_blank')">
-    <div class="thread-avatar" style="background:#6366f1">JB</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">John Bosch</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Waiting on requester</span><span class="updated-time">9/16</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo confirmed his API test worked and has asked John to verify model uJgRmJhHqpw, name which records to update, and say which Airtable fields should populate the branding fields - blocked on John.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Rich-text formatting added to [Scan Requirements] on the MP Client record does not survive through to the job record, the Jotform or the CT emails.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">8/28</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asked for the Bulk Importer Excel to highlight the required fields in yellow and to mark Country and Currency as required.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting answer</span><span class="updated-time">9/17</span><span style="font-size:11px;color:#6e6e73">🤖 Adjet live-replied 11:06 AM 9/18 - he is not certain free-form dates like March 26 at 5am parse correctly in Zapier, and agreed a test batch of varied date formats is the way to check. Ball with Kailyn to run that test batch.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789681228842&createdTime=1789681228842','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2117" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2117 ↗</a><span class="updated-time">9/17</span><span style="font-size:11px;color:#6e6e73">🤖 Kailyn answered 9/18: bill the hardcoded per-space-type quantity, never the API photo count. That settles the open decision and confirms the defect - the photo-count automation overwrites the parent Number of Photos on job completion. Recorded as comment 626121; Ricardo owns the fix.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789753345385&createdTime=1789753345385','_blank')">
-    <div class="thread-avatar" style="background:#6366f1">JB</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">John Bosch</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Casago and Vacasa franchise Folder IDs for model transfer are wrong in Airtable, so models are currently being transferred into the wrong folder. Corrected values supplied as an attached spreadsheet.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2118" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2118 ↗</a><span class="updated-time">9/18</span><span style="font-size:11px;color:#6e6e73">🤖 John confirmed the corrected list is the only authoritative one and that both the 9/11 batch and the earlier 6/10 rows are retired; Ricardo owns applying it to all 39 franchise rows.</span></div>
-    </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333','_blank')">
-    <div class="thread-avatar" style="background:#D9734A">KJ</div>
-    <div class="issue-body">
-      <div class="issue-top"><span style="font-size:13px;font-weight:600">Kailyn Jelniker</span></div>
-      <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Asking for a full rundown of how CLM cancellation fees work across price types and notice windows - what the job rate and the travel fee should each pay at under 2 hours, 2 to 24 hours, and over 24 hours notice.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting decision</span><span class="updated-time">9/18</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.</span></div>
-    </div></div></div>
 </body>
 </html>
