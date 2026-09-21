@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T19:54:15.523Z",
+  "lastUpdated": "2026-09-21T23:08:11.487Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -117,12 +117,12 @@
       "author": "Juyoung Jang",
       "initials": "JJ",
       "color": "#14b8a6",
-      "summary": "A Spec Ops job is auto-populating a 2,820 USD CT travel payout for a technician who requires no travel fee. Asked for the payout to be removed.",
-      "statusCls": "badge-investigating",
-      "status": "Awaiting decision",
+      "summary": "Spec Ops job auto-populates a HKD 2,820 CT travel payout for a technician who needs no travel fee. It is hardwired to 60 percent of the client travel charge, so it cannot be zeroed without dropping the client charge.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/20",
       "jiraKey": "COP-1948",
-      "note": "Root cause confirmed and logged on COP-1948: on Spec Ops jobs the CT travel payout is hardwired to 60 percent of the client travel charge, so it cannot be zeroed without also zeroing the 4,700 USD client charge. Asked Juyoung whether Analog Device should still be billed that travel; Ricardo or Snehal owe the decision and the formula fix.",
+      "note": "Juyoung confirmed 4:02 PM the HKD 4,700 client travel charge stands (contractually agreed), so the record needs no correction and the only available lever is off the table. Snehal proposed clearing it; declined. Now blocked on Ricardo/Snehal to add a CT-payout suppressor - logged on COP-1948 as comment 626598.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789913806995?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789913806995&createdTime=1789913806995"
     }
   ]
