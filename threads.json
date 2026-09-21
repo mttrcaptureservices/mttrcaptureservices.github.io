@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T02:06:05.436Z",
+  "lastUpdated": "2026-09-21T19:54:15.523Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -106,36 +106,24 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
-      "summary": "Welltower photo charges are using the wrong quantity for at least one space type. Job SENIOR6618610460418551190 has two 1 Bedroom (AL) units and billed 32 dollars where the Photo Quantity doc gives 40; she wants an audit of all space types applied to future orders only.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/17",
-      "jiraKey": "COP-2117",
-      "note": "Kailyn answered 9/18: bill the hardcoded per-space-type quantity, never the API photo count. That settles the open decision and confirms the defect - the photo-count automation overwrites the parent Number of Photos on job completion. Recorded as comment 626121; Ricardo owns the fix.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789681228842?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789681228842&createdTime=1789681228842"
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#6366f1",
-      "summary": "Casago and Vacasa franchise Folder IDs for model transfer are wrong in Airtable, so models are currently being transferred into the wrong folder. Corrected values supplied as an attached spreadsheet.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/18",
-      "jiraKey": "COP-2118",
-      "note": "John confirmed the corrected list is the only authoritative one and that both the 9/11 batch and the earlier 6/10 rows are retired; Ricardo owns applying it to all 39 franchise rows.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789753345385?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789753345385&createdTime=1789753345385"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
       "summary": "Asking for a full rundown of how CLM cancellation fees work across price types and notice windows - what the job rate and the travel fee should each pay at under 2 hours, 2 to 24 hours, and over 24 hours notice.",
       "statusCls": "badge-waiting",
       "status": "Awaiting decision",
       "date": "9/18",
       "note": "Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
+    },
+    {
+      "author": "Juyoung Jang",
+      "initials": "JJ",
+      "color": "#14b8a6",
+      "summary": "A Spec Ops job is auto-populating a 2,820 USD CT travel payout for a technician who requires no travel fee. Asked for the payout to be removed.",
+      "statusCls": "badge-investigating",
+      "status": "Awaiting decision",
+      "date": "9/20",
+      "jiraKey": "COP-1948",
+      "note": "Root cause confirmed and logged on COP-1948: on Spec Ops jobs the CT travel payout is hardwired to 60 percent of the client travel charge, so it cannot be zeroed without also zeroing the 4,700 USD client charge. Asked Juyoung whether Analog Device should still be billed that travel; Ricardo or Snehal owe the decision and the formula fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789913806995?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789913806995&createdTime=1789913806995"
     }
   ]
 }
