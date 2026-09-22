@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T00:14:02.205Z",
+  "lastUpdated": "2026-09-22T04:34:59.892Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -112,18 +112,6 @@
       "date": "9/18",
       "note": "Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
-    },
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#14b8a6",
-      "summary": "Spec Ops job auto-populates a HKD 2,820 CT travel payout for a technician who needs no travel fee. It is hardwired to 60 percent of the client travel charge, so it cannot be zeroed without dropping the client charge.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/20",
-      "jiraKey": "COP-1948",
-      "note": "Juyoung confirmed 9/21 that the HKD 4,700 client travel charge is contractually agreed and stands, so record 97323 needs no correction; zeroing the CT payout alone is impossible today and needs a step-3 suppressor on COP-1948 - with Ricardo and Snehal.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789913806995?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789913806995&createdTime=1789913806995"
     }
   ]
 }
