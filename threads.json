@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T04:34:59.892Z",
+  "lastUpdated": "2026-09-22T17:07:12.092Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -77,7 +77,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "9/16",
-      "note": "Ricardo confirmed his API test worked and has asked John to verify model uJgRmJhHqpw, name which records to update, and say which Airtable fields should populate the branding fields - blocked on John.",
+      "note": "Ricardo confirmed 9/22 the branding can go into the automation and asked John to confirm which Airtable fields feed the branding inputs. John also has the one-time Vacasa model list to pull. Ball with John.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
     },
     {
@@ -110,7 +110,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting decision",
       "date": "9/18",
-      "note": "Ricardo owes the policy answer: his in-channel rule and the agreed COP-1873 policy point opposite ways on travel pay under 2 hours. Clark is deliberately not answering - the residual asymmetry is already recorded on COP-2106 comment 624357. Fresh ask inside the 9/10 CLM thread; root now carries 👀 alongside the existing ✅.",
+      "note": "Ricardo gave the full CLM rundown 9/22 12:10 AM and corrected his earlier 2-hour note. Clark answered the add-on half 9:32 AM: client-side add-ons halved from 1 Jan 2025, CT-side from 25 Oct 2025. Still open for Ricardo: why the 100 percent under-2-hour travel rule is limited to Vaca and SF.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789026793333?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789026793333&createdTime=1789026793333"
     }
   ]
