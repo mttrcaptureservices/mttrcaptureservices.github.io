@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T23:16:56.710Z",
+  "lastUpdated": "2026-09-22T00:14:02.205Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -122,7 +122,7 @@
       "status": "Awaiting fix",
       "date": "9/20",
       "jiraKey": "COP-1948",
-      "note": "Juyoung confirmed 4:02 PM the HKD 4,700 client travel charge stands (contractually agreed), so the record needs no correction and the only available lever is off the table. Snehal proposed clearing it; declined. Now blocked on Ricardo/Snehal to add a CT-payout suppressor - logged on COP-1948 as comment 626598.",
+      "note": "Juyoung confirmed 9/21 that the HKD 4,700 client travel charge is contractually agreed and stands, so record 97323 needs no correction; zeroing the CT payout alone is impossible today and needs a step-3 suppressor on COP-1948 - with Ricardo and Snehal.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789913806995?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789913806995&createdTime=1789913806995"
     }
   ]
