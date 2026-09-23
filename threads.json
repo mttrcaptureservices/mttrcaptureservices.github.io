@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-23T02:15:44.689Z",
+  "lastUpdated": "2026-09-23T16:05:12.315Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,7 +9,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Blocked on Kailyn: a teammate asked which specific GCB views need [Unit of Travel Distance] and she has not answered (~4 days). No ticket; nothing owed by us.",
+      "note": "Adjet nudged her 9/23 at 8:26 AM to pick up the outstanding question about which GCB views need Unit of Travel Distance; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
     },
     {
@@ -99,7 +99,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting answer",
       "date": "9/17",
-      "note": "Adjet live-replied 11:06 AM 9/18 - he is not certain free-form dates like March 26 at 5am parse correctly in Zapier, and agreed a test batch of varied date formats is the way to check. Ball with Kailyn to run that test batch.",
+      "note": "Adjet nudged her 9/23 at 8:23 AM asking whether the varied date-format test batch has been run yet; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111"
     }
   ]
