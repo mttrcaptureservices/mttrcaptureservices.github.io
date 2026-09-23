@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-23T21:25:09.996Z",
+  "lastUpdated": "2026-09-23T22:18:12.045Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -107,10 +107,10 @@
       "initials": "FA",
       "color": "#0ea5e9",
       "summary": "Reported that finance adjustment reshoot lines are not being created for two Heartland Dental jobs.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "9/23",
-      "note": "One reshoot line did land (record 102551, custom / zero pending an amount); the other job has no reshoot line at all. Asked Freddy whether the tool errored.",
+      "note": "Freddy confirmed the reshoot line never appeared for JOBID6652197024336936379 and gave no error, so the finance adjustment tool made one line and silently skipped the other; a ticket is owed once Jira recovers.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790191034690?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790191034690&createdTime=1790191034690"
     }
   ]
