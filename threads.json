@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T21:12:32.044Z",
+  "lastUpdated": "2026-09-24T22:14:54.942Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -111,7 +111,7 @@
       "status": "Investigating",
       "date": "9/24",
       "jiraKey": "COP-2121",
-      "note": "Caitlin acknowledged the findings; COP-2121 is open with Ricardo. Three UDR jobs auto-cancelled in 24h - awaiting the Airtable run-history check on the approval email button.",
+      "note": "COP-2121 still To Do with Ricardo; Caitlin acknowledged the finding, so nothing is owed back to her - the next action is the Airtable run-history check on the approval-email button.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
     }
   ]
