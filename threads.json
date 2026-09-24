@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T02:14:02.963Z",
+  "lastUpdated": "2026-09-24T15:44:12.471Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -101,18 +101,6 @@
       "date": "9/17",
       "note": "Adjet nudged her 9/23 at 8:23 AM asking whether the varied date-format test batch has been run yet; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#0ea5e9",
-      "summary": "Reported that finance adjustment reshoot lines are not being created for two Heartland Dental jobs.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/23",
-      "note": "Filed as COP-2120 and assigned to Ricardo; the fix is owed for the silent no-op and the missing reshoot line.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790191034690?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790191034690&createdTime=1790191034690",
-      "jiraKey": "COP-2120"
     }
   ]
 }
