@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T23:12:56.110Z",
+  "lastUpdated": "2026-09-24T23:14:22.621Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -108,10 +108,10 @@
       "color": "#8b5cf6",
       "summary": "UDR report that the Accept or Edit this Job button in the approval email is cancelling the whole request instead of accepting it.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "9/24",
       "jiraKey": "COP-2121",
-      "note": "Ricardo answered in-thread at 4:10 PM on 9/24 - he believes the on-site contact clicked the cancel control rather than accept, and asked Caitlin to set the parent job back to Pending. Recorded on the ticket as comment 627433. COP-2121 stays open for the wider question: three UDR job families, 20 records, two of them never reported.",
+      "note": "RICARDO owes the next action. He answered at 4:10 PM on 9/24 - he believes the on-site contact clicked the cancel control rather than accept, and asked Caitlin to set the parent back to Pending; she replied at 4:12 PM that her permission level cannot change the status of a cancelled job. The Avena parent is still Cancelled. Recorded on the ticket as comments 627433 and 627434.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
     }
   ]
