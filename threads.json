@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T15:44:12.471Z",
+  "lastUpdated": "2026-09-24T18:22:38.998Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -88,7 +88,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "8/28",
-      "note": "Ricardo owns it and is researching a workaround; Kailyn nudged for an update on 9/17 at 10:40 AM and it is still unanswered.",
+      "note": "Ricardo answered the 9/17 nudge on 9/23 at 10:35 PM - the MP Client field arrives as plain text through the synced field in Parent Base, so no fix yet and he is still working a workaround. He owns it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787930079925&createdTime=1787930079925"
     },
     {
