@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-25T04:26:34.684Z",
+  "lastUpdated": "2026-09-25T16:07:31.082Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -111,7 +111,7 @@
       "status": "Awaiting fix",
       "date": "9/24",
       "jiraKey": "COP-2121",
-      "note": "Status restored on the Avena parent but the job is still not dispatching - Caitlin reported 4:58 PM that automations are not triggering and a re-trigger did nothing; Ricardo is debugging live in-thread. Recorded on the ticket as comment 627437.",
+      "note": "Ricardo restored the Avena job overnight and Caitlin confirmed it this morning; the ticket stays open for the systemic accept-button defect, which he owns.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
     }
   ]
