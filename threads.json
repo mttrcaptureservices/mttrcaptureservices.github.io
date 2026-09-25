@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T23:14:22.621Z",
+  "lastUpdated": "2026-09-25T00:15:11.270Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -111,7 +111,7 @@
       "status": "Awaiting fix",
       "date": "9/24",
       "jiraKey": "COP-2121",
-      "note": "RICARDO owes the next action. He answered at 4:10 PM on 9/24 - he believes the on-site contact clicked the cancel control rather than accept, and asked Caitlin to set the parent back to Pending; she replied at 4:12 PM that her permission level cannot change the status of a cancelled job. The Avena parent is still Cancelled. Recorded on the ticket as comments 627433 and 627434.",
+      "note": "Status restored on the Avena parent but the job is still not dispatching - Caitlin reported 4:58 PM that automations are not triggering and a re-trigger did nothing; Ricardo is debugging live in-thread. Recorded on the ticket as comment 627437.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
     }
   ]
