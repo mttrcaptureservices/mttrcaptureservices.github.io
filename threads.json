@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-28T17:35:08.680Z",
+  "lastUpdated": "2026-09-28T17:36:58.788Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -134,7 +134,7 @@
       "status": "Awaiting fix",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Filed as COP-2122 and assigned to Ricardo. Capture size and both price codes are fine so this is not the size gate, and record 102671 has been stuck since 9/24. Needs the Airtable automation run history.",
+      "note": "Ricardo retriggered all three jobs at 10:34 AM and asked Snehal to add the Children Submitted logic to the Livit Zap, so the Zap fix sits with Snehal. Still open on COP-2122: nothing alerts on Send CT Email = Sent with an empty short link, which is how record 102671 went unnoticed for four days.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -146,7 +146,7 @@
       "status": "Awaiting decision",
       "date": "9/28",
       "jiraKey": "COP-2123",
-      "note": "Ricardo answered in-thread that the code can take time to generate when a different technician is selected, and the requester confirmed it is working. COP-2123 records the mechanism and asks him whether to close or rescope it.",
+      "note": "Ricardo answered in-thread that the code can take time to generate when a different technician is selected, and Kevin confirmed at 10:31 AM that it now displays correctly. COP-2123 records the mechanism and asks Ricardo whether to close or rescope it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790612127548?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790612127548&createdTime=1790612127548"
     }
   ]
