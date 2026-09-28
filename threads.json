@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-28T17:36:58.788Z",
+  "lastUpdated": "2026-09-28T17:49:05.331Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -119,10 +119,10 @@
       "initials": "OO",
       "color": "#f59e0b",
       "summary": "CODE Concepts submitted a request through their short form link and it never appeared in the Global Scheduling Base.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/28",
-      "note": "No CODE Concepts job exists in Parent Base Global Requests or in the Global Scheduling Base, and none ever has since the client was set up on 4 August, so this points at the short form rather than one lost submission. A Clark reply is owed - the Teams keystroke channel failed this run.",
+      "note": "Snehal found the MP Client record was created with errors, corrected it and is replaying the Zap; the job does show at Jotform. Ricardo answered her in thread about trailing spaces breaking automation search logic.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790589873308?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790589873308&createdTime=1790589873308"
     },
     {
