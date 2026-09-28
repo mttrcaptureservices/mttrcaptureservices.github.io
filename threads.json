@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-26T06:00:59.693Z",
+  "lastUpdated": "2026-09-28T17:35:08.680Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -113,6 +113,41 @@
       "jiraKey": "COP-2121",
       "note": "Ricardo restored the Avena job overnight and Caitlin confirmed it this morning; the ticket stays open for the systemic accept-button defect, which he owns.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#f59e0b",
+      "summary": "CODE Concepts submitted a request through their short form link and it never appeared in the Global Scheduling Base.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/28",
+      "note": "No CODE Concepts job exists in Parent Base Global Requests or in the Global Scheduling Base, and none ever has since the client was set up on 4 August, so this points at the short form rather than one lost submission. A Clark reply is owed - the Teams keystroke channel failed this run.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790589873308?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790589873308&createdTime=1790589873308"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#0ea5e9",
+      "summary": "Three Livit AG jobs are stuck on Please Schedule and never dispatched to the tech, flagged Send CT Email = Sent with no CT short link ever generated.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/28",
+      "jiraKey": "COP-2122",
+      "note": "Filed as COP-2122 and assigned to Ricardo. Capture size and both price codes are fine so this is not the size gate, and record 102671 has been stuck since 9/24. Needs the Airtable automation run history.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
+    },
+    {
+      "author": "Jordan Saiz",
+      "initials": "JS",
+      "color": "#ec4899",
+      "summary": "VHT jobs were populating USGP CT price codes instead of USVHTCTR. Both example records now read the correct code, one rewritten by an automation with no manual nudge.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "9/28",
+      "jiraKey": "COP-2123",
+      "note": "Ricardo answered in-thread that the code can take time to generate when a different technician is selected, and the requester confirmed it is working. COP-2123 records the mechanism and asks him whether to close or rescope it.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790612127548?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790612127548&createdTime=1790612127548"
     }
   ]
 }
