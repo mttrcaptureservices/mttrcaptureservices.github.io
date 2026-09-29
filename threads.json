@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T21:34:44.788Z",
+  "lastUpdated": "2026-09-29T21:37:18.973Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -158,7 +158,7 @@
       "status": "Awaiting fix",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Wider than the four jobs she named: no UDR Parent Record has been created anywhere since 11:56 AM, 11 job IDs affected and still growing. Snehal is on the root cause. Caitlin owes a decision on whether to backfill the 11 parents now or wait for the intake fix. Her separate 1:27 PM thread on 2 stuck UDR jobs is likely the same cause.",
+      "note": "Wider than the four jobs she named: no UDR Parent Record has been created anywhere since 11:56 AM, 11 job IDs affected and still growing. Snehal is on the root cause. Clark confirmed to Caitlin that the intake fix will not backfill the 11 existing jobs, so she owes a decision on whether to backfill now or after the fix. Her separate 1:27 PM thread on 2 stuck UDR jobs is likely the same cause.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
@@ -180,7 +180,7 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "9/29",
-      "note": "Same banner Caitlin reported on the UDR request forms 40 minutes later, so at least two clients and two surfaces. Snehal is checking whether it relates to the Jotform migration to MyApps. Clark still owes a reply here - the Teams typing channel failed mid-run.",
+      "note": "Same banner Caitlin reported on the UDR request forms 40 minutes later, so at least two clients and two surfaces. Snehal is checking whether it relates to the Jotform migration to MyApps. Clark replied confirming it is known and who owns it. Root carries no eyes marker - the reaction could not be applied this run.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713158613?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713158613&createdTime=1790713158613"
     }
   ]
