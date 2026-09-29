@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T18:12:10.408Z",
+  "lastUpdated": "2026-09-29T19:16:38.021Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -119,11 +119,11 @@
       "initials": "SY",
       "color": "#0ea5e9",
       "summary": "Three Livit AG jobs are stuck on Please Schedule and never dispatched to the tech, flagged Send CT Email = Sent with no CT short link ever generated.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Ricardo confirmed at 5:41 PM that Livit jobs carry no child records and asked Snehal to have the Zap default Children Submitted to 1; Snehal accepted the work and now owns the change.",
+      "note": "Snehal updated the Livit Zap on 9/29 to default Children Submitted to 1; all three jobs are dispatched and In Progress, though that came from a manual retrigger on 9/28. The alert on Sent plus an empty short link is still unbuilt and unowned.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -137,6 +137,17 @@
       "jiraKey": "COP-2123",
       "note": "Ricardo answered in-thread that the code can take time to generate when a different technician is selected, and Kevin confirmed at 10:31 AM that it now displays correctly. COP-2123 records the mechanism and asks Ricardo whether to close or rescope it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790612127548?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790612127548&createdTime=1790612127548"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "A bulk CSV ingest of 11 jobs has not reached Airtable. Adjet traced it to the Zapier to Jotform connection breaking after the recent Jotform SSO login change, so Zapier could not open the CSV.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/29",
+      "note": "Adjet is working it with Ricardo and Snehal; Kailyn needs the batch ingested today and is waiting for the all-clear to retry.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790704401048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790704401048&createdTime=1790704401048"
     }
   ]
 }
