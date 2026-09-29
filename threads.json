@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T20:14:27.890Z",
+  "lastUpdated": "2026-09-29T21:34:44.788Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -146,8 +146,42 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "9/29",
-      "note": "Adjet is working it with Ricardo and Snehal; Kailyn needs the batch ingested today and is waiting for the all-clear to retry.",
+      "note": "Adjet, with Ricardo and Snehal, is on the broken Zapier to Jotform connection. Ricardo had Clark load her Naya file into Airtable directly so she can dispatch today - 11 pairs created, records 103388 to 103398 and 103400 to 103410.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790704401048?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790704401048&createdTime=1790704401048"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "UDR reported a cloaking preview header on the request forms, said parent records were not appearing in Airtable, and said no approval-needed emails arrived.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/29",
+      "jiraKey": "COP-2124",
+      "note": "Wider than the four jobs she named: no UDR Parent Record has been created anywhere since 11:56 AM, 11 job IDs affected and still growing. Snehal is on the root cause. Caitlin owes a decision on whether to backfill the 11 parents now or wait for the intake fix. Her separate 1:27 PM thread on 2 stuck UDR jobs is likely the same cause.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#f59e0b",
+      "summary": "A KPS job had a capture plan added and was distributed, but the field attachments did not reach the CT email until roughly a month later.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "9/29",
+      "note": "Ricardo found that the Spec Ops 2.0 to Parent Base attachment sync did not run at the time, retested it and confirmed it works now, and said he is investigating the root cause. No ticket yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
+    },
+    {
+      "author": "Kevin Curtis",
+      "initials": "KC",
+      "color": "#10b981",
+      "summary": "A cloaking preview banner is visible when clicking the accept or reject link in the Job Request email for Vacasa jobs.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/29",
+      "note": "Same banner Caitlin reported on the UDR request forms 40 minutes later, so at least two clients and two surfaces. Snehal is checking whether it relates to the Jotform migration to MyApps. Clark still owes a reply here - the Teams typing channel failed mid-run.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713158613?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713158613&createdTime=1790713158613"
     }
   ]
 }
