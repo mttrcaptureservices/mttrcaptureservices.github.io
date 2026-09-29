@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T22:26:41.111Z",
+  "lastUpdated": "2026-09-29T23:16:44.047Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -158,7 +158,7 @@
       "status": "Awaiting fix",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Caitlin asked for the missing parents to be backfilled. Clark is holding until intake stops and until we know whether the fix replays the held runs, since a replay would create duplicate billable parents. Scope is now 13 job IDs and still growing.",
+      "note": "Parent-less set re-counted at 4:15 PM and is now 14 job IDs, up from 13. Newest UDR parent is still 103348 at 11:56 AM, and no UDR record of any kind has landed since 3:01 PM. Backfill still held with her agreement at 3:43 PM: short links are down so hand-created parents cannot send approval emails, and a replay of the held runs would make them duplicates. Snehal on root cause, Ricardo on the outage.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
@@ -191,7 +191,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/29",
-      "note": "Ricardo announced a short link service outage at 2:49 PM and owns it. Freddy was asked to stop retriggering so we do not end up with duplicate parent records.",
+      "note": "Records verified clean on both jobs, only the CT short link is missing, so this is the outage rather than anything on the record. He liked the reply and has stopped retriggering. Still Pending with no short link and no email sent as of 4:15 PM. Ricardo owns the fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790717934866?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790717934866&createdTime=1790717934866"
     },
     {
@@ -202,7 +202,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/29",
-      "note": "Told not to re-enter it. Record 103361 is clean apart from the missing CT short link, so it is blocked on the short link outage that Ricardo owns.",
+      "note": "Parent 103361 verified clean apart from the missing CT short link, still Pending with no email sent as of 4:15 PM. He was told not to re-enter the job. Ricardo owns the short link outage.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551"
     }
   ]
