@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T00:16:25.147Z",
+  "lastUpdated": "2026-09-29T02:53:54.070Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -120,10 +120,10 @@
       "color": "#0ea5e9",
       "summary": "Three Livit AG jobs are stuck on Please Schedule and never dispatched to the tech, flagged Send CT Email = Sent with no CT short link ever generated.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
+      "status": "Awaiting fix",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Snehal accepted the Zap fix at 10:36 AM 9/28, then at 4:54 PM asked Ricardo to confirm that Livit jobs carry no child records, so the change now waits on his answer; all three jobs were retriggered by hand and dispatched.",
+      "note": "Ricardo confirmed at 5:41 PM that Livit jobs carry no child records and asked Snehal to have the Zap default Children Submitted to 1; Snehal accepted the work and now owns the change.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
