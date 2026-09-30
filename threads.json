@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T15:05:32.884Z",
+  "lastUpdated": "2026-09-30T15:22:28.864Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -123,7 +123,7 @@
       "status": "Fix deployed",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Zap fix is now EXERCISED and the Children Submitted half is proven - six fresh Livit jobs today all read Children Submitted = 1 at creation, no manual step. Dispatch is still blocked: all six sit on Please Schedule with empty CT Short Link and Last Email Sent, which is the short.io outage. Re-check they self-dispatch once short.io is back.",
+      "note": "Snehal Zap fix proven at creation - six fresh Livit records today all read Children Submitted = 1. Re-checked 8:22 AM: all six still Please Schedule with no short link and no email, blocked on the short.io outage. Next check is whether they self-dispatch once short.io is back.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -147,7 +147,7 @@
       "status": "Awaiting fix",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Ricardo named the cause 6:31 PM 9/29 - short.io outage, step 37 of the UDR Zap pathway - and reconfirmed 7:50 AM 9/30 that it resolves today. Parent-less set is now 15, up from 13; no UDR intake at all since 9:30 PM 9/29. Record 103431 is a parent written onto an OLD job, not the fresh intake pathway recovering. Backfill stays held with Caitlin agreement.",
+      "note": "Short.io outage, step 37 of the UDR Zap pathway - Ricardo owns it and reconfirmed at 7:50 AM that it resolves today. Parent-less set stands at 15. Re-checked 8:22 AM: no new UDR intake since 9:30 PM 9/29, nothing has changed. Backfill held with Caitlin agreement.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
