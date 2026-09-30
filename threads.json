@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T16:18:39.759Z",
+  "lastUpdated": "2026-09-30T16:36:17.534Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -119,11 +119,11 @@
       "initials": "SY",
       "color": "#0ea5e9",
       "summary": "Three Livit AG jobs are stuck on Please Schedule and never dispatched to the tech, flagged Send CT Email = Sent with no CT short link ever generated.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Zap fix proven: Children Submitted reads 1 at creation on all six new Livit records. But those six still had no short link and no tech email at 9:18 AM 9/30 while UDR and Vacasa recovered - re-check next run before calling it fixed end to end.",
+      "note": "Short.io restored and the wider backlog drained, but the six Livit jobs did not pick up links in that sweep. Ricardo is handling them directly. Stephenie has been told and the root is ticked; entry stays until the Livit jobs dispatch and COP-2122 closes.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -144,10 +144,10 @@
       "color": "#8b5cf6",
       "summary": "UDR reported a cloaking preview header on the request forms, said parent records were not appearing in Airtable, and said no approval-needed emails arrived.",
       "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
+      "status": "Awaiting ticket close",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "All 15 parent-less UDR job IDs received Parent Records at 8:54-8:57 AM 9/30 when short.io recovered - records 103469 to 103483, one each, no duplicates. Approval short links are landing now. Holding the backfill was the right call.",
+      "note": "Short.io restored and all 15 parent-less UDR job IDs rebuilt their Parent Records unaided between 8:54 and 9:06 AM, one each with no duplicates. Caitlin has been told no backfill is needed and the root is ticked. Entry stays only until COP-2124 is closed in Jira.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
@@ -160,39 +160,6 @@
       "date": "9/29",
       "note": "Ricardo found that the Spec Ops 2.0 to Parent Base attachment sync did not run at the time, retested it and confirmed it works now, and said he is investigating the root cause. No ticket yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
-    },
-    {
-      "author": "Kevin Curtis",
-      "initials": "KC",
-      "color": "#10b981",
-      "summary": "A cloaking preview banner is visible when clicking the accept or reject link in the Job Request email for Vacasa jobs.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "9/29",
-      "note": "Same banner Caitlin reported on the UDR request forms 40 minutes later, so at least two clients and two surfaces. Snehal is checking whether it relates to the Jotform migration to MyApps. Clark replied confirming it is known and who owns it. Root carries no eyes marker - the reaction could not be applied this run.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713158613?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713158613&createdTime=1790713158613"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#dc2626",
-      "summary": "Two jobs would not dispatch, then no jobs at all were dispatching. Both records have sizes, children and price codes resolved, with only the CT short link missing.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "9/29",
-      "note": "Both jobs dispatched on their own at 9:06 AM 9/30 once short.io came back - record 103370 is In Progress with go.mp/gdxy7h and the tech email sent. Nothing owed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790717934866?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790717934866&createdTime=1790717934866"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#ec4899",
-      "summary": "Vacasa job VAC105-6665202965419427736 stuck for over 30 minutes with no status update and no job request email, asking whether it needs to be re-entered.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "9/29",
-      "note": "Record 103361 dispatched on its own at 9:05 AM 9/30 with go.mp/0dfxkh and the tech email sent; the job is now In Progress. Nothing owed.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551"
     }
   ]
 }
