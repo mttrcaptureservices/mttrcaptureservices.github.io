@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T15:03:08.899Z",
+  "lastUpdated": "2026-09-30T15:05:32.884Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -191,19 +191,8 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/29",
-      "note": "Ricardo confirmed short.io as the cause and said at 7:50 AM 9/30 that it resolves today. Note the same job VAC105-6665202965419427736 is ALSO sitting on Expired Contract status, tracked as a separate 9/30 thread.",
+      "note": "Ricardo confirmed short.io as the cause and said at 7:50 AM 9/30 that it resolves today; the missing short link is all that remains. The separate Expired Contract problem on this same job was fixed by Ricardo at 8:02 AM 9/30 and all its records now read Pending.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#ec4899",
-      "summary": "Three Vacasa jobs are showing Expired Contract status in Airtable and cannot be scheduled. Asked what needs to be done to correct it before more jobs come in today.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "9/30",
-      "note": "Cause identified: the Vacasa (3) client record reads Contract Status Expired, and every Vacasa (3) job created since 12:45 PM 9/29 has landed as Expired Contract - 4 jobs / 8 records so far and still ongoing. A Vacasa (4) record was created 12:38 AM 9/30 with no contract status set. Asked Ricardo whether to repoint new jobs to Vacasa (4) or clear the status on Vacasa (3).",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790775958632?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790775958632&createdTime=1790775958632"
     }
   ]
 }
