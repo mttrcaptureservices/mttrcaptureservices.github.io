@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T15:22:28.864Z",
+  "lastUpdated": "2026-09-30T16:18:39.759Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -123,7 +123,7 @@
       "status": "Fix deployed",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Snehal Zap fix proven at creation - six fresh Livit records today all read Children Submitted = 1. Re-checked 8:22 AM: all six still Please Schedule with no short link and no email, blocked on the short.io outage. Next check is whether they self-dispatch once short.io is back.",
+      "note": "Zap fix proven: Children Submitted reads 1 at creation on all six new Livit records. But those six still had no short link and no tech email at 9:18 AM 9/30 while UDR and Vacasa recovered - re-check next run before calling it fixed end to end.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -143,11 +143,11 @@
       "initials": "CS",
       "color": "#8b5cf6",
       "summary": "UDR reported a cloaking preview header on the request forms, said parent records were not appearing in Airtable, and said no approval-needed emails arrived.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Short.io outage, step 37 of the UDR Zap pathway - Ricardo owns it and reconfirmed at 7:50 AM that it resolves today. Parent-less set stands at 15. Re-checked 8:22 AM: no new UDR intake since 9:30 PM 9/29, nothing has changed. Backfill held with Caitlin agreement.",
+      "note": "All 15 parent-less UDR job IDs received Parent Records at 8:54-8:57 AM 9/30 when short.io recovered - records 103469 to 103483, one each, no duplicates. Approval short links are landing now. Holding the backfill was the right call.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
@@ -177,10 +177,10 @@
       "initials": "FA",
       "color": "#dc2626",
       "summary": "Two jobs would not dispatch, then no jobs at all were dispatching. Both records have sizes, children and price codes resolved, with only the CT short link missing.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "9/29",
-      "note": "Ricardo confirmed the short.io outage as the cause 6:32 PM 9/29 and said at 7:50 AM 9/30 that it resolves today. Nothing to retrigger until then.",
+      "note": "Both jobs dispatched on their own at 9:06 AM 9/30 once short.io came back - record 103370 is In Progress with go.mp/gdxy7h and the tech email sent. Nothing owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790717934866?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790717934866&createdTime=1790717934866"
     },
     {
@@ -188,10 +188,10 @@
       "initials": "JS",
       "color": "#ec4899",
       "summary": "Vacasa job VAC105-6665202965419427736 stuck for over 30 minutes with no status update and no job request email, asking whether it needs to be re-entered.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "9/29",
-      "note": "Ricardo confirmed short.io as the cause and said at 7:50 AM 9/30 that it resolves today; the missing short link is all that remains. The separate Expired Contract problem on this same job was fixed by Ricardo at 8:02 AM 9/30 and all its records now read Pending.",
+      "note": "Record 103361 dispatched on its own at 9:05 AM 9/30 with go.mp/0dfxkh and the tech email sent; the job is now In Progress. Nothing owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551"
     }
   ]
