@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T00:21:09.667Z",
+  "lastUpdated": "2026-09-30T01:16:24.648Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -123,7 +123,7 @@
       "status": "Fix deployed",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "All 3 Livit jobs verified dispatched — Children Submitted reads 1, go.mp short links present, Job Request Email sent. Snehal filed COP-2126 for the same 3 jobs. The Zap fix remains unexercised until a fresh Livit job lands.",
+      "note": "Snehal shipped the Livit Zap change at 10:03 AM 9/29 but it is still unexercised - no brand-new Livit job has landed since 9/28. All three jobs are dispatched with go.mp links, but via Ricardo manual retrigger on 9/28, not via the fix. COP-2126 duplicates this ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -147,7 +147,7 @@
       "status": "Awaiting fix",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Backfill still held, with her agreement in channel at 3:43 PM. Set is stable at 13 job IDs and has not grown in an hour, corrected down from 14 — one ID already had a parent from 9/25. Newest UDR parent is still 103348 at 11:56 AM and UDR intake has been quiet since 2:49 PM. Ricardo owns the short-link outage.",
+      "note": "Set has held at 13 parent-less UDR job IDs for three hours - no growth since 3:24 PM, and the earlier count of 14 was one too high. Newest UDR Parent Record is still 103348 at 11:56 AM, so 6h17m with none created; no new UDR intake since 3:01 PM. Backfill still deliberately held with her agreement. Snehal owns root cause.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
