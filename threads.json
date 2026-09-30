@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T19:49:23.134Z",
+  "lastUpdated": "2026-09-30T22:29:55.838Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -135,7 +135,7 @@
       "status": "Awaiting ticket close",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "12 of 15 parents have dispatched end to end as of 12:50 PM 9/30 (9 Scheduled with the short link correctly cleared, 3 In Progress with live links); the remaining 3 sit on Waiting for Approval, the expected pre-dispatch state. Recovery is complete - only the durable alerting gap keeps the ticket open.",
+      "note": "12 of 15 parents dispatched as of 3:00 PM 9/30 - 11 Scheduled with confirmation emails sent and the link correctly cleared, 1 In Progress with a live link, 3 still on Waiting for Approval; 15 records for 15 job IDs, no duplicates. Nothing further owed on the ticket - it stays open only for the durable alerting gap.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
