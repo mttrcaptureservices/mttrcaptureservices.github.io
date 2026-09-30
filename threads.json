@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T16:36:17.534Z",
+  "lastUpdated": "2026-09-30T18:16:28.625Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -115,18 +115,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
     },
     {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#0ea5e9",
-      "summary": "Three Livit AG jobs are stuck on Please Schedule and never dispatched to the tech, flagged Send CT Email = Sent with no CT short link ever generated.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/28",
-      "jiraKey": "COP-2122",
-      "note": "Short.io restored and the wider backlog drained, but the six Livit jobs did not pick up links in that sweep. Ricardo is handling them directly. Stephenie has been told and the root is ticked; entry stays until the Livit jobs dispatch and COP-2122 closes.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
-    },
-    {
       "author": "Jordan Saiz",
       "initials": "JS",
       "color": "#ec4899",
@@ -147,7 +135,7 @@
       "status": "Awaiting ticket close",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Short.io restored and all 15 parent-less UDR job IDs rebuilt their Parent Records unaided between 8:54 and 9:06 AM, one each with no duplicates. Caitlin has been told no backfill is needed and the root is ticked. Entry stays only until COP-2124 is closed in Jira.",
+      "note": "Fully recovered. Nine parents have dispatched end to end with Send CT Email = Sent and Last Email Sent populated: six In Progress carrying live go.mp links (103473/74/75/79/82/83) and three now Scheduled on Appt Confirmation Emails sent (103469/76/77, where an empty link is the healthy post-accept state). The other six sit on Waiting for Approval, the expected pre-dispatch state. No duplicate parents. Entry stays only until the ticket is closed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
