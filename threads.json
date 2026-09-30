@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T18:16:28.625Z",
+  "lastUpdated": "2026-09-30T19:49:23.134Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -135,7 +135,7 @@
       "status": "Awaiting ticket close",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Fully recovered. Nine parents have dispatched end to end with Send CT Email = Sent and Last Email Sent populated: six In Progress carrying live go.mp links (103473/74/75/79/82/83) and three now Scheduled on Appt Confirmation Emails sent (103469/76/77, where an empty link is the healthy post-accept state). The other six sit on Waiting for Approval, the expected pre-dispatch state. No duplicate parents. Entry stays only until the ticket is closed.",
+      "note": "12 of 15 parents have dispatched end to end as of 12:50 PM 9/30 (9 Scheduled with the short link correctly cleared, 3 In Progress with live links); the remaining 3 sit on Waiting for Approval, the expected pre-dispatch state. Recovery is complete - only the durable alerting gap keeps the ticket open.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
