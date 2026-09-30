@@ -53,8 +53,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </head>
 <body>
 <div class="header"><h1>Needs Your Attention</h1></div>
-<div class="subtitle">September 29, 2026</div>
-<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 7:56 PM PT · Jira live · Teams via Clark</div>
+<div class="subtitle">September 30, 2026</div>
+<div class="refresh-info">🔄 Auto-refreshed every 30 min Mon–Fri · Last updated: 2:11 AM PT · Jira live · Teams via Clark</div>
 <div class="source-row">
 <div class="source-chip"><div class="source-dot"></div> Jira · Matterport</div>
 <div class="source-chip"><div class="source-dot green"></div> Assigned to you</div>
@@ -325,7 +325,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">Caitlin Suh</span></div>
       <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">UDR reported a cloaking preview header on the request forms, said parent records were not appearing in Airtable, and said no approval-needed emails arrived.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2124" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2124 ↗</a><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Set has held at 13 parent-less UDR job IDs for three hours - no growth since 3:24 PM, and the earlier count of 14 was one too high. Newest UDR Parent Record is still 103348 at 11:56 AM, so 6h17m with none created; no new UDR intake since 3:01 PM. Backfill still deliberately held with her agreement. Snehal owns root cause.</span></div>
+      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><a class="badge badge-jira-link" href="https://matterport.atlassian.net/browse/COP-2124" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none">COP-2124 ↗</a><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Root cause confirmed by Ricardo in channel at 6:31 PM 9/29 - the short.io outage, step 37 of the UDR Zap pathway requires a short.io connection, and he expects short.io back tomorrow. The first UDR parent record in 9h12m landed at 9:09 PM (record 103431) but with no short link and no approval email, so the parent step recovered while the email step did not. The parent-less set is still 13. Backfill stays held, with Caitlin agreement in channel.</span></div>
     </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017','_blank')">
     <div class="thread-avatar" style="background:#f59e0b">TL</div>
     <div class="issue-body">
@@ -343,13 +343,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">Freddy Arias</span></div>
       <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Two jobs would not dispatch, then no jobs at all were dispatching. Both records have sizes, children and price codes resolved, with only the CT short link missing.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Records verified clean on both jobs, only the CT short link is missing, so this is the outage rather than anything on the record. He liked the reply and has stopped retriggering. Still Pending with no short link and no email sent as of 4:15 PM. Ricardo owns the fix.</span></div>
+      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Ricardo confirmed the cause in thread at 6:32 PM 9/29 - the short.io outage. Short links are a hard dependency before any automation can send an email, and he expects short.io back tomorrow. Both job records are clean, so nothing needs re-entering.</span></div>
     </div></div><div class="thread-card" onclick="window.open('https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551','_blank')">
     <div class="thread-avatar" style="background:#ec4899">JS</div>
     <div class="issue-body">
       <div class="issue-top"><span style="font-size:13px;font-weight:600">Jordan Saiz</span></div>
       <div style="font-size:13px;color:#3c3c43;margin-bottom:6px;line-height:1.4">Vacasa job VAC105-6665202965419427736 stuck for over 30 minutes with no status update and no job request email, asking whether it needs to be re-entered.</div>
-      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Parent 103361 verified clean apart from the missing CT short link, still Pending with no email sent as of 4:15 PM. He was told not to re-enter the job. Ricardo owns the short link outage.</span></div>
+      <div class="issue-meta"><span class="badge badge-waiting">Awaiting fix</span><span class="updated-time">9/29</span><span style="font-size:11px;color:#6e6e73">🤖 Same confirmed cause as the other dispatch reports - the short.io outage Ricardo named in channel at 6:32 PM 9/29. Short links are required before the automation can send the job request email; fix expected tomorrow. Record 103361 is clean apart from the missing link.</span></div>
     </div></div></div>
 </body>
 </html>
