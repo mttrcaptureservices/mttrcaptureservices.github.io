@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T04:33:49.747Z",
+  "lastUpdated": "2026-09-30T15:03:08.899Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -123,7 +123,7 @@
       "status": "Fix deployed",
       "date": "9/28",
       "jiraKey": "COP-2122",
-      "note": "Snehal shipped the Livit Zap change at 10:03 AM 9/29 but it is still unexercised - no brand-new Livit job has landed since 9/28. All three jobs are dispatched with go.mp links, but via Ricardo manual retrigger on 9/28, not via the fix. COP-2126 duplicates this ticket.",
+      "note": "Zap fix is now EXERCISED and the Children Submitted half is proven - six fresh Livit jobs today all read Children Submitted = 1 at creation, no manual step. Dispatch is still blocked: all six sit on Please Schedule with empty CT Short Link and Last Email Sent, which is the short.io outage. Re-check they self-dispatch once short.io is back.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790604925679?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790604925679&createdTime=1790604925679"
     },
     {
@@ -147,7 +147,7 @@
       "status": "Awaiting fix",
       "date": "9/29",
       "jiraKey": "COP-2124",
-      "note": "Root cause confirmed by Ricardo in channel at 6:31 PM 9/29 - the short.io outage, step 37 of the UDR Zap pathway requires a short.io connection, and he expects short.io back tomorrow. The first UDR parent record in 9h12m landed at 9:09 PM (record 103431) but with no short link and no approval email, so the parent step recovered while the email step did not. The parent-less set is still 13. Backfill stays held, with Caitlin agreement in channel.",
+      "note": "Ricardo named the cause 6:31 PM 9/29 - short.io outage, step 37 of the UDR Zap pathway - and reconfirmed 7:50 AM 9/30 that it resolves today. Parent-less set is now 15, up from 13; no UDR intake at all since 9:30 PM 9/29. Record 103431 is a parent written onto an OLD job, not the fresh intake pathway recovering. Backfill stays held with Caitlin agreement.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
@@ -180,7 +180,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/29",
-      "note": "Ricardo confirmed the cause in thread at 6:32 PM 9/29 - the short.io outage. Short links are a hard dependency before any automation can send an email, and he expects short.io back tomorrow. Both job records are clean, so nothing needs re-entering.",
+      "note": "Ricardo confirmed the short.io outage as the cause 6:32 PM 9/29 and said at 7:50 AM 9/30 that it resolves today. Nothing to retrigger until then.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790717934866?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790717934866&createdTime=1790717934866"
     },
     {
@@ -191,8 +191,19 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "9/29",
-      "note": "Same confirmed cause as the other dispatch reports - the short.io outage Ricardo named in channel at 6:32 PM 9/29. Short links are required before the automation can send the job request email; fix expected tomorrow. Record 103361 is clean apart from the missing link.",
+      "note": "Ricardo confirmed short.io as the cause and said at 7:50 AM 9/30 that it resolves today. Note the same job VAC105-6665202965419427736 is ALSO sitting on Expired Contract status, tracked as a separate 9/30 thread.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790718310551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790718310551&createdTime=1790718310551"
+    },
+    {
+      "author": "Jordan Saiz",
+      "initials": "JS",
+      "color": "#ec4899",
+      "summary": "Three Vacasa jobs are showing Expired Contract status in Airtable and cannot be scheduled. Asked what needs to be done to correct it before more jobs come in today.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "9/30",
+      "note": "Cause identified: the Vacasa (3) client record reads Contract Status Expired, and every Vacasa (3) job created since 12:45 PM 9/29 has landed as Expired Contract - 4 jobs / 8 records so far and still ongoing. A Vacasa (4) record was created 12:38 AM 9/30 with no contract status set. Asked Ricardo whether to repoint new jobs to Vacasa (4) or clear the status on Vacasa (3).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790775958632?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790775958632&createdTime=1790775958632"
     }
   ]
 }
