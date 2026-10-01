@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T22:29:52.777Z",
+  "lastUpdated": "2026-10-01T22:39:02.444Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -112,18 +112,6 @@
       "date": "9/29",
       "note": "Ricardo found that the Spec Ops 2.0 to Parent Base attachment sync did not run at the time, retested it and confirmed it works now, and said he is investigating the root cause. No ticket yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "The automated new job request email to the tech did not fire on JOBID6666833453719496599. The two missing line items have since landed and the email went out, but the parent capture size correction only reached the client price code.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/1",
-      "note": "Capture size now correct at 11,741 and the client code moved to USSFC8, but the CT code is still USGPC3 whose band ends at 10,000 - the tech is 150 short on a job already dispatched. Routed to COP-2048; Ricardo to re-resolve the CT code.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790878233010?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790878233010&createdTime=1790878233010",
-      "jiraKey": "COP-2048"
     },
     {
       "author": "Kailyn Jelniker",
