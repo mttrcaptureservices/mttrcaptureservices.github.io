@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T23:14:59.777Z",
+  "lastUpdated": "2026-10-01T15:05:55.399Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -101,42 +101,6 @@
       "date": "9/17",
       "note": "Adjet nudged her 9/23 at 8:23 AM asking whether the varied date-format test batch has been run yet; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789669265111&createdTime=1789669265111"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "UDR report that the Accept or Edit this Job button in the approval email is cancelling the whole request instead of accepting it.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/24",
-      "jiraKey": "COP-2121",
-      "note": "Ricardo restored the Avena job overnight and Caitlin confirmed it this morning; the ticket stays open for the systemic accept-button defect, which he owns.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790278063122?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790278063122&createdTime=1790278063122"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#ec4899",
-      "summary": "VHT jobs were populating USGP CT price codes instead of USVHTCTR. Both example records now read the correct code, one rewritten by an automation with no manual nudge.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "9/28",
-      "jiraKey": "COP-2123",
-      "note": "Ricardo answered in-thread that the code can take time to generate when a different technician is selected, and Kevin confirmed at 10:31 AM that it now displays correctly. COP-2123 records the mechanism and asks Ricardo whether to close or rescope it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790612127548?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790612127548&createdTime=1790612127548"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "UDR reported a cloaking preview header on the request forms, said parent records were not appearing in Airtable, and said no approval-needed emails arrived.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting ticket close",
-      "date": "9/29",
-      "jiraKey": "COP-2124",
-      "note": "All 15 parents (103469-103483) remain intact with no duplicates; re-verified 23:15Z 9/30 unchanged - 11 Scheduled with the short link correctly cleared, 1 In Progress, 3 Waiting for Approval. Intake healthy through 19:24Z. Ricardo owes only the ticket close.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790715641103?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790715641103&createdTime=1790715641103"
     },
     {
       "author": "Troy Lowry",
