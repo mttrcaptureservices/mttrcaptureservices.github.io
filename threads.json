@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T16:10:51.472Z",
+  "lastUpdated": "2026-10-01T17:17:45.875Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -114,15 +114,15 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
     },
     {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#0ea5e9",
-      "summary": "Roche job SWC-7916 went missing and cannot be found anywhere in Airtable. The record does exist on the Roche and Spec Ops side, but is absent from the ESOFT QA work queue table.",
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "Five Air Communities jobs are Scheduled but the appointment confirmation emails never went out, and re-triggering them did not produce the emails.",
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/1",
-      "note": "Ricardo is working it live and has seen her view screenshot; the record carries a blank Job Status and never landed in the ESOFT QA work queue table.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790869941935?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790869941935&createdTime=1790869941935"
+      "note": "Snehal Meled took it at 10:01 AM after Ricardo pointed at the children submitted logic in the Air Communities zap; nothing owed by the requester.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790873605113?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790873605113&createdTime=1790873605113"
     }
   ]
 }
