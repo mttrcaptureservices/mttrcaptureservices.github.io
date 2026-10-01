@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T15:36:42.268Z",
+  "lastUpdated": "2026-10-01T16:10:51.472Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -112,6 +112,17 @@
       "date": "9/29",
       "note": "Ricardo found that the Spec Ops 2.0 to Parent Base attachment sync did not run at the time, retested it and confirmed it works now, and said he is investigating the root cause. No ticket yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#0ea5e9",
+      "summary": "Roche job SWC-7916 went missing and cannot be found anywhere in Airtable. The record does exist on the Roche and Spec Ops side, but is absent from the ESOFT QA work queue table.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/1",
+      "note": "Ricardo is working it live and has seen her view screenshot; the record carries a blank Job Status and never landed in the ESOFT QA work queue table.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790869941935?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790869941935&createdTime=1790869941935"
     }
   ]
 }
