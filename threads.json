@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T15:32:30.708Z",
+  "lastUpdated": "2026-10-01T15:36:42.268Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -112,18 +112,6 @@
       "date": "9/29",
       "note": "Ricardo found that the Spec Ops 2.0 to Parent Base attachment sync did not run at the time, retested it and confirmed it works now, and said he is investigating the root cause. No ticket yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790713113017?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790713113017&createdTime=1790713113017"
-    },
-    {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#ec4899",
-      "summary": "Five Vacasa (3) jobs are stuck on Expired Contract status and cannot be scheduled. The ten records kept a stale stamp from a short window on 9/29 and were never re-stamped after the contract dates were corrected.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "9/30",
-      "jiraKey": "COP-2127",
-      "note": "Ricardo reverted all ten records off Expired Contract at 8:28 AM 10/1 and the five jobs are now dispatching with live CT short links; Jordan acknowledged. Only a closure decision on COP-2127 remains.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790775958632?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790775958632&createdTime=1790775958632"
     }
   ]
 }
