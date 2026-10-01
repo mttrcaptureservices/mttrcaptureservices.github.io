@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T18:23:30.435Z",
+  "lastUpdated": "2026-10-01T19:51:21.018Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -117,22 +117,11 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#8b5cf6",
-      "summary": "Five Air Communities jobs are Scheduled but the appointment confirmation emails never went out, and re-triggering them did not produce the emails.",
+      "summary": "The new job request email on JOBID6666833453719496599 (Mill Creek Residential) failed because two of the nine submitted units were never created. Both units have since landed and the email has gone out, but the parent record still understates the job.",
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/1",
-      "note": "Adjet found the parents are missing the Reschedule Short Link, which the confirmation email requires; he is retriggering about 13 stuck reschedule long links.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790873605113?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790873605113&createdTime=1790873605113"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "The automated new job request email to the capture tech never fired on JOBID6666833453719496599 (Mill Creek Residential), and re-triggering the Send CT Email field did nothing.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/1",
-      "note": "Confirmed from the original submission: 9 units were submitted and Airtable created only 7, so B05 #6-6111 and B12 #6-6200 are missing and the parent is 2,627 sq ft short. Ricardo and Snehal flagged to create them.",
+      "note": "Units 103811 and 103812 landed at 11:40 and the CT email went out, but parent 103723 still reads 9,114 sq ft instead of 11,741, leaving the job a price tier low on both books; Ricardo or Snehal need to correct the capture size and recalculate price codes.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790878233010?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790878233010&createdTime=1790878233010"
     }
   ]
