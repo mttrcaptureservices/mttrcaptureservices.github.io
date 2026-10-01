@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T18:19:55.562Z",
+  "lastUpdated": "2026-10-01T18:23:30.435Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -129,10 +129,10 @@
       "initials": "CS",
       "color": "#8b5cf6",
       "summary": "The automated new job request email to the capture tech never fired on JOBID6666833453719496599 (Mill Creek Residential), and re-triggering the Send CT Email field did nothing.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "10/1",
-      "note": "The parent reads 9 children submitted against only 7 unit records, so no CT short link generated; asked Caitlin whether the submission was 9 units or 7.",
+      "note": "Confirmed from the original submission: 9 units were submitted and Airtable created only 7, so B05 #6-6111 and B12 #6-6200 are missing and the parent is 2,627 sq ft short. Ricardo and Snehal flagged to create them.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790878233010?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790878233010&createdTime=1790878233010"
     }
   ]
