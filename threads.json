@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T23:35:56.619Z",
+  "lastUpdated": "2026-10-02T23:37:18.632Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -190,17 +190,6 @@
       "date": "10/2",
       "note": "He narrowed it at 3:45 PM: only the header text in his second screenshot should change, ignore the other wording. Ricardo owns the Jotform edit.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790974460160?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790974460160&createdTime=1790974460160"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "A second parent record appeared on Lennar job JOBID6667729454521533636 (Spring Valley Ranch). She cancelled one of them and the cancellation cascaded onto both child records.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix confirmed",
-      "date": "10/2",
-      "note": "Ricardo deleted duplicate parent 104072 at 4:34 PM and put the children back to In Progress - verified: 104049, 104050 and 104051 all In Progress, children back on USGPC2, parent still 4,699 sq ft. His guidance: delete a duplicate parent rather than cancelling it, since a parent replicates its status onto every child.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790980009544?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790980009544&createdTime=1790980009544"
     }
   ]
 }
