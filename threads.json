@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T22:02:56.416Z",
+  "lastUpdated": "2026-10-02T23:34:08.125Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -181,17 +181,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966716200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966716200&createdTime=1790966716200"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "UDR Mitchell view shows only CIA and CLM jobs; Scheduled jobs for Capture Requestor Mitchell are missing from it.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/2",
-      "note": "Clark confirmed all 3 job IDs exist, all read Scheduled, and all 6 records are present in the Global Customer Base table - so it is a condition on the view, not a sync gap. View filters are not MCP-readable, so the last step needs eyes in Airtable.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790973659217?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790973659217&createdTime=1790973659217"
-    },
-    {
       "author": "John Bosch",
       "initials": "JB",
       "color": "#6366f1",
@@ -199,8 +188,19 @@
       "statusCls": "badge-todo",
       "status": "Awaiting fix",
       "date": "10/2",
-      "note": "Addressed to Ricardo. Jotform option text is a manual edit on the form itself, so it needs whoever owns that form; no defect to track.",
+      "note": "He narrowed it at 3:45 PM: only the header text in his second screenshot should change, ignore the other wording. Ricardo owns the Jotform edit.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790974460160?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790974460160&createdTime=1790974460160"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "A second parent record appeared on Lennar job JOBID6667729454521533636 (Spring Valley Ranch). She cancelled one of them and the cancellation cascaded onto both child records.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/2",
+      "note": "Confirmed 104050 is the live parent (4,699 sq ft, tech link, In Progress) and 104072 the duplicate (created 48 min later, no capture size, no link) - she cancelled the right one. Ricardo or Snehal need to put children 104049 and 104051 back to In Progress.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790980009544?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790980009544&createdTime=1790980009544"
     }
   ]
 }
