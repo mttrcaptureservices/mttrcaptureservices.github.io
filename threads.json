@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-01T22:39:02.444Z",
+  "lastUpdated": "2026-10-02T04:29:43.150Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -128,12 +128,12 @@
       "author": "Troy Lowry",
       "initials": "TL",
       "color": "#f59e0b",
-      "summary": "Asked to turn on Jotform submission receipts for all Spec Ops customers on the Legacy and 2.0 bases, so clients get a confirmation that their form was received.",
+      "summary": "Spec Ops clients get no receipt when they submit the Jotform order form, so they cannot tell a successful submission from one that silently went nowhere. Chewy receives nothing at all on submit.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "10/1",
       "jiraKey": "COP-2128",
-      "note": "Ricardo says confirmations should already be enabled for every customer and has asked Troy for an example of a client not receiving one. Blocked on that example; ticket reframed from a config change to a delivery problem.",
+      "note": "Ricardo has taken the investigation - Troy clarified at 3:57 PM that the ask is the Jotform submission receipt, not the job confirmation, and named Chewy; Ricardo confirmed at 6:07 PM he will look into why Chewy is not receiving it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790890406646?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790890406646&createdTime=1790890406646"
     }
   ]
