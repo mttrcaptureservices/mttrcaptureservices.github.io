@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T04:29:43.150Z",
+  "lastUpdated": "2026-10-02T20:37:10.712Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -135,6 +135,39 @@
       "jiraKey": "COP-2128",
       "note": "Ricardo has taken the investigation - Troy clarified at 3:57 PM that the ask is the Jotform submission receipt, not the job confirmation, and named Chewy; Ricardo confirmed at 6:07 PM he will look into why Chewy is not receiving it.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790890406646?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790890406646&createdTime=1790890406646"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "New Lennar job JOBID6667729454521533636 came in missing its parent record and the price codes on the child records.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
+      "date": "10/2",
+      "note": "Ricardo is blocked on Kailyn - he asked whether the Lennar MP Client is correctly set to Aggregated CT Payout before he changes the value.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966036813?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966036813&createdTime=1790966036813"
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#10b981",
+      "summary": "BMO jobs are not getting a value in Total Travel Distance; Ryan reports certain address formats cause the coordinate lookup to fail.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/2",
+      "note": "Adjet traced it to the Skip Distance Calc switch Kailyn requested on Bank of Montreal (2) - USD, not the address. Both job IDs Ryan cited are on that client record with travel distance empty. Ryan owes a counter-example Job ID where it did populate.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Wants to remove the 360s add-on section from a customer Jotform while keeping the edited photos add-on. Towne Properties.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
+      "date": "10/2",
+      "note": "She cleared the 360s selection in MP Client Data but the ShortLink form still shows both sections. Addressed to Ricardo; the form side is not readable from Airtable so it needs his answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790971122596?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790971122596&createdTime=1790971122596"
     }
   ]
 }
