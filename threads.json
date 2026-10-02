@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T23:34:08.125Z",
+  "lastUpdated": "2026-10-02T23:35:56.619Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -196,10 +196,10 @@
       "initials": "CS",
       "color": "#8b5cf6",
       "summary": "A second parent record appeared on Lennar job JOBID6667729454521533636 (Spring Valley Ranch). She cancelled one of them and the cancellation cascaded onto both child records.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix confirmed",
       "date": "10/2",
-      "note": "Confirmed 104050 is the live parent (4,699 sq ft, tech link, In Progress) and 104072 the duplicate (created 48 min later, no capture size, no link) - she cancelled the right one. Ricardo or Snehal need to put children 104049 and 104051 back to In Progress.",
+      "note": "Ricardo deleted duplicate parent 104072 at 4:34 PM and put the children back to In Progress - verified: 104049, 104050 and 104051 all In Progress, children back on USGPC2, parent still 4,699 sq ft. His guidance: delete a duplicate parent rather than cancelling it, since a parent replicates its status onto every child.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790980009544?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790980009544&createdTime=1790980009544"
     }
   ]
