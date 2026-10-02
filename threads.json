@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T20:37:10.712Z",
+  "lastUpdated": "2026-10-02T22:02:56.416Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -168,6 +168,39 @@
       "date": "10/2",
       "note": "She cleared the 360s selection in MP Client Data but the ShortLink form still shows both sections. Addressed to Ricardo; the form side is not readable from Airtable so it needs his answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790971122596?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790971122596&createdTime=1790971122596"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Somerled reports the Reschedule/Cancel link in their confirmation emails returns a 414 Request-URI Too Large error.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
+      "date": "10/2",
+      "note": "Kailyn asked Ricardo at 1:53 PM for the maximum character count allowed in the Scan Requirements and Additional Details fields, since those feed the link. Root carries his 👀.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966716200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966716200&createdTime=1790966716200"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "UDR Mitchell view shows only CIA and CLM jobs; Scheduled jobs for Capture Requestor Mitchell are missing from it.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/2",
+      "note": "Clark confirmed all 3 job IDs exist, all read Scheduled, and all 6 records are present in the Global Customer Base table - so it is a condition on the view, not a sync gap. View filters are not MCP-readable, so the last step needs eyes in Airtable.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790973659217?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790973659217&createdTime=1790973659217"
+    },
+    {
+      "author": "John Bosch",
+      "initials": "JB",
+      "color": "#6366f1",
+      "summary": "Requests text changes to the 3D tour selection labels on the Vacasa form, with old and new wording and a spacing screenshot.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting fix",
+      "date": "10/2",
+      "note": "Addressed to Ricardo. Jotform option text is a manual edit on the form itself, so it needs whoever owns that form; no defect to track.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790974460160?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790974460160&createdTime=1790974460160"
     }
   ]
 }
