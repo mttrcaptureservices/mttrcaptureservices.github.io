@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T23:41:21.803Z",
+  "lastUpdated": "2026-10-03T04:09:14.826Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -164,9 +164,9 @@
       "color": "#D9734A",
       "summary": "Wants to remove the 360s add-on section from a customer Jotform while keeping the edited photos add-on. Towne Properties.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
+      "status": "Awaiting fix",
       "date": "10/2",
-      "note": "She cleared the 360s selection in MP Client Data but the ShortLink form still shows both sections. Addressed to Ricardo; the form side is not readable from Airtable so it needs his answer.",
+      "note": "Ricardo answered 4:40 PM with an ETA of Tue 10/06 and looped in Snehal to review the Jotform logic; nothing owed by Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790971122596?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790971122596&createdTime=1790971122596"
     },
     {
@@ -188,7 +188,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting answer",
       "date": "10/2",
-      "note": "Ricardo gave an ETA of Tuesday 10/06 and said the change involves strong dependencies. John asked at 4:39 PM what those dependencies are for a text-only change, and offered a call Monday - that question is with Ricardo.",
+      "note": "Bosch confirmed 4:55 PM that the Airtable service names and price codes stay unchanged and only the form header text moves; Ricardo owes the call on how to proceed given the Zapier price-code metadata dependency, and offered a Monday call.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790974460160?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790974460160&createdTime=1790974460160"
     }
   ]
