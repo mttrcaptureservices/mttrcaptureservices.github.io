@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T14:52:00.620Z",
+  "lastUpdated": "2026-10-05T15:19:37.927Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -147,28 +147,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Wants to remove the 360s add-on section from a customer Jotform while keeping the edited photos add-on. Towne Properties.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/2",
-      "note": "Ricardo answered 4:40 PM with an ETA of Tue 10/06 and looped in Snehal to review the Jotform logic; nothing owed by Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790971122596?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790971122596&createdTime=1790971122596"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Somerled reports the Reschedule/Cancel link in their confirmation emails returns a 414 Request-URI Too Large error.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
-      "date": "10/2",
-      "note": "Kailyn asked Ricardo at 1:53 PM for the maximum character count allowed in the Scan Requirements and Additional Details fields, since those feed the link. Root carries his 👀.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966716200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966716200&createdTime=1790966716200"
-    },
-    {
       "author": "Jordan Saiz",
       "initials": "JS",
       "color": "#ec4899",
@@ -177,7 +155,7 @@
       "status": "Awaiting fix",
       "date": "10/5",
       "jiraKey": "COP-2130",
-      "note": "COP-2130 filed and assigned to Ricardo; blocked on restoring the go.mp certificate with the short link vendor. Stopgap given in thread - send the full reschedule link off the job record.",
+      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 8:11 AM. Stopgap given: copy the full reschedule link off the parent record.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209292414?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209292414&createdTime=1791209292414",
       "owner": "Ricardo",
       "lastVerified": "2026-10-05"
@@ -191,8 +169,22 @@
       "status": "Awaiting fix",
       "date": "10/5",
       "jiraKey": "COP-2130",
-      "note": "COP-2130 covers both reports; blocked on the go.mp certificate fix. The job itself dispatched cleanly and its link is intact.",
+      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 8:11 AM. His job dispatched cleanly, so the CT email only needs go.mp restored.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209310051?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209310051&createdTime=1791209310051",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-05"
+    },
+    {
+      "author": "Gisele Tan",
+      "initials": "GT",
+      "color": "#e11d48",
+      "summary": "Four International go.mp short links return a certificate error, and external client AIS Global cannot reach theirs either. Earliest confirmed report of the go.mp outage, at 1:24 AM.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/5",
+      "jiraKey": "COP-2130",
+      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 7:57 AM. Long-link stopgap given for AIS Global.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791188690581?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791188690581&createdTime=1791188690581",
       "owner": "Ricardo",
       "lastVerified": "2026-10-05"
     }
