@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T16:15:14.323Z",
+  "lastUpdated": "2026-10-05T21:20:28.890Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -147,45 +147,16 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373"
     },
     {
-      "author": "Jordan Saiz",
-      "initials": "JS",
-      "color": "#ec4899",
-      "summary": "The cancel and reschedule links in client confirmation emails all fail with a go.mp certificate error, so agents cannot reschedule jobs. The CT job request links hit the same error.",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asked whether the Travel Calculator views can work independently per person, so each coordinator can calculate their own set of locations without overwriting what someone else is working on.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "status": "Waiting on requester",
       "date": "10/5",
-      "jiraKey": "COP-2130",
-      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 8:11 AM. Stopgap given: copy the full reschedule link off the parent record.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209292414?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209292414&createdTime=1791209292414",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-05"
-    },
-    {
-      "author": "Kevin Curtis",
-      "initials": "KC",
-      "color": "#10b981",
-      "summary": "A certificate pop-up on the go.mp short link is blocking a capture tech from accepting Vacasa job VAC105-6669412391129241179 from the job request email. Same root cause as the reschedule link failure.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/5",
-      "jiraKey": "COP-2130",
-      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 8:11 AM. His job dispatched cleanly, so the CT email only needs go.mp restored.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209310051?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209310051&createdTime=1791209310051",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-05"
-    },
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#e11d48",
-      "summary": "Four International go.mp short links return a certificate error, and external client AIS Global cannot reach theirs either. Earliest confirmed report of the go.mp outage, at 1:24 AM.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/5",
-      "jiraKey": "COP-2130",
-      "note": "Ricardo owns the go.mp certificate fix and acknowledged in channel at 7:57 AM. Long-link stopgap given for AIS Global.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791188690581?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791188690581&createdTime=1791188690581",
-      "owner": "Ricardo",
+      "note": "Snehal and Ricardo have both asked her to clarify what independent means - separate views to read the data, or separate triggering of the calculation. She owes the answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791227218979?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791227218979&createdTime=1791227218979",
+      "owner": "Kailyn",
       "lastVerified": "2026-10-05"
     }
   ]
