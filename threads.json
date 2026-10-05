@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T21:20:28.890Z",
+  "lastUpdated": "2026-10-05T21:31:23.045Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -132,8 +132,10 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting answer",
       "date": "10/2",
-      "note": "Ricardo is blocked on Kailyn - he asked whether the Lennar MP Client is correctly set to Aggregated CT Payout before he changes the value.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966036813?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966036813&createdTime=1790966036813"
+      "note": "Read the full thread 10/5: the tail is still Ricardo asking Kailyn to confirm whether Lennar MP Client is wrongly set to Aggregated CT Payout before he changes it. Unanswered since Fri 12:06 PM.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966036813?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966036813&createdTime=1790966036813",
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-05"
     },
     {
       "author": "Ryan Morrow",
@@ -154,7 +156,7 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/5",
-      "note": "Snehal and Ricardo have both asked her to clarify what independent means - separate views to read the data, or separate triggering of the calculation. She owes the answer.",
+      "note": "Snehal has asked three times what independent views means - read the data, or trigger the calculation per user. Kailyn has not replied. No reactions on the root.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791227218979?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791227218979&createdTime=1791227218979",
       "owner": "Kailyn",
       "lastVerified": "2026-10-05"
