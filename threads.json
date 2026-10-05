@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T22:15:26.542Z",
+  "lastUpdated": "2026-10-05T23:15:24.187Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -147,8 +147,10 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/2",
-      "note": "Adjet traced it to the Skip Distance Calc switch Kailyn requested on Bank of Montreal (2) - USD, not the address. Both job IDs Ryan cited are on that client record with travel distance empty. Ryan owes a counter-example Job ID where it did populate.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373"
+      "note": "Adjet answered Fri 10/2 that the cause is the Skip Distance Calc switch Kailyn asked for on BMO (2) - USD, not the address format. Ryan said changing the format does populate it and Adjet disputed that outright. Ryan owes a counter-example Job ID. Three days silent.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373",
+      "owner": "Ryan",
+      "lastVerified": "2026-10-05"
     },
     {
       "author": "Kailyn Jelniker",
