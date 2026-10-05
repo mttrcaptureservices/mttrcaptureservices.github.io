@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-03T04:09:14.826Z",
+  "lastUpdated": "2026-10-05T14:52:00.620Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -125,18 +125,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456"
     },
     {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#f59e0b",
-      "summary": "Spec Ops clients get no receipt when they submit the Jotform order form, so they cannot tell a successful submission from one that silently went nowhere. Chewy receives nothing at all on submit.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/1",
-      "jiraKey": "COP-2128",
-      "note": "Ricardo has taken the investigation - Troy clarified at 3:57 PM that the ask is the Jotform submission receipt, not the job confirmation, and named Chewy; Ricardo confirmed at 6:07 PM he will look into why Chewy is not receiving it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790890406646?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790890406646&createdTime=1790890406646"
-    },
-    {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#8b5cf6",
@@ -181,15 +169,32 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966716200?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966716200&createdTime=1790966716200"
     },
     {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#6366f1",
-      "summary": "Requests text changes to the 3D tour selection labels on the Vacasa form, with old and new wording and a spacing screenshot.",
+      "author": "Jordan Saiz",
+      "initials": "JS",
+      "color": "#ec4899",
+      "summary": "The cancel and reschedule links in client confirmation emails all fail with a go.mp certificate error, so agents cannot reschedule jobs. The CT job request links hit the same error.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
-      "date": "10/2",
-      "note": "Bosch confirmed 4:55 PM that the Airtable service names and price codes stay unchanged and only the form header text moves; Ricardo owes the call on how to proceed given the Zapier price-code metadata dependency, and offered a Monday call.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790974460160?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790974460160&createdTime=1790974460160"
+      "status": "Awaiting fix",
+      "date": "10/5",
+      "jiraKey": "COP-2130",
+      "note": "COP-2130 filed and assigned to Ricardo; blocked on restoring the go.mp certificate with the short link vendor. Stopgap given in thread - send the full reschedule link off the job record.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209292414?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209292414&createdTime=1791209292414",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-05"
+    },
+    {
+      "author": "Kevin Curtis",
+      "initials": "KC",
+      "color": "#10b981",
+      "summary": "A certificate pop-up on the go.mp short link is blocking a capture tech from accepting Vacasa job VAC105-6669412391129241179 from the job request email. Same root cause as the reschedule link failure.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/5",
+      "jiraKey": "COP-2130",
+      "note": "COP-2130 covers both reports; blocked on the go.mp certificate fix. The job itself dispatched cleanly and its link is intact.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791209310051?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791209310051&createdTime=1791209310051",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-05"
     }
   ]
 }
