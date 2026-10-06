@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T21:15:33.706Z",
+  "lastUpdated": "2026-10-06T22:22:07.879Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -22,9 +22,11 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/31",
-      "note": "Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.",
+      "note": "Kailyn - Snehal asked on 9/8 for the client details and has had no answer in 28 days. Ricardo handed this to Snehal and told Clark to disengage, so no channel nudge from here.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
-      "jiraKey": "COP-2096"
+      "jiraKey": "COP-2096",
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-06"
     },
     {
       "author": "Kailyn Jelniker",
@@ -156,6 +158,19 @@
       "note": "Adjet replied in channel at 11:38 AM on 10/6 that he will look into this, so the investigation now has a named owner. He has not stated a view on the proposed approach (hold the CT price-code write until a technician is assigned), so the design is still unagreed. Recorded on COP-2048 as comment 629279.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Sales flagged four older JLL jobs (JPMC48100R033935, 033950, 033966 and 033970) as apparently never billed, although all four have been Complete since January.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/6",
+      "note": "Ricardo - all four are priced in Airtable and present in the Netsuite-facing table, so the billed check has to happen in Netsuite. The NS Processed flag is unused base-wide and cannot be the test.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791324280086?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791324280086&createdTime=1791324280086",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-06"
     }
   ]
