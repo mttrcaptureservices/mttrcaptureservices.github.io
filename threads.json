@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T16:08:42.926Z",
+  "lastUpdated": "2026-10-06T16:20:48.766Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -23,17 +23,6 @@
       "note": "Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
-    },
-    {
-      "author": "Juyoung Jang",
-      "initials": "JJ",
-      "color": "#14b8a6",
-      "summary": "Airbnb host has two property IDs at adjacent addresses and both were scanned; asked whether the scheduled job record can be duplicated so both can be billed as separate captures.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "9/2",
-      "note": "Ricardo answered 9/4 12:15 AM - duplicate using the same Job ID with a different entity/property ID and leave both records Scheduled. Juyoung is confirming listing 50683308 with the customer, will duplicate and report back for a data check.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788411226220?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788411226220&createdTime=1788411226220"
     },
     {
       "author": "Kailyn Jelniker",
@@ -163,13 +152,13 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "A job dispatched on the GP price book at a CT payout of 350.37, and the CT code only moved to the VHT book after the tech had accepted. The tech is a VHT technician, so the VHT code should have applied before dispatch.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "10/6",
       "jiraKey": "COP-2048",
-      "note": "Logged on COP-2048 as a new instance that widens its scope from settled capture size to settled CT assignment. Asked Kailyn whether the Custom CT Rate of 75.37 on parent 103750 was entered to honour the dispatched figure.",
+      "note": "Ricardo proposed holding the CT price-code write until a technician is assigned, and asked Adjet for availability and for his view; the direction is proposed, not agreed. Recorded on COP-2048 as comment 629202.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
-      "owner": "Ricardo",
+      "owner": "Adjet",
       "lastVerified": "2026-10-06"
     }
   ]
