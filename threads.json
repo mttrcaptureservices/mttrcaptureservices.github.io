@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T16:20:48.766Z",
+  "lastUpdated": "2026-10-06T17:15:45.791Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,8 +9,10 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Adjet nudged her 9/23 at 8:26 AM to pick up the outstanding question about which GCB views need Unit of Travel Distance; blocked on Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150"
+      "note": "Thread read in full on 10/6: Snehal asked on 8/27 which GCB views need the Unit of Travel Distance field and Ricardo said he would get it. Clark nudged on 9/23 and nothing has been posted since, so this is blocked on Kailyn naming the views.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150",
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-06"
     },
     {
       "author": "Kailyn Jelniker",
