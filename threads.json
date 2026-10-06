@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T04:38:21.220Z",
+  "lastUpdated": "2026-10-06T04:51:20.760Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -23,17 +23,6 @@
       "note": "Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Asking for the status of the decision to remove the country dropdown from the Jotform, and whether Country and Currency now populate correctly without it.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "9/2",
-      "note": "Adjet answered at 12:14 PM - no LOE yet, the country field may be removed by mid next week and he will speak to the team. Adjet owns it; COP-1804 (Complete) already moved country/market to the capture address. Nothing owed here.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788364382868?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788364382868&createdTime=1788364382868"
     },
     {
       "author": "Juyoung Jang",
