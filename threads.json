@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T23:15:24.187Z",
+  "lastUpdated": "2026-10-06T04:38:21.220Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -123,8 +123,10 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/1",
-      "note": "Confirmed at 997 views against the 1,000 per-table limit; 239 are personal initial-prefixed views and 34 contain the word copy. Offered to pull the list grouped by owner - waiting on Kailyn to say if she wants it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456"
+      "note": "Thread read in full 10/5 - 2 messages, no truncation. The view ceiling was confirmed and the composition given (997 of 1,000, with the personal and copy views named as the room). No reply from her in 4 days and no acknowledgement reaction, so the prune decision and the owner sign-off are hers.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456",
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-05"
     },
     {
       "author": "Caitlin Suh",
