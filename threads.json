@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T17:15:45.791Z",
+  "lastUpdated": "2026-10-06T18:16:42.509Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -25,17 +25,6 @@
       "note": "Snehal asked Kailyn at 12:17 PM today for the remaining request details from the client before he can build it; blocked on Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788202147147&createdTime=1788202147147",
       "jiraKey": "COP-2096"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Asked whether Parent base has a field showing which base or intake path a job came from (SpecOps 2.0, GSB, Vacasa) for reporting.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "9/3",
-      "note": "Ricardo offered to build the field in Parent base but asked Kailyn to consider using Global Customer Base for analytics instead; awaiting her answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788452567609?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1788452567609&createdTime=1788452567609"
     },
     {
       "author": "Kailyn Jelniker",
