@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T18:16:42.509Z",
+  "lastUpdated": "2026-10-06T19:16:18.825Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -44,10 +44,12 @@
       "color": "#6366f1",
       "summary": "Asked whether the in-model branding on about 2500 Vacasa models can be bulk updated via API, and whether branding can then be driven from the Vacasa Franchise name (MP Sub Client) for completed Capture Services orders on an ongoing basis.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting answer",
       "date": "9/16",
-      "note": "Ricardo confirmed 9/22 the branding can go into the automation and asked John to confirm which Airtable fields feed the branding inputs. John also has the one-time Vacasa model list to pull. Ball with John.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516"
+      "note": "Thread read in full 10/6 (11 bodies, no truncation): the tail is Ricardo at 9/16 12:04 PM saying the branding fields should be somewhere in the MTTR API and committing to do a quick research and come back. John reacted and has posted nothing since. Three weeks with no follow-up, so the next action sits with Ricardo, not John.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789583853516&createdTime=1789583853516",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-06"
     },
     {
       "author": "Kailyn Jelniker",
@@ -147,7 +149,7 @@
       "status": "Awaiting fix",
       "date": "10/6",
       "jiraKey": "COP-2048",
-      "note": "Ricardo proposed holding the CT price-code write until a technician is assigned, and asked Adjet for availability and for his view; the direction is proposed, not agreed. Recorded on COP-2048 as comment 629202.",
+      "note": "Adjet replied in channel at 11:38 AM on 10/6 that he will look into this, so the investigation now has a named owner. He has not stated a view on the proposed approach (hold the CT price-code write until a technician is assigned), so the design is still unagreed. Recorded on COP-2048 as comment 629279.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
       "lastVerified": "2026-10-06"
