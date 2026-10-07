@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T22:22:01.860Z",
+  "lastUpdated": "2026-10-07T23:18:32.837Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -115,10 +115,10 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting answer",
       "date": "10/2",
-      "note": "Re-read 10/6: thread unchanged, 12 messages, nothing truncated. The tail is still the question from Ricardo on Friday 12:06 PM asking Kailyn to confirm the Lennar MP Client is wrongly set to Aggregated CT Payout before he changes it. Four days unanswered; the ball is with Kailyn.",
+      "note": "Thread unchanged since 10/2 (12 bodies, no truncation); root now carries the Ricardo checkmark but his 12:06 PM question to Kailyn - confirm Lennar MP Client is wrongly set to Aggregated CT Payout before he changes it - is still unanswered after 5 days.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790966036813?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790966036813&createdTime=1790966036813",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-07"
     },
     {
       "author": "Ryan Morrow",
@@ -142,7 +142,7 @@
       "status": "Awaiting fix",
       "date": "10/6",
       "jiraKey": "COP-2131",
-      "note": "Kailyn nudged 3:14 PM 10/7; Adjet replied 3:17 PM that he discussed it with Ricardo and is still working on a plan. Adjet owns the fix on COP-2131; nothing owed by Clark.",
+      "note": "Adjet 3:17 PM 10/7: discussed with Ricardo, still working on a plan. Analysis on COP-2048. Nothing owed by Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
       "lastVerified": "2026-10-07"
@@ -152,11 +152,11 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "No new intake records in Parent Base since 10:29 AM PT 10/7 across all clients and both Jotform forms, and a single-job bulk ingest sheet submitted ~2:58 PM has not landed. Both intake Zaps show on, so the break is upstream of Airtable.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix deployed",
       "date": "10/7",
       "jiraKey": "COP-2132",
-      "note": "Cross-client intake stall; the Zap task history is the discriminating evidence and is not readable by Clark. Ricardo or Adjet owes the read and the replay of any stuck submissions; Kailyn told to hold her bulk sheet. Nobody had replied as of 3:19 PM.",
+      "note": "Intake resumed 3:49-4:15 PM PT: 100 records / 32 jobs across 6 clients drained in one burst, no duplicate parents (one duplicate UDR child 105066/105067 flagged on the ticket). Ricardo 4:15 PM says the issue is fixed and is bulk-uploading the Kailyn file himself; root cause of the 5.5 h hold still unidentified on COP-2132.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
       "owner": "Ricardo",
       "lastVerified": "2026-10-07"
