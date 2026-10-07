@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T03:09:31.944Z",
+  "lastUpdated": "2026-10-07T16:32:26.726Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -9,10 +9,10 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Thread read in full on 10/6: Snehal asked on 8/27 which GCB views need the Unit of Travel Distance field and Ricardo said he would get it. Clark nudged on 9/23 and nothing has been posted since, so this is blocked on Kailyn naming the views.",
+      "note": "Kailyn still owes Snehal the list of which GCB Accounting views need Unit of Travel Distance - his question is 41 days old and a 9/23 nudge is 14 days unanswered. Thread re-read in full 10/7: 4 bodies, no truncation.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1787853624150&createdTime=1787853624150",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-07"
     },
     {
       "author": "Kailyn Jelniker",
@@ -138,13 +138,13 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Asked whether the Travel Calculator views can work independently per person, so each coordinator can calculate their own set of locations without overwriting what someone else is working on.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/5",
-      "note": "Read 10/6: unchanged. Snehal has asked three times what independent views would mean in practice; Kailyn owes the answer.",
+      "note": "Snehal added a Record Created By field and updated the Kailyn Quick Edit View plus Troy and Freddy views on 10/7 morning - waiting on Kailyn to confirm that gives her the independence she asked for.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791227218979?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791227218979&createdTime=1791227218979",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-07"
     },
     {
       "author": "Kailyn Jelniker",
@@ -158,20 +158,7 @@
       "note": "Adjet replied in channel at 11:38 AM on 10/6 that he will look into this, so the investigation now has a named owner. He has not stated a view on the proposed approach (hold the CT price-code write until a technician is assigned), so the design is still unagreed. Recorded on COP-2048 as comment 629279.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
-      "lastVerified": "2026-10-06"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Sales flagged four older JLL jobs (JPMC48100R033935, 033950, 033966 and 033970) as apparently never billed, although all four have been Complete since January.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/6",
-      "note": "Ricardo - all four are priced in Airtable and present in the Netsuite-facing table, so the billed check has to happen in Netsuite. The NS Processed flag is unused base-wide and cannot be the test.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791324280086?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791324280086&createdTime=1791324280086",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-07"
     }
   ]
 }
