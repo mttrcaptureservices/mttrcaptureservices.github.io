@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T16:42:48.250Z",
+  "lastUpdated": "2026-10-07T17:20:13.552Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -141,7 +141,7 @@
       "statusCls": "badge-fix-deployed",
       "status": "Awaiting confirmation",
       "date": "10/5",
-      "note": "Snehal added a Record Created By field and updated the Kailyn Quick Edit View plus Troy and Freddy views on 10/7 morning - waiting on Kailyn to confirm that gives her the independence she asked for.",
+      "note": "Snehal shipped the Record Created By field and updated the Kailyn, Troy and Freddy views on 10/7; Adjet confirmed in thread but Kailyn has not yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791227218979?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791227218979&createdTime=1791227218979",
       "owner": "Kailyn",
       "lastVerified": "2026-10-07"
@@ -158,6 +158,19 @@
       "note": "Adjet replied in channel at 11:38 AM on 10/6 that he will look into this, so the investigation now has a named owner. He has not stated a view on the proposed approach (hold the CT price-code write until a technician is assigned), so the design is still unagreed. Recorded on COP-2048 as comment 629279.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
+      "lastVerified": "2026-10-07"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#4A8FD9",
+      "summary": "Asked whether the payout report for Roche job SWC-7864 shows 214.76 USD after she amended the capture fee by 50 USD for the technician.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/7",
+      "note": "Amount confirmed at 214.76 USD, but that invoice has never been picked up by a payout export since 8/17; flagged in thread to Ricardo, Snehal and Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791392579727?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791392579727&createdTime=1791392579727",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-07"
     }
   ]
