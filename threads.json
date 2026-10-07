@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T00:15:12.918Z",
+  "lastUpdated": "2026-10-07T01:15:10.809Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -126,12 +126,12 @@
       "color": "#10b981",
       "summary": "BMO jobs are not getting a value in Total Travel Distance; Ryan reports certain address formats cause the coordinate lookup to fail.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting answer",
       "date": "10/2",
-      "note": "Adjet answered Fri 10/2 that the cause is the Skip Distance Calc switch Kailyn asked for on BMO (2) - USD, not the address format. Ryan said changing the format does populate it and Adjet disputed that outright. Ryan owes a counter-example Job ID. Three days silent.",
+      "note": "Adjet attributed it to the BMO (2) - USD travel kill switch; Ryan replied that reformatting the address does populate the distance and Adjet disagreed flatly. Silent since Fri 12:49 PM, with no evidence either way. Nothing outstanding from Ryan.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790964938373?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790964938373&createdTime=1790964938373",
-      "owner": "Ryan",
-      "lastVerified": "2026-10-05"
+      "owner": "Adjet",
+      "lastVerified": "2026-10-06"
     },
     {
       "author": "Kailyn Jelniker",
