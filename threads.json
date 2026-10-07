@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T16:32:26.726Z",
+  "lastUpdated": "2026-10-07T16:42:48.250Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -37,10 +37,10 @@
       "status": "Awaiting build",
       "date": "9/10",
       "jiraKey": "COP-2110",
-      "note": "Thread read in full 10/6: 3 bodies, no truncation. Ricardo deferred it 9/10 - the CT Directory additions are to be scoped into the new model that has not shipped yet, so COP-2110 sits On-Hold pending that release. His deferral is the tail; nothing owed by Kailyn.",
+      "note": "Verified 10/7: Ricardo deferred this on 9/10 to the unreleased CT Directory model and COP-2110 has been On-Hold since 9/15; nothing is owed by Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1789057433383&createdTime=1789057433383",
       "owner": "Ricardo",
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-07"
     },
     {
       "author": "John Bosch",
