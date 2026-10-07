@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T20:20:53.180Z",
+  "lastUpdated": "2026-10-07T22:22:01.860Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -142,9 +142,23 @@
       "status": "Awaiting fix",
       "date": "10/6",
       "jiraKey": "COP-2131",
-      "note": "Kailyn filed COP-2131 at 11:38 AM 10/7 (assignee Adjet, In Progress) for this thread; record analysis sits on COP-2048 (629188/629202/629279) and is cross-referenced on 2131 (629532). Gating design still unagreed - Adjet owes the fix. No reply owed.",
+      "note": "Kailyn nudged 3:14 PM 10/7; Adjet replied 3:17 PM that he discussed it with Ricardo and is still working on a plan. Adjet owns the fix on COP-2131; nothing owed by Clark.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
+      "lastVerified": "2026-10-07"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "No new intake records in Parent Base since 10:29 AM PT 10/7 across all clients and both Jotform forms, and a single-job bulk ingest sheet submitted ~2:58 PM has not landed. Both intake Zaps show on, so the break is upstream of Airtable.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/7",
+      "jiraKey": "COP-2132",
+      "note": "Cross-client intake stall; the Zap task history is the discriminating evidence and is not readable by Clark. Ricardo or Adjet owes the read and the replay of any stuck submissions; Kailyn told to hold her bulk sheet. Nobody had replied as of 3:19 PM.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-07"
     }
   ]
