@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T18:20:41.754Z",
+  "lastUpdated": "2026-10-08T19:16:12.204Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -153,11 +153,11 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "No new intake records in Parent Base since 10:29 AM PT 10/7 across all clients and both Jotform forms, and a single-job bulk ingest sheet submitted ~2:58 PM has not landed. Both intake Zaps show on, so the break is upstream of Airtable.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix deployed",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "10/7",
       "jiraKey": "COP-2132",
-      "note": "Ricardo reconnected the Zapier-Jotform connection 4:15 PM; the ~40 held resubmissions landed 23:08-23:16Z and organic intake resumed on its own at 02:09Z (Siemens Healthineers job). Ticket still To Do - Ricardo to close.",
+      "note": "Kailyn asked at 11:25 AM 10/8 for confirmation that every missing order from the 10/7 Zapier-Jotform connection drop (about 40 submissions) has now landed in Airtable - Ricardo or Adjet owe that confirmation.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
       "owner": "Ricardo",
       "lastVerified": "2026-10-08"
@@ -181,12 +181,12 @@
       "initials": "SY",
       "color": "#ec4899",
       "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "10/8",
-      "note": "Adjet took it 8:41 AM 10/8 (Looking into this). Decision still open: custom rate on parent 102448 now vs COP-2088. Stephenie is holding the model transfer until the codes are settled.",
+      "note": "Adjet is working it and asked Stephenie at 11:35 AM 10/8 whether Israel should always bill and pay in USD or only on this job (parent 102448); her answer decides a custom rate now vs the multi-currency work on COP-2088. Model transfer is on hold until the code is fixed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
-      "owner": "Adjet",
+      "owner": "Stephenie",
       "lastVerified": "2026-10-08"
     },
     {
@@ -207,11 +207,11 @@
       "initials": "TL",
       "color": "#f59e0b",
       "summary": "Job Status carries two near-identical choices, On hold by Client (61 records) and On Hold by Client (65 records), both in live use in Spec Ops 2.0 and Parent Base. Troy asks which is canonical and that it be moved directly under On Hold in the dropdown.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Fix in progress",
       "date": "10/8",
       "jiraKey": "COP-2136",
-      "note": "COP-2136 filed 11:16 AM: merge the two choices (re-point views and automations, bulk-update 126 records, delete the loser) and reorder under On Hold. Ricardo owns the decision and the merge.",
+      "note": "Ricardo chose On hold by Client (lowercase h, 61 records) as the canonical choice at 11:35 AM 10/8 and will remove On Hold by Client (65 records); the 65 records need re-pointing first and the dropdown reorder is still open. Decision captured on COP-2136 comment 629736. Root carries his checkmark; Troy has not acknowledged.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791482284505?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791482284505&createdTime=1791482284505",
       "owner": "Ricardo",
       "lastVerified": "2026-10-08"
