@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T23:15:17.364Z",
+  "lastUpdated": "2026-10-08T23:20:47.690Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -201,6 +201,19 @@
       "note": "Ricardo took the thread 10:20 AM (Roche overrode the record with empty values except the dates, which breaks the back-end logic) and asked Stephenie to add him to the email exchange with Roche; still waiting on Stephenie for the new dates and the email thread.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
       "owner": "Stephenie",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "UDR (11) JOBID6671289141718244835 (Inlet Bay at Gateway, Tampa): she changed the scheduled time to 3 PM by hand, but the confirmation email that went out showed a 12 AM start and the tech says he did not enter that.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/8",
+      "note": "Both records now read 10/9 3:00 PM UTC, last written by Caitlin at 3:52 PM PT; the field displays in UTC so 3 PM there is 11 AM Tampa. Asked whether she meant 3 PM local. The original 12 AM value is overwritten and needs the Airtable revision history.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791501282372?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791501282372&createdTime=1791501282372",
+      "owner": "Caitlin",
       "lastVerified": "2026-10-08"
     }
   ]
