@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T18:06:57.249Z",
+  "lastUpdated": "2026-10-08T18:20:41.754Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -197,9 +197,23 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/8",
-      "note": "Our Roche request log has no data row for SWC-7776 (7/30 payload arrived empty); Spec Ops record reads In Progress. Asked Stephenie for the new dates so we can check whether they reached us. Ricardo has 👀 on the root.",
+      "note": "Ricardo took the thread 10:20 AM (Roche overrode the record with empty values except the dates, which breaks the back-end logic) and asked Stephenie to add him to the email exchange with Roche; still waiting on Stephenie for the new dates and the email thread.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
       "owner": "Stephenie",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#f59e0b",
+      "summary": "Job Status carries two near-identical choices, On hold by Client (61 records) and On Hold by Client (65 records), both in live use in Spec Ops 2.0 and Parent Base. Troy asks which is canonical and that it be moved directly under On Hold in the dropdown.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting fix",
+      "date": "10/8",
+      "jiraKey": "COP-2136",
+      "note": "COP-2136 filed 11:16 AM: merge the two choices (re-point views and automations, bulk-update 126 records, delete the loser) and reorder under On Hold. Ricardo owns the decision and the merge.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791482284505?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791482284505&createdTime=1791482284505",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-08"
     }
   ]
