@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T00:14:14.432Z",
+  "lastUpdated": "2026-10-08T01:30:27.390Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -169,9 +169,9 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/7",
-      "note": "Snehal called it automation lag at 5:06 PM; unit 03-106 landed twice in the drain (105066 live, 105067 cancelled) which is the 9/2 duplicate-child dispatch stall. Needs the duplicate deleted if it does not fire once lag clears. Logged on COP-2132.",
+      "note": "Re-pulled 6:28 PM 10/7: parent 104721 still Pending with Send CT Email Sent and no short link, Children Submitted 1, duplicate child 105067 (CIA) still present alongside 105066 - the duplicate needs deleting before the short link can generate; Ricardo/Snehal own that delete. No new replies in thread since Clark 5:09 PM.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
-      "owner": "Snehal",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-07"
     }
   ]
