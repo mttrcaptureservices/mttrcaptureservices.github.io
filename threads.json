@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T15:11:34.090Z",
+  "lastUpdated": "2026-10-08T15:22:45.989Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -170,7 +170,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/7",
-      "note": "Re-pulled 10/8 8:10 AM: parent 104721 still Pending with Send CT Email Sent and no short link; duplicate child 105067 (CIA) still present. Comment 629651 on COP-2132 asks for it to be removed. Nothing owed by Caitlin.",
+      "note": "Still stalled 10/8 8:21 AM: parent 104721 Pending, Send CT Email Sent, no short link, Children Submitted 1 against two 03-106 child rows (105067 cancelled, not removed). Comment 629651 on COP-2132 asks Snehal/Ricardo to remove the duplicate child; no further Teams ping.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
       "owner": "Ricardo",
       "lastVerified": "2026-10-08"
