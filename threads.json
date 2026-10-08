@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T15:22:45.989Z",
+  "lastUpdated": "2026-10-08T16:16:00.687Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -170,7 +170,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/7",
-      "note": "Still stalled 10/8 8:21 AM: parent 104721 Pending, Send CT Email Sent, no short link, Children Submitted 1 against two 03-106 child rows (105067 cancelled, not removed). Comment 629651 on COP-2132 asks Snehal/Ricardo to remove the duplicate child; no further Teams ping.",
+      "note": "Still stalled as of 10/8 9:10 AM PT: parent 104721 Pending / Send CT Email Sent / no short link, Children Submitted 1, duplicate child 105067 still present as Cancelled in Advance, last write 10/7 23:52Z. COP-2132 comment 629651 asks for the removal plus a sweep of the drained submissions. Owner Snehal/Ricardo; no re-ping.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
       "owner": "Ricardo",
       "lastVerified": "2026-10-08"
@@ -198,9 +198,9 @@
       "status": "Awaiting fix",
       "date": "10/8",
       "jiraKey": "COP-2135",
-      "note": "Adjet asked Snehal or Ricardo to fix the form date-picker; Stephenie amended both records by hand and said no rush. Filed as COP-2135.",
+      "note": "Adjet (8:47 AM 10/8) confirmed from Zapier logs the Livit Job Update form submitted the dd-mm-yyyy datetimes; Ricardo retracted his bulk-upload reading at 8:57 AM and the two are discussing later today. Captured on COP-2135 comment 629666. Stephenie amended by hand, no rush.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791446165565?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791446165565&createdTime=1791446165565",
-      "owner": "Ricardo",
+      "owner": "Adjet / Ricardo",
       "lastVerified": "2026-10-08"
     },
     {
@@ -208,12 +208,12 @@
       "initials": "SY",
       "color": "#ec4899",
       "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "10/8",
-      "note": "Automation re-resolves the codes from the record country (Israel maps to the EU books). Multi-currency case tracked on COP-2088; Ricardo to decide custom rate now vs waiting for 2088.",
+      "note": "Adjet picked it up in-thread 8:41 AM 10/8 (Looking into this). Decision still needed: custom rate on parent 102448 now, or wait for COP-2088 multi-currency. Stephenie is holding the model transfer until the price code is settled. No Clark reply owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
-      "owner": "Ricardo",
+      "owner": "Adjet",
       "lastVerified": "2026-10-08"
     }
   ]
