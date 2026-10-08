@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T19:16:12.204Z",
+  "lastUpdated": "2026-10-08T20:15:33.506Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -184,10 +184,11 @@
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/8",
-      "note": "Adjet is working it and asked Stephenie at 11:35 AM 10/8 whether Israel should always bill and pay in USD or only on this job (parent 102448); her answer decides a custom rate now vs the multi-currency work on COP-2088. Model transfer is on hold until the code is fixed.",
+      "note": "Tracked as COP-2137 (Adjet, In Progress, filed by Kailyn 12:17 PM 10/8) - allow manually set price codes to stick. Adjet asked Stephenie 11:35 AM whether Israel should always bill and pay in USD or only this job; unanswered. Record still reads EUSOSFC17 / EUGPCL; COP-2088 is the structural fix.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
       "owner": "Stephenie",
-      "lastVerified": "2026-10-08"
+      "lastVerified": "2026-10-08",
+      "jiraKey": "COP-2137"
     },
     {
       "author": "Stephenie Yong",
