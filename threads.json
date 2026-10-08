@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T23:18:32.837Z",
+  "lastUpdated": "2026-10-08T00:14:14.432Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -156,9 +156,22 @@
       "status": "Fix deployed",
       "date": "10/7",
       "jiraKey": "COP-2132",
-      "note": "Intake resumed 3:49-4:15 PM PT: 100 records / 32 jobs across 6 clients drained in one burst, no duplicate parents (one duplicate UDR child 105066/105067 flagged on the ticket). Ricardo 4:15 PM says the issue is fixed and is bulk-uploading the Kailyn file himself; root cause of the 5.5 h hold still unidentified on COP-2132.",
+      "note": "Root cause stated 4:15 PM: the Zapier to Jotform connection dropped; reconnected, ~40 held on-contract submissions being resubmitted and other forms being checked. Ticket still To Do; first follow-on dispatch stall is the Caitlin 10/7 thread.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
       "owner": "Ricardo",
+      "lastVerified": "2026-10-07"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "UDR (11) job JOBID6670454323223391083 (Riverside CA) is not dispatching after the intake backlog drained: parent 104721 on Pending with Send CT Email marked Sent and no short link.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/7",
+      "note": "Snehal called it automation lag at 5:06 PM; unit 03-106 landed twice in the drain (105066 live, 105067 cancelled) which is the 9/2 duplicate-child dispatch stall. Needs the duplicate deleted if it does not fire once lag clears. Logged on COP-2132.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
+      "owner": "Snehal",
       "lastVerified": "2026-10-07"
     }
   ]
