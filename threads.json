@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T16:16:00.687Z",
+  "lastUpdated": "2026-10-08T17:22:27.973Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -163,19 +163,6 @@
       "lastVerified": "2026-10-08"
     },
     {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "UDR (11) job JOBID6670454323223391083 (Riverside CA) is not dispatching after the intake backlog drained: parent 104721 on Pending with Send CT Email marked Sent and no short link.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/7",
-      "note": "Still stalled as of 10/8 9:10 AM PT: parent 104721 Pending / Send CT Email Sent / no short link, Children Submitted 1, duplicate child 105067 still present as Cancelled in Advance, last write 10/7 23:52Z. COP-2132 comment 629651 asks for the removal plus a sweep of the drained submissions. Owner Snehal/Ricardo; no re-ping.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-08"
-    },
-    {
       "author": "Oriana Ooi",
       "initials": "OO",
       "color": "#0ea5e9",
@@ -211,9 +198,22 @@
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "10/8",
-      "note": "Adjet picked it up in-thread 8:41 AM 10/8 (Looking into this). Decision still needed: custom rate on parent 102448 now, or wait for COP-2088 multi-currency. Stephenie is holding the model transfer until the price code is settled. No Clark reply owed.",
+      "note": "Adjet took it 8:41 AM 10/8 (Looking into this). Decision still open: custom rate on parent 102448 now vs COP-2088. Stephenie is holding the model transfer until the codes are settled.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
       "owner": "Adjet",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "Roche updated the scan dates for SWC-7776 in Monday.com but the change did not reach Airtable; she expected the job to move to In Progress automatically.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/8",
+      "note": "Our Roche request log has no data row for SWC-7776 (7/30 payload arrived empty); Spec Ops record reads In Progress. Asked Stephenie for the new dates so we can check whether they reached us. Ricardo has 👀 on the root.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
+      "owner": "Stephenie",
       "lastVerified": "2026-10-08"
     }
   ]
