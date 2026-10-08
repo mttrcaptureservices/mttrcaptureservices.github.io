@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T02:15:15.708Z",
+  "lastUpdated": "2026-10-08T15:11:34.090Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -100,12 +100,13 @@
       "color": "#D9734A",
       "summary": "GCB > Global has hit the Airtable per-table view ceiling, so she cannot add any new views. She is asking for another cleanup exercise to delete old unused ones.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "10/1",
-      "note": "Read in full 10/6: 997 of 1,000 views, 239 personal and 34 copies are where the room is, two marked DO NOT DELETE so it needs owner sign-off. Offer to pull the list grouped by owner is unanswered 5 days.",
+      "note": "Table is now at exactly 1,000 views (10/8) and Oriana hit the same wall; filed as COP-2134 - owner-approved prune of personal views, then a view-count guard.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456",
-      "owner": "Kailyn",
-      "lastVerified": "2026-10-06"
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-06",
+      "jiraKey": "COP-2134"
     },
     {
       "author": "Caitlin Suh",
@@ -145,7 +146,7 @@
       "note": "Adjet 3:17 PM 10/7: discussed with Ricardo, still working on a plan. Analysis on COP-2048. Nothing owed by Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791300612289&createdTime=1791300612289",
       "owner": "Adjet",
-      "lastVerified": "2026-10-07"
+      "lastVerified": "2026-10-08"
     },
     {
       "author": "Kailyn Jelniker",
@@ -159,7 +160,7 @@
       "note": "Ricardo reconnected the Zapier-Jotform connection 4:15 PM; the ~40 held resubmissions landed 23:08-23:16Z and organic intake resumed on its own at 02:09Z (Siemens Healthineers job). Ticket still To Do - Ricardo to close.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
       "owner": "Ricardo",
-      "lastVerified": "2026-10-07"
+      "lastVerified": "2026-10-08"
     },
     {
       "author": "Caitlin Suh",
@@ -169,10 +170,51 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/7",
-      "note": "Still stalled at 02:13Z: parent 104721 Pending, Send CT Email Sent, no short link, Children Submitted 1, duplicate child 105067 (CIA) still present beside 105066. Snehal said lag 5:06 PM; nobody has acted since. Likely needs the duplicate deleted - Snehal or Ricardo.",
+      "note": "Re-pulled 10/8 8:10 AM: parent 104721 still Pending with Send CT Email Sent and no short link; duplicate child 105067 (CIA) still present. Comment 629651 on COP-2132 asks for it to be removed. Nothing owed by Caitlin.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
       "owner": "Ricardo",
-      "lastVerified": "2026-10-07"
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#0ea5e9",
+      "summary": "Cannot duplicate a CT view under GCB > GLOBAL > Capture Tech Views - INTERNATIONAL for a newly onboarded tech; Airtable returns the base usage-limit error.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/7",
+      "jiraKey": "COP-2134",
+      "note": "GLOBAL table is at the 1,000-view ceiling (counted 10/8). Needs an owner-approved prune before any view can be created; Ricardo owns COP-2134.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791430460218?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791430460218&createdTime=1791430460218",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "Two Livit AG (3) jobs got no confirmation email and the scheduled date did not match what the CT confirmed; Adjet traced it to the Job Update form date-pickers sending dd-mm-yyyy.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/8",
+      "jiraKey": "COP-2135",
+      "note": "Adjet asked Snehal or Ricardo to fix the form date-picker; Stephenie amended both records by hand and said no rush. Filed as COP-2135.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791446165565?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791446165565&createdTime=1791446165565",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "10/8",
+      "note": "Automation re-resolves the codes from the record country (Israel maps to the EU books). Multi-currency case tracked on COP-2088; Ricardo to decide custom rate now vs waiting for 2088.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-08"
     }
   ]
 }
