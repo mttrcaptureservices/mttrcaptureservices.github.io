@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T22:15:40.379Z",
+  "lastUpdated": "2026-10-08T23:15:17.364Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -157,9 +157,9 @@
       "status": "Awaiting confirmation",
       "date": "10/7",
       "jiraKey": "COP-2132",
-      "note": "Kailyn asked at 11:25 AM 10/8 for confirmation that every missing order from the 10/7 Zapier-Jotform connection drop (about 40 submissions) has now landed in Airtable - Ricardo or Adjet owe that confirmation.",
+      "note": "Snehal reconciled the Oct 6-8 drain in-thread at 3:44 PM 10/8: 164 Jotform submissions, 163 landed (162 Parent Base + 1 Spec Ops), the one miss is a blank submission with no MP Client. Ricardo thanked him 3:59 PM. Waiting on Kailyn to acknowledge; COP-2132 stays open for the duplicate-child sweep and the connection monitor.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
-      "owner": "Ricardo",
+      "owner": "Kailyn",
       "lastVerified": "2026-10-08"
     },
     {
@@ -201,20 +201,6 @@
       "note": "Ricardo took the thread 10:20 AM (Roche overrode the record with empty values except the dates, which breaks the back-end logic) and asked Stephenie to add him to the email exchange with Roche; still waiting on Stephenie for the new dates and the email thread.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
       "owner": "Stephenie",
-      "lastVerified": "2026-10-08"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#f59e0b",
-      "summary": "Job Status carries two near-identical choices, On hold by Client (61 records) and On Hold by Client (65 records), both in live use in Spec Ops 2.0 and Parent Base. Troy asks which is canonical and that it be moved directly under On Hold in the dropdown.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Fix in progress",
-      "date": "10/8",
-      "jiraKey": "COP-2136",
-      "note": "Ricardo chose On hold by Client (lowercase h, 61 records) as the canonical choice at 11:35 AM 10/8 and will remove On Hold by Client (65 records); the 65 records need re-pointing first and the dropdown reorder is still open. Decision captured on COP-2136 comment 629736. Root carries his checkmark; Troy has not acknowledged.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791482284505?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791482284505&createdTime=1791482284505",
-      "owner": "Ricardo",
       "lastVerified": "2026-10-08"
     }
   ]
