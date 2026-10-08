@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T17:22:27.973Z",
+  "lastUpdated": "2026-10-08T18:06:57.249Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -174,20 +174,6 @@
       "note": "GLOBAL table is at the 1,000-view ceiling (counted 10/8). Needs an owner-approved prune before any view can be created; Ricardo owns COP-2134.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791430460218?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791430460218&createdTime=1791430460218",
       "owner": "Ricardo",
-      "lastVerified": "2026-10-08"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#ec4899",
-      "summary": "Two Livit AG (3) jobs got no confirmation email and the scheduled date did not match what the CT confirmed; Adjet traced it to the Job Update form date-pickers sending dd-mm-yyyy.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/8",
-      "jiraKey": "COP-2135",
-      "note": "Adjet (8:47 AM 10/8) confirmed from Zapier logs the Livit Job Update form submitted the dd-mm-yyyy datetimes; Ricardo retracted his bulk-upload reading at 8:57 AM and the two are discussing later today. Captured on COP-2135 comment 629666. Stephenie amended by hand, no rush.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791446165565?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791446165565&createdTime=1791446165565",
-      "owner": "Adjet / Ricardo",
       "lastVerified": "2026-10-08"
     },
     {
