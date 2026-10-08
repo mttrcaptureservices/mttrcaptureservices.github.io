@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T01:30:27.390Z",
+  "lastUpdated": "2026-10-08T02:15:15.708Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -156,7 +156,7 @@
       "status": "Fix deployed",
       "date": "10/7",
       "jiraKey": "COP-2132",
-      "note": "Root cause stated 4:15 PM: the Zapier to Jotform connection dropped; reconnected, ~40 held on-contract submissions being resubmitted and other forms being checked. Ticket still To Do; first follow-on dispatch stall is the Caitlin 10/7 thread.",
+      "note": "Ricardo reconnected the Zapier-Jotform connection 4:15 PM; the ~40 held resubmissions landed 23:08-23:16Z and organic intake resumed on its own at 02:09Z (Siemens Healthineers job). Ticket still To Do - Ricardo to close.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
       "owner": "Ricardo",
       "lastVerified": "2026-10-07"
@@ -169,7 +169,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/7",
-      "note": "Re-pulled 6:28 PM 10/7: parent 104721 still Pending with Send CT Email Sent and no short link, Children Submitted 1, duplicate child 105067 (CIA) still present alongside 105066 - the duplicate needs deleting before the short link can generate; Ricardo/Snehal own that delete. No new replies in thread since Clark 5:09 PM.",
+      "note": "Still stalled at 02:13Z: parent 104721 Pending, Send CT Email Sent, no short link, Children Submitted 1, duplicate child 105067 (CIA) still present beside 105066. Snehal said lag 5:06 PM; nobody has acted since. Likely needs the duplicate deleted - Snehal or Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791417241566?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791417241566&createdTime=1791417241566",
       "owner": "Ricardo",
       "lastVerified": "2026-10-07"
