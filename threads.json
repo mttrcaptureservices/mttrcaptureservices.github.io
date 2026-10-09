@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T01:13:58.545Z",
+  "lastUpdated": "2026-10-09T02:16:16.269Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -181,10 +181,10 @@
       "initials": "SY",
       "color": "#ec4899",
       "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/8",
-      "note": "Tracked as COP-2137 (Adjet, In Progress, filed by Kailyn 12:17 PM 10/8) - allow manually set price codes to stick. Adjet asked Stephenie 11:35 AM whether Israel should always bill and pay in USD or only this job; unanswered. Record still reads EUSOSFC17 / EUGPCL; COP-2088 is the structural fix.",
+      "note": "Adjet shipped the fix 6:51 PM 10/8: new Manual Price Codes choice on the Price Code Trigger field; parent 102448 verified USSOSFC6 / USGPC3 with the trigger set to Manual. Stephenie has not yet acknowledged; her answer to Adjet on whether Israel is always USD is still pending.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
       "owner": "Stephenie",
       "lastVerified": "2026-10-08",
