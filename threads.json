@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T18:19:03.248Z",
+  "lastUpdated": "2026-10-09T18:32:43.217Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -170,7 +170,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/8",
-      "note": "Fix shipped 10/8 6:51 PM (Manual Price Codes trigger); Stephenie acknowledged 9:17 PM and answered the currency question (CT always USD, client per AE contract, so far USD) - captured on COP-2137 as 629967. Nothing owed by Stephenie; entry stays while COP-2137 is In Progress with Adjet.",
+      "note": "Adjet shipped the Manual Price Codes trigger (COP-2137, 10/8 6:51 PM); Stephenie acked 9:17 PM and answered the currency question (CT always USD, client per AE). Nothing owed by her; stays while 2137 is In Progress. Owner Adjet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
       "owner": "Adjet",
       "lastVerified": "2026-10-09",
@@ -182,12 +182,12 @@
       "color": "#ec4899",
       "summary": "Roche updated the scan dates for SWC-7776 in Monday.com but the change did not reach Airtable; she expected the job to move to In Progress automatically.",
       "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "status": "Awaiting fix",
       "date": "10/8",
-      "note": "Ricardo took the thread 10:20 AM (Roche overrode the record with empty values except the dates, which breaks the back-end logic) and asked Stephenie to add him to the email exchange with Roche; still waiting on Stephenie for the new dates and the email thread.",
+      "note": "Stephenie did what was asked: 9:44 PM 10/8 she posted the Roche screenshot and said she is adding Ricardo to the Roche email thread with Bhanu. Ball is now with Ricardo to read the override and respond. No reply from Clark.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
-      "owner": "Stephenie",
-      "lastVerified": "2026-10-08"
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-09"
     },
     {
       "author": "Oriana Ooi",
@@ -198,7 +198,7 @@
       "status": "Awaiting fix",
       "date": "10/9",
       "jiraKey": "COP-2138",
-      "note": "Systemic since 9/24: every Jotform-sourced attachment in Airtable is a 2.8 KB HTML login page (about 100 records, 20 clients); coincides with the Jotform SSO change. Ricardo owns the ticket; Oriana has the link and the workaround (file is still on the Jotform submission).",
+      "note": "Ticket COP-2138 filed and link posted 11:17 AM 10/9; root carries Ricardo own pressed eyes. Oriana has not reacted or replied yet. Workaround given (file lives on the Jotform submission). Owner Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791536869312?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791536869312&createdTime=1791536869312",
       "owner": "Ricardo",
       "lastVerified": "2026-10-09"
@@ -208,11 +208,24 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Onboarding email for the new MAPCO (3) MP Client was triggered at 10:41 AM 10/9 but did not go out after 10+ minutes.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
       "date": "10/9",
-      "note": "Ricardo took it live at 11:14 AM (asked which email, then withdrew the question). MAPCO (3) record exists in GSB with a short link; region reads GLOBAL where the MAPCO siblings read NORAM and the Jotform link field is empty - differing properties, not a cause. No Clark reply; owner Ricardo.",
+      "note": "Ricardo diagnosed it 11:21 AM: the POC address luis.rodriguez at mapcoexpress.com does not exist or is undeliverable, so the onboarding automation stopped and nobody got the email. Kailyn owes a corrected address and a re-trigger; she has not acknowledged yet. No Clark reply (teammate owns it).",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791569155329?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791569155329&createdTime=1791569155329",
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "About 64 Livit capture requests suddenly show On hold by Client when Livit jobs normally sit on Waiting for Approval until the agent resubmits; she asks why.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "10/9",
+      "note": "All 64 were changed in one bulk write at 11:35 AM PT 10/8 by Ricardo, matching the COP-2136 duplicate-status merge (the retired On Hold by Client choice is gone). Prior status is not API-readable. Clark replied 11:30 AM 10/9 and applied eyes; Ricardo owes confirmation and any revert to Waiting for Approval. Observation recorded on COP-2136 as comment 629978.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
       "owner": "Ricardo",
       "lastVerified": "2026-10-09"
     }
