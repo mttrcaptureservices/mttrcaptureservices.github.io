@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T00:14:27.304Z",
+  "lastUpdated": "2026-10-09T00:16:48.892Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -102,7 +102,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/1",
-      "note": "Table is now at exactly 1,000 views (10/8) and Oriana hit the same wall; filed as COP-2134 - owner-approved prune of personal views, then a view-count guard.",
+      "note": "Ricardo pruned views on GLOBAL 5:14 PM 10/8 (in Oriana thread), so Kailyn should be able to create her view too; this root was not rendered this run. COP-2134 stays open for the view-count guard. Owner Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456",
       "owner": "Ricardo",
       "lastVerified": "2026-10-06",
@@ -167,13 +167,13 @@
       "initials": "OO",
       "color": "#0ea5e9",
       "summary": "Cannot duplicate a CT view under GCB > GLOBAL > Capture Tech Views - INTERNATIONAL for a newly onboarded tech; Airtable returns the base usage-limit error.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/7",
       "jiraKey": "COP-2134",
-      "note": "GLOBAL table is at the 1,000-view ceiling (counted 10/8). Needs an owner-approved prune before any view can be created; Ricardo owns COP-2134.",
+      "note": "Ricardo made room for new views at 5:14 PM 10/8 and asked Oriana to retry creating the client view; her confirmation is pending. COP-2134 stays open for the view-count guard. Owner Oriana.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791430460218?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791430460218&createdTime=1791430460218",
-      "owner": "Ricardo",
+      "owner": "Oriana",
       "lastVerified": "2026-10-08"
     },
     {
