@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T02:16:16.269Z",
+  "lastUpdated": "2026-10-09T18:19:03.248Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -163,31 +163,17 @@
       "lastVerified": "2026-10-08"
     },
     {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#0ea5e9",
-      "summary": "Cannot duplicate a CT view under GCB > GLOBAL > Capture Tech Views - INTERNATIONAL for a newly onboarded tech; Airtable returns the base usage-limit error.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "10/7",
-      "jiraKey": "COP-2134",
-      "note": "Ricardo made room for new views at 5:14 PM 10/8 and asked Oriana to retry creating the client view; her confirmation is pending. COP-2134 stays open for the view-count guard. Owner Oriana.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791430460218?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791430460218&createdTime=1791430460218",
-      "owner": "Oriana",
-      "lastVerified": "2026-10-08"
-    },
-    {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#ec4899",
       "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "10/8",
-      "note": "Adjet shipped the fix 6:51 PM 10/8: new Manual Price Codes choice on the Price Code Trigger field; parent 102448 verified USSOSFC6 / USGPC3 with the trigger set to Manual. Stephenie has not yet acknowledged; her answer to Adjet on whether Israel is always USD is still pending.",
+      "note": "Fix shipped 10/8 6:51 PM (Manual Price Codes trigger); Stephenie acknowledged 9:17 PM and answered the currency question (CT always USD, client per AE contract, so far USD) - captured on COP-2137 as 629967. Nothing owed by Stephenie; entry stays while COP-2137 is In Progress with Adjet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
-      "owner": "Stephenie",
-      "lastVerified": "2026-10-08",
+      "owner": "Adjet",
+      "lastVerified": "2026-10-09",
       "jiraKey": "COP-2137"
     },
     {
@@ -202,6 +188,33 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
       "owner": "Stephenie",
       "lastVerified": "2026-10-08"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#0ea5e9",
+      "summary": "PDF floor plans attached through the Jotform order forms cannot be opened: the job-request email link redirects to a Jotform login page and the Airtable copy is blank (Cushman and Wakefield (4), JOBID6673433490596066672).",
+      "statusCls": "badge-todo",
+      "status": "Awaiting fix",
+      "date": "10/9",
+      "jiraKey": "COP-2138",
+      "note": "Systemic since 9/24: every Jotform-sourced attachment in Airtable is a 2.8 KB HTML login page (about 100 records, 20 clients); coincides with the Jotform SSO change. Ricardo owns the ticket; Oriana has the link and the workaround (file is still on the Jotform submission).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791536869312?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791536869312&createdTime=1791536869312",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Onboarding email for the new MAPCO (3) MP Client was triggered at 10:41 AM 10/9 but did not go out after 10+ minutes.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/9",
+      "note": "Ricardo took it live at 11:14 AM (asked which email, then withdrew the question). MAPCO (3) record exists in GSB with a short link; region reads GLOBAL where the MAPCO siblings read NORAM and the Jotform link field is empty - differing properties, not a cause. No Clark reply; owner Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791569155329?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791569155329&createdTime=1791569155329",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-09"
     }
   ]
 }
