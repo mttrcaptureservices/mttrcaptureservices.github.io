@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T18:32:43.217Z",
+  "lastUpdated": "2026-10-09T23:13:24.685Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -166,20 +166,6 @@
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#ec4899",
-      "summary": "JOBID6659510681279643699 (Google Data Center, Israel): price code lookups keep reverting to EUSOSFC17 / EUGPCL when she sets USSOSFC6 / USGPC3; client billed and tech paid in USD.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/8",
-      "note": "Adjet shipped the Manual Price Codes trigger (COP-2137, 10/8 6:51 PM); Stephenie acked 9:17 PM and answered the currency question (CT always USD, client per AE). Nothing owed by her; stays while 2137 is In Progress. Owner Adjet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791462257876?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791462257876&createdTime=1791462257876",
-      "owner": "Adjet",
-      "lastVerified": "2026-10-09",
-      "jiraKey": "COP-2137"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#ec4899",
       "summary": "Roche updated the scan dates for SWC-7776 in Monday.com but the change did not reach Airtable; she expected the job to move to In Progress automatically.",
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
@@ -224,7 +210,7 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting decision",
       "date": "10/9",
-      "note": "All 64 were changed in one bulk write at 11:35 AM PT 10/8 by Ricardo, matching the COP-2136 duplicate-status merge (the retired On Hold by Client choice is gone). Prior status is not API-readable. Clark replied 11:30 AM 10/9 and applied eyes; Ricardo owes confirmation and any revert to Waiting for Approval. Observation recorded on COP-2136 as comment 629978.",
+      "note": "Clark replied 11:30 AM: the 64 jobs were re-pointed in one pass by the COP-2136 status merge; root now carries a pressed check. Ricardo to confirm and revert any that belong on Waiting for Approval.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
       "owner": "Ricardo",
       "lastVerified": "2026-10-09"
