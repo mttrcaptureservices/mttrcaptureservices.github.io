@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-09T23:13:24.685Z",
+  "lastUpdated": "2026-10-10T00:13:08.450Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -200,19 +200,6 @@
       "note": "Ricardo diagnosed it 11:21 AM: the POC address luis.rodriguez at mapcoexpress.com does not exist or is undeliverable, so the onboarding automation stopped and nobody got the email. Kailyn owes a corrected address and a re-trigger; she has not acknowledged yet. No Clark reply (teammate owns it).",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791569155329?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791569155329&createdTime=1791569155329",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-09"
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#ec4899",
-      "summary": "About 64 Livit capture requests suddenly show On hold by Client when Livit jobs normally sit on Waiting for Approval until the agent resubmits; she asks why.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "10/9",
-      "note": "Clark replied 11:30 AM: the 64 jobs were re-pointed in one pass by the COP-2136 status merge; root now carries a pressed check. Ricardo to confirm and revert any that belong on Waiting for Approval.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
-      "owner": "Ricardo",
       "lastVerified": "2026-10-09"
     }
   ]
