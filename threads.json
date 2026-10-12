@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T00:13:08.450Z",
+  "lastUpdated": "2026-10-12T22:14:00.664Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -176,20 +176,6 @@
       "lastVerified": "2026-10-09"
     },
     {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#0ea5e9",
-      "summary": "PDF floor plans attached through the Jotform order forms cannot be opened: the job-request email link redirects to a Jotform login page and the Airtable copy is blank (Cushman and Wakefield (4), JOBID6673433490596066672).",
-      "statusCls": "badge-todo",
-      "status": "Awaiting fix",
-      "date": "10/9",
-      "jiraKey": "COP-2138",
-      "note": "Ticket COP-2138 filed and link posted 11:17 AM 10/9; root carries Ricardo own pressed eyes. Oriana has not reacted or replied yet. Workaround given (file lives on the Jotform submission). Owner Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791536869312?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791536869312&createdTime=1791536869312",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-09"
-    },
-    {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
@@ -201,6 +187,32 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791569155329?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791569155329&createdTime=1791569155329",
       "owner": "Kailyn",
       "lastVerified": "2026-10-09"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#14b8a6",
+      "summary": "A job was marked CIA but the automated cancellation emails were not sent.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/12",
+      "note": "Ricardo pressed his own eyes on the post and nobody has replied yet; the Job ID is not in the post text. Owner Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-12"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "JOBID6676482893223157941 has a duplicate child for unit 10-205; record 105709 is stuck in Waiting for Approval and she asks Ricardo or Snehal to delete it so she can trigger automations.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
+      "date": "10/12",
+      "note": "Record 105709 (leading-space unit, created 2:10 PM) is a duplicate of 105759 created 2:26 PM. A teammate has to delete it; Clark does not delete. Owner Ricardo or Snehal.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791841239457?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791841239457&createdTime=1791841239457",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-12"
     }
   ]
 }
