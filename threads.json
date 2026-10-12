@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T22:14:00.664Z",
+  "lastUpdated": "2026-10-12T23:14:12.956Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -95,20 +95,6 @@
       "lastVerified": "2026-10-06"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "GCB > Global has hit the Airtable per-table view ceiling, so she cannot add any new views. She is asking for another cleanup exercise to delete old unused ones.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/1",
-      "note": "Ricardo pruned views on GLOBAL 5:14 PM 10/8 (in Oriana thread), so Kailyn should be able to create her view too; this root was not rendered this run. COP-2134 stays open for the view-count guard. Owner Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1790888864456&createdTime=1790888864456",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-06",
-      "jiraKey": "COP-2134"
-    },
-    {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#8b5cf6",
@@ -149,20 +135,6 @@
       "lastVerified": "2026-10-08"
     },
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "No new intake records in Parent Base since 10:29 AM PT 10/7 across all clients and both Jotform forms, and a single-job bulk ingest sheet submitted ~2:58 PM has not landed. Both intake Zaps show on, so the break is upstream of Airtable.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "10/7",
-      "jiraKey": "COP-2132",
-      "note": "Snehal reconciled Oct 6-8 submissions (164, 162 Parent Base + 1 Spec Ops, 1 blank miss) at 3:44 PM 10/8; Ricardo thanked him. Kailyn has not acknowledged. COP-2132 still To Do for the duplicate-child sweep. Owner Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791410912828?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791410912828&createdTime=1791410912828",
-      "owner": "Kailyn",
-      "lastVerified": "2026-10-08"
-    },
-    {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#ec4899",
@@ -193,10 +165,10 @@
       "initials": "FA",
       "color": "#14b8a6",
       "summary": "A job was marked CIA but the automated cancellation emails were not sent.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "10/12",
-      "note": "Ricardo pressed his own eyes on the post and nobody has replied yet; the Job ID is not in the post text. Owner Ricardo.",
+      "note": "Ricardo asked for the Job ID at 3:45 PM and Freddy supplied it at 3:46 PM, so Ricardo owes the next action. No Clark reply.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
       "owner": "Ricardo",
       "lastVerified": "2026-10-12"
