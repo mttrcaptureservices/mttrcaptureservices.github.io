@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T00:06:48.890Z",
+  "lastUpdated": "2026-10-13T03:58:59.066Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -165,12 +165,12 @@
       "initials": "FA",
       "color": "#14b8a6",
       "summary": "A job was marked CIA but the automated cancellation emails were not sent.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/12",
-      "note": "Freddy supplied the Job ID at 3:46 PM after Ricardo asked for it at 3:45 PM; Ricardo owes the next action. 5 PM 10/12 read.",
+      "note": "Ricardo sent the cancellation emails at 5:11 PM 10/12 (triggered twice by accident, so the client may have received a duplicate); Freddy has not acknowledged. Nothing owed by Clark.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
-      "owner": "Ricardo",
+      "owner": "Freddy",
       "lastVerified": "2026-10-12"
     }
   ]
