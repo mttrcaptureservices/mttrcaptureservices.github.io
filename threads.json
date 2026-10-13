@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T23:14:12.956Z",
+  "lastUpdated": "2026-10-13T00:06:48.890Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -168,21 +168,8 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/12",
-      "note": "Ricardo asked for the Job ID at 3:45 PM and Freddy supplied it at 3:46 PM, so Ricardo owes the next action. No Clark reply.",
+      "note": "Freddy supplied the Job ID at 3:46 PM after Ricardo asked for it at 3:45 PM; Ricardo owes the next action. 5 PM 10/12 read.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-12"
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#8b5cf6",
-      "summary": "JOBID6676482893223157941 has a duplicate child for unit 10-205; record 105709 is stuck in Waiting for Approval and she asks Ricardo or Snehal to delete it so she can trigger automations.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/12",
-      "note": "Record 105709 (leading-space unit, created 2:10 PM) is a duplicate of 105759 created 2:26 PM. A teammate has to delete it; Clark does not delete. Owner Ricardo or Snehal.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791841239457?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791841239457&createdTime=1791841239457",
       "owner": "Ricardo",
       "lastVerified": "2026-10-12"
     }
