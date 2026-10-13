@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T03:58:59.066Z",
+  "lastUpdated": "2026-10-13T16:14:59.353Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -172,6 +172,19 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
       "owner": "Freddy",
       "lastVerified": "2026-10-12"
+    },
+    {
+      "author": "Oriana Ooi",
+      "initials": "OO",
+      "color": "#0ea5e9",
+      "summary": "New Scheduling City Trier (Germany) added for a newly onboarded CT is not populating Lat_Long in the CT Directory Global Scheduling/Ops tab on the EMEA view.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/13",
+      "note": "Clark acknowledged 10/13; root cause not yet investigated and no Jira filed because the Jira write path returned 403. Addressed to Adjet; owner Clark/Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791875733902?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791875733902&createdTime=1791875733902",
+      "owner": "Clark",
+      "lastVerified": "2026-10-13"
     }
   ]
 }
