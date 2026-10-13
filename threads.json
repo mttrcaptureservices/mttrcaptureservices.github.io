@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T19:14:04.997Z",
+  "lastUpdated": "2026-10-13T20:34:44.081Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -205,12 +205,13 @@
       "color": "#10b981",
       "summary": "Asked Adjet for automations for the new SubTech BGC Microsoft Sheet.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
+      "status": "Awaiting decision",
       "date": "10/13",
-      "note": "Addressed to Adjet, posted 9:36 AM 10/13; no reply yet. Owner Adjet.",
+      "note": "Adjet is working it (COP-2142, In Progress) and asked Ricardo 1:33 PM whether the new BGC sheet can be set in Zapier since Adjet does not own the file. Ricardo owes the answer. No Clark reply.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791909363390?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791909363390&createdTime=1791909363390",
-      "owner": "Adjet",
-      "lastVerified": "2026-10-13"
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-13",
+      "jiraKey": "COP-2142"
     }
   ]
 }
