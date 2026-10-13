@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T20:34:44.081Z",
+  "lastUpdated": "2026-10-13T21:15:01.958Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -161,29 +161,16 @@
       "lastVerified": "2026-10-09"
     },
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#14b8a6",
-      "summary": "A job was marked CIA but the automated cancellation emails were not sent.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
-      "date": "10/12",
-      "note": "Ricardo sent the cancellation emails at 5:11 PM 10/12 (triggered twice by accident, so the client may have received a duplicate); Freddy has not acknowledged. Nothing owed by Clark.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791831544652?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791831544652&createdTime=1791831544652",
-      "owner": "Freddy",
-      "lastVerified": "2026-10-12"
-    },
-    {
       "author": "Oriana Ooi",
       "initials": "OO",
       "color": "#0ea5e9",
       "summary": "New Scheduling City Trier (Germany) added for a newly onboarded CT is not populating Lat_Long in the CT Directory Global Scheduling/Ops tab on the EMEA view.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/13",
-      "note": "Clark acknowledged 10/13; root cause not yet investigated and no Jira filed because the Jira write path returned 403. Addressed to Adjet; owner Clark/Adjet.",
+      "note": "Ricardo fixed the failed Lat_Long automation for Trier at 1:36 PM and Adjet confirmed to Oriana at 1:42 PM; her acknowledgement is pending. No Clark reply owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791875733902?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791875733902&createdTime=1791875733902",
-      "owner": "Clark",
+      "owner": "Oriana",
       "lastVerified": "2026-10-13"
     },
     {
@@ -207,11 +194,25 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting decision",
       "date": "10/13",
-      "note": "Adjet is working it (COP-2142, In Progress) and asked Ricardo 1:33 PM whether the new BGC sheet can be set in Zapier since Adjet does not own the file. Ricardo owes the answer. No Clark reply.",
+      "note": "Adjet is working it and asked Ricardo at 1:33 PM whether the new Excel file can be set in Zapier since Adjet does not own it. Ricardo owes the answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791909363390?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791909363390&createdTime=1791909363390",
       "owner": "Ricardo",
       "lastVerified": "2026-10-13",
       "jiraKey": "COP-2142"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Asked Snehal for two new job-level fields, Total Travel Distance CT and Unit of Travel Distance CT, measuring distance from the assigned city to the capture address.",
+      "statusCls": "badge-todo",
+      "status": "Awaiting build",
+      "date": "10/13",
+      "jiraKey": "COP-2143",
+      "note": "Ticket filed and link sent 2:14 PM; Snehal or Adjet to pick up the build. A teammate eyes reaction is on the root.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
+      "owner": "Snehal",
+      "lastVerified": "2026-10-13"
     }
   ]
 }
