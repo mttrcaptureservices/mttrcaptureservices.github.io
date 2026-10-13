@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T16:14:59.353Z",
+  "lastUpdated": "2026-10-13T18:12:24.509Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -184,6 +184,32 @@
       "note": "Clark acknowledged 10/13; root cause not yet investigated and no Jira filed because the Jira write path returned 403. Addressed to Adjet; owner Clark/Adjet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791875733902?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791875733902&createdTime=1791875733902",
       "owner": "Clark",
+      "lastVerified": "2026-10-13"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "About 64 Livit jobs were moved to On hold by Client after the status-choice merge; she asked again on 10/13 for an update and a revert to Waiting for Approval.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "10/9",
+      "note": "Ricardo explained the single-pass change on 10/9; her 10/13 3:44 AM follow-up is unanswered. No ticket. Owner Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-13"
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#10b981",
+      "summary": "Asked Adjet for automations for the new SubTech BGC Microsoft Sheet.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
+      "date": "10/13",
+      "note": "Addressed to Adjet, posted 9:36 AM 10/13; no reply yet. Owner Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791909363390?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791909363390&createdTime=1791909363390",
+      "owner": "Adjet",
       "lastVerified": "2026-10-13"
     }
   ]
