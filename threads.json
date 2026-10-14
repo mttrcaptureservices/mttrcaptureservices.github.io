@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T21:18:28.935Z",
+  "lastUpdated": "2026-10-14T22:12:42.410Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -219,11 +219,11 @@
       "initials": "CS",
       "color": "#8b5cf6",
       "summary": "Lennar parents priced on the wrong CT code family after dispatch (parents 106182, 106190, 106187) while a same-inputs job on 10/2 priced normally.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "10/14",
       "jiraKey": "COP-2145",
-      "note": "Ricardo or Snehal to confirm cause; Caitlin told to hold off hand-typing codes until then.",
+      "note": "Ricardo confirmed the wrong codes in-thread (2:14 PM); at 3:07 PM Caitlin asked him for an ETA because preferred dates start Friday. Owner Ricardo owes the ETA / fix; COP-2145 To Do.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792011521088?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792011521088&createdTime=1792011521088",
       "owner": "Ricardo",
       "lastVerified": "2026-10-14"
