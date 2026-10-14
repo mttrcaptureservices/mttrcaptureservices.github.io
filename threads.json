@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T23:13:43.093Z",
+  "lastUpdated": "2026-10-14T00:13:10.842Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -165,12 +165,12 @@
       "initials": "OO",
       "color": "#0ea5e9",
       "summary": "New Scheduling City Trier (Germany) added for a newly onboarded CT is not populating Lat_Long in the CT Directory Global Scheduling/Ops tab on the EMEA view.",
-      "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
       "date": "10/13",
-      "note": "Ricardo fixed the failed Lat_Long automation for Trier at 1:36 PM and Adjet confirmed to Oriana at 1:42 PM; her acknowledgement is pending. No Clark reply owed.",
+      "note": "Scheduling city fixed by Ricardo and Adjet; Oriana then asked Ricardo to confirm her reading of his CTG-level vs SubTech-level model note (5:03 PM). Owner Ricardo. No Clark reply.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791875733902?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791875733902&createdTime=1791875733902",
-      "owner": "Oriana",
+      "owner": "Ricardo",
       "lastVerified": "2026-10-13"
     },
     {
