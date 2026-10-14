@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T00:13:10.842Z",
+  "lastUpdated": "2026-10-14T21:18:28.935Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -213,6 +213,34 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
       "owner": "Snehal",
       "lastVerified": "2026-10-13"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "Lennar parents priced on the wrong CT code family after dispatch (parents 106182, 106190, 106187) while a same-inputs job on 10/2 priced normally.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/14",
+      "jiraKey": "COP-2145",
+      "note": "Ricardo or Snehal to confirm cause; Caitlin told to hold off hand-typing codes until then.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792011521088?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792011521088&createdTime=1792011521088",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-14"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Additional Details and Scan Requirements repeat once per child in confirmation and reminder emails, and possibly acceptance Jotforms; she wants them shown once per job (Welltower stays per-unit).",
+      "statusCls": "badge-todo",
+      "status": "Awaiting build",
+      "date": "10/14",
+      "jiraKey": "COP-2146",
+      "note": "Logged and acknowledged in thread 2:17 PM; Ricardo or Adjet to pick up. Clark 👀 not yet applied (renderer blank).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792010258263?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792010258263&createdTime=1792010258263",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-14"
     }
   ]
 }
