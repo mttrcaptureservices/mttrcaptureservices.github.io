@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T14:15:32.188Z",
+  "lastUpdated": "2026-10-15T16:26:31.476Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -239,6 +239,19 @@
       "jiraKey": "COP-2146",
       "note": "Kailyn forwarded the confirmation email for review; COP-2146 is To Do and the next step is with Ricardo.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792010258263?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792010258263&createdTime=1792010258263",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-15"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "Asks why the Roche job SWC-7877 had its Model Not Found status removed by automation two months ago, and what triggered it.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting answer",
+      "date": "10/15",
+      "note": "Clark replied 9:26 AM: Spec Ops record created 8/21 on the Roche release, Job Status blank today, cause not visible. Ricardo owes whether the 8/21 release set or cleared it. Ricardo 👀 owed.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792081413992?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792081413992&createdTime=1792081413992",
       "owner": "Ricardo",
       "lastVerified": "2026-10-15"
     }
