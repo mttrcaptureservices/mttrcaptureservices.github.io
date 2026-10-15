@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T22:12:42.410Z",
+  "lastUpdated": "2026-10-15T00:12:59.861Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -220,12 +220,12 @@
       "color": "#8b5cf6",
       "summary": "Lennar parents priced on the wrong CT code family after dispatch (parents 106182, 106190, 106187) while a same-inputs job on 10/2 priced normally.",
       "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "status": "Waiting on requester",
       "date": "10/14",
       "jiraKey": "COP-2145",
-      "note": "Ricardo confirmed the wrong codes in-thread (2:14 PM); at 3:07 PM Caitlin asked him for an ETA because preferred dates start Friday. Owner Ricardo owes the ETA / fix; COP-2145 To Do.",
+      "note": "Adjet told Caitlin at 5:01 PM to manually set the price codes on the 4 jobs; ticket COP-2145 with Snehal still open for the root cause.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792011521088?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792011521088&createdTime=1792011521088",
-      "owner": "Ricardo",
+      "owner": "Caitlin",
       "lastVerified": "2026-10-14"
     },
     {
@@ -237,7 +237,7 @@
       "status": "Awaiting build",
       "date": "10/14",
       "jiraKey": "COP-2146",
-      "note": "Logged and acknowledged in thread 2:17 PM; Ricardo or Adjet to pick up. Clark 👀 not yet applied (renderer blank).",
+      "note": "Kailyn forwarded the confirmation email to Ricardo at 2:51 PM and he acknowledged; COP-2146 To Do, nothing owed by Clark.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792010258263?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792010258263&createdTime=1792010258263",
       "owner": "Ricardo",
       "lastVerified": "2026-10-14"
