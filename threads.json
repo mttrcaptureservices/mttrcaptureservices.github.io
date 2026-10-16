@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T18:13:10.199Z",
+  "lastUpdated": "2026-10-16T19:16:04.947Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -161,19 +161,6 @@
       "lastVerified": "2026-10-09"
     },
     {
-      "author": "Oriana Ooi",
-      "initials": "OO",
-      "color": "#0ea5e9",
-      "summary": "New Scheduling City Trier (Germany) added for a newly onboarded CT is not populating Lat_Long in the CT Directory Global Scheduling/Ops tab on the EMEA view.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
-      "date": "10/13",
-      "note": "Scheduling city fixed by Ricardo and Adjet; Oriana then asked Ricardo to confirm her reading of his CTG-level vs SubTech-level model note (5:03 PM). Owner Ricardo. No Clark reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791875733902?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791875733902&createdTime=1791875733902",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-13"
-    },
-    {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#ec4899",
@@ -198,7 +185,7 @@
       "note": "Ticket filed and link sent 2:14 PM; Snehal or Adjet to pick up the build. A teammate eyes reaction is on the root.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
       "owner": "Snehal",
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-16"
     },
     {
       "author": "Caitlin Suh",
@@ -209,10 +196,23 @@
       "status": "Awaiting fix",
       "date": "10/14",
       "jiraKey": "COP-2145",
-      "note": "Adjet told Caitlin to set the 4 price codes by hand and she acknowledged; COP-2145 is In Progress with Snehal, nothing owed by her.",
+      "note": "Adjet told Caitlin on 10/14 to set the 4 price codes manually; structural fix still in progress on COP-2145.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792011521088?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792011521088&createdTime=1792011521088",
-      "owner": "Snehal",
-      "lastVerified": "2026-10-15"
+      "owner": "Caitlin",
+      "lastVerified": "2026-10-16"
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#D9734A",
+      "summary": "Travel calculator returns a driven distance for non-Oahu Hawaii addresses; the only in-network Hawaii city is Honolulu and the islands cannot be driven between.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/16",
+      "note": "Adjet took it at 11:31 AM (Snehal and Ricardo are off today); no ticket yet, no Clark reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792174291265?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792174291265&createdTime=1792174291265",
+      "owner": "Adjet",
+      "lastVerified": "2026-10-16"
     }
   ]
 }
