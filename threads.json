@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T01:13:27.781Z",
+  "lastUpdated": "2026-10-16T17:21:14.419Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -185,20 +185,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
       "owner": "Ricardo",
       "lastVerified": "2026-10-13"
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#10b981",
-      "summary": "Asked Adjet for automations for the new SubTech BGC Microsoft Sheet.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
-      "date": "10/13",
-      "note": "Adjet moved 4 Zaps to the new BGC sheet 4:12 PM 10/15; Ryan answered 4:31 PM that the Passed/Fail Excel-to-Airtable Zap (off since July) should be turned back on, so Adjet owes that.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791909363390?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791909363390&createdTime=1791909363390",
-      "owner": "Adjet",
-      "lastVerified": "2026-10-15",
-      "jiraKey": "COP-2142"
     },
     {
       "author": "Kailyn Jelniker",
