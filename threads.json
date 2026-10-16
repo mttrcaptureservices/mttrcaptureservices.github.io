@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T00:01:36.879Z",
+  "lastUpdated": "2026-10-16T01:13:27.781Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -226,20 +226,6 @@
       "note": "Adjet told Caitlin to set the 4 price codes by hand and she acknowledged; COP-2145 is In Progress with Snehal, nothing owed by her.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792011521088?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792011521088&createdTime=1792011521088",
       "owner": "Snehal",
-      "lastVerified": "2026-10-15"
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#D9734A",
-      "summary": "Additional Details and Scan Requirements repeat once per child in confirmation and reminder emails, and possibly acceptance Jotforms; she wants them shown once per job (Welltower stays per-unit).",
-      "statusCls": "badge-todo",
-      "status": "Awaiting build",
-      "date": "10/14",
-      "jiraKey": "COP-2146",
-      "note": "Kailyn forwarded the confirmation email for review; COP-2146 is To Do and the next step is with Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792010258263?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792010258263&createdTime=1792010258263",
-      "owner": "Ricardo",
       "lastVerified": "2026-10-15"
     }
   ]
