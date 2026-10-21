@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T20:44:00.556Z",
+  "lastUpdated": "2026-10-21T21:13:36.582Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -161,19 +161,6 @@
       "lastVerified": "2026-10-09"
     },
     {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#ec4899",
-      "summary": "About 64 Livit jobs were moved to On hold by Client after the status-choice merge; she asked again on 10/13 for an update and a revert to Waiting for Approval.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "10/9",
-      "note": "Ricardo explained the single-pass change on 10/9; her 10/13 3:44 AM follow-up is unanswered. No ticket. Owner Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791533622640?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791533622640&createdTime=1791533622640",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-13"
-    },
-    {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#D9734A",
@@ -219,12 +206,12 @@
       "initials": "CS",
       "color": "#8b5cf6",
       "summary": "New UDR job JOBID6684176243226309635 shows duplicated child records; she asks whether it is slowness or a bug.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "10/21",
-      "note": "Snehal replied Looking into this at 1:40 PM; owner Snehal. Related to the duplicate-child dispatch-stall family. Clark sent nothing.",
+      "note": "Snehal explained at 1:59 PM that the client submitted two real child units of different sizes, so Airtable matches the submission. Caitlin ack pending; no defect established, nothing owed by Clark.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
-      "owner": "Snehal",
+      "owner": "Caitlin",
       "lastVerified": "2026-10-21"
     }
   ]
