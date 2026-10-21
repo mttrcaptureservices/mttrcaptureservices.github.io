@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T18:19:47.803Z",
+  "lastUpdated": "2026-10-21T20:44:00.556Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -212,6 +212,19 @@
       "note": "No Jira ticket and no reply in thread after about 24h. Ricardo set a Custom CT Rate of 76.08 on the parent at 2:30 PM 10/20, which is exactly the gap between 200 and 276.08. Owner Ricardo to confirm what the tech should be paid.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792519084525&createdTime=1792519084525",
       "owner": "Ricardo",
+      "lastVerified": "2026-10-21"
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#8b5cf6",
+      "summary": "New UDR job JOBID6684176243226309635 shows duplicated child records; she asks whether it is slowness or a bug.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/21",
+      "note": "Snehal replied Looking into this at 1:40 PM; owner Snehal. Related to the duplicate-child dispatch-stall family. Clark sent nothing.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
+      "owner": "Snehal",
       "lastVerified": "2026-10-21"
     }
   ]
