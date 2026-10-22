@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T18:13:54.315Z",
+  "lastUpdated": "2026-10-22T19:13:37.430Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -213,19 +213,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
       "owner": "Caitlin",
       "lastVerified": "2026-10-21"
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#8b5cf6",
-      "summary": "New Job form for techs not populating the client preferred dates and times on the latest JLL (8) bulk ingest (JPMCBAUQ3Q4OCTBULK1403, 1361, 1426).",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting answer",
-      "date": "10/22",
-      "note": "Ricardo set Scheduling Type to Date Range, Time Range on the bulk jobs at 11:05 AM; Freddy asked at 11:08 AM if he can retrigger and what value to use going forward. Ricardo owes the answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792688801295?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792688801295&createdTime=1792688801295",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-22"
     }
   ]
 }
