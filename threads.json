@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T22:13:45.238Z",
+  "lastUpdated": "2026-10-22T17:39:49.733Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -199,7 +199,7 @@
       "note": "No Jira ticket and no reply in thread after about 24h. Ricardo set a Custom CT Rate of 76.08 on the parent at 2:30 PM 10/20, which is exactly the gap between 200 and 276.08. Owner Ricardo to confirm what the tech should be paid.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792519084525&createdTime=1792519084525",
       "owner": "Ricardo",
-      "lastVerified": "2026-10-21"
+      "lastVerified": "2026-10-22"
     },
     {
       "author": "Caitlin Suh",
@@ -213,6 +213,19 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
       "owner": "Caitlin",
       "lastVerified": "2026-10-21"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#8b5cf6",
+      "summary": "New Job form for techs not populating the client preferred dates and times on the latest JLL (8) bulk ingest (JPMCBAUQ3Q4OCTBULK1403, 1361, 1426).",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting decision",
+      "date": "10/22",
+      "note": "Clark replied 10:39 AM: dates are in Airtable but Scheduling Type is blank on the bulk records, so the CT link opens the legacy form. Ricardo/Snehal owe the importer fix; Jira ticket owed (Jira timed out).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792688801295?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792688801295&createdTime=1792688801295",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-22"
     }
   ]
 }
