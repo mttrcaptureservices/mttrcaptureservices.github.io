@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T22:13:41.679Z",
+  "lastUpdated": "2026-10-23T22:16:28.782Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -213,6 +213,33 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
       "owner": "Caitlin",
       "lastVerified": "2026-10-21"
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#f59e0b",
+      "summary": "Needs 2 more line items added to a large Marvell job; duplicated line items in 2.0 vanish after a few minutes.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/23",
+      "jiraKey": "COP-2152",
+      "note": "Ticket filed and link replied; Ricardo to add the two buildings and check why duplicates disappear.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792790250551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792790250551&createdTime=1792790250551",
+      "owner": "Ricardo",
+      "lastVerified": "2026-10-23"
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#6366f1",
+      "summary": "Asked why a Gallina job shows $0 CT payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/23",
+      "note": "Replied that children show $0 by design and parent carries 387.45; waiting on Freddy to say which record shows $0.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792780777608&createdTime=1792780777608",
+      "owner": "Freddy",
+      "lastVerified": "2026-10-23"
     }
   ]
 }
