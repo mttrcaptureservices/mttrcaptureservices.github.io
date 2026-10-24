@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T22:17:09.030Z",
+  "lastUpdated": "2026-10-24T00:49:52.124Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -139,13 +139,13 @@
       "initials": "SY",
       "color": "#ec4899",
       "summary": "Roche updated the scan dates for SWC-7776 in Monday.com but the change did not reach Airtable; she expected the job to move to In Progress automatically.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting fix",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/8",
-      "note": "Stephenie did what was asked: 9:44 PM 10/8 she posted the Roche screenshot and said she is adding Ricardo to the Roche email thread with Bhanu. Ball is now with Ricardo to read the override and respond. No reply from Clark.",
+      "note": "Adjet set Manual and exposed Price Code Trigger in the Special Ops views; Stephenie confirmation pending.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-09"
+      "owner": "Stephenie",
+      "lastVerified": "2026-10-23"
     },
     {
       "author": "Kailyn Jelniker",
@@ -165,14 +165,14 @@
       "initials": "KJ",
       "color": "#D9734A",
       "summary": "Asked Snehal for two new job-level fields, Total Travel Distance CT and Unit of Travel Distance CT, measuring distance from the assigned city to the capture address.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting build",
+      "statusCls": "badge-fix-deployed",
+      "status": "Awaiting confirmation",
       "date": "10/13",
       "jiraKey": "COP-2143",
-      "note": "Ticket filed and link sent 2:14 PM; Snehal or Adjet to pick up the build. A teammate eyes reaction is on the root.",
+      "note": "Snehal posted that the requested automation is live and two fields added; Kailyn confirmation pending.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
-      "owner": "Snehal",
-      "lastVerified": "2026-10-16"
+      "owner": "Kailyn",
+      "lastVerified": "2026-10-23"
     },
     {
       "author": "Caitlin Suh",
@@ -213,20 +213,6 @@
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792613231001?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792613231001&createdTime=1792613231001",
       "owner": "Caitlin",
       "lastVerified": "2026-10-21"
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#f59e0b",
-      "summary": "Needs 2 more line items added to a large Marvell job; duplicated line items in 2.0 vanish after a few minutes.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/23",
-      "jiraKey": "COP-2152",
-      "note": "Ticket filed and link replied; Ricardo to add the two buildings and check why duplicates disappear.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792790250551?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1792790250551&createdTime=1792790250551",
-      "owner": "Ricardo",
-      "lastVerified": "2026-10-23"
     }
   ]
 }
