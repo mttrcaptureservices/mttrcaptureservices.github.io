@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T21:13:28.546Z",
+  "lastUpdated": "2026-10-26T22:13:44.425Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -145,7 +145,7 @@
       "note": "Adjet set Manual and exposed Price Code Trigger in the Special Ops views; Stephenie confirmation pending.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791477107085&createdTime=1791477107085",
       "owner": "Stephenie",
-      "lastVerified": "2026-10-23"
+      "lastVerified": "2026-10-26"
     },
     {
       "author": "Kailyn Jelniker",
@@ -169,10 +169,10 @@
       "status": "Awaiting confirmation",
       "date": "10/13",
       "jiraKey": "COP-2143",
-      "note": "Snehal posted that the requested automation is live and two fields added; Kailyn confirmation pending.",
+      "note": "Snehal said at 2:54 PM the new fields were added to GCB and GSB (COP-2143 In Testing). Kailyn owes confirmation that they work.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-23"
+      "lastVerified": "2026-10-26"
     },
     {
       "author": "Caitlin Suh",
@@ -222,10 +222,11 @@
       "statusCls": "badge-waiting",
       "status": "Awaiting fix",
       "date": "10/26",
-      "note": "Snehal took the work in-thread and Ricardo gave an ETA of Thursday 10/29; no Clark reply owed.",
+      "note": "Snehal accepted 10:57 AM; Ricardo filed COP-2153 (To Do, Snehal) 2:15 PM. Snehal owes the Region selector. No Clark reply owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1793032079165&createdTime=1793032079165",
       "owner": "Snehal",
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-10-26",
+      "jiraKey": "COP-2153"
     }
   ]
 }
