@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T19:13:23.531Z",
+  "lastUpdated": "2026-10-27T20:12:54.044Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -166,12 +166,12 @@
       "color": "#D9734A",
       "summary": "Asked Snehal for two new job-level fields, Total Travel Distance CT and Unit of Travel Distance CT, measuring distance from the assigned city to the capture address.",
       "statusCls": "badge-fix-deployed",
-      "status": "Awaiting confirmation",
+      "status": "Awaiting answer",
       "date": "10/13",
       "jiraKey": "COP-2143",
-      "note": "Snehal said at 2:54 PM the new fields were added to GCB and GSB (COP-2143 In Testing). Kailyn owes confirmation that they work.",
+      "note": "Fields added to GCB and GSB. Kailyn asked Snehal at 1:00 PM 10/27 whether the calculated distance updates when Scheduling City is changed by hand. Snehal owes the answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
-      "owner": "Kailyn",
+      "owner": "Snehal",
       "lastVerified": "2026-10-27"
     },
     {
