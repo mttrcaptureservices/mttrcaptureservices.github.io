@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T17:11:38.236Z",
+  "lastUpdated": "2026-10-27T18:13:20.792Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
@@ -172,7 +172,7 @@
       "note": "Snehal said at 2:54 PM the new fields were added to GCB and GSB (COP-2143 In Testing). Kailyn owes confirmation that they work.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791924654101?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1791924654101&createdTime=1791924654101",
       "owner": "Kailyn",
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-10-27"
     },
     {
       "author": "Caitlin Suh",
@@ -225,8 +225,21 @@
       "note": "Snehal accepted 10:57 AM; Ricardo filed COP-2153 (To Do, Snehal) 2:15 PM. Snehal owes the Region selector. No Clark reply owed.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1793032079165&createdTime=1793032079165",
       "owner": "Snehal",
-      "lastVerified": "2026-10-26",
+      "lastVerified": "2026-10-27",
       "jiraKey": "COP-2153"
+    },
+    {
+      "author": "Stephenie Yong",
+      "initials": "SY",
+      "color": "#ec4899",
+      "summary": "Asks that a last-minute-cancelled job be adjusted so the tech is paid the full EUR 100 travel fee.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/27",
+      "note": "Ricardo asked Stephenie for the Job ID at 10:38 AM; she owes it, then Ricardo owns the adjustment. No Clark reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793089341416?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1793089341416&createdTime=1793089341416",
+      "owner": "Stephenie",
+      "lastVerified": "2026-10-27"
     }
   ]
 }
