@@ -1,32 +1,36 @@
 {
-  "lastUpdated": "2026-10-30T21:00:00Z",
+  "lastUpdated": "2026-10-31T09:00:00-07:00",
   "threads": [
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#2E86AB",
+      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148); contract travel fees need to be restored. Two rev-rec jobs are affected and Ryan needs to dispatch.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/30",
+      "jiraKey": "COP-2157",
+      "note": "Needs deeper analysis plus an answer from Kailyn Jelniker on the BMO travel-fee rule; Kailyn asked for the question to be restated. Ryan was told to custom price travel in the meantime.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793299030655",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Add a Region selector (North America / UK) to the Welltower order form so UK and US jobs route to the right Airtable contract, filter locations by region, and switch area units (ft2 / m2).",
+      "color": "#8E44AD",
+      "summary": "Add a Region selector (North America / UK) to the Welltower order form so jobs route to the right contract, show region-specific locations, and use the right area units.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
       "jiraKey": "COP-2153",
-      "note": "Blocked on the Welltower UK location list: Kailyn says Madison sent it and she will share it with Snehal separately; Snehal needs it to finish and test.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
-      "reactions": ["👀", "👍"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#2980b9",
-      "summary": "BMO jobs are calculating travel at $2/mile again, which is not in their contract; two rev rec jobs also need correcting (no travel fee on one, $400 instead of $497.60 on the other).",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/29",
-      "jiraKey": "COP-2157",
-      "note": "Needs deeper analysis from the team plus input from Kailyn Jelniker on travel distance; Kailyn asked Ricardo to restate his question, and Ryan has been asked to custom price travel in the meantime.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
-      "reactions": ["👀"],
+      "note": "Kailyn said Madison sent the UK location list but she cannot attach files in the channel and will send it separately; Snehal Meled needs it to complete and test the update.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793032079165",
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     }
   ]
