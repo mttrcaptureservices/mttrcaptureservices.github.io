@@ -1,98 +1,47 @@
 {
- "lastUpdated": "2026-11-02T22:55:00Z",
- "threads": [
-  {
-   "author": "Freddy Arias",
-   "initials": "FA",
-   "color": "#2E86AB",
-   "summary": "Client cannot approve job SENIOR6692729282915488584; the approval page shows a reCAPTCHA 'invalid site key' error and Confirm Approval stays disabled.",
-   "statusCls": "badge-investigating",
-   "status": "Investigating",
-   "date": "11/2",
-   "jiraKey": "COP-2160",
-   "note": "Ricardo owes the fix: find where the approval page's reCAPTCHA site key/domain is misconfigured, then approve the job (a second job, SENIOR6694643138224284008, has the same issue).",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1793642384796)",
-   "reactions": [
-    "eyes (custom: domn-eyes-triggered)"
-   ],
-   "reactionsUnread": false
-  },
-  {
-   "author": "Kailyn Jelniker",
-   "initials": "KJ",
-   "color": "#A23B72",
-   "summary": "Welltower order form needs a Region selector (North America / UK) that routes jobs to the right MP client, filters locations and switches area units.",
-   "statusCls": "badge-waiting",
-   "status": "Waiting on requester",
-   "date": "10/26",
-   "jiraKey": "COP-2153",
-   "note": "Snehal asked at 11:08 AM today whether the UK location list should be grouped by State or by operator; Kailyn owes the answer.",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1793032079165)",
-   "reactions": [
-    "👀"
-   ],
-   "reactionsUnread": false
-  },
-  {
-   "author": "Ryan Morrow",
-   "initials": "RM",
-   "color": "#F18F01",
-   "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148) instead of contract travel fees, and rev rec corrections are needed.",
-   "statusCls": "badge-investigating",
-   "status": "Investigating",
-   "date": "10/29",
-   "jiraKey": "COP-2157",
-   "note": "Not fixed yet; needs deeper analysis plus Kailyn's input (she asked Ricardo on Friday to restate his question). Ryan was told to custom-price travel meanwhile.",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1793299030655)",
-   "reactions": [
-    "👀"
-   ],
-   "reactionsUnread": false
-  },
-  {
-   "author": "Freddy Arias",
-   "initials": "FA",
-   "color": "#2E86AB",
-   "summary": "Job JOBID6664320936115551419 showed $0 CT payout after being moved from Gallina (3) to Gallina (1).",
-   "statusCls": "badge-waiting",
-   "status": "Awaiting Kailyn's input",
-   "date": "10/23",
-   "note": "Root cause explained and price code fixed manually; Ricardo and Adjet asked Kailyn why the job was moved to the older contract. No ✅ yet.",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1792780777608)",
-   "reactions": [
-    "👀"
-   ],
-   "reactionsUnread": false
-  },
-  {
-   "author": "Caitlin Suh",
-   "initials": "CS",
-   "color": "#3B8F5A",
-   "summary": "JOBID6683197282322130889 (VHT pricing): CT payout shows $200 in Airtable but the tech's confirmation email listed $276.08.",
-   "statusCls": "badge-todo",
-   "status": "No reply yet",
-   "date": "10/20",
-   "note": "Marked 👀 but has no replies after 13 days; the team owes a first response. Possibly related to COP-2131.",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1792519084525)",
-   "reactions": [
-    "👀"
-   ],
-   "reactionsUnread": false
-  },
-  {
-   "author": "Kailyn Jelniker",
-   "initials": "KJ",
-   "color": "#A23B72",
-   "summary": "Formatting (bold, bullets) in MP Client Data [Scan Requirements] does not carry to [Derived Scan Requirements] or into the Job Acceptance jotform and emails; also asks for formatting on job-level [Additional Details].",
-   "statusCls": "badge-todo",
-   "status": "Open request",
-   "date": "8/28",
-   "note": "Kailyn followed up 9/17; Ricardo looped in Snehal 10/13 (FYI) and owes a decision on whether formatting can flow through. No Jira ticket found.",
-   "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support, message 1787930079925)",
-   "reactions": [
-    "👀"
-   ],
-   "reactionsUnread": false
-  }
- ]
+  "lastUpdated": "2026-11-02T14:30:00-08:00",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#0F766E",
+      "summary": "Clients cannot approve jobs SENIOR6692729282915488584 and SENIOR6694643138224284008; the approval page shows a reCAPTCHA invalid site key error and Confirm Approval is disabled.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/2",
+      "jiraKey": "COP-2160",
+      "note": "Ricardo is looking into the reCAPTCHA site key on the approval page; a second affected job was added at 1:57 PM.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793642384796",
+      "reactions": ["domn-eyes-triggered"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#B45309",
+      "summary": "BMO jobs are calculating travel at $2/mile again, which is not in their contract; JOBID6655654235795019823 and JOBID6658316555794767269 are also affected.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "10/29",
+      "jiraKey": "COP-2157",
+      "note": "Needs deeper analysis and input from Kailyn Jelniker, who asked Ryan to restate the question (10/30); Ryan is custom-pricing travel meanwhile.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793299030655",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#7C3AED",
+      "summary": "Add a Region selector (North America / UK) to the Welltower Jotform so jobs route to the right contract, show region-specific locations and switch area units.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/26",
+      "jiraKey": "COP-2153",
+      "note": "Snehal asked Kailyn (11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer and the UK list.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793032079165",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    }
+  ]
 }
