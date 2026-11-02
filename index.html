@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order Approval | Matterport</title>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -173,12 +172,7 @@
 
       <!-- Verification area: CAPTCHA + confirm button (shown before submission) -->
       <div class="verify-area" id="verify-area" style="display:none;">
-        <div class="g-recaptcha"
-             data-sitekey="6Le5_BctAAAAAF79LwzB4UoU_5sr_OptzUlkm_dn"
-             data-callback="onCaptchaVerified"
-             data-expired-callback="onCaptchaExpired">
-        </div>
-        <button class="confirm-btn" id="confirm-btn" disabled>Confirm</button>
+        <button class="confirm-btn" id="confirm-btn">Confirm</button>
       </div>
 
       <!-- Pill shown after submission -->
@@ -239,14 +233,6 @@
         btnEl.classList.add("accept");
       }
       verifyEl.style.display = "flex";
-
-      // ── CAPTCHA callbacks (must be global) ────────────────
-      window.onCaptchaVerified = function () {
-        btnEl.disabled = false;
-      };
-      window.onCaptchaExpired = function () {
-        btnEl.disabled = true;
-      };
 
       // ── Confirm button → fire webhook ─────────────────────
       btnEl.addEventListener("click", function () {
