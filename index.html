@@ -97,6 +97,48 @@
       gap: 20px;
     }
 
+    /* ── Math challenge ──────────────────────────────────── */
+    .math-challenge {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px 24px;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+    .challenge-label {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .challenge-eq {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .challenge-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: #111827;
+      outline: none;
+      transition: border-color 0.2s;
+      -moz-appearance: textfield;
+    }
+    .challenge-input::-webkit-outer-spin-button,
+    .challenge-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+    .challenge-input:focus { border-color: #6b7280; }
+    .challenge-input.correct { border-color: #16a34a; background: #f0fdf4; }
+    .challenge-input.wrong   { border-color: #dc2626; background: #fef2f2; }
+
     .confirm-btn {
       width: 100%;
       max-width: 280px;
@@ -170,9 +212,15 @@
       <h1 id="title">Loading…</h1>
       <p id="message"></p>
 
-      <!-- Verification area: CAPTCHA + confirm button (shown before submission) -->
+      <!-- Verification area: math challenge + confirm button (shown before submission) -->
       <div class="verify-area" id="verify-area" style="display:none;">
-        <button class="confirm-btn" id="confirm-btn">Confirm</button>
+        <div class="math-challenge">
+          <p class="challenge-label">Quick check to confirm you're human:</p>
+          <div class="challenge-eq" id="challenge-eq"></div>
+          <input type="number" id="challenge-input" class="challenge-input"
+                 placeholder="?" autocomplete="off" inputmode="numeric" />
+        </div>
+        <button class="confirm-btn" id="confirm-btn" disabled>Confirm</button>
       </div>
 
       <!-- Pill shown after submission -->
@@ -234,9 +282,36 @@
       }
       verifyEl.style.display = "flex";
 
+      // ── Math challenge ────────────────────────────────────
+      var challengeInput = document.getElementById("challenge-input");
+      var challengeEq    = document.getElementById("challenge-eq");
+      var num1 = Math.floor(Math.random() * 9) + 1;
+      var num2 = Math.floor(Math.random() * 9) + 1;
+      var correctAnswer = num1 + num2;
+      challengeEq.textContent = num1 + " + " + num2 + " = ?";
+
+      challengeInput.addEventListener("input", function () {
+        var val = parseInt(challengeInput.value, 10);
+        if (val === correctAnswer) {
+          challengeInput.classList.remove("wrong");
+          challengeInput.classList.add("correct");
+          btnEl.disabled = false;
+        } else {
+          challengeInput.classList.remove("correct");
+          challengeInput.classList.add("wrong");
+          btnEl.disabled = true;
+        }
+        if (challengeInput.value === "") {
+          challengeInput.classList.remove("correct", "wrong");
+          btnEl.disabled = true;
+        }
+      });
+
       // ── Confirm button → fire webhook ─────────────────────
       btnEl.addEventListener("click", function () {
         btnEl.disabled         = true;
+        challengeInput.value   = "";
+        challengeInput.classList.remove("correct", "wrong");
         verifyEl.style.display = "none";
         iconEl.className       = "icon-wrap loading";
         titleEl.textContent    = "Processing…";
