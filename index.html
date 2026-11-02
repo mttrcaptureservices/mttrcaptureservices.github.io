@@ -223,12 +223,12 @@
       // ── Show verify UI based on action ────────────────────
       if (action === "decline") {
         titleEl.textContent = "Cancel this order?";
-        msgEl.textContent   = "Please verify you’re human, then confirm your decision to cancel this order.";
+        msgEl.textContent   = "Please confirm your decision to cancel this order.";
         btnEl.textContent   = "Confirm Cancellation";
         btnEl.classList.add("decline");
       } else {
         titleEl.textContent = "Approve this order?";
-        msgEl.textContent   = "Please verify you’re human, then confirm your approval to proceed.";
+        msgEl.textContent   = "Please confirm your approval to proceed.";
         btnEl.textContent   = "Confirm Approval";
         btnEl.classList.add("accept");
       }
