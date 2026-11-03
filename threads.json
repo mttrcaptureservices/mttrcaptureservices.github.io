@@ -1,45 +1,17 @@
 {
-  "lastUpdated": "2026-11-02T14:30:00-08:00",
+  "lastUpdated": "2026-11-03T22:30:00Z",
   "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#0F766E",
-      "summary": "Clients cannot approve jobs SENIOR6692729282915488584 and SENIOR6694643138224284008; the approval page shows a reCAPTCHA invalid site key error and Confirm Approval is disabled.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/2",
-      "jiraKey": "COP-2160",
-      "note": "Ricardo is looking into the reCAPTCHA site key on the approval page; a second affected job was added at 1:57 PM.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793642384796",
-      "reactions": ["domn-eyes-triggered"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#B45309",
-      "summary": "BMO jobs are calculating travel at $2/mile again, which is not in their contract; JOBID6655654235795019823 and JOBID6658316555794767269 are also affected.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Kailyn",
-      "date": "10/29",
-      "jiraKey": "COP-2157",
-      "note": "Needs deeper analysis and input from Kailyn Jelniker, who asked Ryan to restate the question (10/30); Ryan is custom-pricing travel meanwhile.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793299030655",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#7C3AED",
-      "summary": "Add a Region selector (North America / UK) to the Welltower Jotform so jobs route to the right contract, show region-specific locations and switch area units.",
+      "color": "#8e44ad",
+      "summary": "Welltower is signing a UK contract and wants a Region selector (North America / UK) on their Jotform that routes jobs to the right Airtable client, filters property locations, and switches sq ft vs sq m.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
       "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn (11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer and the UK list.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793032079165",
+      "note": "Snehal asked Kailyn whether the UK property list should be grouped by state or by operator; Kailyn owes the answer.",
+      "url": "https://teams.cloud.microsoft/",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
