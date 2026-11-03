@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-11-03T22:30:00Z",
+  "lastUpdated": "2026-11-03T08:45:00Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Welltower is signing a UK contract and wants a Region selector (North America / UK) on their Jotform that routes jobs to the right Airtable client, filters property locations, and switches sq ft vs sq m.",
+      "color": "#7c5cbf",
+      "summary": "Welltower is signing a new UK contract and wants the same options as the US one. Add a required Region dropdown (North America / UK) at the top of the Jotform that routes the job to the right Airtable client, filters property locations, and switches the size field between sq ft and sq m.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
       "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn whether the UK property list should be grouped by state or by operator; Kailyn owes the answer.",
-      "url": "https://teams.cloud.microsoft/",
+      "note": "Snehal asked Kailyn (11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer.",
+      "url": "https://teams.microsoft.com",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
