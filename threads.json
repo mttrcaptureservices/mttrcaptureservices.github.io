@@ -1,44 +1,16 @@
 {
-  "lastUpdated": "2026-11-04T19:10:00Z",
+  "lastUpdated": "2026-11-04T05:50:00Z",
   "threads": [
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#7c3aed",
-      "summary": "Asked why JOBID6664320936115551419 shows $0 CT payout. Root cause: job was moved from Gallina (3) to Gallina (1), which is not set to CT Aggregated Payout, so the parent said Refer to Children while the children said Refer to Parent.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on Kailyn",
-      "date": "10/23",
-      "note": "Adjet and Ricardo are waiting on Kailyn Jelniker to explain why the job was moved to an older contract before deciding whether to update the Aggregated CT Payout field on expired MP Client contracts.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#0ea5e9",
-      "summary": "BMO jobs are calculating travel distance at $2/mile again (JOBID6691051004013365148) when their contract does not include it; also flagged two rev rec corrections.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/29",
-      "jiraKey": "COP-2157",
-      "note": "Ricardo told Ryan on Friday it is not fixed and needs deeper team analysis; COP-2157 is still To Do, so the next action is on Ricardo/Adjet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#f59e0b",
-      "summary": "Wants a Region selector (North America / UK) at the top of the Welltower Jotform so jobs route to the correct MP client, property list, and area units (ft2 vs m2).",
+      "color": "#8e44ad",
+      "summary": "Welltower is signing a new UK contract; asks to extend their custom Jotform with a required Region dropdown (North America / UK) that routes to the correct Airtable MP client, filters property locations by region, and switches the size field/units between sq ft and sq m.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
-      "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn on 11/3 whether the UK property list should be grouped by state or by operator; Kailyn owes the answer and the UK list is being sent separately.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
+      "note": "Snehal asked Kailyn whether the UK property list should be grouped by State or by operator; Kailyn owes the answer (she also needs to send the UK list separately).",
+      "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support > Posts, message id 1793032079165)",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
