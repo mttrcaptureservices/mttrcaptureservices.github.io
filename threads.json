@@ -1,11 +1,19 @@
 {
-"lastUpdated": "2026-11-04T21:30:00Z",
-"threads": [
-{"author":"Kailyn Jelniker","initials":"KJ","color":"#7C3AED","summary":"Bold/bullet formatting in [Scan Requirements] on MP Client Data does not carry into [Derived Scan Requirements], the Job Acceptance Jotform or emails; also asks for formatting on job-level [Additional Details].","statusCls":"badge-investigating","status":"Investigating","date":"8/28","note":"Ricardo is still looking for a workaround because the synced field in Parent Base reads as plain text; Kailyn followed up 9/17 with no update since 9/23. Reaction row could not be re-read this run (post too far back in channel history).","url":"https://teams.cloud.microsoft/","reactions":[],"reactionsUnread":true},
-{"author":"Caitlin Suh","initials":"CS","color":"#0EA5E9","summary":"JOBID6683197282322130889: CT price code is USVHTCTC2 and Airtable shows a $200 payout, but the tech's confirmation email listed $276.08.","statusCls":"badge-todo","status":"No reply yet","date":"10/20","note":"No team reply in the thread; Ricardo/Snehal owe a root-cause check on the email payout.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
-{"author":"Kailyn Jelniker","initials":"KJ","color":"#7C3AED","summary":"Welltower order form change for the new UK contract: add a Region dropdown that routes to the right MP client, filters locations and switches ft2/m2.","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/26","note":"Snehal asked Kailyn on 11/2 whether the UK property list should be grouped by State or by operator; Kailyn owes the answer.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
-{"author":"Ryan Morrow","initials":"RM","color":"#F59E0B","summary":"BMO jobs are calculating travel at $2/mile again, which is not in their contract (JOBID6691051004013365148); two rev rec jobs also need correcting.","statusCls":"badge-investigating","status":"Investigating","date":"10/29","jiraKey":"COP-2157","note":"Ricardo owes Kailyn an answer: she asked him on Friday to restate his DM question about travel distance, and the dispatch workaround is custom-pricing travel fees.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
-{"author":"Freddy Arias","initials":"FA","color":"#10B981","summary":"JOBID6664320936115551419 shows $0 CT payout after the job was moved from Gallina (3) to Gallina (1).","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/23","note":"Price code was fixed manually; Adjet is waiting on Kailyn to explain why the job moved to an older contract before adjusting MP Client Data.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
-{"author":"Freddy Arias","initials":"FA","color":"#10B981","summary":"Arbor at Lake Worth, 22 unit scans: Welltower (13) has a unique scenario for ingesting these jobs and Freddy asks for the best way to ingest them into Airtable.","statusCls":"badge-waiting","status":"Waiting on requester","date":"11/4","note":"Ricardo asked whether the current bulk upload process would work; Freddy owes a reply.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false}
-]
+  "lastUpdated": "2026-11-04T23:10:00Z",
+  "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#d9534f",
+      "summary": "Welltower (13) Arbor at Lake Worth - 22 Unit Scans: client has 2 jobs with ~20 child records each and Freddy asks the best way to ingest them into Airtable; unclear whether the standard bulk upload handles that parent/child volume.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/4",
+      "jiraKey": "COP-2162",
+      "note": "Ricardo/team owe the next action: confirm whether bulk upload supports ~20 children per job and reply to Freddy with the approach.",
+      "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support channel, post 'Arbor at Lake Worth - 22 Unit Scans', msg id 1793827069610)",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    }
+  ]
 }
