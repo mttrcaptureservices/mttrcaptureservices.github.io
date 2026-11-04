@@ -1,16 +1,31 @@
 {
-  "lastUpdated": "2026-11-04T05:50:00Z",
+  "lastUpdated": "2026-11-04T19:55:00Z",
   "threads": [
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#2E7D6B",
+      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148) instead of contract travel fees; two rev-rec jobs have wrong charges.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/29",
+      "jiraKey": "COP-2157",
+      "note": "Needs deeper analysis by the team and Kailyn Jelniker's input (she asked Ricardo to restate the question); Ricardo owes the next action.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Welltower is signing a new UK contract; asks to extend their custom Jotform with a required Region dropdown (North America / UK) that routes to the correct Airtable MP client, filters property locations by region, and switches the size field/units between sq ft and sq m.",
+      "color": "#8E5BB5",
+      "summary": "Add a Region selector (North America / UK) to the Welltower order form so jobs route to the right contract, property list and area units.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
-      "note": "Snehal asked Kailyn whether the UK property list should be grouped by State or by operator; Kailyn owes the answer (she also needs to send the UK list separately).",
-      "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support > Posts, message id 1793032079165)",
+      "jiraKey": "COP-2153",
+      "note": "Snehal Meled asked whether the UK property list should be grouped by state or by operator; Kailyn owes the answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
