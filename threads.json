@@ -1,31 +1,44 @@
 {
-  "lastUpdated": "2026-11-04T13:05:00-08:00",
+  "lastUpdated": "2026-11-04T19:10:00Z",
   "threads": [
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#7c3aed",
+      "summary": "Asked why JOBID6664320936115551419 shows $0 CT payout. Root cause: job was moved from Gallina (3) to Gallina (1), which is not set to CT Aggregated Payout, so the parent said Refer to Children while the children said Refer to Parent.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "10/23",
+      "note": "Adjet and Ricardo are waiting on Kailyn Jelniker to explain why the job was moved to an older contract before deciding whether to update the Aggregated CT Payout field on expired MP Client contracts.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
     {
       "author": "Ryan Morrow",
       "initials": "RM",
-      "color": "#0d9488",
-      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148) though it's not in their contract; rev rec examples show wrong travel fees (JOBID6655654235795019823, JOBID6658316555794767269).",
+      "color": "#0ea5e9",
+      "summary": "BMO jobs are calculating travel distance at $2/mile again (JOBID6691051004013365148) when their contract does not include it; also flagged two rev rec corrections.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "10/29",
       "jiraKey": "COP-2157",
-      "note": "Needs deeper team analysis and input from Kailyn Jelniker on the contract travel fee rules; Ryan is custom pricing travel in the meantime.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793299030655?context=%7B%22contextType%22%3A%22chat%22%7D",
+      "note": "Ricardo told Ryan on Friday it is not fixed and needs deeper team analysis; COP-2157 is still To Do, so the next action is on Ricardo/Adjet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
       "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "Add a Region selector (North America / UK) to the Welltower order form so jobs route to the correct MP client, show region-specific properties, and use the right area units.",
+      "color": "#f59e0b",
+      "summary": "Wants a Region selector (North America / UK) at the top of the Welltower Jotform so jobs route to the correct MP client, property list, and area units (ft2 vs m2).",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/26",
       "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn whether the UK property list should be grouped by State or by operator; Kailyn owes the answer (UK list is being sent separately).",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793032079165?context=%7B%22contextType%22%3A%22chat%22%7D",
+      "note": "Snehal asked Kailyn on 11/3 whether the UK property list should be grouped by state or by operator; Kailyn owes the answer and the UK list is being sent separately.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
