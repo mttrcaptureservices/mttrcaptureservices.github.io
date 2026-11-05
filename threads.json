@@ -1,19 +1,64 @@
 {
-  "lastUpdated": "2026-11-05T18:15:00-08:00",
+  "lastUpdated": "2026-11-05T19:00:00Z",
   "threads": [
     {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#7B61FF",
-      "summary": "Requests an Airtable client view be created for MP client Nextore SRL.",
-      "statusCls": "badge-todo",
-      "status": "Jira created",
-      "date": "11/5",
+      "author": "Gisele Tan", "initials": "GT", "color": "#7c3aed",
+      "summary": "Requests an Airtable client view for MP client Nextore SRL.",
+      "statusCls": "badge-todo", "status": "Jira queued", "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "Waiting on Ricardo/Homelander to build the Nextore SRL view and post the link back to Gisele in the thread.",
-      "url": "https://teams.microsoft.com/l/message/channel/1793841770079",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "note": "Ticket created and assigned to Ricardo; Ricardo owes the view creation.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
+      "reactions": ["👀", "thankyoumttp"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
+      "summary": "Welltower order form: add a Region selector (North America/UK) that routes jobs to the right MP client, filters locations and sets area units.",
+      "statusCls": "badge-waiting", "status": "Waiting on requester", "date": "10/26",
+      "jiraKey": "COP-2153",
+      "note": "Snehal asked Kailyn whether the UK property list should be grouped by state or operator; Kailyn owes the answer.",
+      "url": "https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias", "initials": "FA", "color": "#f59e0b",
+      "summary": "Asked why job JOBID6664320936115551419 shows $0 CT payout.",
+      "statusCls": "badge-fix-deployed", "status": "Awaiting confirmation", "date": "10/23",
+      "note": "Ricardo explained the cause and the price code was fixed manually; thread just needs a ✅ to close.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Caitlin Suh", "initials": "CS", "color": "#10b981",
+      "summary": "Asks for insight on CT payout / VHT pricing for JOBID6683197282322130889.",
+      "statusCls": "badge-investigating", "status": "Investigating", "date": "10/20",
+      "note": "No visible team reply in the thread yet; Ricardo/Snehal owe a response.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Stephenie Yong", "initials": "SY", "color": "#ec4899",
+      "summary": "Roche updated dates in Monday.com but Airtable did not update automatically (SWC-7776).",
+      "statusCls": "badge-waiting", "status": "Waiting on requester", "date": "10/8",
+      "note": "Ricardo explained the record was overwritten with empty values; Stephenie shared screenshot/email thread, next action unclear.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
+      "summary": "Payout decreased after the tech accepted job JOBID6666852043712325983 (incorrect CT price code before dispatch).",
+      "statusCls": "badge-investigating", "status": "Investigating", "date": "10/6",
+      "jiraKey": "COP-2131",
+      "note": "Adjet is working on a plan and update; Adjet owes the next action.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289",
+      "reactions": ["👀", "👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
+      "summary": "Formatting (bold, bullets) in Scan Requirements and Additional Details fields is not preserved.",
+      "statusCls": "badge-investigating", "status": "Investigating", "date": "8/28",
+      "note": "Ricardo last looped in Snehal on 10/13; Ricardo/Snehal owe the fix.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925",
+      "reactions": ["👀"], "reactionsUnread": false
     }
   ]
 }
