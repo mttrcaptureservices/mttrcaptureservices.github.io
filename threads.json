@@ -1,64 +1,85 @@
 {
-  "lastUpdated": "2026-11-05T19:00:00Z",
+  "lastUpdated": "2026-11-05T09:00:00-08:00",
   "threads": [
     {
-      "author": "Gisele Tan", "initials": "GT", "color": "#7c3aed",
-      "summary": "Requests an Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-todo", "status": "Jira queued", "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Ticket created and assigned to Ricardo; Ricardo owes the view creation.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
-      "reactions": ["👀", "thankyoumttp"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
-      "summary": "Welltower order form: add a Region selector (North America/UK) that routes jobs to the right MP client, filters locations and sets area units.",
-      "statusCls": "badge-waiting", "status": "Waiting on requester", "date": "10/26",
-      "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn whether the UK property list should be grouped by state or operator; Kailyn owes the answer.",
-      "url": "https://teams.microsoft.com/l/channel/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/Capture%20Services%20Applications%20Support",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Freddy Arias", "initials": "FA", "color": "#f59e0b",
-      "summary": "Asked why job JOBID6664320936115551419 shows $0 CT payout.",
-      "statusCls": "badge-fix-deployed", "status": "Awaiting confirmation", "date": "10/23",
-      "note": "Ricardo explained the cause and the price code was fixed manually; thread just needs a ✅ to close.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Caitlin Suh", "initials": "CS", "color": "#10b981",
-      "summary": "Asks for insight on CT payout / VHT pricing for JOBID6683197282322130889.",
-      "statusCls": "badge-investigating", "status": "Investigating", "date": "10/20",
-      "note": "No visible team reply in the thread yet; Ricardo/Snehal owe a response.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Stephenie Yong", "initials": "SY", "color": "#ec4899",
-      "summary": "Roche updated dates in Monday.com but Airtable did not update automatically (SWC-7776).",
-      "statusCls": "badge-waiting", "status": "Waiting on requester", "date": "10/8",
-      "note": "Ricardo explained the record was overwritten with empty values; Stephenie shared screenshot/email thread, next action unclear.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
-      "summary": "Payout decreased after the tech accepted job JOBID6666852043712325983 (incorrect CT price code before dispatch).",
-      "statusCls": "badge-investigating", "status": "Investigating", "date": "10/6",
-      "jiraKey": "COP-2131",
-      "note": "Adjet is working on a plan and update; Adjet owes the next action.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289",
-      "reactions": ["👀", "👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#0ea5e9",
-      "summary": "Formatting (bold, bullets) in Scan Requirements and Additional Details fields is not preserved.",
-      "statusCls": "badge-investigating", "status": "Investigating", "date": "8/28",
-      "note": "Ricardo last looped in Snehal on 10/13; Ricardo/Snehal owe the fix.",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8e44ad",
+      "summary": "Formatting (bold, bullets) added to the Scan Requirements field in MP Client Data is lost in the job's Derived Scan Requirements, so it doesn't show in the Job Acceptance Jotform or emails; also asks for formatting on Additional Details.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "8/28",
+      "jiraKey": "COP-1961",
+      "note": "Synced field in Parent Base reads as plain text; Ricardo still looking for a workaround (Snehal looped in 10/13).",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925",
-      "reactions": ["👀"], "reactionsUnread": false
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#16a085",
+      "summary": "JOBID6683197282322130889: CT payout should be $200 (USVHTCTC2) and Airtable shows that, but the confirmation email sent to the tech lists $276.08.",
+      "statusCls": "badge-todo",
+      "status": "No reply yet",
+      "date": "10/20",
+      "note": "Has 👀 but no reply in thread; team owes an investigation of the email payout mismatch.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#2980b9",
+      "summary": "JOBID6664320936115551419 shows $0 CT payout after being moved from Gallina (3) to Gallina (1), which isn't set as CT Aggregated Payout.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on Kailyn",
+      "date": "10/23",
+      "note": "Root cause explained and price code fixed manually; waiting on Kailyn to say why the job moved to an older contract, then Adjet may update Aggregated CT Payout on expired contracts.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#d35400",
+      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148); not in their contract. Two rev-rec examples with wrong travel charges.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "10/29",
+      "note": "Not fixed; needs deeper team analysis. Kailyn asked Ricardo (Fri 2:19 PM) to restate his question, so Ricardo owes the next reply.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8e44ad",
+      "summary": "Change to the Welltower Jotform order form: add a Region (North America / UK) selector that routes to the right MP client, filters property locations, and switches sq ft / sq m.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/26",
+      "note": "Snehal asked Kailyn (Mon 11:08 AM) whether the UK property list is grouped by State or by operator; Kailyn owes the answer.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Gisele Tan",
+      "initials": "GT",
+      "color": "#c0392b",
+      "summary": "Create an Airtable client view for MP client Nextore SRL.",
+      "statusCls": "badge-todo",
+      "status": "To do",
+      "date": "11/4",
+      "jiraKey": "COP-2163",
+      "note": "Ticket created and assigned to Ricardo; view not built yet.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
+      "reactions": ["eyes-rightmttp (custom 👀)", "thankyoumttp"],
+      "reactionsUnread": false
     }
   ]
 }
