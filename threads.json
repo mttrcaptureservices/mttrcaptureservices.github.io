@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-11-05T23:10:00Z",
+  "lastUpdated": "2026-11-05T18:15:00-08:00",
   "threads": [
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8e5ea2",
-      "summary": "Welltower is signing a new UK contract and wants the existing custom Jotform to add a required Region selector (North America / UK) that routes jobs to the right Welltower MP client, filters property locations, and switches area units between sq ft and sq m.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "10/26",
-      "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn (Mon 11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer.",
-      "url": "https://teams.cloud.microsoft/",
+      "author": "Gisele Tan",
+      "initials": "GT",
+      "color": "#7B61FF",
+      "summary": "Requests an Airtable client view be created for MP client Nextore SRL.",
+      "statusCls": "badge-todo",
+      "status": "Jira created",
+      "date": "11/5",
+      "jiraKey": "COP-2163",
+      "note": "Waiting on Ricardo/Homelander to build the Nextore SRL view and post the link back to Gisele in the thread.",
+      "url": "https://teams.microsoft.com/l/message/channel/1793841770079",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
