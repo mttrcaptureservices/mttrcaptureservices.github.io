@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-11-04T23:10:00Z",
+  "lastUpdated": "2026-11-05T23:10:00Z",
   "threads": [
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#d9534f",
-      "summary": "Welltower (13) Arbor at Lake Worth - 22 Unit Scans: client has 2 jobs with ~20 child records each and Freddy asks the best way to ingest them into Airtable; unclear whether the standard bulk upload handles that parent/child volume.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/4",
-      "jiraKey": "COP-2162",
-      "note": "Ricardo/team owe the next action: confirm whether bulk upload supports ~20 children per job and reply to Freddy with the approach.",
-      "url": "https://teams.cloud.microsoft/ (Capture Services Applications Support channel, post 'Arbor at Lake Worth - 22 Unit Scans', msg id 1793827069610)",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8e5ea2",
+      "summary": "Welltower is signing a new UK contract and wants the existing custom Jotform to add a required Region selector (North America / UK) that routes jobs to the right Welltower MP client, filters property locations, and switches area units between sq ft and sq m.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "10/26",
+      "jiraKey": "COP-2153",
+      "note": "Snehal asked Kailyn (Mon 11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer.",
+      "url": "https://teams.cloud.microsoft/",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
