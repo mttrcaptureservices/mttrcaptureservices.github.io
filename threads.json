@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-11-05T18:08:20Z",
-  "threads": [
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#d97706",
-      "summary": "Requests an Airtable client view be created for MP client Nextore SRL.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
-      "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Ticket COP-2163 is open and assigned to Ricardo; the next action is Ricardo creating the client view.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    }
-  ]
+"lastUpdated": "2026-11-05T19:45:00Z",
+"threads": [
+{
+"author": "Gisele Tan",
+"initials": "GT",
+"color": "#d97706",
+"summary": "Requests an Airtable client view be created for MP client Nextore SRL.",
+"statusCls": "badge-investigating",
+"status": "In progress",
+"date": "11/4",
+"jiraKey": "COP-2163",
+"note": "Snehal Meled said on 11/5 he will take COP-2163; the next action is Snehal creating the client view.",
+"url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
+"reactions": ["👀"],
+"reactionsUnread": false
+}
+]
 }
