@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2026-11-06T05:35:00Z",
+  "lastUpdated": "2026-11-06T17:25:00Z",
   "threads": [
     {
       "author": "Gisele Tan",
       "initials": "GT",
-      "color": "#0F9D8A",
-      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
+      "color": "#7c3aed",
+      "summary": "Asked for an Airtable client view to be created for MP client Nextore SRL.",
       "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/5",
+      "status": "In progress (Snehal)",
+      "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "Snehal Meled took the ticket on 11/6 10:10 AM; next action is Snehal creating the Nextore SRL client view.",
-      "url": "https://teams.cloud.microsoft/",
+      "note": "Snehal Meled said on 11/5 he will take COP-2163; the next action is his to build the client view.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079?context=%7B%22contextType%22%3A%22chat%22%7D",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
