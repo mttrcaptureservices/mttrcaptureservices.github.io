@@ -1,32 +1,18 @@
 {
-  "lastUpdated": "2026-11-05T12:00:00-08:00",
+  "lastUpdated": "2026-11-06T05:35:00Z",
   "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Add a Region selector (North America / UK) to the Welltower order form so jobs route to the correct Welltower MP client and only region-specific locations show.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "10/26",
-      "jiraKey": "COP-2153",
-      "note": "Snehal asked Kailyn (Mon 11/2) whether the UK property list should be grouped by State or by operator; Kailyn owes the answer. Teams message id 1793032079165.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
     {
       "author": "Gisele Tan",
       "initials": "GT",
-      "color": "#16a085",
-      "summary": "Create an Airtable client view for MP client Nextore SRL.",
+      "color": "#0F9D8A",
+      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "11/4",
+      "date": "11/5",
       "jiraKey": "COP-2163",
-      "note": "Snehal Meled took the ticket on 11/5 and is building the view; next action is Snehal's. Teams message id 1793841770079.",
+      "note": "Snehal Meled took the ticket on 11/6 10:10 AM; next action is Snehal creating the Nextore SRL client view.",
       "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀 (eyes-right)"],
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
