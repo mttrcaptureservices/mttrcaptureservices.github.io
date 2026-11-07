@@ -1,4 +1,19 @@
 {
-  "lastUpdated": "2026-11-07T01:07:10Z",
-  "threads": []
+  "lastUpdated": "2026-11-07T21:00:00Z",
+  "threads": [
+    {
+      "author": "Gisele Tan",
+      "initials": "GT",
+      "color": "#0E7C86",
+      "summary": "Requested an Airtable client view be created for MP client Nextore SRL.",
+      "statusCls": "badge-investigating",
+      "status": "In progress",
+      "date": "11/4",
+      "jiraKey": "COP-2163",
+      "note": "Snehal Meled said he will take the ticket; next action is Snehal building the client view.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793841770079",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    }
+  ]
 }
