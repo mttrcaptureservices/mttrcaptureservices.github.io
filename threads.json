@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-11-09T22:15:52Z",
+  "lastUpdated": "2026-11-09T23:13:34Z",
   "threads": [
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Asked for [Unit of Travel Distance] to be added next to total travel distance in all Accountings views in GCB.",
+      "summary": "Add [Unit of Travel Distance] to Accountings views.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "8/27",
-      "note": "Snehal asked which specific views; follow-up tagging Kailyn is unanswered, so the next action is Kailyn's.",
+      "note": "Waiting on Kailyn to name the specific views.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150",
       "reactions": [
         "👀"
@@ -20,11 +20,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Rich-text formatting (bold, bullets) in [Scan Requirements] on MP Client Data does not carry into [Derived Scan Requirements] on the job record.",
+      "summary": "Rich-text formatting of Scan Requirements is not syncing to Derived Scan Requirements.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/28",
-      "note": "Team was still investigating why the synced field in the parent base reads as plain text; no fix confirmed in the thread.",
+      "note": "No fix confirmed and no Jira key; team owes the next update.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925",
       "reactions": [
         "👀"
@@ -35,12 +35,12 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Asked whether the UHG Jotform can be split in two parts so different people fill out the Scheduling Details section.",
+      "summary": "Request to split the UHG Jotform.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "8/31",
       "jiraKey": "COP-2096",
-      "note": "Jira exists (COP-2096); thread still open with no completion posted.",
+      "note": "Open ticket; no completion posted yet.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147",
       "reactions": [
         "👀"
@@ -51,12 +51,12 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Asked for CT Directory functions that show technician stats across all jobs when filtering by Main POC.",
+      "summary": "Stats on Technicians in the CT Directory.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "9/10",
       "jiraKey": "COP-2110",
-      "note": "Jira exists (COP-2110); Ricardo posted additions to CT Directory on 9/10, no closure confirmed.",
+      "note": "Additions posted 9/10; closure not confirmed with Kailyn.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383",
       "reactions": [
         "👀"
@@ -67,11 +67,11 @@
       "author": "John Bosch",
       "initials": "JB",
       "color": "#0F9D8A",
-      "summary": "Asked whether ~2,500 Vacasa models can be bulk updated with branding info (e.g., URL).",
+      "summary": "Vacasa model branding bulk update (~2,500 models).",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "9/16",
-      "note": "No Jira key seen in thread; needs a team answer on bulk-update approach.",
+      "note": "Team needs to choose a bulk-update approach; no Jira key.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516",
       "reactions": [
         "👀"
@@ -82,11 +82,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Requested updates to the Bulk Importer Sheet (field matching Airtable, Country (AE) as a dropdown, etc.).",
+      "summary": "Updates to the Bulk Importer Sheet, addressed to Adjet.",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "9/17",
-      "note": "Addressed to Adjet; no completion posted in the thread.",
+      "note": "No completion posted; owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111",
       "reactions": [
         "👀"
@@ -97,11 +97,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Reports GCB > Global is maxed out on Views and asks for help with the view limit.",
+      "summary": "GCB > Global view limit maxed out on Views.",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "10/1",
-      "note": "No Jira key or team resolution seen; needs a team decision on the view limit.",
+      "note": "No Jira key or decision yet; owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456",
       "reactions": [
         "👀"
@@ -112,11 +112,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Incorrect CT price code assigned to a job before dispatch.",
-      "statusCls": "badge-waiting",
+      "summary": "Incorrect CT price code.",
+      "statusCls": "badge-todo",
       "status": "Awaiting team",
       "date": "10/6",
-      "note": "Adjet said he'd look into it 10/6; Kailyn replied 10/7 and no team response followed.",
+      "note": "Adjet said he would look; Kailyn replied 10/7 and the team has not responded.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289",
       "reactions": [
         "👀"
@@ -127,11 +127,11 @@
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E5733B",
-      "summary": "Roche automation question (SWC-7776) with a screenshot from Roche.",
+      "summary": "Roche automation question (SWC-7776).",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "10/8",
-      "note": "Stephenie's follow-up is the latest message; owes a team response.",
+      "note": "Follow-up unanswered; owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085",
       "reactions": [
         "👀"
@@ -142,11 +142,11 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#2F7DE1",
-      "summary": "CT payout for a VHT-priced job shows 276.08 and Caitlin is questioning it.",
+      "summary": "Question on a VHT-priced CT payout of 276.08.",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "10/20",
-      "note": "Last message is Caitlin's; the payout needs checking against the CT rate/payout rules.",
+      "note": "Needs checking against CT rate and payout rules.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525",
       "reactions": [
         "👀"
@@ -157,11 +157,11 @@
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#C2477A",
-      "summary": "CT payout showing $0 on a job; asks whether that happens now and then.",
+      "summary": "Asks whether a CT payout of $0 is expected.",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "10/23",
-      "note": "Freddy's question about whether this is expected is the last message and is unanswered.",
+      "note": "No answer yet; owed by the team.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
       "reactions": [
         "👀"
@@ -172,11 +172,11 @@
       "author": "Kailyn Jelniker",
       "initials": "KJ",
       "color": "#8E5CF5",
-      "summary": "Welltower is signing a UK contract and wants the same order options as the US contract; asks for changes to the Welltower order form.",
+      "summary": "Welltower UK order form request.",
       "statusCls": "badge-todo",
       "status": "To do",
       "date": "10/26",
-      "note": "No Jira key or completion seen; needs scoping and a build owner.",
+      "note": "Needs scoping and a build owner; no Jira key.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
       "reactions": [
         "👀"
@@ -187,11 +187,11 @@
       "author": "Ryan Morrow",
       "initials": "RM",
       "color": "#6B8E23",
-      "summary": "BMO jobs are calculating travel distance at $2/mile again (example JOBID6691051004013365148).",
+      "summary": "BMO travel distance at $2/mile.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "10/29",
-      "note": "Team asked Ryan to restate his question; waiting on Ryan.",
+      "note": "Waiting on Ryan to restate his question.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
       "reactions": [
         "👀"
@@ -202,12 +202,12 @@
       "author": "Gisele Tan",
       "initials": "GT",
       "color": "#D4A017",
-      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
+      "summary": "Airtable client view for MP client Nextore SRL.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "Jira COP-2163 created; Snehal said he'd take it on 11/5.",
+      "note": "Snehal is taking the ticket.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
       "reactions": [
         "👀"
@@ -218,12 +218,27 @@
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#2F7DE1",
-      "summary": "Automation emails not sent for 3 pending jobs; other users reported the same and a bulk upload not ingesting.",
+      "summary": "Automation emails not sent for 3 pending jobs.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/9",
-      "note": "Ricardo attributes it to a backed-up queue after a bulk UVVC batch; delays expected until it drains.",
+      "note": "Ricardo attributes it to a backed-up queue after a bulk UVVC batch; delays should clear as it drains.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794259474510",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E5CF5",
+      "summary": "Heads-up: UHG signed two new CS contracts; Jotform will need a contract dropdown once the first commit is fulfilled.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "8/4",
+      "note": "FYI; Kailyn is still defining the dropdown options.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420",
       "reactions": [
         "👀"
       ],
