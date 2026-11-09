@@ -1,17 +1,30 @@
 {
-  "lastUpdated": "2026-11-07T21:00:00Z",
+  "lastUpdated": "2026-11-09T22:05:00Z",
   "threads": [
     {
       "author": "Gisele Tan",
       "initials": "GT",
-      "color": "#0E7C86",
-      "summary": "Requested an Airtable client view be created for MP client Nextore SRL.",
-      "statusCls": "badge-investigating",
-      "status": "In progress",
+      "color": "#7c5cbf",
+      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
+      "statusCls": "badge-todo",
+      "status": "To Do",
       "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "Snehal Meled said he will take the ticket; next action is Snehal building the client view.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1793841770079",
+      "note": "Snehal said on 11/5 he can take COP-2163; next action is Snehal building the client view.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#2a9d8f",
+      "summary": "Reported job automation emails not going out for 3 pending jobs for 15+ min; other requesters (Freddy Arias, Kevin Curtis) reported the same, and Caitlin also flagged a bulk upload not ingesting.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/9",
+      "note": "Ricardo attributed it to a backed-up queue after a bulk batch of 50+ UVVC parents landed around 1:09 PM; next action is Ricardo confirming the queue drains and the pending jobs dispatch.",
+      "url": "https://teams.cloud.microsoft/",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
