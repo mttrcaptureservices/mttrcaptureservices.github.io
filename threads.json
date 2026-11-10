@@ -1,67 +1,18 @@
 {
-  "lastUpdated": "2026-11-10T00:09:37+00:00",
+  "lastUpdated": "2026-11-10T01:15:00Z",
   "threads": [
     {
       "author": "Gisele Tan",
       "initials": "GT",
-      "color": "#0ea5e9",
+      "color": "#7c5cbf",
       "summary": "Requested an Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-todo",
-      "status": "To Do",
+      "statusCls": "badge-investigating",
+      "status": "In progress (Snehal)",
       "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "COP-2163 is in To Do; Snehal said on 11/5 he can take it, so the next action is Snehal's.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#f97316",
-      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148), against their contract; two jobs also need rev-rec correction.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "10/29",
-      "jiraKey": "COP-2157",
-      "note": "COP-2157 is in To Do. Ricardo said on 10/30 the fix needs deeper analysis; Kailyn then asked him to restate the question, so Ricardo owes the next reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#a855f7",
-      "summary": "Wants a Region selector (North America / UK) on the Welltower order form so jobs route to the right contract, with region-specific locations and area units.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "10/26",
-      "jiraKey": "COP-2153",
-      "note": "COP-2153 is In Testing with Snehal. Snehal asked on 11/2 whether the UK property list should be grouped by State or by operator, and Kailyn hasn't answered.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#22c55e",
-      "summary": "Asked why JOBID6664320936115551419 showed $0 for the CT payout.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "10/23",
-      "note": "Ricardo explained the cause on 10/23. Adjet asked Kailyn on 10/27 whether jobs are routinely moved to older contracts, and that question is still open.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
-      "reactions": [
-        "👀"
-      ],
+      "note": "Snehal Meled said he can take COP-2163; next action is Snehal building the Nextore SRL client view.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079?context=%7B%22contextType%22%3A%22chat%22%7D",
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
