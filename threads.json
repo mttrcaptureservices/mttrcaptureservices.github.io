@@ -1,1 +1,18 @@
-{"lastUpdated":"2026-11-10T13:05:00-08:00","threads":[{"author":"Kailyn Jelniker","initials":"KJ","color":"#c2410c","summary":"Recent Welltower orders (US and UK) show Sq Ft / Sq M in the [Currency] field instead of a currency (e.g. SENIOR6700703840513776127, SENIOR6701460276951838280).","statusCls":"badge-investigating","status":"Investigating","date":"11/10","jiraKey":"COP-2167","note":"Jira COP-2167 created; Adjet Kodia said he will look into it, so the next action is on the team.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},{"author":"Kailyn Jelniker","initials":"KJ","color":"#c2410c","summary":"The YOUR CAPTURE SCAN REQUEST email for Welltower UK orders is missing the capture size (5,000 m2) and has an empty or repetitive Floor/Unit/Suite and Size table plus a technician-specific Additional Details box.","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Ricardo replied that he will look into it; no Jira ticket yet, next action is on Ricardo.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},{"author":"Kailyn Jelniker","initials":"KJ","color":"#c2410c","summary":"In Global Customer Base > MP Client Data for United Healthcare Group, [Total Completed TD (USD)] does not reflect the new Commitment Payment line, so it no longer matches [Total Completed TD].","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Ricardo replied that he will work on it; no Jira ticket yet, next action is on Ricardo.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false}]}
+{
+  "lastUpdated": "2026-11-10T22:15:00Z",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#7c3aed",
+      "summary": "Welltower UK test orders: the YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2), has an empty and duplicated Floor/Unit/Suite and Size table, and shows technician-specific Additional Details that may need removing.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/10",
+      "note": "Ricardo replied that he will look into it; the email template changes are still owed by Ricardo, no requester response pending.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    }
+  ]
+}
