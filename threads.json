@@ -1,183 +1,17 @@
 {
-  "lastUpdated": "2026-11-09T23:13:34Z",
+  "lastUpdated": "2026-11-10T00:09:37+00:00",
   "threads": [
     {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Add [Unit of Travel Distance] to Accountings views.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "8/27",
-      "note": "Waiting on Kailyn to name the specific views.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787853624150",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Rich-text formatting of Scan Requirements is not syncing to Derived Scan Requirements.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/28",
-      "note": "No fix confirmed and no Jira key; team owes the next update.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1787930079925",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Request to split the UHG Jotform.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "8/31",
-      "jiraKey": "COP-2096",
-      "note": "Open ticket; no completion posted yet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1788202147147",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Stats on Technicians in the CT Directory.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "9/10",
-      "jiraKey": "COP-2110",
-      "note": "Additions posted 9/10; closure not confirmed with Kailyn.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789057433383",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "John Bosch",
-      "initials": "JB",
-      "color": "#0F9D8A",
-      "summary": "Vacasa model branding bulk update (~2,500 models).",
+      "author": "Gisele Tan",
+      "initials": "GT",
+      "color": "#0ea5e9",
+      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
       "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "9/16",
-      "note": "Team needs to choose a bulk-update approach; no Jira key.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789583853516",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Updates to the Bulk Importer Sheet, addressed to Adjet.",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "9/17",
-      "note": "No completion posted; owed by the team.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1789669265111",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "GCB > Global view limit maxed out on Views.",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "10/1",
-      "note": "No Jira key or decision yet; owed by the team.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1790888864456",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Incorrect CT price code.",
-      "statusCls": "badge-todo",
-      "status": "Awaiting team",
-      "date": "10/6",
-      "note": "Adjet said he would look; Kailyn replied 10/7 and the team has not responded.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791300612289",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Stephenie Yong",
-      "initials": "SY",
-      "color": "#E5733B",
-      "summary": "Roche automation question (SWC-7776).",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "10/8",
-      "note": "Follow-up unanswered; owed by the team.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1791477107085",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#2F7DE1",
-      "summary": "Question on a VHT-priced CT payout of 276.08.",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "10/20",
-      "note": "Needs checking against CT rate and payout rules.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792519084525",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#C2477A",
-      "summary": "Asks whether a CT payout of $0 is expected.",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "10/23",
-      "note": "No answer yet; owed by the team.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Welltower UK order form request.",
-      "statusCls": "badge-todo",
-      "status": "To do",
-      "date": "10/26",
-      "note": "Needs scoping and a build owner; no Jira key.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
+      "status": "To Do",
+      "date": "11/4",
+      "jiraKey": "COP-2163",
+      "note": "COP-2163 is in To Do; Snehal said on 11/5 he can take it, so the next action is Snehal's.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
       "reactions": [
         "👀"
       ],
@@ -186,44 +20,14 @@
     {
       "author": "Ryan Morrow",
       "initials": "RM",
-      "color": "#6B8E23",
-      "summary": "BMO travel distance at $2/mile.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
+      "color": "#f97316",
+      "summary": "BMO jobs are calculating travel at $2/mile again (JOBID6691051004013365148), against their contract; two jobs also need rev-rec correction.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "10/29",
-      "note": "Waiting on Ryan to restate his question.",
+      "jiraKey": "COP-2157",
+      "note": "COP-2157 is in To Do. Ricardo said on 10/30 the fix needs deeper analysis; Kailyn then asked him to restate the question, so Ricardo owes the next reply.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793299030655",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#D4A017",
-      "summary": "Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Snehal is taking the ticket.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#2F7DE1",
-      "summary": "Automation emails not sent for 3 pending jobs.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/9",
-      "note": "Ricardo attributes it to a backed-up queue after a bulk UVVC batch; delays should clear as it drains.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794259474510",
       "reactions": [
         "👀"
       ],
@@ -232,13 +36,29 @@
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#8E5CF5",
-      "summary": "Heads-up: UHG signed two new CS contracts; Jotform will need a contract dropdown once the first commit is fulfilled.",
+      "color": "#a855f7",
+      "summary": "Wants a Region selector (North America / UK) on the Welltower order form so jobs route to the right contract, with region-specific locations and area units.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "8/4",
-      "note": "FYI; Kailyn is still defining the dropdown options.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1785863617420",
+      "date": "10/26",
+      "jiraKey": "COP-2153",
+      "note": "COP-2153 is In Testing with Snehal. Snehal asked on 11/2 whether the UK property list should be grouped by State or by operator, and Kailyn hasn't answered.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793032079165",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#22c55e",
+      "summary": "Asked why JOBID6664320936115551419 showed $0 for the CT payout.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
+      "date": "10/23",
+      "note": "Ricardo explained the cause on 10/23. Adjet asked Kailyn on 10/27 whether jobs are routinely moved to older contracts, and that question is still open.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1792780777608",
       "reactions": [
         "👀"
       ],
