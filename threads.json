@@ -1,19 +1,2 @@
 {
-  "lastUpdated": "2026-11-10T01:15:00Z",
-  "threads": [
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#7c5cbf",
-      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-investigating",
-      "status": "In progress (Snehal)",
-      "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Snehal Meled said he can take COP-2163; next action is Snehal building the Nextore SRL client view.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079?context=%7B%22contextType%22%3A%22chat%22%7D",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    }
-  ]
-}
+"lastUpdated":"2026-11-10T02:08:00Z","threads":[{"author":"Gisele Tan","initials":"GT","color":"#7c5cbf","summary":"Requested an Airtable client view for MP client Nextore SRL.","statusCls":"badge-investigating","status":"In progress (Snehal)","date":"11/4","jiraKey":"COP-2163","note":"Snehal Meled said he can take COP-2163; next action is Snehal building the Nextore SRL client view.","url":"https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079?context=%7B%22contextType%22%3A%22chat%22%7D","reactions":["👀"],"reactionsUnread":false}]}
