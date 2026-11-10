@@ -1,18 +1,12 @@
 {
-  "lastUpdated": "2026-11-10T22:15:00Z",
+  "lastUpdated": "2026-11-10T22:45:00Z",
   "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#7c3aed",
-      "summary": "Welltower UK test orders: the YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2), has an empty and duplicated Floor/Unit/Suite and Size table, and shows technician-specific Additional Details that may need removing.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Ricardo replied that he will look into it; the email template changes are still owed by Ricardo, no requester response pending.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    }
+    {"author":"Caitlin Suh","initials":"CS","color":"#e0457b","summary":"JOBID6701540523221429468 has been pending for some time with only a parent record; asks the team to look into it.","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Marked seen (👀) but no team reply yet; Ricardo/Snehal owe the first investigation.","url":"https://teams.cloud.microsoft/","reactions":["👀 (eyes-rightmttp)"],"reactionsUnread":false},
+    {"author":"Kailyn Jelniker","initials":"KJ","color":"#6264a7","summary":"Welltower UK YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2), has an empty Floor/Unit/Suite table, and shows technician-specific additional details.","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Ricardo replied he'll look into it; email template fixes still owed by Ricardo/team.","url":"https://teams.cloud.microsoft/","reactions":["👀 (eyes-rightmttp)"],"reactionsUnread":false},
+    {"author":"Gisele Tan","initials":"GT","color":"#2e8b57","summary":"Requests an Airtable client view for MP client Nextore SRL.","statusCls":"badge-todo","status":"To do","date":"11/4","jiraKey":"COP-2163","note":"Snehal said he can take COP-2163; waiting on Snehal to build the view.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
+    {"author":"Ryan Morrow","initials":"RM","color":"#d9822b","summary":"BMO jobs are calculating travel distance at $2/mile again (not in their contract), affecting rev rec and dispatch.","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/29","note":"Kailyn (10/30) asked Ricardo to restate his question; Ricardo owes the clarification, and the fix needs deeper team analysis.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
+    {"author":"Kailyn Jelniker","initials":"KJ","color":"#6264a7","summary":"Welltower Jotform change: add a required Region (North America/UK) section that routes the MP client, property list and area units.","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/26","note":"Snehal (11/2) asked Kailyn whether the UK property list should be grouped by State or by operator; Kailyn owes the answer.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
+    {"author":"Freddy Arias","initials":"FA","color":"#0f7b8a","summary":"Job showing $0 CT payout after being moved from Gallina (3) to Gallina (1); root cause explained.","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/23","note":"Waiting on Kailyn to explain why the job was moved to an older contract; Adjet may then adjust MP Client Data.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},
+    {"author":"Kailyn Jelniker","initials":"KJ","color":"#6264a7","summary":"Heads-up that UHG signed two new CS contracts; their Jotform will need a contract-selection dropdown once the ~$25k balance is used.","statusCls":"badge-waiting","status":"Waiting on requester","date":"8/4","note":"Waiting on Kailyn to confirm dropdown option names and where the selection should appear in Airtable.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false}
   ]
 }
