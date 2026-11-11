@@ -1,6 +1,84 @@
 {
-  "lastUpdated": "2026-11-11T08:00:00-08:00",
+  "lastUpdated": "2026-11-11T11:15:00-08:00",
   "threads": [
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#d97706",
+      "summary": "URGENT: Completed jobs no longer visible in Spec Ops 2.0 (only View Only base), blocking Mattertag payout validation and adjustments.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/11",
+      "jiraKey": "COP-2170",
+      "note": "Ticket just created; Ricardo owes diagnosis of the Spec Ops 2.0 sync/filter that stopped showing Completed jobs.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#2563eb",
+      "summary": "JOBID6664328756111924876 CT payout flipped from aggregate $672.50 to per-child-record $1,470 without Price Code edits; wants it restored plus a fix.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/11",
+      "jiraKey": "COP-2168",
+      "note": "Ricardo owes root-cause analysis (compare COP-2048) and restoring the $672.50 payout.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Don Fraser",
+      "initials": "DF",
+      "color": "#059669",
+      "summary": "Cannot change CT org on a Spec Ops 2.0 job adjustment line (JOBID6545921865291313626*PAYISSUE) so the revisit tech's team gets the additional payout.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/11",
+      "jiraKey": "COP-2169",
+      "note": "Ricardo owes a fix or workaround to set the revisit org on the adjustment line.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#7c3aed",
+      "summary": "JOBID6667685863919273236 quoted to the CT at $1,155 for a ~14,500 sq ft space (systems error); asks why and how to prevent it.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/10",
+      "note": "Adjet said he will troubleshoot; no Jira ticket yet. Next action is Adjet's findings.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#db2777",
+      "summary": "Welltower UK YOUR CAPTURE SCAN REQUEST email is missing capture size (5,000 m2) and has an empty/duplicate Floor/Unit/Suite table.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/10",
+      "note": "Ricardo said he would look into it; he owes the email template fix.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
     {
       "author": "Gisele Tan",
       "initials": "GT",
@@ -10,36 +88,12 @@
       "status": "Investigating",
       "date": "11/4",
       "jiraKey": "COP-2163",
-      "note": "Snehal Meled offered to take COP-2163; next action is Snehal building the view.",
+      "note": "Snehal Meled offered to take COP-2163; next action is Snehal building the view. (Carried over from prior feed; reactions could not be re-read this run.)",
       "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#C44536",
-      "summary": "JOBID6667685863919273236: CT was quoted $1155 for a ~14,500 sq ft space; asks for root cause and prevention.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Adjet Kodia said he will troubleshoot; no Jira ticket yet and no root cause reported.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#6A994E",
-      "summary": "Welltower UK 'YOUR CAPTURE SCAN REQUEST' email is missing capture size and has empty/duplicate detail boxes.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Ricardo replied he will look into it; no Jira ticket yet, next action is Ricardo.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": true
     }
   ]
 }
