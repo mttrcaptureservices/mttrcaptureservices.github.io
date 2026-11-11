@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-11-11T21:30:00Z",
+  "lastUpdated": "2026-11-11T21:00:00Z",
   "threads": [
     {
       "author": "Ryan Morrow",
       "initials": "RM",
-      "color": "#0f766e",
-      "summary": "Rick Barlow (CT) was quoted $1155 for a ~14,500 sq ft space on JOBID6667685863919273236 even though the payout was correct; asks what caused the bad quote and how to prevent it.",
+      "color": "#2e7d32",
+      "summary": "JOBID6667685863919273236: CT was quoted $1155 for a ~14,500 sq ft space; Ryan calls it a systems error and asks how it happened and how to prevent it.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/11",
-      "note": "Adjet said he will troubleshoot; no root cause or Jira yet, next action is Adjet.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794331111126?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b",
+      "note": "Adjet said he'll troubleshoot (12:42 PM); next action is on the team to report root cause.",
+      "url": "https://teams.cloud.microsoft/",
       "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#b45309",
-      "summary": "Welltower UK 'YOUR CAPTURE SCAN REQUEST' email is missing the capture size (5,000 m2) and has empty/repetitive detail boxes that need cleanup.",
+      "color": "#c2185b",
+      "summary": "Welltower UK 'YOUR CAPTURE SCAN REQUEST' email is missing the capture size (5,000 m2) and has an empty/redundant Floor/Unit/Suite table and technician-specific Additional Details.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/11",
-      "note": "Ricardo said he will look into it; no fix or Jira yet, next action is Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794337691554?groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b",
+      "note": "Ricardo replied he'll look into it (12:57 PM); email template fix still owed by the team.",
+      "url": "https://teams.cloud.microsoft/",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
