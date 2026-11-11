@@ -1,99 +1,60 @@
 {
-  "lastUpdated": "2026-11-11T11:15:00-08:00",
+  "lastUpdated": "2026-11-11T21:40:00Z",
   "threads": [
     {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#d97706",
-      "summary": "URGENT: Completed jobs no longer visible in Spec Ops 2.0 (only View Only base), blocking Mattertag payout validation and adjustments.",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8e44ad",
+      "summary": "Welltower UK 'YOUR CAPTURE SCAN REQUEST' email is missing the capture size (5,000 m2) and has an empty/repetitive Floor/Unit/Suite table and technician-specific Additional Details block.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "11/11",
-      "jiraKey": "COP-2170",
-      "note": "Ticket just created; Ricardo owes diagnosis of the Spec Ops 2.0 sync/filter that stopped showing Completed jobs.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#2563eb",
-      "summary": "JOBID6664328756111924876 CT payout flipped from aggregate $672.50 to per-child-record $1,470 without Price Code edits; wants it restored plus a fix.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/11",
-      "jiraKey": "COP-2168",
-      "note": "Ricardo owes root-cause analysis (compare COP-2048) and restoring the $672.50 payout.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": [
-        "👀"
-      ],
+      "date": "11/10",
+      "note": "Ricardo replied he'd look into it; no Jira yet. Next action owed by Ricardo.",
+      "url": "https://teams.microsoft.com/",
+      "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#059669",
-      "summary": "Cannot change CT org on a Spec Ops 2.0 job adjustment line (JOBID6545921865291313626*PAYISSUE) so the revisit tech's team gets the additional payout.",
+      "color": "#2980b9",
+      "summary": "Cannot change the CT org on a job adjustment line (JOBID6545921865291313626*PAYISSUE) in Spec Ops 2.0 to the revisit tech's team, blocking the additional payout.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/11",
       "jiraKey": "COP-2169",
-      "note": "Ricardo owes a fix or workaround to set the revisit org on the adjustment line.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#7c3aed",
-      "summary": "JOBID6667685863919273236 quoted to the CT at $1,155 for a ~14,500 sq ft space (systems error); asks why and how to prevent it.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Adjet said he will troubleshoot; no Jira ticket yet. Next action is Adjet's findings.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#db2777",
-      "summary": "Welltower UK YOUR CAPTURE SCAN REQUEST email is missing capture size (5,000 m2) and has an empty/duplicate Floor/Unit/Suite table.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Ricardo said he would look into it; he owes the email template fix.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#2E86AB",
-      "summary": "Requested an Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Snehal Meled offered to take COP-2163; next action is Snehal building the view. (Carried over from prior feed; reactions could not be re-read this run.)",
+      "note": "Snehal Meled agreed to assist Don; waiting on Snehal.",
       "url": "https://teams.microsoft.com/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": true
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#d35400",
+      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in View Only base), but Troy needs them there to validate and adjust Mattertag payouts.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
+      "date": "11/11",
+      "jiraKey": "COP-2170",
+      "note": "Ricardo replied that this is by design and to use the Read Only tab; waiting on Troy's response (Mattertag fields missing there).",
+      "url": "https://teams.microsoft.com/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#27ae60",
+      "summary": "JOBID6664328756111924876 CT payout switched from aggregate $672.50 to per-child-record $1,470 without Price Code changes; wants original restored and a permanent fix.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "11/11",
+      "jiraKey": "COP-2168",
+      "note": "Ricardo asked whether the $672.50 aggregate payout is a one-time exception or the standard for this MP client; Freddy owes the answer.",
+      "url": "https://teams.microsoft.com/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
     }
   ]
 }
