@@ -1,59 +1,35 @@
 {
-  "lastUpdated": "2026-11-11T21:40:00Z",
+  "lastUpdated": "2026-11-11T22:55:00Z",
   "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Welltower UK 'YOUR CAPTURE SCAN REQUEST' email is missing the capture size (5,000 m2) and has an empty/repetitive Floor/Unit/Suite table and technician-specific Additional Details block.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/10",
-      "note": "Ricardo replied he'd look into it; no Jira yet. Next action owed by Ricardo.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#2980b9",
-      "summary": "Cannot change the CT org on a job adjustment line (JOBID6545921865291313626*PAYISSUE) in Spec Ops 2.0 to the revisit tech's team, blocking the additional payout.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/11",
-      "jiraKey": "COP-2169",
-      "note": "Snehal Meled agreed to assist Don; waiting on Snehal.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#d35400",
-      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in View Only base), but Troy needs them there to validate and adjust Mattertag payouts.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
+      "color": "#d97706",
+      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in the View Only base), and he needs them there to validate and adjust Mattertag payouts in line items.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "11/11",
       "jiraKey": "COP-2170",
-      "note": "Ricardo replied that this is by design and to use the Read Only tab; waiting on Troy's response (Mattertag fields missing there).",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
+      "note": "Ricardo replied that completed jobs are hidden from Spec Ops 2.0 by design and to use the Read Only tab; waiting on Troy's response / a decision on payout adjustments.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794423540404?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1",
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     },
     {
-      "author": "Freddy Arias",
-      "initials": "FA",
-      "color": "#27ae60",
-      "summary": "JOBID6664328756111924876 CT payout switched from aggregate $672.50 to per-child-record $1,470 without Price Code changes; wants original restored and a permanent fix.",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#2563eb",
+      "summary": "Small bulk ingest (~15 jobs) for Welltower - Canada submitted but no jobs have come through in AT.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "11/11",
-      "jiraKey": "COP-2168",
-      "note": "Ricardo asked whether the $672.50 aggregate payout is a one-time exception or the standard for this MP client; Freddy owes the answer.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
+      "note": "Team asked whether the new Airtable bulk form's Create button was pressed (no submission seen) and offered to submit the file for her; next action is Kailyn's.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794435729906?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1",
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     }
   ]
