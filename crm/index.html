@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://api.airtable.com https://content.airtable.com; img-src data:; base-uri 'none'; form-action 'none'">
+<title>Capture Services CRM</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff3158'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#16181d;--muted:#667085;--line:#e3e6ec;--accent:#4353ff;--accent-ink:#fff;--soft:#eef0ff;--good:#16794c;--goodbg:#e3f5ec;--bad:#c4203f;--badbg:#fde8ec;--warn:#9a5b00;--warnbg:#fff3d6;--brand:#ff3158;--shadow:0 1px 2px rgba(16,24,40,.06);--r:10px}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#181b21;--ink:#eceef2;--muted:#9aa3b2;--line:#2a2f39;--accent:#7c88ff;--accent-ink:#0b0d12;--soft:#22264a;--good:#5fd39c;--goodbg:#143326;--bad:#ff7d93;--badbg:#3b1620;--warn:#f2c14e;--warnbg:#3a2c0c;--shadow:none}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:22px;margin:0 0 2px;line-height:1.25;text-wrap:balance}h2{font-size:15px;margin:0 0 10px}h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:16px 0 8px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.muted{color:var(--muted)}.block{display:block}.warn{color:var(--warn)}.pad{padding:8px 10px;display:block}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);white-space:nowrap}.brand:hover{text-decoration:none}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}.brand.big{font-size:20px;margin-bottom:6px}
+.top nav{display:flex;gap:2px}.top nav a{padding:6px 10px;border-radius:8px;color:var(--muted);font-weight:500}.top nav a.on{background:var(--soft);color:var(--accent)}.top nav a:hover{text-decoration:none;color:var(--ink)}
+.searchwrap{position:relative;flex:1;min-width:160px;max-width:420px;margin-left:auto}
+input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+input[type=checkbox]{width:auto;accent-color:var(--accent)}input[type=file]{border:1px dashed var(--line);padding:6px}
+textarea{resize:vertical;min-height:38px}
+.results{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,.15);overflow:hidden}
+.results a{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;color:var(--ink)}.results a:hover{background:var(--soft);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;font-weight:500;white-space:nowrap}
+.btn:hover{border-color:var(--accent);text-decoration:none}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.btn.danger{color:var(--bad);border-color:var(--bad)}
+.btn.small{padding:4px 9px;font-size:13px}.btn.block{display:flex;width:100%;margin-top:10px}.btn:disabled{opacity:.5;cursor:not-allowed}
+.link{background:none;border:0;padding:0;color:var(--accent);cursor:pointer}.link:hover{text-decoration:underline}
+.usermenu{position:relative}.usermenu summary{cursor:pointer;list-style:none;padding:6px 8px;border-radius:8px;color:var(--muted);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.usermenu .menu{position:absolute;right:0;top:calc(100% + 4px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.15);overflow:hidden}
+.usermenu .menu button{display:block;width:100%;text-align:left;padding:9px 12px;background:none;border:0;cursor:pointer}.usermenu .menu button:hover{background:var(--soft)}
+main{max-width:1320px;margin:0 auto;padding:20px}
+.pagehead,.clienthead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.actions.left{justify-content:flex-start;margin-top:8px}
+.crumb{font-size:13px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);margin-bottom:14px;min-width:0}
+.errorcard{border-color:var(--bad)}.loading,.empty{padding:40px 10px;text-align:center;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:2px;color:var(--ink);min-width:0}
+a.kpi:hover{border-color:var(--accent);text-decoration:none}.kpi .k{font-size:12px;color:var(--muted)}.kpi strong{font-size:22px;font-variant-numeric:tabular-nums;line-height:1.2;overflow-wrap:anywhere}.kpi small{color:var(--muted);font-size:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+.count{display:inline-block;margin-left:6px;padding:0 7px;border-radius:99px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:600}
+.rowlist{list-style:none;margin:0;padding:0}.rowlist li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid var(--line)}.rowlist li:first-child{border-top:0}
+.rowlist .r{color:var(--muted);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.rowlist details{width:100%}.rowlist summary{cursor:pointer}.more{display:inline-block;margin-top:8px}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;font-weight:600;background:var(--line);color:var(--ink);white-space:nowrap;vertical-align:middle}
+.s-Active,.st-Ontrack{background:var(--goodbg);color:var(--good)}.s-Expired,.st-Expired,.s-Deactivated,.st-Deactivated{background:var(--line);color:var(--muted)}
+.st-Behindpace{background:var(--badbg);color:var(--bad)}.st-Renewalwindow,.st-Settingup{background:var(--warnbg);color:var(--warn)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}.toolbar>input[type=search]{max-width:340px}.toolbar select{width:auto;max-width:210px}.toolbar label{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);flex-wrap:wrap}.seg button{border:0;background:none;padding:6px 11px;cursor:pointer;color:var(--muted)}.seg button.on{background:var(--soft);color:var(--accent);font-weight:600}
+.summary{margin:4px 0 10px;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+table.grid{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.grid th{position:sticky;top:0;text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--line);background:var(--card);white-space:nowrap}
+.grid th button{background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit}.grid td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+.grid tbody tr:hover{background:var(--soft)}.grid tbody tr{cursor:default}.num{text-align:right!important;white-space:nowrap}.grid.mini{margin-top:10px}.grid.mini td,.grid.mini th{padding:5px 8px}
+.pace{display:flex;align-items:center;gap:8px;min-width:120px}.pace span{font-size:12px;color:var(--muted);width:34px;text-align:right}
+.track{position:relative;flex:1;height:8px;border-radius:99px;background:var(--line);overflow:visible}.fill{height:100%;border-radius:99px;background:var(--accent)}.fill.good{background:var(--good)}.fill.bad{background:var(--bad)}.fill.time{background:var(--muted)}
+.tick{position:absolute;top:-3px;width:2px;height:14px;background:var(--ink);border-radius:2px}
+.pacecard .dual{display:grid;grid-template-columns:130px 1fr 44px;gap:10px;align-items:center;margin:6px 0}.pacecard p{margin:8px 0 0}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(250px,1fr);gap:12px;overflow-x:auto;padding-bottom:8px}
+.lane{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px;min-width:0}.lane h3{margin:0 0 8px;display:flex;align-items:center;gap:4px}.lane h3 small{margin-left:auto;text-transform:none;letter-spacing:0}
+.kard{display:flex;flex-direction:column;gap:5px;padding:10px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;color:var(--ink);background:var(--bg)}.kard:hover{border-color:var(--accent);text-decoration:none}
+.kfoot{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.kfoot em{font-style:normal}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:4px 0 14px;overflow-x:auto}.tabs a{padding:9px 12px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;font-weight:500}.tabs a.on{color:var(--accent);border-color:var(--accent)}.tabs a:hover{text-decoration:none;color:var(--ink)}
+.sechead{display:flex;justify-content:space-between;align-items:center;gap:10px}.sechead h2{margin:0}.section.saving{opacity:.6;pointer-events:none}
+.group{border-top:1px solid var(--line);margin-top:12px}.sechead+.group{margin-top:10px}details.group>summary{cursor:pointer;padding:12px 0 4px;font-weight:600}details.group>summary small{font-weight:400;color:var(--muted)}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px 16px}
+.field{min-width:0}.field.wide{grid-column:1/-1}.field label,.field .lbl{display:block;font-size:12px;color:var(--muted);margin-bottom:3px;font-weight:500}
+.field .val{overflow-wrap:anywhere}.req{color:var(--bad)}.hint{display:block;color:var(--muted);font-size:12px;margin-top:3px}.err{display:block;color:var(--bad);font-size:12px;margin-top:3px;font-weight:600}
+.field.invalid input,.field.invalid select,.field.invalid textarea,.field.invalid .multi{border-color:var(--bad)}.field.prefilled input,.field.prefilled select,.field.prefilled textarea{background:var(--warnbg)}
+.longtext{white-space:pre-wrap;overflow-wrap:anywhere;max-height:220px;overflow:auto}
+.chips{display:flex;flex-wrap:wrap;gap:5px}.chip{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:6px;background:var(--soft);color:var(--ink);font-size:13px}
+.check{color:var(--muted)}.check.on{color:var(--good);font-weight:600}
+.multi{display:flex;flex-wrap:wrap;gap:6px;border:1px solid var(--line);border-radius:8px;padding:6px;max-height:170px;overflow:auto}
+.pillbox{display:inline-flex!important;align-items:center;gap:5px;padding:3px 8px;border:1px solid var(--line);border-radius:99px;cursor:pointer;margin:0!important;color:var(--ink)!important;font-size:13px!important}.pillbox:has(input:checked){background:var(--soft);border-color:var(--accent)}
+.switch{display:inline-flex!important;align-items:center;gap:7px;cursor:pointer;color:var(--ink)!important;font-size:14px!important;padding:6px 0}
+.files{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.file{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);overflow-wrap:anywhere}.file.new{border-style:dashed}
+.x{border:0;background:none;cursor:pointer;color:var(--muted);font-size:15px;line-height:1;padding:0 2px}.x:hover{color:var(--bad)}
+.linkpick{display:flex;flex-direction:column;gap:6px}
+.wizard{display:grid;grid-template-columns:240px minmax(0,1fr);gap:16px;align-items:start}.wizard aside{position:sticky;top:70px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}.steps button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;padding:8px 10px;border:1px solid transparent;border-radius:8px;background:none;cursor:pointer}
+.steps li.on button{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}.steps .n{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--line);font-size:12px;font-weight:700}
+.steps li.done .n{background:var(--goodbg);color:var(--good)}.steps li.on .n{background:var(--accent);color:var(--accent-ink)}.steps small{display:block;color:var(--muted);font-size:12px}
+.wiznav{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.callout{padding:10px 12px;border-radius:8px;margin:10px 0}.callout ul{margin:6px 0 0;padding-left:18px}.callout.bad{background:var(--badbg);color:var(--bad)}.callout.good{background:var(--goodbg);color:var(--good)}.callout.warn{background:var(--warnbg);color:var(--warn)}
+.bars{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.card>.btn,.card>div>.btn{margin-top:12px}.bar-row{display:grid;grid-template-columns:minmax(90px,34%) 1fr 70px;gap:8px;align-items:center}.bl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bt{position:relative;height:14px;background:var(--line);border-radius:4px;overflow:hidden}.bf{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:4px}.bf.two{background:#fff;opacity:.55}.bv{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.cols{display:flex;align-items:flex-end;gap:5px;height:170px;padding-top:16px}.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0}
+.cb{width:100%;max-width:38px;background:var(--accent);border-radius:4px 4px 0 0}.cl{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}.cv{font-size:10px;color:var(--muted);white-space:nowrap}
+.stack{display:flex;height:30px;border-radius:8px;overflow:hidden;background:var(--line);font-size:12px;font-weight:600}.stack>div{display:grid;place-items:center;white-space:nowrap;overflow:hidden;color:#fff}.seg-good{background:#16794c}.seg-mid{background:#4353ff}.seg-bad{background:#c4203f}
+.notes{list-style:none;padding:0;margin:14px 0 0}.notes li{padding:10px 0;border-top:1px solid var(--line)}.notes .meta{font-size:12px;color:var(--muted);margin-bottom:3px}
+.backdrop{position:fixed;inset:0;background:rgba(10,12,18,.5);display:grid;place-items:center;z-index:50;padding:16px}
+.modal{background:var(--card);border-radius:14px;padding:20px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}.modal h2{font-size:17px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.modal label{display:block;margin:10px 0 4px;font-size:12px;color:var(--muted)}
+#toasts{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:60;max-width:min(420px,calc(100vw - 32px))}
+.toast{padding:10px 14px;border-radius:10px;background:var(--ink);color:var(--bg);box-shadow:0 8px 24px rgba(0,0,0,.25)}.toast.bad{background:var(--bad);color:#fff}.toast.warn{background:#9a5b00;color:#fff}
+.gated{display:grid;min-height:100vh;place-items:center}.gate{width:100%;padding:16px;display:grid;place-items:center}.gate-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(16,24,40,.08)}
+.gate-card label{display:block;margin:14px 0 4px;font-weight:500}.gate-card label.inline{display:flex;gap:8px;align-items:center;font-weight:400}.gate-card .btn{margin-top:16px}.gate-card .link{margin-top:14px}
+.gate-card details{margin-top:18px;color:var(--muted)}.gate-card ol{padding-left:18px;margin:8px 0 0}.gate-card li{margin-bottom:6px}.lead{color:var(--muted);margin:0 0 6px}.error{color:var(--bad);min-height:1.2em;margin:10px 0 0;font-weight:500}
+@media (max-width:820px){main{padding:14px}.top{padding:10px 14px;gap:8px}.searchwrap{order:5;flex-basis:100%;max-width:none;margin:0}.wizard{grid-template-columns:1fr}.wizard aside{position:static}.steps{flex-direction:row;overflow-x:auto}.steps small{display:none}.steps button{white-space:nowrap}
+.pacecard .dual{grid-template-columns:96px 1fr 40px}.usermenu summary{max-width:110px}}
+@media (prefers-reduced-motion:no-preference){.fill,.bf,.cb{transition:width .3s,height .3s}}
+</style>
+</head>
+<body class="gated">
+<div id="app"></div>
+<div id="toasts" aria-live="polite"></div>
+<noscript>This app needs JavaScript.</noscript>
+<script>
+'use strict';
+/* Capture Services CRM — configuration.
+   Only identifiers and layout live here. No tokens, no records, no option lists:
+   labels and dropdown choices are read from Airtable after sign-in. */
+const CFG = {
+  base: 'appGPiaxVj615p7EP',
+  t: { clients: 'tblCdpEnWDJ22i47A', jobs: 'tblSJTugOUJZBbBaN', opps: 'tblEnSxiTl7nFSbUW' },
+  airtableUrl: 'https://airtable.com/appGPiaxVj615p7EP/tblCdpEnWDJ22i47A/',
+};
+
+/* Field table: key, field id, fallback label, type, flags
+   types: t text · e email · l long text · m rich text · n number · $ money · p percent
+          d date · D date-time · s single select · S multi select · c checkbox
+          a attachments · k linked records · f computed (read-only)
+   flags: r required · w recommended (warn only) · c conditional (see RULES) · W full width */
+const FDEF = [
+  // ── client
+  ['name', 'fldBmjUhSiDHKxQ2t', 'MP Client', 't', 'r'],
+  ['latestName', 'fldP0uD7NF55ajuWN', 'Latest MP Client Name', 't', 'r'],
+  ['subClient', 'flduMqG6cMCFIqpfg', 'Sub Client', 't', ''],
+  ['industry', 'fldTJNWXhIO6ITZDm', 'Industry', 's', 'r'],
+  ['spaceType', 'fldt7ST6mA6TtBLDP', 'Space Type', 'S', 'r'],
+  ['region', 'fldg3abhexsxhQdZk', 'Region', 's', 'r'],
+  ['regionSigned', 'fldbFK9iHukpGc1pi', 'Region Contract was Signed in', 'S', 'r'],
+  ['captureRegions', 'fldhq1KJSoApF9UsR', 'Capture Regions', 'S', 'r'],
+  ['keyCoordinator', 'fldL1s9ciL49x29Vn', 'Key Capture Coordinator', 'S', ''],
+  ['pocName', 'fld4RAdYQFMllPx3f', 'Client POC Name', 't', 'r'],
+  ['pocEmail', 'fldOednN9sJUOoOKW', 'Client POC Email', 't', 'r'],
+  ['ccEmail', 'fldjW553H2NITMS7g', 'CC in Email Automations', 'e', ''],
+  ['salesperson', 'fldFVluoGB0wSZ3xc', 'Salesperson', 's', 'r'],
+  ['salesDirector', 'fldufw1LzFLXQaWLb', 'Sales Director', 's', 'r'],
+  ['salesLink', 'fld9EauM17b6Cdzx3', 'Salesperson (Sales Contact Tree)', 'k', ''],
+  ['capservPoc', 'fldVxAgtB8X8jZ14s', 'CapServ POC', 's', 'r'],
+  ['csm', 'fldvcUeX4gZSE9VSH', 'CSM', 's', ''],
+  // ── contract
+  ['contractType', 'fldXDgTVt2RHOdEA1', 'Contract Type', 's', 'r'],
+  ['ssaDate', 'fld42oRNevgVOlAnu', 'SSA Signed Date', 'd', 'r'],
+  ['fulfillDate', 'fldl4ezHpaA0XghxK', 'Fulfill Date', 'd', 'r'],
+  ['endDate', 'fldcWiVYQeoEebuVX', 'Contract End Date', 'd', 'r'],
+  ['closeDate', 'fldywuBYImKp7GtAe', 'Close Date', 'D', ''],
+  ['signedSSA', 'fld9LbD3ulAEStdxv', 'Signed SSA', 'a', 'wW'],
+  ['amendment', 'fld89Mj9jFYFmVfAd', 'Contract amendment agreed', 'S', ''],
+  ['commitment', 'fldam4AvrX6lo6n9j', 'Commitment', '$', 'c'],
+  ['currency', 'fldM0Y2op0Cw2J0Qt', 'Master Currency', 's', 'r'],
+  ['contractMin', 'fld31jeojZdPDmQKj', 'Contract Min', 'n', ''],
+  ['po', 'fldusaIJ7D2rdAc0n', 'Purchase Order (PO#)', 't', ''],
+  ['salesOrder', 'fldv5eY4pHGQb3F8i', 'Sales Order # (payment schedule)', 's', 'c'],
+  ['sfdcAccount', 'fldmjGkOyr88j6TDe', 'SFDC Account ID', 't', 'r'],
+  ['sfdcOpp', 'fld13nRWrLzcyukew', 'SFDC Opportunity ID', 't', 'r'],
+  ['sfdcSid', 'fldu8J9v5zEIU4xuI', 'SFDC SID', 't', ''],
+  ['wonOpp', 'fld4erBkYnwAJeTFu', 'Closed Won Opp', 'k', ''],
+  ['renewalLink', 'fldzccx1XMfqCeYS4', 'Renewal Tracker', 'k', 'R'],
+  ['emailAutomation', 'fldcW4qlKhUUGHgM5', 'Email Automation?', 's', 'r'],
+  ['emailFrequency', 'fldHuVOdzymx3qrAU', 'Commitment Email Frequency', 's', 'r'],
+  // ── pricing
+  ['pricing', 'fld9TDlGBekyz9z7J', 'Pricing', 's', 'r'],
+  ['priceType', 'fldWo8Y5yes61EfoK', 'Price Type', 's', 'r'],
+  ['customPriceName', 'fldHE7H6ALsROoVdr', 'Custom Price Client Name', 't', 'c'],
+  ['contractRates', 'fldlyOlbeUVIPamCy', 'Contract Rates', 's', ''],
+  ['pricingContractType', 'fldYHB5Mb13mMlhwr', 'Pricing - Contract Type', 's', 'r'],
+  ['pricebooks', 'fldqm6ynFX7vgX4PL', 'Pricebooks', 'S', 'r'],
+  ['keystone', 'fldFxLD52fELAvpC4', 'Keystone / Standard', 's', 'r'],
+  ['ccAssigned', 'fldp8R1lImtrIIld0', 'CC Assigned (Keystone only)', 'k', 'c'],
+  ['varTier', 'fldshueSCfk349G0m', 'VAR/D Tier', 's', ''],
+  ['discount', 'fldki2XHNQY40lOl2', 'Discount Rate', 'n', 'r'],
+  ['discEmea', 'fldVjqeIslWHiciSP', 'EMEA Additional Discount', 'n', 'c'],
+  ['discApac', 'fldTkqQOBsHBvY4ar', 'APAC Additional Discount', 'n', 'c'],
+  ['discNoram', 'fldPw7VshsyJ1WjbJ', 'NORAM Additional Discount', 'n', 'c'],
+  ['specOps', 'fldZZInJIkPGh80mn', 'Spec Ops', 'c', ''],
+  ['specOpsMarkup', 'fldN2VKRwucpodGHh', 'Spec Ops Markup', 'n', 'c'],
+  ['priceCheck', 'fldNZmUnSqmf7tsj5', 'Price check - EMEA new rates', 'c', ''],
+  ['offHours', 'fldgSTBm86Qz3xoAO', 'Off Hours Rate', 's', 'r'],
+  ['travelFee', 'fldEyhTQGpdD6i07I', 'Travel Fee Contract Rate', 's', 'r'],
+  ['stitch', 'fldqFocEdAmyOA3aU', 'Charge for Stitch?', 's', 'r'],
+  ['blurFee', 'fld6fB7yd6pGyzrf9', 'Blurring Fee', '$', ''],
+  ['fee360', 'fldoquNEgWamECmGI', '360 Service Fee', '$', ''],
+  ['addOns', 'fld0CZbMUSceIAIB4', 'Add-Ons?', 'S', 'r'],
+  ['photosScope', 'fldi6oUMafaZ1WwZj', 'Photos: Some or All?', 's', 'c'],
+  ['photosNotes', 'fldGuMiV9poZIDDiL', 'Photos: Notes', 'm', 'cW'],
+  ['photoCost', 'fldxoJrggmG0EF8Vd', 'Cost per photo', '$', 'c'],
+  ['photoMin', 'fldguIDIZ7joEeAgY', 'Min. Photo Services Per Job', '$', 'c'],
+  ['tagCost', 'fldFrMygAWCpKSuUz', 'Cost per tag', '$', 'c'],
+  ['adjDiscount', 'fldaLlxfEfOIZacgt', 'Adjusted Discount', 'n', ''],
+  ['adjDate', 'fld0ogXduhFdJu2Kv', 'Adjusted Effective Date', 'd', ''],
+  ['adjCode', 'fldONT4LOsM1diOkb', 'Adjusted Price Type Code', 't', ''],
+  ['adjFee', 'fld6R4dcaV2LNpccr', 'Adjusted Fee', '$', ''],
+  ['pricingNotes', 'fldoAbEVrGl2B2qDK', 'Pricing Notes', 'l', 'W'],
+  // ── ordering & capture
+  ['formType', 'fldWSoNfmiJ5bvCvn', 'Form Type', 's', 'r'],
+  ['clientForm', 'fldBoX0cLqrnzqDpt', 'Client Form (custom form URL)', 'l', 'cW'],
+  ['orderingType', 'fldw4E4vsdkGMN4Xs', 'Ordering Type', 's', 'r'],
+  ['jotformPrefill', 'fldrxHSC9QWRmOmvt', 'Jotform Prefill', 't', ''],
+  ['t1Booking', 'fld4K7wuB9yI4budh', 'T+1 Booking', 'c', ''],
+  ['propertyId', 'fldt5TxGQtiW2H0X6', 'Property ID', 'c', ''],
+  ['skipDistance', 'fldnIgTAG3Vx5DJPJ', 'Skip Distance Calc', 'c', ''],
+  ['skipCt', 'fldhzEzA3wugrsqgB', 'Skip CT Assignment', 'c', ''],
+  ['pro3', 'fldfZAE9PyWofBKSg', 'Pro3 Required?', 's', ''],
+  ['nonStandard', 'fldF5cpnD68SSTQKF', 'Non-Standard Capture Required', 'c', ''],
+  ['snapshotCheck', 'fldRRhoHjUodbxhhc', 'Enterprise Snapshot Check', 'c', ''],
+  ['csatOptOut', 'fldnO1o8x3Ma460Bw', 'CSAT opt-out', 'c', ''],
+  ['scanUse', 'fldj4EMpHxSdRY6QS', 'Scan Req - Use Case', 's', 'r'],
+  ['scanReq', 'fld2PXl8FEVSEvnRy', 'Scan Requirements', 'm', 'rW'],
+  ['scanUse2', 'fldYxRI5JO3WsmYcz', 'Scan Req 2 - Use Case', 's', ''],
+  ['scanReq2', 'fldbN1FpjSnTxmgxW', 'Scan Requirements 2', 'm', 'W'],
+  ['quoting', 'fldz7wbaGjdgMQVbI', 'Job Quoting/Approval', 'm', 'rW'],
+  ['details1', 'fldfzT9MkKtp3lmsR', 'Additional Details Type 1', 'm', 'W'],
+  ['details2', 'fld97m0OhX6HySQoo', 'Additional Details Type 2', 'm', 'W'],
+  ['details3', 'fldKGBjlgNzLhmeCk', 'Additional Details Type 3', 'm', 'W'],
+  ['details4', 'fldD0cy7ApbvznH0f', 'Additional Details Type 4', 'm', 'W'],
+  ['fileReqs', 'fldsL205da5z9WdhZ', 'Customer Specific Requirements', 'a', 'W'],
+  ['fileFloor', 'fldDPEhALwJZsuMak', 'Floor Plans/Attachments', 'a', 'W'],
+  ['fileOnsite', 'fldWk5jTDzkRcX52s', 'On-Site Contact Additional Attachment', 'a', 'W'],
+  ['fileRequest', 'fldpy9pQ3IGBldNAG', 'Capture Request Additional Attachment', 'a', 'W'],
+  ['fileCt', 'fld0ZsdzzrUQVmV1s', 'CT Additional Attachment', 'a', 'W'],
+  // ── account & delivery
+  ['mpEmail', 'fldFyZeaS95lVOQ6u', 'MP Account Email', 't', 'r'],
+  ['mpName', 'fldSqUCmfzzMnjzFu', 'MP Account Name', 't', 'r'],
+  ['mpSid', 'fldx5NBBVXgQBb1Gl', 'MP Account SID', 't', 'r'],
+  ['deliveryFolder', 'fldtF4nS8hd9j7fyj', 'Model Delivery - Transfer to Folder', 'm', 'rW'],
+  ['deliveryEmails', 'fld6P4lvucJXMRkhO', 'Model Delivery - Notified Email(s)', 'm', 'rW'],
+  ['namingSyntax', 'fld4WAibgc6lB3O0O', 'Model Naming Syntax', 'm', 'rW'],
+  ['snapshots', 'fldig2HVsWkfvtnyB', 'Snapshots', 'm', 'W'],
+  ['privacy', 'fldksHCKbXTNJZqwM', 'Model Privacy', 't', ''],
+  ['clientView', 'fldU8KvJ4SLgfizny', 'Client View Airtable (link)', 'l', 'W'],
+  ['scans360', 'fldK8sw1lwoJD6xuz', '360 scans', 'l', 'W'],
+  // ── billing & finance
+  ['billContact', 'fldeRykRWxL6L444w', 'Billing Contact', 'l', 'r'],
+  ['billEmail', 'fldELMrymRnUK54aB', 'Billing Email', 'l', 'r'],
+  ['billAddress', 'fld88qfGirkq0W23D', 'Billing Address', 'l', 'rW'],
+  ['billCountry', 'fldVRXxi0l79xEKRq', 'Billing Country', 't', 'r'],
+  ['billCountryCode', 'fldvX8Pa23hK7vis2', 'Billing Country Code', 's', 'r'],
+  ['billTerms', 'fld2OuvpjOQaGk7wb', 'Billing Terms', 's', 'r'],
+  ['paymentType', 'fldhXgjZSjgT3DzVm', 'Payment Type', 's', 'r'],
+  ['billMode', 'fldwvG1lgx4YuEgFN', 'Billing Mode', 's', 'r'],
+  ['propTypeBilling', 'fldm0LZsno3TgXTvi', 'Property Type Billing', 's', 'r'],
+  ['billTz', 'fldtDXlnvkOmPj6df', 'Billing Timezone (to GMT)', 'n', 'r'],
+  ['invoiceType', 'fldf3ct1YzsytEiPj', 'Invoice Type', 't', ''],
+  ['aggBilling', 'fldEsIy2XtgxFw7le', 'Aggregated Client Billing', 'c', ''],
+  ['aggPayout', 'fld4znISQEXyzGFuC', 'Aggregated CT Payout', 'c', ''],
+  ['arHold', 'fldNP1Foi7LNXPuVT', 'AR Hold?', 's', ''],
+  ['captureData', 'fldld6l5O8Xm3UgYY', 'Capture Data', 'n', ''],
+  ['audit', 'fldjbuJfySetRgl59', 'Audit', 's', ''],
+  ['revSid', 'fld2z8T31a30US4Xa', 'Rev - SFDC SID', 't', ''],
+  ['revSo', 'fldqLcW9e082OckE1', 'Rev - NS Sales Order', 't', ''],
+  ['revCard', 'fld6alSk2eZtMJhZt', 'Rev - Contract Rate Card', 't', ''],
+  ['revStatus', 'fldXjYFeDtTOlpCmF', 'Rev - Revenue Contract Status', 's', ''],
+  ['revReviewed', 'flduVqZ2Cxa6qRW5q', 'Rev - Reviewed by Revenue', 'c', ''],
+  ['notes', 'fldRyjZG1nb1GFmso', 'Notes', 'l', 'W'],
+  ['qaNotes', 'fld2js39bHQVgWIBS', 'QA Notes', 'm', 'W'],
+  // ── automation triggers (never in the intake form)
+  ['onboardingEmails', 'fld2BrMhoPW8FUvbW', 'Onboarding Emails', 's', ''],
+  ['fxRetrigger', 'fldX5z4hgOERrhiPa', 'Exchange Rate Script Retrigger', 'c', ''],
+  // ── system / computed (read-only)
+  ['fx', 'fldGuqEcCgtgOFcca', 'Exchange Rate (script)', 'f', ''],
+  ['shortLink', 'fldkM1rtlzNwg5MOp', 'Order link (short.io)', 'f', ''],
+  ['lastEmail', 'fldedWeoJ84OF6Eyq', 'Last usage email sent', 'f', ''],
+  ['onboardingStamp', 'fldKCmZtboSXuzr7o', 'Onboarding email sent', 'f', ''],
+  ['contractStatus', 'fldmw9RKo5ODsWKVN', 'Contract Status', 'f', ''],
+  ['commitStatus', 'fldvoUzgNexZH5gvh', 'Commit. Status', 'f', ''],
+  ['commitUsd', 'fldzERBYTdnTc0a0G', 'Commitment (USD)', 'f', ''],
+  ['doneUsd', 'fldEX5kS7DUO6ZO87', 'Completed to date (USD)', 'f', ''],
+  ['wipUsd', 'fld5uCimJEegWL2Jh', 'In flight (USD)', 'f', ''],
+  ['remainUsd', 'fldHeygx3dycgnTek', 'Remaining incl. in flight (USD)', 'f', ''],
+  ['pctUsed', 'fldoYppkLoqtoR0xw', '% of commitment used', 'f', ''],
+  ['pctTime', 'fld2Wkti4yHaMlq55', '% of term elapsed', 'f', ''],
+  ['utilization', 'fldUyKVSm8gTkeFz9', 'Utilization rate', 'f', ''],
+  ['priceCode', 'fldmajVaf4KNxGKOO', 'Price Type Code', 'f', ''],
+  ['dynForm', 'fldpqCka4NVPp1zGc', 'Dynamic Client Form', 'f', ''],
+  ['created', 'fldL6xJmrtbsUbzJj', 'Created', 'f', ''],
+  ['modified', 'fldw6e2PVBRJPUdTD', 'Last modified', 'f', ''],
+  ['jobsDone', 'fld6XQCIoiwyDE0Xz', 'Completed jobs', 'f', ''],
+  ['projMonth', 'fldpfFJnOX1omQuld', 'Projected fulfillment month', 'f', ''],
+  ['projUnused', 'fld1dkLDO2OPMY6U5', 'Projected unused balance', 'f', ''],
+  ['globalLink', 'fld2bDUL7CaUqLk3q', 'Jobs (GLOBAL)', 'f', ''],
+];
+const MONTH_IDS = ['fldwRRab5gqnujDHL', 'fldC61FexlkVzZNzK', 'fldcRfPVDSOpcZta0', 'fldlbMecWvHciFkmk', 'fldFXsit1i8tLWhnB', 'fld02z9jjvKvRqcS3',
+  'fldyoHrrG4sjyVD7O', 'fldplpyIRiQRKSjlY', 'fldZRYQ23AZFDLFFM', 'fldnAtBIgiOszEDU6', 'fldPjlazApeaqaWh1', 'fldMhPtD9gQhCI3aq'];
+
+const F = {};
+FDEF.forEach(([key, id, name, type, flags]) => { F[key] = { key, id, name, type, flags: flags || '' }; });
+
+/* Conditional rules: when a field is shown and when it is required. v(key) reads the form. */
+const STD_PRICE = ['Spec Ops On-Contract', 'Sales & Mkt', 'On-Contract', 'On-Contract JPY', 'Multi-Family Package', 'Multi-Family',
+  'Standard Pricing', 'Insurance (Major Loss)', 'General Property', 'On-Contract 2.0', 'On-Contract Spec Ops 2.0'];
+const hasAddOn = (v, re) => (v('addOns') || []).some(x => re.test(x));
+const RULES = {
+  commitment: { req: v => v('contractType') !== 'No Commitment' },
+  salesOrder: { show: v => /Payment Schedule/i.test(v('contractType') || '') },
+  customPriceName: { show: v => !!v('priceType') && !STD_PRICE.includes(v('priceType')), req: v => true },
+  ccAssigned: { show: v => v('keystone') === 'Keystone', req: v => true },
+  discEmea: { show: v => ['EMEA', 'GLOBAL'].includes(v('region')) },
+  discApac: { show: v => ['APAC', 'GLOBAL'].includes(v('region')) },
+  discNoram: { show: v => ['NORAM', 'GLOBAL'].includes(v('region')) },
+  specOpsMarkup: { show: v => !!v('specOps') || /Spec Ops/i.test(v('priceType') || ''), req: v => true },
+  photosScope: { show: v => hasAddOn(v, /photo/i), req: v => true },
+  photosNotes: { show: v => hasAddOn(v, /photo/i) },
+  photoCost: { show: v => hasAddOn(v, /photo/i), req: v => true },
+  photoMin: { show: v => hasAddOn(v, /photo/i) },
+  tagCost: { show: v => hasAddOn(v, /tag/i), req: v => true },
+  clientForm: { show: v => v('formType') === 'Custom', req: v => true },
+};
+
+const HINTS = {
+  name: 'Must match exactly what the order form sends. Renewals keep the name and add a number, e.g. “Acme (2)”.',
+  latestName: 'The name passed to the order form link.',
+  regionSigned: 'Sales alert emails only go out for US and SpecOps contracts.',
+  ssaDate: 'Contract start. Drives pacing, exchange rate and usage reports.',
+  fulfillDate: 'Capture period end. The contract shows as Expired after this date.',
+  commitment: 'In the contract currency. The USD value is calculated once the exchange-rate script runs.',
+  signedSSA: 'Order form, amendments, MSA or SOW. Files up to 5 MB can be attached here.',
+  priceType: 'Decides the price-code prefix used to find the price book.',
+  discount: 'As a fraction: 0.10 = 10% discount. Use 0 for none.',
+  formType: 'Creates the client’s order link automatically. “Deactivate” removes it.',
+  emailFrequency: 'How often the client gets the usage report. “NONE” = never.',
+  pocEmail: 'Receives the usage report.',
+  billTz: 'Hours from GMT, e.g. -5.',
+  offHours: 'Standard contract: 25% for jobs between 18:01 and 07:59 local time.',
+  travelFee: 'Standard contract: $2 per mile beyond 30 miles from an in-network city (US).',
+  billTerms: 'Standard is Net 30; larger enterprises often negotiate Net 45 or Net 60.',
+};
+
+/* Blocks: used by the intake wizard (steps) and the client page (sections). */
+const BLOCKS = [
+  { id: 'client', title: 'Client', lead: 'Who they are, where they operate and who looks after them.', groups: [
+    { title: 'Who is the client', keys: ['name', 'latestName', 'subClient', 'industry', 'spaceType'] },
+    { title: 'Where they operate', keys: ['region', 'regionSigned', 'captureRegions', 'keyCoordinator'] },
+    { title: 'Client contact', keys: ['pocName', 'pocEmail', 'ccEmail'] },
+    { title: 'Our team', keys: ['salesperson', 'salesDirector', 'salesLink', 'capservPoc', 'csm'] },
+  ] },
+  { id: 'contract', title: 'Contract', lead: 'What was signed, for how much and for how long.', groups: [
+    { title: 'Agreement', keys: ['contractType', 'ssaDate', 'fulfillDate', 'endDate', 'closeDate', 'amendment', 'signedSSA'] },
+    { title: 'Commitment', keys: ['commitment', 'currency', 'contractMin', 'po', 'salesOrder'] },
+    { title: 'Salesforce', keys: ['sfdcAccount', 'sfdcOpp', 'sfdcSid', 'wonOpp', 'renewalLink'] },
+    { title: 'Client emails', keys: ['emailAutomation', 'emailFrequency'] },
+  ] },
+  { id: 'pricing', title: 'Pricing', lead: 'Rate card, discounts, surcharges and add-ons from the order form exhibits.', groups: [
+    { title: 'Rate card', keys: ['pricing', 'priceType', 'customPriceName', 'contractRates', 'pricingContractType', 'pricebooks', 'keystone', 'ccAssigned'] },
+    { title: 'Discounts', keys: ['discount', 'discNoram', 'discEmea', 'discApac', 'varTier', 'specOps', 'specOpsMarkup', 'priceCheck'] },
+    { title: 'Surcharges and fees', keys: ['offHours', 'travelFee', 'stitch', 'blurFee', 'fee360'] },
+    { title: 'Add-ons', keys: ['addOns', 'photosScope', 'photoCost', 'photoMin', 'tagCost', 'photosNotes'] },
+    { title: 'Mid-contract price change', optional: true, keys: ['adjDiscount', 'adjDate', 'adjCode', 'adjFee'] },
+    { title: 'Notes', keys: ['pricingNotes'] },
+  ] },
+  { id: 'ordering', title: 'Ordering & capture', lead: 'How the client orders and what our technicians need to know.', groups: [
+    { title: 'Order form', keys: ['formType', 'clientForm', 'orderingType', 'jotformPrefill', 't1Booking', 'propertyId'] },
+    { title: 'Dispatch rules', keys: ['pro3', 'skipDistance', 'skipCt', 'nonStandard', 'snapshotCheck', 'csatOptOut'] },
+    { title: 'Scan requirements', keys: ['scanUse', 'scanReq', 'scanUse2', 'scanReq2'] },
+    { title: 'Quoting and job instructions', keys: ['quoting', 'details1', 'details2', 'details3', 'details4'] },
+    { title: 'Reference files', keys: ['fileReqs', 'fileFloor', 'fileOnsite', 'fileRequest', 'fileCt'] },
+  ] },
+  { id: 'delivery', title: 'Account & delivery', lead: 'Where finished models go and how they are named.', groups: [
+    { title: 'Matterport account', keys: ['mpEmail', 'mpName', 'mpSid', 'privacy'] },
+    { title: 'Model delivery', keys: ['deliveryFolder', 'deliveryEmails', 'namingSyntax', 'snapshots', 'scans360', 'clientView'] },
+  ] },
+  { id: 'billing', title: 'Billing & finance', lead: 'Who we invoice and on what terms.', groups: [
+    { title: 'Bill to', keys: ['billContact', 'billEmail', 'billCountry', 'billCountryCode', 'billAddress'] },
+    { title: 'Terms', keys: ['billTerms', 'paymentType', 'billMode', 'propTypeBilling', 'billTz', 'invoiceType', 'aggBilling', 'aggPayout', 'arHold'] },
+    { title: 'Finance review', optional: true, keys: ['captureData', 'audit', 'revSid', 'revSo', 'revCard', 'revStatus', 'revReviewed'] },
+    { title: 'Notes', keys: ['notes', 'qaNotes'] },
+  ] },
+];
+
+/* Fields fetched for the client list, board, home and reports. */
+const LIST_KEYS = ['name', 'latestName', 'region', 'industry', 'priceType', 'contractType', 'formType', 'salesperson', 'csm', 'capservPoc', 'keystone',
+  'commitment', 'currency', 'ssaDate', 'fulfillDate', 'endDate', 'contractStatus', 'commitStatus', 'commitUsd', 'doneUsd', 'wipUsd', 'remainUsd',
+  'pctUsed', 'pctTime', 'utilization', 'shortLink', 'created', 'jobsDone', 'sfdcAccount', 'billTerms', 'projUnused', 'pocEmail', 'emailFrequency'];
+
+/* Related tables (read-only in the CRM). */
+const JOB = { client: 'fldagC98UwHbbSzk1', id: 'fldRZHwLeDe8jZelG', status: 'flds2NoCBTYytQ1k4', scheduled: 'fldtl4vA0UIKFYHk6', requested: 'flduwHFaGse9JJlmM',
+  address: 'fldxVIO8Aj2MFZgAG', size: 'fldkTrlewQ0UP55Gi', usd: 'fldRyYFasD92GuPh9', ct: 'fldyfqbiIKtEUNhd8', model: 'fldZ27iWkdFVqd28T', city: 'fldlhB7xV60WFjJn1' };
+const OPP = { name: 'fldXd6r6PJta0MhQd', owner: 'fldyzohJZZHS2VZe4', stage: 'fldFK1tSzUhtxm8PP', usd: 'fldC3mIbE3M7qVlau', close: 'fldNWGeGR4Yu4UOUC',
+  accountId: 'fldNDiyr1YNaiBIKd', account: 'fld1VT0hundb3aPrF', oppId: 'fldg9X0Qm1SGYWU2n', forecast: 'fldTme0GjIbN3OrfL', start: 'fld3OwetMMV7zjAKI',
+  end: 'fld7G0aMNMO9JTXlM', deal: 'fldlHPHWVJL1RgwLr', next: 'fldR01IvfnZhM5oSW', nextName: 'fldLr34Q87Fb7WAJ3', billEmail: 'fldieGhJEL12ANzyQ',
+  street: 'fldlNmbFAMuLIhe1N', city: 'fldYnDxip9FoujvM7', country: 'fldCzIslbjWvSIZbp', state: 'fld1CiaanLbNEkiNa', zip: 'fld6cgPDhFcs44FQB',
+  discount: 'fld0gsghUXUUgfKLs', currency: 'fld1pRTgAruk9YoDR', industry: 'flddufsu0DbavNMD3', sid: 'fld65f3Gt1PKIsBgY', wonAt: 'fldov9zZdm2jktIin',
+  clientLink: 'fldGJsb4pjnEni1Qe' };
+
+/* ───────── utilities ───────── */
+const $ = (s, r = document) => r.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function h(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else if (k === 'style' && typeof v === 'object') Object.assign(e.style, v);
+    else if (k === 'value' || k === 'checked' || k === 'disabled' || k === 'selected') e[k] = v;
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) { if (c == null || c === false) continue; e.append(c.nodeType ? c : document.createTextNode(String(c))); }
+  return e;
+}
+/* replaceChildren that accepts nested arrays and skips empty values, like h() does */
+const _replace = Element.prototype.replaceChildren;
+Element.prototype.replaceChildren = function (...kids) { return _replace.apply(this, kids.flat(Infinity).filter(k => k != null && k !== false)); };
+const isBlank = v => v == null || v === '' || (Array.isArray(v) && !v.length);
+const num = v => (typeof v === 'number' && isFinite(v)) ? v : (Array.isArray(v) ? num(v[0]) : 0);
+const money = (v, cur = 'USD', digits = 0) => {
+  if (v == null || v === '' || !isFinite(v)) return '—';
+  try { return new Intl.NumberFormat('en-US', { style: 'currency', currency: cur, maximumFractionDigits: digits, minimumFractionDigits: digits }).format(v); }
+  catch { return Number(v).toLocaleString('en-US') + ' ' + cur; }
+};
+const compact = v => (v == null || !isFinite(v)) ? '—' : '$' + new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(v);
+const pct = v => (v == null || v === '' || !isFinite(v)) ? '—' : Math.round(v * 100) + '%';
+const parseDate = v => { if (!v) return null; const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(v) ? v + 'T00:00:00' : v); return isNaN(d) ? null : d; };
+const fmtDate = v => { const d = parseDate(v); return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '—'; };
+const fmtDateTime = v => { const d = parseDate(v); return d ? d.toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '—'; };
+const daysUntil = v => { const d = parseDate(v); if (!d) return null; const t = new Date(); t.setHours(0, 0, 0, 0); return Math.round((d - t) / 864e5); };
+const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+const b64 = buf => { let s = ''; const u = new Uint8Array(buf); for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+function toast(msg, kind = 'ok', ms = 4200) {
+  const t = h('div', { class: 'toast ' + kind, role: 'status' }, msg);
+  $('#toasts').append(t); setTimeout(() => t.remove(), ms);
+}
+function modal({ title, body, actions, wide }) {
+  return new Promise(resolve => {
+    const close = v => { back.remove(); document.removeEventListener('keydown', onKey); resolve(v); };
+    const onKey = e => { if (e.key === 'Escape') close(null); };
+    const box = h('div', { class: 'modal' + (wide ? ' wide' : ''), role: 'dialog', 'aria-modal': 'true', 'aria-label': title },
+      h('h2', null, title), h('div', { class: 'modal-body' }, body),
+      h('div', { class: 'modal-actions' }, (actions || [{ label: 'Close', value: null }]).map(a =>
+        h('button', { class: 'btn ' + (a.kind || ''), id: a.id, disabled: a.disabled, onclick: () => close(typeof a.value === 'function' ? a.value() : a.value) }, a.label))));
+    const back = h('div', { class: 'backdrop', onmousedown: e => { if (e.target === back) close(null); } }, box);
+    document.body.append(back); document.addEventListener('keydown', onKey);
+    (box.querySelector('input,textarea,select') || box.querySelector('button'))?.focus();
+  });
+}
+const confirmBox = (title, text, okLabel = 'Confirm', kind = 'primary') =>
+  modal({ title, body: h('p', null, text), actions: [{ label: 'Cancel', value: false }, { label: okLabel, value: true, kind }] });
+
+function downloadCsv(name, rows) {
+  const esc = v => { const s = v == null ? '' : String(v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  const blob = new Blob(['﻿' + rows.map(r => r.map(esc).join(',')).join('\n')], { type: 'text/csv' });
+  const a = h('a', { href: URL.createObjectURL(blob), download: name }); document.body.append(a); a.click(); a.remove();
+}
+
+/* ───────── state ───────── */
+const S = { token: null, user: null, meta: {}, clients: [], clientsLoaded: false, opps: null, linkNames: {}, canWrite: true };
+
+/* ───────── Airtable API (throttled to stay under 5 requests/second) ───────── */
+const Q = []; let busy = 0, nextSlot = 0;
+function api(url, opt = {}) { return new Promise((res, rej) => { Q.push({ url, opt, res, rej, tries: 0 }); pump(); }); }
+async function pump() {
+  if (busy >= 3 || !Q.length) return;
+  busy++; const job = Q.shift();
+  const start = Math.max(Date.now(), nextSlot); nextSlot = start + 230;
+  await sleep(start - Date.now());
+  try {
+    const r = await fetch(job.url, { method: job.opt.method || 'GET', body: job.opt.body ? JSON.stringify(job.opt.body) : undefined,
+      headers: { Authorization: 'Bearer ' + (job.opt.token || S.token), ...(job.opt.body ? { 'Content-Type': 'application/json' } : {}) } });
+    if (r.status === 429 && job.tries < 3) { job.tries++; toast('Airtable is rate-limiting; retrying in 30 seconds…', 'warn', 8000); await sleep(31000); Q.unshift(job); }
+    else {
+      const txt = await r.text(); let data = null; try { data = txt ? JSON.parse(txt) : null; } catch { /* not json */ }
+      if (r.ok) job.res(data);
+      else { const er = data && data.error; const e = new Error((er && (er.message || er.type || er)) || r.statusText || 'Request failed'); e.status = r.status; e.type = er && er.type; job.rej(e); }
+    }
+  } catch (e) { e.network = true; job.rej(e); }
+  finally { busy--; pump(); }
+}
+const API = 'https://api.airtable.com/v0/';
+const tblUrl = t => API + CFG.base + '/' + t;
+async function listAll(table, { fields, formula, sort, max = 20000, onPage } = {}) {
+  const out = []; let offset;
+  do {
+    const p = new URLSearchParams({ pageSize: '100', returnFieldsByFieldId: 'true' });
+    (fields || []).forEach(f => p.append('fields[]', f));
+    if (formula) p.set('filterByFormula', formula);
+    (sort || []).forEach((s, i) => { p.set(`sort[${i}][field]`, s[0]); p.set(`sort[${i}][direction]`, s[1] || 'asc'); });
+    if (offset) p.set('offset', offset);
+    const d = await api(tblUrl(table) + '?' + p);
+    out.push(...d.records); offset = d.offset; onPage && onPage(out.length);
+  } while (offset && out.length < max);
+  return out;
+}
+const getRec = (table, id) => api(`${tblUrl(table)}/${id}?returnFieldsByFieldId=true`);
+const createRec = (table, fields) => api(tblUrl(table), { method: 'POST', body: { fields, returnFieldsByFieldId: true } });
+const updateRec = (table, id, fields) => api(`${tblUrl(table)}/${id}`, { method: 'PATCH', body: { fields, returnFieldsByFieldId: true } });
+const deleteRec = (table, id) => api(`${tblUrl(table)}/${id}`, { method: 'DELETE' });
+async function uploadFile(recId, fieldId, file) {
+  if (file.size > 5 * 1024 * 1024) throw new Error(file.name + ' is over 5 MB — attach it in Airtable instead.');
+  return api(`https://content.airtable.com/v0/${CFG.base}/${recId}/${fieldId}/uploadAttachment`,
+    { method: 'POST', body: { contentType: file.type || 'application/octet-stream', filename: file.name, file: b64(await file.arrayBuffer()) } });
+}
+function explain(e) {
+  if (e.status === 401) return 'Your Airtable token was rejected. Sign in again.';
+  if (e.status === 403) return 'Your Airtable access does not allow this. Check your base permission and the token scopes.';
+  if (e.status === 404) return 'Not found in Airtable — it may have been deleted, or the token cannot see this base.';
+  if (e.status === 422) return 'Airtable rejected the value: ' + e.message;
+  if (e.network) return 'Could not reach Airtable. Check your connection.';
+  return e.message || 'Something went wrong.';
+}
+
+/* ───────── sign-in: token kept in this tab, or encrypted on the device behind a password ───────── */
+const VAULT = 'cscrm.vault', SESSION = 'cscrm.session';
+async function deriveKey(pass, salt) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 310000, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function saveVault(token, pass) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await deriveKey(pass, salt), new TextEncoder().encode(token));
+  localStorage.setItem(VAULT, JSON.stringify({ s: b64(salt), i: b64(iv), c: b64(ct) }));
+}
+async function openVault(pass) {
+  const v = JSON.parse(localStorage.getItem(VAULT));
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(v.i) }, await deriveKey(pass, unb64(v.s)), unb64(v.c));
+  return new TextDecoder().decode(pt);
+}
+const hasVault = () => { try { return !!localStorage.getItem(VAULT); } catch { return false; } };
+async function connect(token) {
+  const who = await api(API + 'meta/whoami', { token });
+  let meta;
+  try { meta = await api(`${API}meta/bases/${CFG.base}/tables`, { token }); }
+  catch (e) {
+    if (e.status === 403 || e.status === 404) throw new Error('This token cannot open the Capture Services customer base. Add the base to the token and include the “schema.bases:read” scope.');
+    throw e;
+  }
+  S.token = token; S.user = who; S.meta = {};
+  for (const t of meta.tables) { const m = { id: t.id, name: t.name, primary: t.primaryFieldId, f: {} }; t.fields.forEach(f => { m.f[f.id] = f; }); S.meta[t.id] = m; }
+  if (!S.meta[CFG.t.clients]) throw new Error('The client table was not found in this base.');
+  S.canWrite = !who.scopes || who.scopes.includes('data.records:write');
+  try { sessionStorage.setItem(SESSION, token); } catch { /* private mode */ }
+}
+function signOut(forget) {
+  S.token = null; S.user = null; S.clients = []; S.clientsLoaded = false; S.opps = null;
+  try { sessionStorage.removeItem(SESSION); localStorage.removeItem('cscrm.draft'); if (forget) localStorage.removeItem(VAULT); } catch { /* ignore */ }
+  location.hash = ''; renderGate();
+}
+
+/* ───────── schema helpers ───────── */
+const cm = () => S.meta[CFG.t.clients];
+const fmeta = key => cm().f[F[key].id];
+const label = key => (fmeta(key) && fmeta(key).name) || F[key].name;
+const choices = key => ((fmeta(key) && fmeta(key).options && fmeta(key).options.choices) || []).map(c => c.name).filter(n => n && n.trim());
+const val = (rec, key) => rec.fields[F[key].id];
+const exists = key => !!fmeta(key);
+const linkedTable = key => fmeta(key) && fmeta(key).options && fmeta(key).options.linkedTableId;
+const str = v => v == null ? '' : Array.isArray(v) ? v.map(str).join(', ') : typeof v === 'object' ? (v.name || v.email || v.filename || '') : String(v);
+
+/* ───────── client store + derived CRM fields ───────── */
+function derive(rec) {
+  const g = k => val(rec, k);
+  const expired = /expired/i.test(str(g('contractStatus')));
+  const deactivated = g('formType') === 'Deactivate';
+  const commit = num(g('commitUsd')), remain = num(g('remainUsd'));
+  const left = daysUntil(g('fulfillDate'));
+  const util = g('utilization'); const hasUtil = typeof util === 'number' && isFinite(util);
+  const remPct = commit > 0 ? remain / commit : null;
+  let stage;
+  if (deactivated) stage = 'Deactivated';
+  else if (expired) stage = 'Expired';
+  else if (!g('ssaDate') || !g('shortLink')) stage = 'Setting up';
+  else if ((left != null && left <= 90) || (remPct != null && remPct <= 0.2)) stage = 'Renewal window';
+  else if (hasUtil && util < 0.95) stage = 'Behind pace';
+  else stage = 'On track';
+  rec.x = { status: deactivated ? 'Deactivated' : expired ? 'Expired' : 'Active', stage, left, remPct, commit, remain, done: num(g('doneUsd')), wip: num(g('wipUsd')),
+    pace: !hasUtil ? null : util > 1.05 ? 'Ahead' : util >= 0.95 ? 'On track' : 'Behind', name: str(g('name')) };
+  return rec;
+}
+const STAGES = ['Setting up', 'On track', 'Behind pace', 'Renewal window', 'Expired', 'Deactivated'];
+const listFieldIds = () => LIST_KEYS.filter(exists).map(k => F[k].id).concat(MONTH_IDS.filter(id => cm().f[id]));
+async function loadClients(onProgress) {
+  const recs = await listAll(CFG.t.clients, { fields: listFieldIds(), onPage: onProgress });
+  S.clients = recs.map(derive).sort((a, b) => a.x.name.localeCompare(b.x.name)); S.clientsLoaded = true;
+}
+function upsertClient(rec) {
+  derive(rec); const i = S.clients.findIndex(c => c.id === rec.id);
+  if (i >= 0) S.clients[i] = rec; else S.clients.push(rec);
+  S.clients.sort((a, b) => a.x.name.localeCompare(b.x.name));
+}
+async function loadOpps() {
+  if (S.opps) return S.opps;
+  const m = S.meta[CFG.t.opps]; if (!m) return (S.opps = []);
+  const ids = Object.values(OPP).filter(id => m.f[id]);
+  S.opps = await listAll(CFG.t.opps, { fields: ids, sort: m.f[OPP.close] ? [[OPP.close, 'desc']] : null, max: 3000 });
+  return S.opps;
+}
+async function linkName(tableId, recId) {
+  const k = tableId + recId; if (S.linkNames[k]) return S.linkNames[k];
+  const m = S.meta[tableId]; if (!m) return recId;
+  try { const r = await getRec(tableId, recId); return (S.linkNames[k] = str(r.fields[m.primary]) || recId); } catch { return recId; }
+}
+async function linkOptions(tableId) {
+  const k = 'opts' + tableId; if (S.linkNames[k]) return S.linkNames[k];
+  const m = S.meta[tableId]; if (!m) return [];
+  const recs = await listAll(tableId, { fields: [m.primary], max: 3000 });
+  const out = recs.map(r => ({ id: r.id, name: str(r.fields[m.primary]) || r.id })).sort((a, b) => a.name.localeCompare(b.name));
+  out.forEach(o => { S.linkNames[tableId + o.id] = o.name; });
+  return (S.linkNames[k] = out);
+}
+
+/* ───────── field display ───────── */
+function showValue(key, v, rec) {
+  const t = F[key].type;
+  if (t === 'c') return h('span', { class: 'check ' + (v ? 'on' : '') }, v ? 'Yes' : 'No');
+  if (isBlank(v)) return h('span', { class: 'muted' }, '—');
+  if (t === 'a') return h('div', { class: 'files' }, v.map(a => h('a', { class: 'file', href: a.url, target: '_blank', rel: 'noopener' }, a.filename, h('small', null, a.size ? ' · ' + Math.max(1, Math.round(a.size / 1024)) + ' KB' : ''))));
+  if (t === 'k') {
+    const tid = linkedTable(key); const wrap = h('span', { class: 'chips' });
+    v.forEach(id => { const c = h('span', { class: 'chip' }, '…'); wrap.append(c); linkName(tid, id).then(n => { c.textContent = n; }); });
+    return wrap;
+  }
+  if (t === 'S' || Array.isArray(v)) return h('span', { class: 'chips' }, [].concat(v).map(x => h('span', { class: 'chip' }, str(x))));
+  if (t === 's') return h('span', { class: 'chip' }, str(v));
+  if (t === 'd') return fmtDate(v);
+  if (t === 'D') return fmtDateTime(v);
+  if (t === '$') return money(v, key === 'commitment' && rec ? (str(val(rec, 'currency')) || 'USD') : 'USD', 2);
+  if (t === 'l' || t === 'm') { const s = str(v); return /^https?:\/\/\S+$/.test(s.trim()) ? h('a', { href: s.trim(), target: '_blank', rel: 'noopener' }, s.trim()) : h('div', { class: 'longtext' }, s); }
+  if (t === 'f') {
+    if (/Usd$/.test(key) || key === 'projUnused') return money(num(v), 'USD');
+    if (key === 'pctUsed' || key === 'pctTime' || key === 'utilization') return pct(num(v));
+    if (key === 'created' || key === 'modified' || key === 'lastEmail' || key === 'onboardingStamp') return fmtDateTime(v);
+    const s = str(v); return /^https?:\/\//.test(s) ? h('a', { href: s, target: '_blank', rel: 'noopener' }, s.length > 60 ? s.slice(0, 60) + '…' : s) : s;
+  }
+  return str(v);
+}
+
+/* ───────── field editors ─────────
+   editor(key, value, onChange) → { el, get, files? }. get() returns the Airtable-ready value. */
+function editor(key, value, onChange, opts = {}) {
+  const t = F[key].type, id = 'f_' + key; let el, get, files;
+  const fire = () => onChange && onChange(key, get());
+  if (t === 'c') { const i = h('input', { type: 'checkbox', id, checked: !!value, onchange: fire }); el = h('label', { class: 'switch' }, i, h('span', null, 'Yes')); get = () => i.checked; }
+  else if (t === 's') {
+    const opt = choices(key); if (value && !opt.includes(value)) opt.unshift(value);
+    el = h('select', { id, onchange: fire }, h('option', { value: '' }, '— select —'), opt.map(o => h('option', { value: o, selected: o === value }, o)));
+    get = () => el.value || null;
+  }
+  else if (t === 'S') {
+    const opt = choices(key); const cur = new Set(value || []); (value || []).forEach(v => { if (!opt.includes(v)) opt.push(v); });
+    el = h('div', { class: 'multi', id, role: 'group' }, opt.map(o => { const i = h('input', { type: 'checkbox', checked: cur.has(o), onchange: () => { i.checked ? cur.add(o) : cur.delete(o); fire(); } }); return h('label', { class: 'pillbox' }, i, h('span', null, o)); }));
+    get = () => opt.filter(o => cur.has(o));
+  }
+  else if (t === 'l' || t === 'm') { el = h('textarea', { id, rows: t === 'm' ? 4 : 2, oninput: fire }); el.value = str(value); get = () => el.value.trim() ? el.value : null; }
+  else if (t === 'n' || t === '$' || t === 'p') { el = h('input', { type: 'number', step: 'any', id, value: value ?? '', oninput: fire, inputmode: 'decimal' }); get = () => el.value === '' ? null : Number(el.value); }
+  else if (t === 'd') { el = h('input', { type: 'date', id, value: value || '', onchange: fire }); get = () => el.value || null; }
+  else if (t === 'D') {
+    const d = parseDate(value); const loc = d ? new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 16) : '';
+    el = h('input', { type: 'datetime-local', id, value: loc, onchange: fire }); get = () => el.value ? new Date(el.value).toISOString() : null;
+  }
+  else if (t === 'a') {
+    let keep = (value || []).filter(a => a.id); files = opts.files || [];
+    const list = h('div', { class: 'files edit' });
+    const paint = () => { list.replaceChildren(
+      ...keep.map(a => h('span', { class: 'file' }, a.filename, h('button', { type: 'button', class: 'x', title: 'Remove', onclick: () => { keep = keep.filter(k => k !== a); paint(); fire(); } }, '×'))),
+      ...files.map(f => h('span', { class: 'file new' }, f.name, h('small', null, ' · new'), h('button', { type: 'button', class: 'x', title: 'Remove', onclick: () => { files.splice(files.indexOf(f), 1); paint(); fire(); } }, '×')))); };
+    const inp = h('input', { type: 'file', multiple: true, id, onchange: () => { for (const f of inp.files) { if (f.size > 5 * 1024 * 1024) toast(f.name + ' is over 5 MB — attach it in Airtable instead.', 'warn'); else files.push(f); } inp.value = ''; paint(); fire(); } });
+    paint(); el = h('div', null, list, inp);
+    get = () => keep.map(a => ({ id: a.id }));
+    return { el, get, files: () => files, count: () => keep.length + files.length };
+  }
+  else if (t === 'k') {
+    let cur = [...(value || [])]; const tid = linkedTable(key);
+    const chipsEl = h('span', { class: 'chips' }), sel = h('select', { id }, h('option', { value: '' }, 'Loading…'));
+    const paint = () => chipsEl.replaceChildren(...cur.map(rid => { const c = h('span', { class: 'chip' }, '…', h('button', { type: 'button', class: 'x', onclick: () => { cur = cur.filter(x => x !== rid); paint(); fire(); } }, '×')); linkName(tid, rid).then(n => { c.firstChild.textContent = n + ' '; }); return c; }));
+    linkOptions(tid).then(o => { sel.replaceChildren(h('option', { value: '' }, '+ add…'), ...o.map(x => h('option', { value: x.id }, x.name))); }).catch(() => { sel.replaceChildren(h('option', { value: '' }, 'Not available')); });
+    sel.addEventListener('change', () => { if (sel.value && !cur.includes(sel.value)) { cur.push(sel.value); paint(); fire(); } sel.value = ''; });
+    paint(); el = h('div', { class: 'linkpick' }, chipsEl, sel); get = () => cur;
+  }
+  else { el = h('input', { type: t === 'e' ? 'email' : 'text', id, value: str(value), oninput: fire, autocomplete: 'off' }); get = () => { const s = el.value.trim(); return s === '' ? null : s; }; }
+  return { el, get };
+}
+
+/* Rules evaluated against a value getter. */
+const isShown = (key, v) => !(RULES[key] && RULES[key].show) || RULES[key].show(v);
+const isRequired = (key, v) => {
+  const fl = F[key].flags; if (!isShown(key, v)) return false;
+  if (fl.includes('r')) return true;
+  if (fl.includes('c') && RULES[key] && RULES[key].req) return RULES[key].req(v);
+  return false;
+};
+const isEditable = key => exists(key) && F[key].type !== 'f' && !F[key].flags.includes('R');
+
+/* ───────── sign-in gate ───────── */
+function renderGate(msg) {
+  document.body.classList.add('gated');
+  const app = $('#app'); const vault = hasVault();
+  const err = h('p', { class: 'error', role: 'alert' }, msg || '');
+  const busyBtn = (b, on, txt) => { b.disabled = on; b.textContent = on ? 'Checking…' : txt; };
+  const start = async (token, btn, txt, before) => {
+    busyBtn(btn, true, txt); err.textContent = '';
+    try { await connect(token); if (before) await before(); renderShell(); return true; }
+    catch (e) { err.textContent = e.status === 401 ? 'Airtable did not accept that token.' : explain(e); busyBtn(btn, false, txt); return false; }
+  };
+  let form;
+  if (vault) {
+    const pw = h('input', { type: 'password', id: 'pw', autocomplete: 'current-password', required: true });
+    const btn = h('button', { class: 'btn primary block', type: 'submit' }, 'Unlock');
+    form = h('form', { onsubmit: async e => { e.preventDefault(); let token; try { token = await openVault(pw.value); } catch { err.textContent = 'Wrong password.'; return; } await start(token, btn, 'Unlock'); } },
+      h('label', { for: 'pw' }, 'Password'), pw, btn, err,
+      h('button', { type: 'button', class: 'link', onclick: () => { try { localStorage.removeItem(VAULT); } catch { /* ignore */ } renderGate(); } }, 'Forget this device and sign in with a token'));
+  } else {
+    const tok = h('input', { type: 'password', id: 'tok', autocomplete: 'off', required: true, placeholder: 'pat…' });
+    const remember = h('input', { type: 'checkbox', id: 'remember' });
+    const p1 = h('input', { type: 'password', id: 'p1', autocomplete: 'new-password', minlength: 8 }), p2 = h('input', { type: 'password', id: 'p2', autocomplete: 'new-password', minlength: 8 });
+    const pwBox = h('div', { class: 'pwbox', hidden: true }, h('label', { for: 'p1' }, 'Choose a password (8+ characters)'), p1, h('label', { for: 'p2' }, 'Repeat password'), p2,
+      h('p', { class: 'hint' }, 'Your token is stored encrypted in this browser. Next time you only type this password.'));
+    remember.addEventListener('change', () => { pwBox.hidden = !remember.checked; });
+    const btn = h('button', { class: 'btn primary block', type: 'submit' }, 'Sign in');
+    form = h('form', { onsubmit: async e => {
+      e.preventDefault(); const token = tok.value.trim();
+      if (remember.checked) { if (p1.value.length < 8) { err.textContent = 'Password needs at least 8 characters.'; return; } if (p1.value !== p2.value) { err.textContent = 'Passwords do not match.'; return; } }
+      await start(token, btn, 'Sign in', remember.checked ? () => saveVault(token, p1.value) : null);
+    } },
+      h('label', { for: 'tok' }, 'Airtable personal access token'), tok,
+      h('label', { class: 'inline' }, remember, ' Remember me on this device with a password'), pwBox, btn, err,
+      h('details', null, h('summary', null, 'How do I get a token?'),
+        h('ol', null,
+          h('li', null, 'Open ', h('a', { href: 'https://airtable.com/create/tokens', target: '_blank', rel: 'noopener' }, 'airtable.com/create/tokens'), ' and create a token.'),
+          h('li', null, 'Scopes: data.records:read, data.records:write, schema.bases:read. Optional: data.recordComments:read and :write for notes, user.email:read to show your name.'),
+          h('li', null, 'Access: add the Capture Services customer base.'),
+          h('li', null, 'Paste the token here. It never leaves your browser except to talk to Airtable.'))));
+  }
+  app.replaceChildren(h('div', { class: 'gate' }, h('div', { class: 'gate-card' },
+    h('div', { class: 'brand big' }, h('span', { class: 'dot' }), 'Capture Services CRM'),
+    h('p', { class: 'lead' }, vault ? 'Enter your password to unlock.' : 'For Capture Services Airtable users. Sign in with your own Airtable token — what you can see and edit is whatever Airtable allows you.'),
+    form)));
+  (form.querySelector('input'))?.focus();
+}
+
+/* ───────── shell + router ───────── */
+const NAV = [['home', 'Home'], ['clients', 'Clients'], ['opps', 'Opportunities'], ['reports', 'Reports']];
+function renderShell() {
+  document.body.classList.remove('gated');
+  const results = h('div', { class: 'results', hidden: true });
+  const search = h('input', { type: 'search', id: 'gsearch', placeholder: 'Find a client…  ( / )', autocomplete: 'off', 'aria-label': 'Find a client',
+    oninput: () => {
+      const q = search.value.trim().toLowerCase(); if (!q) { results.hidden = true; return; }
+      const hits = S.clients.filter(c => c.x.name.toLowerCase().includes(q)).slice(0, 8);
+      results.replaceChildren(...(hits.length ? hits.map(c => h('a', { href: '#/clients/' + c.id, onclick: () => { results.hidden = true; search.value = ''; } }, c.x.name, h('span', { class: 'pill s-' + c.x.status }, c.x.status))) : [h('span', { class: 'muted pad' }, 'No client matches')]));
+      results.hidden = false;
+    }, onkeydown: e => { if (e.key === 'Enter') { const a = results.querySelector('a'); if (a) a.click(); } if (e.key === 'Escape') { results.hidden = true; search.blur(); } },
+    onblur: () => setTimeout(() => { results.hidden = true; }, 200) });
+  const who = (S.user && (S.user.email || S.user.id)) || 'Signed in';
+  const menu = h('details', { class: 'usermenu' }, h('summary', null, who),
+    h('div', { class: 'menu' },
+      h('button', { onclick: async () => { menu.open = false; await refreshData(); } }, 'Refresh data'),
+      hasVault() ? h('button', { onclick: () => { try { sessionStorage.removeItem(SESSION); } catch { /* ignore */ } S.token = null; renderGate(); } }, 'Lock') : null,
+      h('button', { onclick: () => signOut(true) }, 'Sign out')));
+  $('#app').replaceChildren(
+    h('header', { class: 'top' },
+      h('a', { class: 'brand', href: '#/home' }, h('span', { class: 'dot' }), 'Capture Services CRM'),
+      h('nav', { 'aria-label': 'Main' }, NAV.map(([k, t]) => h('a', { href: '#/' + k, 'data-nav': k }, t))),
+      h('div', { class: 'searchwrap' }, search, results),
+      h('a', { class: 'btn primary', href: '#/new' }, '+ New client'), menu),
+    h('main', { id: 'view', tabindex: '-1' }));
+  if (!location.hash || location.hash === '#') location.hash = '#/home';
+  route();
+}
+async function refreshData() {
+  S.clientsLoaded = false; S.opps = null; S.linkNames = {}; route();
+}
+async function ensureClients(view) {
+  if (S.clientsLoaded) return true;
+  const bar = h('div', { class: 'loading' }, 'Loading clients from Airtable…');
+  view.replaceChildren(bar);
+  try { await loadClients(n => { bar.textContent = `Loading clients from Airtable… ${n}`; }); return true; }
+  catch (e) { if (e.status === 401) { signOut(false); renderGate(explain(e)); return false; } view.replaceChildren(errorBox(e, route)); return false; }
+}
+const errorBox = (e, retry) => h('div', { class: 'card errorcard' }, h('h2', null, 'Could not load'), h('p', null, explain(e)), retry ? h('button', { class: 'btn', onclick: retry }, 'Try again') : null);
+let routeSeq = 0;
+async function route() {
+  if (!S.token) return;
+  const seq = ++routeSeq; const view = $('#view'); if (!view) return;
+  const parts = location.hash.replace(/^#\/?/, '').split('/'); const page = parts[0] || 'home';
+  document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === page || (page === 'new' && a.dataset.nav === 'clients')));
+  if (!(await ensureClients(view)) || seq !== routeSeq) return;
+  window.scrollTo(0, 0);
+  try {
+    if (page === 'home') viewHome(view);
+    else if (page === 'clients' && parts[1]) await viewClient(view, parts[1], parts[2]);
+    else if (page === 'clients') viewClients(view);
+    else if (page === 'new') await viewWizard(view, parts[1], parts[2]);
+    else if (page === 'opps') await viewOpps(view);
+    else if (page === 'reports') viewReports(view);
+    else viewHome(view);
+  } catch (e) { console.error(e); if (e.status === 401) { signOut(false); renderGate(explain(e)); } else view.replaceChildren(errorBox(e, route)); }
+}
+window.addEventListener('hashchange', route);
+document.addEventListener('keydown', e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { const s = $('#gsearch'); if (s) { e.preventDefault(); s.focus(); } } });
+
+/* ───────── small components ───────── */
+const pill = (text, cls) => h('span', { class: 'pill ' + (cls || '') }, text);
+const stagePill = c => pill(c.x.stage, 'st-' + c.x.stage.replace(/\s+/g, ''));
+function paceBar(c) {
+  const used = Math.max(0, Math.min(1, num(val(c, 'pctUsed')))), time = Math.max(0, Math.min(1, num(val(c, 'pctTime'))));
+  return h('div', { class: 'pace', title: `${pct(used)} of commitment used · ${pct(time)} of term elapsed` },
+    h('div', { class: 'track' }, h('div', { class: 'fill ' + (c.x.pace === 'Behind' ? 'bad' : c.x.pace === 'Ahead' ? 'good' : ''), style: { width: (used * 100) + '%' } }), h('div', { class: 'tick', style: { left: (time * 100) + '%' } })),
+    h('span', null, pct(used)));
+}
+const kpi = (labelText, value, sub, href) => h(href ? 'a' : 'div', { class: 'kpi', href }, h('span', { class: 'k' }, labelText), h('strong', null, value), sub ? h('small', null, sub) : null);
+function barList(rows, { fmt = v => v, max, href } = {}) {
+  const m = max || Math.max(1, ...rows.map(r => r[1]));
+  return h('div', { class: 'bars' }, rows.length ? rows.map(r => h('div', { class: 'bar-row' },
+    h('span', { class: 'bl', title: r[0] }, r[0]), h('div', { class: 'bt' }, h('div', { class: 'bf', style: { width: Math.max(1, (r[1] / m) * 100) + '%' } }),
+      r[2] != null ? h('div', { class: 'bf two', style: { width: Math.max(0, (r[2] / m) * 100) + '%' } }) : null), h('span', { class: 'bv' }, fmt(r[1])))) : h('p', { class: 'muted' }, 'Nothing to show.'));
+}
+function colChart(rows, fmt = v => v) {
+  const m = Math.max(1, ...rows.map(r => r[1]));
+  return h('div', { class: 'cols', role: 'img', 'aria-label': rows.map(r => r[0] + ' ' + fmt(r[1])).join(', ') }, rows.map(r => h('div', { class: 'col', title: r[0] + ': ' + fmt(r[1]) },
+    h('span', { class: 'cv' }, r[1] ? fmt(r[1]) : ''), h('div', { class: 'cb', style: { height: Math.max(2, (r[1] / m) * 100) + '%' } }), h('span', { class: 'cl' }, r[0]))));
+}
+const clientLink = c => h('a', { href: '#/clients/' + c.id }, c.x.name);
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const active = () => S.clients.filter(c => c.x.status === 'Active');
+const sum = (arr, f) => arr.reduce((a, c) => a + (f(c) || 0), 0);
+
+/* ───────── home ───────── */
+function viewHome(view) {
+  const act = active();
+  const expiring = act.filter(c => c.x.left != null && c.x.left >= 0 && c.x.left <= 90).sort((a, b) => a.x.left - b.x.left);
+  const low = act.filter(c => c.x.remPct != null && c.x.remPct <= 0.2 && c.x.commit > 0).sort((a, b) => a.x.remPct - b.x.remPct);
+  const behind = act.filter(c => c.x.pace === 'Behind' && c.x.commit > 0).sort((a, b) => b.x.remain - a.x.remain);
+  const setup = act.filter(c => c.x.stage === 'Setting up');
+  const recent = [...S.clients].filter(c => val(c, 'created')).sort((a, b) => String(val(b, 'created')).localeCompare(String(val(a, 'created')))).slice(0, 6);
+  const list = (title, rows, right, empty, more) => h('section', { class: 'card' }, h('h2', null, title, h('span', { class: 'count' }, rows.length)),
+    rows.length ? h('ul', { class: 'rowlist' }, rows.slice(0, 7).map(c => h('li', null, clientLink(c), h('span', { class: 'r' }, right(c))))) : h('p', { class: 'muted' }, empty),
+    rows.length > 7 ? h('a', { class: 'more', href: more || '#/clients' }, `View all ${rows.length}`) : null);
+  const months = MONTHS.map((m, i) => [m, sum(S.clients, c => num(c.fields[MONTH_IDS[i]]))]);
+  view.replaceChildren(
+    h('div', { class: 'pagehead' }, h('h1', null, 'Home'), h('p', { class: 'muted' }, `${S.clients.length} client contracts · ${act.length} active`)),
+    h('div', { class: 'kpis' },
+      kpi('Active contracts', act.length, null, '#/clients'),
+      kpi('Active commitment', compact(sum(act, c => c.x.commit)), 'USD'),
+      kpi('Used to date', compact(sum(act, c => c.x.done)), pct(sum(act, c => c.x.done) / Math.max(1, sum(act, c => c.x.commit))) + ' of commitment'),
+      kpi('In flight', compact(sum(act, c => c.x.wip)), 'scheduled + in progress'),
+      kpi('Expiring in 90 days', expiring.length, compact(sum(expiring, c => Math.max(0, c.x.remain))) + ' unused'),
+      kpi('Behind pace', behind.length, compact(sum(behind, c => Math.max(0, c.x.remain))) + ' at risk')),
+    h('div', { class: 'grid2' },
+      list('Expiring in the next 90 days', expiring, c => `${c.x.left} day${c.x.left === 1 ? '' : 's'} · ${compact(Math.max(0, c.x.remain))} left`, 'No contract ends in the next 90 days.'),
+      list('Commitment nearly used (≤ 20% left)', low, c => c.x.remPct <= 0 ? 'Fully used · renew' : `${pct(c.x.remPct)} left · renew`, 'No client is close to its commitment.'),
+      list('Behind pace', behind, c => `${pct(num(val(c, 'pctUsed')))} used at ${pct(num(val(c, 'pctTime')))} of term`, 'Everyone with a commitment is on pace.'),
+      list('Setup incomplete', setup, c => !val(c, 'ssaDate') ? 'No signed date' : 'No order link', 'Every active client has a signed date and an order link.')),
+    h('div', { class: 'grid2' },
+      h('section', { class: 'card' }, h('h2', null, 'Completed revenue by month (USD, this year)'), colChart(months, compact)),
+      h('section', { class: 'card' }, h('h2', null, 'Recently added'), h('ul', { class: 'rowlist' }, recent.map(c => h('li', null, clientLink(c), h('span', { class: 'r' }, fmtDate(val(c, 'created')))))))));
+}
+
+/* ───────── clients: table + board ───────── */
+const CV = { q: '', status: 'Active', mode: 'table', sort: 'name', dir: 1, limit: 100, f: {} };
+const FILTER_KEYS = ['region', 'industry', 'priceType', 'contractType', 'salesperson', 'csm'];
+const COLS = [
+  ['name', 'Client', c => c.x.name.toLowerCase(), c => h('div', null, clientLink(c), val(c, 'industry') ? h('small', { class: 'muted block' }, str(val(c, 'industry'))) : null)],
+  ['stage', 'Stage', c => STAGES.indexOf(c.x.stage), c => stagePill(c)],
+  ['region', 'Region', c => str(val(c, 'region')), c => str(val(c, 'region')) || '—'],
+  ['sales', 'Salesperson', c => str(val(c, 'salesperson')), c => str(val(c, 'salesperson')) || '—'],
+  ['commit', 'Commitment', c => c.x.commit, c => c.x.commit ? money(c.x.commit) : '—', 'num'],
+  ['used', 'Used', c => num(val(c, 'pctUsed')), c => c.x.commit ? paceBar(c) : h('span', { class: 'muted' }, '—')],
+  ['remain', 'Remaining', c => c.x.remain, c => c.x.commit ? money(c.x.remain) : '—', 'num'],
+  ['end', 'Ends', c => str(val(c, 'fulfillDate')) || '9999', c => h('span', null, fmtDate(val(c, 'fulfillDate')), c.x.status === 'Active' && c.x.left != null && c.x.left <= 90 && c.x.left >= 0 ? h('small', { class: 'warn block' }, c.x.left + ' days') : null)],
+];
+function filteredClients() {
+  const q = CV.q.trim().toLowerCase();
+  return S.clients.filter(c => (CV.status === 'All' || c.x.status === CV.status)
+    && (!q || c.x.name.toLowerCase().includes(q) || str(val(c, 'salesperson')).toLowerCase().includes(q) || str(val(c, 'sfdcAccount')).toLowerCase().includes(q))
+    && FILTER_KEYS.every(k => !CV.f[k] || str(val(c, k)) === CV.f[k]));
+}
+function viewClients(view) {
+  const body = h('div');
+  const counts = { Active: 0, Expired: 0, Deactivated: 0 }; S.clients.forEach(c => { counts[c.x.status]++; });
+  const paint = () => {
+    const rows = filteredClients();
+    const col = COLS.find(c => c[0] === CV.sort) || COLS[0];
+    rows.sort((a, b) => { const x = col[2](a), y = col[2](b); return (x > y ? 1 : x < y ? -1 : 0) * CV.dir; });
+    summary.textContent = `${rows.length} client${rows.length === 1 ? '' : 's'} · ${money(sum(rows, c => c.x.commit))} committed · ${money(sum(rows, c => c.x.remain))} remaining`;
+    if (CV.mode === 'board') {
+      const stages = STAGES.filter(s => CV.status === 'All' || (CV.status === 'Active' ? !['Expired', 'Deactivated'].includes(s) : s === CV.status));
+      body.replaceChildren(h('div', { class: 'board' }, stages.map(s => { const cs = rows.filter(c => c.x.stage === s);
+        return h('section', { class: 'lane' }, h('h3', null, s, h('span', { class: 'count' }, cs.length), h('small', null, compact(sum(cs, c => c.x.commit)))),
+          cs.slice(0, 40).map(c => h('a', { class: 'kard', href: '#/clients/' + c.id }, h('strong', null, c.x.name), h('span', { class: 'muted' }, [str(val(c, 'region')), str(val(c, 'salesperson'))].filter(Boolean).join(' · ')),
+            c.x.commit ? paceBar(c) : null, h('span', { class: 'kfoot' }, c.x.commit ? money(c.x.commit) : 'No commitment', c.x.left != null && c.x.status === 'Active' ? h('em', { class: c.x.left <= 90 ? 'warn' : '' }, c.x.left + 'd left') : null))),
+          cs.length > 40 ? h('p', { class: 'muted pad' }, `+ ${cs.length - 40} more — switch to the table to see all`) : null); })));
+      return;
+    }
+    const shown = rows.slice(0, CV.limit);
+    body.replaceChildren(h('div', { class: 'tablewrap' }, h('table', { class: 'grid' },
+      h('thead', null, h('tr', null, COLS.map(c => h('th', { class: c[4] || '', 'aria-sort': CV.sort === c[0] ? (CV.dir > 0 ? 'ascending' : 'descending') : null },
+        h('button', { onclick: () => { if (CV.sort === c[0]) CV.dir *= -1; else { CV.sort = c[0]; CV.dir = 1; } paint(); } }, c[1], CV.sort === c[0] ? (CV.dir > 0 ? ' ▲' : ' ▼') : ''))))),
+      h('tbody', null, shown.map(c => h('tr', { onclick: e => { if (!e.target.closest('a')) location.hash = '#/clients/' + c.id; } }, COLS.map(col2 => h('td', { class: col2[4] || '' }, col2[3](c)))))))),
+      !rows.length ? h('p', { class: 'empty' }, 'No clients match these filters.') : null,
+      rows.length > shown.length ? h('button', { class: 'btn block', onclick: () => { CV.limit += 200; paint(); } }, `Show more (${rows.length - shown.length} hidden)`) : null);
+  };
+  const summary = h('p', { class: 'muted summary' });
+  const seg = (items, cur, set) => h('div', { class: 'seg', role: 'group' }, items.map(([v, t]) => h('button', { class: cur() === v ? 'on' : '', onclick: e => { set(v); e.currentTarget.parentNode.querySelectorAll('button').forEach(b => b.classList.remove('on')); e.currentTarget.classList.add('on'); CV.limit = 100; paint(); } }, t)));
+  const filterSel = k => { const vals = [...new Set(S.clients.map(c => str(val(c, k))).filter(Boolean))].sort();
+    return h('select', { 'aria-label': label(k), onchange: e => { CV.f[k] = e.target.value; CV.limit = 100; paint(); } }, h('option', { value: '' }, label(k) + ': all'), vals.map(v => h('option', { value: v, selected: CV.f[k] === v }, v))); };
+  view.replaceChildren(
+    h('div', { class: 'pagehead' }, h('h1', null, 'Clients'),
+      h('div', { class: 'actions' },
+        h('button', { class: 'btn', onclick: () => { const rows = filteredClients(); const keys = LIST_KEYS.filter(exists);
+          downloadCsv('capture-services-clients.csv', [keys.map(label).concat('Stage'), ...rows.map(c => keys.map(k => str(val(c, k))).concat(c.x.stage))]); } }, 'Export CSV'),
+        h('a', { class: 'btn primary', href: '#/new' }, '+ New client'))),
+    h('div', { class: 'toolbar' },
+      h('input', { type: 'search', placeholder: 'Search name, salesperson, SFDC account…', value: CV.q, 'aria-label': 'Search clients', oninput: e => { CV.q = e.target.value; CV.limit = 100; paint(); } }),
+      seg([['Active', `Active ${counts.Active}`], ['Expired', `Expired ${counts.Expired}`], ['Deactivated', `Deactivated ${counts.Deactivated}`], ['All', 'All']], () => CV.status, v => { CV.status = v; }),
+      seg([['table', 'Table'], ['board', 'Board']], () => CV.mode, v => { CV.mode = v; })),
+    h('div', { class: 'toolbar filters' }, FILTER_KEYS.filter(exists).map(filterSel),
+      h('button', { class: 'link', onclick: () => { CV.f = {}; CV.q = ''; viewClients(view); } }, 'Clear filters')),
+    summary, body);
+  paint();
+}
+
+/* ───────── client page ───────── */
+function fieldRow(key, node, { required, hint, error } = {}) {
+  return h('div', { class: 'field' + (F[key].flags.includes('W') ? ' wide' : '') + (error ? ' invalid' : ''), 'data-key': key },
+    h('label', { for: 'f_' + key }, label(key), required ? h('span', { class: 'req', title: 'Required' }, ' *') : null),
+    node, hint ? h('small', { class: 'hint' }, hint) : null, error ? h('small', { class: 'err' }, error) : null);
+}
+async function viewClient(view, id, tab) {
+  view.replaceChildren(h('div', { class: 'loading' }, 'Loading client…'));
+  let rec;
+  try { rec = await getRec(CFG.t.clients, id); } catch (e) { view.replaceChildren(errorBox(e, route)); return; }
+  derive(rec); upsertClient({ ...rec, fields: { ...rec.fields } });
+  const g = k => val(rec, k); const cur = str(g('currency')) || 'USD';
+  const tabs = [['overview', 'Overview'], ['jobs', 'Jobs'], ['opps', 'Opportunities'], ['notes', 'Notes'], ['files', 'Files']];
+  tab = tabs.some(t => t[0] === tab) ? tab : 'overview';
+  const panel = h('div', { class: 'tabpanel' });
+  const jobCount = Array.isArray(g('globalLink')) ? g('globalLink').length : 0;
+
+  const head = h('div', { class: 'clienthead' },
+    h('div', null, h('a', { class: 'crumb', href: '#/clients' }, '← Clients'),
+      h('h1', null, rec.x.name, ' ', pill(rec.x.status, 's-' + rec.x.status), ' ', stagePill(rec)),
+      h('p', { class: 'muted' }, [str(g('industry')), str(g('region')), str(g('priceType')), str(g('contractType'))].filter(Boolean).join(' · '))),
+    h('div', { class: 'actions' },
+      g('shortLink') ? h('button', { class: 'btn', onclick: async () => { try { await navigator.clipboard.writeText(str(g('shortLink'))); toast('Order link copied'); } catch { toast(str(g('shortLink'))); } } }, 'Copy order link') : null,
+      h('a', { class: 'btn', href: CFG.airtableUrl + rec.id, target: '_blank', rel: 'noopener' }, 'Open in Airtable'),
+      h('a', { class: 'btn', href: '#/new/renew/' + rec.id }, 'Renew / new contract'),
+      h('button', { class: 'btn danger', onclick: () => deleteClient(rec, jobCount) }, 'Delete')));
+
+  const usedP = Math.max(0, Math.min(1, num(g('pctUsed')))), timeP = Math.max(0, Math.min(1, num(g('pctTime'))));
+  const highlights = h('div', { class: 'kpis' },
+    kpi('Commitment', isBlank(g('commitment')) ? '—' : money(g('commitment'), cur), cur !== 'USD' && rec.x.commit ? money(rec.x.commit) + ' USD' : str(g('commitStatus'))),
+    kpi('Used to date', money(rec.x.done), pct(usedP) + ' of commitment'),
+    kpi('In flight', money(rec.x.wip), 'scheduled + in progress'),
+    kpi('Remaining', money(rec.x.remain), 'including in-flight jobs'),
+    kpi('Term', rec.x.left == null ? '—' : rec.x.left >= 0 ? rec.x.left + ' days left' : 'Ended', `${fmtDate(g('ssaDate'))} → ${fmtDate(g('fulfillDate'))}`),
+    kpi('Pacing', rec.x.pace || '—', rec.x.commit ? `${pct(usedP)} used at ${pct(timeP)} of term` : 'No commitment'));
+  const pace = rec.x.commit ? h('div', { class: 'card pacecard' },
+    h('div', { class: 'dual' }, h('span', null, 'Commitment used'), h('div', { class: 'track' }, h('div', { class: 'fill ' + (rec.x.pace === 'Behind' ? 'bad' : rec.x.pace === 'Ahead' ? 'good' : ''), style: { width: usedP * 100 + '%' } })), h('b', null, pct(usedP))),
+    h('div', { class: 'dual' }, h('span', null, 'Term elapsed'), h('div', { class: 'track' }, h('div', { class: 'fill time', style: { width: timeP * 100 + '%' } })), h('b', null, pct(timeP))),
+    rec.x.pace === 'Behind' && num(g('projUnused')) > 0 ? h('p', { class: 'warn' }, `At this pace about ${money(num(g('projUnused')))} will be unused at the end of the term.`) : null,
+    rec.x.pace === 'Ahead' && str(g('projMonth')) ? h('p', { class: 'muted' }, `At this pace the commitment is used up around ${str(g('projMonth'))} — a renewal conversation is due before then.`) : null) : null;
+
+  const tabbar = h('div', { class: 'tabs', role: 'tablist' }, tabs.map(([k, t]) => h('a', { href: `#/clients/${id}/${k}`, role: 'tab', class: k === tab ? 'on' : '' }, t, k === 'jobs' && jobCount ? h('span', { class: 'count' }, jobCount) : null)));
+  view.replaceChildren(head, highlights, pace, tabbar, panel);
+
+  if (tab === 'overview') overviewTab(panel, rec);
+  else if (tab === 'jobs') jobsTab(panel, rec);
+  else if (tab === 'opps') await oppsTab(panel, rec);
+  else if (tab === 'notes') await notesTab(panel, rec);
+  else filesTab(panel, rec);
+}
+function overviewTab(panel, rec) {
+  const v = k => val(rec, k);
+  const section = block => {
+    const card = h('section', { class: 'card section' });
+    const read = () => {
+      card.replaceChildren(h('div', { class: 'sechead' }, h('h2', null, block.title), S.canWrite ? h('button', { class: 'btn small', onclick: edit }, 'Edit') : null),
+        block.groups.map(gp => { const keys = gp.keys.filter(k => exists(k) && (isShown(k, v) || !isBlank(v(k))));
+          return keys.length ? h('div', { class: 'group' }, h('h3', null, gp.title), h('div', { class: 'fields' }, keys.map(k => h('div', { class: 'field ro' + (F[k].flags.includes('W') ? ' wide' : '') }, h('span', { class: 'lbl' }, label(k)), h('div', { class: 'val' }, showValue(k, v(k), rec)))))) : null; }));
+    };
+    const edit = () => {
+      const draft = {}; const eds = {}; const dirty = new Set(); const efiles = {};
+      block.groups.forEach(gp => gp.keys.filter(isEditable).forEach(k => { draft[k] = v(k); }));
+      const dv = k => (k in draft ? draft[k] : v(k));
+      const paint = () => {
+        card.replaceChildren(h('div', { class: 'sechead' }, h('h2', null, block.title),
+          h('div', { class: 'actions' }, h('button', { class: 'btn small', onclick: read }, 'Cancel'), h('button', { class: 'btn small primary', onclick: save }, 'Save'))),
+          block.groups.map(gp => { const keys = gp.keys.filter(k => exists(k) && (isShown(k, dv) || !isBlank(dv(k))));
+            return keys.length ? h('div', { class: 'group' }, h('h3', null, gp.title), h('div', { class: 'fields' }, keys.map(k => {
+              if (!isEditable(k)) return h('div', { class: 'field ro' }, h('span', { class: 'lbl' }, label(k)), h('div', { class: 'val' }, showValue(k, v(k), rec)));
+              eds[k] = editor(k, draft[k], (key, value) => { draft[key] = F[key].type === 'a' ? (v(key) || []).filter(a => value.some(x => x.id === a.id)) : value; dirty.add(key); if (DRIVERS.includes(key)) paint(); }, { files: (efiles[k] = efiles[k] || []) });
+              return fieldRow(k, eds[k].el, { hint: HINTS[k] }); }))) : null; }));
+      };
+      const save = async () => {
+        const fields = {}; const uploads = [];
+        for (const k of Object.keys(eds)) {
+          if (!dirty.has(k) || !isShown(k, dv)) continue;
+          const nv = F[k].type === 'a' ? eds[k].get() : draft[k];
+          if (F[k].type === 'a') { if (!same(nv, (v(k) || []).map(a => ({ id: a.id })))) fields[F[k].id] = nv; eds[k].files().forEach(f => uploads.push([k, f])); continue; }
+          const ov = F[k].type === 'c' ? !!v(k) : (isBlank(v(k)) ? null : v(k)); const cmp = isBlank(nv) ? null : nv;
+          if (!same(cmp, ov)) fields[F[k].id] = F[k].type === 'S' || F[k].type === 'k' ? (nv || []) : nv;
+        }
+        if (F.name.id in fields && isBlank(fields[F.name.id])) { toast('The client name cannot be empty.', 'bad'); return; }
+        if (!Object.keys(fields).length && !uploads.length) { read(); return; }
+        card.classList.add('saving');
+        try {
+          let out = rec;
+          if (Object.keys(fields).length) out = await updateRec(CFG.t.clients, rec.id, fields);
+          for (const [k, f] of uploads) await uploadFile(rec.id, F[k].id, f);
+          if (uploads.length) out = await getRec(CFG.t.clients, rec.id);
+          toast('Saved'); rec.fields = out.fields; derive(rec); upsertClient({ id: rec.id, fields: { ...rec.fields } }); route();
+        } catch (e) { toast(explain(e), 'bad', 7000); card.classList.remove('saving'); }
+      };
+      paint();
+    };
+    read(); return card;
+  };
+  const sysKeys = ['contractStatus', 'commitStatus', 'priceCode', 'fx', 'shortLink', 'dynForm', 'lastEmail', 'onboardingStamp', 'jobsDone', 'created', 'modified'].filter(exists);
+  const act = async (title, text, fields) => { if (!(await confirmBox(title, text, 'Yes, do it'))) return; try { await updateRec(CFG.t.clients, rec.id, fields); toast('Done'); route(); } catch (e) { toast(explain(e), 'bad', 7000); } };
+  const onboardChoice = exists('onboardingEmails') ? choices('onboardingEmails')[0] : null;
+  const system = h('section', { class: 'card section' }, h('div', { class: 'sechead' }, h('h2', null, 'System & automations')),
+    h('div', { class: 'group' }, h('h3', null, 'Calculated by Airtable'), h('div', { class: 'fields' }, sysKeys.map(k => h('div', { class: 'field ro' }, h('span', { class: 'lbl' }, label(k)), h('div', { class: 'val' }, showValue(k, v(k), rec)))))),
+    S.canWrite ? h('div', { class: 'group' }, h('h3', null, 'Actions'), h('div', { class: 'actions left' },
+      onboardChoice ? h('button', { class: 'btn', disabled: !v('shortLink'), title: v('shortLink') ? '' : 'Needs an order link first',
+        onclick: () => act('Send the onboarding email?', `This emails the onboarding message for ${rec.x.name} to the client contact straight away.`, { [F.onboardingEmails.id]: onboardChoice }) }, 'Send onboarding email') : null,
+      exists('fxRetrigger') ? h('button', { class: 'btn', onclick: () => act('Re-run the exchange rate?', 'This asks the Airtable script to recalculate the USD commitment for this client.', { [F.fxRetrigger.id]: true }) }, 'Re-run exchange rate') : null)) : null);
+  panel.replaceChildren(...BLOCKS.map(section), system);
+}
+function jobsTab(panel, rec) {
+  const m = S.meta[CFG.t.jobs]; if (!m) { panel.replaceChildren(h('p', { class: 'empty' }, 'Your token cannot read the jobs table.')); return; }
+  panel.replaceChildren(h('div', { class: 'loading' }, 'Loading jobs…'));
+  const ids = Object.entries(JOB).filter(([k, id]) => k !== 'client' && m.f[id]).map(x => x[1]);
+  const clientField = m.f[JOB.client] ? m.f[JOB.client].name : 'MP Client';
+  listAll(CFG.t.jobs, { fields: ids, formula: `{${clientField}}="${rec.x.name.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`, sort: m.f[JOB.requested] ? [[JOB.requested, 'desc']] : null, max: 500 }).then(jobs => {
+    const by = {}; jobs.forEach(j => { const s = str(j.fields[JOB.status]) || '—'; by[s] = (by[s] || 0) + 1; });
+    panel.replaceChildren(
+      h('p', { class: 'muted summary' }, jobs.length ? `${jobs.length}${jobs.length >= 500 ? '+' : ''} most recent jobs · ` + Object.entries(by).sort((a, b) => b[1] - a[1]).map(([s, n]) => `${n} ${s}`).join(' · ') : ''),
+      jobs.length ? h('div', { class: 'tablewrap' }, h('table', { class: 'grid' }, h('thead', null, h('tr', null, ['Job', 'Status', 'Requested', 'Scheduled', 'Address', 'Size', 'USD', 'Technician', ''].map(t => h('th', null, t)))),
+        h('tbody', null, jobs.map(j => { const f = j.fields; return h('tr', null, h('td', null, str(f[JOB.id]) || j.id), h('td', null, pill(str(f[JOB.status]) || '—')), h('td', null, fmtDate(f[JOB.requested])), h('td', null, fmtDate(f[JOB.scheduled])),
+          h('td', null, str(f[JOB.address]) || str(f[JOB.city]) || '—'), h('td', { class: 'num' }, f[JOB.size] != null ? Number(f[JOB.size]).toLocaleString('en-US') : '—'), h('td', { class: 'num' }, typeof f[JOB.usd] === 'number' ? money(f[JOB.usd]) : '—'),
+          h('td', null, str(f[JOB.ct]) || '—'), h('td', null, /^https?:/.test(str(f[JOB.model])) ? h('a', { href: str(f[JOB.model]), target: '_blank', rel: 'noopener' }, 'Model') : '')); })))) : h('p', { class: 'empty' }, 'No jobs found for this client name.'));
+  }).catch(e => panel.replaceChildren(errorBox(e)));
+}
+const oppStage = o => str(o.fields[OPP.stage]);
+function oppTable(opps, action) {
+  return h('div', { class: 'tablewrap' }, h('table', { class: 'grid' }, h('thead', null, h('tr', null, ['Opportunity', 'Account', 'Owner', 'Stage', 'Commitment (USD)', 'Close date', ''].map(t => h('th', null, t)))),
+    h('tbody', null, opps.map(o => { const f = o.fields; return h('tr', null, h('td', null, str(f[OPP.name]) || o.id, f[OPP.deal] ? h('small', { class: 'muted block' }, str(f[OPP.deal])) : null), h('td', null, str(f[OPP.account]) || '—'), h('td', null, str(f[OPP.owner]) || '—'),
+      h('td', null, pill(oppStage(o) || '—', /won/i.test(oppStage(o)) ? 's-Active' : /lost/i.test(oppStage(o)) ? 's-Expired' : '')), h('td', { class: 'num' }, typeof f[OPP.usd] === 'number' ? money(f[OPP.usd]) : '—'), h('td', null, fmtDate(f[OPP.close])), h('td', null, action ? action(o) : '')); }))));
+}
+async function oppsTab(panel, rec) {
+  panel.replaceChildren(h('div', { class: 'loading' }, 'Loading opportunities…'));
+  const opps = await loadOpps(); const acct = str(val(rec, 'sfdcAccount')).trim(); const linked = new Set(val(rec, 'wonOpp') || []);
+  const mine = opps.filter(o => linked.has(o.id) || (acct && str(o.fields[OPP.accountId]).trim() === acct));
+  panel.replaceChildren(mine.length ? oppTable(mine) : h('p', { class: 'empty' }, acct ? 'No Salesforce opportunities for this account ID.' : 'Add the SFDC Account ID on the Contract section to see this client’s opportunities.'));
+}
+async function notesTab(panel, rec) {
+  panel.replaceChildren(h('div', { class: 'loading' }, 'Loading notes…'));
+  const url = `${tblUrl(CFG.t.clients)}/${rec.id}/comments`;
+  let data;
+  try { data = await api(url + '?pageSize=100'); }
+  catch (e) { panel.replaceChildren(h('p', { class: 'empty' }, e.status === 403 ? 'Notes use Airtable record comments. Add the “data.recordComments:read” and “:write” scopes to your token to use them.' : explain(e))); return; }
+  const ta = h('textarea', { rows: 3, placeholder: 'Log a call, a decision or a follow-up…', 'aria-label': 'New note' });
+  const list = h('ul', { class: 'notes' });
+  const paint = cs => list.replaceChildren(...(cs.length ? cs.map(c => h('li', null, h('div', { class: 'meta' }, h('b', null, (c.author && (c.author.name || c.author.email)) || 'Someone'), ' · ', fmtDateTime(c.createdTime)), h('div', { class: 'longtext' }, c.text))) : [h('li', { class: 'muted' }, 'No notes yet.')]));
+  const cs = [...(data.comments || [])].sort((a, b) => String(b.createdTime).localeCompare(String(a.createdTime))); paint(cs);
+  panel.replaceChildren(h('section', { class: 'card' }, h('h2', null, 'Notes'), h('p', { class: 'muted' }, 'Saved as comments on the Airtable record, so the whole team sees them there too.'), ta,
+    h('div', { class: 'actions left' }, h('button', { class: 'btn primary', onclick: async e => { const text = ta.value.trim(); if (!text) return; e.target.disabled = true;
+      try { const c = await api(url, { method: 'POST', body: { text } }); cs.unshift(c); paint(cs); ta.value = ''; } catch (er) { toast(explain(er), 'bad'); } e.target.disabled = false; } }, 'Add note')), list));
+}
+function filesTab(panel, rec) {
+  const keys = Object.keys(F).filter(k => F[k].type === 'a' && exists(k));
+  panel.replaceChildren(h('section', { class: 'card' }, h('h2', null, 'Contract documents and reference files'),
+    h('p', { class: 'muted' }, 'A contract is usually an order form plus later amendments that extend the term or add commitment. Edit a section on the Overview tab to add or remove files.'),
+    keys.map(k => h('div', { class: 'group' }, h('h3', null, label(k)), showValue(k, val(rec, k), rec)))));
+}
+async function deleteClient(rec, jobCount) {
+  const inp = h('input', { type: 'text', 'aria-label': 'Type the client name to confirm', autocomplete: 'off' });
+  const ok = await modal({ title: 'Delete this client permanently?', body: h('div', null,
+    h('p', null, `This removes “${rec.x.name}” from Airtable for everyone.`, jobCount ? ` Its ${jobCount} linked job${jobCount === 1 ? '' : 's'} will lose their client link and drop out of this client’s usage totals.` : ''),
+    h('p', null, 'If the contract simply ended, set Form Type to “Deactivate” instead — that keeps the history.'),
+    h('label', null, 'Type the client name to confirm'), inp),
+    actions: [{ label: 'Cancel', value: false }, { label: 'Delete permanently', kind: 'danger', value: () => inp.value.trim() === rec.x.name.trim() ? true : 'mismatch' }] });
+  if (ok === 'mismatch') { toast('The name did not match — nothing was deleted.', 'warn'); return; }
+  if (!ok) return;
+  try { await deleteRec(CFG.t.clients, rec.id); S.clients = S.clients.filter(c => c.id !== rec.id); toast('Client deleted'); location.hash = '#/clients'; }
+  catch (e) { toast(explain(e), 'bad', 7000); }
+}
+
+/* ───────── intake wizard (new client · renewal · from opportunity) ───────── */
+const DRIVERS = ['contractType', 'priceType', 'keystone', 'region', 'specOps', 'addOns', 'formType'];
+const RESET_ON_RENEW = ['ssaDate', 'fulfillDate', 'endDate', 'closeDate', 'commitment', 'po', 'salesOrder', 'sfdcOpp', 'wonOpp', 'amendment', 'adjDiscount', 'adjDate', 'adjCode', 'adjFee', 'revSid', 'revSo', 'revCard', 'revStatus', 'revReviewed', 'audit'];
+let W = null;
+const wizardKeys = () => BLOCKS.flatMap(b => b.groups.flatMap(g => g.keys)).filter(isEditable);
+function nextName(name) { const m = /^(.*?)\s*\((\d+)\)\s*$/.exec(name || ''); return m ? `${m[1]} (${Number(m[2]) + 1})` : `${name} (2)`; }
+function fromOpp(o) {
+  const f = o.fields, v = {}, pre = []; const set = (k, x) => { if (!isBlank(x) && exists(k)) { v[k] = x; pre.push(k); } };
+  const name = str(f[OPP.nextName]) || str(f[OPP.account]) || str(f[OPP.name]);
+  set('name', name.trim()); set('latestName', name.trim());
+  set('ssaDate', f[OPP.start]); set('fulfillDate', f[OPP.end]); set('endDate', f[OPP.end]); set('closeDate', f[OPP.wonAt]);
+  set('sfdcAccount', str(f[OPP.accountId])); set('sfdcOpp', str(f[OPP.oppId])); set('wonOpp', [o.id]); set('mpSid', str(f[OPP.sid]));
+  set('billEmail', str(f[OPP.billEmail])); set('billCountry', str(f[OPP.country]));
+  set('billAddress', [str(f[OPP.street]), [str(f[OPP.city]), str(f[OPP.state]), str(f[OPP.zip])].filter(Boolean).join(', '), str(f[OPP.country])].filter(Boolean).join('\n'));
+  const cur = str(f[OPP.currency]); if (cur && choices('currency').includes(cur)) set('currency', cur);
+  if (typeof f[OPP.usd] === 'number' && (!cur || cur === 'USD')) { set('commitment', f[OPP.usd]); if (!v.currency && choices('currency').includes('USD')) set('currency', 'USD'); }
+  if (typeof f[OPP.discount] === 'number') set('discount', f[OPP.discount]);
+  const owner = str(f[OPP.owner]); if (choices('salesperson').includes(owner)) set('salesperson', owner);
+  const ind = str(f[OPP.industry]); if (choices('industry').includes(ind)) set('industry', ind);
+  return { vals: v, pre, source: `Salesforce opportunity “${str(f[OPP.name])}”` };
+}
+async function viewWizard(view, mode, id) {
+  if (!S.canWrite) { view.replaceChildren(h('p', { class: 'empty' }, 'Your token is read-only, so you cannot create clients.')); return; }
+  const tag = (mode || 'blank') + ':' + (id || '');
+  if (!W || W.tag !== tag) {
+    W = { tag, vals: {}, files: {}, step: 0, pre: new Set(), source: null, touched: false };
+    if (mode === 'renew' && id) {
+      const rec = await getRec(CFG.t.clients, id);
+      wizardKeys().forEach(k => { const x = val(rec, k); if (!isBlank(x) && F[k].type !== 'a' && !RESET_ON_RENEW.includes(k)) { W.vals[k] = x; W.pre.add(k); } });
+      W.vals.name = nextName(str(val(rec, 'name'))); W.source = `a copy of ${str(val(rec, 'name'))} — contract dates, commitment and documents were cleared`;
+    } else if (mode === 'opp' && id) {
+      const o = (await loadOpps()).find(x => x.id === id); if (o) { const p = fromOpp(o); W.vals = p.vals; W.pre = new Set(p.pre); W.source = p.source; }
+    } else {
+      try { const d = JSON.parse(localStorage.getItem('cscrm.draft') || 'null'); if (d && d.vals && Object.keys(d.vals).length) { W.vals = d.vals; W.step = d.step || 0; W.source = 'your unsaved draft on this device'; } } catch { /* ignore */ }
+    }
+  }
+  const gv = k => W.vals[k];
+  const stepKeys = b => b.groups.flatMap(g => g.keys).filter(k => isEditable(k) && isShown(k, gv));
+  const missing = b => stepKeys(b).filter(k => isRequired(k, gv) && (F[k].type === 'c' ? false : isBlank(W.vals[k])));
+  const saveDraft = () => { W.touched = true; if (W.tag === 'blank:') try { localStorage.setItem('cscrm.draft', JSON.stringify({ vals: W.vals, step: W.step })); } catch { /* ignore */ } };
+  const dupe = () => { const n = str(W.vals.name).trim().toLowerCase(); return n && S.clients.some(c => c.x.name.trim().toLowerCase() === n); };
+  const main = h('div', { class: 'wizmain' }), side = h('ol', { class: 'steps' });
+  const go = i => { W.step = Math.max(0, Math.min(BLOCKS.length, i)); saveDraft(); paint(); window.scrollTo(0, 0); main.querySelector('input,select,textarea')?.focus({ preventScroll: true }); };
+
+  const paintSide = () => side.replaceChildren(...BLOCKS.map((b, i) => { const m = missing(b).length;
+    return h('li', { class: (i === W.step ? 'on ' : '') + (m ? '' : 'done') }, h('button', { onclick: () => go(i) }, h('span', { class: 'n' }, m ? i + 1 : '✓'), h('span', null, b.title, h('small', null, m ? `${m} required left` : 'Complete')))); }),
+    h('li', { class: W.step === BLOCKS.length ? 'on' : '' }, h('button', { onclick: () => go(BLOCKS.length) }, h('span', { class: 'n' }, BLOCKS.length + 1), h('span', null, 'Review & create', h('small', null, 'Check and save')))));
+
+  const paintStep = (showErrors) => {
+    const b = BLOCKS[W.step];
+    main.replaceChildren(h('div', { class: 'card section' }, h('h2', null, `${W.step + 1}. ${b.title}`), h('p', { class: 'muted' }, b.lead),
+      b.groups.map(gp => { const keys = gp.keys.filter(k => isEditable(k) && isShown(k, gv)); if (!keys.length) return null;
+        const body = h('div', { class: 'fields' }, keys.map(k => {
+          if (F[k].type === 'a' && !W.files[k]) W.files[k] = [];
+          const ed = editor(k, W.vals[k], (key, value) => { if (F[key].type !== 'a') { if (isBlank(value) && F[key].type !== 'c') delete W.vals[key]; else W.vals[key] = value; } W.pre.delete(key); saveDraft(); paintSide();
+            const row = main.querySelector(`[data-key="${key}"]`); if (row) { row.classList.remove('invalid', 'prefilled'); row.querySelector('.err')?.remove(); }
+            if (DRIVERS.includes(key)) paintStep(false); }, { files: W.files[k] });
+          const req = isRequired(k, gv); const miss = showErrors && req && F[k].type !== 'c' && isBlank(W.vals[k]);
+          const row = fieldRow(k, ed.el, { required: req, hint: (W.pre.has(k) ? 'Pre-filled — please check. ' : '') + (HINTS[k] || '') + (k === 'name' && dupe() ? ' A client with this exact name already exists.' : ''), error: miss ? 'Required' : null });
+          if (W.pre.has(k)) row.classList.add('prefilled'); return row; }));
+        return gp.optional ? h('details', { class: 'group', open: keys.some(k => !isBlank(W.vals[k])) }, h('summary', null, gp.title, h('small', null, ' — only if it applies')), body) : h('div', { class: 'group' }, h('h3', null, gp.title), body); }),
+      h('div', { class: 'wiznav' }, W.step > 0 ? h('button', { class: 'btn', onclick: () => go(W.step - 1) }, '← Back') : h('span'),
+        h('button', { class: 'btn primary', onclick: () => { const m = missing(b); if (m.length) { toast(`${m.length} required field${m.length === 1 ? '' : 's'} left on this step — you can come back to them.`, 'warn'); } go(W.step + 1); } }, W.step === BLOCKS.length - 1 ? 'Review →' : 'Next →'))));
+  };
+  const paintReview = () => {
+    const miss = BLOCKS.map((b, i) => [b, i, missing(b)]).filter(x => x[2].length); const total = sum(miss, x => x[2].length);
+    const warn = wizardKeys().filter(k => F[k].flags.includes('w') && isShown(k, gv) && (F[k].type === 'a' ? !(W.files[k] || []).length : isBlank(W.vals[k])));
+    const createBtn = h('button', { class: 'btn primary', disabled: total > 0 || dupe(), onclick: create }, 'Create client');
+    main.replaceChildren(h('div', { class: 'card section' }, h('h2', null, `${BLOCKS.length + 1}. Review & create`),
+      total ? h('div', { class: 'callout bad' }, h('b', null, `${total} required field${total === 1 ? '' : 's'} still empty`), h('ul', null, miss.map(([b, i, ks]) => h('li', null, h('button', { class: 'link', onclick: () => { go(i); paintStep(true); } }, b.title), ': ', ks.map(label).join(', '))))) : h('div', { class: 'callout good' }, 'Everything required is filled in.'),
+      dupe() ? h('div', { class: 'callout bad' }, 'A client with this exact name already exists. Renewals add a number, e.g. “', nextName(str(W.vals.name)), '”.') : null,
+      warn.length ? h('div', { class: 'callout warn' }, 'Recommended but empty: ', warn.map(label).join(', '), '. You can add these later.') : null,
+      BLOCKS.map((b, i) => { const ks = stepKeys(b).filter(k => F[k].type === 'a' ? (W.files[k] || []).length : !isBlank(W.vals[k]) && W.vals[k] !== false);
+        return h('div', { class: 'group' }, h('h3', null, b.title, ' ', h('button', { class: 'link', onclick: () => go(i) }, 'Edit')),
+          ks.length ? h('div', { class: 'fields' }, ks.map(k => h('div', { class: 'field ro' + (F[k].flags.includes('W') ? ' wide' : '') }, h('span', { class: 'lbl' }, label(k)),
+            h('div', { class: 'val' }, F[k].type === 'a' ? W.files[k].map(f => f.name).join(', ') : showValue(k, W.vals[k], { fields: { [F.currency.id]: W.vals.currency } }))))) : h('p', { class: 'muted' }, 'Nothing entered.')); }),
+      h('p', { class: 'muted' }, 'Creating the client starts the Airtable automations: the exchange-rate script and the order short link. The onboarding email is not sent until you send it from the client page.'),
+      h('div', { class: 'wiznav' }, h('button', { class: 'btn', onclick: () => go(BLOCKS.length - 1) }, '← Back'), createBtn)));
+  };
+  async function create(e) {
+    e.target.disabled = true; e.target.textContent = 'Creating…';
+    const fields = {};
+    wizardKeys().forEach(k => { if (F[k].type === 'a' || !isShown(k, gv)) return; const x = W.vals[k]; if (isBlank(x) || x === false) return; fields[F[k].id] = typeof x === 'string' ? x.trim() : x; });
+    try {
+      const rec = await createRec(CFG.t.clients, fields); const failed = [];
+      for (const [k, list] of Object.entries(W.files)) for (const f of list) { try { await uploadFile(rec.id, F[k].id, f); } catch (er) { failed.push(f.name); } }
+      try { localStorage.removeItem('cscrm.draft'); } catch { /* ignore */ }
+      upsertClient(rec); W = null;
+      toast(failed.length ? `Client created, but these files did not upload: ${failed.join(', ')}` : 'Client created', failed.length ? 'warn' : 'ok', 7000);
+      location.hash = '#/clients/' + rec.id;
+    } catch (er) { toast(explain(er), 'bad', 9000); e.target.disabled = false; e.target.textContent = 'Create client'; }
+  }
+  const paint = () => { paintSide(); if (W.step >= BLOCKS.length) paintReview(); else paintStep(false); };
+  view.replaceChildren(
+    h('div', { class: 'pagehead' }, h('div', null, h('h1', null, mode === 'renew' ? 'Renew / new contract' : 'New client'),
+      h('p', { class: 'muted' }, W.source ? `Started from ${W.source}.` : 'Six short blocks, then a review. Your progress is kept on this device until you create the client.')),
+      h('div', { class: 'actions' }, h('a', { class: 'btn', href: '#/opps' }, 'Start from an opportunity'),
+        h('button', { class: 'btn', onclick: async () => { if (await confirmBox('Discard this form?', 'Everything typed into this form will be cleared.', 'Discard', 'danger')) { try { localStorage.removeItem('cscrm.draft'); } catch { /* ignore */ } W = null; location.hash = '#/clients'; } } }, 'Discard'))),
+    h('div', { class: 'wizard' }, h('aside', null, side), main));
+  paint();
+}
+
+/* ───────── opportunities ───────── */
+let OV = 'ready';
+async function viewOpps(view) {
+  view.replaceChildren(h('div', { class: 'loading' }, 'Loading Salesforce opportunities…'));
+  const opps = await loadOpps();
+  if (!S.meta[CFG.t.opps]) { view.replaceChildren(h('p', { class: 'empty' }, 'Your token cannot read the opportunities table.')); return; }
+  const won = o => /won/i.test(oppStage(o)), lost = o => /lost/i.test(oppStage(o));
+  const sets = { ready: opps.filter(o => won(o) && isBlank(o.fields[OPP.clientLink])), open: opps.filter(o => !won(o) && !lost(o)), won: opps.filter(won) };
+  const body = h('div');
+  const paint = () => { const rows = sets[OV];
+    body.replaceChildren(h('p', { class: 'muted summary' }, `${rows.length} opportunit${rows.length === 1 ? 'y' : 'ies'} · ${money(sum(rows, o => num(o.fields[OPP.usd])))}`),
+      rows.length ? oppTable(rows.slice(0, 300), OV === 'won' ? null : o => S.canWrite && (OV === 'ready' || won(o)) ? h('a', { class: 'btn small primary', href: '#/new/opp/' + o.id }, 'Create client') : '') : h('p', { class: 'empty' }, OV === 'ready' ? 'Every closed-won opportunity already has a client record.' : 'Nothing here.')); };
+  view.replaceChildren(h('div', { class: 'pagehead' }, h('div', null, h('h1', null, 'Opportunities'), h('p', { class: 'muted' }, 'Read-only from Salesforce. Closed-won deals without a client record are ready to onboard.'))),
+    h('div', { class: 'toolbar' }, h('div', { class: 'seg' }, [['ready', `Ready to onboard ${sets.ready.length}`], ['open', `Open pipeline ${sets.open.length}`], ['won', `All closed won ${sets.won.length}`]].map(([k, t]) =>
+      h('button', { class: OV === k ? 'on' : '', onclick: e => { OV = k; e.currentTarget.parentNode.querySelectorAll('button').forEach(b => b.classList.remove('on')); e.currentTarget.classList.add('on'); paint(); } }, t)))), body);
+  paint();
+}
+
+/* ───────── reports ───────── */
+const RV = { dim: 'region', metric: 'commit', scope: 'Active' };
+const DIMS = { region: ['Region', c => str(val(c, 'region'))], industry: ['Industry', c => str(val(c, 'industry'))], priceType: ['Price type', c => str(val(c, 'priceType'))], contractType: ['Contract type', c => str(val(c, 'contractType'))],
+  salesperson: ['Salesperson', c => str(val(c, 'salesperson'))], csm: ['CSM', c => str(val(c, 'csm'))], capservPoc: ['CapServ POC', c => str(val(c, 'capservPoc'))], stage: ['Stage', c => c.x.stage], billTerms: ['Billing terms', c => str(val(c, 'billTerms'))],
+  year: ['Year signed', c => str(val(c, 'ssaDate')).slice(0, 4)], endq: ['Quarter ending', c => { const d = parseDate(val(c, 'fulfillDate')); return d ? `${d.getFullYear()} Q${Math.floor(d.getMonth() / 3) + 1}` : ''; }] };
+const METRICS = { count: ['Clients', () => 1, v => v], commit: ['Commitment (USD)', c => c.x.commit, money], done: ['Used to date (USD)', c => c.x.done, money], wip: ['In flight (USD)', c => c.x.wip, money], remain: ['Remaining (USD)', c => Math.max(0, c.x.remain), money] };
+function groupBy(rows, dimFn, metFn) { const m = new Map(); rows.forEach(c => { const k = dimFn(c) || '(blank)'; const e = m.get(k) || { n: 0, v: 0, commit: 0, done: 0 }; e.n++; e.v += metFn(c) || 0; e.commit += c.x.commit; e.done += c.x.done; m.set(k, e); }); return [...m.entries()]; }
+function viewReports(view) {
+  const act = active(); const now = new Date();
+  const ym = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+  const next12 = Array.from({ length: 12 }, (_, i) => new Date(now.getFullYear(), now.getMonth() + i, 1));
+  const last12 = Array.from({ length: 12 }, (_, i) => new Date(now.getFullYear(), now.getMonth() - 11 + i, 1));
+  const lab = d => MONTHS[d.getMonth()] + ' ’' + String(d.getFullYear()).slice(2);
+  const renew = next12.map(d => { const cs = act.filter(c => str(val(c, 'fulfillDate')).slice(0, 7) === ym(d)); return [lab(d), cs.length, sum(cs, c => Math.max(0, c.x.remain))]; });
+  const signed = last12.map(d => { const cs = S.clients.filter(c => str(val(c, 'ssaDate')).slice(0, 7) === ym(d)); return [lab(d), sum(cs, c => c.x.commit), cs.length]; });
+  const paceN = { Ahead: 0, 'On track': 0, Behind: 0 }; act.forEach(c => { if (c.x.pace && c.x.commit) paceN[c.x.pace]++; }); const paceTot = Math.max(1, paceN.Ahead + paceN['On track'] + paceN.Behind);
+  const top = [...act].sort((a, b) => b.x.commit - a.x.commit).slice(0, 12);
+  const bands = [['Under $5k', 0, 5e3], ['$5k–$15k', 5e3, 15e3], ['$15k–$50k', 15e3, 5e4], ['$50k–$150k', 5e4, 15e4], ['$150k+', 15e4, Infinity]].map(([n, lo, hi]) => { const cs = act.filter(c => c.x.commit > 0 && c.x.commit >= lo && c.x.commit < hi); return [n, cs.length, sum(cs, c => c.x.commit)]; });
+  const dq = [['No order link', c => !val(c, 'shortLink')], ['No signed date', c => !val(c, 'ssaDate')], ['No end date', c => !val(c, 'fulfillDate')], ['No client contact email', c => !val(c, 'pocEmail')], ['No salesperson', c => !val(c, 'salesperson')],
+    ['Usage email frequency not set', c => !val(c, 'emailFrequency')], ['Commitment without USD value', c => num(val(c, 'commitment')) > 0 && !c.x.commit]].map(([n, f]) => [n, act.filter(f)]);
+  const months = MONTHS.map((m, i) => [m, sum(S.clients, c => num(c.fields[MONTH_IDS[i]]))]);
+
+  const out = h('div');
+  const paintBuilder = () => { const rows0 = RV.scope === 'All' ? S.clients : S.clients.filter(c => c.x.status === RV.scope); const [, mf, fmt] = METRICS[RV.metric];
+    const rows = groupBy(rows0, DIMS[RV.dim][1], mf).sort((a, b) => b[1].v - a[1].v);
+    out.replaceChildren(barList(rows.slice(0, 25).map(([k, e]) => [k, e.v]), { fmt }),
+      h('div', { class: 'tablewrap' }, h('table', { class: 'grid' }, h('thead', null, h('tr', null, [DIMS[RV.dim][0], 'Clients', 'Commitment', 'Used', 'Used %'].map((t, i) => h('th', { class: i ? 'num' : '' }, t)))),
+        h('tbody', null, rows.map(([k, e]) => h('tr', null, h('td', null, k), h('td', { class: 'num' }, e.n), h('td', { class: 'num' }, money(e.commit)), h('td', { class: 'num' }, money(e.done)), h('td', { class: 'num' }, e.commit ? pct(e.done / e.commit) : '—')))))),
+      h('button', { class: 'btn', onclick: () => downloadCsv(`clients-by-${RV.dim}.csv`, [[DIMS[RV.dim][0], 'Clients', 'Commitment USD', 'Used USD'], ...rows.map(([k, e]) => [k, e.n, Math.round(e.commit), Math.round(e.done)])]) }, 'Export CSV')); };
+  const pick = (obj, key, lbl) => h('label', null, lbl, ' ', h('select', { onchange: e => { RV[key] = e.target.value; paintBuilder(); } }, Object.entries(obj).map(([k, v]) => h('option', { value: k, selected: RV[key] === k }, Array.isArray(v) ? v[0] : v))));
+  const card = (title, note, ...kids) => h('section', { class: 'card' }, h('h2', null, title), note ? h('p', { class: 'muted' }, note) : null, kids);
+
+  view.replaceChildren(h('div', { class: 'pagehead' }, h('div', null, h('h1', null, 'Reports'), h('p', { class: 'muted' }, 'Live from Airtable. Amounts are USD, estimated from operational data rather than invoices.'))),
+    h('div', { class: 'grid2' },
+      card('Renewal calendar — contracts ending per month', 'Active contracts by capture-period end date. The unused balance is what is forfeited if nothing changes.',
+        colChart(renew.map(r => [r[0], r[1]])), h('table', { class: 'grid mini' }, h('thead', null, h('tr', null, h('th', null, 'Month'), h('th', { class: 'num' }, 'Ending'), h('th', { class: 'num' }, 'Unused balance'))),
+          h('tbody', null, renew.filter(r => r[1]).map(r => h('tr', null, h('td', null, r[0]), h('td', { class: 'num' }, r[1]), h('td', { class: 'num' }, money(r[2]))))))),
+      card('Pacing of active commitments', 'Share of commitment used compared with share of term elapsed.',
+        h('div', { class: 'stack', role: 'img', 'aria-label': `Ahead ${paceN.Ahead}, on track ${paceN['On track']}, behind ${paceN.Behind}` }, [['Ahead', 'good'], ['On track', ''], ['Behind', 'bad']].map(([k, cls]) => h('div', { class: 'seg-' + (cls || 'mid'), style: { width: (paceN[k] / paceTot * 100) + '%' }, title: `${k}: ${paceN[k]}` }, paceN[k] ? `${k} ${paceN[k]}` : ''))),
+        h('h3', null, 'Commitment size (active)'), barList(bands.map(b => [`${b[0]} · ${b[1]} clients`, b[2]]), { fmt: compact }))),
+    h('div', { class: 'grid2' },
+      card('New commitments signed per month (USD)', 'By SSA signed date, last 12 months.', colChart(signed.map(r => [r[0], r[1]]), compact)),
+      card('Completed revenue by month (USD, this year)', null, colChart(months, compact))),
+    h('div', { class: 'grid2' },
+      card('Largest active commitments', 'Dark bar: commitment. Light bar: used to date.', barList(top.map(c => [c.x.name, c.x.commit, c.x.done]), { fmt: compact })),
+      card('Data quality — active clients', 'Gaps that stop automations or reports from working.', h('ul', { class: 'rowlist' }, dq.map(([n, cs]) => h('li', null, h('details', null, h('summary', null, n, h('span', { class: 'count' }, cs.length)), cs.length ? h('div', { class: 'chips' }, cs.slice(0, 60).map(c => h('a', { class: 'chip', href: '#/clients/' + c.id }, c.x.name))) : h('span', { class: 'muted' }, 'None'))))))),
+    card('Build your own breakdown', null, h('div', { class: 'toolbar' }, pick(METRICS, 'metric', 'Show'), pick(DIMS, 'dim', 'by'), pick({ Active: 'Active contracts', Expired: 'Expired contracts', All: 'All contracts' }, 'scope', 'for')), out));
+  paintBuilder();
+}
+
+/* ───────── start ───────── */
+(async function boot() {
+  let t = null; try { t = sessionStorage.getItem(SESSION); } catch { /* ignore */ }
+  if (t) { try { await connect(t); renderShell(); return; } catch { try { sessionStorage.removeItem(SESSION); } catch { /* ignore */ } } }
+  renderGate();
+})();
+</script>
+</body>
+</html>
