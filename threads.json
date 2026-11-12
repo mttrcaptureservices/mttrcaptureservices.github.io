@@ -1,35 +1,18 @@
 {
-  "lastUpdated": "2026-11-11T22:55:00Z",
+  "lastUpdated": "2026-11-12T06:10:00Z",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#d97706",
-      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in the View Only base), and he needs them there to validate and adjust Mattertag payouts in line items.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/11",
-      "jiraKey": "COP-2170",
-      "note": "Ricardo replied that completed jobs are hidden from Spec Ops 2.0 by design and to use the Read Only tab; waiting on Troy's response / a decision on payout adjustments.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794423540404?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#2563eb",
-      "summary": "Small bulk ingest (~15 jobs) for Welltower - Canada submitted but no jobs have come through in AT.",
+      "color": "#2E7D6B",
+      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in the View Only base), but he needs them there to validate and adjust Mattertag payouts in line items.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "11/11",
-      "note": "Team asked whether the new Airtable bulk form's Create button was pressed (no submission seen) and offered to submit the file for her; next action is Kailyn's.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794435729906?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1",
-      "reactions": [
-        "👀"
-      ],
+      "date": "11/12",
+      "jiraKey": "COP-2170",
+      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; Troy owes a response, and COP-2170 is still open.",
+      "url": "https://teams.microsoft.com/",
+      "reactions": ["eyes-rightmttp (custom 👀)"],
       "reactionsUnread": false
     }
   ]
