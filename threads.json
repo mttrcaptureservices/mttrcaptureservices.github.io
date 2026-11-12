@@ -1,18 +1,31 @@
 {
-  "lastUpdated": "2026-11-12T06:10:00Z",
+  "lastUpdated": "2026-11-12T16:55:00Z",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
       "color": "#2E7D6B",
-      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in the View Only base), but he needs them there to validate and adjust Mattertag payouts in line items.",
+      "summary": "URGENT: completed jobs no longer show in Spec Ops 2.0 (only in the View Only base), so Troy can't reconcile Mattertag payouts in the line items.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "11/12",
+      "date": "11/11",
       "jiraKey": "COP-2170",
-      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; Troy owes a response, and COP-2170 is still open.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["eyes-rightmttp (custom 👀)"],
+      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; waiting on Troy to confirm or push back before closing.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#B5651D",
+      "summary": "JOBID6667685863919273236: CT was quoted $1155 for ~14,500 sq ft (system error); asks why it happened and how to prevent it.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/10",
+      "note": "Adjet said he'd troubleshoot (Tue); Kailyn asked for an update 11/12 8:41 AM with no reply yet. Possibly related to COP-2131 (unconfirmed).",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
