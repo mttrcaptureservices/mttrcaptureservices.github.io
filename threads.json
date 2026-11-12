@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-11-12T16:55:00Z",
+  "lastUpdated": "2026-11-12T17:50:00Z",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#2E7D6B",
-      "summary": "URGENT: completed jobs no longer show in Spec Ops 2.0 (only in the View Only base), so Troy can't reconcile Mattertag payouts in the line items.",
+      "color": "#2E7D32",
+      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in the View Only base); Troy needs them there to validate and adjust Mattertag payouts in line items.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "11/11",
       "jiraKey": "COP-2170",
-      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; waiting on Troy to confirm or push back before closing.",
-      "url": "https://teams.cloud.microsoft/",
+      "note": "Ricardo replied that completed jobs are hidden from 2.0 by design and to use the Read Only tab; waiting on Troy to confirm whether that resolves his Mattertag adjustment need.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794423540404",
       "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
       "author": "Ryan Morrow",
       "initials": "RM",
-      "color": "#B5651D",
-      "summary": "JOBID6667685863919273236: CT was quoted $1155 for ~14,500 sq ft (system error); asks why it happened and how to prevent it.",
+      "color": "#C62828",
+      "summary": "JOBID6667685863919273236: CT was quoted $1155 for a ~14,500 sq ft job, a systems error the company now has to honor; asks for root cause and prevention.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/10",
-      "note": "Adjet said he'd troubleshoot (Tue); Kailyn asked for an update 11/12 8:41 AM with no reply yet. Possibly related to COP-2131 (unconfirmed).",
-      "url": "https://teams.cloud.microsoft/",
+      "note": "Adjet suspects a price-code automation bug that doubled the CT Rate (price code on both parent and child); Adjet owes the code review, testing and confirmation, and Kailyn asked for an update this morning.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794331111126",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
