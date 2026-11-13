@@ -1,32 +1,36 @@
 {
-  "lastUpdated": "2026-11-13T18:58:00Z",
+  "lastUpdated": "2026-11-13T19:20:00Z",
   "threads": [
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#8e44ad",
-      "summary": "Welltower - Canada 8-location bulk-ingested jobs: Additional Details are correct in Airtable but don't appear in tech emails (only [Derived Scan Requirements] shows). Wants to know why and how to bulk ingest correctly.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/13",
-      "jiraKey": "COP-2173",
-      "note": "Ricardo owes the investigation of the email source field for bulk-ingested records (example job SENIORCANAMICAERINMILLS).",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#16a085",
-      "summary": "Two UDR jobs (JOBID6703997213227050081, JOBID6703999103228793523) show only the parent record with no child records.",
+      "color": "#d9534f",
+      "summary": "Two UDR jobs (JOBID6703997213227050081, JOBID6703999103228793523) show only the parent record; child records are missing.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/13",
       "jiraKey": "COP-2174",
-      "note": "Ricardo owes a check of the Jotform submissions and intake Zap runs, then recreating the missing children.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
+      "note": "Ricardo to investigate why child records were not created; nothing owed by the requester.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794595529371",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#5b6fd6",
+      "summary": "8 bulk-ingested Welltower - Canada 'Entire Property' jobs: Additional Details are correct in Airtable but missing from tech emails (only Derived Scan Requirements shows). Wants root cause and the correct bulk-ingest procedure.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/13",
+      "jiraKey": "COP-2173",
+      "note": "Ricardo to compare the bulk-ingest path with Jotform intake for the email field mapping; next action is Ricardo's.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794594748787",
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     }
   ]
