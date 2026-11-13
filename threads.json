@@ -1,1 +1,86 @@
-{"lastUpdated":"2026-11-13T20:00:00Z","threads":[{"author":"Ryan Morrow","initials":"RM","color":"#2E7D32","summary":"Reports JOBID6667685863919273236 where the CT was quoted $1155 for a ~14,500 sq ft space; the quote was far too high while the actual payout was correct. Asks why and how to prevent it.","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Adjet suspects a price-code-automation bug that put a price code on a child record as well as the parent, doubling the CT Rate; he still needs to confirm in code and test (owes next action).","url":"https://teams.cloud.microsoft/","reactions":["eyes-rightmttp"],"reactionsUnread":false},{"author":"Troy Lowry","initials":"TL","color":"#6A1B9A","summary":"Urgent: completed jobs no longer show in Spec Ops 2.0 (only in View Only), but he needs them there to validate and adjust Mattertag payout line items.","statusCls":"badge-waiting","status":"Awaiting confirmation","date":"11/12","jiraKey":"COP-2170","note":"Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; Troy hasn't confirmed whether that works for Mattertag payout adjustments (Troy owes next action).","url":"https://teams.cloud.microsoft/","reactions":["eyes-rightmttp"],"reactionsUnread":false},{"author":"Kailyn Jelniker","initials":"KJ","color":"#00838F","summary":"Welltower UK test: the YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2), has an empty Floor/Unit/Suite and Size table, and shows technician-specific additional details that may need removing.","statusCls":"badge-investigating","status":"Investigating","date":"11/10","note":"Ricardo said he would look into it; no fix or follow-up posted yet (Ricardo owes next action).","url":"https://teams.cloud.microsoft/","reactions":["eyes-rightmttp"],"reactionsUnread":false},{"author":"Ryan Morrow","initials":"RM","color":"#2E7D32","summary":"BMO jobs are again calculating travel at $2/mile (not in their contract); JOBID6691051004013365148 blocks dispatch, plus two rev-rec jobs with wrong travel fees.","statusCls":"badge-investigating","status":"Investigating","date":"10/29","note":"Needs deeper team analysis and a word from Kailyn; Kailyn asked Ricardo on 10/30 to restate his question and it hasn't been answered (Ricardo owes next action).","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},{"author":"Kailyn Jelniker","initials":"KJ","color":"#00838F","summary":"Change request to the Welltower order Jotform: add a required Region dropdown (North America / UK) that routes to the right MP client, filters property locations, and switches the size unit between sq ft and m2.","statusCls":"badge-waiting","status":"Waiting on requester","date":"10/26","note":"Snehal asked on 11/2 whether the UK property list should be grouped by state or by operator; Kailyn owes the answer.","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false},{"author":"Gisele Tan","initials":"GT","color":"#EF6C00","summary":"Asks for an Airtable client view to be created for MP client Nextore SRL.","statusCls":"badge-todo","status":"To do","date":"11/4","jiraKey":"COP-2163","note":"Snehal offered on 11/5 to take COP-2163; no completion posted yet (Snehal owes next action).","url":"https://teams.cloud.microsoft/","reactions":["👀"],"reactionsUnread":false}]}
+{
+  "lastUpdated": "2026-11-13T09:15:00-08:00",
+  "threads": [
+    {
+      "author": "Ryan Morrow", "initials": "RM", "color": "#2563eb",
+      "summary": "CT was quoted $1155 for a ~14,500 sq ft space (JOBID6667685863919273236); payout paid was correct but the quote was far too high. Adjet suspects a price-code-automation bug that applied a price code to both parent and child, doubling the CT rate.",
+      "statusCls": "badge-investigating", "status": "Investigating",
+      "date": "11/10",
+      "note": "Adjet owes a code review/test to confirm the root cause (Kailyn asked for an update this morning).",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Troy Lowry", "initials": "TL", "color": "#d97706",
+      "summary": "Completed jobs no longer show in Spec Ops 2.0 (only in View Only), but he needs them there to adjust Mattertag payouts in line items.",
+      "statusCls": "badge-waiting", "status": "Awaiting confirmation",
+      "date": "11/12", "jiraKey": "COP-2170",
+      "note": "Ricardo replied it is by design and pointed to the Read Only tab; Troy has not confirmed whether that works (Mattertag fields are missing there).",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
+      "summary": "Welltower UK test: the YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2) and has an empty/duplicate Floor/Unit/Suite table and technician-specific Additional Details.",
+      "statusCls": "badge-investigating", "status": "Investigating",
+      "date": "11/10",
+      "note": "Ricardo said 'I'll look into this one' on 11/10; no follow-up posted yet.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Gisele Tan", "initials": "GT", "color": "#0d9488",
+      "summary": "Requests an Airtable client view for MP client Nextore SRL.",
+      "statusCls": "badge-todo", "status": "To do",
+      "date": "11/4", "jiraKey": "COP-2163",
+      "note": "Snehal owes the build; no completion posted in the thread.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Ryan Morrow", "initials": "RM", "color": "#2563eb",
+      "summary": "BMO jobs are again calculating travel at $2/mile (not in their contract); JOBID6691051004013365148 is blocked from dispatch and two rev-rec jobs have wrong travel fees.",
+      "statusCls": "badge-investigating", "status": "Investigating",
+      "date": "10/29",
+      "note": "Ricardo said it needs deeper analysis plus input from Kailyn; Kailyn asked on 10/30 for the question to be restated and nothing since.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
+      "summary": "Change request for the Welltower order Jotform: add a required Region dropdown (North America / UK) that routes the MP client, filters locations and switches size units.",
+      "statusCls": "badge-waiting", "status": "Waiting on requester",
+      "date": "10/26",
+      "note": "Kailyn owes an answer to Snehal's 11/2 question: should the UK property list be grouped by state or by operator?",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias", "initials": "FA", "color": "#dc2626",
+      "summary": "A job showed $0 CT payout (JOBID6664320936115551419) after being moved from Gallina (3) to Gallina (1), which is not set to CT aggregated payout.",
+      "statusCls": "badge-waiting", "status": "Waiting on requester",
+      "date": "10/23",
+      "note": "Adjet (10/27) asked Kailyn why the job was moved to an older contract; no answer posted. Related 11/12 Gallina aggregation fix may cover this.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
+      "summary": "Formatting (bold, bullets) in MP Client Data [Scan Requirements] is lost in the job's [Derived Scan Requirements], so it does not reach the Job Acceptance Jotform or emails; also asks for formatting on job-level [Additional Details].",
+      "statusCls": "badge-investigating", "status": "Investigating",
+      "date": "8/28",
+      "note": "Ricardo is looking for a workaround (synced field reads as plain text); last update 10/13 when he looped in Snehal.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    },
+    {
+      "author": "Caitlin Suh", "initials": "CS", "color": "#db2777",
+      "summary": "JOBID6683197282322130889: CT payout in Airtable is $200.00 (price code USVHTCTC2) but the confirmation email to the tech showed $276.08.",
+      "statusCls": "badge-todo", "status": "No reply yet",
+      "date": "10/20",
+      "note": "Has a 👀 but no reply in the thread since 10/20; the team owes Caitlin a response.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"], "reactionsUnread": false
+    }
+  ]
+}
