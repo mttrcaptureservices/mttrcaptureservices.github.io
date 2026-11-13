@@ -1,47 +1,19 @@
 {
-"lastUpdated": "2026-11-13T22:20:00Z",
-"threads": [
-{
-"author": "Caitlin Suh",
-"initials": "CS",
-"color": "#E4572E",
-"summary": "Two UDR jobs (JOBID6703997213227050081, JOBID6703999103228793523) show only the parent record; child records are missing.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "11/13",
-"jiraKey": "COP-2174",
-"note": "Ricardo to determine who removed the children (history doesn't show) and recreate units 3149-204 and 3133-307 if the removal was unintended; Caitlin to confirm intent.",
-"url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=&tenantId=",
-"reactions": ["👀"],
-"reactionsUnread": false
-},
-{
-"author": "Kailyn Jelniker",
-"initials": "KJ",
-"color": "#17BEBB",
-"summary": "Welltower Canada 8-location bulk-ingested jobs: Additional Details are correct in Airtable but missing from tech emails (only Derived Scan Requirements shows); asks how to make bulk ingests flow through.",
-"statusCls": "badge-investigating",
-"status": "Investigating",
-"date": "11/13",
-"jiraKey": "COP-2173",
-"note": "Ricardo to trace why bulk ingest skips Additional Details in the tech email (example SENIORCANAMICAERINMILLS) and document the correct bulk process for Kailyn.",
-"url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=&tenantId=",
-"reactions": ["👀"],
-"reactionsUnread": false
-},
-{
-"author": "Troy Lowry",
-"initials": "TL",
-"color": "#7B61FF",
-"summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in View Only base); needed there to reconcile Mattertag payouts.",
-"statusCls": "badge-waiting",
-"status": "Awaiting confirmation",
-"date": "11/11",
-"jiraKey": "COP-2170",
-"note": "Ricardo replied that completed jobs are hidden from Spec Ops 2.0 by design and to use the Read Only tab; waiting on Troy to confirm or push back (Mattertag fields are missing in View Only).",
-"url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=&tenantId=",
-"reactions": ["👀"],
-"reactionsUnread": false
-}
-]
+  "lastUpdated": "2026-11-13T22:20:00Z",
+  "threads": [
+    {
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8E44AD",
+      "summary": "Welltower - Canada 8-location bulk-ingested 'Entire Property' jobs: Additional Details are correct in Airtable but tech job request emails only show [Derived Scan Requirements]. Wants root cause and the correct way to do bulk ingests going forward.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/13",
+      "jiraKey": "COP-2173",
+      "note": "Ricardo owes the investigation of why bulk-ingested records skip Additional Details in the tech email, then a reply to Kailyn with the fix and bulk-ingest guidance.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794594748787?context=%7B%22contextType%22%3A%22chat%22%7D",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    }
+  ]
 }
