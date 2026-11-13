@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-13T19:20:00Z",
+  "lastUpdated": "2026-11-13T20:08:00Z",
   "threads": [
     {
       "author": "Caitlin Suh",
@@ -12,9 +12,7 @@
       "jiraKey": "COP-2174",
       "note": "Ricardo to investigate why child records were not created; nothing owed by the requester.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794595529371",
-      "reactions": [
-        "👀"
-      ],
+      "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
@@ -28,9 +26,7 @@
       "jiraKey": "COP-2173",
       "note": "Ricardo to compare the bulk-ingest path with Jotform intake for the email field mapping; next action is Ricardo's.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794594748787",
-      "reactions": [
-        "👀"
-      ],
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
