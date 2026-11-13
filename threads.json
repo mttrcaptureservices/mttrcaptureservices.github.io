@@ -1,86 +1,37 @@
 {
-  "lastUpdated": "2026-11-13T09:15:00-08:00",
+  "lastUpdated": "2026-11-13T02:08:00Z",
   "threads": [
     {
-      "author": "Ryan Morrow", "initials": "RM", "color": "#2563eb",
-      "summary": "CT was quoted $1155 for a ~14,500 sq ft space (JOBID6667685863919273236); payout paid was correct but the quote was far too high. Adjet suspects a price-code-automation bug that applied a price code to both parent and child, doubling the CT rate.",
-      "statusCls": "badge-investigating", "status": "Investigating",
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#2e7d32",
+      "summary": "JOBID6667685863919273236: CT Rick Barlow was quoted $1,155 for a ~14,500 sq ft space; the quote was a systems error and the team has to honor it. Wants root cause and prevention.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "11/10",
-      "note": "Adjet owes a code review/test to confirm the root cause (Kailyn asked for an update this morning).",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
+      "jiraKey": "COP-2172",
+      "note": "Root cause found (child record created 34s before parent, priced as stand-alone); fix to {Parent-Child?} and intake Zaps is pending, owed by Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794331111126",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
     },
     {
-      "author": "Troy Lowry", "initials": "TL", "color": "#d97706",
-      "summary": "Completed jobs no longer show in Spec Ops 2.0 (only in View Only), but he needs them there to adjust Mattertag payouts in line items.",
-      "statusCls": "badge-waiting", "status": "Awaiting confirmation",
-      "date": "11/12", "jiraKey": "COP-2170",
-      "note": "Ricardo replied it is by design and pointed to the Read Only tab; Troy has not confirmed whether that works (Mattertag fields are missing there).",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
-      "summary": "Welltower UK test: the YOUR CAPTURE SCAN REQUEST email is missing the capture size (5,000 m2) and has an empty/duplicate Floor/Unit/Suite table and technician-specific Additional Details.",
-      "statusCls": "badge-investigating", "status": "Investigating",
-      "date": "11/10",
-      "note": "Ricardo said 'I'll look into this one' on 11/10; no follow-up posted yet.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Gisele Tan", "initials": "GT", "color": "#0d9488",
-      "summary": "Requests an Airtable client view for MP client Nextore SRL.",
-      "statusCls": "badge-todo", "status": "To do",
-      "date": "11/4", "jiraKey": "COP-2163",
-      "note": "Snehal owes the build; no completion posted in the thread.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow", "initials": "RM", "color": "#2563eb",
-      "summary": "BMO jobs are again calculating travel at $2/mile (not in their contract); JOBID6691051004013365148 is blocked from dispatch and two rev-rec jobs have wrong travel fees.",
-      "statusCls": "badge-investigating", "status": "Investigating",
-      "date": "10/29",
-      "note": "Ricardo said it needs deeper analysis plus input from Kailyn; Kailyn asked on 10/30 for the question to be restated and nothing since.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
-      "summary": "Change request for the Welltower order Jotform: add a required Region dropdown (North America / UK) that routes the MP client, filters locations and switches size units.",
-      "statusCls": "badge-waiting", "status": "Waiting on requester",
-      "date": "10/26",
-      "note": "Kailyn owes an answer to Snehal's 11/2 question: should the UK property list be grouped by state or by operator?",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Freddy Arias", "initials": "FA", "color": "#dc2626",
-      "summary": "A job showed $0 CT payout (JOBID6664320936115551419) after being moved from Gallina (3) to Gallina (1), which is not set to CT aggregated payout.",
-      "statusCls": "badge-waiting", "status": "Waiting on requester",
-      "date": "10/23",
-      "note": "Adjet (10/27) asked Kailyn why the job was moved to an older contract; no answer posted. Related 11/12 Gallina aggregation fix may cover this.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker", "initials": "KJ", "color": "#7c3aed",
-      "summary": "Formatting (bold, bullets) in MP Client Data [Scan Requirements] is lost in the job's [Derived Scan Requirements], so it does not reach the Job Acceptance Jotform or emails; also asks for formatting on job-level [Additional Details].",
-      "statusCls": "badge-investigating", "status": "Investigating",
-      "date": "8/28",
-      "note": "Ricardo is looking for a workaround (synced field reads as plain text); last update 10/13 when he looped in Snehal.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
-    },
-    {
-      "author": "Caitlin Suh", "initials": "CS", "color": "#db2777",
-      "summary": "JOBID6683197282322130889: CT payout in Airtable is $200.00 (price code USVHTCTC2) but the confirmation email to the tech showed $276.08.",
-      "statusCls": "badge-todo", "status": "No reply yet",
-      "date": "10/20",
-      "note": "Has a 👀 but no reply in the thread since 10/20; the team owes Caitlin a response.",
-      "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"], "reactionsUnread": false
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#c62828",
+      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in View Only); needed there to validate and adjust Mattertag payouts in line items.",
+      "statusCls": "badge-waiting",
+      "status": "Waiting on requester",
+      "date": "11/12",
+      "jiraKey": "COP-2170",
+      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; waiting on Troy to confirm whether that works for Mattertag payout adjustments.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794423540404",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
     }
   ]
 }
