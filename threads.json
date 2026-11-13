@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-11-13T20:08:00Z",
+  "lastUpdated": "2026-11-13T21:10:00Z",
   "threads": [
     {
       "author": "Caitlin Suh",
       "initials": "CS",
-      "color": "#d9534f",
+      "color": "#E4572E",
       "summary": "Two UDR jobs (JOBID6703997213227050081, JOBID6703999103228793523) show only the parent record; child records are missing.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/13",
       "jiraKey": "COP-2174",
-      "note": "Ricardo to investigate why child records were not created; nothing owed by the requester.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794595529371",
+      "note": "Ricardo to determine who removed the children (history doesn't show) and recreate units 3149-204 and 3133-307 if the removal was unintended; Caitlin to confirm intent.",
+      "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=&tenantId=",
       "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
       "author": "Kailyn Jelniker",
       "initials": "KJ",
-      "color": "#5b6fd6",
-      "summary": "8 bulk-ingested Welltower - Canada 'Entire Property' jobs: Additional Details are correct in Airtable but missing from tech emails (only Derived Scan Requirements shows). Wants root cause and the correct bulk-ingest procedure.",
+      "color": "#17BEBB",
+      "summary": "Welltower Canada 8-location bulk-ingested jobs: Additional Details are correct in Airtable but missing from tech emails (only Derived Scan Requirements shows); asks how to make bulk ingests flow through.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/13",
       "jiraKey": "COP-2173",
-      "note": "Ricardo to compare the bulk-ingest path with Jotform intake for the email field mapping; next action is Ricardo's.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794594748787",
+      "note": "Ricardo to trace why bulk ingest skips Additional Details in the tech email (example SENIORCANAMICAERINMILLS) and document the correct bulk process for Kailyn.",
+      "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support?groupId=&tenantId=",
       "reactions": ["👀"],
       "reactionsUnread": false
     }
