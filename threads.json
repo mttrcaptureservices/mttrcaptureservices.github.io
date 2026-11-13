@@ -1,36 +1,32 @@
 {
-  "lastUpdated": "2026-11-13T05:58:55Z",
+  "lastUpdated": "2026-11-13T18:58:00Z",
   "threads": [
     {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#2e7d32",
-      "summary": "JOBID6667685863919273236: CT Rick Barlow was quoted $1,155 for a ~14,500 sq ft space; the quote was a systems error and the team has to honor it. Wants root cause and prevention.",
+      "author": "Kailyn Jelniker",
+      "initials": "KJ",
+      "color": "#8e44ad",
+      "summary": "Welltower - Canada 8-location bulk-ingested jobs: Additional Details are correct in Airtable but don't appear in tech emails (only [Derived Scan Requirements] shows). Wants to know why and how to bulk ingest correctly.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
-      "date": "11/10",
-      "jiraKey": "COP-2172",
-      "note": "Root cause found (child record created 34s before parent, priced as stand-alone); fix to {Parent-Child?} and intake Zaps is pending, owed by Ricardo.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794331111126",
-      "reactions": [
-        "👀"
-      ],
+      "date": "11/13",
+      "jiraKey": "COP-2173",
+      "note": "Ricardo owes the investigation of the email source field for bulk-ingested records (example job SENIORCANAMICAERINMILLS).",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
       "reactionsUnread": false
     },
     {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#c62828",
-      "summary": "URGENT: Completed jobs no longer appear in Spec Ops 2.0 (only in View Only); needed there to validate and adjust Mattertag payouts in line items.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "11/12",
-      "jiraKey": "COP-2170",
-      "note": "Ricardo replied that completed jobs are hidden in 2.0 by design and to use the Read Only tab; waiting on Troy to confirm whether that works for Mattertag payout adjustments.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794423540404",
-      "reactions": [
-        "👀"
-      ],
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#16a085",
+      "summary": "Two UDR jobs (JOBID6703997213227050081, JOBID6703999103228793523) show only the parent record with no child records.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/13",
+      "jiraKey": "COP-2174",
+      "note": "Ricardo owes a check of the Jotform submissions and intake Zap runs, then recreating the missing children.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
