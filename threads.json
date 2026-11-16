@@ -1,18 +1,1 @@
-{
-  "lastUpdated": "2026-11-16T20:50:00Z",
-  "threads": [
-    {
-      "author": "Caitlin Suh",
-      "initials": "CS",
-      "color": "#7c3aed",
-      "summary": "A UDR contact says clicking \"Click Here to Accept or Edit This Job\" in the approval email cancelled his request (JOBID6706694973226420294) instead of letting him accept or edit it.",
-      "statusCls": "badge-todo",
-      "status": "Needs investigation",
-      "date": "11/16",
-      "note": "Marked 👀 but no reply or Jira ticket yet; Ricardo/Snehal owe a first look at the approval-email link behavior. Permalink unavailable, url points to the channel.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    }
-  ]
-}
+{"lastUpdated": "2026-11-16T22:20:00Z", "threads": []}
