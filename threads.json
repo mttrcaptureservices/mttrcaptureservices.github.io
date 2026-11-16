@@ -1,4 +1,1 @@
-{
-  "lastUpdated": "2026-11-16T20:15:25.544Z",
-  "threads": []
-}
+{"lastUpdated":"2026-11-16T20:50:00Z","threads":[{"author":"Caitlin Suh","initials":"CS","color":"#7B61FF","summary":"A UDR contact says the 'Click Here to Accept or Edit This Job' link in the approval-needed email cancelled his request for JOBID6706694973226420294 instead of letting him accept or edit it.","statusCls":"badge-todo","status":"Needs investigation","date":"11/16","note":"Marked eyes but no team reply or Jira ticket yet; next action is Ricardo/Snehal investigating the approval email link.","url":"https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794861504975","reactions":["👀"],"reactionsUnread":false}]}
