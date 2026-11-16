@@ -1,1 +1,18 @@
-{"lastUpdated": "2026-11-16T22:20:00Z", "threads": []}
+{
+  "lastUpdated": "2026-11-16T23:14:28.868Z",
+  "threads": [
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#2E86C1",
+      "summary": "A UDR contact clicked Click Here to Accept or Edit This Job in the approval email and the page said the job was cancelled. All 3 records on the job now read Cancelled in Advance.",
+      "statusCls": "badge-todo",
+      "status": "Needs triage",
+      "date": "11/16",
+      "note": "Clark could not file a Jira (write declined on unattended run) and sent no reply. Ricardo reacted with a custom eyes emoji. Owner: Ricardo.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794861504975?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1794861504975&createdTime=1794861504975",
+      "owner": "Ricardo",
+      "lastVerified": "2026-11-16"
+    }
+  ]
+}
