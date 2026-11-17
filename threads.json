@@ -1,18 +1,35 @@
 {
-  "lastUpdated": "2026-11-17T22:19:18.767Z",
+  "lastUpdated": "2026-11-17T23:10:00Z",
   "threads": [
     {
       "author": "Don Fraser",
       "initials": "DF",
-      "color": "#2E7D6B",
-      "summary": "Spec Ops 2.0 jobs do not send the confirmation email with both client and tech on it like legacy (example RC_21, Raising Canes). Wants parity for all customers on 2.0.",
-      "statusCls": "badge-todo",
-      "status": "Needs triage",
+      "color": "#2E7D32",
+      "summary": "Spec Ops 2.0 base does not send a confirmation email with both client and tech on it like Legacy did (example: JOBID RC_21, Raising Canes). Wants 2.0 to follow Legacy rules for all customers.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
       "date": "11/17",
-      "note": "New post, no reply yet. Jira write was not approved in this automated run, so no ticket exists; Ricardo to review.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794932949979?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1794932949979&createdTime=1794932949979",
-      "owner": "Ricardo",
-      "lastVerified": "2026-11-17"
+      "note": "Ricardo replied that 2.0 comms were agreed to match Parent Base templates and asked for the legacy email example and desired behavior; next action is a discussion with Don/Troy.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794932949979",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Troy Lowry",
+      "initials": "TL",
+      "color": "#E65100",
+      "summary": "Requests that Spec Ops 2.0 confirmation emails (client, CT and coordinator together) match the Legacy base confirmation emails, with provided verbiage/payout and all project documents attached.",
+      "statusCls": "badge-todo",
+      "status": "Needs review",
+      "date": "11/17",
+      "note": "Troy supplied legacy email screenshots and wording; Ricardo has not replied yet and needs to review and decide on scope/Jira.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false
     }
   ]
 }
