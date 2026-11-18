@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T21:55:00Z",
+  "lastUpdated": "2026-11-18T21:44:13.982Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -12,7 +12,9 @@
       "jiraKey": "COP-2178",
       "note": "Ricardo asked whether the new email should replace the existing Confirmation email; Troy owes the answer.",
       "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     },
     {
@@ -20,13 +22,17 @@
       "initials": "FA",
       "color": "#1565C0",
       "summary": "Asks why the CT payout for JOBID6665184745141440258 dropped from $947.54 (quoted incl. travel) to $516.84 after completion.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting fix",
       "date": "11/18",
-      "note": "Has 👀 but no reply or Jira yet; the next action (payout check) is owed by the team.",
+      "note": "Parent 103353 CT Rate 516.84 plus a new CUSTOM adjustment line 111871 at 430.70 sums to the quoted 947.54; both written within a minute of the post, so a teammate is already working it. Owner Ricardo, no Teams reply sent.",
       "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false,
+      "owner": "Ricardo",
+      "lastVerified": "2026-11-18"
     }
   ]
 }
