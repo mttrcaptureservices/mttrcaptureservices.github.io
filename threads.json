@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T16:45:00-08:00",
+  "lastUpdated": "2026-11-18T02:14:09.222Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -8,12 +8,16 @@
       "summary": "Requests that Spec Ops 2.0 base confirmation emails go to the client, CT and coordinator together, matching the legacy base emails, with payout verbiage and all project documents attached.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "11/18",
+      "date": "11/17",
       "jiraKey": "COP-2178",
       "note": "Ricardo asked whether the new email should replace the existing Confirmation email; the next action is Troy's answer.",
       "url": "https://teams.microsoft.com/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false,
+      "lastVerified": "2026-11-17",
+      "owner": "Troy"
     }
   ]
 }
