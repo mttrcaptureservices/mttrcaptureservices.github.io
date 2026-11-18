@@ -1,51 +1,32 @@
 {
-  "lastUpdated": "2026-11-18T22:09:29Z",
+  "lastUpdated": "2026-11-18T23:10:00Z",
   "threads": [
-    {
-      "author": "Gisele Tan",
-      "initials": "GT",
-      "color": "#0e7490",
-      "summary": "Asked for an Airtable client view to be created for MP client Nextore SRL.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/4",
-      "jiraKey": "COP-2163",
-      "note": "Snehal Meled offered on 11/5 to take COP-2163; the client view is still owed by Snehal.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1793841770079?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1793841770079&createdTime=1793841770079",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#b45309",
-      "summary": "Wants Spec Ops 2.0 confirmation emails sent to client, CT and coordinator together, matching the legacy base (with payout and project documents).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "11/17",
-      "jiraKey": "COP-2178",
-      "note": "Ricardo asked whether this should replace the current Confirmation email; Troy owes the answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1794942984469&createdTime=1794942984469",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
     {
       "author": "Freddy Arias",
       "initials": "FA",
-      "color": "#7c3aed",
-      "summary": "Asks why the CT payout on JOBID6665184745141440258 dropped from the $947.54 quoted at confirmation to $516.84 now that the job is complete.",
+      "color": "#2E86AB",
+      "summary": "CT payout for JOBID6665184745141440258 was quoted $947.54 at dispatch but Airtable shows $516.84 at completion; asked why it changed.",
       "statusCls": "badge-investigating",
       "status": "Investigating",
       "date": "11/18",
-      "note": "No reply or Jira yet. Airtable shows the original record at $516.84 and a new PAYISSUE amendment of $430.70 created 1:12 PM PT today; Ricardo owes the root-cause reply.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795035076685?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1795035076685&createdTime=1795035076685",
-      "reactions": [
-        "👀"
-      ],
+      "jiraKey": "COP-2179",
+      "note": "Capture appears counted twice in the dispatch quote; payissue line added, Ricardo owes root-cause fix on the quote logic.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Caitlin Suh",
+      "initials": "CS",
+      "color": "#A23B72",
+      "summary": "UDR job JOBID6708472623222463724 has duplicated child records; one child stuck on Waiting for Approval while parent and other child are Pending.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting duplicate removal",
+      "date": "11/18",
+      "jiraKey": "COP-2180",
+      "note": "Record 111904 (stale child) must be removed before the job is sent; Ricardo owes the cleanup and root-cause fix.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
       "reactionsUnread": false
     }
   ]
