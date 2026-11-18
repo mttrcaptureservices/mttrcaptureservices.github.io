@@ -1,40 +1,19 @@
 {
-  "lastUpdated": "2026-11-18T00:08:29.381Z",
+  "lastUpdated": "2026-11-18T16:45:00-08:00",
   "threads": [
-    {
-      "author": "Don Fraser",
-      "initials": "DF",
-      "color": "#2E7D32",
-      "summary": "Spec Ops 2.0 base does not send a confirmation email with both client and tech on it like Legacy did (example: JOBID RC_21, Raising Canes). Wants 2.0 to follow Legacy rules for all customers.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
-      "date": "11/17",
-      "note": "Ricardo replied that 2.0 comms were agreed to match Parent Base templates and asked for the legacy email example and desired behavior; next action is a discussion with Don/Troy. Same ask as Troy Lowry COP-2178.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794932949979",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false,
-      "owner": "Ricardo",
-      "lastVerified": "2026-11-17"
-    },
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#E65100",
-      "summary": "Requests that Spec Ops 2.0 confirmation emails (client, CT and coordinator together) match the Legacy base confirmation emails, with provided verbiage/payout and all project documents attached.",
+      "color": "#2E7D6B",
+      "summary": "Wants all Spec Ops 2.0 base confirmation emails sent to the client, CT and coordinator together, matching the legacy base email (with payout verbiage and project documents attached).",
       "statusCls": "badge-waiting",
-      "status": "Awaiting decision",
-      "date": "11/17",
-      "note": "COP-2178 filed and linked in thread. Ricardo is already discussing the desired Spec Ops 2.0 email behavior in the related Don Fraser thread and owes the next step.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false,
+      "status": "Waiting on requester",
+      "date": "11/18",
       "jiraKey": "COP-2178",
-      "owner": "Ricardo",
-      "lastVerified": "2026-11-17"
+      "note": "Ricardo asked at 4:22 PM whether the new email should replace the existing Parent Base 'Confirmation' email; next action is Troy's answer.",
+      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794942984469?context=%7B%22contextType%22%3A%22chat%22%7D",
+      "reactions": ["👀"],
+      "reactionsUnread": false
     }
   ]
 }
