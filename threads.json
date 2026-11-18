@@ -1,23 +1,32 @@
 {
-  "lastUpdated": "2026-11-18T03:14:15.213Z",
+  "lastUpdated": "2026-11-18T21:55:00Z",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#7B61FF",
-      "summary": "Requests that Spec Ops 2.0 base confirmation emails go to the client, CT and coordinator together, matching the legacy base emails, with payout verbiage and all project documents attached.",
+      "color": "#2E7D32",
+      "summary": "Wants Spec Ops 2.0 confirmation emails sent to client, CT and coordinator together, matching the legacy base (with payout and project documents).",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
       "date": "11/17",
       "jiraKey": "COP-2178",
-      "note": "Ricardo asked whether the new email should replace the existing Confirmation email; the next action is Troy's answer.",
-      "url": "https://teams.microsoft.com/",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false,
-      "lastVerified": "2026-11-17",
-      "owner": "Troy"
+      "note": "Ricardo asked whether the new email should replace the existing Confirmation email; Troy owes the answer.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
+    },
+    {
+      "author": "Freddy Arias",
+      "initials": "FA",
+      "color": "#1565C0",
+      "summary": "Asks why the CT payout for JOBID6665184745141440258 dropped from $947.54 (quoted incl. travel) to $516.84 after completion.",
+      "statusCls": "badge-investigating",
+      "status": "Investigating",
+      "date": "11/18",
+      "note": "Has 👀 but no reply or Jira yet; the next action (payout check) is owed by the team.",
+      "url": "https://teams.cloud.microsoft/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
     }
   ]
 }
