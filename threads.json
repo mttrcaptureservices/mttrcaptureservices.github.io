@@ -1,33 +1,41 @@
 {
-  "lastUpdated": "2026-11-18T23:10:00Z",
+  "lastUpdated": "2026-11-18T23:13:30.858Z",
   "threads": [
     {
       "author": "Freddy Arias",
       "initials": "FA",
       "color": "#2E86AB",
       "summary": "CT payout for JOBID6665184745141440258 was quoted $947.54 at dispatch but Airtable shows $516.84 at completion; asked why it changed.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
       "date": "11/18",
       "jiraKey": "COP-2179",
-      "note": "Capture appears counted twice in the dispatch quote; payissue line added, Ricardo owes root-cause fix on the quote logic.",
+      "note": "Explanation posted 2:10 PM (capture counted twice at dispatch); no reply from Freddy yet. Ricardo owns COP-2179, To Do.",
       "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false,
+      "owner": "Ricardo",
+      "lastVerified": "2026-11-18"
     },
     {
       "author": "Caitlin Suh",
       "initials": "CS",
       "color": "#A23B72",
       "summary": "UDR job JOBID6708472623222463724 has duplicated child records; one child stuck on Waiting for Approval while parent and other child are Pending.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting duplicate removal",
+      "statusCls": "badge-investigating",
+      "status": "Root cause investigating",
       "date": "11/18",
       "jiraKey": "COP-2180",
-      "note": "Record 111904 (stale child) must be removed before the job is sent; Ricardo owes the cleanup and root-cause fix.",
+      "note": "Duplicate child removed 3:11 PM; root cause under investigation. Ricardo owns COP-2180, To Do.",
       "url": "https://teams.cloud.microsoft/",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false,
+      "owner": "Ricardo",
+      "lastVerified": "2026-11-18"
     }
   ]
 }
