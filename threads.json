@@ -1,23 +1,19 @@
 {
-  "lastUpdated": "2026-11-18T01:12:58.276Z",
+  "lastUpdated": "2026-11-18T16:45:00-08:00",
   "threads": [
     {
       "author": "Troy Lowry",
       "initials": "TL",
-      "color": "#2E7D6B",
-      "summary": "Wants all Spec Ops 2.0 base confirmation emails sent to the client, CT and coordinator together, matching the legacy base email (with payout verbiage and project documents attached).",
+      "color": "#7B61FF",
+      "summary": "Requests that Spec Ops 2.0 base confirmation emails go to the client, CT and coordinator together, matching the legacy base emails, with payout verbiage and all project documents attached.",
       "statusCls": "badge-waiting",
       "status": "Waiting on requester",
-      "date": "11/17",
+      "date": "11/18",
       "jiraKey": "COP-2178",
-      "note": "Ricardo asked at 4:22 PM whether the new email should replace the existing Parent Base 'Confirmation' email; next action is Troy's answer.",
-      "url": "https://teams.microsoft.com/l/message/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/1794942984469?context=%7B%22contextType%22%3A%22chat%22%7D",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false,
-      "owner": "Troy",
-      "lastVerified": "2026-11-17"
+      "note": "Ricardo asked whether the new email should replace the existing Confirmation email; the next action is Troy's answer.",
+      "url": "https://teams.microsoft.com/",
+      "reactions": ["👀"],
+      "reactionsUnread": false
     }
   ]
 }
