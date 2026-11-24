@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T23:13:30.858Z",
+  "lastUpdated": "2026-11-24T19:05:14.375Z",
   "threads": [
     {
       "author": "Freddy Arias",
@@ -36,6 +36,19 @@
       "reactionsUnread": false,
       "owner": "Ricardo",
       "lastVerified": "2026-11-18"
+    },
+    {
+      "author": "Ryan Morrow",
+      "initials": "RM",
+      "color": "#2E7D32",
+      "summary": "Asked to match Bank of Montreal (2) - CAN travel fee setup to the USD entity; also flagged CAD travel distance calculating in km.",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting confirmation",
+      "date": "11/24",
+      "note": "Replied: Skip Distance Calc is ticked on USD but not CAN in Global Scheduling Base MP Client Data; Ryan can tick it. Pending 👀 on root (not added this run).",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795533902254?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1795533902254&createdTime=1795533902254",
+      "owner": "Ryan",
+      "lastVerified": "2026-11-24"
     }
   ]
 }
