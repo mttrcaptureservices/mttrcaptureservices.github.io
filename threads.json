@@ -1,21 +1,4 @@
 {
-  "lastUpdated": "2026-11-24T20:14:20.701Z",
-  "threads": [
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#2E7D32",
-      "summary": "Wants Spec Ops 2.0 confirmation emails to reach the client, CT and coordinator together, matching the legacy base (payout verbiage and project documents included).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "11/17",
-      "jiraKey": "COP-2178",
-      "note": "Ricardo asked whether the new email should replace the existing Confirmation email; Troy owes the answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    }
-  ]
+  "lastUpdated": "2026-11-24T21:20:00Z",
+  "threads": []
 }
