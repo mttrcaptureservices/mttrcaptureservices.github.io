@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T21:15:00Z",
+  "lastUpdated": "2026-11-24T20:14:20.701Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -12,33 +12,9 @@
       "jiraKey": "COP-2178",
       "note": "Ricardo asked whether the new email should replace the existing Confirmation email; Troy owes the answer.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Kailyn Jelniker",
-      "initials": "KJ",
-      "color": "#6A1B9A",
-      "summary": "Somerled Designs (2) signed a new order form; asks how to keep the Job Requestor email prefill with the new short-link process.",
-      "statusCls": "badge-waiting",
-      "status": "Awaiting confirmation",
-      "date": "11/19",
-      "note": "Ricardo suggested setting the form type to Custom with the old URL as base and asked if she wants to try it or have the team set it up; Kailyn replied 'Thanks!!' without confirming.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795103508264",
-      "reactions": ["👀"],
-      "reactionsUnread": false
-    },
-    {
-      "author": "Ryan Morrow",
-      "initials": "RM",
-      "color": "#E65100",
-      "summary": "Asks to match Bank of Montreal (2) - CAN travel fee setup to the USD record; notes CAD travel distance is calculated in km, not miles.",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "11/24",
-      "note": "Ricardo explained the MP Client setup is identical and the difference is the Skip Distance Calc switch in GSB (MP Client Data tab); Ryan owes confirmation that ticking it on the CAN record resolves it.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795533902254",
-      "reactions": ["👀"],
+      "reactions": [
+        "👀"
+      ],
       "reactionsUnread": false
     }
   ]
