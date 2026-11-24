@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Job Rate Calculator</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<div id="login" class="center" style="height:100%;display:grid;place-items:center;padding:24px 16px">
+  <main class="auth">
+    <div class="mark">◆</div>
+    <h1>Job Rate Calculator</h1>
+    <p class="muted">Sign in with the passphrase you set when you enrolled.</p>
+    <form id="lf" class="stack">
+      <label for="le">Work email</label>
+      <input id="le" type="email" autocomplete="username" required>
+      <label for="lp">Passphrase</label>
+      <input id="lp" type="password" autocomplete="current-password" required>
+      <p id="lerr" class="err" role="alert" hidden></p>
+      <button id="lgo" type="submit">Sign in</button>
+    </form>
+    <p class="muted small">No access yet? <a href="enroll.html">Set up your access</a>.</p>
+  </main>
+</div>
+
+<!-- App -->
+<div id="app" class="app" hidden>
+  <header class="top">
+    <span class="title">Job Rate Calculator</span>
+    <span class="stamp" id="stamp"></span>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-chat" aria-selected="true">Chat</button>
+      <button role="tab" id="t-grid" aria-selected="false">Grid</button>
+    </div>
+    <button class="link" id="out">Sign out</button>
+  </header>
+
+  <main class="scroll" id="chatpane">
+    <div class="col" id="thread">
+      <div class="hello">
+        <h2>What should we quote?</h2>
+        <p>Describe the job, or attach a CSV with one job per row. Base rate only; fees aren't included.</p>
+        <div class="chips">
+          <button data-q="3,500 sq ft commercial in the US">3,500 sq ft commercial in the US</button>
+          <button data-q="450 m2 office in Germany">450 m² office in Germany</button>
+          <button data-q="12000 sqft for Welltower - UK (2) in the UK">12,000 sq ft, Welltower - UK (2)</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main class="scroll" id="gridpane" hidden>
+    <div class="col">
+      <p class="muted">One row per job. Leave a field empty to use the default: country US, property Commercial, price type SF when no client is picked.</p>
+      <div class="tbl"><table class="grid">
+        <thead><tr><th>#</th><th>Country</th><th>Size</th><th>Area unit</th><th>MP Client</th><th>Property type</th><th></th></tr></thead>
+        <tbody id="gbody"></tbody>
+      </table></div>
+      <div class="actions"><button class="ghost" id="gadd">Add row</button><button id="gcalc">Calculate</button></div>
+      <div id="gout"></div>
+    </div>
+  </main>
+
+  <div class="dock" id="dock">
+    <form class="composer" id="cf">
+      <label for="msg" class="sr" hidden>Message</label>
+      <textarea id="msg" rows="1" placeholder="e.g. quote 3,500 sq ft commercial in Toronto for Welltower (12)"></textarea>
+      <div class="row">
+        <input type="file" id="csv" accept=".csv,text/csv" hidden>
+        <button type="button" class="iconbtn" id="attach" title="Attach a CSV">＋ CSV</button>
+        <span class="file" id="fname" hidden></span>
+        <button type="submit" class="send" id="send">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<datalist id="dl-clients"></datalist>
+<datalist id="dl-countries"></datalist>
+
+<script src="engine.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  let SNAP = null, lastActive = Date.now(), pendingCsv = null;
+  const IDLE_MS = 30 * 60 * 1000;
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+  /* ---------- Sign in ---------- */
+  async function unlock(email, pw) {
+    const r = await fetch("data/jrc.enc.json", { cache: "no-store" });
+    if (!r.ok) throw new Error("The pricing data hasn't been published yet.");
+    const f = await r.json();
+    const h = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(email.trim().toLowerCase()))))
+      .map(b => b.toString(16).padStart(2, "0")).join("");
+    const u = f.users[h];
+    if (!u) throw new Error("That email or passphrase isn't right.");
+    const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", salt: unb64(u.salt), iterations: f.iter, hash: "SHA-256" }, base, 256);
+    const kek = await crypto.subtle.importKey("raw", bits, "AES-GCM", false, ["decrypt"]);
+    let raw;
+    try { raw = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(u.iv) }, kek, unb64(u.wk)); }
+    catch { throw new Error("That email or passphrase isn't right."); }
+    const dk = await crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]);
+    const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(f.iv) }, dk, unb64(f.ct));
+    return JSON.parse(new TextDecoder().decode(plain));
+  }
+
+  $("lf").addEventListener("submit", async e => {
+    e.preventDefault();
+    const btn = $("lgo"), err = $("lerr");
+    err.hidden = true; btn.disabled = true; btn.textContent = "Unlocking…";
+    try {
+      SNAP = await unlock($("le").value, $("lp").value);
+      $("lp").value = "";
+      start();
+    } catch (x) { err.textContent = x.message; err.hidden = false; }
+    btn.disabled = false; btn.textContent = "Sign in";
+  });
+
+  function signOut() { SNAP = null; location.reload(); }
+  $("out").addEventListener("click", signOut);
+  ["click", "keydown", "pointermove"].forEach(ev => addEventListener(ev, () => (lastActive = Date.now()), { passive: true }));
+  setInterval(() => { if (SNAP && Date.now() - lastActive > IDLE_MS) signOut(); }, 30000);
+
+  function start() {
+    $("login").hidden = true; $("app").hidden = false;
+    const d = new Date(SNAP.generatedAt);
+    $("stamp").textContent = "Pricebook as of " + d.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+    $("dl-clients").innerHTML = SNAP.clients.map(c => `<option value="${esc(c.n)}">`).join("");
+    $("dl-countries").innerHTML = SNAP.countries.filter(c => c.c && !/deprecated|somewhere/i.test(c.n)).map(c => `<option value="${esc(c.n)}">`).join("");
+    for (let i = 0; i < 3; i++) addRow();
+    $("msg").focus();
+  }
+
+  /* ---------- Tabs ---------- */
+  function tab(which) {
+    const chat = which === "chat";
+    $("t-chat").setAttribute("aria-selected", chat); $("t-grid").setAttribute("aria-selected", !chat);
+    $("chatpane").hidden = !chat; $("dock").hidden = !chat; $("gridpane").hidden = chat;
+  }
+  $("t-chat").onclick = () => tab("chat"); $("t-grid").onclick = () => tab("grid");
+
+  /* ---------- Results ---------- */
+  const money = (v, cur) => (cur ? cur + " " : "") + Number(v).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function describe(r) {
+    const i = r.input || {};
+    return [i.client || "No client", i.country, i.size ? `${Number(i.size).toLocaleString()} ${i.unit === "m2" ? "m²" : "ft²"}` : null, i.property, i.priceType && `price type ${i.priceType}`].filter(Boolean).join(" · ");
+  }
+  function table(results) {
+    const rows = results.map((r, i) => r.ok
+      ? `<tr><td>${i + 1}</td><td class="wrap">${esc(describe(r))}</td><td class="code">${esc(r.code)}</td><td>${esc(r.range)}</td><td class="num">${esc(money(r.rate, r.currency))}</td><td class="wrap small muted">${esc((r.notes || []).join("; "))}</td></tr>`
+      : `<tr><td>${i + 1}</td><td class="wrap">${esc(describe(r) || "—")}</td><td colspan="3" class="wrap bad">${esc(r.reason)}</td><td class="wrap small muted">${esc((r.notes || []).join("; "))}</td></tr>`).join("");
+    return `<div class="tbl"><table><thead><tr><th>#</th><th>Job</th><th>Price code</th><th>Size range</th><th class="num">Job rate</th><th>Notes</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+  function toCsv(results, inputs) {
+    const q = v => { const s = String(v == null ? "" : v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    const head = ["Country", "Size", "Area Unit", "MP Client", "Property Type", "Price Code", "Size Range", "Currency", "Job Rate", "Notes"];
+    const lines = results.map((r, i) => { const x = inputs[i] || {}; return [x.country, x.size, x.unit, x.client, x.property, r.ok ? r.code : "", r.ok ? r.range : "", r.ok ? r.currency : "", r.ok ? r.rate.toFixed(2) : "", r.ok ? (r.notes || []).join("; ") : r.reason].map(q).join(","); });
+    return [head.join(","), ...lines].join("\n");
+  }
+  function download(name, text) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([text], { type: "text/csv" }));
+    a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  /* ---------- Chat ---------- */
+  function addMsg(cls, html) {
+    const hello = document.querySelector(".hello"); if (hello) hello.remove();
+    const d = document.createElement("div"); d.className = cls; d.innerHTML = html;
+    $("thread").appendChild(d); d.scrollIntoView({ block: "end", behavior: "smooth" });
+    return d;
+  }
+  function reply(results, inputs, intro) {
+    const ok = results.filter(r => r.ok);
+    let lead = intro;
+    if (!lead) {
+      if (results.length === 1 && ok.length === 1) {
+        const r = ok[0];
+        lead = `<p>That's <b>${esc(r.code)}</b> (${esc(r.range)}) at <b>${esc(money(r.rate, r.currency))}</b>.</p><p class="note">I read this as ${esc(describe(r))}.</p>`;
+      } else if (results.length === 1) {
+        lead = `<p>I couldn't price that. ${esc(results[0].reason)}</p><p class="note">Try adding the size with its unit, the country and the MP Client, e.g. “4,200 sq ft commercial in the US for Clay Software (2)”.</p>`;
+      } else lead = `<p>I priced ${ok.length} of ${results.length} lines.</p>`;
+    }
+    const d = addMsg("a", lead + table(results) + `<p class="note">Base rate only. Travel, off-hours, 360s and other fees aren't included.</p><div class="actions"><button class="ghost dl">Download results as CSV</button></div>`);
+    d.querySelector(".dl").onclick = () => download("job-rate-quotes.csv", toCsv(results, inputs));
+  }
+  function quoteOne(raw) { return JRC.quote(SNAP, raw); }
+
+  $("cf").addEventListener("submit", e => {
+    e.preventDefault();
+    const text = $("msg").value.trim();
+    if (!text && !pendingCsv) return;
+    if (pendingCsv) {
+      const { name, rows, ignored } = pendingCsv;
+      addMsg("u", esc((text ? text + "\n" : "") + "📎 " + name));
+      const results = rows.map(quoteOne);
+      const extra = ignored.length ? ` I ignored these columns: ${ignored.map(esc).join(", ")}.` : "";
+      reply(results, rows, results.length ? `<p>I read <b>${rows.length}</b> line${rows.length === 1 ? "" : "s"} from ${esc(name)} and priced ${results.filter(r => r.ok).length}.${extra}</p>` : `<p>${esc(name)} has no data rows.</p>`);
+      pendingCsv = null; $("fname").hidden = true; $("csv").value = "";
+    } else {
+      addMsg("u", esc(text));
+      const raw = JRC.parseRequest(SNAP, text);
+      reply([quoteOne(raw)], [raw]);
+    }
+    $("msg").value = ""; $("msg").style.height = "";
+  });
+  $("msg").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("cf").requestSubmit(); } });
+  $("msg").addEventListener("input", e => { e.target.style.height = "auto"; e.target.style.height = Math.min(e.target.scrollHeight, 180) + "px"; });
+  $("thread").addEventListener("click", e => { const q = e.target.closest("[data-q]"); if (q) { $("msg").value = q.dataset.q; $("cf").requestSubmit(); } });
+
+  /* ---------- CSV ---------- */
+  function parseCsv(text) {
+    const rows = []; let row = [], cell = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (q) { if (ch === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += ch; }
+      else if (ch === '"') q = true;
+      else if (ch === ",") { row.push(cell); cell = ""; }
+      else if (ch === "\n" || ch === "\r") { if (ch === "\r" && text[i + 1] === "\n") i++; row.push(cell); rows.push(row); row = []; cell = ""; }
+      else cell += ch;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(r => r.some(c => c.trim()));
+  }
+  const HEAD = {
+    country: /^(country|country name|country string|market)$/,
+    size: /^(size|sq ?ft|sqft|square feet|area|capture size|capture size - requested|sq ?m|sqm|square met(er|re)s)$/,
+    unit: /^(unit|units|area unit|unit of measure|uom)$/,
+    client: /^(client|mp client|customer|account)$/,
+    property: /^(property|property type|type)$/,
+  };
+  function readCsv(file) {
+    return file.text().then(t => {
+      const rows = parseCsv(t.replace(/^﻿/, ""));
+      if (!rows.length) return { rows: [], ignored: [] };
+      const head = rows[0].map(h => h.trim().toLowerCase());
+      const map = {}, ignored = [];
+      head.forEach((h, i) => { const k = Object.keys(HEAD).find(k => HEAD[k].test(h)); if (k && map[k] == null) map[k] = i; else ignored.push(rows[0][i]); });
+      if (map.size == null) throw new Error("I couldn't find a size column. Name it Size, Sq Ft or Area.");
+      const sizeHead = head[map.size];
+      return {
+        ignored,
+        rows: rows.slice(1).map(r => {
+          const o = {};
+          for (const k in map) o[k] = (r[map[k]] || "").trim();
+          if (!o.unit && /sq ?m|sqm|met/.test(sizeHead)) o.unit = "m2";
+          return o;
+        }),
+      };
+    });
+  }
+  $("attach").onclick = () => $("csv").click();
+  $("csv").addEventListener("change", async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try { const parsed = await readCsv(f); pendingCsv = { name: f.name, ...parsed }; $("fname").textContent = `${f.name} · ${parsed.rows.length} rows`; $("fname").hidden = false; $("msg").focus(); }
+    catch (x) { addMsg("a", `<p>${esc(x.message)}</p>`); $("csv").value = ""; }
+  });
+
+  /* ---------- Grid ---------- */
+  let rowN = 0;
+  function addRow() {
+    rowN++;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${$("gbody").children.length + 1}</td>
+      <td><input id="g-co-${rowN}" list="dl-countries" placeholder="USA" aria-label="Country"></td>
+      <td><input id="g-sz-${rowN}" inputmode="decimal" placeholder="3,500" aria-label="Size"></td>
+      <td><select id="g-un-${rowN}" aria-label="Area unit"><option value="ft2">ft²</option><option value="m2">m²</option></select></td>
+      <td><input id="g-cl-${rowN}" list="dl-clients" placeholder="Search MP Client" aria-label="MP Client"></td>
+      <td><select id="g-pr-${rowN}" aria-label="Property type"><option value="">Commercial (default)</option><option>Commercial</option><option>Residential</option><option>Multi Family</option><option>Manufacturing</option></select></td>
+      <td><button class="x" title="Remove row" aria-label="Remove row">✕</button></td>`;
+    tr.querySelector(".x").onclick = () => { tr.remove(); [...$("gbody").children].forEach((r, i) => (r.firstElementChild.textContent = i + 1)); };
+    $("gbody").appendChild(tr);
+  }
+  $("gadd").onclick = addRow;
+  $("gcalc").onclick = () => {
+    const inputs = [...$("gbody").children].map(tr => {
+      const v = s => tr.querySelector(s).value.trim();
+      return { country: v('[aria-label="Country"]'), size: v('[aria-label="Size"]'), unit: v('[aria-label="Area unit"]'), client: v('[aria-label="MP Client"]'), property: v('[aria-label="Property type"]') };
+    }).filter(r => r.size || r.country || r.client);
+    const results = inputs.map(quoteOne);
+    $("gout").innerHTML = results.length ? table(results) + `<div class="actions" style="margin-top:10px"><button class="ghost" id="gdl">Download results as CSV</button></div>` : `<p class="muted">Enter at least a size.</p>`;
+    const b = $("gdl"); if (b) b.onclick = () => download("job-rate-quotes.csv", toCsv(results, inputs));
+  };
+})();
+</script>
+</body>
+</html>

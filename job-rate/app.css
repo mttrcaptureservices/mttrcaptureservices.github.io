@@ -1,0 +1,83 @@
+/* Job Rate Calculator — chat layout modelled on the Claude app: warm paper ground,
+   centred conversation column, serif assistant voice, rounded composer docked at the bottom. */
+:root{
+  --bg:#faf9f5; --panel:#ffffff; --sunk:#f0eee6; --ink:#1f1e1d; --muted:#6b6862; --line:#e5e2d9;
+  --accent:#c96442; --accent-ink:#ffffff; --accent-soft:#f6e6de; --err:#b3261e; --ok:#2e7d4f; --warn:#9a6a00;
+  --sans:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#262624; --panel:#30302e; --sunk:#1f1e1d; --ink:#f0eee6; --muted:#a8a59c; --line:#3d3c39;
+  --accent:#d97757; --accent-soft:#3a2b24; --err:#f2b8b5; --ok:#8fd3a8; --warn:#e8c168; color-scheme:dark;}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.muted{color:var(--muted)} .small{font-size:13px}
+.err{color:var(--err);margin:0}
+.stack{display:flex;flex-direction:column;gap:8px}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}
+textarea{font-family:var(--mono);font-size:12px;resize:vertical}
+button{background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:9px 14px;font-weight:500;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button.link{background:none;color:var(--muted);padding:4px 6px}
+
+/* Auth */
+body.center{display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right)) 24px max(16px,env(safe-area-inset-left))}
+.auth{width:100%;max-width:400px;display:flex;flex-direction:column;gap:14px}
+.auth h1{font:600 28px/1.2 var(--serif);margin:0}
+.auth p{margin:0}
+.mark{color:var(--accent);font-size:26px}
+
+/* App shell */
+.app{display:grid;grid-template-rows:auto 1fr auto;height:100%}
+header.top{display:flex;align-items:center;gap:12px;padding:10px max(16px,env(safe-area-inset-left));border-bottom:1px solid var(--line);flex-wrap:wrap}
+header.top .title{font:600 17px var(--serif)}
+header.top .stamp{font-size:12px;color:var(--muted)}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--sunk);padding:3px;border-radius:10px}
+.tabs button{background:none;color:var(--muted);padding:5px 12px;border-radius:8px}
+.tabs button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+main.scroll{overflow-y:auto}
+.col{max-width:780px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left)) 24px max(16px,env(safe-area-inset-right));display:flex;flex-direction:column;gap:22px}
+
+/* Messages */
+.u{align-self:flex-end;background:var(--sunk);padding:10px 14px;border-radius:16px;max-width:85%;white-space:pre-wrap}
+.a{font-family:var(--serif);font-size:16px;line-height:1.6;display:flex;flex-direction:column;gap:10px}
+.a p{margin:0}
+.a .note{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.hello h2{font:500 30px/1.25 var(--serif);margin:24px 0 6px;text-align:center}
+.hello p{text-align:center;color:var(--muted);margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips button{background:var(--panel);color:var(--ink);border:1px solid var(--line);font-size:13px;border-radius:999px;padding:6px 12px}
+
+/* Results */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-family:var(--sans)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
+td.wrap{white-space:normal;min-width:180px}
+th{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+.code{font-family:var(--mono);font-size:12.5px}
+.bad{color:var(--err)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--sans)}
+.actions button{font-size:13px;padding:6px 11px}
+
+/* Composer */
+.dock{padding:8px max(16px,env(safe-area-inset-left)) calc(14px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-right))}
+.composer{max-width:780px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.composer textarea{border:0;padding:4px 2px;font:15px/1.5 var(--sans);resize:none;background:transparent;min-height:26px;max-height:180px}
+.composer textarea:focus-visible{outline:none}
+.composer .row{display:flex;align-items:center;gap:8px}
+.composer .file{font-size:12.5px;color:var(--muted);background:var(--sunk);border-radius:8px;padding:3px 8px}
+.iconbtn{background:none;color:var(--muted);border:1px solid var(--line);border-radius:9px;padding:5px 9px;font-size:13px}
+.send{margin-left:auto;border-radius:9px;padding:6px 12px}
+
+/* Grid */
+.grid td{padding:5px 6px}
+.grid input,.grid select{padding:6px 8px;border-radius:8px;min-width:110px}
+.grid .x{background:none;color:var(--muted);padding:4px 8px}

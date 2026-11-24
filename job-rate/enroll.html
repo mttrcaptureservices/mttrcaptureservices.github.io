@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Job Rate Calculator · Enrol</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="center">
+<main class="auth">
+  <div class="mark">◆</div>
+  <h1>Set up your access</h1>
+  <p class="muted">Choose a passphrase. It never leaves this browser. You'll get a one-line code to send to Ricardo, who adds it to the calculator's user list. Your access starts after the next nightly update.</p>
+  <form id="f" class="stack">
+    <label for="email">Work email</label>
+    <input id="email" type="email" autocomplete="username" required placeholder="name@costar.com">
+    <label for="pw">Passphrase</label>
+    <input id="pw" type="password" autocomplete="new-password" required minlength="16" placeholder="At least 16 characters, e.g. four random words">
+    <label for="pw2">Repeat passphrase</label>
+    <input id="pw2" type="password" autocomplete="new-password" required>
+    <p id="err" class="err" role="alert" hidden></p>
+    <button id="go" type="submit">Create my code</button>
+  </form>
+  <section id="done" class="stack" hidden>
+    <p>Send this line to Ricardo. It contains no passphrase and can't be turned back into one.</p>
+    <textarea id="code" readonly rows="4"></textarea>
+    <button id="copy" type="button" class="ghost">Copy code</button>
+    <p class="muted small">Keep your passphrase somewhere safe. If you lose it, enrol again with a new one.</p>
+  </section>
+</main>
+<script>
+const b64 = u => btoa(String.fromCharCode(...new Uint8Array(u)));
+document.getElementById("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("err"), go = document.getElementById("go");
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const pw = document.getElementById("pw").value, pw2 = document.getElementById("pw2").value;
+  err.hidden = true;
+  if (pw.length < 16) { err.textContent = "Use at least 16 characters."; err.hidden = false; return; }
+  if (pw !== pw2) { err.textContent = "The two passphrases don't match."; err.hidden = false; return; }
+  if (/,/.test(email)) { err.textContent = "Email can't contain a comma."; err.hidden = false; return; }
+  go.disabled = true; go.textContent = "Working… (a few seconds)";
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 600000, hash: "SHA-256" }, base, 256);
+  document.getElementById("code").value = `${email},${b64(salt)},${b64(bits)}`;
+  document.getElementById("f").hidden = true;
+  document.getElementById("done").hidden = false;
+});
+document.getElementById("copy").addEventListener("click", async () => {
+  const t = document.getElementById("code"); t.select();
+  try { await navigator.clipboard.writeText(t.value); document.getElementById("copy").textContent = "Copied"; } catch { document.execCommand("copy"); }
+});
+</script>
+</body>
+</html>
