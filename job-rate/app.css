@@ -12,6 +12,7 @@
   --bg:#262624; --panel:#30302e; --sunk:#1f1e1d; --ink:#f0eee6; --muted:#a8a59c; --line:#3d3c39;
   --accent:#d97757; --accent-soft:#3a2b24; --err:#f2b8b5; --ok:#8fd3a8; --warn:#e8c168; color-scheme:dark;}}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans)}
 button,input,select,textarea{font:inherit;color:inherit}

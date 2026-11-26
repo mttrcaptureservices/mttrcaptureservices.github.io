@@ -197,6 +197,8 @@
       const cities = { toronto: "Canada", vancouver: "Canada", montreal: "Canada", calgary: "Canada", london: "UK", manchester: "UK", paris: "France", berlin: "Germany", munich: "Germany", madrid: "Spain", sydney: "Australia", melbourne: "Australia", singapore: "Singapore", tokyo: "Japan", dubai: "UAE", "hong kong": "Hong Kong", zurich: "Switzerland", geneva: "Switzerland", amsterdam: "Netherlands", dublin: "Ireland", "tel aviv": "Israel", mumbai: "India", seoul: "South Korea" };
       for (const k in cities) if (lower.includes(k)) { out.country = cities[k]; break; }
       if (!out.country && /\b(usa|u\.s\.|united states)\b/.test(lower)) out.country = "USA";
+      const states = "alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|new york|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|west virginia|wisconsin|wyoming|district of columbia|los angeles|san francisco|chicago|houston|dallas|austin|seattle|boston|atlanta|miami|denver|phoenix|nyc|new york city";
+      if (!out.country && new RegExp("\\b(" + states + ")\\b").test(lower)) out.country = "USA";
       if (!out.country && /\b(uk|united kingdom)\b/.test(lower)) out.country = "UK";
     }
     return out;
