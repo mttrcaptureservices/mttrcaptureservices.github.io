@@ -1,35 +1,19 @@
 {
-  "lastUpdated": "2026-11-26T05:07:12.900Z",
+  "lastUpdated": "2026-11-26T05:30:00Z",
   "threads": [
-    {
-      "author": "Troy Lowry",
-      "initials": "TL",
-      "color": "#2E7D32",
-      "summary": "Wants Spec Ops 2.0 confirmation emails to reach the client, CT and coordinator together, matching the legacy base (payout verbiage and project documents included).",
-      "statusCls": "badge-waiting",
-      "status": "Waiting on requester",
-      "date": "11/17",
-      "jiraKey": "COP-2178",
-      "note": "Ricardo asked whether the new email should replace the existing Confirmation email; Troy owes the answer.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
-      "reactions": [
-        "👀"
-      ],
-      "reactionsUnread": false
-    },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
-      "color": "#7B61FF",
-      "summary": "Asked to remove or make conditional the NOTE: Photography Services line in the confirmation email, because techs follow it on jobs where it does not apply.",
+      "color": "#8e44ad",
+      "summary": "Asks to remove (or show only when applicable) the \"NOTE: Photography Services\" line on the confirmation email, since techs are following it on projects that don't need it.",
       "statusCls": "badge-todo",
-      "status": "Awaiting fix",
+      "status": "Jira filed - queued",
       "date": "11/25",
       "jiraKey": "COP-2181",
-      "note": "Ticket filed and linked in thread; not urgent, Ricardo owns the decision after Thanksgiving.",
-      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795615001619?tenantId=9a64e7ca-363f-441c-9aa7-4f85977c09f1&groupId=9f62a32c-6bf2-4db5-ba72-a88d34c91f9b&teamName=Matterport&channelName=Capture%20Services%20Applications%20Support&parentMessageId=1795615001619&createdTime=1795615001619",
-      "owner": "Ricardo",
-      "lastVerified": "2026-11-25"
+      "note": "Tracked in COP-2181; Ricardo's team to pick it up after Thanksgiving. Not urgent per requester.",
+      "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1795615001619",
+      "reactions": ["👀"],
+      "reactionsUnread": false
     }
   ]
 }
