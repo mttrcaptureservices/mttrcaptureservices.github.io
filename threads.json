@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T17:00:00Z",
+  "lastUpdated": "2026-11-26T15:13:51.771Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -12,8 +12,12 @@
       "jiraKey": "COP-2178",
       "note": "The joint email is built and ready; Troy owes the answer on whether it replaces the current Confirmation emails or goes out in addition.",
       "url": "https://teams.microsoft.com/l/message/19:4c70dfd82c184969b216c59dbd59aa4b@thread.tacv2/1794942984469",
-      "reactions": ["👀"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀"
+      ],
+      "reactionsUnread": false,
+      "owner": "Troy",
+      "lastVerified": "2026-11-26"
     },
     {
       "author": "Stephenie Yong",
@@ -26,8 +30,13 @@
       "jiraKey": "COP-2181",
       "note": "Ricardo asked Kailyn Jelniker for input; Gisele Tan says other regions may use the note, so the team owes a decision when back after Thanksgiving.",
       "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support",
-      "reactions": ["👀", "❓"],
-      "reactionsUnread": false
+      "reactions": [
+        "👀",
+        "❓"
+      ],
+      "reactionsUnread": false,
+      "owner": "Ricardo",
+      "lastVerified": "2026-11-26"
     }
   ]
 }
