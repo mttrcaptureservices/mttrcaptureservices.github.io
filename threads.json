@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-27T04:50:42.375Z",
+  "lastUpdated": "2026-11-28T07:46:54.038Z",
   "threads": [
     {
       "author": "Troy Lowry",
@@ -17,26 +17,26 @@
       ],
       "reactionsUnread": false,
       "owner": "Troy",
-      "lastVerified": "2026-11-26"
+      "lastVerified": "2026-11-28"
     },
     {
       "author": "Stephenie Yong",
       "initials": "SY",
       "color": "#E65100",
       "summary": "Asks to remove (or show only where it applies) the 'NOTE: Photography Services' line on the confirmation email, because techs are rescanning or abandoning jobs that don't need it.",
-      "statusCls": "badge-investigating",
-      "status": "Investigating",
+      "statusCls": "badge-waiting",
+      "status": "Awaiting team input",
       "date": "11/25",
       "jiraKey": "COP-2181",
-      "note": "Ricardo asked Kailyn Jelniker for input; Gisele Tan says other regions may use the note, so the team owes a decision when back after Thanksgiving.",
+      "note": "Ricardo asked Kailyn Jelniker for input on removing the note; Gisele Tan says other regions may use it, so a decision is needed. No new channel activity since 11/26.",
       "url": "https://teams.microsoft.com/l/channel/19%3A4c70dfd82c184969b216c59dbd59aa4b%40thread.tacv2/Capture%20Services%20Applications%20Support",
       "reactions": [
         "👀",
         "❓"
       ],
       "reactionsUnread": false,
-      "owner": "Ricardo",
-      "lastVerified": "2026-11-26"
+      "owner": "Kailyn",
+      "lastVerified": "2026-11-28"
     }
   ]
 }
